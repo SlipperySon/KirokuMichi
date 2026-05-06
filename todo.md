@@ -62,6 +62,14 @@ Last updated: 2026-05-06
 ### 2c. Word Selection & Deck Import / Textbook Pair Unlock
 - [ ] **Word selection in lessons**: User can highlight/click words in LearningMode or lesson preview
 - [ ] **Custom deck import**: Selected words → route to user's chosen deck in SRS (e.g., "My Vocab" deck)
+- [ ] **2c.1 Textbook pair mapping schema (implementation order)**:
+  - [ ] Define mapping shape: `textbook_key`, `match_rules`, `default_deck_name`, `deck_match_rules`, `unlock_label`, `enabled`
+  - [ ] Implement initial mapping entry for `genki_1_v3`
+  - [ ] Add lesson-to-textbook resolver using filename + optional user textbook tag
+  - [ ] Add imported deck matcher using normalized names + alias rules
+  - [ ] Add fallback when no deck match: choose existing deck or create `default_deck_name`
+  - [ ] Gate unlock CTA: only show when mapping is enabled and lesson has mapped vocab
+  - [ ] Ensure adding new textbook pairs is data-only (new mapping entry, no new logic branch)
 - [ ] **Textbook pair detection and unlock flows**: Detect if content matches known textbook/deck pairs (starting with Genki 1 v3)
   - [ ] Show "Unlock" button for vocab learned in current lesson for mapped textbook pairs
   - [ ] User can request additional words via dialog: "Add these words to my [Textbook] deck"
