@@ -52,15 +52,16 @@ Last updated: 2026-05-06
 ### Content Import (`/practice` → Upload Content tab)
 - **Anki `.apkg`**: full import with audio
 - **Paste text or upload file** (`.pdf`, `.txt`, `.md`, `.csv`)
-- **PDF (Parallel Mode)**: Upload multiple PDFs together (e.g., Genki textbook + workbook)
+- **PDF (Parallel Mode)**: Upload multiple PDFs together (e.g., textbook + workbook)
   - Text extracted client-side via `pdfjs-dist` from all PDFs in order
   - Optional page image rendering (up to 8 pages per PDF → JPEG base64) for vision-capable models
   - AI processes all PDFs together in single call with cross-document context
 - **AI extraction** via strict `EXTRACTION_SYSTEM_PROMPT` — single call returns `{ vocab, grammar, lessons }`
   - Assumption: user knows all hiragana & katakana (no kana drills)
-  - **Genki 1 v3 textbook/workbook special handling**: Automatic furigana elimination over kanji
+  - **Structured textbook path handling (primary)**: Automatic furigana elimination over kanji where applicable
     - User can hover or highlight kanji to reveal furigana (JavaScript interception)
     - Detected via filename pattern or user selection in UI
+    - Primary path set: Genki 1, Genki 2, Quartet 1, Quartet 2, Tobira, Shin Kanzen Master
 - **Preview panel**: three collapsible sections (Vocab / Grammar / Lessons), per-category import toggles
 - **Import routing**:
   - `vocab` → `cards` + `card_states` (immediately in SRS queue, `source='user'`)
@@ -78,6 +79,31 @@ Last updated: 2026-05-06
 - **General flow**: Highlight word in lesson → "Add to [Deck]" → confirm → word routes to SRS queue in chosen deck
 - **Personalized notes**: Users can attach private notes to added/unlocked cards for memory cues, mnemonics, and context
 - Works with all lesson types (textbook imports, custom imports, pasted text)
+
+#### Textbook Pair Mapping Schema (proposed)
+- Add a lightweight mapping record (config table or static JSON seed) for textbook-specific unlock behavior:
+  - `textbook_key` (e.g., `genki_1`, `quartet_2`)
+  - `match_rules` (filename keywords, optional user-selected textbook tag)
+  - `default_deck_name` (e.g., `Genki 1`)
+  - `deck_match_rules` (imported Anki deck name aliases / normalized name)
+  - `unlock_label` (button text override, optional)
+  - `enabled` (feature flag per textbook pair)
+- Runtime flow:
+  - Identify imported lesson's `textbook_key` from `match_rules`
+  - Resolve target deck by `deck_match_rules` first, fallback to `default_deck_name` create/select prompt
+  - Render unlock CTA only when mapping exists and lesson has mapped vocabulary
+  - Persist unlock events in `lesson_vocabulary` and apply optional per-card personal note
+- Initial textbook mappings:
+  - `genki_1`, `genki_2`, `quartet_1`, `quartet_2`, `tobira`, `shin_kanzen_master`
+- Follow shared scraping/extraction patterns across these books where possible (same pipeline, mapping-specific rules only)
+- Audio reading support for these books is explicitly deferred to a later phase
+- For non-mapped PDFs/content imports: keep generic extraction path and prompt user where to route content (deck/grammar/lessons)
+- Extend by adding rows/entries only (no new logic paths)
+
+### AI Tutor Structured Lesson Planning
+- Tutor should generate **structured lesson plans** from whatever content the user provides (not only textbook-path content)
+- Textbook path is the primary structured path, but tutor planning must support mixed/custom sources
+- Planned output format: lesson goals, vocab targets, grammar targets, exercises, and review checkpoints
 
 ### Other Sections (Built)
 - **TutorChat** (`/practice`): AI chat with tab switcher (Tutor | Upload Content)
@@ -124,6 +150,7 @@ The extraction prompt and pipeline are complete. The current open question from 
 ### AI Learning Path (CEFR-aligned)
 - AI generates ordered topic sequence from user content
 - Stored as JSON, visualised as a path/roadmap
+- Should prioritize the textbook path when matched, then blend in user custom content
 - Low priority — needs substantial UX design first
 
 ---
@@ -212,7 +239,7 @@ server/
 
 ## Next Steps (Priority Order)
 
-1. **Weekly goals widget** — small, self-contained, high user value
-2. **Test content import end-to-end** with a real PDF textbook to validate extraction prompt quality
-3. **ScenarioMode v2** — AI conversation (requires UX decision first)
-4. **AI learning path** — lowest priority, most design-heavy
+1. **Textbook-path mapping rollout** — Genki 1/2, Quartet 1/2, Tobira, Shin Kanzen Master
+2. **Test content import end-to-end** for mapped textbooks plus fallback handling for non-mapped PDFs
+3. **Structured AI tutor lesson planning** from user-provided content (textbook and non-textbook)
+4. **ScenarioMode v2** — AI conversation (requires UX decision first)

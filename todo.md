@@ -64,7 +64,13 @@ Last updated: 2026-05-06
 - [ ] **Custom deck import**: Selected words → route to user's chosen deck in SRS (e.g., "My Vocab" deck)
 - [ ] **2c.1 Textbook pair mapping schema (implementation order)**:
   - [ ] Define mapping shape: `textbook_key`, `match_rules`, `default_deck_name`, `deck_match_rules`, `unlock_label`, `enabled`
-  - [ ] Implement initial mapping entry for `genki_1_v3`
+  - [ ] Implement initial textbook mappings:
+    - [ ] `genki_1`
+    - [ ] `genki_2`
+    - [ ] `quartet_1`
+    - [ ] `quartet_2`
+    - [ ] `tobira`
+    - [ ] `shin_kanzen_master`
   - [ ] Add lesson-to-textbook resolver using filename + optional user textbook tag
   - [ ] Add imported deck matcher using normalized names + alias rules
   - [ ] Add fallback when no deck match: choose existing deck or create `default_deck_name`
@@ -92,12 +98,34 @@ Last updated: 2026-05-06
 - [ ] Test: Import Genki deck from Anki → unlock words from lesson → verify words appear in correct deck
 - [ ] Test: Add/edit personal note on unlocked word → verify note appears in subsequent reviews
 - [ ] Test: Non-Genki textbook pair with mapped deck → unlock button appears and routes correctly
-- **Effort:** 4-6 hours (DB schema + pair mapping + UI selection + deck routing + note support)
+- [ ] **Deferred (later phase): Textbook audio readings**
+  - [ ] Document audio source strategy for mapped textbook sets
+  - [ ] Add placeholder schema/metadata for future lesson-linked audio
+  - [ ] Do not block current unlock/scraping flow on audio implementation
+- **Effort:** 5-8 hours (DB schema + mappings + UI selection + deck routing + note support + validation)
 - **Blocks:** Depends on Subdeck Hierarchy (Phase 5) for multi-deck support
 
 ---
 
 ## Priority 3: Medium-Term Features (Next Week)
+
+### 2d. Non-Mapped PDF Routing + Structured Tutor Planning
+- [ ] **Non-mapped content routing prompt**:
+  - [ ] If imported PDF/text does not match textbook mappings, prompt user where to route extracted items
+  - [ ] Prompt options: add to vocab deck, grammar queue, lessons, or mixed split
+  - [ ] Save user routing choice as reusable preference for similar imports
+- [ ] **Shared scraping pipeline**:
+  - [ ] Keep one extraction/scraping path for mapped and non-mapped PDFs
+  - [ ] Apply mapping-specific rules only when textbook key is detected
+  - [ ] Verify regression safety across textbook and non-textbook imports
+- [ ] **AI tutor structured lesson planning**:
+  - [ ] Generate structured lesson plans from user-provided content (textbook or non-textbook)
+  - [ ] Planned structure: objectives, target vocab, target grammar, activities, review checkpoints
+  - [ ] Prioritize textbook-path progression when mapped content exists
+  - [ ] Blend in custom user content without breaking textbook sequence
+- [ ] Test: import mixed sources (mapped textbook + random PDF) → confirm routing prompt + tutor plan quality
+- **Effort:** 4-6 hours
+- **Blocks:** Depends on stable extraction outputs from Priority 2 testing
 
 ### 3. ScenarioMode v2 — Live AI Conversation
 - [ ] **UX Decision:** Decide between:
