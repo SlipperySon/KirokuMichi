@@ -52,14 +52,32 @@ Last updated: 2026-05-06
 ### Content Import (`/practice` → Upload Content tab)
 - **Anki `.apkg`**: full import with audio
 - **Paste text or upload file** (`.pdf`, `.txt`, `.md`, `.csv`)
-- **PDF**: text extracted client-side via `pdfjs-dist`; optional page image rendering (up to 8 pages → JPEG base64) for vision-capable models
+- **PDF (Parallel Mode)**: Upload multiple PDFs together (e.g., Genki textbook + workbook)
+  - Text extracted client-side via `pdfjs-dist` from all PDFs in order
+  - Optional page image rendering (up to 8 pages per PDF → JPEG base64) for vision-capable models
+  - AI processes all PDFs together in single call with cross-document context
 - **AI extraction** via strict `EXTRACTION_SYSTEM_PROMPT` — single call returns `{ vocab, grammar, lessons }`
+  - Assumption: user knows all hiragana & katakana (no kana drills)
+  - **Genki 1 v3 textbook/workbook special handling**: Automatic furigana elimination over kanji
+    - User can hover or highlight kanji to reveal furigana (JavaScript interception)
+    - Detected via filename pattern or user selection in UI
 - **Preview panel**: three collapsible sections (Vocab / Grammar / Lessons), per-category import toggles
 - **Import routing**:
   - `vocab` → `cards` + `card_states` (immediately in SRS queue, `source='user'`)
   - `grammar` → `grammar_points` (`source='user'`, appears in Grammar Review)
   - `lessons` → `learning_content` (appears in `/learn`)
 - Import summary: tile count per category
+
+### Word Selection, Deck Import & Unlock Flows (LearningMode)
+- Users can **select/highlight words in lessons** and add them to any deck
+- **Textbook pair unlock flow (generalized)**: If imported lesson content matches a known textbook/deck pair:
+  - Show "Unlock words from this lesson" button for that lesson
+  - Route unlocked words to matching imported deck (if present) or let user choose/create target deck
+  - Applies to Genki and any future textbook pair mappings (not Genki-exclusive)
+  - `lesson_vocabulary` table tracks: lesson_id → vocab_id → unlock status per user
+- **General flow**: Highlight word in lesson → "Add to [Deck]" → confirm → word routes to SRS queue in chosen deck
+- **Personalized notes**: Users can attach private notes to added/unlocked cards for memory cues, mnemonics, and context
+- Works with all lesson types (textbook imports, custom imports, pasted text)
 
 ### Other Sections (Built)
 - **TutorChat** (`/practice`): AI chat with tab switcher (Tutor | Upload Content)
@@ -107,6 +125,30 @@ The extraction prompt and pipeline are complete. The current open question from 
 - AI generates ordered topic sequence from user content
 - Stored as JSON, visualised as a path/roadmap
 - Low priority — needs substantial UX design first
+
+---
+
+## Phase 5: Anki-like Review System (Planned)
+
+**Scope:** Full-featured SRS with deck hierarchy, filtering, suspend/bury, card browser, cram mode, stats/graphs, custom fields, and card templates.
+
+**Effort:** ~36-50 hours (3-4 weeks @ 10h/week, or 1-2 weeks full-time)
+
+**Approach:** Read Anki open source (AGPL v3), extract detailed specification via black-boxing, then reimplement cleanly in TypeScript/React without copying code.
+
+**Features in order:**
+1. **Subdeck hierarchy** (6-8h) — new `decks` table, tree UI, card routing by deck_id
+2. **Suspend/bury mechanics** (2-3h) — `suspended_at` / `buried_until` columns, queue filtering
+3. **Filtered decks** (3-4h) — query builder, saved filters, dynamic card sets (depends on decks)
+4. **Card browser** (6-8h) — sortable/filterable table, bulk edit, modal UI (depends on decks)
+5. **Cram mode** (2-3h) — session mode flag, bypass SRS scheduling
+6. **Stats/graphs** (4-6h) — daily review count, card ease, time analysis, Chart.js visualization
+7. **Custom fields** (4-5h) — `card_fields` JSON, template renderer, form builder
+8. **Card templates** (3-4h) — HTML/CSS templates, handlebars rendering
+9. **DB backups** (1-2h) — export/import full snapshot (manual button)
+10. **Testing & polish** (5-7h) — E2E testing, UI responsive design
+
+**Critical path:** Subdeck hierarchy → Filtered decks, Card browser, Cram mode (in parallel) → Stats → Templates + Custom fields
 
 ---
 
