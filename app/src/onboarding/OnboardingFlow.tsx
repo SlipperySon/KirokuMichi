@@ -96,9 +96,7 @@ export function OnboardingFlow() {
         <StepGoal
           currentLevel={placementLevel}
           onDone={(goalLevel, goalDate) => {
-            updateSettings({ jlptTarget: goalLevel })
-            // goalDate stored in DB on Phase 4 — for now just proceed
-            void goalDate
+            updateSettings({ jlptTarget: goalLevel, goalDate })
             setStep('ime')
           }}
         />

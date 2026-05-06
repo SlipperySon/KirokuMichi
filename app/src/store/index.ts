@@ -7,6 +7,7 @@ interface Settings {
   apiEndpoint: string | null
   schedulerAlgorithm: 'fsrs' | 'sm2'
   jlptTarget: 'N5' | 'N4' | 'N3' | 'N2' | 'N1'
+  goalDate: string | null
   dailyCardLimit: number
   hoverDelayMs: number
   furiganaEnabled: boolean
@@ -41,6 +42,7 @@ export const useAppStore = create<AppState>()(
         apiEndpoint: null,
         schedulerAlgorithm: 'fsrs',
         jlptTarget: 'N5',
+        goalDate: null,
         dailyCardLimit: 20,
         hoverDelayMs: 2000,
         furiganaEnabled: true,

@@ -9,6 +9,7 @@ import { SessionRecovery } from '../srs/sessionRecovery'
 import { Heatmap } from './Heatmap'
 import { WeakPointPanel } from './WeakPointPanel'
 import { Navigation } from '../components/Navigation'
+import { calculateWeeklyGoal } from './weeklyGoals'
 import type { ReviewCard, GrammarQuestion, StreakData, SessionRecoveryPayload } from './types'
 
 function interleaveQueue(due: ReviewCard[], newCards: ReviewCard[], limit: number): ReviewCard[] {
@@ -44,6 +45,7 @@ export function StudyDashboard() {
   const [newCount, setNewCount] = useState(0)
   const [availableNewCount, setAvailableNewCount] = useState(0)
   const [grammarDueCount, setGrammarDueCount] = useState(0)
+  const [weeklyReviewedCount, setWeeklyReviewedCount] = useState(0)
   const [streakData, setStreakData] = useState<StreakData | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [recoveryPayload, setRecoveryPayload] = useState<SessionRecoveryPayload | null>(null)
@@ -64,11 +66,22 @@ export function StudyDashboard() {
       setActiveUserId(uid)
     }
 
-    const [due, newC, streak, grammarDue] = await Promise.all([
+    const [due, newC, streak, grammarDue, weeklyRows] = await Promise.all([
       service.getDueCount(uid),
       service.getNewCount(uid),
       service.getStreakData(uid),
       service.getGrammarDueCount(uid),
+      storage.query<{ date: string; cardsReviewed: number }>(
+        `SELECT
+          date(started_at) AS date,
+          SUM(cards_reviewed) AS cardsReviewed
+         FROM sessions
+         WHERE user_id = ?
+           AND started_at >= date('now', 'weekday 1', '-7 days')
+           AND ended_at IS NOT NULL
+         GROUP BY date(started_at)`,
+        [uid]
+      ),
     ])
     setDueCount(due)
     setNewCount(newC)
@@ -77,6 +90,8 @@ export function StudyDashboard() {
     const available = Math.max(0, settings.dailyCardLimit - due)
     setAvailableNewCount(Math.min(newC, available))
     setStreakData(streak)
+    const reviewedThisWeek = weeklyRows.reduce((sum, row) => sum + (row.cardsReviewed ?? 0), 0)
+    setWeeklyReviewedCount(reviewedThisWeek)
 
     // Check for recovery
     const payload = SessionRecovery.load()
@@ -179,6 +194,49 @@ export function StudyDashboard() {
       {streakData && (
         <Heatmap data={streakData.days} currentStreak={streakData.currentStreak} />
       )}
+
+      {/* Weekly goals */}
+      {(() => {
+        const weeklyGoal = calculateWeeklyGoal({
+          goalDate: settings.goalDate,
+          cardsNeeded: dueCount + newCount,
+        })
+        if (!weeklyGoal) return null
+        const progressPct = weeklyGoal.cardsPerWeekNeeded <= 0
+          ? 100
+          : Math.min(100, Math.round((weeklyReviewedCount / weeklyGoal.cardsPerWeekNeeded) * 100))
+
+        return (
+          <div className="bg-amber-50 border border-amber-200 rounded-xl p-4">
+            <div className="flex items-start justify-between gap-4">
+              <div>
+                <p className="font-semibold text-amber-900">Weekly goal</p>
+                <p className="text-sm text-amber-800 mt-1">
+                  {weeklyReviewedCount} cards this week · {weeklyGoal.cardsPerWeekNeeded} needed for goal
+                </p>
+                <p className="text-xs text-amber-700 mt-1">
+                  Target {settings.jlptTarget} in {weeklyGoal.weeksRemaining} week{weeklyGoal.weeksRemaining === 1 ? '' : 's'}
+                  {weeklyGoal.isPastDue ? ' (goal date passed)' : ''}
+                </p>
+              </div>
+              <div className="text-right">
+                <div className="text-xl font-bold text-amber-900">{progressPct}%</div>
+              </div>
+            </div>
+            <div className="mt-3 h-2 bg-amber-100 rounded-full overflow-hidden">
+              <div
+                className="h-full bg-amber-500 transition-all"
+                style={{ width: `${progressPct}%` }}
+                role="progressbar"
+                aria-valuenow={progressPct}
+                aria-valuemin={0}
+                aria-valuemax={100}
+                aria-label="Weekly goal progress"
+              />
+            </div>
+          </div>
+        )
+      })()}
 
       {/* Weak-point analysis */}
       <WeakPointPanel />
