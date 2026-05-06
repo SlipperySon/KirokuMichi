@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+:root {
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Dark mode by default */
+  --text: #9ca3af;
+  --text-h: #f3f4f6;
+  --bg: #16171d;
+  --border: #2e303a;
+  --code-bg: #1f2028;
+  --accent: #c084fc;
+  --accent-bg: rgba(192, 132, 252, 0.15);
+  --accent-border: rgba(192, 132, 252, 0.5);
+  --social-bg: rgba(47, 48, 58, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+}
+
+body {
+  margin: 0;
+  font-family: 'Noto Sans JP', 'BIZ UDGothic', system-ui, sans-serif;
+  background: #0f1117;
+  color: #c9d1d9;
+}
+
+/* Japanese text always uses correct locale font */
+:lang(ja) {
+  font-family: 'Noto Sans JP', 'BIZ UDGothic', sans-serif;
+}
+
+/* Light mode when class is removed */
+body.light {
+  background: #ffffff;
+  color: #24292f;
+}
+
+body.light :root {
+  --text: #57606a;
+  --text-h: #24292f;
+  --bg: #ffffff;
+  --border: #d0d7de;
+  --code-bg: #f6f8fa;
+  --accent: #0969da;
+  --accent-bg: rgba(9, 105, 218, 0.1);
+  --accent-border: rgba(9, 105, 218, 0.3);
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #0f1117;
+  color: #c9d1d9;
+}
+
+body.light {
+  background: #ffffff;
+  color: #24292f;
+}
+
+/* Dark mode component overrides */
+html.dark {
+  color-scheme: dark;
+}
+
+/* Override Tailwind bg-white to dark */
+html.dark .bg-white {
+  @apply bg-gray-900;
+}
+
+html.dark .bg-gray-50 {
+  @apply bg-gray-800;
+}
+
+html.dark .bg-red-50 {
+  @apply bg-red-900/20;
+}
+
+html.dark .bg-green-50 {
+  @apply bg-green-900/20;
+}
+
+html.dark .bg-amber-50 {
+  @apply bg-amber-900/20;
+}
+
+html.dark .bg-indigo-50 {
+  @apply bg-indigo-900/20;
+}
+
+html.dark .border-gray-200 {
+  @apply border-gray-700;
+}
+
+html.dark .text-gray-900 {
+  @apply text-gray-100;
+}
+
+html.dark .text-gray-700 {
+  @apply text-gray-300;
+}
+
+html.dark .text-gray-600 {
+  @apply text-gray-400;
+}
+
+html.dark .text-gray-500 {
+  @apply text-gray-500;
+}
+
+html.dark .text-red-700 {
+  @apply text-red-400;
+}
+
+html.dark .text-green-700 {
+  @apply text-green-400;
+}
+
+html.dark .text-amber-800 {
+  @apply text-amber-300;
+}
+
+html.dark .text-indigo-700 {
+  @apply text-indigo-400;
+}
+
+html.dark .placeholder-gray-400::placeholder {
+  @apply placeholder-gray-500;
+}
+
+html.dark .border-gray-300 {
+  @apply border-gray-600;
+}
+
+/* Light mode overrides — reverse the hardcoded dark classes used in components */
+body.light {
+  background: #ffffff;
+  color: #24292f;
+}
+
+body.light .bg-gray-950 { background-color: #f9fafb !important; }
+body.light .bg-gray-900 { background-color: #ffffff !important; }
+body.light .bg-gray-800 { background-color: #f3f4f6 !important; }
+body.light .bg-gray-700 { background-color: #e5e7eb !important; }
+body.light .border-gray-700 { border-color: #d1d5db !important; }
+body.light .border-gray-600 { border-color: #e5e7eb !important; }
+body.light .text-gray-100 { color: #111827 !important; }
+body.light .text-gray-200 { color: #374151 !important; }
+body.light .text-gray-300 { color: #4b5563 !important; }
+body.light .text-gray-400 { color: #6b7280 !important; }
+body.light .text-gray-500 { color: #9ca3af !important; }
+body.light .hover\:bg-gray-800:hover { background-color: #e5e7eb !important; }
+body.light .hover\:bg-gray-700:hover { background-color: #d1d5db !important; }
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}

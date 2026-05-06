@@ -1,0 +1,1969 @@
+{
+  "level": "B2",
+  "source": "bunpro",
+  "items": [
+    {
+      "id": 321,
+      "pattern": "得る・得る",
+      "reading": "える",
+      "meaning": "Is able to, Can, Possible",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "得る-得る"
+    },
+    {
+      "id": 336,
+      "pattern": "〜得ない",
+      "reading": "えない",
+      "meaning": "Unable to, Cannot",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "得ない"
+    },
+    {
+      "id": 397,
+      "pattern": "ざるを得ない",
+      "reading": "ざるをえない",
+      "meaning": "Can&#x27;t help doing, Have no choice but",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ざるを得ない"
+    },
+    {
+      "id": 1079,
+      "pattern": "～ざる",
+      "reading": null,
+      "meaning": "To not ~, Un~",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ざる"
+    },
+    {
+      "id": 333,
+      "pattern": "つもりで",
+      "reading": null,
+      "meaning": "With the intention of doing, Instead of..., Act as if or pretend, Believing that..., Thinking that...",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "つもりで"
+    },
+    {
+      "id": 499,
+      "pattern": "どうせ",
+      "reading": null,
+      "meaning": "Anyhow, At any rate, In any case, I have no doubt that, Probably",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "どうせ"
+    },
+    {
+      "id": 573,
+      "pattern": "せめて",
+      "reading": null,
+      "meaning": "At least",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "せめて"
+    },
+    {
+      "id": 517,
+      "pattern": "どうやら",
+      "reading": null,
+      "meaning": "Apparently, Looks Like, Seems like",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "どうやら"
+    },
+    {
+      "id": 1087,
+      "pattern": "なにやら",
+      "reading": null,
+      "meaning": "Something (or other), Some kind of",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "なにやら"
+    },
+    {
+      "id": 515,
+      "pattern": "よりほかない",
+      "reading": "よりほかない",
+      "meaning": "To have no choice but, No other way than, Have to",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "よりほかない"
+    },
+    {
+      "id": 351,
+      "pattern": "確かに",
+      "reading": "たしかに",
+      "meaning": "Surely, Certainly",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "確かに"
+    },
+    {
+      "id": 676,
+      "pattern": "一応 ①",
+      "reading": "いちおう ①",
+      "meaning": "Just in case, Just to be sure",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "一応1"
+    },
+    {
+      "id": 763,
+      "pattern": "一応 ②",
+      "reading": "いちおう ②",
+      "meaning": "more or less, for the time being, tentatively, roughly",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "一応2"
+    },
+    {
+      "id": 527,
+      "pattern": "に相違ない",
+      "reading": "にそういない",
+      "meaning": "Without a doubt, Certainly, Surely, Not mistaken",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "に相違ない"
+    },
+    {
+      "id": 513,
+      "pattern": "万が一",
+      "reading": "まんがいち",
+      "meaning": "Just in case, In the worst-case scenario, In the unlikely event, By any chance",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "万が一"
+    },
+    {
+      "id": 434,
+      "pattern": "ようがない・ようもない",
+      "reading": "ようがない",
+      "meaning": "There&#x27;s no way to, It&#x27;s impossible to",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ようがない・ようもない"
+    },
+    {
+      "id": 538,
+      "pattern": "にほかならない",
+      "reading": "にほかならない",
+      "meaning": "Nothing but, None other than, Simply",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "にほかならない"
+    },
+    {
+      "id": 598,
+      "pattern": "っこない",
+      "reading": null,
+      "meaning": "There is no chance of, There is no way of, Impossible",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "っこない"
+    },
+    {
+      "id": 431,
+      "pattern": "それなら",
+      "reading": null,
+      "meaning": "Then, If that&#x27;s the case",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "それなら"
+    },
+    {
+      "id": 521,
+      "pattern": "ものなら①",
+      "reading": "ものなら ①",
+      "meaning": "If, If one could, If something would be possible",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ものなら①"
+    },
+    {
+      "id": 354,
+      "pattern": "～を～に任せる",
+      "reading": "にまかせる",
+      "meaning": "Leave 〜 up to, Entrust 〜 to",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "を-に任せる"
+    },
+    {
+      "id": 662,
+      "pattern": "活かす",
+      "reading": "いかす",
+      "meaning": "To make use of (something), To take full advantage of, To capitalize on, To leverage (skills), Bring out (the quality of)",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "活かす"
+    },
+    {
+      "id": 1078,
+      "pattern": "おおよそ",
+      "reading": null,
+      "meaning": "Approximately, Roughly, About, Outline, Gist",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "おおよそ"
+    },
+    {
+      "id": 343,
+      "pattern": "まい",
+      "reading": null,
+      "meaning": "Won&#x27;t, Intend not to, Probably not",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "まい"
+    },
+    {
+      "id": 316,
+      "pattern": "上",
+      "reading": "じょう",
+      "meaning": "From the standpoint of",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "上"
+    },
+    {
+      "id": 337,
+      "pattern": "上に",
+      "reading": "うえに",
+      "meaning": "As well, Besides, In addition to",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "上に"
+    },
+    {
+      "id": 317,
+      "pattern": "以上 ②",
+      "reading": "いじょう ②",
+      "meaning": "Since, Now that, As long as, If",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "以上2"
+    },
+    {
+      "id": 338,
+      "pattern": "以上に",
+      "reading": "いじょうに",
+      "meaning": "More than, No less than, Even more",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "以上に"
+    },
+    {
+      "id": 508,
+      "pattern": "途中に・途中で",
+      "reading": "とちゅうに",
+      "meaning": "On the way, Partway, In the middle of",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "途中に・途中で"
+    },
+    {
+      "id": 429,
+      "pattern": "中を",
+      "reading": "なかを",
+      "meaning": "In, On, Into, Inside of",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "中を"
+    },
+    {
+      "id": 687,
+      "pattern": "を中心に",
+      "reading": "をちゅうしんに",
+      "meaning": "Focused on, Centered on or around, Mainly, Most notably",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "を中心に"
+    },
+    {
+      "id": 417,
+      "pattern": "その上",
+      "reading": "そのうえ",
+      "meaning": "Besides, In addition, Furthermore",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "その上"
+    },
+    {
+      "id": 396,
+      "pattern": "上は",
+      "reading": "うえは",
+      "meaning": "Once, Since, Now that, As long as",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "上は"
+    },
+    {
+      "id": 686,
+      "pattern": "の下で",
+      "reading": "のもとで",
+      "meaning": "Under, Under the supervision of, On the basis of",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "の下で"
+    },
+    {
+      "id": 679,
+      "pattern": "後(の) Noun",
+      "reading": "あとの + (Noun)",
+      "meaning": "…left, Rest, Remaining, In, …to, …else",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "後-のnoun"
+    },
+    {
+      "id": 410,
+      "pattern": "手前",
+      "reading": "てまえ",
+      "meaning": "Before, In front of, From one&#x27;s standpoint or side",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "手前"
+    },
+    {
+      "id": 690,
+      "pattern": "を巡って",
+      "reading": "をめぐって",
+      "meaning": "Concerning, In regard to, About, (Split) over",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "を巡って"
+    },
+    {
+      "id": 553,
+      "pattern": "にわたって",
+      "reading": "にわたって",
+      "meaning": "Across, Throughout, Extends, Over (a period of time or range)",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "にわたって"
+    },
+    {
+      "id": 692,
+      "pattern": "に沿って",
+      "reading": "にそって",
+      "meaning": "Along, In accordance with, In line with",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "に沿って"
+    },
+    {
+      "id": 535,
+      "pattern": "た末・の末",
+      "reading": "～たすえ",
+      "meaning": "After, As a conclusion of",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "た末-の末"
+    },
+    {
+      "id": 581,
+      "pattern": "にしたがって",
+      "reading": "にしたがって",
+      "meaning": "As, Following, As then, According to, In accordance with",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "にしたがって"
+    },
+    {
+      "id": 600,
+      "pattern": "に伴って・に伴い",
+      "reading": "にともなって",
+      "meaning": "As, Due,  Along with, Hand-in-hand with, Resulted in, Be consequent upon",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "に伴って-に伴い"
+    },
+    {
+      "id": 528,
+      "pattern": "につき",
+      "reading": "につき",
+      "meaning": "Due to, On account of, Each or every",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "につき"
+    },
+    {
+      "id": 551,
+      "pattern": "につけ",
+      "reading": "につけ",
+      "meaning": "Whenever, Every time something happens",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "につけ"
+    },
+    {
+      "id": 523,
+      "pattern": "にかかわる",
+      "reading": "にかかわる",
+      "meaning": "To relate to, To have to do with, Concerning, Depends on",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "にかかわる"
+    },
+    {
+      "id": 327,
+      "pattern": "に向かって・に向けて",
+      "reading": "にむかって",
+      "meaning": "Towards, To face, To head to",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "に向かって-に向けて"
+    },
+    {
+      "id": 399,
+      "pattern": "が気になる",
+      "reading": "がきになる",
+      "meaning": "To be interested in, To be concerned about",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "が気になる"
+    },
+    {
+      "id": 518,
+      "pattern": "に気をつける",
+      "reading": "にきをつける",
+      "meaning": "Take care, Be careful, Pay attention, Make sure, Watch out",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "に気をつける"
+    },
+    {
+      "id": 344,
+      "pattern": "も構わず",
+      "reading": "もかまわず",
+      "meaning": "Without worrying about",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "もかまわず"
+    },
+    {
+      "id": 542,
+      "pattern": "かねる",
+      "reading": "かねる",
+      "meaning": "Cannot, Be unable to, Hard to, Hesitant to",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "かねる"
+    },
+    {
+      "id": 565,
+      "pattern": "かねない",
+      "reading": "かねない",
+      "meaning": "Might, Could be, Capable of, Possible",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "かねない"
+    },
+    {
+      "id": 552,
+      "pattern": "を除いて",
+      "reading": "をのぞいて",
+      "meaning": "Except, With the exception of, Unless",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "を除いて"
+    },
+    {
+      "id": 545,
+      "pattern": "にかかわらず",
+      "reading": "にかかわらず",
+      "meaning": "Regardless of, Whether or, No matter, With or without",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "にかかわらず"
+    },
+    {
+      "id": 570,
+      "pattern": "にもかかわらず",
+      "reading": "にもかかわらず",
+      "meaning": "Despite, In spite of, Regardless, Nevertheless",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "にもかかわらず"
+    },
+    {
+      "id": 430,
+      "pattern": "に限って",
+      "reading": "にかぎって",
+      "meaning": "Particularly when, Those who, Only when",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "に限って"
+    },
+    {
+      "id": 504,
+      "pattern": "に限らず",
+      "reading": "にかぎらず",
+      "meaning": "Not just, Not only… but also",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "に限らず"
+    },
+    {
+      "id": 566,
+      "pattern": "なお①",
+      "reading": "なお ①",
+      "meaning": "Still, Even, Yet",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "なお1"
+    },
+    {
+      "id": 567,
+      "pattern": "なお②",
+      "reading": "なお ②",
+      "meaning": "In addition, Incidentally, Furthermore, Moreover",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "なお2"
+    },
+    {
+      "id": 544,
+      "pattern": "限り",
+      "reading": "かぎり",
+      "meaning": "As long as, While… is the case, Limited to",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "限り"
+    },
+    {
+      "id": 349,
+      "pattern": "次第だ・次第で",
+      "reading": "しだいだ",
+      "meaning": "Depending on, So",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "次第だ-次第で"
+    },
+    {
+      "id": 1090,
+      "pattern": "次第に",
+      "reading": "しだいに",
+      "meaning": "Gradually",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "次第に"
+    },
+    {
+      "id": 352,
+      "pattern": "～てこそ",
+      "reading": null,
+      "meaning": "Only if, Because, By, Unless, Until",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "-てこそ"
+    },
+    {
+      "id": 519,
+      "pattern": "を問わず",
+      "reading": "をとわず",
+      "meaning": "Regardless of, Whether or not, No matter, With or without",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "を問わず"
+    },
+    {
+      "id": 580,
+      "pattern": "よりしかたがない",
+      "reading": "よりしかたがない",
+      "meaning": "There is no choice but, Can&#x27;t be helped, Inevitable",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "よりしかたがない"
+    },
+    {
+      "id": 525,
+      "pattern": "に越したことはない",
+      "reading": "にこしたことはない",
+      "meaning": "There is nothing better than, It is the best, Would be the best",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "に越したことはない"
+    },
+    {
+      "id": 512,
+      "pattern": "要するに",
+      "reading": "ようするに",
+      "meaning": "To sum up, In summary, In short",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "要するに"
+    },
+    {
+      "id": 507,
+      "pattern": "てからでないと",
+      "reading": null,
+      "meaning": "(Not) unless ~ cannot, (Not) until ~ cannot",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "てからでないと"
+    },
+    {
+      "id": 402,
+      "pattern": "なくはない",
+      "reading": null,
+      "meaning": "It&#x27;s not that…, Kind of, might, Slightly, Somewhat, In some respects",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "なくはない"
+    },
+    {
+      "id": 347,
+      "pattern": "ないことには～ない",
+      "reading": "ないことには～ない",
+      "meaning": "Unless you do something",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ないことには-ない"
+    },
+    {
+      "id": 418,
+      "pattern": "ないではいられない",
+      "reading": null,
+      "meaning": "Cannot help doing something, Cannot resist doing something",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ないではいられない"
+    },
+    {
+      "id": 548,
+      "pattern": "ねばならない",
+      "reading": "ねばなら + ぬ",
+      "meaning": "Must, Have to, Should",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ねばならない"
+    },
+    {
+      "id": 608,
+      "pattern": "たまえ",
+      "reading": "たまえ",
+      "meaning": "(Please) do!, Ask to, Beg to, (Order somebody to do something)",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "たまえ"
+    },
+    {
+      "id": 681,
+      "pattern": "～のうち(で)",
+      "reading": "のうちで",
+      "meaning": "Of the, Among(st)",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "-のうち-で"
+    },
+    {
+      "id": 560,
+      "pattern": "つつ",
+      "reading": null,
+      "meaning": "While, And",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "つつ"
+    },
+    {
+      "id": 569,
+      "pattern": "つつ(も)",
+      "reading": "つつも",
+      "meaning": "Even while ~ing, Even though ~ing, Despite ~ing, Although ~ing",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "つつ-も"
+    },
+    {
+      "id": 683,
+      "pattern": "に際して",
+      "reading": "にさいして",
+      "meaning": "On the occasion of, At the time of",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "に際して"
+    },
+    {
+      "id": 572,
+      "pattern": "際に",
+      "reading": "さいに",
+      "meaning": "When, At the time of, In case of, On the occasion of",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "際に"
+    },
+    {
+      "id": 522,
+      "pattern": "にあたり・にあたって",
+      "reading": "にあたって",
+      "meaning": "When, When doing something, On the occasion, At the time",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "にあたり-にあたって"
+    },
+    {
+      "id": 689,
+      "pattern": "を契機に",
+      "reading": "をけいきに",
+      "meaning": "Lead to, As a good opportunity to, As a result of, As a trigger",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "を契機に"
+    },
+    {
+      "id": 582,
+      "pattern": "つつある",
+      "reading": null,
+      "meaning": "-ing, Be -ing",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "つつある"
+    },
+    {
+      "id": 510,
+      "pattern": "～ところに・～ところへ",
+      "reading": "～ところに",
+      "meaning": "At the time, When, While, Timing",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "～ところに・～ところへ"
+    },
+    {
+      "id": 557,
+      "pattern": "か〜ないかのうちに",
+      "reading": "か〜ないかのうちに",
+      "meaning": "Right after, As soon as, Just when, Barely",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "か-ないかのうちに"
+    },
+    {
+      "id": 670,
+      "pattern": "がけに",
+      "reading": "がけに",
+      "meaning": "On the way to, As you go",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "がけに"
+    },
+    {
+      "id": 695,
+      "pattern": "ていては",
+      "reading": null,
+      "meaning": "If one keeps doing something, When, If something is...",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ていては"
+    },
+    {
+      "id": 413,
+      "pattern": "ところだった ②",
+      "reading": null,
+      "meaning": "Was just about to do something, Was in the middle of...",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ところだった2"
+    },
+    {
+      "id": 422,
+      "pattern": "どころではない",
+      "reading": null,
+      "meaning": "This is not the time for…, Far from, Out of the question",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "どころではない"
+    },
+    {
+      "id": 318,
+      "pattern": "ぶりに",
+      "reading": "ぶりに",
+      "meaning": "For the first time in, Haven&#x27;t done for some time",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ぶりに"
+    },
+    {
+      "id": 562,
+      "pattern": "ては",
+      "reading": "～ては",
+      "meaning": "If, With, Since, Because",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ては"
+    },
+    {
+      "id": 563,
+      "pattern": "ては〜ては",
+      "reading": "～ては〜ては",
+      "meaning": "Repeating action, If, Since",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ては-ては"
+    },
+    {
+      "id": 671,
+      "pattern": "も又",
+      "reading": "もまた",
+      "meaning": "Too, Also (with more emphasis than も alone), Again",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "も又"
+    },
+    {
+      "id": 555,
+      "pattern": "結果・の結果",
+      "reading": "けっか",
+      "meaning": "As a result of",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "結果・の結果"
+    },
+    {
+      "id": 556,
+      "pattern": "以来",
+      "reading": "いらい",
+      "meaning": "Since, Henceforth",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "以来"
+    },
+    {
+      "id": 605,
+      "pattern": "に先立ち",
+      "reading": "にさきだち",
+      "meaning": "Before, Prior to, In preference over",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "に先立ち"
+    },
+    {
+      "id": 539,
+      "pattern": "はたして",
+      "reading": "はたして",
+      "meaning": "Wonder if ~ (really)?, Wonder how ~ (actually)?, Sure enough, As expected",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "はたして"
+    },
+    {
+      "id": 540,
+      "pattern": "甲斐がある",
+      "reading": "かいがある",
+      "meaning": "To be (not) worth, To (not) pay off",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "甲斐がある"
+    },
+    {
+      "id": 612,
+      "pattern": "やがて",
+      "reading": null,
+      "meaning": "Before long, All too soon, In the end, Eventually",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "やがて"
+    },
+    {
+      "id": 554,
+      "pattern": "したがって",
+      "reading": "したがって",
+      "meaning": "Therefore, Thus, As a result",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "したがって"
+    },
+    {
+      "id": 607,
+      "pattern": "あげく",
+      "reading": "あげく",
+      "meaning": "After, In the end, After all, Eventually",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "あげく"
+    },
+    {
+      "id": 603,
+      "pattern": "きっかけ",
+      "reading": "きっかけ",
+      "meaning": "Lead to, Because of, As a start or trigger of, An opportunity",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "きっかけ"
+    },
+    {
+      "id": 579,
+      "pattern": "にかけては",
+      "reading": null,
+      "meaning": "When it comes to, Regarding, Concerning",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "にかけては"
+    },
+    {
+      "id": 609,
+      "pattern": "とっくに",
+      "reading": "とっくに",
+      "meaning": "Already, A long time ago, Long ago",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "とっくに"
+    },
+    {
+      "id": 708,
+      "pattern": "未だに",
+      "reading": "いまだに",
+      "meaning": "Still, Not yet, Even now",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "未だに"
+    },
+    {
+      "id": 550,
+      "pattern": "をもとに",
+      "reading": "をもとに",
+      "meaning": "Based on, From, According to",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "をもとに"
+    },
+    {
+      "id": 401,
+      "pattern": "からには",
+      "reading": null,
+      "meaning": "As long as, Since, Given",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "からには"
+    },
+    {
+      "id": 613,
+      "pattern": "いつの間にか",
+      "reading": "いつのまにか",
+      "meaning": "Suddenly, Unnoticed, Without noticing, Too soon",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "いつの間にか"
+    },
+    {
+      "id": 614,
+      "pattern": "一旦",
+      "reading": "いったん",
+      "meaning": "Once …, If … for a short time, Temporarily (stop), For now or the time being",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "一旦"
+    },
+    {
+      "id": 611,
+      "pattern": "はもとより",
+      "reading": "はもとより",
+      "meaning": "Not only... but also, Let alone, Of course",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "はもとより"
+    },
+    {
+      "id": 534,
+      "pattern": "そうにない",
+      "reading": null,
+      "meaning": "Unlikely to, Showing no signs of",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "そうにない"
+    },
+    {
+      "id": 543,
+      "pattern": "に反して",
+      "reading": "にはんして",
+      "meaning": "Go against, Contrary to",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "に反して"
+    },
+    {
+      "id": 322,
+      "pattern": "逆に",
+      "reading": "ぎゃくに",
+      "meaning": "On the contrary",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "逆に"
+    },
+    {
+      "id": 561,
+      "pattern": "反面",
+      "reading": "はんめん",
+      "meaning": "While, On the other hand, Although, However, On the flip side",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "反面"
+    },
+    {
+      "id": 571,
+      "pattern": "抜く",
+      "reading": "ぬく",
+      "meaning": "All~, Completely, See through, Overcome, To the bitter end",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "抜く"
+    },
+    {
+      "id": 602,
+      "pattern": "抜きで",
+      "reading": "ぬきで",
+      "meaning": "Without, Unless",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "抜きで"
+    },
+    {
+      "id": 520,
+      "pattern": "いよいよ",
+      "reading": "いよいよ",
+      "meaning": "At last, Finally, More and more",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "いよいよ"
+    },
+    {
+      "id": 334,
+      "pattern": "ずに済む",
+      "reading": "ずにすむ",
+      "meaning": "Get by without doing something, To get away with",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ずに済む"
+    },
+    {
+      "id": 599,
+      "pattern": "に応じて",
+      "reading": "におうじて",
+      "meaning": "Depending or based on, According to, In response to, Suitable for or to",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "に応じて"
+    },
+    {
+      "id": 514,
+      "pattern": "を通じて・を通して",
+      "reading": "をつうじて",
+      "meaning": "Through, Via, Throughout",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "を通じて-を通して"
+    },
+    {
+      "id": 568,
+      "pattern": "に応えて",
+      "reading": "にこたえて",
+      "meaning": "In response to, Meet",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "に応えて"
+    },
+    {
+      "id": 506,
+      "pattern": "それとも",
+      "reading": null,
+      "meaning": "Or, Or else, Rather",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "それとも"
+    },
+    {
+      "id": 328,
+      "pattern": "にしたら",
+      "reading": null,
+      "meaning": "From the point of view of",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "にしたら"
+    },
+    {
+      "id": 329,
+      "pattern": "にしても～にしても",
+      "reading": null,
+      "meaning": "Regardless of whether",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "にしても-にしても"
+    },
+    {
+      "id": 400,
+      "pattern": "としては",
+      "reading": null,
+      "meaning": "As a, For a, As for",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "としては"
+    },
+    {
+      "id": 341,
+      "pattern": "としても",
+      "reading": null,
+      "meaning": "Even if (we assume), Assuming,  Also as",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "としても"
+    },
+    {
+      "id": 350,
+      "pattern": "それにしても",
+      "reading": null,
+      "meaning": "Nevertheless, Even so",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "それにしても"
+    },
+    {
+      "id": 657,
+      "pattern": "ぬ",
+      "reading": null,
+      "meaning": "Classical negative, Classical verb [ない]",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ぬ"
+    },
+    {
+      "id": 428,
+      "pattern": "ことなく",
+      "reading": "ことなく",
+      "meaning": "Without ~ing",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ことなく"
+    },
+    {
+      "id": 408,
+      "pattern": "にて",
+      "reading": null,
+      "meaning": "In, At, With, Using, By",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "にて"
+    },
+    {
+      "id": 348,
+      "pattern": "には",
+      "reading": null,
+      "meaning": "In order to, In regard to, For",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "には"
+    },
+    {
+      "id": 319,
+      "pattern": "思うように",
+      "reading": "おもうように",
+      "meaning": "As one hopes, As desired, As one thought",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "思うように"
+    },
+    {
+      "id": 426,
+      "pattern": "かと思ったら・かと思うと",
+      "reading": "かとおもうと",
+      "meaning": "Then again, Just when I thought, No sooner than",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "かと思ったら-かと思うと"
+    },
+    {
+      "id": 1097,
+      "pattern": "～ばと思います",
+      "reading": "～ばとおもいます",
+      "meaning": "I would appreciate it if, If you could, I would like to think that",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "～ばと思います"
+    },
+    {
+      "id": 509,
+      "pattern": "というものでもない",
+      "reading": "というものでもない",
+      "meaning": "There is no guarantee that…, Not necessarily",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "というものでもない"
+    },
+    {
+      "id": 541,
+      "pattern": "と考えられる",
+      "reading": "とかんがえられる",
+      "meaning": "Can be considered as, Is thought to be, One can think that, It is conceivable that",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "と考えられる"
+    },
+    {
+      "id": 648,
+      "pattern": "という点から考えると",
+      "reading": "というてんからかんがえると",
+      "meaning": "From the standpoint of, From the perspective of, From the viewpoint of, Think in terms of, Viewed from the angle of",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "という点から考えると"
+    },
+    {
+      "id": 345,
+      "pattern": "ということは",
+      "reading": "ということは",
+      "meaning": "That means, That is to say",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ということは"
+    },
+    {
+      "id": 423,
+      "pattern": "ふうに",
+      "reading": "ふうに",
+      "meaning": "~ way, In a way that suggests, Like ~",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ふうに"
+    },
+    {
+      "id": 536,
+      "pattern": "という風に",
+      "reading": "というふうに",
+      "meaning": "As if to say, As if to suggest that, In such a way that, Things like",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "という風に"
+    },
+    {
+      "id": 546,
+      "pattern": "ものの",
+      "reading": null,
+      "meaning": "Although, But, Even Though",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ものの"
+    },
+    {
+      "id": 420,
+      "pattern": "というものだ",
+      "reading": "というものだ",
+      "meaning": "Speaker&#x27;s impression, Criticism or conclusion",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "というものだ"
+    },
+    {
+      "id": 323,
+      "pattern": "から見ると",
+      "reading": "からみると",
+      "meaning": "From the point of view of, By the look of",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "から見ると"
+    },
+    {
+      "id": 425,
+      "pattern": "ところを見ると",
+      "reading": "ところをみると",
+      "meaning": "Judging from, Seeing that",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ところを見ると"
+    },
+    {
+      "id": 340,
+      "pattern": "からすると・からすれば",
+      "reading": "からすると",
+      "meaning": "Judging from, Considering",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "からすると-からすれば"
+    },
+    {
+      "id": 424,
+      "pattern": "からして",
+      "reading": null,
+      "meaning": "Even..., Judging from, Based on",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "からして"
+    },
+    {
+      "id": 501,
+      "pattern": "からといって",
+      "reading": null,
+      "meaning": "Just because",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "からといって"
+    },
+    {
+      "id": 332,
+      "pattern": "そういえば",
+      "reading": null,
+      "meaning": "Speaking of which, By the way, Come to think of it",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "そういえば"
+    },
+    {
+      "id": 532,
+      "pattern": "お～願う",
+      "reading": "お～ねがう",
+      "meaning": "Please, Could you please",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "お-願う"
+    },
+    {
+      "id": 1092,
+      "pattern": "～て頂戴",
+      "reading": "～てちょうだい",
+      "meaning": "Please do",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "て頂戴"
+    },
+    {
+      "id": 339,
+      "pattern": "とか",
+      "reading": null,
+      "meaning": "I heard that… something like, They said ... or something",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "とか"
+    },
+    {
+      "id": 421,
+      "pattern": "〜ようではないか",
+      "reading": "う・よう + ではないか",
+      "meaning": "Let&#x27;s do something, Why don&#x27;t we",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ようではないか"
+    },
+    {
+      "id": 682,
+      "pattern": "かのようだ",
+      "reading": "かのようだ",
+      "meaning": "As if, Just like",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "かのようだ"
+    },
+    {
+      "id": 405,
+      "pattern": "のではないだろうか",
+      "reading": "のではないでしょうか",
+      "meaning": "I think ... isn&#x27;t it?, It might be that..., Don&#x27;t you agree?",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "のではないだろうか"
+    },
+    {
+      "id": 433,
+      "pattern": "て当然だ",
+      "reading": "～てとうぜんだ",
+      "meaning": "Natural, As a matter of course",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "て当然だ"
+    },
+    {
+      "id": 685,
+      "pattern": "のも当然だ",
+      "reading": "のもとうぜんだ",
+      "meaning": "It is only natural that, It is no wonder",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "のも当然だ"
+    },
+    {
+      "id": 710,
+      "pattern": "たった(の)",
+      "reading": "たったの",
+      "meaning": "Only, Just, No more than",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "たった-の"
+    },
+    {
+      "id": 688,
+      "pattern": "恐れがある",
+      "reading": "おそれがある",
+      "meaning": "There is a risk or fear that, Be in danger of, Possibility of",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "恐れがある"
+    },
+    {
+      "id": 604,
+      "pattern": "おそらく",
+      "reading": "おそらく",
+      "meaning": "Probably, Perhaps, (Most) likely, (I) fear that",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "おそらく"
+    },
+    {
+      "id": 503,
+      "pattern": "ものか",
+      "reading": null,
+      "meaning": "Definitely not, Absolutely not, Impossible, Do you really think~?",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ものか"
+    },
+    {
+      "id": 691,
+      "pattern": "おまけに",
+      "reading": "おまけに",
+      "meaning": "In addition, On top of that, What is more, To make matters worse",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "おまけに"
+    },
+    {
+      "id": 524,
+      "pattern": "に決まっている",
+      "reading": "にきまっている",
+      "meaning": "Surely, Bound to, Certainly, Be decided",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "に決まっている"
+    },
+    {
+      "id": 325,
+      "pattern": "ことになっている",
+      "reading": "ことになっている",
+      "meaning": "To be expected to, To be scheduled to",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ことになっている"
+    },
+    {
+      "id": 427,
+      "pattern": "気",
+      "reading": "き",
+      "meaning": "Feel like ~, Spirit",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "気"
+    },
+    {
+      "id": 559,
+      "pattern": "げ",
+      "reading": "げ",
+      "meaning": "Seemingly, Giving appearance of, [Expresses emotions or feelings]",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "げ"
+    },
+    {
+      "id": 342,
+      "pattern": "ことだから",
+      "reading": "ことだから",
+      "meaning": "It is exactly because",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ことだから"
+    },
+    {
+      "id": 346,
+      "pattern": "ものだから",
+      "reading": null,
+      "meaning": "Because, The reason is",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ものだから"
+    },
+    {
+      "id": 415,
+      "pattern": "ものですから・もので",
+      "reading": "ものですから",
+      "meaning": "Because, My excuse is, My explanation is",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ものですから-もので"
+    },
+    {
+      "id": 406,
+      "pattern": "ものがある",
+      "reading": null,
+      "meaning": "Strong judgement, There is something, Feel strongly that",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ものがある"
+    },
+    {
+      "id": 641,
+      "pattern": "傾向がある",
+      "reading": "けいこうがある",
+      "meaning": "Tendency, Trend, Inclination",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "傾向がある"
+    },
+    {
+      "id": 1093,
+      "pattern": "～に値する",
+      "reading": "～にあたいする",
+      "meaning": "Be worthy of, Deserving of, Amounts to",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "に値する"
+    },
+    {
+      "id": 432,
+      "pattern": "てしょうがない",
+      "reading": "～てしょうがない",
+      "meaning": "Extremely, Very, Really, It can&#x27;t be helped",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "てしょうがない"
+    },
+    {
+      "id": 419,
+      "pattern": "だけましだ",
+      "reading": null,
+      "meaning": "At least, It&#x27;s better than..., One should feel grateful for",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "だけましだ"
+    },
+    {
+      "id": 694,
+      "pattern": "幸い・幸いなことに",
+      "reading": "さいわいなことに",
+      "meaning": "Luckily, Fortunately",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "幸い-幸いなことに"
+    },
+    {
+      "id": 414,
+      "pattern": "ようでは・ようじゃ",
+      "reading": "ようでは",
+      "meaning": "If, If it is true that",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ようでは-ようじゃ"
+    },
+    {
+      "id": 496,
+      "pattern": "さすが",
+      "reading": "さすが",
+      "meaning": "as one would expect, only natural, that is just like..., even",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "さすが"
+    },
+    {
+      "id": 502,
+      "pattern": "ことは〜が",
+      "reading": null,
+      "meaning": "It is true...but, although, but",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ことは-が"
+    },
+    {
+      "id": 505,
+      "pattern": "更に",
+      "reading": "さらに",
+      "meaning": "Even more or further, Again, More and more",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "さらに"
+    },
+    {
+      "id": 606,
+      "pattern": "精々",
+      "reading": "せいぜい",
+      "meaning": "(At) most , (At) best, No more than, Barely",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "精々"
+    },
+    {
+      "id": 696,
+      "pattern": "僅かに",
+      "reading": "わずかに",
+      "meaning": "Only, Slightly, A little, Barely, Merely",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "僅かに"
+    },
+    {
+      "id": 697,
+      "pattern": "および",
+      "reading": "および",
+      "meaning": "And, As well as",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "および"
+    },
+    {
+      "id": 698,
+      "pattern": "たちまち",
+      "reading": "たちまち",
+      "meaning": "Immediately, Quickly, Suddenly, In a moment or flash",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "たちまち"
+    },
+    {
+      "id": 500,
+      "pattern": "いきなり",
+      "reading": null,
+      "meaning": "For no reason, Suddenly, All of a sudden",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "いきなり"
+    },
+    {
+      "id": 412,
+      "pattern": "といった",
+      "reading": null,
+      "meaning": "Such as, Like, So much as",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "といった"
+    },
+    {
+      "id": 533,
+      "pattern": "を込めて",
+      "reading": "をこめて",
+      "meaning": "Full of, Filled with, With ～",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "を込めて"
+    },
+    {
+      "id": 558,
+      "pattern": "に加えて",
+      "reading": "にくわえて",
+      "meaning": "Not only...but also, In addition, Not to mention",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "に加えて"
+    },
+    {
+      "id": 680,
+      "pattern": "何から何まで",
+      "reading": "なにからなにまで",
+      "meaning": "Everything and anything, From A to Z, From head to toe, Everything",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "何から何まで"
+    },
+    {
+      "id": 610,
+      "pattern": "は別として",
+      "reading": "はべつとして",
+      "meaning": "Apart from, (Setting) aside, Whether or, Except for, Save for",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "は別として"
+    },
+    {
+      "id": 320,
+      "pattern": "だけに",
+      "reading": null,
+      "meaning": "As might be expected, Because, All the more because, It&#x27;s only natural",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "だけに"
+    },
+    {
+      "id": 398,
+      "pattern": "だけは",
+      "reading": null,
+      "meaning": "To do all that one can, As much or many ~ as one could",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "だけは"
+    },
+    {
+      "id": 335,
+      "pattern": "だけあって",
+      "reading": null,
+      "meaning": "Is only natural, …Being the case, Because, As might be expected",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "だけあって"
+    },
+    {
+      "id": 709,
+      "pattern": "何より",
+      "reading": "なにより",
+      "meaning": "Be glad, Be relieved, Most, Best, Above all else, More than anything",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "何より"
+    },
+    {
+      "id": 407,
+      "pattern": "何といっても",
+      "reading": "なんといっても",
+      "meaning": "By any account, All the same, No doubt",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "何といっても"
+    },
+    {
+      "id": 597,
+      "pattern": "か何か",
+      "reading": "かなにか",
+      "meaning": "Or something, Or something like that",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "か何か"
+    },
+    {
+      "id": 353,
+      "pattern": "てならない",
+      "reading": "～てならない",
+      "meaning": "Very, Extremely, Can&#x27;t help but do",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "てならない"
+    },
+    {
+      "id": 601,
+      "pattern": "のみならず",
+      "reading": null,
+      "meaning": "Not only...but, Not just...but, What is more",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "のみならず"
+    },
+    {
+      "id": 409,
+      "pattern": "それなのに",
+      "reading": null,
+      "meaning": "And yet, Despite this",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "それなのに"
+    },
+    {
+      "id": 564,
+      "pattern": "いわゆる",
+      "reading": null,
+      "meaning": "What is called, So-called, Generally known",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "いわゆる"
+    },
+    {
+      "id": 330,
+      "pattern": "にすぎない",
+      "reading": "にすぎない",
+      "meaning": "No more than, Just, Merely",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "にすぎない"
+    },
+    {
+      "id": 326,
+      "pattern": "も～ば～も",
+      "reading": null,
+      "meaning": "…And…, Both ... and ..., ... And ... as well",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "も-ば-も"
+    },
+    {
+      "id": 324,
+      "pattern": "でしかない",
+      "reading": null,
+      "meaning": "Merely, Nothing but, No more than",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "でしかない"
+    },
+    {
+      "id": 411,
+      "pattern": "てたまらない",
+      "reading": "～てたまらない",
+      "meaning": "Can&#x27;t help but want to, Very, Extremely",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "てたまらない"
+    },
+    {
+      "id": 526,
+      "pattern": "にせよ・にしろ",
+      "reading": "にせよ",
+      "meaning": "Even if, Even though, No matter, Whether… or",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "にせよ-にしろ"
+    },
+    {
+      "id": 574,
+      "pattern": "何しろ",
+      "reading": "なにしろ",
+      "meaning": "No wonder, After all, In fact, Because, At any rate",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "何しろ"
+    },
+    {
+      "id": 549,
+      "pattern": "にしろ～にしろ",
+      "reading": "にしろ〜にしろ",
+      "meaning": "Whether… or",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "にしろ-にしろ"
+    },
+    {
+      "id": 577,
+      "pattern": "はともかく",
+      "reading": "はともかく",
+      "meaning": "Setting aside, Apart from",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "はともかく"
+    },
+    {
+      "id": 1080,
+      "pattern": "ならともかく",
+      "reading": null,
+      "meaning": "If it&#x27;s (A), sure, but (B), Putting aside (A), (B)",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ならともかく"
+    },
+    {
+      "id": 578,
+      "pattern": "やら～やら",
+      "reading": "やら〜やら",
+      "meaning": "Whether or, Things like, And … so on",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "やら-やら"
+    },
+    {
+      "id": 674,
+      "pattern": "しかしながら",
+      "reading": null,
+      "meaning": "However, Nevertheless, But",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "しかしながら"
+    },
+    {
+      "id": 403,
+      "pattern": "ことにはならない",
+      "reading": "ことにはならない",
+      "meaning": "Just because… doesn&#x27;t mean…",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ことにはならない"
+    },
+    {
+      "id": 497,
+      "pattern": "だけのことはある",
+      "reading": null,
+      "meaning": "No wonder, Not surprising that, As expected",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "だけのことはある"
+    },
+    {
+      "id": 516,
+      "pattern": "てはならない",
+      "reading": "～てはならない",
+      "meaning": "Must not, Cannot, Should not",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "てはならない"
+    },
+    {
+      "id": 498,
+      "pattern": "てはいられない",
+      "reading": "～てはいられない",
+      "meaning": "Can&#x27;t afford to, Unable to",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "てはいられない"
+    },
+    {
+      "id": 693,
+      "pattern": "陸に～ない",
+      "reading": "ろくに～ない",
+      "meaning": "Not well or properly, Not much or enough, Barely, Hardly",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "陸に-ない"
+    },
+    {
+      "id": 331,
+      "pattern": "しかも",
+      "reading": null,
+      "meaning": "Moreover, Furthermore",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "しかも"
+    },
+    {
+      "id": 576,
+      "pattern": "てでも",
+      "reading": "～てでも",
+      "meaning": "Even if I have to, By any or all means, No matter what",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "てでも"
+    },
+    {
+      "id": 511,
+      "pattern": "とも",
+      "reading": null,
+      "meaning": "Even if, No matter",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "とも"
+    },
+    {
+      "id": 404,
+      "pattern": "ないわけにはいかない",
+      "reading": "ないわけにはいかない",
+      "meaning": "Can&#x27;t not, No way to avoid",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "ないわけにはいかない"
+    },
+    {
+      "id": 537,
+      "pattern": "というわけではない",
+      "reading": "というわけではない",
+      "meaning": "It is not that, It doesn&#x27;t mean that, It is not always the case",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "というわけではない"
+    },
+    {
+      "id": 684,
+      "pattern": "のももっともだ",
+      "reading": "のももっともだ",
+      "meaning": "May well, Have or has good reason for, No wonder, … Is only natural",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "のももっともだ"
+    },
+    {
+      "id": 575,
+      "pattern": "たって",
+      "reading": null,
+      "meaning": "Even if, Even though, No matter how",
+      "jlptLevel": "N2",
+      "cefrLevel": "B2",
+      "slug": "たって"
+    }
+  ],
+  "count": 218
+}

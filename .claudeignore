@@ -1,0 +1,8 @@
+# Claude Code — ignore large/generated directories
+app/node_modules/
+app/dist/
+app/.vite/
+app/coverage/
+app/data/generated/*.sql
+*.apkg
+*.db
