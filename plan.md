@@ -69,6 +69,27 @@ Last updated: 2026-05-06
   - `lessons` → `learning_content` (appears in `/learn`)
 - Import summary: tile count per category
 
+#### Known Textbooks Import UX (proposed)
+- Add a dedicated **Known Textbooks** panel in Upload Content, separate from generic PDF/text import
+- Layout:
+  - Large drop zone: textbook/workbook PDFs
+  - Smaller side drop zone: corresponding Anki decks for those textbooks
+- Known textbook path targets: Genki 1/2, Quartet 1/2, Tobira, Shin Kanzen Master
+- Keep generic import unchanged for all non-mapped content
+- In `/learn`, add **Textbook Learning** subsection:
+  - Lesson-by-lesson progression for matched textbook sets
+  - Integrated extraction actions (vocab, phrases, grammar)
+  - Unlock-to-deck actions for mapped textbook lessons
+  - Personal notes on unlocked/added cards
+
+#### File/Deck Identification Strategy (proposed)
+- Use hybrid matching rather than strict file naming requirements:
+  - Auto-detect via filename heuristics + title page/first-page text extraction
+  - Auto-match Anki decks via normalized names + aliases
+  - Show user confirmation step when detection confidence is low or ambiguous
+- User can override detected textbook/deck link in one click; overrides are stored for future imports
+- Do not require manual renaming as a hard prerequisite
+
 ### Word Selection, Deck Import & Unlock Flows (LearningMode)
 - Users can **select/highlight words in lessons** and add them to any deck
 - **Textbook pair unlock flow (generalized)**: If imported lesson content matches a known textbook/deck pair:
@@ -83,6 +104,7 @@ Last updated: 2026-05-06
 #### Textbook Pair Mapping Schema (proposed)
 - Add a lightweight mapping record (config table or static JSON seed) for textbook-specific unlock behavior:
   - `textbook_key` (e.g., `genki_1`, `quartet_2`)
+  - `textbook_label` (user-facing name, e.g., `Genki 1`, `Quartet 2`)
   - `match_rules` (filename keywords, optional user-selected textbook tag)
   - `default_deck_name` (e.g., `Genki 1`)
   - `deck_match_rules` (imported Anki deck name aliases / normalized name)
@@ -94,7 +116,8 @@ Last updated: 2026-05-06
   - Render unlock CTA only when mapping exists and lesson has mapped vocabulary
   - Persist unlock events in `lesson_vocabulary` and apply optional per-card personal note
 - Initial textbook mappings:
-  - `genki_1`, `genki_2`, `quartet_1`, `quartet_2`, `tobira`, `shin_kanzen_master`
+  - Keys: `genki_1`, `genki_2`, `quartet_1`, `quartet_2`, `tobira`, `shin_kanzen_master`
+  - Labels: `Genki 1`, `Genki 2`, `Quartet 1`, `Quartet 2`, `Tobira`, `Shin Kanzen Master`
 - Follow shared scraping/extraction patterns across these books where possible (same pipeline, mapping-specific rules only)
 - Audio reading support for these books is explicitly deferred to a later phase
 - For non-mapped PDFs/content imports: keep generic extraction path and prompt user where to route content (deck/grammar/lessons)

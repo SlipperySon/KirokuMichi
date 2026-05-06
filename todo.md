@@ -59,18 +59,38 @@ Last updated: 2026-05-06
 - **Effort:** 2-3 hours (PDF handling + Genki detection + furigana interaction)
 - **Blocks:** Shipping content import feature (can be done in parallel with 2.)
 
+### 2b.1 Known Textbooks Import Panel + Linking UX
+- [ ] Add dedicated **Known Textbooks** panel in Upload Content (separate from generic import area)
+- [ ] Build two-drop-zone layout:
+  - [ ] Large drop zone for textbook/workbook PDFs
+  - [ ] Smaller side drop zone for corresponding Anki decks
+- [ ] Restrict known textbook classifier to initial mapped set:
+  - [ ] `genki_1` (`Genki 1`)
+  - [ ] `genki_2` (`Genki 2`)
+  - [ ] `quartet_1` (`Quartet 1`)
+  - [ ] `quartet_2` (`Quartet 2`)
+  - [ ] `tobira` (`Tobira`)
+  - [ ] `shin_kanzen_master` (`Shin Kanzen Master`)
+- [ ] Add textbook/deck linking state in import flow:
+  - [ ] Link uploaded textbook files to detected textbook key
+  - [ ] Link uploaded Anki deck(s) to same textbook key when possible
+  - [ ] Surface unresolved links with "Select textbook/deck pair" prompt
+- [ ] Keep generic PDF/text import flow unchanged for non-mapped uploads
+- **Effort:** 3-5 hours
+- **Blocks:** Depends on 2c.1 mapping schema definitions
+
 ### 2c. Word Selection & Deck Import / Textbook Pair Unlock
 - [ ] **Word selection in lessons**: User can highlight/click words in LearningMode or lesson preview
 - [ ] **Custom deck import**: Selected words → route to user's chosen deck in SRS (e.g., "My Vocab" deck)
 - [ ] **2c.1 Textbook pair mapping schema (implementation order)**:
-  - [ ] Define mapping shape: `textbook_key`, `match_rules`, `default_deck_name`, `deck_match_rules`, `unlock_label`, `enabled`
+  - [ ] Define mapping shape: `textbook_key`, `textbook_label`, `match_rules`, `default_deck_name`, `deck_match_rules`, `unlock_label`, `enabled`
   - [ ] Implement initial textbook mappings:
-    - [ ] `genki_1`
-    - [ ] `genki_2`
-    - [ ] `quartet_1`
-    - [ ] `quartet_2`
-    - [ ] `tobira`
-    - [ ] `shin_kanzen_master`
+    - [ ] `genki_1` (`Genki 1`)
+    - [ ] `genki_2` (`Genki 2`)
+    - [ ] `quartet_1` (`Quartet 1`)
+    - [ ] `quartet_2` (`Quartet 2`)
+    - [ ] `tobira` (`Tobira`)
+    - [ ] `shin_kanzen_master` (`Shin Kanzen Master`)
   - [ ] Add lesson-to-textbook resolver using filename + optional user textbook tag
   - [ ] Add imported deck matcher using normalized names + alias rules
   - [ ] Add fallback when no deck match: choose existing deck or create `default_deck_name`
@@ -126,6 +146,30 @@ Last updated: 2026-05-06
 - [ ] Test: import mixed sources (mapped textbook + random PDF) → confirm routing prompt + tutor plan quality
 - **Effort:** 4-6 hours
 - **Blocks:** Depends on stable extraction outputs from Priority 2 testing
+
+### 2e. Textbook Learning Subsection in `/learn`
+- [ ] Add new **Textbook Learning** subsection/tab in Learn page
+- [ ] Show lesson progression for linked known-textbook imports (textbook, workbook, lesson units)
+- [ ] Add in-lesson actions:
+  - [ ] Extract vocab/phrases/grammar from current lesson view
+  - [ ] Unlock mapped lesson vocab directly into linked/imported deck
+  - [ ] Add/edit personal notes on textbook-derived cards
+- [ ] Add progress state per textbook path (current lesson, completed lessons, unlocked counts)
+- [ ] Test: complete one lesson flow end-to-end from textbook upload to unlocked deck cards
+- **Effort:** 4-7 hours
+- **Blocks:** Depends on 2b.1 linking UX and 2c unlock mechanics
+
+### 2f. Hybrid Auto-Detect + User Confirmation (No Strict Naming Requirement)
+- [ ] Detect textbook identity using filename heuristics + title/first-page text extraction
+- [ ] Detect Anki deck match using normalized deck names + alias mapping
+- [ ] Add confidence scoring and ambiguity handling:
+  - [ ] High confidence: auto-link silently with review indicator
+  - [ ] Low/ambiguous confidence: show confirmation dialog before linking
+- [ ] Add manual override control for textbook/deck association
+- [ ] Persist user overrides/preferences for future imports
+- [ ] Confirm UX copy clearly states manual renaming is optional, not required
+- **Effort:** 3-5 hours
+- **Blocks:** Depends on 2c.1 mapping schema + import metadata storage
 
 ### 3. ScenarioMode v2 — Live AI Conversation
 - [ ] **UX Decision:** Decide between:
