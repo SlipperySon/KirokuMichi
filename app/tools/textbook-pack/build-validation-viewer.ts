@@ -581,10 +581,10 @@ function escapeHtml(value: string): string {
 
 function parseArgs(rawArgs: string[]): CliOptions {
   const options: CliOptions = {
-    proofPath: 'tools/textbook-pack/out/canonical-proofs/genki_1_lesson_1.json',
-    normalizedRoot: 'tools/textbook-pack/out/normalized',
-    groupedRoot: 'tools/textbook-pack/out/grouped',
-    outDir: 'tools/textbook-pack/out/validation-viewer/genki_1_lesson_1',
+    proofPath: 'app/tools/textbook-pack/out/canonical-proofs/genki_1_lesson_1.json',
+    normalizedRoot: 'app/tools/textbook-pack/out/normalized',
+    groupedRoot: 'app/tools/textbook-pack/out/grouped',
+    outDir: 'app/tools/textbook-pack/out/validation-viewer/genki_1_lesson_1',
   }
 
   for (let index = 0; index < rawArgs.length; index += 1) {

@@ -55,7 +55,7 @@ if (manifest.gaps.length > 0) {
 function parseArgs(rawArgs: string[]): CliOptions {
   const options: CliOptions = {
     sourceRoot: '../test-fixtures',
-    outFile: 'tools/textbook-pack/out/source-manifest.json',
+    outFile: 'app/tools/textbook-pack/out/source-manifest.json',
   }
 
   for (let index = 0; index < rawArgs.length; index += 1) {

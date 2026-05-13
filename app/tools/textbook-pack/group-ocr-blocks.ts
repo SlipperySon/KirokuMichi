@@ -206,8 +206,8 @@ function round(value: number): number {
 function parseArgs(rawArgs: string[]): CliOptions {
   const options: CliOptions = {
     sourceId: null,
-    normalizedRoot: 'tools/textbook-pack/out/normalized',
-    outRoot: 'tools/textbook-pack/out/grouped',
+    normalizedRoot: 'app/tools/textbook-pack/out/normalized',
+    outRoot: 'app/tools/textbook-pack/out/grouped',
   }
 
   for (let index = 0; index < rawArgs.length; index += 1) {

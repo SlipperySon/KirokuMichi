@@ -110,7 +110,7 @@ function truncate(value: string, maxLength: number): string {
 
 function parseArgs(rawArgs: string[]): CliOptions {
   const options: CliOptions = {
-    proofPath: 'tools/textbook-pack/out/canonical-proofs/genki_1_lesson_1.json',
+    proofPath: 'app/tools/textbook-pack/out/canonical-proofs/genki_1_lesson_1.json',
     outFile: null,
     force: false,
   }

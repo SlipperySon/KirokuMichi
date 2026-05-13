@@ -102,8 +102,8 @@ function noteForMode(mode: ExerciseAnswerKey['gradingMode']): string {
 
 function parseArgs(rawArgs: string[]): CliOptions {
   const options: CliOptions = {
-    packPath: 'tools/textbook-pack/out/reviewed-packs/genki_1_lesson_1.json',
-    groupedRoot: 'tools/textbook-pack/out/grouped',
+    packPath: 'app/tools/textbook-pack/out/reviewed-packs/genki_1_lesson_1.json',
+    groupedRoot: 'app/tools/textbook-pack/out/grouped',
     outFile: null,
   }
 

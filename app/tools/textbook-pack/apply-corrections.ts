@@ -30,7 +30,7 @@ const reviewed = applyCorrections(proof, corrections, reviewedAt)
 const lesson = reviewed.lessons[0]
 if (!lesson) throw new Error('Proof pack does not contain a lesson')
 
-const outFile = resolveAppPath(options.outFile ?? path.join('tools/textbook-pack/out/reviewed-packs', `${lesson.id}.json`))
+const outFile = resolveAppPath(options.outFile ?? path.join('app/tools/textbook-pack/out/reviewed-packs', `${lesson.id}.json`))
 await writeJson(outFile, reviewed)
 
 const summary = summarize(lesson, corrections)
@@ -159,7 +159,7 @@ function summarize(lesson: CanonicalLesson, corrections: TextbookPackCorrections
 
 function parseArgs(rawArgs: string[]): CliOptions {
   const options: CliOptions = {
-    proofPath: 'tools/textbook-pack/out/canonical-proofs/genki_1_lesson_1.json',
+    proofPath: 'app/tools/textbook-pack/out/canonical-proofs/genki_1_lesson_1.json',
     correctionsPath: 'tools/textbook-pack/corrections/genki_1_lesson_1.corrections.json',
     outFile: null,
     reviewer: 'manual_review',

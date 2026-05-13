@@ -78,7 +78,7 @@ function isReady(lesson: CanonicalTextbookPack['lessons'][number] | undefined): 
 
 function parseArgs(rawArgs: string[]): CliOptions {
   const options: CliOptions = {
-    packsRoot: 'tools/textbook-pack/out/reviewed-packs',
+    packsRoot: 'app/tools/textbook-pack/out/reviewed-packs',
   }
 
   for (let index = 0; index < rawArgs.length; index += 1) {

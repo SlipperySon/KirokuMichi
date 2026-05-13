@@ -285,9 +285,9 @@ function warning(findings: ValidationFinding[], message: string): void {
 
 function parseArgs(rawArgs: string[]): CliOptions {
   const options: CliOptions = {
-    packPath: 'tools/textbook-pack/out/reviewed-packs/genki_1_lesson_1.json',
-    manifestPath: 'tools/textbook-pack/out/source-manifest.json',
-    groupedRoot: 'tools/textbook-pack/out/grouped',
+    packPath: 'app/tools/textbook-pack/out/reviewed-packs/genki_1_lesson_1.json',
+    manifestPath: 'app/tools/textbook-pack/out/source-manifest.json',
+    groupedRoot: 'app/tools/textbook-pack/out/grouped',
     requireReviewed: true,
   }
 

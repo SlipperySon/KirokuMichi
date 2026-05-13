@@ -80,7 +80,7 @@ const pack: CanonicalTextbookPack = {
 const outFile = resolveAppPath(
   options.outFile ??
     path.join(
-      'tools/textbook-pack/out/canonical-proofs',
+      'app/tools/textbook-pack/out/canonical-proofs',
       options.unit === 'pre_lesson' ? `${options.textbookKey}_pre_${requiredSlug()}.json` : `${options.textbookKey}_lesson_${options.lessonNumber}.json`,
     ),
 )
@@ -430,8 +430,8 @@ function parseArgs(rawArgs: string[]): CliOptions {
     unit: 'lesson',
     lessonNumber: 1,
     slug: null,
-    manifestPath: 'tools/textbook-pack/out/source-manifest.json',
-    groupedRoot: 'tools/textbook-pack/out/grouped',
+    manifestPath: 'app/tools/textbook-pack/out/source-manifest.json',
+    groupedRoot: 'app/tools/textbook-pack/out/grouped',
     outFile: null,
   }
 

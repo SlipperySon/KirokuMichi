@@ -58,7 +58,7 @@ const pack: CanonicalTextbookPack = {
   lessons: [lesson],
 }
 
-const outFile = resolveAppPath(options.outFile ?? path.join('tools/textbook-pack/out/canonical-proofs', `${options.textbookKey}_lesson_${options.lessonNumber}.json`))
+const outFile = resolveAppPath(options.outFile ?? path.join('app/tools/textbook-pack/out/canonical-proofs', `${options.textbookKey}_lesson_${options.lessonNumber}.json`))
 await writeJson(outFile, pack)
 console.log(`wrote ${path.relative(process.cwd(), outFile)}`)
 console.log(
@@ -348,8 +348,8 @@ function parseArgs(rawArgs: string[]): CliOptions {
   const options: CliOptions = {
     textbookKey: 'quartet_1',
     lessonNumber: 1,
-    manifestPath: 'tools/textbook-pack/out/source-manifest.json',
-    groupedRoot: 'tools/textbook-pack/out/grouped',
+    manifestPath: 'app/tools/textbook-pack/out/source-manifest.json',
+    groupedRoot: 'app/tools/textbook-pack/out/grouped',
     outFile: null,
   }
 

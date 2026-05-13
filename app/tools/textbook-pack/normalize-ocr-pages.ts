@@ -239,10 +239,10 @@ function round(value: number): number {
 
 function parseArgs(rawArgs: string[]): CliOptions {
   const options: CliOptions = {
-    manifestPath: 'tools/textbook-pack/out/source-manifest.json',
+    manifestPath: 'app/tools/textbook-pack/out/source-manifest.json',
     sourceId: null,
-    ocrRoot: 'tools/textbook-pack/out/ocr',
-    outRoot: 'tools/textbook-pack/out/normalized',
+    ocrRoot: 'app/tools/textbook-pack/out/ocr',
+    outRoot: 'app/tools/textbook-pack/out/normalized',
   }
 
   for (let index = 0; index < rawArgs.length; index += 1) {
