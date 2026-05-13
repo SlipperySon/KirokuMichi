@@ -1,8 +1,8 @@
 # KirokuMichi Handoff Document
 
-**Last updated:** 2026-05-13 15:10 UTC  
-**Current status:** A1 Core complete (Genki I), A1 Pair in progress (Marugoto A1 OCR running), A2 Core pending  
-**Next phase:** Complete A1 with Marugoto, then extract A2 (Genki II), then move to manual corrections
+**Last updated:** 2026-05-13 20:35 UTC  
+**Current status:** ✅ A1 CORE + PAIR COMPLETE | ✅ A2 CORE COMPLETE | ⏳ Ready for manual corrections  
+**Next phase:** Manual corrections on Genki I L2-L12 + Genki II L13-L23, answer-key linking, validation
 
 > **🔄 Keep this updated:** At the end of each session, before switching AI models, update the "Last updated" date and "Current status" above. Update the Quick Status table and the "What Just Completed" section to reflect new work. This ensures seamless handoff.
 
@@ -12,14 +12,15 @@
 
 | Item | Status |
 |------|--------|
-| **A1 Core:** Genki I full OCR (393+157+84 pages) | ✅ Complete |
-| **A1 Core:** All 14 lesson packs generated | ✅ Complete (2,992 blocks, 2,289 exercises) |
-| **A1 Core:** Individual reviewed packs split | ✅ Complete (14 files) |
-| **A1 Pair:** Marugoto A1 OCR (147 pages) | 🔄 In progress (PaddleOCR running) |
-| **A2 Core:** Genki II textbook OCR (399 pages) | ⏳ Pending |
-| **A2 Core:** Genki II workbook OCR (137 pages) | ⏳ Pending |
-| Manual corrections (Genki I L1-L12) | ⏳ Pending |
-| Answer-key linking (all lessons) | ⏳ Pending |
+| **A1 Core:** Genki I (393 TB + 157 WB + 84 AK pages) | ✅ Complete |
+| **A1 Core:** 14 lesson packs (2,992 blocks, 2,289 exercises) | ✅ Complete & Split |
+| **A1 Pair:** Marugoto A1 (147 pages) | ✅ Complete & Split |
+| **A2 Core:** Genki II (399 TB + 137 WB pages) | ✅ Complete & Split |
+| **A2 Core:** 11 lesson packs L13-L23 (2,678 blocks, 2,657 exercises) | ✅ Complete & Split |
+| **Total Reviewed Packs:** 26 new + 14 existing = 40 files | ✅ Ready |
+| Manual corrections (Genki I L2-L12, Genki II L13-L23) | ⏳ Next |
+| Answer-key linking | ⏳ After corrections |
+| Maynard grammar extraction | ⏳ Final phase |
 
 ---
 
