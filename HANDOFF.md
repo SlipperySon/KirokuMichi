@@ -23,15 +23,26 @@
 
 ---
 
-## What Just Completed (2026-05-13, Latest)
+## What Just Completed (2026-05-13, Latest Update)
 
-### A1/A2 Multi-Textbook Extraction Started
-- **Marugoto A1 OCR:** PaddleOCR at 300 DPI started (147 pages, CPU processing)
-  - Raw capture in progress: `out/ocr/marugoto_a1_textbook/raw/`
-  - Will be followed by normalize → group → lesson build
-- **Genki II OCR:** Planned (399 textbook + 137 workbook pages)
-  - Will use same PaddleOCR pipeline as Genki I
-- **New tool:** `batch-extract-pipeline.ts` created for coordinating multi-step extractions
+### A1/A2 Multi-Parallel Extraction Pipeline Launched
+- **3 parallel OCR processes running** (PaddleOCR at 300 DPI, CPU):
+  - Marugoto A1 Textbook: 7/147 pages (A1 Pair)
+  - Genki II Textbook: ~3/399 pages (A2 Core)
+  - Genki II Workbook: ~3/137 pages (A2 Core)
+  - **Estimated completion:** ~1.5 hours (12 pages done, ~683 remaining)
+
+- **New tools created:**
+  - `build-all-textbook-lessons.ts` — Unified lesson builder (Genki, Marugoto, Quartet structures)
+  - `batch-extract-pipeline.ts` — Single-source OCR → normalize → group coordinator
+  - `auto-complete-pipeline.sh` — Full A1/A2 completion script (normalize → group → build for all sources)
+
+- **Post-OCR automated workflow ready:**
+  1. ✅ All tools prepared and tested
+  2. ⏳ Once OCR completes, run: `bash app/tools/textbook-pack/auto-complete-pipeline.sh`
+  3. Outputs: 4 new all-lessons packs (marugoto_a1, genki_2) + 23 reviewed packs (Genki II L13-L23)
+
+- **Documentation updated:** HANDOFF.md, plan.md, todo.md reflect current extraction status
 
 ## What Just Completed (2026-05-13 Morning)
 
