@@ -4,6 +4,8 @@
 **Current status:** Genki I full-source OCR extraction and all-lessons generation complete  
 **Next phase:** Manual corrections and answer-key linking for all 14 lessons
 
+> **🔄 Keep this updated:** At the end of each session, before switching AI models, update the "Last updated" date and "Current status" above. Update the Quick Status table and the "What Just Completed" section to reflect new work. This ensures seamless handoff.
+
 ---
 
 ## Quick Status
