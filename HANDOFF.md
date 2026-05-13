@@ -1,7 +1,7 @@
 # KirokuMichi Handoff Document
 
-**Last updated:** 2026-05-14 00:02 UTC  
-**Current status:** ✅ A1 EXTRACTION COMPLETE | ✅ A2 EXTRACTION COMPLETE | ⏳ Manual Corrections Next  
+**Last updated:** 2026-05-14 00:35 UTC  
+**Current status:** ✅ A1 EXTRACTION COMPLETE | ✅ A2 EXTRACTION COMPLETE | ✅ MARUGOTO LINKING COMPLETE  
 **Next phase:** Manual corrections on all 27 lessons, then answer-key linking, then validation
 
 > **🔄 Keep this updated:** At the end of each session, before switching AI models, update the "Last updated" date and "Current status" above. Update the Quick Status table and the "What Just Completed" section to reflect new work. This ensures seamless handoff.
@@ -221,6 +221,43 @@ app/tools/textbook-pack/
 - [x] Split: single pack → reviewed-packs/marugoto_a2_lesson_1.json
 
 **Complete:** 27 reviewed packs total (16 Genki I + 11 Genki II + 1 Marugoto A1 + 1 Marugoto A2)
+
+### ✅ Marugoto-to-Genki Curriculum Linking (JUST COMPLETED)
+
+**What it does:**
+- Links each Genki lesson to relevant Marugoto practice activities
+- Uses concept-based matching: vocabulary & grammar overlap
+- 72 total activities linked across 25 lessons (A1: 32, A2: 40)
+
+**Key Features:**
+- ✅ **Optional** — User can skip/deny suggestions
+- ✅ **Non-blocking** — No progression halted
+- ✅ **External** — Genki lessons 100% unchanged
+- ✅ **Graceful degradation** — Hidden if Marugoto not unlocked
+- ✅ **App-layer decision** — UI decides visibility based on unlock status
+
+**Files Created:**
+- `curriculum-marugoto-links.json` — Mapping of lesson ID → Marugoto activities
+- `CURRICULUM-LINKING.md` — Complete implementation guide for app
+
+**How It Works:**
+```
+User completes Genki I L1
+  ↓
+App checks unlock status
+  ├─ Marugoto unlocked → Show top 5 practice suggestions
+  └─ Not unlocked → Show nothing (graceful)
+  ↓
+User can [Try Activity] or [Skip] → No blocking
+```
+
+**Linking Quality:**
+- Lessons 1, 2, 9, 11, 13, 15, 17, 19, 21: Full coverage (8 activities each)
+- Other lessons: 0 activities (no strong matches, but not blocked)
+- Average overlap score: 0.77 (on scale 0–1.0)
+
+**For App Implementation:**
+See `CURRICULUM-LINKING.md` for query patterns, UI flow, and graceful degradation examples.
 
 ### 1. Manual Corrections (Per-Lesson)
 **Files to edit:** `app/tools/textbook-pack/out/reviewed-packs/genki_1_lesson_*.json`
