@@ -1,6 +1,6 @@
 # KirokuMichi — Current State & Active Roadmap
 
-Last updated: 2026-05-06
+Last updated: 2026-05-13 15:15 UTC
 
 ---
 
@@ -17,6 +17,7 @@ Last updated: 2026-05-06
 ### Study Dashboard (`/study`)
 - Due count + new count (capped by daily limit)
 - Daily card limit stepper (0–100)
+- Weekly Goals widget: reads `jlptTarget` + `goalDate`, calculates cards/week needed, tracks this week's completed cards from `sessions`, and shows progress toward the target
 - Streak heatmap — blue = vocab only, purple = grammar only, green = both
 - Weak-point panel (`WeakPointPanel.tsx`)
 - Two review buttons: "Review Words" (indigo) and "Study Grammar" (purple)
@@ -51,11 +52,14 @@ Last updated: 2026-05-06
 
 ### Content Import (`/practice` → Upload Content tab)
 - **Anki `.apkg`**: full import with audio
-- **Paste text or upload file** (`.pdf`, `.txt`, `.md`, `.csv`)
+- **Paste text or upload one or more files** (`.pdf`, `.txt`, `.md`, `.csv`)
 - **PDF (Parallel Mode)**: Upload multiple PDFs together (e.g., textbook + workbook)
-  - Text extracted client-side via `pdfjs-dist` from all PDFs in order
+  - Text extracted client-side via `pdfjs-dist` from all uploaded files in picker order for generic text PDFs
+  - Scanned PDFs can be OCRed server-side using local macOS Vision OCR
+  - Per-file PDF ranges are supported; Genki 1 presets currently use textbook page 14 and workbook page 12
+  - Repeated same-file/same-range extractions are cached during the server session to avoid run-to-run variation
   - Optional page image rendering (up to 8 pages per PDF → JPEG base64) for vision-capable models
-  - AI processes all PDFs together in single call with cross-document context
+  - AI processes all uploaded files together in a single call with cross-document context
 - **AI extraction** via strict `EXTRACTION_SYSTEM_PROMPT` — single call returns `{ vocab, grammar, lessons }`
   - Assumption: user knows all hiragana & katakana (no kana drills)
   - **Structured textbook path handling (primary)**: Automatic furigana elimination over kanji where applicable
@@ -82,6 +86,99 @@ Last updated: 2026-05-06
   - Unlock-to-deck actions for mapped textbook lessons
   - Personal notes on unlocked/added cards
 
+#### Specialized Textbook Pack Strategy (new primary mapped-textbook plan)
+- For known textbooks, generic PDF→OCR→AI extraction is now a fallback, not the desired production path.
+- Primary plan: generate high-quality structured textbook packs offline, encrypt them in the app, and unlock them only when the user supplies matching source PDFs.
+- Dataset scope is Japan Times GENKI 3rd Edition plus QUARTET, covering roughly N5 through N2:
+  - Genki I Textbook/Workbook: Lessons 1-12
+  - Genki II Textbook/Workbook: Lessons 13-23
+  - Genki I & II Answer Key: combined answers plus listening scripts
+  - Quartet I Textbook/Workbook/Workbook Answer Key: Lessons 1-6, roughly N3
+  - Quartet II Textbook/Workbook/Workbook Answer Key: Lessons 7-12, roughly N2
+- Genki 1 v3 is the first target:
+  - Full textbook/workbook extraction comes first, including front matter, contents, Reading & Writing, indexes, and support pages.
+  - The old textbook page 14 / workbook page 12 starts are only quick generic-import smoke-test presets, not canonical pack boundaries.
+  - First proof should produce a canonical Lesson 1 JSON pack from the full-source capture before expanding to the full book.
+- Offline/specialized extraction pipeline:
+  - Evaluate Apple Vision OCR, PaddleOCR/PP-OCRv5 Japanese+English, and optionally Manga OCR.
+  - Prefer PaddleOCR if it improves Japanese+English layout, table, and exercise extraction over Apple Vision.
+  - Manga OCR is likely better for manga/immersion assets than textbook pages; do not make it the primary Genki engine unless testing proves otherwise.
+  - Convert textbook/workbook pages into canonical JSON: lessons, vocab, grammar, readings/dialogues, workbook references, and furigana mappings.
+  - Include answer-key mappings: exercise id → answer-key page/coordinates/ground-truth answer.
+  - Include listening-script mappings from answer keys for listening exercises and tutor explanations.
+  - Include section-mode metadata when a book has explicit skill divisions, for example Quartet's Reading/Writing/Speaking/Listening sections.
+  - Validate generated JSON with schema checks, duplicate checks, coverage checks, and stable output diffs.
+- Genki-specific extraction notes:
+  - Vocab is listed within each lesson.
+  - Kanji comes from the textbook Reading & Writing section in the back.
+  - Answer key is a combined Genki I & II source and should be indexed for textbook/workbook answers plus listening scripts.
+- Quartet-specific pack notes:
+  - Quartet 1 consists of Textbook + Workbook for Lessons 1-6, roughly JLPT N3.
+  - Quartet 2 consists of Textbook + Workbook for Lessons 7-12, roughly JLPT N2.
+  - Quartet textbooks also rely on a separate supplement / 別冊 (Bessatsu) for vocabulary and kanji lists. The pack pipeline must ingest this as its own file role, not assume all vocab lives inside lesson chapters.
+  - Quartet lessons should preserve the 4-skill structure: Reading (読む), Writing (書く), Speaking (話す), Listening (聞く).
+  - Textbook content is the AI tutor source of truth: readings, grammar notes (`文型・表現ノート`), and model dialogues.
+  - Workbook content should become output/challenge material: drills, true/false questions, sentence construction, grammar practice, and reading comprehension checks.
+  - Layout extraction must handle denser pages than Genki: long authentic-style readings, multi-page essays, richer diagrams, and text wrapping around images.
+- Tutor/assessment rules:
+  - When grading, use answer-key ground truth for the specific exercise id, page, and coordinates.
+  - If a user answer is grammatically correct but does not use the lesson target grammar, flag it as correct but off-target.
+  - For listening exercises, use answer-key listening scripts to explain dialogue and highlight vocab.
+  - Future handwritten workbook checking should compare handwriting against answer-key ground truth, not raw AI vision alone.
+- Encrypted pack/unlock model:
+  - Ship only encrypted structured JSON packs and non-sensitive metadata.
+  - User uploads their own textbook/workbook PDFs locally to prove access.
+  - App verifies the files using local fingerprints/signatures, then decrypts/unlocks the relevant pack.
+  - Persist unlock status locally per user/device.
+  - If verification fails or the edition is ambiguous, fall back to generic PDF import with user confirmation.
+- This avoids repeatedly asking DeepSeek to infer textbook structure and gives consistent, curated lesson data for mapped textbooks.
+
+#### CEFR Roadmap Structure (`Structure.xlsx`)
+- The workbook defines the curriculum as three parallel source roles:
+  - **Core**: the main content spine and grammar engine. These are the authoritative course packs the app should extract first.
+  - **Pair**: practical/social practice material paired with the Core stage. This supports output practice, can-do validation, and real-use reinforcement.
+  - **In-depth grammar**: deeper explanation material for linguistic logic, nuance, and "why this rule works" support.
+- Current stage map:
+  - **A1 / Breakthrough**
+    - Core: Genki I Textbook, Genki I Workbook, Answer Key
+    - Pair: Marugoto A1 Katsudoo (Starter)
+    - In-depth grammar: Maynard Strategy P1-2, preliminaries and fundamentals
+    - Focus: survival basics, introductions, time/dates, and simple daily interactions
+  - **A2 / Elementary**
+    - Core: Genki II Textbook, Genki II Workbook, Answer Key
+    - Pair: Marugoto A2 Katsudoo (Elementary 2)
+    - In-depth grammar: Maynard Strategy P3, the core
+    - Focus: routine tasks, personal background, and familiar information exchange
+  - **B1 / Threshold**
+    - Core: Quartet I Textbook, Quartet I Workbook, Answer Key
+    - Pair: Marugoto B1 (Intermediate 1 / Chukyu 1)
+    - In-depth grammar: Maynard Strategy P4, expansion
+    - Focus: connected text on personal interests, dreams, ambitions, and opinions
+  - **B2 / Independent**
+    - Core: Quartet II Textbook, Quartet II Workbook, Answer Key
+    - Pair: Tobira
+    - In-depth grammar: Maynard general reference / linguistic nuance
+    - Focus: complex abstract texts and more fluent interaction with native speakers
+- Roadmap study rules:
+  - Core first: complete the Genki/Quartet grammar chapter to build the structural base.
+  - Pair second: use Marugoto A1-B1 or Tobira B2 to see and practice that structure in practical communication or denser reading.
+  - In-depth grammar check: use Maynard when a grammar rule feels arbitrary and needs linguistic explanation.
+  - Can-do validation: do not advance CEFR rank until the relevant practical tasks are comfortable.
+- Data model implication:
+  - Source manifest entries now carry `curriculumRole`, `cefrPhase`, `source_series`/`book_key` via `textbookKey`, and source file role.
+  - Textbook packs and future roadmap nodes should also carry `cefr_level`, `phase_name`, `source_role`, `source_series`, `book_key`, and optional `can_do_targets`.
+  - Existing Genki/Quartet extraction remains the immediate **Core** path. Pair and In-depth grammar sources should be attached after Core pack structure and validation are reliable.
+- Current inventory status:
+  - `app/tools/textbook-pack/out/source-manifest.json` has no source gaps.
+  - Pair sources are present: Marugoto A1, Marugoto A2, Marugoto B1, and Tobira.
+  - The Maynard/Yanard in-depth grammar source is present as `maynard_grammar_grammar_reference`; it is a reusable explanation preset layer, not a normal lesson sequence.
+  - The only medium-confidence source is the known Genki II workbook file because its filename lacks an explicit workbook marker; prior outline/page checks classify it as Genki II workbook.
+- Future post-path expansion:
+  - C1 bridge: Authentic Japanese / progressing from intermediate to advanced material.
+  - Advanced nuance: Shin Kanzen Master N1.
+  - Literacy: Kanji in Context for broader Joyo kanji mastery.
+  - End state: native immersion through novels, podcasts, and unfiltered native content.
+
 #### File/Deck Identification Strategy (proposed)
 - Use hybrid matching rather than strict file naming requirements:
   - Auto-detect via filename heuristics + title page/first-page text extraction
@@ -89,6 +186,12 @@ Last updated: 2026-05-06
   - Show user confirmation step when detection confidence is low or ambiguous
 - User can override detected textbook/deck link in one click; overrides are stored for future imports
 - Do not require manual renaming as a hard prerequisite
+- Show explicit link status badges per upload: `Auto-linked`, `Needs confirmation`, `Unlinked`
+- Allow reversible linking after import (re-link deck, reassign textbook pair) without reuploading files
+
+#### Dictionary Linking Policy (current)
+- For now, provide **Jisho-only external lookup links** from vocab/lesson/card actions
+- Do not embed or scrape dictionary sites; open lookup externally and keep card creation/editing in-app
 
 ### Word Selection, Deck Import & Unlock Flows (LearningMode)
 - Users can **select/highlight words in lessons** and add them to any deck
@@ -99,6 +202,7 @@ Last updated: 2026-05-06
   - `lesson_vocabulary` table tracks: lesson_id → vocab_id → unlock status per user
 - **General flow**: Highlight word in lesson → "Add to [Deck]" → confirm → word routes to SRS queue in chosen deck
 - **Personalized notes**: Users can attach private notes to added/unlocked cards for memory cues, mnemonics, and context
+- **Create card support**: Users can also create cards manually (aligned with Anki-like workflow), with optional reading/tags/notes
 - Works with all lesson types (textbook imports, custom imports, pasted text)
 
 #### Textbook Pair Mapping Schema (proposed)
@@ -119,14 +223,28 @@ Last updated: 2026-05-06
   - Keys: `genki_1`, `genki_2`, `quartet_1`, `quartet_2`, `tobira`, `shin_kanzen_master`
   - Labels: `Genki 1`, `Genki 2`, `Quartet 1`, `Quartet 2`, `Tobira`, `Shin Kanzen Master`
 - Follow shared scraping/extraction patterns across these books where possible (same pipeline, mapping-specific rules only)
-- Audio reading support for these books is explicitly deferred to a later phase
+- Audio reading support for textbook lesson content is explicitly deferred to a later phase
+- Audio policy for cards:
+  - Preserve imported Anki audio exactly as-is
+  - User-created cards can be text-only or have optional uploaded audio
+  - Future TTS is fallback-only for cards without real audio
+  - Playback precedence: imported/uploaded real audio > TTS fallback > no audio
 - For non-mapped PDFs/content imports: keep generic extraction path and prompt user where to route content (deck/grammar/lessons)
 - Extend by adding rows/entries only (no new logic paths)
+- Add provenance metadata on created cards for filtering/stats/debugging:
+  - `origin_type` (`textbook_unlock`, `manual_create`, `pdf_extract`, `anki_import`)
+  - `origin_ref` (optional link to lesson/import source)
+- Use `Unsorted` inbox deck as safe fallback when routing is unclear (never block import/unlock on uncertain routing)
 
 ### AI Tutor Structured Lesson Planning
 - Tutor should generate **structured lesson plans** from whatever content the user provides (not only textbook-path content)
 - Textbook path is the primary structured path, but tutor planning must support mixed/custom sources
 - Planned output format: lesson goals, vocab targets, grammar targets, exercises, and review checkpoints
+
+### Implementation Guardrails (Quality)
+- Define acceptance criteria for each major block (`2b.1`, `2c`, `2e`, `2g`) before implementation starts
+- Plan migrations early for note/audio/provenance fields to minimize repeated schema churn
+- Add a Textbook Progress Dashboard in Learn: per-book completion %, current lesson, unlocked count, due count
 
 ### Other Sections (Built)
 - **TutorChat** (`/practice`): AI chat with tab switcher (Tutor | Upload Content)
@@ -147,22 +265,51 @@ Idempotent migrations run on every DB load (new + restored): `grammar_progress` 
 ## Active Work In Progress
 
 ### Content Import — Extraction Quality
-The extraction prompt and pipeline are complete. The current open question from the user is ensuring extracted content is sorted into the right sections and accessible. The three destinations are working:
+Generic content routing is working:
 - Vocab → SRS deck (appears in "Review Words" count on dashboard)
 - Grammar → Grammar Review queue (appears in "Study Grammar" count)
 - Lessons → Learn section (`/learn`)
 
-**No structural work needed here** — routing is implemented. What may need improvement is prompt quality/testing with real textbook PDFs.
+However, mapped textbooks should move to the specialized encrypted pack strategy. The generic OCR/AI path remains useful for:
+- unknown PDFs
+- quick experiments
+- fallback when a textbook pack is unavailable or unlock verification fails
+
+Current mapped-textbook priority is no longer "make DeepSeek extraction perfect every run"; it is:
+1. build a reliable offline pack-generation pipeline,
+2. validate canonical JSON,
+3. encrypt the pack,
+4. unlock it locally when the user supplies matching PDFs.
+
+Current extraction status (2026-05-13):
+
+**✅ A1 Core (Genki I) — COMPLETE**
+- `genki_1_textbook`: 393/393 pages captured, normalized, grouped
+- `genki_1_workbook`: 157/157 pages captured, normalized, grouped
+- `genki_combined_answer_key`: 84/84 pages (Genki I section mapped)
+- All 14 lesson packs generated: 2,992 content blocks, 2,289 exercises
+- Individual reviewed packs ready: `out/reviewed-packs/genki_1_*.json`
+
+**🔄 A1 Pair (Marugoto A1) — IN PROGRESS**
+- PaddleOCR at 300 DPI running: 6/147 pages (estimated 40min remaining)
+- Will normalize → group → build 1 unified lesson pack
+- Output: `marugoto_a1_all_lessons.json` (once complete)
+
+**🔄 A2 Core (Genki II) — IN PROGRESS**
+- Genki II textbook OCR starting (399 pages)
+- Genki II workbook OCR starting (137 pages)
+- Answer key: extract A2 section from combined key (~20 pages estimated)
+- Will generate 11 lesson packs (L13-L23)
+
+**⏳ A2 Pair & In-depth Grammar — Pending**
+- Marugoto A2 (186p) — After A1 complete
+- Maynard/Yanard reference — Deferred to end (reusable layer)
+
+Next: Monitor OCR completion, then normalize/group/build lessons.
 
 ---
 
 ## Pending / Not Yet Built
-
-### Weekly Goals Widget (StudyDashboard)
-- Read `jlptTarget` + `goalDate` from Zustand store
-- Calculate cards/grammar needed per week to hit goal
-- Show on StudyDashboard: "X cards this week · Y needed for goal"
-- Track weekly sessions total from `sessions` table (`started_at >= date('now', 'weekday 1', '-7 days')`)
 
 ### ScenarioMode v2 — Live AI Conversation
 - Free-form Japanese conversation with AI playing a character
@@ -262,7 +409,9 @@ server/
 
 ## Next Steps (Priority Order)
 
-1. **Textbook-path mapping rollout** — Genki 1/2, Quartet 1/2, Tobira, Shin Kanzen Master
-2. **Test content import end-to-end** for mapped textbooks plus fallback handling for non-mapped PDFs
-3. **Structured AI tutor lesson planning** from user-provided content (textbook and non-textbook)
-4. **ScenarioMode v2** — AI conversation (requires UX decision first)
+1. **Genki 1 specialized pack proof** — evaluate PaddleOCR vs Apple Vision, generate canonical Lesson 1 JSON, validate it
+2. **Encrypted pack + local unlock flow** — user uploads Genki textbook/workbook to unlock the encrypted pack
+3. **Known Textbooks panel** — route Genki uploads into unlock flow; keep generic PDF import as fallback
+4. **Textbook Learning subsection** — render unlocked structured lessons and unlock vocab into linked decks
+5. **Structured AI tutor lesson planning** from unlocked textbook packs plus user-provided custom content
+6. **ScenarioMode v2** — AI conversation (requires UX decision first)

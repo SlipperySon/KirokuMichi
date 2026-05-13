@@ -2,7 +2,7 @@ import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 
 interface Settings {
-  aiProvider: 'anthropic' | 'openai' | 'openrouter' | 'ollama' | 'custom' | null
+  aiProvider: 'anthropic' | 'openai' | 'openrouter' | 'deepseek' | 'ollama' | 'custom' | null
   apiKey: string | null
   apiEndpoint: string | null
   schedulerAlgorithm: 'fsrs' | 'sm2'

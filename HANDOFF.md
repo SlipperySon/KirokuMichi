@@ -1,8 +1,8 @@
 # KirokuMichi Handoff Document
 
-**Last updated:** 2026-05-13 02:52 UTC  
-**Current status:** Genki I full-source OCR extraction and all-lessons generation complete  
-**Next phase:** Manual corrections and answer-key linking for all 14 lessons
+**Last updated:** 2026-05-13 15:10 UTC  
+**Current status:** A1 Core complete (Genki I), A1 Pair in progress (Marugoto A1 OCR running), A2 Core pending  
+**Next phase:** Complete A1 with Marugoto, then extract A2 (Genki II), then move to manual corrections
 
 > **🔄 Keep this updated:** At the end of each session, before switching AI models, update the "Last updated" date and "Current status" above. Update the Quick Status table and the "What Just Completed" section to reflect new work. This ensures seamless handoff.
 
@@ -12,16 +12,28 @@
 
 | Item | Status |
 |------|--------|
-| Genki I full OCR capture (300 DPI) | ✅ Complete (393+157+84 pages) |
-| All 14 lesson packs generated | ✅ Complete (2,992 blocks, 2,289 exercises) |
-| Individual reviewed packs split | ✅ Complete (14 files in out/reviewed-packs/) |
-| Manual corrections applied | ⏳ In progress (Lesson 1 done, L2-L12 pending) |
-| Answer-key linking | ⏳ Pending |
-| Validation & testing | ⏳ Pending |
+| **A1 Core:** Genki I full OCR (393+157+84 pages) | ✅ Complete |
+| **A1 Core:** All 14 lesson packs generated | ✅ Complete (2,992 blocks, 2,289 exercises) |
+| **A1 Core:** Individual reviewed packs split | ✅ Complete (14 files) |
+| **A1 Pair:** Marugoto A1 OCR (147 pages) | 🔄 In progress (PaddleOCR running) |
+| **A2 Core:** Genki II textbook OCR (399 pages) | ⏳ Pending |
+| **A2 Core:** Genki II workbook OCR (137 pages) | ⏳ Pending |
+| Manual corrections (Genki I L1-L12) | ⏳ Pending |
+| Answer-key linking (all lessons) | ⏳ Pending |
 
 ---
 
-## What Just Completed (2026-05-13)
+## What Just Completed (2026-05-13, Latest)
+
+### A1/A2 Multi-Textbook Extraction Started
+- **Marugoto A1 OCR:** PaddleOCR at 300 DPI started (147 pages, CPU processing)
+  - Raw capture in progress: `out/ocr/marugoto_a1_textbook/raw/`
+  - Will be followed by normalize → group → lesson build
+- **Genki II OCR:** Planned (399 textbook + 137 workbook pages)
+  - Will use same PaddleOCR pipeline as Genki I
+- **New tool:** `batch-extract-pipeline.ts` created for coordinating multi-step extractions
+
+## What Just Completed (2026-05-13 Morning)
 
 ### Genki I All-Lessons Generation Pipeline
 - **New tool:** `app/tools/textbook-pack/build-genki-all-lessons.ts`

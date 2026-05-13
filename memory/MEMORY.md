@@ -1,3 +1,4 @@
 - [Nihongo Project Overview](project_nihongo_overview.md) — Comprehensive spec: pregenerated curriculum + optional AI tutor, tech stack, 11-phase development plan
 - [Phase Decisions](project_phase_decisions.md) — Key implementation decisions per phase (CEFR quiz, kana placeholder, app name)
 - [Quiz Answer Position](feedback_quiz_answer_position.md) — Correct answer must always be options[0] (top-left in CardGrammar 2x2 grid)
+- [Textbook Pack Strategy](textbook_pack_strategy.md) — New mapped-textbook direction: specialized OCR pipeline, encrypted JSON packs, local PDF unlock flow

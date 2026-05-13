@@ -1,6 +1,6 @@
 # KirokuMichi — Active Todo List
 
-Last updated: 2026-05-06
+Last updated: 2026-05-13 15:15 UTC
 
 ---
 
@@ -44,20 +44,163 @@ Last updated: 2026-05-06
 - **Blocks:** Shipping content import feature
 
 ### 2b. Parallel PDF Import & Genki Special Handling
-- [ ] Update ContentUpload.tsx to accept multiple PDFs (drag-drop multiple files)
-- [ ] Extract text from all PDFs in document order
-- [ ] Pass all extracted text to single AI call for unified context
+- [x] Update ContentUpload.tsx to accept multiple PDFs (file picker supports multiple files)
+- [x] Extract text from all PDFs in document order
+- [x] Pass all extracted text to single AI call for unified context
+- [x] Add local macOS Vision OCR fallback for scanned PDFs
+- [x] Add deterministic cache for repeated same-file/same-range extraction attempts
+- [x] Add per-file PDF ranges with Genki presets:
+  - [x] Genki 1 textbook useful start page: 14
+  - [x] Genki 1 workbook useful start page: 12
 - [ ] Update `EXTRACTION_SYSTEM_PROMPT` to note user knows hiragana/katakana (no kana drills)
 - [ ] Detect Genki 1 v3 textbook/workbook:
-  - [ ] Filename pattern matching (e.g., "Genki 1" + "v3" or user manual selection in UI)
+  - [x] Filename pattern matching for Genki textbook vs workbook page-range presets
+  - [ ] Add user manual selection override in UI
   - [ ] Add special instruction to extraction prompt: "For Genki 1 v3, eliminate ruby furigana over kanji in lessons"
 - [ ] Post-import furigana hover/highlight for Genki content:
   - [ ] Detect kanji in lesson text with furigana removed
   - [ ] On hover or selection: JavaScript intercept, show furigana tooltip or inline
   - [ ] Store mapping of kanji → furigana during import for lookup
-- [ ] Test with actual Genki 1 v3 PDFs (textbook + workbook together)
+- [x] Test with actual Genki 1 v3 PDFs (textbook + workbook together) for OCR/import smoke path
+- [ ] Replace generic Genki extraction as primary path with specialized encrypted textbook pack unlock flow (see 2b.2)
 - **Effort:** 2-3 hours (PDF handling + Genki detection + furigana interaction)
 - **Blocks:** Shipping content import feature (can be done in parallel with 2.)
+
+### 2b.2 Specialized Textbook Pack Pipeline (New Primary Strategy)
+- [ ] Treat generic PDF extraction as fallback/import aid, not the main mapped-textbook content source
+  - [ ] Build offline/specialized pipeline for known textbooks, starting with Genki 1:
+    - [ ] Define dataset manifest for Japan Times target series:
+    - [ ] Genki I Textbook 3rd Ed, lessons 1-12
+    - [ ] Genki I Workbook 3rd Ed, lessons 1-12
+    - [ ] Genki II Textbook 3rd Ed, lessons 13-23
+    - [ ] Genki II Workbook 3rd Ed, lessons 13-23
+    - [ ] Genki I & II Answer Key 3rd Ed, combined answers + listening scripts
+    - [ ] Quartet I Textbook, lessons 1-6, roughly JLPT N3
+    - [ ] Quartet I Workbook
+    - [ ] Quartet I Workbook Answer Key
+    - [ ] Quartet II Textbook, lessons 7-12, roughly JLPT N2
+    - [ ] Quartet II Workbook
+    - [ ] Quartet II Workbook Answer Key
+    - [x] Inventory local source PDFs currently in `test-fixtures`
+    - [x] Classify ambiguous local PDFs:
+      - [x] Verify whether the 137-page Genki II-like PDF is Genki II Workbook/support material
+      - [x] Verify whether the 93-page Quartet PDF is Quartet II Workbook Answer Key/support material
+    - [x] Generate stable source-role manifest with file fingerprints, page counts, outlines, and lesson/supplement split hints
+    - [x] Define first canonical textbook pack schema for lessons, vocab, grammar, content blocks, exercises, source refs, answer keys, listening scripts, and coordinates
+    - [ ] Model Genki I pre-lesson sections before Lesson 1:
+      - [x] Record `あいさつ / Greetings` as pre-lesson content, not Lesson 1
+      - [x] Record `すうじ / Numbers` as pre-lesson content, not Lesson 1
+      - [ ] Generate canonical pre-lesson proof pack for Greetings/Numbers
+  - [ ] Evaluate OCR engines on full source PDFs first, then filter/classify after capture:
+    - [ ] Current Apple Vision OCR baseline
+    - [ ] PaddleOCR / PP-OCRv5 Japanese+English pipeline
+    - [ ] Manga OCR only as optional comparison for manga/vertical text, not primary textbook OCR
+  - [ ] Choose OCR engine per content type based on accuracy, layout order, table preservation, and speed
+  - [ ] Generate canonical structured JSON files:
+    - [ ] textbook metadata
+    - [ ] lesson list and page ranges
+    - [ ] vocab entries with readings/meanings/source lesson
+    - [ ] grammar entries with examples/source lesson
+    - [ ] lesson/dialogue/reading content
+    - [ ] workbook exercise references where useful
+    - [x] Genki I Lesson 1 reviewed pack passes validation with vocab, grammar, content blocks, exercises, and image asset reference
+    - [x] Quartet I Lesson 1 reviewed pack passes validation with Bessatsu vocab, grammar examples, curated content blocks, workbook exercise groups, and image asset reference
+    - [x] Quartet I Lesson 1 answer key exercise mappings: curated exercise id → answer-key page/coordinates
+    - [x] Genki I Lesson 1 answer key exercise mappings: curated exercise id → answer-key page/coordinates
+    - [x] Genki I/II workbook source-level answer-key section map
+    - [x] Genki I Lesson 1 answer key ground-truth text extraction for grading payloads
+    - [x] Quartet I Lesson 1 answer key ground-truth text extraction for grading payloads
+    - [ ] Fine-grained parsed answer items for exact per-question grading
+    - [ ] listening script mappings: exercise id/audio prompt → script text/vocab highlights
+    - [ ] furigana mapping for hover/reveal
+    - [ ] skill/mode metadata for textbook sections (`reading`, `writing`, `speaking`, `listening`) where applicable
+  - [ ] Add deterministic validation scripts for generated JSON:
+    - [x] reviewed-pack validation for review status, duplicate IDs, required refs, coordinate bounds, grammar targets, and image assets
+    - [ ] schema validation
+    - [x] duplicate detection
+    - [x] missing required fields
+    - [x] lesson/page coverage checks
+    - [x] stable reviewed-pack fingerprint check between runs
+- [ ] Encrypt packaged JSON assets before shipping in the app:
+  - [ ] Define encrypted pack format and manifest
+  - [ ] Store no readable Genki content in the repo/app bundle
+  - [ ] Include only metadata needed for detection/unlock UI
+- [ ] Build unlock flow requiring user-provided source PDFs:
+  - [ ] User uploads their Genki textbook/workbook from wherever they obtained them
+  - [ ] App verifies matching files locally using fingerprints/signatures, not by uploading content externally
+  - [ ] On successful verification, decrypt/unlock corresponding structured JSON pack
+  - [ ] Persist unlock status locally per user/device
+  - [ ] If verification fails or is ambiguous, ask user to confirm edition/files or use generic import fallback
+- [x] Start with Genki 1 v3 textbook + workbook:
+  - [x] OCR/layout every page of textbook and workbook, including front matter, contents, Reading & Writing, indexes, and support pages
+  - [x] OCR/layout every page of the combined Genki answer key for answer and listening-script ground truth
+  - [x] Classify full extracted output into sections before filtering
+  - [x] Produce Lesson 1 pack first as proof of concept from the full-source capture
+  - [x] Expand lesson-by-lesson after validation (all 14 lessons generated: pre-lessons + L1-L12)
+- [ ] Design future extensibility for Genki 2, Quartet, Tobira, Shin Kanzen Master packs
+- [ ] Quartet-specific pipeline requirements:
+  - [ ] Model Quartet 1 as lessons 1-6, roughly JLPT N3
+  - [ ] Model Quartet 2 as lessons 7-12, roughly JLPT N2
+  - [ ] Support four required file roles per level where available:
+    - [ ] Textbook
+    - [ ] Workbook
+    - [ ] Textbook supplement / 別冊 (Bessatsu)
+    - [ ] Workbook supplement / answer or support material if present
+  - [x] Treat the Bessatsu/supplement as the primary source for vocab and kanji unlock data for Quartet I Lesson 1
+  - [ ] Cross-reference furigana/kanji extraction against Bessatsu vocab and kanji lists
+  - [x] Preserve Quartet lesson modes in JSON for Quartet I Lesson 1: Reading (読む), Writing (書く), Speaking (話す), Listening (聞く)
+  - [x] Mark Quartet I Lesson 1 textbook content as AI tutor source-of-truth: readings, grammar notes (`文型・表現ノート`), model dialogues
+  - [x] Mark Quartet I Lesson 1 workbook content as challenge/output prompts: drills, true/false, sentence construction, comprehension checks
+  - [ ] Ensure layout parser handles dense readings, multi-page essays, text wrapping around images, and richer diagrams than Genki
+- [ ] Tutor/assessment ground-truth requirements:
+  - [x] For Quartet I Lesson 1 answer checking, map workbook exercise IDs to answer-key entries and coordinates
+  - [x] For Genki I Lesson 1 answer checking, map workbook exercise IDs to answer-key entries and coordinates
+  - [x] Record Genki II workbook answer-key section ranges for future lesson packs
+  - [x] Attach OCR-backed answer-key source text to Genki I Lesson 1 and Quartet I Lesson 1 exercise payloads
+  - [ ] If user answer is grammatical but misses target grammar, flag: "correct but not target structure"
+  - [ ] For listening exercises, use answer-key listening scripts to explain dialogue and highlight vocab
+  - [ ] Future handwritten workbook checking must compare to answer-key ground truth rather than raw AI vision only
+- **Effort:** 8-15 hours for Genki 1 Lesson 1 proof, more for full-book pack
+- **Blocks:** Known Textbooks import UX, Textbook Learning subsection, unlock mechanics
+
+### 2b.3 CEFR Curriculum Structure from `Structure.xlsx`
+- [x] Treat the learning roadmap as three parallel source roles:
+  - [x] **Core** = main structured course content and grammar spine
+  - [x] **Pair** = practical practice/social validation material paired with each stage
+  - [x] **In-depth grammar** = Maynard/Yanard-style explanation preset layer for linguistic logic and nuance
+- [x] Model the four current CEFR stages in the source manifest:
+  - [x] A1 / Breakthrough:
+    - [x] Core: Genki I Textbook + Workbook + Answer Key
+    - [x] Pair: Marugoto A1 Katsudoo (Starter)
+    - [x] In-depth grammar: Maynard/Yanard Strategy P1-2 / preliminaries and fundamentals
+  - [x] A2 / Elementary:
+    - [x] Core: Genki II Textbook + Workbook + Answer Key
+    - [x] Pair: Marugoto A2 Katsudoo (Elementary 2)
+    - [x] In-depth grammar: Maynard/Yanard Strategy P3 / the core
+  - [x] B1 / Threshold:
+    - [x] Core: Quartet I Textbook + Workbook + Answer Key
+    - [x] Pair: Marugoto B1 (Intermediate 1 / Chukyu 1)
+    - [x] In-depth grammar: Maynard/Yanard Strategy P4 / expansion
+  - [x] B2 / Independent:
+    - [x] Core: Quartet II Textbook + Workbook + Answer Key
+    - [x] Pair: Tobira
+    - [x] In-depth grammar: Maynard/Yanard general reference / linguistic nuance
+- [x] Extend textbook-pack manifest metadata so each source can declare `curriculumRole`: `core`, `pair`, or `in_depth_grammar`
+- [x] Add stage metadata to source manifest: CEFR phase plus source role
+- [ ] Add stage metadata to generated packs and learning paths: CEFR level, phase name, focus, source roles, and can-do validation checkpoints
+- [ ] Keep current extraction loop focused on Core packs first, then attach Pair and In-depth grammar material after the Core source structure is stable
+- [ ] Add roadmap UX copy/logic:
+  - [ ] "Engine first": complete the Core grammar chapter
+  - [ ] "Social second": use Pair material for real/practical usage
+  - [ ] "Maynard check": consult In-depth grammar when a rule needs deeper explanation
+  - [ ] "Can-do validation": do not advance CEFR stage until stage tasks are demonstrably comfortable
+- [ ] Record post-path expansion as future scope, not current extraction scope:
+  - [ ] C1 bridge: Authentic Japanese / advanced transition material
+  - [ ] N1 nuance: Shin Kanzen Master N1
+  - [ ] Literacy: Kanji in Context / Joyo kanji coverage
+  - [ ] End goal: native immersion sources
+- **Effort:** 2-4 hours for metadata + docs, additional time later for Pair/In-depth source ingestion
+- **Blocks:** Learning path roadmap UI and multi-source lesson composition
 
 ### 2b.1 Known Textbooks Import Panel + Linking UX
 - [ ] Add dedicated **Known Textbooks** panel in Upload Content (separate from generic import area)
@@ -75,6 +218,8 @@ Last updated: 2026-05-06
   - [ ] Link uploaded textbook files to detected textbook key
   - [ ] Link uploaded Anki deck(s) to same textbook key when possible
   - [ ] Surface unresolved links with "Select textbook/deck pair" prompt
+  - [ ] Show link status badges: `Auto-linked`, `Needs confirmation`, `Unlinked`
+  - [ ] Allow post-import relinking (change textbook match / re-link deck) without reupload
 - [ ] Keep generic PDF/text import flow unchanged for non-mapped uploads
 - **Effort:** 3-5 hours
 - **Blocks:** Depends on 2c.1 mapping schema definitions
@@ -104,6 +249,9 @@ Last updated: 2026-05-06
   - [ ] Keep textbook-pair mapping extensible so future textbook sets can opt into unlock flow
   - [ ] Create mapping: lesson → vocab IDs in lesson → unlock status per user
 - [ ] Store in DB: `lesson_vocabulary` table (lesson_id, vocab_id, unlocked_by_user, added_to_deck_id)
+- [ ] Add card provenance metadata:
+  - [ ] `origin_type` (`textbook_unlock`, `manual_create`, `pdf_extract`, `anki_import`)
+  - [ ] `origin_ref` for optional source linkage (lesson/import/card source id)
 - [ ] **Personalized notes on cards**:
   - [ ] Add per-card user note field/storage for selected/unlocked words
   - [ ] UI input when adding/unlocking: optional "Personal note" text
@@ -134,6 +282,7 @@ Last updated: 2026-05-06
   - [ ] If imported PDF/text does not match textbook mappings, prompt user where to route extracted items
   - [ ] Prompt options: add to vocab deck, grammar queue, lessons, or mixed split
   - [ ] Save user routing choice as reusable preference for similar imports
+  - [ ] If routing remains unresolved, place cards in `Unsorted` inbox deck instead of blocking import
 - [ ] **Shared scraping pipeline**:
   - [ ] Keep one extraction/scraping path for mapped and non-mapped PDFs
   - [ ] Apply mapping-specific rules only when textbook key is detected
@@ -144,6 +293,10 @@ Last updated: 2026-05-06
   - [ ] Prioritize textbook-path progression when mapped content exists
   - [ ] Blend in custom user content without breaking textbook sequence
 - [ ] Test: import mixed sources (mapped textbook + random PDF) → confirm routing prompt + tutor plan quality
+- [ ] **Dictionary linking (current scope)**:
+  - [ ] Add `Look up in Jisho` action from selected words/cards/lesson vocabulary
+  - [ ] Open Jisho externally with prefilled query
+  - [ ] Keep implementation Jisho-only for now (no embedded/scraped dictionary providers)
 - **Effort:** 4-6 hours
 - **Blocks:** Depends on stable extraction outputs from Priority 2 testing
 
@@ -155,6 +308,11 @@ Last updated: 2026-05-06
   - [ ] Unlock mapped lesson vocab directly into linked/imported deck
   - [ ] Add/edit personal notes on textbook-derived cards
 - [ ] Add progress state per textbook path (current lesson, completed lessons, unlocked counts)
+- [ ] Add Textbook Progress Dashboard cards:
+  - [ ] Completion %
+  - [ ] Current lesson
+  - [ ] Unlocked count
+  - [ ] Due count
 - [ ] Test: complete one lesson flow end-to-end from textbook upload to unlocked deck cards
 - **Effort:** 4-7 hours
 - **Blocks:** Depends on 2b.1 linking UX and 2c unlock mechanics
@@ -170,6 +328,30 @@ Last updated: 2026-05-06
 - [ ] Confirm UX copy clearly states manual renaming is optional, not required
 - **Effort:** 3-5 hours
 - **Blocks:** Depends on 2c.1 mapping schema + import metadata storage
+
+### 2g. User-Created Cards + Audio Rules (Anki-Clone Parity)
+- [ ] Add manual card creation flow (from scratch + from selected lesson word/phrase)
+- [ ] Card fields: front, back, reading (optional), deck, tags, personal note
+- [ ] Audio behavior for card creation:
+  - [ ] Audio optional (text-only cards allowed)
+  - [ ] Optional upload for user-provided audio (`mp3`, `m4a`, `wav`)
+  - [ ] Store uploaded audio via existing IndexedDB `idb:` approach
+- [ ] Preserve imported Anki audio as-is during import and review
+- [ ] Playback precedence:
+  - [ ] real imported/uploaded audio first
+  - [ ] TTS only as future fallback for cards without real audio
+  - [ ] no forced TTS for cards already containing real audio
+- [ ] Test: imported Anki card audio remains unchanged after edit/move/deck routing
+- [ ] Test: user-created card with no audio, uploaded audio, and future-fallback path behavior
+- **Effort:** 4-7 hours
+- **Blocks:** Depends on card editor/create UI readiness from Phase 5 browser/templates work
+
+### 2h. Acceptance Criteria + Migration Readiness
+- [ ] Define acceptance criteria checklists for `2b.1`, `2c`, `2e`, and `2g` before coding starts
+- [ ] Add migration plan for notes/audio/provenance fields in one forward-compatible pass
+- [ ] Validate migration idempotency on new DB and restored snapshots
+- **Effort:** 1-2 hours
+- **Blocks:** None (should be completed before implementation work)
 
 ### 3. ScenarioMode v2 — Live AI Conversation
 - [ ] **UX Decision:** Decide between:

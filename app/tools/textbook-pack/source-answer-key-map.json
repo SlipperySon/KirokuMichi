@@ -1,0 +1,45 @@
+{
+  "schemaVersion": 1,
+  "mappings": [
+    {
+      "textbookKey": "genki_1",
+      "workbookSourceId": "genki_1_workbook",
+      "answerKeySourceId": "genki_combined_answer_key",
+      "answerSections": {
+        "conversationGrammar": { "startPage": 34, "endPage": 47 },
+        "readingWriting": { "startPage": 48, "endPage": 50 },
+        "listeningScripts": { "startPage": 65, "endPage": 73 }
+      },
+      "notes": "Genki I workbook answers live inside the combined Genki answer key PDF."
+    },
+    {
+      "textbookKey": "genki_2",
+      "workbookSourceId": "genki_2_workbook",
+      "answerKeySourceId": "genki_combined_answer_key",
+      "answerSections": {
+        "conversationGrammar": { "startPage": 51, "endPage": 62 },
+        "readingWriting": { "startPage": 63, "endPage": 64 },
+        "listeningScripts": { "startPage": 74, "endPage": 83 }
+      },
+      "notes": "Genki II workbook answers live inside the combined Genki answer key PDF."
+    },
+    {
+      "textbookKey": "quartet_1",
+      "workbookSourceId": "quartet_1_workbook",
+      "answerKeySourceId": "quartet_1_workbook_answer_key",
+      "answerSections": {
+        "workbookAnswers": { "startPage": 3, "endPage": 75 }
+      },
+      "notes": "Quartet I has a dedicated workbook answer key PDF."
+    },
+    {
+      "textbookKey": "quartet_2",
+      "workbookSourceId": "quartet_2_workbook",
+      "answerKeySourceId": "quartet_2_workbook_answer_key",
+      "answerSections": {
+        "workbookAnswers": { "startPage": 3, "endPage": 93 }
+      },
+      "notes": "Quartet II has a dedicated workbook answer key PDF."
+    }
+  ]
+}

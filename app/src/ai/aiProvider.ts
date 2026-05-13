@@ -9,13 +9,17 @@ import { useAppStore } from '../store'
 export class ClientAIProvider implements AIProvider {
   private sessionToken: string | null = null
   private aiProvider: string | null = null
+  private apiKey: string | null = null
+  private apiEndpoint: string | null = null
   private fastModel: string
   private powerfulModel: string
 
   constructor(sessionToken?: string | null) {
-    const store = useAppStore()
+    const store = useAppStore.getState()
     this.sessionToken = sessionToken || store.settings.sessionToken
     this.aiProvider = store.settings.aiProvider
+    this.apiKey = store.settings.apiKey
+    this.apiEndpoint = store.settings.apiEndpoint
     this.fastModel = store.settings.fastModel
     this.powerfulModel = store.settings.powerfulModel
   }
@@ -37,7 +41,35 @@ export class ClientAIProvider implements AIProvider {
       throw new Error('No AI provider configured. Please set one in Settings.')
     }
 
-    const response = await fetch('/api/ai/complete', {
+    let response = await this.requestCompletion(messages, system, tier)
+    if (response.status === 401) {
+      await this.refreshSessionToken()
+      response = await this.requestCompletion(messages, system, tier)
+    }
+
+    if (!response.ok) {
+      const error = await response.text()
+      throw new Error(`AI request failed: ${error}`)
+    }
+
+    const data = await response.json() as { text: string }
+    return data.text
+  }
+
+  private async refreshSessionToken() {
+    const response = await fetch('/api/session', { method: 'POST' })
+    if (!response.ok) return
+    const data = await response.json() as { token: string }
+    this.sessionToken = data.token
+    useAppStore.getState().setSessionToken(data.token)
+  }
+
+  private requestCompletion(messages: AIMessage[], system: string | undefined, tier: 'fast' | 'reasoning') {
+    if (!this.sessionToken) {
+      throw new Error('No session token available. Please configure AI in Settings.')
+    }
+
+    return fetch('/api/ai/complete', {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -48,18 +80,12 @@ export class ClientAIProvider implements AIProvider {
         system,
         tier,
         provider: this.aiProvider,
+        apiKey: this.apiKey,
+        apiEndpoint: this.apiEndpoint,
         fastModel: this.fastModel,
         powerfulModel: this.powerfulModel,
       }),
     })
-
-    if (!response.ok) {
-      const error = await response.text()
-      throw new Error(`AI request failed: ${error}`)
-    }
-
-    const data = await response.json() as { text: string }
-    return data.text
   }
 
   async *completeStream(): AsyncIterable<string> {

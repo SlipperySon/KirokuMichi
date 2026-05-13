@@ -1,0 +1,242 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://kirokumichi.local/schemas/canonical-textbook-pack.schema.json",
+  "title": "KirokuMichi Canonical Textbook Pack",
+  "type": "object",
+  "required": ["schemaVersion", "textbookKey", "title", "sources", "lessons"],
+  "properties": {
+    "schemaVersion": { "const": 1 },
+    "textbookKey": {
+      "type": "string",
+      "enum": ["genki_1", "genki_2", "quartet_1", "quartet_2"]
+    },
+    "title": { "type": "string", "minLength": 1 },
+    "edition": { "type": "string" },
+    "levelRange": { "type": "string" },
+    "sources": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/source" },
+      "minItems": 1
+    },
+    "lessons": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/lesson" },
+      "minItems": 1
+    }
+  },
+  "$defs": {
+    "source": {
+      "type": "object",
+      "required": ["sourceId", "role", "fingerprint"],
+      "properties": {
+        "sourceId": { "type": "string", "minLength": 1 },
+        "role": {
+          "type": "string",
+          "enum": ["textbook", "workbook", "answer_key", "supplement", "support", "unknown"]
+        },
+        "fingerprint": {
+          "type": "object",
+          "required": ["sha256", "bytes"],
+          "properties": {
+            "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+            "bytes": { "type": "integer", "minimum": 1 }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "lesson": {
+      "type": "object",
+      "required": ["id", "lessonNumber", "title", "modes", "vocabulary", "grammar", "contentBlocks", "exercises"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "unitType": {
+          "type": "string",
+          "enum": ["pre_lesson", "lesson"]
+        },
+        "lessonNumber": { "type": "integer", "minimum": 0 },
+        "title": { "type": "string", "minLength": 1 },
+        "level": { "type": "string" },
+        "pageRange": {
+          "type": "object",
+          "required": ["start", "end"],
+          "properties": {
+            "start": { "type": "integer", "minimum": 1 },
+            "end": { "type": "integer", "minimum": 1 }
+          },
+          "additionalProperties": false
+        },
+        "modes": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": ["conversation_grammar", "reading_writing", "reading", "writing", "speaking", "listening", "workbook"]
+          }
+        },
+        "vocabulary": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/vocabEntry" }
+        },
+        "grammar": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/grammarEntry" }
+        },
+        "contentBlocks": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/contentBlock" }
+        },
+        "exercises": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/exerciseEntry" }
+        }
+      },
+      "additionalProperties": false
+    },
+    "sourceRef": {
+      "type": "object",
+      "required": ["sourceId", "pageNumber"],
+      "properties": {
+        "sourceId": { "type": "string", "minLength": 1 },
+        "pageNumber": { "type": "integer", "minimum": 1 },
+        "coordinates": {
+          "type": "array",
+          "prefixItems": [
+            { "type": "number" },
+            { "type": "number" },
+            { "type": "number" },
+            { "type": "number" }
+          ],
+          "items": false,
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "additionalProperties": false
+    },
+    "vocabEntry": {
+      "type": "object",
+      "required": ["id", "surface", "meaning", "lessonNumber", "sourceRef"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "surface": { "type": "string", "minLength": 1 },
+        "reading": { "type": "string" },
+        "meaning": { "type": "string", "minLength": 1 },
+        "partOfSpeech": { "type": "string" },
+        "lessonNumber": { "type": "integer", "minimum": 1 },
+        "sourceRef": { "$ref": "#/$defs/sourceRef" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "review": { "$ref": "#/$defs/reviewMetadata" }
+      },
+      "additionalProperties": false
+    },
+    "grammarEntry": {
+      "type": "object",
+      "required": ["id", "pattern", "meaning", "examples", "lessonNumber", "sourceRef"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "pattern": { "type": "string", "minLength": 1 },
+        "meaning": { "type": "string", "minLength": 1 },
+        "explanation": { "type": "string" },
+        "examples": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["japanese"],
+            "properties": {
+              "japanese": { "type": "string", "minLength": 1 },
+              "reading": { "type": "string" },
+              "english": { "type": "string" }
+            },
+            "additionalProperties": false
+          }
+        },
+        "lessonNumber": { "type": "integer", "minimum": 1 },
+        "sourceRef": { "$ref": "#/$defs/sourceRef" },
+        "review": { "$ref": "#/$defs/reviewMetadata" }
+      },
+      "additionalProperties": false
+    },
+    "contentBlock": {
+      "type": "object",
+      "required": ["id", "type", "sourceRef"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "type": {
+          "type": "string",
+          "enum": ["dialogue", "reading", "grammar_note", "activity", "image", "table", "instruction", "listening_script"]
+        },
+        "mode": {
+          "type": "string",
+          "enum": ["conversation_grammar", "reading_writing", "reading", "writing", "speaking", "listening", "workbook"]
+        },
+        "title": { "type": "string" },
+        "text": { "type": "string" },
+        "imageFile": { "type": "string" },
+        "imageSourceRef": { "$ref": "#/$defs/sourceRef" },
+        "sourceRef": { "$ref": "#/$defs/sourceRef" },
+        "review": { "$ref": "#/$defs/reviewMetadata" }
+      },
+      "additionalProperties": false
+    },
+    "exerciseEntry": {
+      "type": "object",
+      "required": ["id", "label", "sourceRef"],
+      "properties": {
+        "id": { "type": "string", "minLength": 1 },
+        "label": { "type": "string", "minLength": 1 },
+        "prompt": { "type": "string" },
+        "targetGrammarIds": { "type": "array", "items": { "type": "string" } },
+        "imageFile": { "type": "string" },
+        "imageSourceRef": { "$ref": "#/$defs/sourceRef" },
+        "sourceRef": { "$ref": "#/$defs/sourceRef" },
+        "answerKeyRef": { "$ref": "#/$defs/sourceRef" },
+        "answerKeyRefs": { "type": "array", "items": { "$ref": "#/$defs/sourceRef" } },
+        "answerKey": { "$ref": "#/$defs/exerciseAnswerKey" },
+        "listeningScriptRef": { "$ref": "#/$defs/sourceRef" },
+        "review": { "$ref": "#/$defs/reviewMetadata" }
+      },
+      "additionalProperties": false
+    },
+    "exerciseAnswerKey": {
+      "type": "object",
+      "required": ["gradingMode"],
+      "properties": {
+        "gradingMode": {
+          "type": "string",
+          "enum": ["exact", "sample", "open_ended", "manual"]
+        },
+        "sourceText": { "type": "string" },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["answer"],
+            "properties": {
+              "label": { "type": "string" },
+              "answer": { "type": "string", "minLength": 1 }
+            },
+            "additionalProperties": false
+          }
+        },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "reviewMetadata": {
+      "type": "object",
+      "required": ["action"],
+      "properties": {
+        "action": {
+          "type": "string",
+          "enum": ["pending", "approved", "fixed", "ignored"]
+        },
+        "reviewedAt": { "type": "string" },
+        "reviewer": { "type": "string" },
+        "notes": { "type": "string" }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

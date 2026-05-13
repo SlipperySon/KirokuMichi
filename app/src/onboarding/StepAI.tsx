@@ -2,13 +2,14 @@ import { useState } from 'react'
 import { useIntl } from 'react-intl'
 import { useAppStore } from '../store'
 
-type ProviderType = 'anthropic' | 'openai' | 'openrouter' | 'ollama' | 'custom' | null
+type ProviderType = 'anthropic' | 'openai' | 'openrouter' | 'deepseek' | 'ollama' | 'custom' | null
+type ConfigurableProvider = Exclude<ProviderType, null>
 
 interface Props {
   onNext: () => void
 }
 
-const PROVIDER_DEFAULTS: Record<ProviderType, { fastModel: string; powerfulModel: string }> = {
+const PROVIDER_DEFAULTS: Record<ConfigurableProvider, { fastModel: string; powerfulModel: string }> = {
   anthropic: {
     fastModel: 'claude-haiku-4-5-20251001',
     powerfulModel: 'claude-sonnet-4-6',
@@ -21,6 +22,10 @@ const PROVIDER_DEFAULTS: Record<ProviderType, { fastModel: string; powerfulModel
     fastModel: 'mistralai/mistral-7b-instruct',
     powerfulModel: 'anthropic/claude-3-sonnet',
   },
+  deepseek: {
+    fastModel: 'deepseek-v4-flash',
+    powerfulModel: 'deepseek-v4-pro',
+  },
   ollama: {
     fastModel: 'llama2',
     powerfulModel: 'llama2',
@@ -29,20 +34,18 @@ const PROVIDER_DEFAULTS: Record<ProviderType, { fastModel: string; powerfulModel
     fastModel: 'your-model-name',
     powerfulModel: 'your-model-name',
   },
-  null: {
-    fastModel: '',
-    powerfulModel: '',
-  },
 }
 
-const PROVIDER_INFO: Record<ProviderType, { label: string; description: string }> = {
+const PROVIDER_INFO: Record<ConfigurableProvider, { label: string; description: string }> = {
   anthropic: { label: 'Anthropic (Claude)', description: 'High-quality Claude models' },
   openai: { label: 'OpenAI (GPT)', description: 'GPT-4 and GPT-3.5 Turbo' },
   openrouter: { label: 'OpenRouter', description: '100+ models in one API' },
+  deepseek: { label: 'DeepSeek', description: 'DeepSeek API models' },
   ollama: { label: 'Ollama (Local)', description: 'Run models locally, no cost' },
   custom: { label: 'Custom Provider', description: 'Self-hosted or proprietary endpoint' },
-  null: { label: 'Skip for now', description: 'Configure later in Settings' },
 }
+
+const SKIP_PROVIDER_INFO = { label: 'Skip for now', description: 'Configure later in Settings' }
 
 export function StepAI({ onNext }: Props) {
   const intl = useIntl()
@@ -60,7 +63,7 @@ export function StepAI({ onNext }: Props) {
       return
     }
 
-    if ((provider === 'anthropic' || provider === 'openai' || provider === 'openrouter') && !apiKey) {
+    if ((provider === 'anthropic' || provider === 'openai' || provider === 'openrouter' || provider === 'deepseek') && !apiKey) {
       setStatus('fail')
       return
     }
@@ -79,6 +82,8 @@ export function StepAI({ onNext }: Props) {
           system: 'You are helpful.',
           tier: 'fast',
           provider,
+          apiKey,
+          apiEndpoint: provider === 'custom' ? customEndpoint : provider === 'ollama' ? ollamaEndpoint : null,
           fastModel: defaults.fastModel,
           powerfulModel: defaults.powerfulModel,
         }),
@@ -97,6 +102,7 @@ export function StepAI({ onNext }: Props) {
   }
 
   function handleSaveSettings() {
+    if (!provider) return
     const defaults = PROVIDER_DEFAULTS[provider]
     updateSettings({
       aiProvider: provider,
@@ -121,7 +127,7 @@ export function StepAI({ onNext }: Props) {
 
       {/* Provider Selection Grid */}
       <div className="w-full grid grid-cols-1 gap-3">
-        {(['anthropic', 'openai', 'openrouter', 'ollama', 'custom', null] as ProviderType[]).map(p => (
+        {(['anthropic', 'openai', 'openrouter', 'deepseek', 'ollama', 'custom', null] as ProviderType[]).map(p => (
           <button
             key={p ?? 'skip'}
             onClick={() => {
@@ -134,8 +140,8 @@ export function StepAI({ onNext }: Props) {
                 : 'border-gray-200 hover:border-gray-300'
             }`}
           >
-            <div className="font-semibold text-gray-900">{PROVIDER_INFO[p].label}</div>
-            <div className="text-sm text-gray-600">{PROVIDER_INFO[p].description}</div>
+            <div className="font-semibold text-gray-900">{(p ? PROVIDER_INFO[p] : SKIP_PROVIDER_INFO).label}</div>
+            <div className="text-sm text-gray-600">{(p ? PROVIDER_INFO[p] : SKIP_PROVIDER_INFO).description}</div>
           </button>
         ))}
       </div>
@@ -152,6 +158,7 @@ export function StepAI({ onNext }: Props) {
               provider === 'anthropic' ? 'sk-ant-...' :
               provider === 'openai' ? 'sk-...' :
               provider === 'openrouter' ? 'sk-or-...' :
+              provider === 'deepseek' ? 'sk-...' :
               'your-api-key'
             }
             className="w-full px-4 py-2 border border-gray-300 rounded-lg font-mono text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
@@ -160,6 +167,7 @@ export function StepAI({ onNext }: Props) {
             {provider === 'anthropic' && 'Get from https://console.anthropic.com/account/keys'}
             {provider === 'openai' && 'Get from https://platform.openai.com/account/api-keys'}
             {provider === 'openrouter' && 'Get from https://openrouter.ai/keys'}
+            {provider === 'deepseek' && 'Get from https://platform.deepseek.com/api_keys'}
           </p>
         </div>
       )}

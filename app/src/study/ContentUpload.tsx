@@ -47,6 +47,35 @@ interface ImportSummary {
   lessons: number
 }
 
+interface DevPdfTestResult {
+  files: { name: string; sizeMB: number; pages: number; extractedChars: number; ocrUsed?: boolean }[]
+  ai: {
+    model: string
+    responseChars: number
+    validJson: boolean
+    parseError: string | null
+    counts: { vocab: number; grammar: number; lessons: number } | null
+    sourceTitle: string | null
+  }
+}
+
+interface DevPdfOcrResult {
+  ok: boolean
+  elapsedMs: number
+  files: { name: string; sizeMB: number; pages: number; extractedPages: number; extractedChars: number; charsPerPage: number; textSparse: boolean; ocrUsed?: boolean }[]
+  totals: { pages: number; chars: number; charsPerPage: number }
+}
+
+interface ServerPdfExtractionResponse {
+  result: ExtractionResult
+  files: { name: string; sizeMB: number; pages: number; extractedChars: number; ocrUsed?: boolean }[]
+}
+
+interface PdfRange {
+  startPage: number
+  pageCount: number
+}
+
 // ---------------------------------------------------------------------------
 // System prompt — strict multi-category extraction
 // ---------------------------------------------------------------------------
@@ -78,6 +107,7 @@ Rules:
 - Do not include grammar patterns here — those go in the grammar array
 - If a word list has romaji only, convert to hiragana for the reading field
 - Copy Japanese characters exactly — never romanise the word field
+- Deduplicate by exact word plus reading. If the same word appears again, keep the first occurrence.
 
 ## grammar — every grammar pattern or structure explained in the material
 Each item:
@@ -94,6 +124,7 @@ Each item:
 Rules:
 - Every grammar item MUST have at least 2 examples. If the source only gives 1, synthesise a second that matches the same pattern
 - Do not duplicate vocab items here — grammar is about structural patterns, not vocabulary
+- Deduplicate by exact pattern. If the same pattern appears again, keep the first occurrence.
 
 ## lessons — narrative content, reading passages, sentence sets, dialogues
 These are sections of material that provide context and reading practice — NOT individual vocab or grammar points.
@@ -114,51 +145,99 @@ content_type rules:
 1. NEVER alter, romanise, or translate Japanese text in the word/pattern/ja fields — copy exactly
 2. If the source has kanji without furigana and you know the reading, add it. If uncertain, omit.
 3. If you cannot parse a section into any category, put it in lessons as a text_passage with the raw content as the body
-4. Output must be valid JSON parseable by JSON.parse() — no trailing commas, no comments`
+4. Preserve document order inside each array. Do not randomly reorder items.
+5. Use the same classification every time: word/translation pairs go to vocab; structural explanations go to grammar; longer passages, exercises, and dialogues go to lessons.
+6. Output must be valid JSON parseable by JSON.parse() — no trailing commas, no comments`
 
 // ---------------------------------------------------------------------------
 // PDF extraction
 // ---------------------------------------------------------------------------
 
-async function extractPdfText(file: File): Promise<string> {
+const DEFAULT_PDF_PAGE_LIMIT = 10
+const DEFAULT_PDF_PAGE_START = 1
+const GENKI_TEXTBOOK_PAGE_START = 14
+const GENKI_WORKBOOK_PAGE_START = 12
+
+function isPdfFile(file: File) {
+  return file.type === 'application/pdf' || file.name.toLowerCase().endsWith('.pdf')
+}
+
+function getPdfRangePreset(file: File): PdfRange {
+  const name = file.name.toLowerCase()
+  const isGenki = name.includes('genki') || name.includes('げんき')
+  const isWorkbook = name.includes('workbook') || name.includes('ワークブック')
+  if (isGenki && isWorkbook) {
+    return { startPage: GENKI_WORKBOOK_PAGE_START, pageCount: DEFAULT_PDF_PAGE_LIMIT }
+  }
+  if (isGenki) {
+    return { startPage: GENKI_TEXTBOOK_PAGE_START, pageCount: DEFAULT_PDF_PAGE_LIMIT }
+  }
+  return { startPage: DEFAULT_PDF_PAGE_START, pageCount: DEFAULT_PDF_PAGE_LIMIT }
+}
+
+function waitForPaint(): Promise<void> {
+  return new Promise(resolve => window.setTimeout(resolve, 0))
+}
+
+async function extractPdfText(
+  file: File,
+  options: {
+    maxPages: number
+    onProgress?: (page: number, totalPages: number, cappedPages: number) => void
+  }
+): Promise<string> {
   const { getDocument, GlobalWorkerOptions } = await import('pdfjs-dist')
   GlobalWorkerOptions.workerSrc = '/node_modules/pdfjs-dist/build/pdf.worker.mjs'
 
   const arrayBuffer = await file.arrayBuffer()
   const pdf = await getDocument({ data: arrayBuffer }).promise
   const parts: string[] = []
+  const cappedPages = Math.min(pdf.numPages, Math.max(1, options.maxPages))
 
-  for (let i = 1; i <= pdf.numPages; i++) {
+  for (let i = 1; i <= cappedPages; i++) {
+    options.onProgress?.(i, pdf.numPages, cappedPages)
     const page = await pdf.getPage(i)
     const content = await page.getTextContent()
     const pageText = content.items
-      .filter((item): item is { str: string; transform: number[] } => 'str' in item)
-      .map(item => item.str)
+      .map(item => 'str' in item ? item.str : '')
+      .filter(Boolean)
       .join(' ')
     parts.push(`[Page ${i}]\n${pageText}`)
+    await waitForPaint()
+  }
+
+  if (cappedPages < pdf.numPages) {
+    parts.push(`[Import note]\nOnly the first ${cappedPages} of ${pdf.numPages} pages were extracted from ${file.name}. Increase the page limit and re-run extraction if you need later chapters.`)
   }
 
   return parts.join('\n\n')
 }
 
-async function extractPdfImages(file: File, maxPages = 8): Promise<{ data: string; mediaType: string }[]> {
+async function extractPdfImages(
+  file: File,
+  maxPages = 8,
+  onProgress?: (page: number, totalPages: number, cappedPages: number) => void
+): Promise<{ data: string; mediaType: string }[]> {
   const { getDocument, GlobalWorkerOptions } = await import('pdfjs-dist')
   GlobalWorkerOptions.workerSrc = '/node_modules/pdfjs-dist/build/pdf.worker.mjs'
 
   const arrayBuffer = await file.arrayBuffer()
   const pdf = await getDocument({ data: arrayBuffer }).promise
   const images: { data: string; mediaType: string }[] = []
+  const cappedPages = Math.min(pdf.numPages, maxPages)
 
-  for (let i = 1; i <= Math.min(pdf.numPages, maxPages); i++) {
+  for (let i = 1; i <= cappedPages; i++) {
+    onProgress?.(i, pdf.numPages, cappedPages)
     const page = await pdf.getPage(i)
     const viewport = page.getViewport({ scale: 1.5 })
     const canvas = document.createElement('canvas')
     canvas.width = viewport.width
     canvas.height = viewport.height
     const ctx = canvas.getContext('2d')!
-    await page.render({ canvasContext: ctx, viewport }).promise
+    await page.render({ canvas, canvasContext: ctx, viewport }).promise
     const dataUrl = canvas.toDataURL('image/jpeg', 0.75)
     images.push({ data: dataUrl.split(',')[1], mediaType: 'image/jpeg' })
+    await waitForPaint()
   }
 
   return images
@@ -303,7 +382,7 @@ type InputMode = 'text' | 'file'
 type Step = 'input' | 'extracting' | 'preview' | 'done'
 
 export function ContentUpload() {
-  const { settings, activeUserId } = useAppStore()
+  const { settings, activeUserId, setSessionToken } = useAppStore()
   const [storage] = useState(() => new SQLiteStorage())
   const userId = activeUserId ?? 1
 
@@ -314,14 +393,20 @@ export function ContentUpload() {
   // Content import
   const [inputMode, setInputMode] = useState<InputMode>('text')
   const [rawText, setRawText] = useState('')
-  const [selectedFile, setSelectedFile] = useState<File | null>(null)
+  const [selectedFiles, setSelectedFiles] = useState<File[]>([])
   const [extractImages, setExtractImages] = useState(false)
+  const [pdfRanges, setPdfRanges] = useState<Record<string, PdfRange>>({})
 
   const [step, setStep] = useState<Step>('input')
   const [statusMsg, setStatusMsg] = useState('')
+  const [progressMsg, setProgressMsg] = useState('')
   const [preview, setPreview] = useState<ExtractionResult | null>(null)
   const [importSummary, setImportSummary] = useState<ImportSummary | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const [devTestLoading, setDevTestLoading] = useState(false)
+  const [devTestResult, setDevTestResult] = useState<DevPdfTestResult | null>(null)
+  const [devOcrResult, setDevOcrResult] = useState<DevPdfOcrResult | null>(null)
+  const [devTestError, setDevTestError] = useState<string | null>(null)
 
   // Per-category enable toggles in preview
   const [importVocab, setImportVocab] = useState(true)
@@ -329,6 +414,41 @@ export function ContentUpload() {
   const [importLessons, setImportLessons] = useState(true)
 
   const fileInputRef = useRef<HTMLInputElement>(null)
+
+  async function refreshSessionToken() {
+    const response = await fetch('/api/session', { method: 'POST' })
+    if (!response.ok) throw new Error('Could not refresh session token')
+    const data = await response.json() as { token: string }
+    setSessionToken(data.token)
+    return data.token
+  }
+
+  async function fetchWithClientTimeout(url: string, init: RequestInit, timeoutMs = 120000) {
+    const controller = new AbortController()
+    const timeoutId = window.setTimeout(() => controller.abort(), timeoutMs)
+    try {
+      return await fetch(url, { ...init, signal: controller.signal })
+    } finally {
+      window.clearTimeout(timeoutId)
+    }
+  }
+
+  function getPdfRange(file: File) {
+    return pdfRanges[file.name] ?? getPdfRangePreset(file)
+  }
+
+  function updatePdfRange(file: File, patch: Partial<PdfRange>) {
+    setPdfRanges(current => {
+      const existing = current[file.name] ?? getPdfRangePreset(file)
+      return {
+        ...current,
+        [file.name]: {
+          startPage: Math.max(1, patch.startPage ?? existing.startPage),
+          pageCount: Math.max(1, patch.pageCount ?? existing.pageCount),
+        },
+      }
+    })
+  }
 
   // -------------------------------------------------------------------------
   // Anki import
@@ -348,50 +468,206 @@ export function ContentUpload() {
     }
   }
 
+  async function handleDevFixtureTest() {
+    setDevTestLoading(true)
+    setDevTestResult(null)
+    setDevOcrResult(null)
+    setDevTestError(null)
+    try {
+      let token = settings.sessionToken || await refreshSessionToken()
+      const request = (sessionToken: string) => fetchWithClientTimeout('/api/dev/test-pdf-import', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'x-session-token': sessionToken,
+        },
+        body: JSON.stringify({
+          apiKey: settings.apiKey,
+          fastModel: settings.fastModel,
+          pageStart: GENKI_TEXTBOOK_PAGE_START,
+          pageLimit: 2,
+        }),
+      })
+      let response = await request(token)
+      if (response.status === 401) {
+        token = await refreshSessionToken()
+        response = await request(token)
+      }
+      if (!response.ok) {
+        const data = await response.json().catch(() => null) as { error?: string } | null
+        throw new Error(data?.error || 'Fixture test failed')
+      }
+      setDevTestResult(await response.json() as DevPdfTestResult)
+    } catch (err) {
+      setDevTestError(err instanceof Error ? err.message : 'Fixture test failed')
+    } finally {
+      setDevTestLoading(false)
+    }
+  }
+
+  async function handleDevOcrTest() {
+    setDevTestLoading(true)
+    setDevTestResult(null)
+    setDevOcrResult(null)
+    setDevTestError(null)
+    try {
+      let token = settings.sessionToken || await refreshSessionToken()
+      const request = (sessionToken: string) => fetchWithClientTimeout('/api/dev/test-pdf-ocr', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'x-session-token': sessionToken,
+        },
+        body: JSON.stringify({ pageStart: GENKI_TEXTBOOK_PAGE_START, pageLimit: 2 }),
+      })
+      let response = await request(token)
+      if (response.status === 401) {
+        token = await refreshSessionToken()
+        response = await request(token)
+      }
+      if (!response.ok) {
+        const data = await response.json().catch(() => null) as { error?: string } | null
+        throw new Error(data?.error || 'OCR fixture test failed')
+      }
+      setDevOcrResult(await response.json() as DevPdfOcrResult)
+    } catch (err) {
+      setDevTestError(err instanceof Error ? err.message : 'OCR fixture test failed')
+    } finally {
+      setDevTestLoading(false)
+    }
+  }
+
+  async function extractPdfsOnServer(files: File[]) {
+    let token = settings.sessionToken || await refreshSessionToken()
+    const request = (sessionToken: string) => {
+      const formData = new FormData()
+      for (const file of files) formData.append('files', file)
+      const fileRanges = files
+        .filter(isPdfFile)
+        .map(file => {
+          const range = getPdfRange(file)
+          return { filename: file.name, startPage: range.startPage, pageLimit: range.pageCount }
+        })
+      formData.append('fileRanges', JSON.stringify(fileRanges))
+      formData.append('pageStart', String(fileRanges[0]?.startPage ?? DEFAULT_PDF_PAGE_START))
+      formData.append('pageLimit', String(fileRanges[0]?.pageLimit ?? DEFAULT_PDF_PAGE_LIMIT))
+      formData.append('provider', settings.aiProvider || '')
+      formData.append('apiKey', settings.apiKey || '')
+      formData.append('fastModel', settings.fastModel)
+      formData.append('system', EXTRACTION_SYSTEM_PROMPT)
+      formData.append('ocrMode', 'prefer')
+      return fetch('/api/content/extract-pdfs', {
+        method: 'POST',
+        headers: { 'x-session-token': sessionToken },
+        body: formData,
+      })
+    }
+
+    let response = await request(token)
+    if (response.status === 401) {
+      token = await refreshSessionToken()
+      response = await request(token)
+    }
+    if (!response.ok) {
+      const data = await response.json().catch(() => null) as { error?: string } | null
+      throw new Error(data?.error || 'Server PDF extraction failed')
+    }
+
+    return await response.json() as ServerPdfExtractionResponse
+  }
+
   // -------------------------------------------------------------------------
   // Extract
   // -------------------------------------------------------------------------
 
   async function handleExtract() {
+    const setProgress = async (message: string) => {
+      setStatusMsg(message)
+      setProgressMsg(message)
+      await waitForPaint()
+    }
+
     setStep('extracting')
     setError(null)
     setPreview(null)
     setImportSummary(null)
+    setStatusMsg('Preparing extraction…')
+    setProgressMsg('Preparing extraction…')
+    await waitForPaint()
 
     try {
       const ai = new ClientAIProvider(settings.sessionToken)
       let userContent: unknown
 
-      if (inputMode === 'file' && selectedFile) {
-        const isPdf = selectedFile.type === 'application/pdf' || selectedFile.name.endsWith('.pdf')
+      if (inputMode === 'file' && selectedFiles.length > 0) {
+        const allPdfFiles = selectedFiles.every(file => file.type === 'application/pdf' || file.name.endsWith('.pdf'))
+        if (allPdfFiles && !extractImages) {
+          await setProgress(`Uploading ${selectedFiles.length} PDF${selectedFiles.length === 1 ? '' : 's'} for server-side extraction…`)
+          const serverResult = await extractPdfsOnServer(selectedFiles)
+          const parsed = serverResult.result
+          parsed.vocab = parsed.vocab ?? []
+          parsed.grammar = parsed.grammar ?? []
+          parsed.lessons = parsed.lessons ?? []
+          setPreview(parsed)
+          setProgressMsg('')
+          setStep('preview')
+          return
+        }
 
-        if (isPdf) {
-          setStatusMsg('Extracting text from PDF…')
-          const text = await extractPdfText(selectedFile)
+        const textParts: string[] = []
+        const imageParts: { data: string; mediaType: string }[] = []
 
-          if (extractImages) {
-            setStatusMsg('Rendering page images…')
-            const images = await extractPdfImages(selectedFile)
-            setStatusMsg('Sending to AI…')
-            userContent = [
-              { type: 'text', text: `Extract all Japanese learning content from these PDF pages.\n\nExtracted text:\n${text}` },
-              ...images.map(img => ({
-                type: 'image',
-                source: { type: 'base64', media_type: img.mediaType, data: img.data },
-              })),
-            ]
+        for (const file of selectedFiles) {
+          const pdfFile = isPdfFile(file)
+
+          if (pdfFile) {
+            const range = getPdfRange(file)
+            await setProgress(`Loading ${file.name}…`)
+            const text = await extractPdfText(file, {
+              maxPages: range.pageCount,
+              onProgress: (page, totalPages, cappedPages) => {
+                const message = `Extracting ${file.name}: page ${page}/${cappedPages}${cappedPages < totalPages ? ` of ${totalPages}` : ''}…`
+                setStatusMsg(message)
+                setProgressMsg(message)
+              },
+            })
+            textParts.push(`## ${file.name}\n\n${text}`)
+
+            if (extractImages) {
+              await setProgress(`Preparing page images from ${file.name}…`)
+              imageParts.push(...await extractPdfImages(
+                file,
+                Math.min(8, range.pageCount),
+                (page, totalPages, cappedPages) => {
+                  const message = `Rendering images from ${file.name}: page ${page}/${cappedPages}${cappedPages < totalPages ? ` of ${totalPages}` : ''}…`
+                  setStatusMsg(message)
+                  setProgressMsg(message)
+                }
+              ))
+            }
           } else {
-            setStatusMsg('Sending to AI…')
-            userContent = `Extract all Japanese learning content from this PDF text:\n\n${text}`
+            await setProgress(`Reading ${file.name}…`)
+            const text = await file.text()
+            textParts.push(`## ${file.name}\n\n${text}`)
           }
+        }
+
+        const combinedText = textParts.join('\n\n---\n\n')
+        await setProgress('Sending extracted content to AI…')
+
+        if (imageParts.length > 0) {
+          userContent = [
+            { type: 'text', text: `Extract all Japanese learning content from these uploaded materials in document order. Treat related files, such as a textbook and workbook, as one shared context.\n\nExtracted text:\n${combinedText}` },
+            ...imageParts.map(img => ({
+              type: 'image',
+              source: { type: 'base64', media_type: img.mediaType, data: img.data },
+            })),
+          ]
         } else {
-          setStatusMsg('Reading file…')
-          const text = await selectedFile.text()
-          setStatusMsg('Sending to AI…')
-          userContent = text
+          userContent = `Extract all Japanese learning content from these uploaded materials in document order. Treat related files, such as a textbook and workbook, as one shared context.\n\n${combinedText}`
         }
       } else {
-        setStatusMsg('Sending to AI…')
+        await setProgress('Sending text to AI…')
         userContent = rawText
       }
 
@@ -411,9 +687,11 @@ export function ContentUpload() {
       parsed.lessons = parsed.lessons ?? []
 
       setPreview(parsed)
+      setProgressMsg('')
       setStep('preview')
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Extraction failed')
+      setProgressMsg('')
       setStep('input')
     }
   }
@@ -430,7 +708,7 @@ export function ContentUpload() {
       grammar: importGrammar ? preview.grammar : [],
       lessons: importLessons ? preview.lessons : [],
     }
-    const sourceDoc = preview.source_title ?? selectedFile?.name ?? null
+    const sourceDoc = preview.source_title ?? (selectedFiles.length > 0 ? selectedFiles.map(file => file.name).join(', ') : null)
     const summary = await importExtracted(filtered, storage, userId, sourceDoc)
     setImportSummary(summary)
     setStep('done')
@@ -439,14 +717,17 @@ export function ContentUpload() {
   function reset() {
     setStep('input')
     setRawText('')
-    setSelectedFile(null)
+    setSelectedFiles([])
+    setPdfRanges({})
     setPreview(null)
     setImportSummary(null)
     setError(null)
+    setStatusMsg('')
+    setProgressMsg('')
   }
 
-  const canExtract = inputMode === 'text' ? rawText.trim().length > 0 : selectedFile !== null
-  const isPdf = selectedFile && (selectedFile.type === 'application/pdf' || selectedFile.name.endsWith('.pdf'))
+  const canExtract = inputMode === 'text' ? rawText.trim().length > 0 : selectedFiles.length > 0
+  const hasPdf = selectedFiles.some(isPdfFile)
 
   // -------------------------------------------------------------------------
   // Render
@@ -479,6 +760,45 @@ export function ContentUpload() {
           </p>
         </div>
 
+        <div className="bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 flex flex-col gap-3">
+          <div className="flex items-center justify-between gap-4">
+            <div>
+              <p className="text-sm font-semibold text-slate-800">Dev fixture smoke test</p>
+              <p className="text-xs text-slate-500 mt-0.5">Runs a small Genki fixture slice through server-side OCR and DeepSeek JSON extraction.</p>
+            </div>
+            <div className="flex gap-2">
+              <button
+                onClick={handleDevOcrTest}
+                disabled={devTestLoading}
+                className="px-4 py-2 bg-white border border-slate-300 text-slate-700 rounded-lg text-sm font-semibold hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                {devTestLoading ? 'Testing…' : 'Test OCR'}
+              </button>
+              <button
+                onClick={handleDevFixtureTest}
+                disabled={devTestLoading || !settings.apiKey}
+                className="px-4 py-2 bg-slate-800 text-white rounded-lg text-sm font-semibold hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                {devTestLoading ? 'Testing…' : 'Run AI test'}
+              </button>
+            </div>
+          </div>
+          {devOcrResult && (
+            <div className="text-xs text-slate-600 space-y-1">
+              <p>OCR passed in {(devOcrResult.elapsedMs / 1000).toFixed(1)}s · Pages: {devOcrResult.totals.pages} · Chars: {devOcrResult.totals.chars} · Avg: {devOcrResult.totals.charsPerPage}/page</p>
+              <p>Files: {devOcrResult.files.map(file => `${file.extractedPages}/${file.pages} pages, ${file.charsPerPage}/page`).join(' · ')}</p>
+            </div>
+          )}
+          {devTestResult && (
+            <div className="text-xs text-slate-600 space-y-1">
+              <p>Files: {devTestResult.files.length} · Pages: {devTestResult.files.map(file => file.pages).join(' + ')} · Extracted chars: {devTestResult.files.reduce((sum, file) => sum + file.extractedChars, 0)} · OCR: {devTestResult.files.some(file => file.ocrUsed) ? 'used' : 'not needed'}</p>
+              <p>AI JSON: {devTestResult.ai.validJson ? 'valid' : 'invalid'} · Vocab: {devTestResult.ai.counts?.vocab ?? 0} · Grammar: {devTestResult.ai.counts?.grammar ?? 0} · Lessons: {devTestResult.ai.counts?.lessons ?? 0}</p>
+              {devTestResult.ai.parseError && <p className="text-red-600">Parse error: {devTestResult.ai.parseError}</p>}
+            </div>
+          )}
+          {devTestError && <p className="text-xs text-red-600">{devTestError}</p>}
+        </div>
+
         {/* Input step */}
         {(step === 'input' || step === 'extracting') && (
           <>
@@ -507,29 +827,94 @@ export function ContentUpload() {
               <div className="flex flex-col gap-3">
                 <label
                   className={`flex flex-col items-center justify-center px-4 py-8 border-2 border-dashed rounded-xl transition-colors cursor-pointer
-                    ${selectedFile ? 'border-indigo-400 bg-indigo-50' : 'border-gray-300 hover:bg-gray-50'}`}
-                  onClick={() => fileInputRef.current?.click()}
+                    ${selectedFiles.length > 0 ? 'border-indigo-400 bg-indigo-50' : 'border-gray-300 hover:bg-gray-50'}`}
                 >
-                  <span className="text-3xl mb-2">{selectedFile ? '📄' : '⬆️'}</span>
-                  {selectedFile
-                    ? <span className="text-sm font-medium text-indigo-700">{selectedFile.name}</span>
-                    : <span className="text-sm text-gray-600">Click to choose a file</span>}
+                  <span className="text-3xl mb-2">{selectedFiles.length > 0 ? '📄' : '⬆️'}</span>
+                  {selectedFiles.length > 0
+                    ? (
+                      <span className="flex flex-col items-center gap-1">
+                        <span className="text-sm font-medium text-indigo-700">
+                          {selectedFiles.length} file{selectedFiles.length !== 1 ? 's' : ''} selected
+                        </span>
+                        <span className="text-xs text-indigo-500 text-center">
+                          {selectedFiles.map(file => file.name).join(' · ')}
+                        </span>
+                      </span>
+                    )
+                    : <span className="text-sm text-gray-600">Click to choose files</span>}
                   <span className="text-xs text-gray-400 mt-1">.pdf · .txt · .md · .csv</span>
-                  <input ref={fileInputRef} type="file" accept=".pdf,.txt,.md,.csv,.text" className="hidden"
-                    onChange={e => { const f = e.target.files?.[0]; if (f) { setSelectedFile(f); setError(null) } }} />
+                  <input ref={fileInputRef} type="file" multiple accept=".pdf,.txt,.md,.csv,.text" className="hidden"
+                    onChange={e => {
+                      const files = Array.from(e.target.files ?? [])
+                      if (files.length > 0) {
+                        setSelectedFiles(files)
+                        setPdfRanges(current => {
+                          const next: Record<string, PdfRange> = {}
+                          for (const file of files.filter(isPdfFile)) {
+                            next[file.name] = current[file.name] ?? getPdfRangePreset(file)
+                          }
+                          return next
+                        })
+                        setError(null)
+                      }
+                    }} />
                 </label>
 
-                {isPdf && (
-                  <label className="flex items-start gap-3 cursor-pointer select-none">
-                    <input type="checkbox" checked={extractImages} onChange={e => setExtractImages(e.target.checked)} className="mt-0.5 accent-indigo-600" />
-                    <div>
-                      <p className="text-sm font-medium text-gray-800">Also extract page images</p>
-                      <p className="text-xs text-gray-400 mt-0.5">
-                        Renders up to 8 PDF pages as images alongside the text — useful for tables, diagrams, or
-                        mixed layouts. Uses a vision-capable model and more credits.
+                {hasPdf && (
+                  <div className="flex flex-col gap-3">
+                    <label className="flex items-start gap-3 cursor-pointer select-none">
+                      <input type="checkbox" checked={extractImages} onChange={e => setExtractImages(e.target.checked)} className="mt-0.5 accent-indigo-600" />
+                      <div>
+                        <p className="text-sm font-medium text-gray-800">Also extract page images</p>
+                        <p className="text-xs text-gray-400 mt-0.5">
+                          Renders up to 8 pages per PDF as images alongside the text — useful for tables, diagrams, or
+                          mixed layouts. Uses a vision-capable model and more credits.
+                        </p>
+                      </div>
+                    </label>
+
+                    <div className="flex flex-col gap-2">
+                      {selectedFiles.filter(isPdfFile).map(file => {
+                        const range = getPdfRange(file)
+                        return (
+                          <div key={file.name} className="rounded-xl border border-gray-200 px-4 py-3">
+                            <p className="text-sm font-medium text-gray-800 truncate">{file.name}</p>
+                            <div className="grid grid-cols-2 gap-3 mt-3">
+                              <label className="flex items-center justify-between gap-3">
+                                <span className="text-xs text-gray-500">Start page</span>
+                                <input
+                                  type="number"
+                                  min={1}
+                                  max={500}
+                                  value={range.startPage}
+                                  onChange={e => updatePdfRange(file, { startPage: Number(e.target.value) || getPdfRangePreset(file).startPage })}
+                                  className="w-20 px-3 py-2 border border-gray-300 rounded-lg text-sm text-center"
+                                  aria-label={`${file.name} start page`}
+                                />
+                              </label>
+                              <label className="flex items-center justify-between gap-3">
+                                <span className="text-xs text-gray-500">Page count</span>
+                                <input
+                                  type="number"
+                                  min={1}
+                                  max={500}
+                                  value={range.pageCount}
+                                  onChange={e => updatePdfRange(file, { pageCount: Number(e.target.value) || DEFAULT_PDF_PAGE_LIMIT })}
+                                  className="w-20 px-3 py-2 border border-gray-300 rounded-lg text-sm text-center"
+                                  aria-label={`${file.name} page count`}
+                                />
+                              </label>
+                            </div>
+                          </div>
+                        )
+                      })}
+                    </div>
+                    <div className="bg-amber-50 border border-amber-200 rounded-xl px-4 py-3">
+                      <p className="text-xs text-amber-800">
+                        Scanned PDFs use local OCR automatically. Genki defaults: textbook page {GENKI_TEXTBOOK_PAGE_START}, workbook page {GENKI_WORKBOOK_PAGE_START}.
                       </p>
                     </div>
-                  </label>
+                  </div>
                 )}
               </div>
             )}
@@ -538,6 +923,13 @@ export function ContentUpload() {
               <div className="bg-red-50 border border-red-200 rounded-xl px-4 py-3">
                 <p className="text-sm text-red-700 font-medium">Extraction failed</p>
                 <p className="text-xs text-red-500 mt-1">{error}</p>
+              </div>
+            )}
+
+            {step === 'extracting' && progressMsg && (
+              <div className="bg-blue-50 border border-blue-200 rounded-xl px-4 py-3">
+                <p className="text-sm font-medium text-blue-800">Extraction in progress</p>
+                <p className="text-xs text-blue-600 mt-1 break-words">{progressMsg}</p>
               </div>
             )}
 
