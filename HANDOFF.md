@@ -1,8 +1,8 @@
 # KirokuMichi Handoff Document
 
-**Last updated:** 2026-05-13 21:06 UTC  
-**Current status:** ✅ A1 COMPLETE | ✅ A2 CORE COMPLETE | ⏳ A2 PAIR (Marugoto A2) OCR IN PROGRESS  
-**Next phase:** Complete Marugoto A2 extraction, then manual corrections + answer-key linking
+**Last updated:** 2026-05-14 00:02 UTC  
+**Current status:** ✅ A1 EXTRACTION COMPLETE | ✅ A2 EXTRACTION COMPLETE | ⏳ Manual Corrections Next  
+**Next phase:** Manual corrections on all 27 lessons, then answer-key linking, then validation
 
 > **🔄 Keep this updated:** At the end of each session, before switching AI models, update the "Last updated" date and "Current status" above. Update the Quick Status table and the "What Just Completed" section to reflect new work. This ensures seamless handoff.
 
@@ -17,22 +17,34 @@
 | **A1 Pair:** Marugoto A1 (147 pages) | ✅ Complete & Split |
 | **A2 Core:** Genki II (399 TB + 137 WB pages) | ✅ Complete & Split |
 | **A2 Core:** 11 lesson packs L13-L23 (2,678 blocks, 2,657 exercises) | ✅ Complete & Split |
-| **A2 Pair:** Marugoto A2 (186 pages) | ⏳ OCR IN PROGRESS (Normalize/Group/Build follow) |
-| **Total Reviewed Packs (A1+A2):** 26 new + 2 pre = 28 files ready | ✅ Ready |
-| **Genki Answer Key:** normalized & grouped | ✅ Ready for linking |
-| Manual corrections (Genki I L2-L12, Genki II L13-L23, Marugoto A1/A2) | ⏳ After A2 extraction |
+| **A2 Pair:** Marugoto A2 (186 pages, 2,901 blocks) | ✅ Complete & Split |
+| **Total Reviewed Packs (A1+A2):** 27 lesson packs ready for review | ✅ READY |
+| **Genki Answer Key:** normalized & grouped (84 pages) | ✅ Ready for linking |
+| **Marugoto Answer Keys:** included in textbook | ℹ️ N/A (embedded in pages) |
+| Manual corrections (all 27 lessons) | ⏳ NEXT |
 | Answer-key linking (all lessons) | ⏳ After corrections |
 | Maynard grammar extraction | ⏳ Final phase |
 
 ---
 
-## What Just Completed (2026-05-13 21:06 UTC, Current Session)
+## What Just Completed (2026-05-14 00:02 UTC, Current Session)
 
-### Marugoto A2 Extraction Initiated (A2 Pair)
-- **Status:** Marugoto A2 textbook OCR in progress (186 pages, PaddleOCR at 300 DPI)
-- **Timeline:** ~2-3 hours estimated for OCR; normalize/group/build will auto-run on completion
-- **Completion script ready:** Full pipeline (normalize → group → build → split) prepared and will auto-execute
-- **Expected output:** `marugoto_a2_lesson_1.json` (single unit, no workbook) in reviewed-packs
+### ✅ A1 & A2 EXTRACTION FULLY COMPLETE
+
+**Marugoto A2 Extraction (A2 Pair) - FINISHED**
+- **OCR:** 186 pages captured at 300 DPI (PaddleOCR, CPU) - started 21:03, finished 23:57 (~2h 54m)
+- **Normalization:** All 186 pages classified by pageKind (dialogue, grammar, vocab, etc.)
+- **Grouping:** Semantic blocks extracted (tables, dialogues, instructions)
+- **Building:** CanonicalTextbookPack created with 1 lesson (2,901 content blocks, 0 exercises)
+- **Splitting:** `marugoto_a2_lesson_1.json` created in reviewed-packs/
+- **Size:** 1.4MB per pack file
+
+**Complete A1 & A2 Extraction Summary:**
+- ✅ **A1 Core (Genki I):** 14 lesson packs (16 files including 2 pre-lessons)
+- ✅ **A1 Pair (Marugoto A1):** 1 lesson pack
+- ✅ **A2 Core (Genki II):** 11 lesson packs
+- ✅ **A2 Pair (Marugoto A2):** 1 lesson pack
+- **Total: 27 reviewed lesson packs ready for next phase**
 
 ### Previous Session Summary (2026-05-13 Earlier)
 
@@ -201,14 +213,14 @@ app/tools/textbook-pack/
 
 ## Immediate Next Steps (Priority Order)
 
-### 0. Complete Marugoto A2 Extraction (In Progress)
-- [ ] OCR: 186 pages → raw/page_*.json (PaddleOCR, 300 DPI)
-- [ ] Normalize: pageKind classification → normalized/page_*.json
-- [ ] Group: semantic blocks (tables, dialogues, instructions) → grouped/pages/page_*.json
-- [ ] Build: CanonicalTextbookPack with 1 lesson → canonical-proofs/marugoto_a2_all_lessons.json
-- [ ] Split: single pack → reviewed-packs/marugoto_a2_lesson_1.json
+### 0. ✅ Complete Marugoto A2 Extraction (FINISHED 2026-05-14 00:02 UTC)
+- [x] OCR: 186 pages → raw/page_*.json (PaddleOCR, 300 DPI)
+- [x] Normalize: pageKind classification → normalized/page_*.json
+- [x] Group: semantic blocks (tables, dialogues, instructions) → grouped/pages/page_*.json
+- [x] Build: CanonicalTextbookPack with 1 lesson → canonical-proofs/marugoto_a2_all_lessons.json
+- [x] Split: single pack → reviewed-packs/marugoto_a2_lesson_1.json
 
-**When complete:** Will have 27 reviewed packs (16 Genki I + 11 Genki II + Marugoto A1 + Marugoto A2)
+**Complete:** 27 reviewed packs total (16 Genki I + 11 Genki II + 1 Marugoto A1 + 1 Marugoto A2)
 
 ### 1. Manual Corrections (Per-Lesson)
 **Files to edit:** `app/tools/textbook-pack/out/reviewed-packs/genki_1_lesson_*.json`
