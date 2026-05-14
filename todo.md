@@ -1,6 +1,8 @@
 # KirokuMichi — Active Todo List
 
-Last updated: 2026-05-13 15:15 UTC
+Last updated: 2026-05-14 13:12 UTC
+
+**EXTRACTION STATUS:** ✅ A1 COMPLETE (27 packs) | ✅ A2 COMPLETE (27 packs) | ✅ B1-B2 COMPLETE (27 packs) | **54 TOTAL LESSONS EXTRACTED**
 
 ---
 

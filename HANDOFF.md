@@ -1,8 +1,8 @@
 # KirokuMichi Handoff Document
 
-**Last updated:** 2026-05-14 00:35 UTC  
-**Current status:** ✅ A1 EXTRACTION COMPLETE | ✅ A2 EXTRACTION COMPLETE | ✅ MARUGOTO LINKING COMPLETE  
-**Next phase:** Manual corrections on all 27 lessons, then answer-key linking, then validation
+**Last updated:** 2026-05-14 13:12 UTC  
+**Current status:** ✅ A1 EXTRACTION COMPLETE | ✅ A2 EXTRACTION COMPLETE | ✅ B1-B2 EXTRACTION COMPLETE | ✅ MARUGOTO LINKING COMPLETE  
+**Next phase:** Manual corrections on B1-B2 (27 lessons), then answer-key linking, then validation
 
 > **🔄 Keep this updated:** At the end of each session, before switching AI models, update the "Last updated" date and "Current status" above. Update the Quick Status table and the "What Just Completed" section to reflect new work. This ensures seamless handoff.
 
@@ -19,15 +19,54 @@
 | **A2 Core:** 11 lesson packs L13-L23 (2,678 blocks, 2,657 exercises) | ✅ Complete & Split |
 | **A2 Pair:** Marugoto A2 (186 pages, 2,901 blocks) | ✅ Complete & Split |
 | **Total Reviewed Packs (A1+A2):** 27 lesson packs ready for review | ✅ READY |
+| **B1 Core:** Quartet 1 (352 pages, 6 lessons, 1,963 exercises) | ✅ Complete & Split |
+| **B1 Pair:** Marugoto B1 (273 pages, 7 lessons, 4,257 blocks) | ✅ Complete & Split |
+| **B2 Core:** Quartet 2 (N2, 6 lessons, 1,664 exercises) | ✅ Complete & Split |
+| **B2 Grammar:** Tobira (428 pages, 8 lessons, 4,232 blocks) | ✅ Complete & Split |
+| **Total B1-B2 Reviewed Packs:** 27 lesson packs (Q1: 6, Q2: 6, Tobira: 8, Marugoto B1: 7) | ✅ READY |
 | **Genki Answer Key:** normalized & grouped (84 pages) | ✅ Ready for linking |
 | **Marugoto Answer Keys:** included in textbook | ℹ️ N/A (embedded in pages) |
-| Manual corrections (all 27 lessons) | ⏳ NEXT |
-| Answer-key linking (all lessons) | ⏳ After corrections |
+| Manual corrections (A1+A2 27 + B1-B2 27 = 54 lessons) | ⏳ A1+A2 first, then B1-B2 |
+| Answer-key linking (A1+A2 lessons) | ⏳ After A1-A2 corrections |
 | Maynard grammar extraction | ⏳ Final phase |
 
 ---
 
-## What Just Completed (2026-05-14 00:02 UTC, Current Session)
+## What Just Completed (2026-05-14 13:12 UTC, Current Session)
+
+### ✅ B1-B2 EXTRACTION FULLY COMPLETE
+
+**B1-B2 Multi-Textbook Extraction Pipeline - FINISHED**
+- **Quartet 1 Textbook OCR:** 352 pages captured (started at 174/352, completed 12:54 UTC)
+- **Quartet 2 Textbook:** 6 lessons built & split (356 pages)
+- **Tobira Textbook:** 8 lessons built & split (428 pages, 4,232 blocks)
+- **Marugoto B1 Textbook:** 7 lessons built & split (273 pages, 4,257 blocks)
+
+**B1-B2 Complete Breakdown:**
+- ✅ **Quartet 1** (B1/N3): 6 lessons (352 blocks/page range, 1,963 exercises)
+- ✅ **Quartet 2** (N2): 6 lessons (2,166 blocks, 1,664 exercises)
+- ✅ **Marugoto B1** (B1): 7 lessons (4,257 blocks, 273 pages)
+- ✅ **Tobira** (N2): 8 lessons (4,232 blocks, 428 pages)
+- **Total: 27 reviewed lesson packs ready for corrections phase**
+
+**Build/Split Process:**
+- Quartet 1/2: Standard quartet-lesson-proof.ts + custom splitter
+- Tobira/Marugoto B1: Custom build scripts (textbooks without separate workbooks)
+- All packs created with proper CanonicalTextbookPack structure
+
+**Storage:**
+- Reviewed packs: `app/tools/textbook-pack/out/reviewed-packs/`
+  - quartet_1_lesson_1-6.json
+  - quartet_2_lesson_7-12.json
+  - tobira_lesson_1-8.json
+  - marugoto_b1_lesson_1-7.json
+- Canonical proofs: `app/tools/textbook-pack/out/canonical-proofs/`
+  - quartet_1_all_lessons.json
+  - quartet_2_all_lessons.json
+  - tobira_all_lessons.json
+  - marugoto_b1_all_lessons.json
+
+## What Just Completed (2026-05-14 00:02 UTC, Previous Session)
 
 ### ✅ A1 & A2 EXTRACTION FULLY COMPLETE
 

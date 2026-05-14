@@ -1,6 +1,6 @@
 # KirokuMichi — Current State & Active Roadmap
 
-Last updated: 2026-05-13 15:15 UTC
+Last updated: 2026-05-14 13:12 UTC
 
 ---
 
@@ -281,31 +281,55 @@ Current mapped-textbook priority is no longer "make DeepSeek extraction perfect 
 3. encrypt the pack,
 4. unlock it locally when the user supplies matching PDFs.
 
-Current extraction status (2026-05-13):
+Current extraction status (2026-05-14):
 
 **✅ A1 Core (Genki I) — COMPLETE**
-- `genki_1_textbook`: 393/393 pages captured, normalized, grouped
-- `genki_1_workbook`: 157/157 pages captured, normalized, grouped
-- `genki_combined_answer_key`: 84/84 pages (Genki I section mapped)
-- All 14 lesson packs generated: 2,992 content blocks, 2,289 exercises
-- Individual reviewed packs ready: `out/reviewed-packs/genki_1_*.json`
+- `genki_1_textbook`: 393/393 pages ✓
+- `genki_1_workbook`: 157/157 pages ✓
+- `genki_combined_answer_key`: 84/84 pages (A1 mapped) ✓
+- All 14 lesson packs: 2,992 blocks, 2,289 exercises
+- Reviewed packs: `genki_1_pre_greetings`, `genki_1_pre_numbers`, `genki_1_lesson_1-12`
 
-**🔄 A1 Pair (Marugoto A1) — IN PROGRESS**
-- PaddleOCR at 300 DPI running: 6/147 pages (estimated 40min remaining)
-- Will normalize → group → build 1 unified lesson pack
-- Output: `marugoto_a1_all_lessons.json` (once complete)
+**✅ A1 Pair (Marugoto A1) — COMPLETE**
+- `marugoto_a1_textbook`: 147/147 pages ✓
+- 1 unified lesson pack: 1,878 blocks
+- Reviewed pack: `marugoto_a1_lesson_1`
 
-**🔄 A2 Core (Genki II) — IN PROGRESS**
-- Genki II textbook OCR starting (399 pages)
-- Genki II workbook OCR starting (137 pages)
-- Answer key: extract A2 section from combined key (~20 pages estimated)
-- Will generate 11 lesson packs (L13-L23)
+**✅ A2 Core (Genki II) — COMPLETE**
+- `genki_2_textbook`: 399/399 pages ✓
+- `genki_2_workbook`: 137/137 pages ✓
+- All 11 lesson packs (L13-L23): 2,678 blocks, 2,657 exercises
+- Reviewed packs: `genki_2_lesson_13-23`
 
-**⏳ A2 Pair & In-depth Grammar — Pending**
-- Marugoto A2 (186p) — After A1 complete
-- Maynard/Yanard reference — Deferred to end (reusable layer)
+**✅ A2 Pair (Marugoto A2) — COMPLETE**
+- `marugoto_a2_textbook`: 186/186 pages ✓
+- 1 unified lesson pack: 2,901 blocks
+- Reviewed pack: `marugoto_a2_lesson_1`
 
-Next: Monitor OCR completion, then normalize/group/build lessons.
+**✅ B1 Core (Quartet 1) — COMPLETE**
+- `quartet_1_textbook`: 352/352 pages ✓
+- 6 lesson packs: 1,963 exercises
+- Reviewed packs: `quartet_1_lesson_1-6`
+
+**✅ B1 Pair (Marugoto B1) — COMPLETE**
+- `marugoto_b1_textbook`: 273/273 pages ✓
+- 7 lesson packs: 4,257 blocks
+- Reviewed packs: `marugoto_b1_lesson_1-7`
+
+**✅ B2 Core (Quartet 2) — COMPLETE**
+- `quartet_2_textbook`: 356/356 pages ✓
+- `quartet_2_workbook`: 102/102 pages ✓
+- 6 lesson packs: 2,166 blocks, 1,664 exercises
+- Reviewed packs: `quartet_2_lesson_7-12`
+
+**✅ B2 Grammar (Tobira) — COMPLETE**
+- `tobira_textbook`: 428/428 pages ✓
+- 8 lesson packs: 4,232 blocks
+- Reviewed packs: `tobira_lesson_1-8`
+
+**📊 TOTAL EXTRACTION COMPLETE: 54 lessons (27 A1-A2 + 27 B1-B2)**
+
+Next: Manual corrections phase (A1-A2 first, then B1-B2)
 
 ---
 
