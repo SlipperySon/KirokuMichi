@@ -276,24 +276,36 @@ export function StudyDashboard() {
         </div>
       </div>
 
-      {/* Review buttons */}
-      <div className="grid grid-cols-2 gap-3">
-        <button
-          onClick={startWordReview}
-          disabled={dueCount + newCount === 0}
-          className="flex flex-col items-center px-4 py-5 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-        >
-          <span className="text-lg">Review Words</span>
-          <span className="text-xs mt-1 opacity-80">{dueCount} due · {availableNewCount} new</span>
-        </button>
-        <button
-          onClick={startGrammarReview}
-          disabled={grammarDueCount === 0}
-          className="flex flex-col items-center px-4 py-5 bg-purple-600 text-white rounded-xl font-semibold hover:bg-purple-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-        >
-          <span className="text-lg">Study Grammar</span>
-          <span className="text-xs mt-1 opacity-80">{grammarDueCount} due</span>
-        </button>
+      {/* Study mode selector */}
+      <div className="space-y-3">
+        <p className="text-sm font-semibold text-gray-600">Study Mode</p>
+        <div className="grid grid-cols-2 gap-3">
+          <button
+            onClick={() => navigate('/study/lessons')}
+            className="flex flex-col items-center px-4 py-5 bg-blue-500 text-white rounded-xl font-semibold hover:bg-blue-600 transition-colors"
+          >
+            <span className="text-lg">📚 By Lesson</span>
+            <span className="text-xs mt-1 opacity-80">Structured learning</span>
+          </button>
+          <div className="flex flex-col gap-3">
+            <button
+              onClick={startWordReview}
+              disabled={dueCount + newCount === 0}
+              className="flex flex-col items-center px-4 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              <span className="text-sm">Review Words</span>
+              <span className="text-xs mt-1 opacity-80">{dueCount} due</span>
+            </button>
+            <button
+              onClick={startGrammarReview}
+              disabled={grammarDueCount === 0}
+              className="flex flex-col items-center px-4 py-3 bg-purple-600 text-white rounded-xl font-semibold hover:bg-purple-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              <span className="text-sm">Study Grammar</span>
+              <span className="text-xs mt-1 opacity-80">{grammarDueCount} due</span>
+            </button>
+          </div>
+        </div>
       </div>
 
     </main>
