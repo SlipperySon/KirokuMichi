@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import type { Rating } from '../core/providers'
 import { SRSService } from '../srs/srsService'
 import type { ReviewCard, SessionStats } from './types'
@@ -24,7 +24,6 @@ interface InterleavedReviewState {
 interface InterleavedReviewActions {
   reveal: () => void
   rate: (rating: Rating) => Promise<void>
-  getNextCard: () => ReviewCard | null
 }
 
 export function useInterleavedReviewSession(
@@ -33,10 +32,9 @@ export function useInterleavedReviewSession(
   initialQueue: ReviewCard[],
   sessionId: number | string
 ): InterleavedReviewState & InterleavedReviewActions {
-  const [activeQueue, setActiveQueue] = useState<ReviewCard[]>(initialQueue || [])
+  const [activeQueue, setActiveQueue] = useState<ReviewCard[]>([])
   const [replayQueue, setReplayQueue] = useState<ReviewCard[]>([])
   const [phase, setPhase] = useState<'front' | 'back'>('front')
-  const [isComplete, setIsComplete] = useState(initialQueue?.length === 0)
   const [currentRating, setCurrentRating] = useState<Rating | null>(null)
   const [stats, setStats] = useState<SessionStats>({
     cardsReviewed: 0,
@@ -47,47 +45,35 @@ export function useInterleavedReviewSession(
     improvementCount: 0,
   })
 
-  /**
-   * Get the next card to show
-   * Prioritizes replay queue, then cycles back to active queue
-   */
-  const getNextCard = useCallback((): ReviewCard | null => {
-    // If we have cards in replay queue and it's time to show one
-    if (replayQueue.length > 0) {
-      // Show a replay card with some probability based on queue sizes
-      // More replays when replay queue is large
-      const showReplay = replayQueue.length > activeQueue.length * 0.3
-      if (showReplay) {
-        return replayQueue[0] ?? null
-      }
-    }
+  // Sync activeQueue when initialQueue changes (fixes initialization bug)
+  useEffect(() => {
+    setActiveQueue(initialQueue || [])
+  }, [initialQueue])
 
-    // Otherwise, show from active queue
-    if (activeQueue.length > 0) {
-      return activeQueue[0] ?? null
-    }
+  // Derive currentCard from state rather than computing on render (fixes non-determinism)
+  const hasCards = activeQueue.length > 0 || replayQueue.length > 0
+  const isComplete = !hasCards && stats.cardsReviewed > 0
 
-    // Fallback: try replay queue if active is empty
-    if (replayQueue.length > 0) {
+  // Determine which card to show based on queue state
+  const currentCard = (() => {
+    if (isComplete) return null
+    if (replayQueue.length > 0 && replayQueue.length > activeQueue.length * 0.3) {
       return replayQueue[0] ?? null
     }
-
+    if (activeQueue.length > 0) return activeQueue[0] ?? null
+    if (replayQueue.length > 0) return replayQueue[0] ?? null
     return null
-  }, [activeQueue, replayQueue])
-
-  const currentCard = isComplete ? null : getNextCard()
+  })()
 
   /**
-   * Build preview of next ~5 cards in queue for UI display
+   * Build preview of next cards for UI display
    */
   const nextQueuePreview = (() => {
     const preview: string[] = []
-    // Show 1-2 from active queue
     if (activeQueue.length > 0) {
       preview.push(activeQueue[0].front)
       if (activeQueue.length > 1) preview.push(activeQueue[1].front)
     }
-    // Show indicator if replays coming
     if (replayQueue.length > 0) {
       preview.push(`Review: ${replayQueue[0].front}`)
     }
@@ -98,7 +84,7 @@ export function useInterleavedReviewSession(
 
   /**
    * Rate a card and manage queue mechanics
-   * Higher difficulty cards are added to replay queue more often
+   * Uses functional updaters to avoid stale closure issues
    */
   const rate = useCallback(
     async (rating: Rating) => {
@@ -107,11 +93,12 @@ export function useInterleavedReviewSession(
       setCurrentRating(rating)
       const isCorrect = rating !== 'again'
 
-      // Track the rating on the card for later analysis
-      if (currentCard.isReplay) {
-        currentCard.replayRating = rating
-      } else {
-        currentCard.originalRating = rating
+      // Clone card to avoid mutation (bug fix #5)
+      const ratedCard: ReviewCard = {
+        ...currentCard,
+        isReplay: currentCard.isReplay,
+        originalRating: currentCard.isReplay ? currentCard.originalRating : rating,
+        replayRating: currentCard.isReplay ? rating : currentCard.replayRating,
       }
 
       // Update SRS state
@@ -119,7 +106,6 @@ export function useInterleavedReviewSession(
         await service.reviewCard(userId, currentCard.cardStateId, rating)
 
         if (!isCorrect && !currentCard.isReplay) {
-          // sessionId can be a string or number, coerce to number for logging
           const numSessionId = typeof sessionId === 'string' ? parseInt(sessionId, 10) : sessionId
           await service.logMistake(userId, currentCard.cardId, null, currentCard.front, numSessionId)
         }
@@ -127,48 +113,41 @@ export function useInterleavedReviewSession(
         console.error('Error rating card:', error)
       }
 
-      // Update stats
-      const newStats: SessionStats = {
-        ...stats,
-        cardsReviewed: stats.cardsReviewed + 1,
-        correctCount: stats.correctCount + (isCorrect ? 1 : 0),
-        replayCount: (stats.replayCount ?? 0) + (currentCard.isReplay ? 1 : 0),
-        totalReplays: (stats.totalReplays ?? 0) + (currentCard.isReplay ? 1 : 0),
-        improvementCount:
-          (stats.improvementCount ?? 0) +
-          (currentCard.isReplay && currentCard.originalRating === 'again' && isCorrect ? 1 : 0),
-      }
-      setStats(newStats)
+      // Update stats using functional updater (fixes stale closure)
+      setStats((prev) => {
+        const newStats: SessionStats = {
+          ...prev,
+          cardsReviewed: prev.cardsReviewed + 1,
+          correctCount: prev.correctCount + (isCorrect ? 1 : 0),
+          replayCount: (prev.replayCount ?? 0) + (currentCard.isReplay ? 1 : 0),
+          totalReplays: (prev.totalReplays ?? 0) + (currentCard.isReplay ? 1 : 0),
+          improvementCount:
+            (prev.improvementCount ?? 0) +
+            (currentCard.isReplay && currentCard.originalRating === 'again' && isCorrect ? 1 : 0),
+        }
+        return newStats
+      })
 
-      // Manage queue mechanics
-      // Remove from current queue
+      // Manage queue using functional updaters (fixes stale closure)
       if (currentCard.isReplay) {
         setReplayQueue((prev) => prev.slice(1))
       } else {
         setActiveQueue((prev) => prev.slice(1))
       }
 
-      // Add to replay queue with probability based on difficulty (rating)
-      // Harder cards (rating 1-2) appear 3-4x, medium cards (rating 3) appear 2x, easy cards (rating 4) appear 1x
+      // Add to replay queue with probability based on difficulty
       const replayProbability =
         rating === 'again' ? 0.9 : rating === 'hard' ? 0.7 : rating === 'good' ? 0.4 : 0.1
 
       if (Math.random() < replayProbability) {
-        const replayCard = { ...currentCard, isReplay: true }
-        setReplayQueue((prev) => [...prev, replayCard])
+        setReplayQueue((prev) => [...prev, ratedCard])
       }
 
-      // Check if we're done (all cards reviewed and no replays left)
-      const remainingActive = activeQueue.slice(1).length
-      if (remainingActive === 0 && replayQueue.length === 0) {
-        setIsComplete(true)
-      } else {
-        // Move to next card
-        setPhase('front')
-        setCurrentRating(null)
-      }
+      // Move to next card
+      setPhase('front')
+      setCurrentRating(null)
     },
-    [currentCard, isComplete, stats, service, userId, sessionId, activeQueue, replayQueue]
+    [currentCard, isComplete, service, userId, sessionId]
   )
 
   return {
@@ -183,6 +162,5 @@ export function useInterleavedReviewSession(
     nextQueuePreview,
     reveal,
     rate,
-    getNextCard,
   }
 }

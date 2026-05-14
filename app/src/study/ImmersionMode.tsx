@@ -543,104 +543,126 @@ export function ImmersionMode() {
         {/* INTERLEAVED REVIEW MODE */}
         {immersionMode === 'interleaved' && (
           <div className="space-y-6">
-            {/* Header with timer and session info */}
-            <div className="bg-white border border-gray-200 rounded-2xl p-6 space-y-4 sticky top-6 z-10 shadow-sm">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-sm text-gray-500">Session {completedSessions + 1} of {immersionSessionsPerDay}</p>
-                  <div className={`text-5xl font-mono font-bold tabular-nums ${
-                    phase === 'break' ? 'text-green-600' : phase === 'study' ? 'text-indigo-600' : 'text-gray-400'
-                  }`}>
-                    {timerDisplay}
-                  </div>
-                </div>
-                <div className="text-right space-y-1">
-                  <p className="text-2xl font-bold text-gray-900">{interleavedSession.stats.cardsReviewed}</p>
-                  <p className="text-sm text-gray-500">cards reviewed</p>
-                  {interleavedSession.stats.replayCount && interleavedSession.stats.replayCount > 0 && (
-                    <>
-                      <p className="text-lg font-semibold text-amber-600">{interleavedSession.stats.replayCount}</p>
-                      <p className="text-xs text-amber-500">replays</p>
-                    </>
-                  )}
-                </div>
-              </div>
-
-              {/* Accuracy during session */}
-              {interleavedSession.stats.cardsReviewed > 0 && (
-                <div className="pt-3 border-t border-gray-200">
-                  <p className={`text-sm font-semibold ${
-                    interleavedSession.stats.correctCount / interleavedSession.stats.cardsReviewed >= 0.7
-                      ? 'text-green-600'
-                      : interleavedSession.stats.correctCount / interleavedSession.stats.cardsReviewed >= 0.5
-                      ? 'text-amber-600'
-                      : 'text-red-600'
-                  }`}>
-                    Accuracy: {Math.round((interleavedSession.stats.correctCount / interleavedSession.stats.cardsReviewed) * 100)}%
-                  </p>
-                </div>
-              )}
-            </div>
-
-            {/* Card display or completion */}
-            {interleavedSession.isComplete ? (
-              <div className="rounded-2xl bg-white border border-gray-200 p-8 text-center space-y-4">
-                <p className="text-5xl">🎉</p>
-                <p className="text-2xl font-bold text-gray-900">Session complete!</p>
-                <div className="space-y-2 pt-2">
-                  <p className="text-gray-600">
-                    <span className="font-semibold">{interleavedSession.stats.cardsReviewed}</span> cards reviewed
-                  </p>
-                  {interleavedSession.stats.cardsReviewed > 0 && (
-                    <p className={`font-semibold ${
-                      interleavedSession.stats.correctCount / interleavedSession.stats.cardsReviewed >= 0.7
-                        ? 'text-green-600'
-                        : 'text-amber-600'
-                    }`}>
-                      {Math.round((interleavedSession.stats.correctCount / interleavedSession.stats.cardsReviewed) * 100)}% accuracy
-                    </p>
-                  )}
-                  {interleavedSession.stats.improvementCount && interleavedSession.stats.improvementCount > 0 && (
-                    <p className="text-green-600 text-sm">
-                      {interleavedSession.stats.improvementCount} cards improved on replay ✓
-                    </p>
-                  )}
-                </div>
-                <button
-                  onClick={() => {
-                    finishSession()
-                    setImmersionMode('standard')
-                  }}
-                  className="mt-4 px-6 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
-                >
-                  {phase === 'study' ? 'Finish This Session' : 'Continue'}
-                </button>
-              </div>
-            ) : interleavedSession.currentCard ? (
-              <ImmersionCardReview
-                card={interleavedSession.currentCard}
-                phase={interleavedSession.phase}
-                onReveal={interleavedSession.reveal}
-                onRate={interleavedSession.rate}
-                nextQueuePreview={interleavedSession.nextQueuePreview}
-              />
-            ) : (
-              <div className="rounded-2xl bg-amber-50 border border-amber-200 p-6 text-center">
-                <p className="text-amber-800 font-semibold mb-2">No cards available</p>
-                <p className="text-sm text-amber-700">Import an Anki deck to start studying</p>
+            {/* Show start screen if idle and no session active */}
+            {phase === 'idle' && (
+              <div className="bg-white border border-gray-200 rounded-2xl p-8 text-center space-y-4">
+                <p className="text-4xl">🔄</p>
+                <p className="text-2xl font-bold text-gray-900">Interleaved Review</p>
+                <p className="text-gray-600">Study with natural card cycling and replay mechanics</p>
+                {dueCards.length === 0 && newCards.length === 0 ? (
+                  <p className="text-sm text-amber-700 bg-amber-50 rounded-lg p-3">Import an Anki deck to start</p>
+                ) : (
+                  <button
+                    onClick={handleStart}
+                    className="mt-4 px-8 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
+                  >
+                    Start Session
+                  </button>
+                )}
               </div>
             )}
 
-            {/* Pause button during study */}
-            {phase === 'study' && !interleavedSession.isComplete && (
-              <div className="flex gap-2 justify-center">
-                <button
-                  onClick={handlePause}
-                  className="px-6 py-3 border border-gray-300 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
-                >
-                  Pause
-                </button>
+            {/* Header with timer and session info - only show during study */}
+            {phase === 'study' && (
+              <div className="bg-white border border-gray-200 rounded-2xl p-6 space-y-4 sticky top-6 z-10 shadow-sm">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-sm text-gray-500">Session {completedSessions + 1} of {immersionSessionsPerDay}</p>
+                    <div className="text-5xl font-mono font-bold tabular-nums text-indigo-600">
+                      {timerDisplay}
+                    </div>
+                  </div>
+                  <div className="text-right space-y-1">
+                    <p className="text-2xl font-bold text-gray-900">{interleavedSession.stats.cardsReviewed}</p>
+                    <p className="text-sm text-gray-500">cards reviewed</p>
+                    {interleavedSession.stats.replayCount && interleavedSession.stats.replayCount > 0 && (
+                      <>
+                        <p className="text-lg font-semibold text-amber-600">{interleavedSession.stats.replayCount}</p>
+                        <p className="text-xs text-amber-500">replays</p>
+                      </>
+                    )}
+                  </div>
+                </div>
+
+                {/* Accuracy during session */}
+                {interleavedSession.stats.cardsReviewed > 0 && (
+                  <div className="pt-3 border-t border-gray-200">
+                    <p className={`text-sm font-semibold ${
+                      interleavedSession.stats.correctCount / interleavedSession.stats.cardsReviewed >= 0.7
+                        ? 'text-green-600'
+                        : interleavedSession.stats.correctCount / interleavedSession.stats.cardsReviewed >= 0.5
+                        ? 'text-amber-600'
+                        : 'text-red-600'
+                    }`}>
+                      Accuracy: {Math.round((interleavedSession.stats.correctCount / interleavedSession.stats.cardsReviewed) * 100)}%
+                    </p>
+                  </div>
+                )}
               </div>
+            )}
+
+            {/* Card display during study phase */}
+            {phase === 'study' && (
+              <>
+                {interleavedSession.isComplete ? (
+                  <div className="rounded-2xl bg-white border border-gray-200 p-8 text-center space-y-4">
+                    <p className="text-5xl">🎉</p>
+                    <p className="text-2xl font-bold text-gray-900">Session complete!</p>
+                    <div className="space-y-2 pt-2">
+                      <p className="text-gray-600">
+                        <span className="font-semibold">{interleavedSession.stats.cardsReviewed}</span> cards reviewed
+                      </p>
+                      {interleavedSession.stats.cardsReviewed > 0 && (
+                        <p className={`font-semibold ${
+                          interleavedSession.stats.correctCount / interleavedSession.stats.cardsReviewed >= 0.7
+                            ? 'text-green-600'
+                            : 'text-amber-600'
+                        }`}>
+                          {Math.round((interleavedSession.stats.correctCount / interleavedSession.stats.cardsReviewed) * 100)}% accuracy
+                        </p>
+                      )}
+                      {interleavedSession.stats.improvementCount && interleavedSession.stats.improvementCount > 0 && (
+                        <p className="text-green-600 text-sm">
+                          {interleavedSession.stats.improvementCount} cards improved on replay ✓
+                        </p>
+                      )}
+                    </div>
+                    <button
+                      onClick={() => {
+                        finishSession()
+                      }}
+                      className="mt-4 px-6 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
+                    >
+                      Finish This Session
+                    </button>
+                  </div>
+                ) : interleavedSession.currentCard ? (
+                  <ImmersionCardReview
+                    card={interleavedSession.currentCard}
+                    phase={interleavedSession.phase}
+                    onReveal={interleavedSession.reveal}
+                    onRate={interleavedSession.rate}
+                    nextQueuePreview={interleavedSession.nextQueuePreview}
+                  />
+                ) : (
+                  <div className="rounded-2xl bg-amber-50 border border-amber-200 p-6 text-center">
+                    <p className="text-amber-800 font-semibold mb-2">No cards available</p>
+                    <p className="text-sm text-amber-700">Import an Anki deck to start studying</p>
+                  </div>
+                )}
+
+                {/* Pause button during study */}
+                {!interleavedSession.isComplete && (
+                  <div className="flex gap-2 justify-center">
+                    <button
+                      onClick={handlePause}
+                      className="px-6 py-3 border border-gray-300 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
+                    >
+                      Pause
+                    </button>
+                  </div>
+                )}
+              </>
             )}
 
             {/* Session progress */}
