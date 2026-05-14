@@ -75,9 +75,20 @@ export async function unlockCardsForLesson(
     }
 
     // Step 3: Extract lesson terms from curriculum
-    const lessonNumber = lesson.lesson_number.toString()
-    const vocabForLesson = curriculum.vocabulary.filter(v => v.lesson === lessonNumber)
-    const grammarForLesson = curriculum.grammar.filter(g => g.lesson === lessonNumber)
+    // The curriculum uses various lesson ID formats (genki_1_1, 1_textbook_genki_1_1, etc.)
+    // So we filter by normalized_id and also try the raw lesson numbers
+    const lessonPrefixes = [
+      lessonId,  // e.g., "genki_1_1"
+      `1_textbook_${lessonId}`,  // e.g., "1_textbook_genki_1_1"
+      `${lesson.lesson_number.toString()}`,  // e.g., "1" (just number)
+    ]
+
+    const vocabForLesson = curriculum.vocabulary.filter(v =>
+      lessonPrefixes.some(prefix => v.lesson === prefix || v.lesson.includes(lessonId))
+    )
+    const grammarForLesson = curriculum.grammar.filter(g =>
+      lessonPrefixes.some(prefix => g.lesson === prefix || g.lesson.includes(lessonId))
+    )
     const lessonTerms = extractLessonTerms(vocabForLesson, grammarForLesson)
 
     if (lessonTerms.length === 0) {
@@ -85,7 +96,7 @@ export async function unlockCardsForLesson(
         lessonId,
         unlockedCount: 0,
         matches: [],
-        errors: [`No vocabulary or grammar found for lesson ${lessonNumber} in ${textbookName}`]
+        errors: [`No vocabulary or grammar found for lesson ${lesson.lesson_number} in ${textbookName}`]
       }
     }
 
