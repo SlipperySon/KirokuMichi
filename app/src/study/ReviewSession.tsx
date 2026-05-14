@@ -76,8 +76,18 @@ export function ReviewSession() {
 
   return (
     <div className="flex flex-col min-h-screen p-6 max-w-xl mx-auto">
-      {/* Header with exit */}
-      <div className="flex justify-end mb-2">
+      {/* Header with exit + undo */}
+      <div className="flex justify-end gap-1 mb-2">
+        {session.canUndo && (
+          <button
+            onClick={() => void session.undoLastRating()}
+            className="text-sm text-amber-600 hover:text-amber-800 px-3 py-1 rounded-lg hover:bg-amber-50 transition-colors"
+            aria-label="Undo last rating"
+            title="Undo last rating (Ctrl+Z)"
+          >
+            ↶ Undo
+          </button>
+        )}
         <button
           onClick={handleExit}
           className="text-sm text-gray-400 hover:text-gray-600 px-3 py-1 rounded-lg hover:bg-gray-100 transition-colors"

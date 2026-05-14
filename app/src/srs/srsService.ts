@@ -2,6 +2,21 @@ import type { StorageProvider, SchedulerProvider, CardState, Rating } from '../c
 import { isLeech, LEECH_THRESHOLD } from '../core/scheduler'
 import type { ReviewCard, SessionStats, StreakData, HeatmapDay, GrammarQuestion, IntervalPreview } from '../study/types'
 
+/** Full card_state snapshot used by undo-last-review. */
+export interface CardStateSnapshot {
+  id: number
+  due: string
+  stability: number
+  difficulty: number
+  retrievability: number
+  state: string
+  reps: number
+  lapses: number
+  leechCount: number
+  isLeech: number
+  lastReview: string | null
+}
+
 function formatInterval(due: Date, now = new Date()): string {
   const diffMs = due.getTime() - now.getTime()
   const diffMins = Math.round(diffMs / 60000)
@@ -161,6 +176,70 @@ export class SRSService {
     return { isNewLeech: newIsLeech && !wasLeech }
   }
 
+  /**
+   * Snapshot a card_state row (everything we'd need to roll back a review).
+   * Returns null if the row doesn't exist.
+   */
+  async snapshotCardState(userId: number, cardStateId: number): Promise<CardStateSnapshot | null> {
+    const rows = await this.storage.query<CardStateSnapshot>(
+      `SELECT id, due, stability, difficulty, retrievability, state, reps, lapses,
+              leech_count AS leechCount, is_leech AS isLeech, last_review AS lastReview
+       FROM card_states WHERE id = ? AND user_id = ?`,
+      [cardStateId, userId]
+    )
+    return rows[0] ?? null
+  }
+
+  /**
+   * Restore a card_state row from a snapshot. Used by "undo last review".
+   */
+  async revertCardState(userId: number, snapshot: CardStateSnapshot): Promise<void> {
+    await this.storage.execute(
+      `UPDATE card_states SET
+        due            = ?,
+        stability      = ?,
+        difficulty     = ?,
+        retrievability = ?,
+        state          = ?,
+        reps           = ?,
+        lapses         = ?,
+        leech_count    = ?,
+        is_leech       = ?,
+        last_review    = ?
+       WHERE id = ? AND user_id = ?`,
+      [
+        snapshot.due,
+        snapshot.stability,
+        snapshot.difficulty,
+        snapshot.retrievability,
+        snapshot.state,
+        snapshot.reps,
+        snapshot.lapses,
+        snapshot.leechCount,
+        snapshot.isLeech,
+        snapshot.lastReview,
+        snapshot.id,
+        userId,
+      ]
+    )
+  }
+
+  /**
+   * Remove the most-recent mistake_log row for a card (used when undoing a
+   * review that was rated "Again"). No-op if no rows match.
+   */
+  async deleteLatestMistakeForCard(userId: number, cardId: number): Promise<void> {
+    await this.storage.execute(
+      `DELETE FROM mistake_logs
+       WHERE id = (
+         SELECT id FROM mistake_logs
+         WHERE user_id = ? AND card_id = ?
+         ORDER BY id DESC LIMIT 1
+       )`,
+      [userId, cardId]
+    )
+  }
+
   async suspendCard(userId: number, cardStateId: number): Promise<void> {
     await this.storage.execute(
       `UPDATE card_states SET is_leech = 1 WHERE id = ? AND user_id = ?`,
@@ -220,16 +299,101 @@ export class SRSService {
 
   async logMistake(
     userId: number,
-    cardId: number,
+    cardId: number | null,
     userInput: string | null,
     correctAnswer: string,
-    sessionId: number
+    sessionId: number | null
   ): Promise<void> {
     await this.storage.execute(
-      `INSERT INTO mistake_logs (user_id, card_id, user_input, correct_answer, session_id, created_at)
+      `INSERT INTO mistake_logs (user_id, card_id, user_input, correct_answer, session_id, logged_at)
        VALUES (?, ?, ?, ?, ?, datetime('now'))`,
       [userId, cardId, userInput, correctAnswer, sessionId]
     )
+  }
+
+  /**
+   * Recent mistakes (default 7 days) joined with the originating card so callers
+   * can drill them with the existing ReviewSession queue mechanism. Card-id is
+   * nullable because free-form mistakes (e.g. from Conversation Partner) are
+   * logged with cardId=null and won't join a row.
+   */
+  async getRecentMistakes(userId: number, daysBack = 7): Promise<Array<{
+    mistakeId: number
+    cardId: number | null
+    cardStateId: number | null
+    front: string | null
+    back: string | null
+    reading: string | null
+    audioUrl: string | null
+    type: string | null
+    userInput: string | null
+    correctAnswer: string
+    loggedAt: string
+  }>> {
+    return this.storage.query(
+      `SELECT
+        m.id             AS mistakeId,
+        m.card_id        AS cardId,
+        cs.id            AS cardStateId,
+        c.front          AS front,
+        c.back           AS back,
+        c.reading        AS reading,
+        c.audio_url      AS audioUrl,
+        c.type           AS type,
+        m.user_input     AS userInput,
+        m.correct_answer AS correctAnswer,
+        m.logged_at      AS loggedAt
+       FROM mistake_logs m
+       LEFT JOIN cards       c  ON c.id  = m.card_id
+       LEFT JOIN card_states cs ON cs.card_id = m.card_id AND cs.user_id = m.user_id
+       WHERE m.user_id = ?
+         AND m.logged_at >= datetime('now', '-' || ? || ' days')
+       ORDER BY m.logged_at DESC`,
+      [userId, daysBack]
+    )
+  }
+
+  /**
+   * Fetch full ReviewCard rows for a given list of card_state ids. Used to
+   * build a drill queue (e.g. for MistakeReview) without re-running selection
+   * logic.
+   */
+  async getCardsByStateIds(userId: number, cardStateIds: number[]): Promise<ReviewCard[]> {
+    if (cardStateIds.length === 0) return []
+    const placeholders = cardStateIds.map(() => '?').join(',')
+    const rows = await this.storage.query<ReviewCard>(
+      `SELECT
+        cs.id        AS cardStateId,
+        cs.card_id   AS cardId,
+        cs.state,
+        cs.lapses,
+        cs.stability,
+        cs.difficulty,
+        cs.due,
+        c.type,
+        c.front,
+        c.back,
+        c.reading,
+        c.audio_url  AS audioUrl,
+        c.jlpt_level AS jlptLevel
+       FROM card_states cs
+       JOIN cards c ON c.id = cs.card_id
+       WHERE cs.user_id = ?
+         AND cs.id IN (${placeholders})`,
+      [userId, ...cardStateIds]
+    )
+    // Preserve caller-supplied order
+    const byId = new Map(rows.map(r => [r.cardStateId, r]))
+    return cardStateIds.map(id => byId.get(id)).filter((r): r is ReviewCard => r != null)
+  }
+
+  async getRecentMistakeCount(userId: number, daysBack = 7): Promise<number> {
+    const rows = await this.storage.query<{ count: number }>(
+      `SELECT COUNT(*) AS count FROM mistake_logs
+       WHERE user_id = ? AND logged_at >= datetime('now', '-' || ? || ' days')`,
+      [userId, daysBack]
+    )
+    return rows[0]?.count ?? 0
   }
 
   async getStreakData(userId: number): Promise<StreakData> {

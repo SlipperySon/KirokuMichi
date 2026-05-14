@@ -1,8 +1,21 @@
-import { useState, useCallback, useMemo } from 'react'
+import { useState, useCallback, useEffect, useMemo, useRef } from 'react'
 import type { Rating, CardState } from '../core/providers'
-import { SRSService } from '../srs/srsService'
+import { SRSService, type CardStateSnapshot } from '../srs/srsService'
 import { SessionRecovery } from '../srs/sessionRecovery'
+import { getKeyboardShortcutManager } from '../utils/keyboard-shortcuts'
 import type { ReviewCard, GrammarQuestion, IntervalPreview, SessionStats } from './types'
+
+interface UndoEntry {
+  snapshot: CardStateSnapshot
+  cardId: number
+  wasAgainRating: boolean
+  /** Index in the queue the user was on when they rated. */
+  previousIndex: number
+  /** Stats snapshot to restore on undo. */
+  previousStats: SessionStats
+  /** Was the rated card a new leech? (so we can clear that flag.) */
+  becameLeech: boolean
+}
 
 export type CardVariant = 'reading' | 'meaning' | 'writing' | 'grammar'
 
@@ -42,6 +55,8 @@ interface ReviewSessionActions {
   suspendCurrentCard: () => Promise<void>
   dismissLeechWarning: () => void
   handleGrammarAnswer: (isCorrect: boolean) => void
+  undoLastRating: () => Promise<void>
+  canUndo: boolean
 }
 
 export function useReviewSession(
@@ -62,6 +77,9 @@ export function useReviewSession(
     correctCount: 0,
     startedAt: Date.now(),
   })
+  /** One-deep undo buffer — only the most-recent rating is undoable. */
+  const undoBufferRef = useRef<UndoEntry | null>(null)
+  const [canUndo, setCanUndo] = useState(false)
 
   const currentCard = isComplete ? null : (queue[currentIndex] ?? null)
   const currentVariant = currentCard ? resolveVariant(currentCard) : 'reading'
@@ -98,6 +116,9 @@ export function useReviewSession(
   const rate = useCallback(async (rating: Rating) => {
     if (!currentCard || isNewLeech) return
 
+    // Snapshot before the SRS service mutates the row — used by undo.
+    const snapshot = await service.snapshotCardState(userId, currentCard.cardStateId)
+
     const { isNewLeech: becameLeech } = await service.reviewCard(userId, currentCard.cardStateId, rating)
 
     const isCorrect = rating !== 'again'
@@ -112,6 +133,19 @@ export function useReviewSession(
     }
     setStats(newStats)
 
+    // Stash undo entry (cap 1)
+    if (snapshot) {
+      undoBufferRef.current = {
+        snapshot,
+        cardId: currentCard.cardId,
+        wasAgainRating: !isCorrect,
+        previousIndex: currentIndex,
+        previousStats: stats,
+        becameLeech,
+      }
+      setCanUndo(true)
+    }
+
     if (becameLeech) {
       setIsNewLeech(true)
       return
@@ -119,6 +153,43 @@ export function useReviewSession(
 
     await advance(newStats, currentIndex + 1)
   }, [currentCard, currentIndex, isNewLeech, service, sessionId, stats, userId, advance])
+
+  const undoLastRating = useCallback(async () => {
+    const entry = undoBufferRef.current
+    if (!entry) return
+    // Restore card state in DB
+    await service.revertCardState(userId, entry.snapshot)
+    if (entry.wasAgainRating) {
+      // Best-effort: drop the mistake log we just inserted
+      await service.deleteLatestMistakeForCard(userId, entry.cardId)
+    }
+    // Restore UI state
+    setStats(entry.previousStats)
+    setCurrentIndex(entry.previousIndex)
+    setPhase('back') // Show the card revealed so the user can re-rate
+    setIsNewLeech(false)
+    if (isComplete) setIsComplete(false)
+    undoBufferRef.current = null
+    setCanUndo(false)
+    SessionRecovery.save({
+      sessionId,
+      userId,
+      mode: 'srs',
+      queue,
+      currentIndex: entry.previousIndex,
+      stats: entry.previousStats,
+      savedAt: Date.now(),
+    })
+  }, [isComplete, queue, service, sessionId, userId])
+
+  // Wire Ctrl/Cmd+Z to the manager's 'undo' action
+  useEffect(() => {
+    const manager = getKeyboardShortcutManager()
+    const unsubscribe = manager.on('undo', () => {
+      void undoLastRating()
+    })
+    return unsubscribe
+  }, [undoLastRating])
 
   const suspendCurrentCard = useCallback(async () => {
     if (!currentCard) return
@@ -152,5 +223,7 @@ export function useReviewSession(
     suspendCurrentCard,
     dismissLeechWarning,
     handleGrammarAnswer,
+    undoLastRating,
+    canUndo,
   }
 }

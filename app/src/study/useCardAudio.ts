@@ -1,8 +1,61 @@
 import { useEffect, useRef } from 'react'
 import { loadAudio } from '../srs/audioStore'
+import { useAppStore } from '../store'
+
+/** Cache the resolved Japanese voice between calls. */
+let cachedJaVoice: SpeechSynthesisVoice | null = null
+let voicesPromise: Promise<void> | null = null
+
+function ensureVoices(): Promise<void> {
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return Promise.resolve()
+  if (cachedJaVoice) return Promise.resolve()
+  if (voicesPromise) return voicesPromise
+
+  voicesPromise = new Promise<void>(resolve => {
+    const pick = () => {
+      const voices = window.speechSynthesis.getVoices()
+      const ja = voices.find(v => v.lang.toLowerCase().startsWith('ja')) ?? null
+      if (ja) cachedJaVoice = ja
+      resolve()
+    }
+    const initial = window.speechSynthesis.getVoices()
+    if (initial.length > 0) {
+      pick()
+    } else {
+      // Chrome populates voices asynchronously; subscribe once.
+      const handler = () => {
+        window.speechSynthesis.removeEventListener('voiceschanged', handler)
+        pick()
+      }
+      window.speechSynthesis.addEventListener('voiceschanged', handler)
+      // Safety timeout — resolve even if voiceschanged never fires.
+      setTimeout(() => {
+        window.speechSynthesis.removeEventListener('voiceschanged', handler)
+        pick()
+      }, 1500)
+    }
+  })
+  return voicesPromise
+}
+
+function speakViaTTS(text: string, rate: number) {
+  if (typeof window === 'undefined' || !('speechSynthesis' in window)) return
+  if (!text) return
+
+  // Cancel anything currently speaking — we never want overlapping playback.
+  window.speechSynthesis.cancel()
+
+  const utter = new SpeechSynthesisUtterance(text)
+  utter.lang = 'ja-JP'
+  utter.rate = rate
+  if (cachedJaVoice) utter.voice = cachedJaVoice
+  window.speechSynthesis.speak(utter)
+}
 
 export function useCardAudio(audioUrl: string | null | undefined, text: string, phase: 'front' | 'back') {
   const audioRef = useRef<HTMLAudioElement | null>(null)
+  const ttsEnabled = useAppStore(s => s.settings.ttsEnabled)
+  const ttsRate = useAppStore(s => s.settings.ttsRate)
 
   useEffect(() => {
     if (phase !== 'back') return
@@ -22,8 +75,15 @@ export function useCardAudio(audioUrl: string | null | undefined, text: string, 
         const audio = new Audio(resolvedUrl)
         audioRef.current = audio
         audio.play().catch(() => {})
+        return
       }
-      // No TTS fallback — cards without audio are silent
+
+      // TTS fallback for cards without recorded audio
+      if (ttsEnabled && text) {
+        await ensureVoices()
+        if (cancelled) return
+        speakViaTTS(text, ttsRate)
+      }
     }
 
     void play()
@@ -31,6 +91,9 @@ export function useCardAudio(audioUrl: string | null | undefined, text: string, 
     return () => {
       cancelled = true
       audioRef.current?.pause()
+      if (typeof window !== 'undefined' && 'speechSynthesis' in window) {
+        window.speechSynthesis.cancel()
+      }
     }
-  }, [phase, audioUrl, text])
+  }, [phase, audioUrl, text, ttsEnabled, ttsRate])
 }

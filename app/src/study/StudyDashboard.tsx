@@ -9,7 +9,9 @@ import { SessionRecovery } from '../srs/sessionRecovery'
 import { Heatmap } from './Heatmap'
 import { WeakPointPanel } from './WeakPointPanel'
 import { Navigation } from '../components/Navigation'
+import { DailyGoalRing } from '../components/DailyGoalRing'
 import { calculateWeeklyGoal } from './weeklyGoals'
+import { refreshStreakSnapshot } from './streakService'
 import type { ReviewCard, GrammarQuestion, StreakData, SessionRecoveryPayload } from './types'
 
 function interleaveQueue(due: ReviewCard[], newCards: ReviewCard[], limit: number): ReviewCard[] {
@@ -36,6 +38,8 @@ export function StudyDashboard() {
   const updateSettings = useAppStore(s => s.updateSettings)
   const activeUserId = useAppStore(s => s.activeUserId)
   const setActiveUserId = useAppStore(s => s.setActiveUserId)
+  const dailyStats = useAppStore(s => s.dailyStats)
+  const setDailyStats = useAppStore(s => s.setDailyStats)
 
   const [storage] = useState(() => new SQLiteStorage())
   const scheduler = settings.schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
@@ -44,6 +48,7 @@ export function StudyDashboard() {
   const [dueCount, setDueCount] = useState(0)
   const [newCount, setNewCount] = useState(0)
   const [availableNewCount, setAvailableNewCount] = useState(0)
+  const [mistakeCount, setMistakeCount] = useState(0)
   const [weeklyReviewedCount, setWeeklyReviewedCount] = useState(0)
   const [streakData, setStreakData] = useState<StreakData | null>(null)
   const [isLoading, setIsLoading] = useState(true)
@@ -65,10 +70,11 @@ export function StudyDashboard() {
       setActiveUserId(uid)
     }
 
-    const [due, newC, streak, weeklyRows] = await Promise.all([
+    const [due, newC, streak, mistakes, weeklyRows] = await Promise.all([
       service.getDueCount(uid),
       service.getNewCount(uid),
       service.getStreakData(uid),
+      service.getRecentMistakeCount(uid, 7),
       storage.query<{ date: string; cardsReviewed: number }>(
         `SELECT
           date(started_at) AS date,
@@ -87,6 +93,25 @@ export function StudyDashboard() {
     const available = Math.max(0, settings.dailyCardLimit - due)
     setAvailableNewCount(Math.min(newC, available))
     setStreakData(streak)
+    setMistakeCount(mistakes)
+
+    // Refresh cached daily snapshot (used by Navigation badge) so it stays in
+    // sync after a review session completes. Read settings via getState() to
+    // avoid stale closure values without forcing settings into the useCallback
+    // deps (which would re-run init on every settings keystroke).
+    try {
+      const latest = useAppStore.getState().settings
+      const { snapshot, patch } = await refreshStreakSnapshot(service, uid, {
+        streakFreezeTokens: latest.streakFreezeTokens,
+        lastStreakAward: latest.lastStreakAward,
+        lastFreezeUsedDate: latest.lastFreezeUsedDate,
+      })
+      setDailyStats(snapshot)
+      if (Object.keys(patch).length > 0) updateSettings(patch)
+    } catch {
+      // Non-fatal
+    }
+
     const reviewedThisWeek = weeklyRows.reduce((sum, row) => sum + (row.cardsReviewed ?? 0), 0)
     setWeeklyReviewedCount(reviewedThisWeek)
 
@@ -167,6 +192,32 @@ export function StudyDashboard() {
           </div>
         </div>
       )}
+
+      {/* Daily goal + streak banner */}
+      <div className="bg-white border-2 border-indigo-100 rounded-xl p-4 flex items-center gap-4">
+        <DailyGoalRing
+          reviewed={dailyStats.todayReviewed}
+          goal={settings.dailyGoal}
+          size={64}
+        />
+        <div className="flex-1 min-w-0">
+          <p className="font-semibold text-gray-900">
+            {dailyStats.todayReviewed} / {settings.dailyGoal} today
+          </p>
+          <p className="text-sm text-gray-600 mt-0.5">
+            <span className="text-orange-600 font-semibold">🔥 {dailyStats.currentStreak}</span>
+            <span className="text-gray-400"> day streak</span>
+            {settings.streakFreezeTokens > 0 && (
+              <span className="ml-2 text-blue-600 font-semibold">
+                ❄️ {settings.streakFreezeTokens} freeze{settings.streakFreezeTokens === 1 ? '' : 's'}
+              </span>
+            )}
+          </p>
+          {dailyStats.currentStreak > 0 && dailyStats.currentStreak < dailyStats.longestStreak && (
+            <p className="text-xs text-gray-400 mt-0.5">Best: {dailyStats.longestStreak} days</p>
+          )}
+        </div>
+      </div>
 
       {/* Stats */}
       <div className="grid grid-cols-2 gap-4">
@@ -278,6 +329,17 @@ export function StudyDashboard() {
         <span className="text-lg">Review Cards</span>
         <span className="text-xs mt-1 opacity-80">{dueCount} due · {availableNewCount} new</span>
       </button>
+
+      {/* Mistake drill */}
+      {mistakeCount > 0 && (
+        <button
+          onClick={() => navigate('/study/mistakes')}
+          className="w-full flex flex-col items-center px-4 py-3 bg-white border-2 border-amber-300 text-amber-900 rounded-xl font-semibold hover:bg-amber-50 transition-colors"
+        >
+          <span className="text-base">Drill {mistakeCount} recent mistake{mistakeCount === 1 ? '' : 's'}</span>
+          <span className="text-xs mt-1 text-amber-700">Last 7 days · cards you rated Again</span>
+        </button>
+      )}
 
     </main>
     </div>

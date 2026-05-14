@@ -58,6 +58,7 @@ app.post('/api/ai/complete', requireToken, async (req, res) => {
     apiKey,
     apiEndpoint,
     maxTokens,
+    stream = false,
     fastModel = 'gpt-3.5-turbo',
     powerfulModel = 'gpt-4',
     // Backward compat: legacy `prompt` string
@@ -70,6 +71,7 @@ app.post('/api/ai/complete', requireToken, async (req, res) => {
     apiKey?: string
     apiEndpoint?: string
     maxTokens?: number
+    stream?: boolean
     fastModel?: string
     powerfulModel?: string
     prompt?: string
@@ -83,9 +85,57 @@ app.post('/api/ai/complete', requireToken, async (req, res) => {
   }
 
   const model = tier === 'reasoning' ? powerfulModel : fastModel
-  console.log(`[ai] request provider=${provider} model=${model} tier=${tier} messages=${finalMessages.length}`)
+  console.log(`[ai] request provider=${provider} model=${model} tier=${tier} messages=${finalMessages.length} stream=${stream}`)
 
   try {
+    if (stream) {
+      // Streaming code path — supported for Anthropic + OpenAI-compatible providers.
+      if (provider === 'anthropic') {
+        await streamAnthropicRequest(res, finalMessages, system, model, tier, apiKey, maxTokens)
+      } else if (provider === 'openai') {
+        await streamOpenAICompatible(res, finalMessages, system, model, tier, {
+          apiKey: apiKey || process.env.OPENAI_API_KEY,
+          endpoint: 'https://api.openai.com/v1/chat/completions',
+          maxTokens,
+          missingKeyError: 'OpenAI API key not configured',
+        })
+      } else if (provider === 'openrouter') {
+        await streamOpenAICompatible(res, finalMessages, system, model, tier, {
+          apiKey: apiKey || process.env.OPENROUTER_API_KEY,
+          endpoint: 'https://openrouter.io/api/v1/chat/completions',
+          maxTokens,
+          extraHeaders: {
+            'http-referer': 'http://localhost:5173',
+            'x-title': 'KirokuMichi',
+          },
+          missingKeyError: 'OpenRouter API key not configured',
+        })
+      } else if (provider === 'deepseek') {
+        await streamOpenAICompatible(res, finalMessages, system, model, tier, {
+          apiKey: apiKey || process.env.DEEPSEEK_API_KEY,
+          endpoint: 'https://api.deepseek.com/chat/completions',
+          maxTokens,
+          extraBody:
+            tier === 'fast'
+              ? { thinking: { type: 'disabled' } }
+              : { thinking: { type: 'enabled' }, reasoning_effort: 'high' },
+          missingKeyError: 'DeepSeek API key not configured',
+        })
+      } else if (provider === 'custom') {
+        await streamOpenAICompatible(res, finalMessages, system, model, tier, {
+          apiKey,
+          endpoint: apiEndpoint,
+          maxTokens,
+          missingKeyError: 'Custom provider API key not configured',
+          missingEndpointError: 'Custom provider endpoint not configured',
+        })
+      } else {
+        // Ollama (or unknown) — gracefully fall back to non-streaming.
+        res.status(400).json({ error: `Streaming not supported for provider: ${provider}` })
+      }
+      return
+    }
+
     if (provider === 'anthropic') {
       await handleAnthropicRequest(res, finalMessages, system, model, tier, apiKey, maxTokens)
     } else if (provider === 'openai') {
@@ -110,6 +160,16 @@ app.post('/api/ai/complete', requireToken, async (req, res) => {
   } catch (err) {
     console.error('AI request error:', err)
     const isAbort = err instanceof Error && err.name === 'AbortError'
+    if (res.headersSent) {
+      // Streaming already started — emit an error event and close.
+      try {
+        res.write(`event: error\ndata: ${JSON.stringify({ error: 'AI request failed' })}\n\n`)
+      } catch {
+        // ignore
+      }
+      res.end()
+      return
+    }
     res.status(isAbort ? 504 : 500).json({
       error: isAbort
         ? `AI request timed out after ${Math.round((Date.now() - startedAt) / 1000)}s`
@@ -117,6 +177,179 @@ app.post('/api/ai/complete', requireToken, async (req, res) => {
     })
   }
 })
+
+// --- Streaming helpers --------------------------------------------------
+
+function setupSSE(res: express.Response) {
+  res.status(200).set({
+    'content-type': 'text/event-stream',
+    'cache-control': 'no-cache, no-transform',
+    'connection': 'keep-alive',
+    'x-accel-buffering': 'no',
+  })
+  res.flushHeaders?.()
+}
+
+function writeDelta(res: express.Response, text: string) {
+  if (!text) return
+  // SSE: data lines per chunk
+  res.write(`data: ${JSON.stringify({ delta: text })}\n\n`)
+}
+
+function writeDone(res: express.Response) {
+  res.write('data: [DONE]\n\n')
+  res.end()
+}
+
+/**
+ * Iterate Server-Sent-Events lines (data: ...) from an upstream Response body.
+ * Yields each `data:` payload as a string. Stops on `[DONE]`.
+ */
+async function* iterateSSEPayloads(body: ReadableStream<Uint8Array>): AsyncGenerator<string> {
+  const reader = body.getReader()
+  const decoder = new TextDecoder()
+  let buffer = ''
+  try {
+    while (true) {
+      const { value, done } = await reader.read()
+      if (done) break
+      buffer += decoder.decode(value, { stream: true })
+      let nl
+      // Process whole SSE events (separated by \n\n)
+      while ((nl = buffer.indexOf('\n\n')) !== -1) {
+        const event = buffer.slice(0, nl)
+        buffer = buffer.slice(nl + 2)
+        for (const line of event.split('\n')) {
+          if (line.startsWith('data: ')) {
+            const payload = line.slice(6)
+            if (payload === '[DONE]') return
+            yield payload
+          }
+        }
+      }
+    }
+  } finally {
+    reader.releaseLock()
+  }
+}
+
+async function streamAnthropicRequest(
+  res: express.Response,
+  messages: Array<{ role: string; content: MessageContent }>,
+  system: string | undefined,
+  model: string,
+  tier: string,
+  providedApiKey?: string,
+  maxTokens?: number
+) {
+  const apiKey = providedApiKey || process.env.ANTHROPIC_API_KEY
+  if (!apiKey) {
+    res.status(503).json({ error: 'Anthropic API key not configured' })
+    return
+  }
+
+  const upstream = await fetchWithTimeout('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'x-api-key': apiKey,
+      'anthropic-version': '2023-06-01',
+      'content-type': 'application/json',
+    },
+    body: JSON.stringify({
+      model,
+      max_tokens: maxTokens ?? (tier === 'reasoning' ? 8192 : 2048),
+      system,
+      messages,
+      stream: true,
+    }),
+  })
+
+  if (!upstream.ok || !upstream.body) {
+    const err = await upstream.text()
+    res.status(upstream.status).json({ error: err })
+    return
+  }
+
+  setupSSE(res)
+  for await (const payload of iterateSSEPayloads(upstream.body)) {
+    try {
+      const evt = JSON.parse(payload) as {
+        type?: string
+        delta?: { type?: string; text?: string }
+      }
+      if (evt.type === 'content_block_delta' && evt.delta?.type === 'text_delta' && evt.delta.text) {
+        writeDelta(res, evt.delta.text)
+      }
+    } catch {
+      // Ignore non-JSON events (e.g., ping)
+    }
+  }
+  writeDone(res)
+}
+
+async function streamOpenAICompatible(
+  res: express.Response,
+  messages: Array<{ role: string; content: MessageContent }>,
+  system: string | undefined,
+  model: string,
+  tier: string,
+  options: {
+    apiKey?: string
+    endpoint?: string
+    maxTokens?: number
+    extraBody?: Record<string, unknown>
+    extraHeaders?: Record<string, string>
+    missingKeyError: string
+    missingEndpointError?: string
+  }
+) {
+  if (!options.apiKey) {
+    res.status(503).json({ error: options.missingKeyError })
+    return
+  }
+  if (!options.endpoint) {
+    res.status(503).json({ error: options.missingEndpointError ?? 'Provider endpoint not configured' })
+    return
+  }
+
+  const systemMsg = system ? [{ role: 'system', content: system }] : []
+  const openAiMessages = messages.map(m => ({ role: m.role, content: toOpenAIContent(m.content) }))
+  const upstream = await fetchWithTimeout(options.endpoint, {
+    method: 'POST',
+    headers: {
+      'authorization': `Bearer ${options.apiKey}`,
+      'content-type': 'application/json',
+      ...(options.extraHeaders ?? {}),
+    },
+    body: JSON.stringify({
+      model,
+      max_tokens: options.maxTokens ?? (tier === 'reasoning' ? 8192 : 2048),
+      messages: [...systemMsg, ...openAiMessages],
+      stream: true,
+      ...options.extraBody,
+    }),
+  })
+
+  if (!upstream.ok || !upstream.body) {
+    const err = await upstream.text()
+    res.status(upstream.status).json({ error: err })
+    return
+  }
+
+  setupSSE(res)
+  for await (const payload of iterateSSEPayloads(upstream.body)) {
+    try {
+      const evt = JSON.parse(payload) as {
+        choices?: Array<{ delta?: { content?: string } }>
+      }
+      const delta = evt.choices?.[0]?.delta?.content
+      if (delta) writeDelta(res, delta)
+    } catch {
+      // Ignore non-JSON keepalives
+    }
+  }
+  writeDone(res)
+}
 
 type ContentBlock =
   | { type: 'text'; text: string }

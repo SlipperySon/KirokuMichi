@@ -3,6 +3,7 @@ import { useIntl } from 'react-intl'
 import { useAppStore } from '../store'
 import { useTheme } from '../hooks/useTheme'
 import { Navigation } from '../components/Navigation'
+import { KeyboardShortcutsPanel } from '../components/KeyboardShortcutsPanel'
 
 type ProviderType = 'anthropic' | 'openai' | 'openrouter' | 'deepseek' | 'ollama' | 'custom' | null
 type ConfigurableProvider = Exclude<ProviderType, null>
@@ -380,6 +381,56 @@ export function Settings() {
                 />
               </div>
 
+              {/* Daily Goal */}
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2 text-center">
+                  Daily goal (cards)
+                </label>
+                <input
+                  type="number"
+                  min="0"
+                  max="500"
+                  value={settings.dailyGoal}
+                  onChange={e => updateSettings({ dailyGoal: parseInt(e.target.value) || 0 })}
+                  className="w-full px-3 py-2 border border-gray-600 rounded-lg bg-gray-800 text-gray-100 text-center focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <p className="text-xs text-gray-500 mt-2 text-center">
+                  Daily ring fills as you review · streak freeze tokens auto-award at 7/14/30 days
+                </p>
+              </div>
+
+              {/* TTS Settings */}
+              <label className="relative flex items-center justify-center p-3 border border-gray-600 rounded-lg bg-gray-800 text-gray-100 cursor-pointer hover:bg-gray-700 text-center">
+                <input
+                  type="checkbox"
+                  checked={settings.ttsEnabled}
+                  onChange={e => updateSettings({ ttsEnabled: e.target.checked })}
+                  className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4"
+                />
+                <div className="px-8">
+                  <div className="font-medium text-gray-100">Use TTS for cards without audio</div>
+                  <div className="text-xs text-gray-400 mt-0.5">Browser speech synthesis fallback</div>
+                </div>
+              </label>
+
+              {settings.ttsEnabled && (
+                <div>
+                  <label className="block text-sm font-medium text-gray-300 mb-2 text-center">
+                    TTS rate
+                  </label>
+                  <input
+                    type="range"
+                    min="0.6"
+                    max="1.4"
+                    step="0.05"
+                    value={settings.ttsRate}
+                    onChange={e => updateSettings({ ttsRate: parseFloat(e.target.value) })}
+                    className="w-full"
+                  />
+                  <p className="text-xs text-gray-500 mt-2 text-center">{settings.ttsRate.toFixed(2)}×</p>
+                </div>
+              )}
+
               {/* Hover Delay */}
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2 text-center">
@@ -457,6 +508,11 @@ export function Settings() {
                 </button>
               </div>
             </div>
+          </div>
+
+          {/* Keyboard shortcuts */}
+          <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
+            <KeyboardShortcutsPanel />
           </div>
 
           {/* Advanced Settings */}

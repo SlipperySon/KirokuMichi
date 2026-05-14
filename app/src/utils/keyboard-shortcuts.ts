@@ -116,6 +116,32 @@ export const DEFAULT_SHORTCUTS: KeyboardShortcut[] = [
   },
 ]
 
+const STORAGE_KEY = 'kiroku-shortcuts'
+
+function loadPersistedShortcuts(): Partial<Record<ShortcutAction, string[]>> {
+  if (typeof window === 'undefined') return {}
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY)
+    if (!raw) return {}
+    const parsed = JSON.parse(raw) as unknown
+    if (!parsed || typeof parsed !== 'object') return {}
+    return parsed as Partial<Record<ShortcutAction, string[]>>
+  } catch {
+    return {}
+  }
+}
+
+function persistShortcuts(customShortcuts: Map<ShortcutAction, string[]>) {
+  if (typeof window === 'undefined') return
+  try {
+    const obj: Partial<Record<ShortcutAction, string[]>> = {}
+    for (const [k, v] of customShortcuts) obj[k] = v
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify(obj))
+  } catch {
+    // Storage unavailable — settings won't persist this session
+  }
+}
+
 /**
  * Keyboard shortcut manager
  */
@@ -127,8 +153,12 @@ export class KeyboardShortcutManager {
   constructor(customShortcuts?: Partial<Record<ShortcutAction, string[]>>) {
     this.initializeShortcuts()
 
-    if (customShortcuts) {
-      this.customShortcuts = new Map(Object.entries(customShortcuts))
+    // Merge: explicit constructor arg wins, fall back to persisted localStorage.
+    const source = customShortcuts ?? loadPersistedShortcuts()
+    this.customShortcuts = new Map(Object.entries(source) as Array<[ShortcutAction, string[]]>)
+    // Re-apply persisted entries to the lookup map so the listener sees them.
+    for (const [action, keys] of this.customShortcuts) {
+      for (const key of keys) this.shortcuts.set(key.toLowerCase(), action)
     }
 
     this.setupListeners()
@@ -252,12 +282,18 @@ export class KeyboardShortcutManager {
    * Set custom shortcut
    */
   public setShortcut(action: ShortcutAction, keys: string[]) {
+    // Remove the previous binding from the lookup map so old keys stop firing.
+    const previous = this.customShortcuts.get(action) ?? DEFAULT_SHORTCUTS.find(s => s.action === action)?.keys ?? []
+    for (const key of previous) this.shortcuts.delete(key.toLowerCase())
+
     this.customShortcuts.set(action, keys)
 
     // Update shortcuts map
     for (const key of keys) {
       this.shortcuts.set(key.toLowerCase(), action)
     }
+
+    persistShortcuts(this.customShortcuts)
   }
 
   /**
@@ -289,6 +325,7 @@ export class KeyboardShortcutManager {
     this.customShortcuts.clear()
     this.shortcuts.clear()
     this.initializeShortcuts()
+    persistShortcuts(this.customShortcuts)
   }
 }
 

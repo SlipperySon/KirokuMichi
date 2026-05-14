@@ -20,6 +20,22 @@ interface Settings {
   immersionBreakMinutes: number
   immersionSessionsPerDay: number
   immersionEnabled: boolean
+  // Daily goal & streak
+  dailyGoal: number
+  streakFreezeTokens: number
+  /** Highest streak length at which a freeze token was last awarded (so we award each threshold once). */
+  lastStreakAward: number
+  /** ISO date (YYYY-MM-DD) of the last day a freeze token was consumed (so we only consume once per gap). */
+  lastFreezeUsedDate: string | null
+  // Text-to-speech
+  ttsEnabled: boolean
+  ttsRate: number
+}
+
+interface DailyStats {
+  currentStreak: number
+  longestStreak: number
+  todayReviewed: number
 }
 
 interface AppState {
@@ -28,12 +44,19 @@ interface AppState {
   activeUserId: number | null
   lessonsCompleted: string[] // e.g., ["genki_1_1", "genki_1_2"]
   currentLesson: string | null // e.g., "genki_1_1"
+  /**
+   * Cached daily snapshot for nav indicators. Refreshed from the SRS service on
+   * mount and after each review session ends. Persisted so the UI shows a value
+   * immediately on cold start; refreshed values overwrite quickly.
+   */
+  dailyStats: DailyStats
   updateSettings: (patch: Partial<Settings>) => void
   setOnboardingComplete: (v: boolean) => void
   setSessionToken: (token: string) => void
   setActiveUserId: (id: number) => void
   markLessonComplete: (lessonId: string) => void
   setCurrentLesson: (lessonId: string | null) => void
+  setDailyStats: (stats: DailyStats) => void
 }
 
 export const useAppStore = create<AppState>()(
@@ -42,6 +65,7 @@ export const useAppStore = create<AppState>()(
       activeUserId: null,
       lessonsCompleted: [],
       currentLesson: null,
+      dailyStats: { currentStreak: 0, longestStreak: 0, todayReviewed: 0 },
       settings: {
         aiProvider: null,
         apiKey: null,
@@ -60,6 +84,12 @@ export const useAppStore = create<AppState>()(
         immersionBreakMinutes: 5,
         immersionSessionsPerDay: 4,
         immersionEnabled: false,
+        dailyGoal: 20,
+        streakFreezeTokens: 0,
+        lastStreakAward: 0,
+        lastFreezeUsedDate: null,
+        ttsEnabled: true,
+        ttsRate: 0.95,
       },
       onboardingComplete: false,
       updateSettings: (patch) =>
@@ -75,6 +105,7 @@ export const useAppStore = create<AppState>()(
             : [...s.lessonsCompleted, lessonId],
         })),
       setCurrentLesson: (lessonId) => set({ currentLesson: lessonId }),
+      setDailyStats: (stats) => set({ dailyStats: stats }),
     }),
     { name: 'kiroku-michi-app' }
   )

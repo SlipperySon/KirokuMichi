@@ -7,9 +7,16 @@ import { getCachedWeakPoints, buildWeakPointContext } from '../ai/weakPointSumma
 import { SQLiteStorage } from '../db/sqlite'
 import { Navigation } from '../components/Navigation'
 import { ContentUpload } from './ContentUpload'
+import { ConversationPartner } from './ConversationPartner'
 import type { AIMessage } from '../core/providers'
 
-type Tab = 'tutor' | 'upload'
+type Tab = 'tutor' | 'conversation' | 'upload'
+
+const TAB_LABELS: Record<Tab, string> = {
+  tutor: 'AI Tutor',
+  conversation: 'Conversation',
+  upload: 'Upload Content',
+}
 
 const STARTER_PROMPTS = [
   'What does は do?',
@@ -18,11 +25,41 @@ const STARTER_PROMPTS = [
   "Can you fix my sentence?",
 ]
 
+const TUTOR_CHAT_STORAGE_KEY = 'kiroku-tutor-chat'
+const MAX_PERSISTED_MESSAGES = 50
+
+function loadPersistedMessages(): AIMessage[] {
+  try {
+    const raw = localStorage.getItem(TUTOR_CHAT_STORAGE_KEY)
+    if (!raw) return []
+    const parsed = JSON.parse(raw) as unknown
+    if (!Array.isArray(parsed)) return []
+    return parsed.filter(
+      (m): m is AIMessage =>
+        typeof m === 'object' &&
+        m !== null &&
+        (((m as AIMessage).role === 'user') || ((m as AIMessage).role === 'assistant')) &&
+        typeof (m as AIMessage).content === 'string'
+    )
+  } catch {
+    return []
+  }
+}
+
+function persistMessages(messages: AIMessage[]) {
+  try {
+    const tail = messages.slice(-MAX_PERSISTED_MESSAGES)
+    localStorage.setItem(TUTOR_CHAT_STORAGE_KEY, JSON.stringify(tail))
+  } catch {
+    // Storage full or disabled — silently degrade
+  }
+}
+
 export function TutorChat() {
   const { settings, activeUserId } = useAppStore()
   const [storage] = useState(() => new SQLiteStorage())
   const [tab, setTab] = useState<Tab>('tutor')
-  const [messages, setMessages] = useState<AIMessage[]>([])
+  const [messages, setMessages] = useState<AIMessage[]>(() => loadPersistedMessages())
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -43,7 +80,18 @@ export function TutorChat() {
 
   useEffect(() => {
     scrollToBottom()
+    persistMessages(messages)
   }, [messages])
+
+  const clearChat = () => {
+    setMessages([])
+    setError(null)
+    try {
+      localStorage.removeItem(TUTOR_CHAT_STORAGE_KEY)
+    } catch {
+      // ignore
+    }
+  }
 
   const handleSend = async () => {
     if (!input.trim() || loading) return
@@ -54,17 +102,30 @@ export function TutorChat() {
     setLoading(true)
     setError(null)
 
+    // Append a placeholder assistant message we'll grow as chunks arrive.
+    setMessages(prev => [...prev, { role: 'assistant', content: '' }])
+
     try {
       const aiProvider = new ClientAIProvider(settings.sessionToken)
-      const response = await aiProvider.completeWithMessages(
+      await aiProvider.completeWithMessagesStream(
         [...messages, userMessage],
         systemPrompt,
-        'fast'
+        'fast',
+        (delta: string) => {
+          setMessages(prev => {
+            const next = [...prev]
+            const last = next[next.length - 1]
+            if (last && last.role === 'assistant') {
+              next[next.length - 1] = { role: 'assistant', content: last.content + delta }
+            }
+            return next
+          })
+        }
       )
-      setMessages(prev => [...prev, { role: 'assistant', content: response }])
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Connection failed')
-      setMessages(prev => prev.slice(0, -1)) // Remove user message on error
+      // Remove the user message AND placeholder assistant on error
+      setMessages(prev => prev.slice(0, -2))
     } finally {
       setLoading(false)
     }
@@ -75,9 +136,20 @@ export function TutorChat() {
       <Navigation />
       <main className="flex flex-col h-full max-w-2xl mx-auto flex-1" aria-label="Practice">
         <div className="p-4 border-b border-gray-200">
-          <h1 className="text-2xl font-bold text-gray-900">Practice</h1>
+          <div className="flex items-center justify-between">
+            <h1 className="text-2xl font-bold text-gray-900">Practice</h1>
+            {tab === 'tutor' && messages.length > 0 && (
+              <button
+                onClick={clearChat}
+                className="text-xs text-gray-500 hover:text-red-600 transition-colors"
+                aria-label="Clear chat"
+              >
+                Clear chat
+              </button>
+            )}
+          </div>
           <div className="flex gap-1 mt-3">
-            {(['tutor', 'upload'] as Tab[]).map(t => (
+            {(['tutor', 'conversation', 'upload'] as Tab[]).map(t => (
               <button
                 key={t}
                 onClick={() => setTab(t)}
@@ -85,7 +157,7 @@ export function TutorChat() {
                   tab === t ? 'bg-indigo-100 text-indigo-700' : 'text-gray-500 hover:bg-gray-100'
                 }`}
               >
-                {t === 'tutor' ? 'AI Tutor' : 'Upload Content'}
+                {TAB_LABELS[t]}
               </button>
             ))}
           </div>
@@ -94,6 +166,10 @@ export function TutorChat() {
         {tab === 'upload' ? (
           <div className="flex-1 overflow-y-auto">
             <ContentUpload />
+          </div>
+        ) : tab === 'conversation' ? (
+          <div className="flex-1 flex flex-col min-h-0">
+            <ConversationPartner />
           </div>
         ) : (
           <>
