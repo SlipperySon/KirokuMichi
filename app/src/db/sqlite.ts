@@ -24,6 +24,9 @@ async function initDB() {
     // Always run schema init + migrations (CREATE IF NOT EXISTS is idempotent)
     initializeSchema()
 
+    // Clear old imported cards on first load of new system
+    clearOldCards()
+
     return dbInstance
   })()
 
@@ -230,6 +233,24 @@ function initializeSchema() {
   }
 
   persist()
+}
+
+function clearOldCards() {
+  if (!dbInstance) return
+
+  // Clear old imported cards on first load of new system
+  const hasCleared = localStorage.getItem('kiroku_michi_cleared_old_cards')
+  if (!hasCleared) {
+    try {
+      // Delete all imported cards (from old Anki import system)
+      dbInstance.run(`DELETE FROM card_states`)
+      dbInstance.run(`DELETE FROM cards`)
+      localStorage.setItem('kiroku_michi_cleared_old_cards', 'true')
+      console.log('Cleared old imported cards from database')
+    } catch (e) {
+      console.error('Error clearing old cards:', e)
+    }
+  }
 }
 
 function persist() {
