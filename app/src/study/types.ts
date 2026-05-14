@@ -12,6 +12,10 @@ export interface ReviewCard {
   stability: number
   difficulty: number
   due: string
+  // Immersion mode interleaved review fields
+  isReplay?: boolean
+  originalRating?: 'again' | 'hard' | 'good' | 'easy'
+  replayRating?: 'again' | 'hard' | 'good' | 'easy'
 }
 
 export interface IntervalPreview {
@@ -25,6 +29,10 @@ export interface SessionStats {
   cardsReviewed: number
   correctCount: number
   startedAt: number
+  // Interleaved review tracking
+  replayCount?: number
+  totalReplays?: number
+  improvementCount?: number
 }
 
 export interface SessionRecoveryPayload {

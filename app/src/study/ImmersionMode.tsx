@@ -1,7 +1,10 @@
-import { useState, useEffect, useCallback, useRef } from 'react'
+import { useState, useEffect, useCallback, useRef, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../store'
 import { Navigation } from '../components/Navigation'
+import { SQLiteStorage } from '../db/sqlite'
+import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
+import { SRSService } from '../srs/srsService'
 import {
   buildDailySchedule,
   findCurrentBlock,
@@ -12,12 +15,45 @@ import {
   accuracyRating,
 } from '../core/immersionSchedule'
 import type { AccuracySnapshot } from '../core/immersionSchedule'
+import type { ReviewCard } from './types'
+import { useInterleavedReviewSession } from './useInterleavedReviewSession'
+import { ImmersionCardReview } from './ImmersionCardReview'
 
 type TimerPhase = 'idle' | 'study' | 'break' | 'done'
+type ImmersionModeType = 'standard' | 'interleaved'
 
 export function ImmersionMode() {
   const navigate = useNavigate()
   const { settings, updateSettings } = useAppStore()
+  const activeUserId = useAppStore(s => s.activeUserId)
+
+  // Initialize SRS service for card reviews
+  const [storage] = useState(() => new SQLiteStorage())
+  const scheduler = settings.schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
+  const [srsService] = useState(() => new SRSService(storage, scheduler))
+  const [dueCards, setDueCards] = useState<ReviewCard[]>([])
+  const [newCards, setNewCards] = useState<ReviewCard[]>([])
+  const [cardsReviewedThisSession, setCardsReviewedThisSession] = useState(0)
+
+  // Immersion mode type: standard timer or interleaved review
+  const [immersionMode, setImmersionMode] = useState<ImmersionModeType>('standard')
+  const [interleavedSessionId] = useState(() => Date.now())
+
+  // Interleaved review session state - only initialize with cards when mode is interleaved
+  const cardsForInterleaved = useMemo(
+    () =>
+      immersionMode === 'interleaved' && (dueCards.length > 0 || newCards.length > 0)
+        ? dueCards.length > 0 ? dueCards : newCards
+        : [],
+    [immersionMode, dueCards, newCards]
+  )
+
+  const interleavedSession = useInterleavedReviewSession(
+    activeUserId ?? 0,
+    srsService,
+    cardsForInterleaved,
+    interleavedSessionId
+  )
 
   const {
     immersionSessionMinutes,
@@ -50,6 +86,22 @@ export function ImmersionMode() {
   const [draftBreak, setDraftBreak] = useState(immersionBreakMinutes)
   const [draftSessions, setDraftSessions] = useState(immersionSessionsPerDay)
 
+  // Load due cards for review
+  useEffect(() => {
+    async function loadCards() {
+      if (!activeUserId) return
+      try {
+        const due = await srsService.getDueCards(activeUserId, 100)
+        const newC = await srsService.getNewCards(activeUserId, 100)
+        setDueCards(due)
+        setNewCards(newC)
+      } catch (error) {
+        console.error('Failed to load cards:', error)
+      }
+    }
+    void loadCards()
+  }, [activeUserId, srsService])
+
   const clearTimer = useCallback(() => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current)
@@ -62,6 +114,7 @@ export function ImmersionMode() {
     setSecondsLeft(immersionSessionMinutes * 60)
     setSessionCorrect(0)
     setSessionTotal(0)
+    setCardsReviewedThisSession(0)
   }, [immersionSessionMinutes])
 
   const startBreak = useCallback(() => {
@@ -131,6 +184,27 @@ export function ImmersionMode() {
     setEditingSettings(false)
   }
 
+  function startReview() {
+    // Navigate to review with due cards during immersion session
+    if (dueCards.length === 0 && newCards.length === 0) {
+      alert('No cards available for review.')
+      return
+    }
+    navigate('/study/review', {
+      state: {
+        queue: dueCards.length > 0 ? dueCards : newCards,
+        grammarEntries: [],
+        sessionId: null,
+        userId: activeUserId,
+        immersionSessionActive: true, // Flag to indicate user is in immersion mode
+        onReturn: () => {
+          // When user returns from review, update card count
+          setCardsReviewedThisSession(prev => prev + (dueCards.length > 0 ? Math.min(10, dueCards.length) : Math.min(10, newCards.length)))
+        }
+      }
+    })
+  }
+
   const mins = Math.floor(secondsLeft / 60)
   const secs = secondsLeft % 60
   const timerDisplay = `${String(mins).padStart(2, '0')}:${String(secs).padStart(2, '0')}`
@@ -152,6 +226,33 @@ export function ImmersionMode() {
           <h1 className="text-3xl font-bold text-gray-900">Immersion Mode</h1>
           <p className="text-gray-600">Structured study sessions with timed breaks</p>
         </div>
+
+        {/* Mode selector tabs */}
+        <div className="flex gap-2 bg-gray-100 p-1 rounded-xl w-full">
+          <button
+            onClick={() => setImmersionMode('standard')}
+            className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-colors ${
+              immersionMode === 'standard'
+                ? 'bg-white text-indigo-600 shadow-sm'
+                : 'text-gray-600 hover:text-gray-900'
+            }`}
+          >
+            ⏱️ Standard Timer
+          </button>
+          <button
+            onClick={() => setImmersionMode('interleaved')}
+            className={`flex-1 px-4 py-2 rounded-lg font-semibold transition-colors ${
+              immersionMode === 'interleaved'
+                ? 'bg-white text-indigo-600 shadow-sm'
+                : 'text-gray-600 hover:text-gray-900'
+            }`}
+          >
+            🔄 Interleaved Review
+          </button>
+        </div>
+
+        {/* STANDARD TIMER MODE */}
+        {immersionMode === 'standard' && <>
 
         {/* Enable toggle */}
         <div className="flex items-center justify-between bg-white border border-gray-200 rounded-xl p-4">
@@ -251,6 +352,32 @@ export function ImmersionMode() {
 
         {/* Schedule context + timer — only when enabled */}
         {immersionEnabled && <>
+        {/* Card Review Summary — show available cards */}
+        {(dueCards.length > 0 || newCards.length > 0) && (
+          <div className="bg-blue-50 border border-blue-200 rounded-xl p-4">
+            <p className="text-sm font-medium text-blue-900 mb-2">📋 Cards due for review</p>
+            <div className="flex items-center gap-4">
+              {dueCards.length > 0 && (
+                <div>
+                  <span className="text-xl font-bold text-blue-700">{dueCards.length}</span>
+                  <p className="text-xs text-blue-600">cards due</p>
+                </div>
+              )}
+              {newCards.length > 0 && (
+                <div>
+                  <span className="text-xl font-bold text-green-700">{newCards.length}</span>
+                  <p className="text-xs text-green-600">new cards</p>
+                </div>
+              )}
+              <p className="text-xs text-blue-600 ml-auto flex-1">
+                {dueCards.length > 0
+                  ? '✓ You have cards overdue for review. Review them during this session to stay on schedule.'
+                  : 'No cards overdue. Great job staying on top of your reviews!'}
+              </p>
+            </div>
+          </div>
+        )}
+
         {/* Schedule context — what's happening now */}
         {phase === 'idle' && (currentBlock || nextBlock) && (
           <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-sm">
@@ -307,10 +434,11 @@ export function ImmersionMode() {
                 {phase === 'study' && (
                   <>
                     <button
-                      onClick={() => navigate('/study/review')}
-                      className="px-6 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
+                      onClick={startReview}
+                      disabled={dueCards.length === 0 && newCards.length === 0}
+                      className="px-6 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                     >
-                      Go to Review
+                      Review Cards ({dueCards.length > 0 ? dueCards.length : newCards.length})
                     </button>
                     <button
                       onClick={handlePause}
@@ -346,6 +474,14 @@ export function ImmersionMode() {
                 style={{ width: `${sessionProgress}%` }}
               />
             </div>
+
+            {/* Card reviews in this session */}
+            {(phase === 'study' || cardsReviewedThisSession > 0) && (
+              <div className="pt-2 border-t border-gray-200 flex items-center justify-between">
+                <span className="text-sm font-medium text-gray-700">Cards reviewed</span>
+                <span className="text-sm font-semibold text-indigo-600">{cardsReviewedThisSession}</span>
+              </div>
+            )}
 
             {/* Per-session accuracy */}
             {accuracy.length > 0 && (
@@ -402,6 +538,128 @@ export function ImmersionMode() {
         )}
 
         </>}
+        </>}
+
+        {/* INTERLEAVED REVIEW MODE */}
+        {immersionMode === 'interleaved' && (
+          <div className="space-y-6">
+            {/* Header with timer and session info */}
+            <div className="bg-white border border-gray-200 rounded-2xl p-6 space-y-4 sticky top-6 z-10 shadow-sm">
+              <div className="flex items-center justify-between">
+                <div>
+                  <p className="text-sm text-gray-500">Session {completedSessions + 1} of {immersionSessionsPerDay}</p>
+                  <div className={`text-5xl font-mono font-bold tabular-nums ${
+                    phase === 'break' ? 'text-green-600' : phase === 'study' ? 'text-indigo-600' : 'text-gray-400'
+                  }`}>
+                    {timerDisplay}
+                  </div>
+                </div>
+                <div className="text-right space-y-1">
+                  <p className="text-2xl font-bold text-gray-900">{interleavedSession.stats.cardsReviewed}</p>
+                  <p className="text-sm text-gray-500">cards reviewed</p>
+                  {interleavedSession.stats.replayCount && interleavedSession.stats.replayCount > 0 && (
+                    <>
+                      <p className="text-lg font-semibold text-amber-600">{interleavedSession.stats.replayCount}</p>
+                      <p className="text-xs text-amber-500">replays</p>
+                    </>
+                  )}
+                </div>
+              </div>
+
+              {/* Accuracy during session */}
+              {interleavedSession.stats.cardsReviewed > 0 && (
+                <div className="pt-3 border-t border-gray-200">
+                  <p className={`text-sm font-semibold ${
+                    interleavedSession.stats.correctCount / interleavedSession.stats.cardsReviewed >= 0.7
+                      ? 'text-green-600'
+                      : interleavedSession.stats.correctCount / interleavedSession.stats.cardsReviewed >= 0.5
+                      ? 'text-amber-600'
+                      : 'text-red-600'
+                  }`}>
+                    Accuracy: {Math.round((interleavedSession.stats.correctCount / interleavedSession.stats.cardsReviewed) * 100)}%
+                  </p>
+                </div>
+              )}
+            </div>
+
+            {/* Card display or completion */}
+            {interleavedSession.isComplete ? (
+              <div className="rounded-2xl bg-white border border-gray-200 p-8 text-center space-y-4">
+                <p className="text-5xl">🎉</p>
+                <p className="text-2xl font-bold text-gray-900">Session complete!</p>
+                <div className="space-y-2 pt-2">
+                  <p className="text-gray-600">
+                    <span className="font-semibold">{interleavedSession.stats.cardsReviewed}</span> cards reviewed
+                  </p>
+                  {interleavedSession.stats.cardsReviewed > 0 && (
+                    <p className={`font-semibold ${
+                      interleavedSession.stats.correctCount / interleavedSession.stats.cardsReviewed >= 0.7
+                        ? 'text-green-600'
+                        : 'text-amber-600'
+                    }`}>
+                      {Math.round((interleavedSession.stats.correctCount / interleavedSession.stats.cardsReviewed) * 100)}% accuracy
+                    </p>
+                  )}
+                  {interleavedSession.stats.improvementCount && interleavedSession.stats.improvementCount > 0 && (
+                    <p className="text-green-600 text-sm">
+                      {interleavedSession.stats.improvementCount} cards improved on replay ✓
+                    </p>
+                  )}
+                </div>
+                <button
+                  onClick={() => {
+                    finishSession()
+                    setImmersionMode('standard')
+                  }}
+                  className="mt-4 px-6 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
+                >
+                  {phase === 'study' ? 'Finish This Session' : 'Continue'}
+                </button>
+              </div>
+            ) : interleavedSession.currentCard ? (
+              <ImmersionCardReview
+                card={interleavedSession.currentCard}
+                phase={interleavedSession.phase}
+                onReveal={interleavedSession.reveal}
+                onRate={interleavedSession.rate}
+                nextQueuePreview={interleavedSession.nextQueuePreview}
+              />
+            ) : (
+              <div className="rounded-2xl bg-amber-50 border border-amber-200 p-6 text-center">
+                <p className="text-amber-800 font-semibold mb-2">No cards available</p>
+                <p className="text-sm text-amber-700">Import an Anki deck to start studying</p>
+              </div>
+            )}
+
+            {/* Pause button during study */}
+            {phase === 'study' && !interleavedSession.isComplete && (
+              <div className="flex gap-2 justify-center">
+                <button
+                  onClick={handlePause}
+                  className="px-6 py-3 border border-gray-300 text-gray-700 rounded-xl font-semibold hover:bg-gray-50 transition-colors"
+                >
+                  Pause
+                </button>
+              </div>
+            )}
+
+            {/* Session progress */}
+            {(phase !== 'idle' || completedSessions > 0) && (
+              <div className="bg-white border border-gray-200 rounded-xl p-4">
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-sm font-medium text-gray-700">Sessions today</span>
+                  <span className="text-sm text-gray-500">{completedSessions} / {immersionSessionsPerDay}</span>
+                </div>
+                <div className="h-2 bg-gray-100 rounded-full overflow-hidden">
+                  <div
+                    className="h-full bg-indigo-500 rounded-full transition-all"
+                    style={{ width: `${sessionProgress}%` }}
+                  />
+                </div>
+              </div>
+            )}
+          </div>
+        )}
 
       </div>
     </div>

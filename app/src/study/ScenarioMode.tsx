@@ -14,6 +14,7 @@ interface Scenario {
   title: string
   description: string | null
   lines: DialogueLine[]
+  lesson_id?: string | null  // e.g., "marugoto_a1_1"
 }
 
 function speak(text: string) {
@@ -108,14 +109,22 @@ export function ScenarioMode() {
           title TEXT NOT NULL,
           description TEXT,
           lines TEXT NOT NULL DEFAULT '[]',
+          lesson_id TEXT,
           created_at TEXT NOT NULL DEFAULT (datetime('now'))
         )
       `)
 
-      const rows = await storage.query<{ id: number; title: string; description: string | null; lines: string }>(
-        `SELECT id, title, description, lines FROM scenarios
+      // Idempotent migration: add lesson_id column if it doesn't exist
+      try {
+        await storage.execute(`ALTER TABLE scenarios ADD COLUMN lesson_id TEXT`)
+      } catch {
+        // Column already exists
+      }
+
+      const rows = await storage.query<{ id: number; title: string; description: string | null; lines: string; lesson_id?: string | null }>(
+        `SELECT id, title, description, lines, lesson_id FROM scenarios
          WHERE user_id = ? OR user_id IS NULL
-         ORDER BY id ASC`,
+         ORDER BY lesson_id ASC, id ASC`,
         [activeUserId ?? 0]
       )
 

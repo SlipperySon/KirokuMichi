@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
 import { Navigation } from '../components/Navigation'
+import { LessonsHub } from './LessonsHub'
 
 type ContentType = 'text_passage' | 'word_list' | 'grammar_point' | 'sentence_pair' | 'dialogue_script' | 'unknown'
 type SectionFilter = 'all' | 'vocabulary' | 'grammar' | 'reading' | 'dialogue'
@@ -195,6 +196,7 @@ export function LearningMode() {
   const [isLoading, setIsLoading] = useState(true)
   const [sectionFilter, setSectionFilter] = useState<SectionFilter>('all')
   const [sourceFilter, setSourceFilter] = useState<string | null>(null)
+  const [learningMode, setLearningMode] = useState<'lesson' | 'browse'>('lesson')
 
   useEffect(() => {
     async function load() {
@@ -214,11 +216,24 @@ export function LearningMode() {
         )
       `)
 
+      // Idempotent migration: add missing columns if they don't exist
+      try {
+        await storage.execute(`ALTER TABLE learning_content ADD COLUMN source_document TEXT`)
+      } catch {
+        // Column already exists
+      }
+
+      try {
+        await storage.execute(`ALTER TABLE learning_content ADD COLUMN jlpt_level TEXT`)
+      } catch {
+        // Column already exists
+      }
+
       const rows = await storage.query<LearningItem>(
         `SELECT id, content_type, title, body, translation, sequence, source_document, jlpt_level
          FROM learning_content
          WHERE user_id = ? OR user_id IS NULL
-         ORDER BY source_document ASC NULLS FIRST, sequence ASC, id ASC`,
+         ORDER BY source_document ASC, sequence ASC, id ASC`,
         [activeUserId ?? 0]
       )
       setAllItems(rows)
@@ -325,17 +340,42 @@ export function LearningMode() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />
-      <main className="flex flex-col gap-6 p-6 max-w-2xl mx-auto flex-1 w-full">
-        <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold text-gray-900">Learn</h1>
-          <button
-            onClick={() => navigate('/learn/lessons')}
-            className="text-sm px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
-          >
-            📚 Study by Lesson
-          </button>
+      <main className="flex flex-col gap-6 p-6 max-w-4xl mx-auto flex-1 w-full">
+        <div>
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Learn</h1>
+          {/* Tab Toggle */}
+          <div className="flex gap-2 bg-gray-100 rounded-xl p-1 w-fit">
+            <button
+              onClick={() => setLearningMode('lesson')}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
+                learningMode === 'lesson'
+                  ? 'bg-white text-gray-900 shadow-sm'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              <span>📚</span>
+              <span>Study by Lesson</span>
+            </button>
+            <button
+              onClick={() => setLearningMode('browse')}
+              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
+                learningMode === 'browse'
+                  ? 'bg-white text-gray-900 shadow-sm'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              <span>📖</span>
+              <span>Browse Content</span>
+            </button>
+          </div>
         </div>
 
+        {learningMode === 'lesson' ? (
+          // Study by Lesson mode - show LessonsHub
+          <LessonsHub />
+        ) : (
+          // Browse Content mode
+          <>
         {isLoading ? (
           <div className="flex-1 flex items-center justify-center text-gray-400">Loading…</div>
         ) : allItems.length === 0 ? (
@@ -433,6 +473,8 @@ export function LearningMode() {
                 </button>
               </div>
             )}
+          </>
+        )}
           </>
         )}
       </main>

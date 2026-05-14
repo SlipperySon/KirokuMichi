@@ -303,7 +303,7 @@ export class SRSService {
       `SELECT gp.id, gp.jlpt_level, gp.title, gp.pattern, gp.meaning, gp.explanation, gp.examples_json
        FROM grammar_points gp
        LEFT JOIN grammar_progress prog ON prog.grammar_point_id = gp.id AND prog.user_id = ?
-       ORDER BY prog.times_seen ASC NULLS FIRST, prog.last_seen_at ASC NULLS FIRST, gp.frequency_rank ASC
+       ORDER BY prog.times_seen ASC, prog.last_seen_at ASC, gp.frequency_rank ASC
        LIMIT ?`,
       [userId, limit]
     )

@@ -10,6 +10,7 @@ import { useAppStore } from '../store'
 import { CEFR_BASE_TEXTBOOK, TEXTBOOK_LESSON_COUNTS, CEFR_SUPPLEMENTAL, type CEFRLevel } from '../content/cefrMapping'
 import { lessonStructureService, type LessonStructure } from '../content/lessonNormalization'
 import { curriculumService } from '../content/curriculumService'
+import { unlockScenariosForLesson } from '../content/scenarioUnlockService'
 import { SRSService } from '../srs/srsService'
 import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
@@ -166,8 +167,19 @@ export function LessonPage() {
     }
   }
 
-  const handleMarkComplete = () => {
+  const handleMarkComplete = async () => {
     markComplete(lessonId)
+    // Unlock corresponding scenarios when lesson is completed
+    if (activeUserId) {
+      try {
+        const result = await unlockScenariosForLesson(lessonId, activeUserId, storage)
+        if (result.unlockedCount > 0) {
+          console.log(`Unlocked ${result.unlockedCount} scenarios from ${result.practiceBookName}`)
+        }
+      } catch (error) {
+        console.error('Failed to unlock scenarios:', error)
+      }
+    }
   }
 
   return (

@@ -14,18 +14,19 @@ export const CEFR_BASE_TEXTBOOK: Record<CEFRLevel, string> = {
   a2: 'genki_2_textbook',      // Genki 2
   b1: 'quartet_1_textbook',    // Quartet 1
   b2: 'quartet_2_textbook',    // Quartet 2
-  c1: 'tobira_textbook'        // Tobira
+  c1: 'authentic_japanese'     // TBD: Authentic Japanese reading/content (Tobira is supplementary for B2)
 }
 
 /**
  * Supplemental materials available for each CEFR level
- * Users can optionally study workbooks, alternative textbooks, etc.
+ * Includes workbooks and "pair" practice textbooks (Marugoto/Tobira)
+ * Users can optionally study these alongside the core textbook
  */
 export const CEFR_SUPPLEMENTAL: Record<CEFRLevel, string[]> = {
-  a1: ['genki_1_workbook'],
-  a2: ['genki_2_workbook'],
-  b1: ['quartet_1_workbook'],
-  b2: ['quartet_2_workbook'],
+  a1: ['genki_1_workbook', 'marugoto_a1_textbook'],
+  a2: ['genki_2_workbook', 'marugoto_a2_textbook'],
+  b1: ['quartet_1_workbook', 'marugoto_b1_textbook'],
+  b2: ['quartet_2_workbook', 'tobira_textbook'],
   c1: []
 }
 
@@ -45,7 +46,8 @@ export const TEXTBOOK_LESSON_COUNTS: Record<string, number> = {
   'quartet_1_workbook': 12,
   'quartet_2_textbook': 12,
   'quartet_2_workbook': 12,
-  'tobira_textbook': 14
+  'tobira_textbook': 14,
+  'authentic_japanese': 0  // TBD: C1 content not yet available
 }
 
 /**

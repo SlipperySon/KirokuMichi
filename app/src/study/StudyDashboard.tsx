@@ -44,7 +44,6 @@ export function StudyDashboard() {
   const [dueCount, setDueCount] = useState(0)
   const [newCount, setNewCount] = useState(0)
   const [availableNewCount, setAvailableNewCount] = useState(0)
-  const [grammarDueCount, setGrammarDueCount] = useState(0)
   const [weeklyReviewedCount, setWeeklyReviewedCount] = useState(0)
   const [streakData, setStreakData] = useState<StreakData | null>(null)
   const [isLoading, setIsLoading] = useState(true)
@@ -66,11 +65,10 @@ export function StudyDashboard() {
       setActiveUserId(uid)
     }
 
-    const [due, newC, streak, grammarDue, weeklyRows] = await Promise.all([
+    const [due, newC, streak, weeklyRows] = await Promise.all([
       service.getDueCount(uid),
       service.getNewCount(uid),
       service.getStreakData(uid),
-      service.getGrammarDueCount(uid),
       storage.query<{ date: string; cardsReviewed: number }>(
         `SELECT
           date(started_at) AS date,
@@ -85,7 +83,6 @@ export function StudyDashboard() {
     ])
     setDueCount(due)
     setNewCount(newC)
-    setGrammarDueCount(grammarDue)
     // Cap new cards shown by daily limit minus due cards already scheduled
     const available = Math.max(0, settings.dailyCardLimit - due)
     setAvailableNewCount(Math.min(newC, available))
@@ -126,10 +123,6 @@ export function StudyDashboard() {
     if (queue.length === 0) return
     const sessionId = await service.startSession(userId, 'vocab')
     navigate('/study/review', { state: { queue, grammarEntries: [], sessionId, userId } })
-  }
-
-  async function startGrammarReview() {
-    navigate('/study/grammar')
   }
 
   async function resumeSession() {
@@ -276,25 +269,15 @@ export function StudyDashboard() {
         </div>
       </div>
 
-      {/* Review buttons */}
-      <div className="grid grid-cols-2 gap-3">
-        <button
-          onClick={startWordReview}
-          disabled={dueCount + newCount === 0}
-          className="flex flex-col items-center px-4 py-5 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-        >
-          <span className="text-lg">Review Words</span>
-          <span className="text-xs mt-1 opacity-80">{dueCount} due · {availableNewCount} new</span>
-        </button>
-        <button
-          onClick={startGrammarReview}
-          disabled={grammarDueCount === 0}
-          className="flex flex-col items-center px-4 py-5 bg-purple-600 text-white rounded-xl font-semibold hover:bg-purple-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-        >
-          <span className="text-lg">Study Grammar</span>
-          <span className="text-xs mt-1 opacity-80">{grammarDueCount} due</span>
-        </button>
-      </div>
+      {/* Review button */}
+      <button
+        onClick={startWordReview}
+        disabled={dueCount + newCount === 0}
+        className="w-full flex flex-col items-center px-4 py-5 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+      >
+        <span className="text-lg">Review Cards</span>
+        <span className="text-xs mt-1 opacity-80">{dueCount} due · {availableNewCount} new</span>
+      </button>
 
     </main>
     </div>
