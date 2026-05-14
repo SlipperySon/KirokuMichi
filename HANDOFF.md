@@ -32,7 +32,26 @@
 
 ---
 
-## What Just Completed (2026-05-14 13:12 UTC, Current Session)
+## What Just Completed (2026-05-14 14:15 UTC, Current Session)
+
+### ✅ CURRICULUM VOCABULARY & GRAMMAR EXTRACTION COMPLETE
+
+**Extracted from all 54 lesson packs:**
+- **645 vocabulary entries** with surface, reading, meaning, part of speech, examples
+- **27 grammar patterns** with explanations and examples
+- **4 optimized index files** for different use cases:
+  1. `curriculum-vocabulary.json` (177 KB) — Full vocab data
+  2. `curriculum-grammar.json` (8.1 KB) — Grammar patterns
+  3. `curriculum-lessons-index.json` (100 KB) — **FOR ANKI UNLOCKS** (lesson-indexed, lightweight)
+  4. `curriculum-vocab-grammar.json` (405 KB) — Complete comprehensive index
+
+**Location:** `app/tools/textbook-pack/out/curriculum-*.json`
+
+**Ready for Anki unlock system:**
+- Query by lesson ID: `lessons.genki_1_lesson_1.vocabulary`
+- Per-lesson vocabulary list for unlock buttons
+- Per-lesson grammar patterns for context
+- Textbook-key indexed for curriculum linking
 
 ### ✅ B1-B2 EXTRACTION FULLY COMPLETE
 
