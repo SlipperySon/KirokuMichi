@@ -72,7 +72,7 @@ export async function parseApkg(file: File): Promise<ParsedApkg> {
  * Extract metadata from parsed APKG
  */
 export async function extractApkgMetadata(parsed: ParsedApkg): Promise<ApkgMetadata> {
-  const SQL = await initSqlJs()
+  const SQL = await initSqlJs({ locateFile: f => `/sql.js/${f}` })
   const db = new SQL.Database(parsed.dbData)
 
   try {
@@ -114,7 +114,7 @@ export async function extractApkgMetadata(parsed: ParsedApkg): Promise<ApkgMetad
  * Get SQL.js database instance from parsed APKG
  */
 export async function getApkgDatabase(parsed: ParsedApkg): Promise<SqlJsDatabase> {
-  const SQL = await initSqlJs()
+  const SQL = await initSqlJs({ locateFile: f => `/sql.js/${f}` })
   return new SQL.Database(parsed.dbData)
 }
 
