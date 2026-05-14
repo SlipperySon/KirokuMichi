@@ -15,6 +15,8 @@ import { ImmersionMode } from './study/ImmersionMode'
 import { LearningMode } from './study/LearningMode'
 import { ScenarioMode } from './study/ScenarioMode'
 import { GrammarReview } from './study/GrammarReview'
+import { LessonsHub } from './study/LessonsHub'
+import { LessonPage } from './study/LessonPage'
 import { OfflineBanner } from './components/OfflineBanner'
 import { TestImport } from './TestImport'
 
@@ -49,6 +51,8 @@ function App() {
           />
           <Route path="/onboarding" element={<OnboardingFlow />} />
           <Route path="/study" element={<StudyDashboard />} />
+          <Route path="/study/lessons" element={<LessonsHub />} />
+          <Route path="/study/lessons/:cefr/:lessonNumber" element={<LessonPage />} />
           <Route path="/study/review" element={<ReviewSession />} />
           <Route path="/study/jlpt" element={<JLPTSection />} />
           <Route path="/practice" element={<TutorChat />} />

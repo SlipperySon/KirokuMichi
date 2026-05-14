@@ -2,12 +2,17 @@ import JSZip from 'jszip'
 import initSqlJs from 'sql.js'
 import type { StorageProvider } from '../core/providers'
 import { saveAudio } from './audioStore'
+import { unlockCardsForTextbook } from '../content/lessonUnlockService'
 
 export interface ImportResult {
   imported: number
   skipped: number
   errors: string[]
   audioExtracted: number
+  unlockedForLessons?: {
+    textbook: string
+    totalUnlocked: number
+  }
 }
 
 function deriveJlptLevel(tags: string): string | null {
@@ -172,5 +177,37 @@ export async function importFromAnki(
     }
   }
 
-  return { imported, skipped, errors, audioExtracted }
+  // After importing cards, attempt to unlock them for lessons
+  // Try common textbook names from Anki deck
+  let unlockedForLessons: { textbook: string; totalUnlocked: number } | undefined
+
+  // Detect which textbook this might be from based on deck name or heuristics
+  // For now, try the most common textbooks
+  const textbooksToTry = [
+    'genki_1_textbook',
+    'genki_2_textbook',
+    'marugoto_a1_textbook',
+    'marugoto_a2_textbook',
+    'marugoto_b1_textbook',
+    'quartet_1_textbook',
+    'quartet_2_textbook',
+    'tobira_textbook'
+  ]
+
+  for (const textbook of textbooksToTry) {
+    try {
+      const result = await unlockCardsForTextbook(textbook, userId, storage)
+      if (result.totalUnlocked > 0) {
+        unlockedForLessons = {
+          textbook,
+          totalUnlocked: result.totalUnlocked
+        }
+        break // Stop after first textbook with matches
+      }
+    } catch {
+      // Continue to next textbook
+    }
+  }
+
+  return { imported, skipped, errors, audioExtracted, unlockedForLessons }
 }

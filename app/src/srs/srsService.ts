@@ -73,6 +73,33 @@ export class SRSService {
     )
   }
 
+  async getCardsForLesson(userId: number, lessonId: string, limit?: number): Promise<ReviewCard[]> {
+    const query = `SELECT
+      cs.id        AS cardStateId,
+      cs.card_id   AS cardId,
+      cs.state,
+      cs.lapses,
+      cs.stability,
+      cs.difficulty,
+      cs.due,
+      c.type,
+      c.front,
+      c.back,
+      c.reading,
+      c.audio_url  AS audioUrl,
+      c.jlpt_level AS jlptLevel
+     FROM card_states cs
+     JOIN cards c ON c.id = cs.card_id
+     WHERE cs.user_id = ?
+       AND cs.lesson_id = ?
+       AND cs.is_leech = 0
+     ORDER BY cs.state ASC, cs.due ASC, cs.id ASC
+     ${limit ? 'LIMIT ?' : ''}`
+
+    const params = limit ? [userId, lessonId, limit] : [userId, lessonId]
+    return this.storage.query<ReviewCard>(query, params)
+  }
+
   async reviewCard(
     userId: number,
     cardStateId: number,

@@ -74,8 +74,15 @@ function initializeSchema() {
       leech_count INTEGER DEFAULT 0,
       is_leech INTEGER DEFAULT 0,
       last_review TEXT,
+      lesson_id TEXT DEFAULT NULL,
       UNIQUE(card_id, user_id)
     )
+  `)
+
+  // Create index for lesson_id queries
+  dbInstance.run(`
+    CREATE INDEX IF NOT EXISTS idx_card_states_lesson
+    ON card_states(user_id, lesson_id)
   `)
 
   dbInstance.run(`

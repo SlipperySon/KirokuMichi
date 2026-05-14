@@ -21,13 +21,14 @@ interface LocationState {
   grammarEntries: [number, GrammarQuestion][]
   sessionId: number
   userId: number
+  lessonId?: string
 }
 
 export function ReviewSession() {
   const intl = useIntl()
   const navigate = useNavigate()
   const { state } = useLocation() as { state: LocationState }
-  const { settings } = useAppStore()
+  const { settings, markLessonComplete } = useAppStore()
 
   const [storage] = useState(() => new SQLiteStorage())
   const scheduler = settings.schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
@@ -44,6 +45,11 @@ export function ReviewSession() {
   )
 
   if (session.isComplete) {
+    // Mark lesson as complete if this was a lesson study session
+    if (state.lessonId) {
+      markLessonComplete(state.lessonId)
+    }
+
     return (
       <SessionSummary
         stats={session.stats}

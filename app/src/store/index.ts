@@ -26,16 +26,22 @@ interface AppState {
   settings: Settings
   onboardingComplete: boolean
   activeUserId: number | null
+  lessonsCompleted: string[] // e.g., ["genki_1_1", "genki_1_2"]
+  currentLesson: string | null // e.g., "genki_1_1"
   updateSettings: (patch: Partial<Settings>) => void
   setOnboardingComplete: (v: boolean) => void
   setSessionToken: (token: string) => void
   setActiveUserId: (id: number) => void
+  markLessonComplete: (lessonId: string) => void
+  setCurrentLesson: (lessonId: string | null) => void
 }
 
 export const useAppStore = create<AppState>()(
   persist(
     (set) => ({
       activeUserId: null,
+      lessonsCompleted: [],
+      currentLesson: null,
       settings: {
         aiProvider: null,
         apiKey: null,
@@ -62,6 +68,13 @@ export const useAppStore = create<AppState>()(
       setSessionToken: (token) =>
         set((s) => ({ settings: { ...s.settings, sessionToken: token } })),
       setActiveUserId: (id) => set({ activeUserId: id }),
+      markLessonComplete: (lessonId) =>
+        set((s) => ({
+          lessonsCompleted: s.lessonsCompleted.includes(lessonId)
+            ? s.lessonsCompleted
+            : [...s.lessonsCompleted, lessonId],
+        })),
+      setCurrentLesson: (lessonId) => set({ currentLesson: lessonId }),
     }),
     { name: 'kiroku-michi-app' }
   )
