@@ -79,11 +79,7 @@ function initializeSchema() {
     )
   `)
 
-  // Create index for lesson_id queries
-  dbInstance.run(`
-    CREATE INDEX IF NOT EXISTS idx_card_states_lesson
-    ON card_states(user_id, lesson_id)
-  `)
+  // Index creation moved after ALTER TABLE (see below)
 
   dbInstance.run(`
     CREATE TABLE IF NOT EXISTS sessions (
@@ -215,6 +211,22 @@ function initializeSchema() {
     dbInstance.run(`ALTER TABLE questions ADD COLUMN source TEXT DEFAULT 'base'`)
   } catch {
     // Column already exists
+  }
+
+  try {
+    dbInstance.run(`ALTER TABLE card_states ADD COLUMN lesson_id TEXT DEFAULT NULL`)
+  } catch {
+    // Column already exists
+  }
+
+  // Create index for lesson_id queries (after column exists)
+  try {
+    dbInstance.run(`
+      CREATE INDEX IF NOT EXISTS idx_card_states_lesson
+      ON card_states(user_id, lesson_id)
+    `)
+  } catch {
+    // Index already exists
   }
 
   persist()
