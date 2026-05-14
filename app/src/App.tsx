@@ -18,7 +18,6 @@ import { GrammarReview } from './study/GrammarReview'
 import { LessonsHub } from './study/LessonsHub'
 import { LessonPage } from './study/LessonPage'
 import { OfflineBanner } from './components/OfflineBanner'
-import { TestImport } from './TestImport'
 
 function App() {
   useTheme() // Initialize theme on mount
@@ -44,16 +43,15 @@ function App() {
       <BrowserRouter>
         <OfflineBanner />
         <Routes>
-          <Route path="/test-import" element={<TestImport />} />
           <Route
             path="/"
             element={onboardingComplete ? <Navigate to="/study" replace /> : <Navigate to="/onboarding" replace />}
           />
           <Route path="/onboarding" element={<OnboardingFlow />} />
           <Route path="/study" element={<StudyDashboard />} />
-          <Route path="/study/lessons" element={<LessonsHub />} />
-          <Route path="/study/lessons/:cefr/:lessonNumber" element={<LessonPage />} />
           <Route path="/study/review" element={<ReviewSession />} />
+          <Route path="/learn/lessons" element={<LessonsHub />} />
+          <Route path="/learn/lessons/:cefr/:lessonNumber" element={<LessonPage />} />
           <Route path="/study/jlpt" element={<JLPTSection />} />
           <Route path="/practice" element={<TutorChat />} />
           <Route path="/my-content" element={<MyContent />} />

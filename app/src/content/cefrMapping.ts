@@ -10,9 +10,9 @@ export type CEFRLevel = 'a1' | 'a2' | 'b1' | 'b2' | 'c1'
  * These are the primary textbooks users follow for each level
  */
 export const CEFR_BASE_TEXTBOOK: Record<CEFRLevel, string> = {
-  a1: 'genki_1_textbook',      // Genki I
-  a2: 'genki_2_textbook',      // Genki II
-  b1: 'marugoto_b1_textbook',  // Marugoto B1
+  a1: 'genki_1_textbook',      // Genki 1
+  a2: 'genki_2_textbook',      // Genki 2
+  b1: 'quartet_1_textbook',    // Quartet 1
   b2: 'quartet_2_textbook',    // Quartet 2
   c1: 'tobira_textbook'        // Tobira
 }
@@ -24,7 +24,7 @@ export const CEFR_BASE_TEXTBOOK: Record<CEFRLevel, string> = {
 export const CEFR_SUPPLEMENTAL: Record<CEFRLevel, string[]> = {
   a1: ['genki_1_workbook'],
   a2: ['genki_2_workbook'],
-  b1: ['marugoto_b1_workbook', 'quartet_1_textbook', 'quartet_1_workbook'],
+  b1: ['quartet_1_workbook'],
   b2: ['quartet_2_workbook'],
   c1: []
 }

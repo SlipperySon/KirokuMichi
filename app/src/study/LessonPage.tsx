@@ -125,7 +125,7 @@ export function LessonPage() {
         <div className="text-center">
           <p className="mb-4 text-red-600">{state.error || 'Lesson not found'}</p>
           <button
-            onClick={() => navigate('/study/lessons')}
+            onClick={() => navigate('/learn/lessons')}
             className="rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
           >
             Back to Lessons
@@ -197,7 +197,7 @@ export function LessonPage() {
           {/* Navigation and Actions */}
           <div className="flex flex-wrap items-center gap-3">
             <button
-              onClick={() => navigate('/study/lessons')}
+              onClick={() => navigate('/learn/lessons')}
               className="rounded-lg border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50"
             >
               ← Back to Lessons
@@ -205,7 +205,7 @@ export function LessonPage() {
 
             {hasPreviousLesson && (
               <button
-                onClick={() => navigate(`/study/lessons/${cefr}/${lessonNum - 1}`)}
+                onClick={() => navigate(`/learn/lessons/${cefr}/${lessonNum - 1}`)}
                 className="rounded-lg border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50"
               >
                 ← Previous Lesson
@@ -214,7 +214,7 @@ export function LessonPage() {
 
             {hasNextLesson && (
               <button
-                onClick={() => navigate(`/study/lessons/${cefr}/${lessonNum + 1}`)}
+                onClick={() => navigate(`/learn/lessons/${cefr}/${lessonNum + 1}`)}
                 className="rounded-lg border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50"
               >
                 Next Lesson →

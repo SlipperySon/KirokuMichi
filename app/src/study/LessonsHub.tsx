@@ -107,7 +107,7 @@ export function LessonsHub() {
 
   const handleCEFRSelect = (cefr: CEFRLevel) => {
     // Navigate to first lesson for that CEFR level
-    navigate(`/study/lessons/${cefr}/1`)
+    navigate(`/learn/lessons/${cefr}/1`)
   }
 
   return (

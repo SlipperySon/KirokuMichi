@@ -1,4 +1,5 @@
 import { useState, useEffect, useMemo } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
 import { Navigation } from '../components/Navigation'
@@ -319,15 +320,20 @@ export function LearningMode() {
 
   const current = filteredItems[index]
 
+  const navigate = useNavigate()
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />
       <main className="flex flex-col gap-6 p-6 max-w-2xl mx-auto flex-1 w-full">
         <div className="flex items-center justify-between">
           <h1 className="text-2xl font-bold text-gray-900">Learn</h1>
-          {filteredItems.length > 0 && (
-            <span className="text-sm text-gray-400">{index + 1} / {filteredItems.length}</span>
-          )}
+          <button
+            onClick={() => navigate('/learn/lessons')}
+            className="text-sm px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors"
+          >
+            📚 Study by Lesson
+          </button>
         </div>
 
         {isLoading ? (
