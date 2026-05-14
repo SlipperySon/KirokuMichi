@@ -1,5 +1,5 @@
 // Centralized registry of data file locations for easy swapping
-// To replace data: update file paths below and replace files in app/data/generated/jlpt/
+// To replace data: update file paths below and replace files in app/data/generated/
 
 export const VOCAB_FILES: Record<string, string> = {
   N5: '../../data/generated/jlpt/vocab-N5.json',
@@ -29,3 +29,24 @@ export const QUIZ_FILES: string[] = [
   '../../data/generated/jlpt/quiz-part9.json',
   '../../data/generated/jlpt/quiz-part10.json',
 ]
+
+// Textbook curriculum data
+export const TEXTBOOK_FILES: Record<string, string> = {
+  'comprehensive-curriculum': '../../data/generated/textbooks/comprehensive-curriculum.json',
+  'genki_1_textbook': '../../data/generated/textbooks/genki_1_textbook-comprehensive.json',
+  'genki_1_workbook': '../../data/generated/textbooks/genki_1_workbook-comprehensive.json',
+  'genki_2_textbook': '../../data/generated/textbooks/genki_2_textbook-comprehensive.json',
+  'genki_2_workbook': '../../data/generated/textbooks/genki_2_workbook-comprehensive.json',
+  'genki_combined_answer_key': '../../data/generated/textbooks/genki_combined_answer_key-comprehensive.json',
+  'marugoto_a1_textbook': '../../data/generated/textbooks/marugoto_a1_textbook-comprehensive.json',
+  'marugoto_a2_textbook': '../../data/generated/textbooks/marugoto_a2_textbook-comprehensive.json',
+  'marugoto_b1_textbook': '../../data/generated/textbooks/marugoto_b1_textbook-comprehensive.json',
+  'quartet_1_textbook': '../../data/generated/textbooks/quartet_1_textbook-comprehensive.json',
+  'quartet_1_workbook': '../../data/generated/textbooks/quartet_1_workbook-comprehensive.json',
+  'quartet_1_workbook_answer_key': '../../data/generated/textbooks/quartet_1_workbook_answer_key-comprehensive.json',
+  'quartet_2_textbook': '../../data/generated/textbooks/quartet_2_textbook-comprehensive.json',
+  'quartet_2_workbook': '../../data/generated/textbooks/quartet_2_workbook-comprehensive.json',
+  'tobira_textbook': '../../data/generated/textbooks/tobira_textbook-comprehensive.json',
+}
+
+export const EXTRACTION_SUMMARY = '../../data/generated/textbooks/EXTRACTION_SUMMARY.json'

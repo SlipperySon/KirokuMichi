@@ -16,6 +16,7 @@ import { LearningMode } from './study/LearningMode'
 import { ScenarioMode } from './study/ScenarioMode'
 import { GrammarReview } from './study/GrammarReview'
 import { OfflineBanner } from './components/OfflineBanner'
+import { TestImport } from './TestImport'
 
 function App() {
   useTheme() // Initialize theme on mount
@@ -41,6 +42,7 @@ function App() {
       <BrowserRouter>
         <OfflineBanner />
         <Routes>
+          <Route path="/test-import" element={<TestImport />} />
           <Route
             path="/"
             element={onboardingComplete ? <Navigate to="/study" replace /> : <Navigate to="/onboarding" replace />}
