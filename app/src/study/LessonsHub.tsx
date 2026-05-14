@@ -9,6 +9,15 @@ import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../store'
 import { CEFR_BASE_TEXTBOOK, TEXTBOOK_LESSON_COUNTS, type CEFRLevel } from '../content/cefrMapping'
 
+// Display names for each base textbook (kept in sync with cefrMapping.ts)
+const TEXTBOOK_DISPLAY_NAMES: Record<string, string> = {
+  'genki_1_textbook': 'Genki I',
+  'genki_2_textbook': 'Genki II',
+  'quartet_1_textbook': 'Quartet 1',
+  'quartet_2_textbook': 'Quartet 2',
+  'authentic_japanese': 'Coming soon'
+}
+
 interface CEFRButtonProps {
   cefr: CEFRLevel
   title: string
@@ -16,6 +25,7 @@ interface CEFRButtonProps {
   baseTextbook: string
   lessonsCompleted: number
   totalLessons: number
+  disabled?: boolean
   onClick: () => void
 }
 
@@ -24,14 +34,21 @@ function CEFRButton({
   description,
   lessonsCompleted,
   totalLessons,
+  disabled = false,
   onClick
 }: CEFRButtonProps) {
   const percentage = totalLessons > 0 ? Math.round((lessonsCompleted / totalLessons) * 100) : 0
 
   return (
     <button
-      onClick={onClick}
-      className="group relative flex flex-col gap-3 rounded-lg border-2 border-slate-200 bg-white p-6 text-left transition-all hover:border-blue-500 hover:shadow-lg"
+      onClick={disabled ? undefined : onClick}
+      disabled={disabled}
+      title={disabled ? 'Content not yet available' : undefined}
+      className={`group relative flex flex-col gap-3 rounded-lg border-2 p-6 text-left transition-all ${
+        disabled
+          ? 'cursor-not-allowed border-slate-200 bg-slate-50 opacity-60'
+          : 'border-slate-200 bg-white hover:border-blue-500 hover:shadow-lg'
+      }`}
     >
       {/* CEFR Level Badge */}
       <div className="flex items-start justify-between">
@@ -39,8 +56,8 @@ function CEFRButton({
           <h3 className="text-xl font-bold text-slate-900">{title}</h3>
           <p className="text-sm text-slate-600">{description}</p>
         </div>
-        <div className="text-xs font-bold text-slate-500 group-hover:text-blue-600">
-          {lessonsCompleted}/{totalLessons}
+        <div className={`text-xs font-bold text-slate-500 ${disabled ? '' : 'group-hover:text-blue-600'}`}>
+          {disabled ? '—' : `${lessonsCompleted}/${totalLessons}`}
         </div>
       </div>
 
@@ -48,17 +65,19 @@ function CEFRButton({
       <div className="h-2 w-full rounded-full bg-slate-200">
         <div
           className="h-full rounded-full bg-blue-500 transition-all"
-          style={{ width: `${percentage}%` }}
+          style={{ width: `${disabled ? 0 : percentage}%` }}
         />
       </div>
 
       {/* Stats */}
       <div className="text-xs text-slate-500">
-        {lessonsCompleted === 0
-          ? 'Not started'
-          : lessonsCompleted === totalLessons
-            ? '✓ Completed'
-            : `${percentage}% complete`}
+        {disabled
+          ? 'Coming soon'
+          : lessonsCompleted === 0
+            ? 'Not started'
+            : lessonsCompleted === totalLessons
+              ? '✓ Completed'
+              : `${percentage}% complete`}
       </div>
     </button>
   )
@@ -68,18 +87,28 @@ export function LessonsHub() {
   const navigate = useNavigate()
   const lessonsCompleted = useAppStore(s => s.lessonsCompleted)
 
-  // CEFR levels and their descriptions
+  // CEFR levels — descriptions derived from CEFR_BASE_TEXTBOOK so labels stay in sync
+  const TIERS: Record<CEFRLevel, string> = {
+    a1: 'Beginner',
+    a2: 'Elementary',
+    b1: 'Intermediate',
+    b2: 'Upper Intermediate',
+    c1: 'Advanced'
+  }
+
   const cefrLevels: Array<{
     cefr: CEFRLevel
     title: string
     description: string
-  }> = [
-    { cefr: 'a1', title: 'A1', description: 'Beginner • Genki I' },
-    { cefr: 'a2', title: 'A2', description: 'Elementary • Genki II' },
-    { cefr: 'b1', title: 'B1', description: 'Intermediate • Marugoto B1' },
-    { cefr: 'b2', title: 'B2', description: 'Upper Intermediate • Quartet 2' },
-    { cefr: 'c1', title: 'C1', description: 'Advanced • Tobira' }
-  ]
+  }> = (['a1', 'a2', 'b1', 'b2', 'c1'] as CEFRLevel[]).map(cefr => {
+    const baseTextbook = CEFR_BASE_TEXTBOOK[cefr]
+    const textbookName = TEXTBOOK_DISPLAY_NAMES[baseTextbook] ?? 'TBD'
+    return {
+      cefr,
+      title: cefr.toUpperCase(),
+      description: `${TIERS[cefr]} • ${textbookName}`
+    }
+  })
 
   // Calculate completion stats for each level
   const stats = useMemo(() => {
@@ -123,18 +152,22 @@ export function LessonsHub() {
 
         {/* CEFR Level Grid */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-          {cefrLevels.map(({ cefr, title, description }) => (
-            <CEFRButton
-              key={cefr}
-              cefr={cefr}
-              title={title}
-              description={description}
-              baseTextbook={CEFR_BASE_TEXTBOOK[cefr]}
-              lessonsCompleted={stats[cefr].completed}
-              totalLessons={stats[cefr].total}
-              onClick={() => handleCEFRSelect(cefr)}
-            />
-          ))}
+          {cefrLevels.map(({ cefr, title, description }) => {
+            const isDisabled = stats[cefr].total === 0
+            return (
+              <CEFRButton
+                key={cefr}
+                cefr={cefr}
+                title={title}
+                description={description}
+                baseTextbook={CEFR_BASE_TEXTBOOK[cefr]}
+                lessonsCompleted={stats[cefr].completed}
+                totalLessons={stats[cefr].total}
+                disabled={isDisabled}
+                onClick={() => handleCEFRSelect(cefr)}
+              />
+            )
+          })}
         </div>
 
         {/* Information Section */}
