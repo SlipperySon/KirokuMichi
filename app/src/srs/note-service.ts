@@ -19,6 +19,7 @@ export interface NoteDatabase {
   getNote(noteId: NoteId): Promise<Note | null>
   getNoteType(noteTypeId: NoteTypeId): Promise<NoteType | null>
   getNotesByDeck(deckId: number): Promise<Note[]>
+  getAllNotes(): Promise<Note[]>
   getDefaultNoteType(): Promise<NoteType | null>
   getAllNoteTypes(): Promise<NoteType[]>
 
