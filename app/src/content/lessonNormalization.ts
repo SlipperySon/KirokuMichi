@@ -105,12 +105,17 @@ class LessonStructureService {
     if (this.cache) return this.cache
 
     try {
-      const response = await fetch('../../data/generated/lesson-structure.json')
+      const response = await fetch('/data/generated/lesson-structure.json')
       if (!response.ok) {
-        throw new Error('Failed to load lesson structure')
+        throw new Error(`Failed to load lesson structure: ${response.status} ${response.statusText}`)
       }
 
-      this.cache = (await response.json()) as LessonStructureFile
+      const text = await response.text()
+      if (!text) {
+        throw new Error('Empty response from lesson structure endpoint')
+      }
+
+      this.cache = JSON.parse(text) as LessonStructureFile
 
       // Build lesson map for quick lookup
       this.cache.lessons.forEach(lesson => {
