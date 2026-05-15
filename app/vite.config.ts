@@ -15,8 +15,8 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': 'http://localhost:3001',
+      '/data': 'http://localhost:3001',
     },
-    middlewareMode: false,
   },
   // Serve data folder as static files for curriculum/lesson data
   publicDir: 'public',

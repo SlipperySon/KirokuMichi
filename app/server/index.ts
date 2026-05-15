@@ -31,6 +31,9 @@ app.use(corsMiddleware)
 app.options(/.*/, corsMiddleware)
 app.use(express.json())
 
+// Serve curriculum data folder (lesson structures, textbook content, etc.)
+app.use('/data', express.static(path.join(__dirname, '../data')))
+
 // Issue a session token
 app.post('/api/session', (_req, res) => {
   const token = crypto.randomBytes(32).toString('hex')
