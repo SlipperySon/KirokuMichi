@@ -11,7 +11,7 @@
  */
 
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { Send } from 'lucide-react'
+import { Send, ChevronDown } from 'lucide-react'
 import { useAppStore } from '../store'
 import { ClientAIProvider } from '../ai/aiProvider'
 import {
@@ -23,6 +23,7 @@ import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { SRSService } from '../srs/srsService'
 import { Ruby } from '../components/Ruby'
+import { getTextbookScenarios, type TextbookScenario } from './textbookDialogues'
 import type { AIMessage } from '../core/providers'
 
 interface Correction {
@@ -48,8 +49,9 @@ type Turn = AssistantTurn | UserTurn
 
 const MAX_PERSISTED_TURNS = 50
 
-function storageKey(scenarioId: string) {
-  return `kiroku-conversation-${scenarioId}`
+function storageKey(scenarioId: string, isTextbook: boolean = false) {
+  const prefix = isTextbook ? 'kiroku-conversation-textbook' : 'kiroku-conversation'
+  return `${prefix}-${scenarioId}`
 }
 
 function loadPersistedTurns(scenarioId: string): Turn[] {
@@ -130,6 +132,8 @@ export function ConversationPartner({ cefrLevel = 'a2' }: ConversationPartnerPro
   const activeUserId = useAppStore(s => s.activeUserId)
 
   const [scenario, setScenario] = useState<ConversationScenario>(CONVERSATION_SCENARIOS[0])
+  const [textbookScenarios, setTextbookScenarios] = useState<TextbookScenario[]>([])
+  const [selectedTextbookScenario, setSelectedTextbookScenario] = useState<TextbookScenario | null>(null)
   const [turns, setTurns] = useState<Turn[]>(() => loadPersistedTurns(scenario.id))
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
@@ -146,23 +150,62 @@ export function ConversationPartner({ cefrLevel = 'a2' }: ConversationPartnerPro
   const [service] = useState(() => new SRSService(storage, scheduler))
   const [sessionId, setSessionId] = useState<number | null>(null)
 
+  // Load textbook scenarios on mount
+  useEffect(() => {
+    void getTextbookScenarios().then(scenarios => {
+      setTextbookScenarios(scenarios)
+    })
+  }, [])
+
   // Reload chat when scenario changes
   useEffect(() => {
-    setTurns(loadPersistedTurns(scenario.id))
+    const key = selectedTextbookScenario
+      ? selectedTextbookScenario.id
+      : scenario.id
+    const isTextbook = !!selectedTextbookScenario
+    setTurns(loadPersistedTurns(storageKey(key, isTextbook)))
     setError(null)
     setSessionId(null)
-  }, [scenario.id])
+  }, [scenario.id, selectedTextbookScenario])
 
   // Persist on change + autoscroll
   useEffect(() => {
-    persistTurns(scenario.id, turns)
+    const key = selectedTextbookScenario
+      ? selectedTextbookScenario.id
+      : scenario.id
+    const isTextbook = !!selectedTextbookScenario
+    persistTurns(storageKey(key, isTextbook), turns)
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }, [turns, scenario.id])
+  }, [turns, scenario.id, selectedTextbookScenario])
 
-  const systemPrompt = useMemo(
-    () => buildConversationSystemPrompt(scenario, cefrLevel),
-    [scenario, cefrLevel]
-  )
+  const systemPrompt = useMemo(() => {
+    if (selectedTextbookScenario) {
+      // Build a dynamic system prompt for textbook scenarios
+      return `You are practicing Japanese conversation from a textbook dialogue (${selectedTextbookScenario.textbook}, level ${selectedTextbookScenario.level}).
+
+The learner will practice natural conversation at their level. Respond naturally in Japanese, and after each exchange, provide corrections in structured JSON format if their Japanese has errors.
+
+**Important:**
+- Respond naturally and stay in conversational context
+- Correct only real errors (grammar, vocabulary, particles)
+- Be encouraging and supportive
+- Use simple Japanese for lower levels (A1-A2), more complex for higher levels (B1+)
+- Include furigana (kanji(kana)) for characters the learner might not know yet
+
+**Response format:**
+\`\`\`json
+{
+  "reply": "your Japanese response here",
+  "romaji": "optional romaji if helpful",
+  "corrections": [
+    {"original": "user's mistake", "corrected": "correct version", "explanation": "brief explanation"}
+  ]
+}
+\`\`\``
+    } else {
+      return buildConversationSystemPrompt(scenario, cefrLevel)
+    }
+  }, [selectedTextbookScenario, scenario, cefrLevel])
 
   const handleSend = async () => {
     const text = input.trim()
@@ -249,7 +292,11 @@ export function ConversationPartner({ cefrLevel = 'a2' }: ConversationPartnerPro
     setTurns([])
     setError(null)
     try {
-      localStorage.removeItem(storageKey(scenario.id))
+      const key = selectedTextbookScenario
+        ? selectedTextbookScenario.id
+        : scenario.id
+      const isTextbook = !!selectedTextbookScenario
+      localStorage.removeItem(storageKey(key, isTextbook))
     } catch {
       // ignore
     }
@@ -264,9 +311,12 @@ export function ConversationPartner({ cefrLevel = 'a2' }: ConversationPartnerPro
             {CONVERSATION_SCENARIOS.map(s => (
               <button
                 key={s.id}
-                onClick={() => setScenario(s)}
+                onClick={() => {
+                  setScenario(s)
+                  setSelectedTextbookScenario(null)
+                }}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                  scenario.id === s.id
+                  scenario.id === s.id && !selectedTextbookScenario
                     ? 'bg-indigo-100 text-indigo-700'
                     : 'text-gray-600 hover:bg-gray-100'
                 }`}
@@ -276,6 +326,32 @@ export function ConversationPartner({ cefrLevel = 'a2' }: ConversationPartnerPro
               </button>
             ))}
           </div>
+
+          {/* Textbook scenario dropdown */}
+          {textbookScenarios.length > 0 && (
+            <div className="relative group">
+              <button className="px-3 py-1.5 rounded-lg text-xs font-medium bg-purple-100 text-purple-700 hover:bg-purple-200 transition-colors flex items-center gap-1">
+                📚 Textbook
+                <ChevronDown className="w-3 h-3" />
+              </button>
+              <div className="hidden group-hover:block absolute right-0 mt-0 w-56 bg-white border border-gray-200 rounded-lg shadow-lg z-10 max-h-96 overflow-y-auto">
+                {textbookScenarios.map(ts => (
+                  <button
+                    key={ts.id}
+                    onClick={() => {
+                      setSelectedTextbookScenario(ts)
+                    }}
+                    className="w-full text-left px-4 py-2 hover:bg-purple-50 border-b border-gray-100 last:border-b-0 transition-colors"
+                  >
+                    <div className="text-xs font-semibold text-purple-700">{ts.textbook} ({ts.level})</div>
+                    <div className="text-xs text-gray-600 truncate">{ts.title}</div>
+                    <div className="text-xs text-gray-400 truncate">{ts.description}</div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
           {turns.length > 0 && (
             <button
               onClick={clearChat}
@@ -287,7 +363,16 @@ export function ConversationPartner({ cefrLevel = 'a2' }: ConversationPartnerPro
         </div>
         <div className="flex items-center justify-between text-xs text-gray-500">
           <span>
-            <strong className="text-gray-700">{scenario.title}</strong> · {scenario.description}
+            {selectedTextbookScenario ? (
+              <>
+                <strong className="text-purple-700">{selectedTextbookScenario.textbook}</strong> ·{' '}
+                {selectedTextbookScenario.description} · <span className="text-gray-400">page {selectedTextbookScenario.page}</span>
+              </>
+            ) : (
+              <>
+                <strong className="text-gray-700">{scenario.title}</strong> · {scenario.description}
+              </>
+            )}
           </span>
           <div className="flex items-center gap-3">
             <label className="flex items-center gap-1 cursor-pointer">
@@ -314,10 +399,24 @@ export function ConversationPartner({ cefrLevel = 'a2' }: ConversationPartnerPro
       <div className="flex-1 overflow-y-auto p-4 space-y-3" role="log" aria-live="polite">
         {turns.length === 0 && !error && (
           <div className="flex flex-col items-center justify-center h-full gap-3 text-center px-6">
-            <p className="text-gray-700 font-semibold">
-              {scenario.titleJa} — {scenario.title}
-            </p>
-            <p className="text-sm text-gray-500 max-w-md">{scenario.description}</p>
+            {selectedTextbookScenario ? (
+              <>
+                <p className="text-purple-700 font-semibold">
+                  {selectedTextbookScenario.titleJa}
+                </p>
+                <p className="text-xs text-purple-600 font-medium">
+                  {selectedTextbookScenario.textbook} ({selectedTextbookScenario.level})
+                </p>
+                <p className="text-sm text-gray-500 max-w-md">{selectedTextbookScenario.description}</p>
+              </>
+            ) : (
+              <>
+                <p className="text-gray-700 font-semibold">
+                  {scenario.titleJa} — {scenario.title}
+                </p>
+                <p className="text-sm text-gray-500 max-w-md">{scenario.description}</p>
+              </>
+            )}
             <p className="text-xs text-gray-400">Send your first Japanese line to start.</p>
           </div>
         )}
