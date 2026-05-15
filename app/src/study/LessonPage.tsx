@@ -49,7 +49,7 @@ export function LessonPage() {
   const lessonsCompleted = useAppStore(s => s.lessonsCompleted)
   const activeUserId = useAppStore(s => s.activeUserId)
 
-  const cefrLevel = cefr as CEFRLevel
+  const cefrLevel = (cefr?.toLowerCase() ?? 'a1') as CEFRLevel
   const baseTextbook = CEFR_BASE_TEXTBOOK[cefrLevel]
   const lessonNum = parseInt(lessonNumber || '1', 10)
 
