@@ -21,6 +21,7 @@ import { ScenarioMode } from './study/ScenarioMode'
 import { GrammarReview } from './study/GrammarReview'
 import { LessonsHub } from './study/LessonsHub'
 import { LessonPage } from './study/LessonPage'
+import { LessonStudy } from './study/LessonStudy'
 import { MistakeReview } from './study/MistakeReview'
 import { OfflineBanner } from './components/OfflineBanner'
 
@@ -90,6 +91,7 @@ function App() {
           <Route path="/study/mistakes" element={<MistakeReview />} />
           <Route path="/learn/lessons" element={<LessonsHub />} />
           <Route path="/learn/lessons/:cefr/:lessonNumber" element={<LessonPage />} />
+          <Route path="/learn/study" element={<LessonStudy />} />
           <Route path="/study/jlpt" element={<JLPTSection />} />
           <Route path="/practice" element={<TutorChat />} />
           <Route path="/my-content" element={<MyContent />} />

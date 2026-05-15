@@ -206,6 +206,26 @@ export function LessonPage() {
             </div>
           </div>
 
+          {/* Start Lesson Button — prominent CTA */}
+          {(state.vocab && state.vocab.length > 0) || (state.grammar && state.grammar.length > 0) ? (
+            <button
+              onClick={() => {
+                navigate('/learn/study', {
+                  state: {
+                    vocab: state.vocab || [],
+                    grammar: state.grammar || [],
+                    lessonId,
+                    lessonTitle: `${state.lesson!.series} - Lesson ${state.lesson!.lesson_number}`,
+                    cefrLevel: cefr,
+                  }
+                })
+              }}
+              className="w-full rounded-xl bg-indigo-600 px-6 py-4 text-lg font-bold text-white hover:bg-indigo-700 transition-colors shadow-md mb-4"
+            >
+              Start Lesson ({(state.vocab?.length ?? 0) + (state.grammar?.length ?? 0)} items)
+            </button>
+          ) : null}
+
           {/* Navigation and Actions */}
           <div className="flex flex-wrap items-center gap-3">
             <button
