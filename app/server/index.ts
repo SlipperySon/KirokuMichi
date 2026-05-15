@@ -32,7 +32,19 @@ app.options(/.*/, corsMiddleware)
 app.use(express.json())
 
 // Serve curriculum data folder (lesson structures, textbook content, etc.)
-app.use('/data', express.static(path.join(__dirname, '../data')))
+// Use process.cwd() since we run from app/ directory (npm run server)
+const dataPath = path.join(process.cwd(), 'data')
+console.log(`[server] Serving /data from ${dataPath}`)
+try {
+  access(dataPath).then(() => {
+    app.use('/data', express.static(dataPath))
+    console.log(`[server] ✓ Data folder accessible and served`)
+  }).catch(() => {
+    console.error(`[server] ✗ Data folder not found at ${dataPath}`)
+  })
+} catch (err) {
+  console.error(`[server] Error setting up data folder: ${err}`)
+}
 
 // Issue a session token
 app.post('/api/session', (_req, res) => {
