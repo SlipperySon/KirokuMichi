@@ -111,11 +111,11 @@ export function LessonStudy() {
     const percentage = total > 0 ? Math.round((knewCount / total) * 100) : 0
 
     return (
-      <div className="flex min-h-screen items-center justify-center bg-slate-50 p-6">
+      <div className="flex min-h-screen items-center justify-center bg-gray-50 p-6">
         <div className="w-full max-w-md rounded-2xl bg-white p-8 shadow-lg text-center space-y-6">
           <div className="text-5xl">{percentage >= 80 ? '🎉' : percentage >= 50 ? '👍' : '📚'}</div>
-          <h1 className="text-2xl font-bold text-slate-900">Lesson Complete!</h1>
-          <p className="text-slate-600">{state.lessonTitle}</p>
+          <h1 className="text-2xl font-bold text-gray-900">Lesson Complete!</h1>
+          <p className="text-gray-600">{state.lessonTitle}</p>
 
           <div className="grid grid-cols-3 gap-4 text-center">
             <div className="rounded-lg bg-blue-50 p-3">
@@ -156,13 +156,13 @@ export function LessonStudy() {
                 setKnewIt([])
                 setIsComplete(false)
               }}
-              className="w-full rounded-lg border border-slate-300 px-4 py-3 font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
+              className="w-full rounded-lg border border-gray-200 px-4 py-3 font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
             >
               Study Again
             </button>
             <button
               onClick={() => navigate(-1)}
-              className="text-sm text-slate-500 hover:text-slate-700"
+              className="text-sm text-gray-500 hover:text-gray-700"
             >
               Back to Lesson
             </button>
@@ -175,13 +175,13 @@ export function LessonStudy() {
   if (!current) return null
 
   return (
-    <div className="flex flex-col min-h-screen bg-slate-50">
+    <div className="flex flex-col min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-white border-b border-slate-200 px-6 py-4">
+      <div className="bg-white border-b border-gray-200 px-6 py-4">
         <div className="max-w-xl mx-auto flex items-center justify-between">
           <div>
-            <h1 className="text-lg font-bold text-slate-900">{state.lessonTitle}</h1>
-            <p className="text-sm text-slate-500">
+            <h1 className="text-lg font-bold text-gray-900">{state.lessonTitle}</h1>
+            <p className="text-sm text-gray-500">
               {currentIndex + 1} of {items.length} ·{' '}
               {current.type === 'vocab' ? 'Vocabulary' : 'Grammar'}
             </p>
@@ -192,7 +192,7 @@ export function LessonStudy() {
                 navigate(-1)
               }
             }}
-            className="text-sm text-slate-400 hover:text-slate-600 px-3 py-1 rounded-lg hover:bg-slate-100"
+            className="text-sm text-gray-500 hover:text-gray-600 px-3 py-1 rounded-lg hover:bg-slate-100"
           >
             Exit
           </button>
@@ -200,7 +200,7 @@ export function LessonStudy() {
       </div>
 
       {/* Progress bar */}
-      <div className="w-full bg-slate-200 h-1.5">
+      <div className="w-full bg-gray-200 h-1.5">
         <div
           className="bg-indigo-500 h-1.5 transition-all duration-300"
           style={{ width: `${progress}%` }}
@@ -229,9 +229,9 @@ export function LessonStudy() {
       </div>
 
       {/* Footer hint */}
-      <div className="text-center pb-6 text-xs text-slate-400">
+      <div className="text-center pb-6 text-xs text-gray-500">
         {!revealed ? (
-          <span>Press <kbd className="px-1.5 py-0.5 bg-slate-200 rounded text-slate-600">Space</kbd> to reveal</span>
+          <span>Press <kbd className="px-1.5 py-0.5 bg-gray-200 rounded text-gray-600">Space</kbd> to reveal</span>
         ) : (
           <span>
             <kbd className="px-1.5 py-0.5 bg-green-100 rounded text-green-700">1</kbd> I knew it ·{' '}
@@ -261,16 +261,16 @@ function VocabCard({
         <div className="text-xs font-medium text-blue-600 uppercase tracking-wider mb-3">
           Vocabulary
         </div>
-        <div className="text-4xl font-bold text-slate-900 mb-2" lang="ja">
+        <div className="text-4xl font-bold text-gray-900 mb-2" lang="ja">
           {item.surface}
         </div>
       </div>
 
       {/* Back (revealed) */}
       {revealed ? (
-        <div className="border-t border-slate-100 bg-slate-50 p-6 space-y-4">
+        <div className="border-t border-gray-200 bg-gray-50 p-6 space-y-4">
           <div className="text-center">
-            <div className="text-xl text-slate-700">{item.english}</div>
+            <div className="text-xl text-gray-700">{item.english}</div>
           </div>
           <div className="flex gap-3">
             <button
@@ -288,7 +288,7 @@ function VocabCard({
           </div>
         </div>
       ) : (
-        <div className="border-t border-slate-100 p-6">
+        <div className="border-t border-gray-200 p-6">
           <button
             onClick={onReveal}
             className="w-full rounded-lg bg-indigo-500 px-4 py-3 font-semibold text-white hover:bg-indigo-600 transition-colors"
@@ -319,16 +319,16 @@ function GrammarCard({
         <div className="text-xs font-medium text-purple-600 uppercase tracking-wider mb-3">
           Grammar
         </div>
-        <div className="text-2xl font-bold text-slate-900 mb-2 font-mono" lang="ja">
+        <div className="text-2xl font-bold text-gray-900 mb-2 font-mono" lang="ja">
           {item.pattern}
         </div>
       </div>
 
       {/* Back (revealed) */}
       {revealed ? (
-        <div className="border-t border-slate-100 bg-slate-50 p-6 space-y-4">
+        <div className="border-t border-gray-200 bg-gray-50 p-6 space-y-4">
           <div className="text-center">
-            <div className="text-lg text-slate-700">{item.meaning}</div>
+            <div className="text-lg text-gray-700">{item.meaning}</div>
           </div>
           <div className="flex gap-3">
             <button
@@ -346,7 +346,7 @@ function GrammarCard({
           </div>
         </div>
       ) : (
-        <div className="border-t border-slate-100 p-6">
+        <div className="border-t border-gray-200 p-6">
           <button
             onClick={onReveal}
             className="w-full rounded-lg bg-indigo-500 px-4 py-3 font-semibold text-white hover:bg-indigo-600 transition-colors"

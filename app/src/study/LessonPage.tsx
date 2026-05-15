@@ -122,10 +122,10 @@ export function LessonPage() {
 
   if (state.loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-slate-50">
+      <div className="flex min-h-screen items-center justify-center bg-gray-50">
         <div className="text-center">
-          <div className="mb-4 h-8 w-8 animate-spin rounded-full border-4 border-slate-300 border-t-blue-500" />
-          <p className="text-slate-600">Loading lesson...</p>
+          <div className="mb-4 h-8 w-8 animate-spin rounded-full border-4 border-gray-200 border-t-blue-500" />
+          <p className="text-gray-600">Loading lesson...</p>
         </div>
       </div>
     )
@@ -133,7 +133,7 @@ export function LessonPage() {
 
   if (state.error || !state.lesson) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-slate-50">
+      <div className="flex min-h-screen items-center justify-center bg-gray-50">
         <div className="text-center">
           <p className="mb-4 text-red-600">{state.error || 'Lesson not found'}</p>
           <button
@@ -194,14 +194,14 @@ export function LessonPage() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white shadow">
         <div className="mx-auto max-w-4xl px-6 py-8">
           <div className="mb-6 flex items-start justify-between">
             <div>
               <div className="flex items-center gap-2">
-                <h1 className="text-3xl font-bold text-slate-900">
+                <h1 className="text-3xl font-bold text-gray-900">
                   {state.lesson.series} - Lesson {state.lesson.lesson_number}
                 </h1>
                 {isCompleted && (
@@ -210,7 +210,7 @@ export function LessonPage() {
                   </span>
                 )}
               </div>
-              <p className="mt-2 text-slate-600">
+              <p className="mt-2 text-gray-600">
                 {state.lesson.content.vocab} vocab • {state.lesson.content.grammar} grammar •{' '}
                 {state.lesson.content.exercises} exercises
               </p>
@@ -241,7 +241,7 @@ export function LessonPage() {
           <div className="flex flex-wrap items-center gap-3">
             <button
               onClick={() => navigate('/learn/lessons')}
-              className="rounded-lg border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50"
+              className="rounded-lg border border-gray-200 px-4 py-2 text-gray-700 hover:bg-gray-50"
             >
               ← Back to Lessons
             </button>
@@ -249,7 +249,7 @@ export function LessonPage() {
             {hasPreviousLesson && (
               <button
                 onClick={() => navigate(`/learn/lessons/${cefr}/${lessonNum - 1}`)}
-                className="rounded-lg border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50"
+                className="rounded-lg border border-gray-200 px-4 py-2 text-gray-700 hover:bg-gray-50"
               >
                 ← Previous Lesson
               </button>
@@ -258,7 +258,7 @@ export function LessonPage() {
             {hasNextLesson && (
               <button
                 onClick={() => navigate(`/learn/lessons/${cefr}/${lessonNum + 1}`)}
-                className="rounded-lg border border-slate-300 px-4 py-2 text-slate-700 hover:bg-slate-50"
+                className="rounded-lg border border-gray-200 px-4 py-2 text-gray-700 hover:bg-gray-50"
               >
                 Next Lesson →
               </button>
@@ -281,16 +281,16 @@ export function LessonPage() {
         {/* Vocabulary Section */}
         {state.vocab && state.vocab.length > 0 && (
           <div className="mb-8 rounded-lg bg-white p-6 shadow">
-            <h2 className="mb-4 text-xl font-bold text-slate-900">Vocabulary ({state.vocab.length})</h2>
+            <h2 className="mb-4 text-xl font-bold text-gray-900">Vocabulary ({state.vocab.length})</h2>
             <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
               {state.vocab.slice(0, 15).map((item, idx) => (
                 <div key={idx} className="rounded bg-blue-50 p-3">
-                  <div className="font-semibold text-slate-900">{item.surface}</div>
-                  <div className="text-sm text-slate-600">{item.english}</div>
+                  <div className="font-semibold text-gray-900">{item.surface}</div>
+                  <div className="text-sm text-gray-600">{item.english}</div>
                 </div>
               ))}
               {state.vocab.length > 15 && (
-                <div className="flex items-center justify-center rounded bg-slate-100 p-3 text-sm text-slate-600">
+                <div className="flex items-center justify-center rounded bg-gray-50 p-3 text-sm text-gray-600">
                   +{state.vocab.length - 15} more
                 </div>
               )}
@@ -301,16 +301,16 @@ export function LessonPage() {
         {/* Grammar Section */}
         {state.grammar && state.grammar.length > 0 && (
           <div className="mb-8 rounded-lg bg-white p-6 shadow">
-            <h2 className="mb-4 text-xl font-bold text-slate-900">Grammar ({state.grammar.length})</h2>
+            <h2 className="mb-4 text-xl font-bold text-gray-900">Grammar ({state.grammar.length})</h2>
             <div className="space-y-3">
               {state.grammar.slice(0, 10).map((item, idx) => (
                 <div key={idx} className="rounded bg-purple-50 p-3">
-                  <div className="font-semibold text-slate-900">{item.pattern}</div>
-                  <div className="text-sm text-slate-600">{item.meaning}</div>
+                  <div className="font-semibold text-gray-900">{item.pattern}</div>
+                  <div className="text-sm text-gray-600">{item.meaning}</div>
                 </div>
               ))}
               {state.grammar.length > 10 && (
-                <div className="rounded bg-slate-100 p-3 text-center text-sm text-slate-600">
+                <div className="rounded bg-gray-50 p-3 text-center text-sm text-gray-600">
                   +{state.grammar.length - 10} more grammar patterns
                 </div>
               )}
@@ -320,7 +320,7 @@ export function LessonPage() {
 
         {/* Unlocked Cards Section */}
         <div className="mb-8 rounded-lg bg-white p-6 shadow">
-          <h2 className="mb-4 text-xl font-bold text-slate-900">
+          <h2 className="mb-4 text-xl font-bold text-gray-900">
             Anki Cards ({state.unlockedCards.length} unlocked)
           </h2>
 
@@ -328,9 +328,9 @@ export function LessonPage() {
             <>
               <div className="mb-4 grid gap-2 sm:grid-cols-2 md:grid-cols-3">
                 {state.unlockedCards.slice(0, 6).map(card => (
-                  <div key={card.cardStateId} className="rounded bg-slate-100 p-3">
-                    <div className="truncate font-semibold text-slate-900">{card.front}</div>
-                    <div className="truncate text-xs text-slate-600">{card.back}</div>
+                  <div key={card.cardStateId} className="rounded bg-gray-50 p-3">
+                    <div className="truncate font-semibold text-gray-900">{card.front}</div>
+                    <div className="truncate text-xs text-gray-600">{card.back}</div>
                   </div>
                 ))}
               </div>
@@ -352,12 +352,12 @@ export function LessonPage() {
         {/* Supplemental Materials */}
         {CEFR_SUPPLEMENTAL[cefrLevel].length > 0 && (
           <div className="rounded-lg bg-white p-6 shadow">
-            <h2 className="mb-4 text-xl font-bold text-slate-900">Supplemental Materials</h2>
+            <h2 className="mb-4 text-xl font-bold text-gray-900">Supplemental Materials</h2>
             <div className="flex flex-wrap gap-2">
               {CEFR_SUPPLEMENTAL[cefrLevel].map(textbook => (
                 <button
                   key={textbook}
-                  className="rounded-lg border border-slate-300 px-3 py-2 text-sm text-slate-700 hover:bg-slate-50"
+                  className="rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50"
                   title={`View ${textbook}`}
                 >
                   {textbook.replace(/_/g, ' ')}

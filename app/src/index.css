@@ -103,6 +103,22 @@ html.dark .bg-indigo-50 {
   @apply bg-indigo-900/20;
 }
 
+html.dark .bg-blue-50 {
+  @apply bg-blue-900/20;
+}
+
+html.dark .bg-purple-50 {
+  @apply bg-purple-900/20;
+}
+
+html.dark .bg-yellow-50 {
+  @apply bg-yellow-900/20;
+}
+
+html.dark .text-yellow-800 {
+  @apply text-yellow-300;
+}
+
 html.dark .border-gray-200 {
   @apply border-gray-700;
 }
