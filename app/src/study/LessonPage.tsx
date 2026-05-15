@@ -77,10 +77,21 @@ export function LessonPage() {
         }
 
         // Get content for this lesson
+        // Curriculum data uses various lesson ID formats:
+        //   normalized: 'genki_1_1', 'quartet_1_3'
+        //   original:   '1_textbook_genki_1_1'
+        //   plain:      '1'
+        // Match against all of them.
         const lessonNumStr = lessonNum.toString()
-        const vocab = curriculum.vocabulary.filter(v => v.lesson === lessonNumStr)
-        const grammar = curriculum.grammar.filter(g => g.lesson === lessonNumStr)
-        const exercises = curriculum.exercises.filter(e => e.lesson === lessonNumStr)
+        const matchesLesson = (itemLesson: string) =>
+          itemLesson === lessonNumStr ||
+          itemLesson === lessonId ||
+          itemLesson.endsWith(`_${lessonId}`) ||
+          itemLesson === `${lessonNum}`
+
+        const vocab = curriculum.vocabulary.filter(v => matchesLesson(v.lesson))
+        const grammar = curriculum.grammar.filter(g => matchesLesson(g.lesson))
+        const exercises = curriculum.exercises.filter(e => matchesLesson(e.lesson))
 
         // Load unlocked cards for this lesson
         let unlockedCards: ReviewCard[] = []
