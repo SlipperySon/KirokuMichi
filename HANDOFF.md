@@ -1,8 +1,8 @@
 # KirokuMichi Handoff Document
 
-**Last updated:** 2026-05-14 13:12 UTC  
-**Current status:** ✅ A1 EXTRACTION COMPLETE | ✅ A2 EXTRACTION COMPLETE | ✅ B1-B2 EXTRACTION COMPLETE | ✅ MARUGOTO LINKING COMPLETE  
-**Next phase:** Manual corrections on B1-B2 (27 lessons), then answer-key linking, then validation
+**Last updated:** 2026-05-16 UTC  
+**Current status:** ✅ EXTRACTION COMPLETE (54 lessons) | ✅ TIER 1 FEATURES SHIPPED (8/8) | ✅ LESSON TEACHING FLOW LIVE  
+**Next phase:** Fix vocab data quality (OCR romaji→English), then Tier 2 features or Anki-like review system
 
 > **🔄 Keep this updated:** At the end of each session, before switching AI models, update the "Last updated" date and "Current status" above. Update the Quick Status table and the "What Just Completed" section to reflect new work. This ensures seamless handoff.
 
@@ -26,15 +26,49 @@
 | **Total B1-B2 Reviewed Packs:** 27 lesson packs (Q1: 6, Q2: 6, Tobira: 8, Marugoto B1: 7) | ✅ READY |
 | **Genki Answer Key:** normalized & grouped (84 pages) | ✅ Ready for linking |
 | **Marugoto Answer Keys:** included in textbook | ℹ️ N/A (embedded in pages) |
+| **Tier 1 Features:** 8 quick-win features | ✅ All shipped |
+| **Lesson Teaching Flow:** TEACH → QUIZ → SUMMARY | ✅ Live |
+| **Data Paths:** `/data` served via Express + Vite proxy | ✅ Fixed |
+| **Vocab Data Quality:** Genki `english` field has romaji not translations | ⚠️ Needs fix |
 | Manual corrections (A1+A2 27 + B1-B2 27 = 54 lessons) | ⏳ A1+A2 first, then B1-B2 |
 | Answer-key linking (A1+A2 lessons) | ⏳ After A1-A2 corrections |
 | Maynard grammar extraction | ⏳ Final phase |
 
 ---
 
-## What Just Completed (2026-05-14 14:15 UTC, Current Session)
+## What Just Completed (2026-05-16 UTC, Current Session)
 
-### ✅ CURRICULUM VOCABULARY & GRAMMAR EXTRACTION COMPLETE
+### ✅ TIER 1 FEATURE BUILDOUT COMPLETE (8 features)
+
+All 8 Tier 1 quick-win features shipped:
+1. **Conversation Partner** — third tab in TutorChat with 6 scenario presets + textbook dialogue scenarios from supplementary textbooks
+2. **Mistake Review** — surfaces `mistake_logs` table, drill builder navigates to ReviewSession
+3. **Daily Goal & Streak** — SVG progress ring, freeze tokens, streak display in nav
+4. **TTS Fallback** — Web Speech API for cards without audio, Japanese voice selection
+5. **Keyboard Shortcuts UI** — Settings section with rebind UX, localStorage persistence
+6. **Conversation Persistence** — localStorage per-chat, hydrate on mount
+7. **Streaming Responses** — SSE streaming for TutorChat + ConversationPartner
+8. **Undo Last Review** — 1-deep undo stack, Ctrl+Z shortcut
+
+### ✅ LESSON TEACHING FLOW
+
+- **LessonPage** (`/learn/lessons/:cefr/:lessonNumber`) — shows vocab/grammar/exercises, "Start Lesson" CTA
+- **LessonStudy** (`/learn/study`) — three-phase teaching: TEACH → QUIZ → SUMMARY
+  - TEACH: walkthrough each item with meaning always visible, arrow key navigation
+  - QUIZ: auto-generated multiple-choice (max 15 questions) with distractors from same lesson
+  - SUMMARY: score breakdown, retry if <80%, mark complete
+- Fixed CEFR case sensitivity crash, dark mode compatibility, curriculum content filter
+- **Known issue:** Genki vocab `english` field contains romaji instead of translations (upstream OCR data quality)
+
+### ✅ DATA PATH FIXES
+
+- `lessonNormalization.ts`, `dataRegistry.ts` — all paths changed from relative to `/data/generated/...`
+- Express server serves `/data` via `express.static()`
+- Vite proxy forwards `/data` to server on port 3001
+
+---
+
+### Previous: CURRICULUM VOCABULARY & GRAMMAR EXTRACTION COMPLETE
 
 **Extracted from all 54 lesson packs:**
 - **645 vocabulary entries** with surface, reading, meaning, part of speech, examples
