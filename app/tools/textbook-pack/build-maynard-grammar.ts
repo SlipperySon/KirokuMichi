@@ -94,9 +94,10 @@ async function main(): Promise<void> {
   // Build sections from depth-1 outline entries
   const majorSections = outline.filter(o => o.depth === 1 && o.pageNumber !== null)
 
-  // Exclude front/back matter
+  // Exclude front/back matter (trim \r from OCR artifacts)
+  const EXCLUDE = new Set(['Table of Content', 'Acknowledgements', 'Preface', 'Index'])
   const contentSections = majorSections.filter(s =>
-    !['Table of Content', 'Acknowledgements', 'Preface', 'Index'].includes(s.title)
+    !EXCLUDE.has(s.title.trim())
   )
 
   console.log(`📑 ${contentSections.length} content sections found`)
@@ -120,30 +121,37 @@ async function main(): Promise<void> {
       o.depth >= 1
     )
 
-    const sectionId = slugify(section.title)
+    const sectionId = slugify(section.title.trim())
     const topics: MaynardTopic[] = []
 
     for (let ti = 0; ti < sectionOutline.length; ti++) {
       const topicEntry = sectionOutline[ti]
       const nextEntry = sectionOutline[ti + 1]
       const topicStart = topicEntry.pageNumber!
-      const topicEnd = nextEntry?.pageNumber
+      const rawEnd = nextEntry?.pageNumber
         ? nextEntry.pageNumber - 1
         : sectionEnd
+      // Clamp: pageEnd must be >= pageStart
+      const topicEnd = Math.max(rawEnd, topicStart)
 
       // Extract text from pages in this topic's range
       const topicText = extractTextFromPages(pageMap, topicStart, topicEnd)
       const examples = extractExamples(topicText)
       totalExamples += examples.length
 
-      const topicId = `${sectionId}/${slugify(topicEntry.title)}`
+      // Disambiguate duplicate slugs by appending page number
+      const trimmedTitle = topicEntry.title.trim()
+      let topicId = `${sectionId}/${slugify(trimmedTitle)}`
+      if (topicIndex[topicId]) {
+        topicId = `${topicId}_p${topicStart}`
+      }
       const parentId = topicEntry.depth > 1
         ? findParentId(sectionOutline, ti, sectionId)
         : null
 
       const topic: MaynardTopic = {
         id: topicId,
-        title: topicEntry.title,
+        title: trimmedTitle,
         depth: topicEntry.depth,
         pageStart: topicStart,
         pageEnd: topicEnd,
@@ -166,7 +174,7 @@ async function main(): Promise<void> {
 
     sections.push({
       id: sectionId,
-      title: section.title,
+      title: section.title.trim(),
       pageStart: section.pageNumber!,
       pageEnd: sectionEnd,
       topics,
@@ -282,7 +290,7 @@ function findParentId(
   // Walk backwards to find the nearest entry with lower depth
   for (let i = currentIndex - 1; i >= 0; i--) {
     if (outline[i].depth < current.depth) {
-      return `${sectionId}/${slugify(outline[i].title)}`
+      return `${sectionId}/${slugify(outline[i].title.trim())}`
     }
   }
   return null
