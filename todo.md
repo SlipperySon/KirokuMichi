@@ -1,22 +1,88 @@
 # KirokuMichi — Active Todo List
 
-Last updated: 2026-05-14 13:12 UTC
+Last updated: 2026-05-16 UTC
 
-**EXTRACTION STATUS:** ✅ A1 COMPLETE (27 packs) | ✅ A2 COMPLETE (27 packs) | ✅ B1-B2 COMPLETE (27 packs) | **54 TOTAL LESSONS EXTRACTED**
+**EXTRACTION STATUS:** ✅ A1 COMPLETE | ✅ A2 COMPLETE | ✅ B1-B2 COMPLETE | **54 TOTAL LESSONS EXTRACTED**
+**TIER 1 FEATURES:** ✅ 8/8 shipped | 🔧 Lesson teaching flow polished
+
+---
+
+## Tier 1 Features — Quick Wins (SHIPPED)
+
+### 1.1 Conversation Partner Mode ✅
+- [x] Third tab `'conversation'` in TutorChat
+- [x] 6 hardcoded scenario presets (café, directions, weekend plans, interview, doctor, business email)
+- [x] Textbook dialogue scenarios loaded dynamically from supplementary textbooks
+- [x] Structured JSON responses with corrections
+- [x] Furigana/romaji rendering via `<Ruby>` helper
+- [x] Mistake harvesting → `srsService.logMistake()`
+
+### 1.2 Mistake Review Mode ✅
+- [x] `MistakeReview.tsx` — list + drill builder
+- [x] `getRecentMistakes()` query in srsService
+- [x] Route `/study/mistakes`
+- [x] "Drill these" builds queue and navigates to ReviewSession
+
+### 1.3 Daily Goal & Streak Polish ✅
+- [x] `dailyGoal` + `streakFreezeTokens` in store
+- [x] `DailyGoalRing.tsx` — circular SVG progress ring
+- [x] Navigation streak display
+- [x] Freeze logic on mount
+
+### 1.4 TTS Fallback ✅
+- [x] Web Speech API fallback in `useCardAudio.ts`
+- [x] `ttsEnabled` + `ttsRate` settings
+- [x] Japanese voice selection with `voiceschanged` handling
+
+### 1.5 Keyboard Shortcuts UI ✅
+- [x] Settings section showing all shortcuts
+- [x] Rebind UX with keydown capture
+- [x] localStorage persistence
+
+### 1.6 Conversation Persistence ✅
+- [x] localStorage per-chat persistence
+- [x] Hydrate on mount, persist on change
+- [x] Clear chat button
+
+### 1.7 Streaming Responses ✅
+- [x] SSE streaming in server proxy
+- [x] `completeWithMessagesStream()` in aiProvider
+- [x] TutorChat + ConversationPartner use streaming
+
+### 1.8 Undo Last Review ✅
+- [x] 1-deep undo stack in review hooks
+- [x] `revertCardState()` in srsService
+- [x] Ctrl+Z keyboard shortcut
+
+---
+
+## Lesson System — Recently Shipped
+
+### Lesson Page + Teaching Flow ✅
+- [x] LessonPage shows vocab/grammar/exercises from curriculum data
+- [x] "Start Lesson" button navigates to LessonStudy
+- [x] Curriculum content filter handles multiple lesson ID formats
+- [x] CEFR case sensitivity fix (uppercase URLs no longer crash)
+- [x] Dark mode compatibility (all gray-* classes)
+- [x] Three-phase teaching flow (TEACH → QUIZ → SUMMARY)
+  - [x] TEACH: walkthrough with meanings visible, arrow key navigation
+  - [x] QUIZ: auto-generated multiple-choice from lesson content
+  - [x] SUMMARY: score breakdown, retry if <80%, mark complete
+
+### ⚠️ Known Issue: Vocab Data Quality
+- [ ] Many Genki vocab entries have romaji in `english` field instead of actual English translations (OCR artifact)
+- [ ] Fix upstream: re-extract or manually correct `genki_1_textbook-comprehensive.json` vocab entries
+- [ ] Affects lesson teaching display — meanings show "obaasan" instead of "grandmother"
 
 ---
 
 ## Priority 1: Quick Wins (This Week)
 
-### 1. Weekly Goals Widget
-- [x] Add `jlptTarget` + `goalDate` to Zustand store (if not present)
-- [x] Implement weekly goal calculation: `(cardsNeeded / weeksRemaining)` per week
-- [x] Query `sessions` table for this week's activity: `GROUP BY DATE(started_at) WHERE started_at >= date('now', 'weekday 1', '-7 days')`
-- [x] Display on StudyDashboard: "X cards this week · Y needed for goal"
-- [x] Add progress bar or simple indicator
-- [x] Test with various goal dates (past, future, urgent)
-- **Effort:** 1-2 hours
-- **Blocks:** Nothing (independent feature)
+### 1. Weekly Goals Widget ✅
+- [x] Add `jlptTarget` + `goalDate` to Zustand store
+- [x] Implement weekly goal calculation
+- [x] Display on StudyDashboard
+- [x] Add progress bar
 
 ---
 
