@@ -1,8 +1,8 @@
 # KirokuMichi Handoff Document
 
-**Last updated:** 2026-05-18 (current session)
-**Current status:** ✅ EXTRACTION COMPLETE (54 lessons) | ✅ TIER 1 FEATURES SHIPPED (8/8) | ✅ TIER 2 UX FEATURES (9/10 shipped) | ✅ STAGING READINESS PASS (ErrorBoundary, 404, spinners, meta tags, PWA, README, /api/health) | ✅ ALL CURATED SCENARIOS LIVE + UNIFORM (206 total, all 12 packs at 2/lesson) | ✅ B2 TOBIRA PACK LIVE (16 scenarios) | ✅ SCENARIO SEARCH LIVE | ✅ KEYBOARD HELP MODAL LIVE (press ?) | ✅ MOBILE NAV LIVE | ✅ TOAST/SKELETON/EMPTYSTATE COMPONENTS CREATED | ⚠️ TOAST NOT WIRED TO ANY SURFACE | ⚠️ EMPTYSTATE/SKELETON SWEEP INCOMPLETE (only ScenarioMode + MistakeReview done) | ⚠️ MOBILE AUDIT INCOMPLETE (only nav + root width fixed)
-**Next phase:** wire Toast to action completions, sweep EmptyState/Skeleton to remaining surfaces (StudyDashboard, LessonsHub, LearningMode, TutorChat), full mobile responsive audit of all routes
+**Last updated:** 2026-05-18 23:38 AEST
+**Current status:** ✅ EXTRACTION COMPLETE (54 lessons) | ✅ TIER 1 FEATURES SHIPPED (8/8) | ✅ TIER 2 UX FEATURES (10/10 shipped — 2.2 was already live in CardGrammar) | ✅ STAGING READINESS PASS | ✅ WORKBOOK SCENARIO SOURCES LIVE | ✅ TOASTS WIRED | ✅ EMPTYSTATE/SKELETON SWEEP COMPLETE | ✅ MOBILE ROUTE AUDIT PASS COMPLETE | ✅ PLAYWRIGHT ROUTE QA + SCREENSHOTS LIVE | ✅ FULL VERIFY SCRIPT LIVE | ✅ QA DASHBOARD UPGRADED | ✅ WORKBOOK OUTPUT STEP LIVE | ✅ TEXTBOOK IMAGE MANIFEST LIVE | ✅ MAYNARD COVERAGE QA LIVE | ✅ CI VERIFY WORKFLOW LIVE | ✅ CODE SPLITTING IMPROVED
+**Next phase:** Wait for the external textbook-image/direct-Maynard extraction agent to produce more reviewed source assets, then rerun `npm run textbook:assets:manifest` and `npm run verify`.
 
 > **🔄 Keep this updated:** At the end of each session, before switching AI models, update the "Last updated" date and "Current status" above. Update the Quick Status table and the "What Just Completed" section to reflect new work. This ensures seamless handoff.
 
@@ -30,23 +30,30 @@
 | **Tier 2 UX Features:** 10 quick-win UX improvements | ✅ 9/10 shipped |
 | **Lesson Teaching Flow:** predict → reveal → hook → micro-practice → self-rate → checkpoint → mixed review | ✅ v1 Live |
 | **Supplemental Scenario Layer:** curated runtime scenarios from Genki workbooks, Marugoto, Quartet, Tobira | ✅ v2 QA+Tests Live |
-| **Quality Gates:** `npm run lint` + `npx tsc -b --pretty false` + `npm run build` + `npm run test` | ✅ Passing, 112 tests / 18 files |
+| **Quality Gates:** `npm run verify` | ✅ Passing, 123 tests / 21 files + 16 Playwright checks + content audits |
 | **Data Paths:** `/data` served via Express + Vite proxy; `app/public/data -> ../data` | ✅ Fixed |
 | **Vocab Data Quality:** OCR-spillover meaning cleanup | ✅ `unresolvedSuspicious: 0` |
 | **Learner-Facing OCR Quality:** app-facing vocab/grammar/tasks/scenarios audit | ✅ `issueCount: 0` via `npm run textbook:learner:quality` |
 | **Grammar Data Quality:** CEFR grammar replaces OCR noise, Maynard enrichment | ✅ Complete (746 entries, 705 Maynard matches) |
 | **Curated Scenarios:** All 12 packs, uniform 2/lesson — A1: 66, A2: 62, B1: 38, B2: 40 (206 total) | ✅ Complete |
+| **Workbook Scenario Sources:** Genki 1/2 Workbook + Quartet 1/2 Workbook tabs populated and lesson-normalized | ✅ Complete |
 | **Tobira B2 pack:** 16 scenarios, 8 lessons, 2/lesson — closes B2 gap | ✅ Live |
 | **Scenario search:** search box on /scenarios filters by title/topic/canDo | ✅ Live |
 | **Keyboard help modal:** press ? anywhere to see all shortcuts | ✅ Live |
 | **Staging readiness:** ErrorBoundary, 404 page, animated spinners, OG meta tags, PWA manifest, /api/health, README.md | ✅ Live |
 | **Mobile nav:** burger menu + drawer; compact streak chip on phones | ✅ Live |
-| **Toast component:** `useToast()` + `<ToastContainer />` built | ✅ Component exists |
-| **Toast wired to surfaces:** no surface actually fires toasts yet | ⚠️ Not done |
-| **EmptyState component:** built and used in ScenarioMode + MistakeReview | ⚠️ Partial |
-| **Skeleton loaders:** built and used in ScenarioMode + MistakeReview | ⚠️ Partial |
-| **EmptyState/Skeleton sweep:** StudyDashboard, LessonsHub, LearningMode, TutorChat still have plain text | ⚠️ Not done |
-| **Mobile responsive audit:** full per-route audit (ReviewSession, LessonPage, ConversationPartner, etc.) | ⚠️ Not done |
+| **Toast component:** `useToast()` + `<ToastContainer />` built and wired | ✅ Live |
+| **Toast wired to surfaces:** dashboard, mistake drill, undo, settings AI test, tutor/conversation errors, save correction | ✅ Complete |
+| **EmptyState component:** built and used across target zero-data surfaces | ✅ Complete |
+| **Skeleton loaders:** built and used across target loading surfaces | ✅ Complete |
+| **EmptyState/Skeleton sweep:** StudyDashboard, LessonsHub fallback, LearningMode, GrammarReview, ScenarioMode, MistakeReview | ✅ Complete |
+| **Mobile responsive audit:** dashboard, learn, lessons, scenarios, review, grammar, mistakes, tutor, conversation | ✅ Passing at 390px no-overflow smoke |
+| **Automated route smoke/screenshots:** desktop + mobile Playwright QA with screenshots | ✅ `npm run qa:routes` |
+| **Full health command:** lint + TS + Vitest + route QA + build + learner content audit | ✅ `npm run verify` |
+| **Textbook QA Dashboard:** workbook output, asset count, Maynard %, warnings | ✅ Upgraded |
+| **Workbook output practice:** workbook tasks are answerable lesson-flow tasks | ✅ Live |
+| **Textbook image manifest:** reviewed assets copied + manifest generated | ✅ Live, 2 current assets |
+| **Code splitting:** vendor/storage/PDF chunks separated, main app chunk reduced | ✅ Improved |
 | **Scenario UI:** `/scenarios` level tabs → expected textbook subtabs, plus grouped Conversation Partner dropdown | ✅ Complete |
 | **Scenario Furigana:** selected A1/A2 scenario dialogues have a toggle with ruby readings | ✅ Complete |
 | **Scenario Ordering:** numeric lesson ordering inside textbook tabs | ✅ Complete |
@@ -54,25 +61,201 @@
 | **Lesson Navigation:** `/learn/lessons` can return to main Learn menu | ✅ Fixed |
 | **Readability/Exit Labels:** Higher contrast muted text + explicit back/exit destinations | ✅ Fixed |
 | **Genki 1 Lesson 1:** foundation greetings/numbers overlay + narrowed grammar scope | ✅ Shared module + tests |
-| **Maynard in Teaching Flow:** matched references available through explicit deep-explanation buttons | ✅ Live, coverage still partial |
+| **Maynard in Teaching Flow:** direct references + curated support bridges behind explicit deep-explanation buttons | ✅ Live, 84% support coverage |
 | **Lesson Intent Layer:** objective/prereq/page range/targets/output skill/scenarios/workbook tasks | ✅ Live |
-| **Maynard Explanation Engine:** basic/deep/contrast/common mistake/example pattern | ✅ Live, matching still partial |
+| **Maynard Explanation Engine:** basic/deep/contrast/common mistake/example pattern | ✅ Live, coverage QA command added |
 | **Textbook QA Dashboard:** `/dev/textbook-qa` coverage table | ✅ Live |
 | **A1-B2 Grammar Support Fallbacks:** beginner, Genki 2, and Quartet discussion grammar get deep-support bridges while cleaned Maynard extraction is pending | ✅ Live |
 | **Workbook Practice Cleanup:** front-matter/OCR admin text filtered out of practice tasks | ✅ Live |
 | **Second-Volume Lesson Mapping:** Genki II app lessons 1-11 → source 13-23; Quartet II app lessons 1-6 → source 7-12 | ✅ Live |
 | **Review Grammar Context:** grammar fill-blank review can expand explanation/examples from linked grammar points | ✅ Live |
-| **Textbook Image Assets:** typed asset manifest service for future page/photo manifests | ✅ Service live, images pending |
+| **Textbook Image Assets:** typed asset manifest service + generated manifest for available reviewed crops | ✅ Live |
 | **Route Smoke Tests:** critical learning routes + lesson flow | ✅ Passing, 112 tests / 18 files |
 | **Browser Smoke:** lesson page, lesson hub, grammar review, QA dashboard, and A1/A2/B1/B2 scenario tabs | ✅ Passing |
-| **Route Code Splitting:** lazy-loaded main app surfaces | ✅ Main shell ~339 kB; data/PDF chunks still large |
+| **Route Code Splitting:** lazy-loaded main app surfaces | ✅ Main app chunk ~32 kB; generated data/PDF chunks lazy |
 | Manual corrections (A1+A2 27 + B1-B2 27 = 54 lessons) | ⏳ A1+A2 first, then B1-B2 |
 | Answer-key linking (A1+A2 lessons) | ⏳ After A1-A2 corrections |
 | Curated scenario packs for Quartet 1/2 | ✅ Complete |
 
 ---
 
-## What Just Completed (2026-05-18, Current Session)
+## What Just Completed (2026-05-18 23:38 AEST, Current Session)
+
+### ✅ CONTENT QA TOOLING + ASSET MANIFEST + CI VERIFY
+
+- Added `npm run textbook:maynard:quality`.
+  - Writes `tools/textbook-pack/out/content-quality/maynard-coverage-report.json`.
+  - Current report: 637 grammar points, 535 supported, 84% coverage, 0 low-coverage lessons.
+- Improved Maynard/support bridges using actual unmatched coverage output:
+  - te-form linking
+  - verb-form systems
+  - core particles/endings
+  - preference/desire
+  - permission/prohibition
+  - time sequence
+  - clause relation
+  - framing/quoting
+  - resemblance, quantity, feasibility, viewpoint, and intermediate relation patterns
+- Added `npm run textbook:assets:manifest`.
+  - Scans reviewed-pack asset folders.
+  - Copies assets into `app/data/generated/assets/textbook/`.
+  - Writes `app/data/generated/assets/textbook-assets.json`.
+  - Current manifest publishes 2 local reviewed assets: Genki I Workbook Lesson 1 listening picture choices and Quartet I Lesson 1 Miyazaki reading photo.
+- Lesson pages now query base + supplemental source keys for image assets, so workbook crops can show beside core lessons.
+- Added `.github/workflows/verify.yml`.
+  - Runs on push and pull request.
+  - Uses Node 22.
+  - Installs bundled Playwright Chromium.
+  - Runs `npm run verify`.
+- Updated Playwright config so CI can use `PLAYWRIGHT_CHANNEL=bundled`, while local route QA still defaults to Chrome.
+- Expanded `npm run verify` to include learner content audit, Maynard coverage audit, and asset manifest generation.
+- Verification:
+  - `npm run verify` ✅
+  - Vitest: 123 tests / 21 files
+  - Playwright route QA: 16 checks
+  - learner-facing audit: `issueCount: 0`
+  - Maynard coverage: 84%, 0 low-coverage lessons
+  - asset manifest: 2 reviewed assets published
+- Assessed JLPT data splitting: no extra sub-splitting needed right now because the main app chunk is already small and generated data chunks are lazy-loaded.
+
+---
+
+## Previous Session (2026-05-18 23:23 AEST)
+
+### ✅ FULL VERIFY COMMAND + QA DASHBOARD UPGRADE
+
+- Added `npm run verify` as the canonical full health command:
+  - `npm run lint`
+  - `npx tsc -b --pretty false`
+  - `npm run test`
+  - `npm run qa:routes`
+  - `npm run build`
+  - `npm run textbook:learner:quality`
+- Upgraded `/dev/textbook-qa`:
+  - totals include workbook tasks, image assets, and Maynard percentage
+  - table includes workbook task count, asset count, and Maynard `matched/total (%)`
+  - warnings now flag no workbook output, no image assets, and low Maynard coverage
+  - header points maintainers to `npm run qa:routes`
+- Added `textbookQAService.test.ts` coverage for workbook/asset/Maynard QA fields.
+- Verification:
+  - `npm run verify` ✅
+  - Vitest: 123 tests / 21 files
+  - Playwright route QA: 16 checks
+  - learner-facing audit: `issueCount: 0`
+
+---
+
+## Previous Session (2026-05-18 22:46 AEST)
+
+### ✅ ROUTE QA + SCREENSHOTS + WORKBOOK OUTPUT + ASSET HOOKS
+
+- Added `@playwright/test`, `playwright.config.ts`, and `npm run qa:routes`.
+- Route QA now runs desktop Chrome + mobile Pixel 5 checks for:
+  - `/study`
+  - `/learn`
+  - `/learn/lessons`
+  - `/learn/lessons/a1/1`
+  - `/scenarios?level=A1&source=genki_1_workbook`
+  - `/practice`
+  - `/study/grammar`
+  - `/study/mistakes`
+- Each Playwright route check:
+  - waits for route-specific text
+  - asserts no horizontal overflow
+  - saves a screenshot under `app/tools/qa/out/route-screenshots/`
+- Added `app/tools/qa/out/` to `.gitignore` so screenshots/reports are local QA artifacts.
+- Added Vitest route manifest coverage for the same high-priority routes.
+- Added real workbook output to the lesson flow:
+  - `lessonStudyPlanner` can append a `workbook` step
+  - `LessonStudy` renders workbook tasks with response textareas and completion buttons
+  - summary tracks workbook completion and shows learner output
+- Added lesson-page textbook image hooks:
+  - `LessonPage` loads `textbookAssetService.getAssetsForLesson(...)`
+  - shows real images/captions/page refs when the manifest exists
+  - shows a pending state until extraction generates assets
+- Improved code splitting:
+  - manual chunks for React/router, storage/sql.js/SRS, and PDF tooling
+  - moved Anki import/export `sql.js` imports to dynamic imports
+  - latest main app chunk is ~32 kB
+- Verification:
+  - `npm run lint` ✅
+  - `npx tsc -b --pretty false` ✅
+  - `npm run test` ✅ (121 tests / 20 files)
+  - `npm run qa:routes` ✅ (16 checks)
+  - `npm run build` ✅
+  - `npm run textbook:learner:quality` ✅ (`issueCount: 0`)
+
+---
+
+## Previous Session (2026-05-18 20:26 AEST)
+
+### ✅ TOAST / EMPTY STATE / MOBILE AUDIT PASS
+
+- Wired toast notifications into real flows:
+  - StudyDashboard review start, empty queue, resume, abandon
+  - MistakeReview drill start / no drillable / drill error
+  - Review undo, including keyboard shortcut path
+  - Settings AI test success/failure/missing config
+  - TutorChat and ConversationPartner AI failures
+  - Conversation correction saved to drill
+- Added a non-browser guard in `toastStore.ts` so tests/tooling do not trip over `window`.
+- Replaced remaining plain loading/zero states with shared `Skeleton`/`EmptyState` where requested:
+  - StudyDashboard loading + caught-up state
+  - LearningMode loading, no content, and filter-empty states
+  - LessonsHub no-pack fallback
+  - GrammarReview no grammar state
+- Patched mobile layout/readability across:
+  - StudyDashboard, LearningMode, LessonsHub, LessonPage, ScenarioMode, ReviewSession, GrammarReview, MistakeReview, TutorChat, ConversationPartner
+- Browser smoke:
+  - Desktop routes: `/study`, `/learn`, `/learn/lessons`, `/learn/lessons/a1/1`, `/scenarios?level=A1&source=genki_1_workbook`, `/practice`, `/study/grammar`, `/study/mistakes`
+  - Mobile viewport 390px: same route set, no horizontal overflow observed
+- Verification:
+  - `npm run lint`
+  - `npx tsc -b --pretty false`
+  - `npm run test` (119 tests / 20 files)
+  - `npm run build` (passes; existing large chunk warnings remain)
+  - `npm run textbook:learner:quality` (0 issues)
+- Caveat: in-app Browser screenshot capture timed out through CDP, so screenshots were not saved; route text/DOM/overflow checks passed.
+
+---
+
+## Previous Session (2026-05-18 19:50 AEST)
+
+### ✅ WORKBOOK SCENARIO SOURCE FIX + SOURCE COVERAGE AUDIT
+
+- Confirmed the scenario packs for Genki 1 Workbook, Genki 2 Workbook, Quartet 1 Workbook, and Quartet 2 Workbook are present and registered.
+- Fixed curated scenario runtime normalization so source-volume lesson IDs match app lesson IDs:
+  - Genki 2 Workbook `genki_2_13` through `genki_2_23` now map to app `genki_2_1` through `genki_2_11`.
+  - Quartet 2 Workbook `quartet_2_7` through `quartet_2_12` now map to app `quartet_2_1` through `quartet_2_6`.
+- Tightened Marugoto B1/core lesson normalization so source-derived scenario links cannot point outside the app's B1 lesson range.
+- Added regression tests in `supplementalScenarioService.test.ts` for:
+  - every catalog source having at least one scenario, including workbook tabs
+  - curated second-volume workbook lesson normalization
+  - scenario `coreLessonId` values staying inside app lesson ranges
+- Source audit after fix:
+  - Genki 1 Workbook: 24 scenarios / 12 app lessons
+  - Genki 2 Workbook: 22 scenarios / 11 app lessons
+  - Quartet 1 Workbook: 13 scenarios / 6 app lessons
+  - Quartet 2 Workbook: 12 scenarios / 6 app lessons
+  - zero-count scenario sources: 0
+- Browser smoke:
+  - `/scenarios?level=A1&source=genki_1_workbook` shows Genki 1 Workbook scenarios
+  - `/scenarios?level=A2&source=genki_2_workbook` shows Genki 2 Workbook scenarios
+  - `/learn/lessons/a2/1` has workbook scenario/practice linkage
+- Re-ran learner-facing OCR audit:
+  - tasks: 243
+  - scenarios: 295
+  - scenario lines: 1,037
+  - issueCount: 0
+- Also fixed a lint blocker from the staging toast component by moving toast publishing into `toastStore.ts`, leaving `Toast.tsx` as a component-only file.
+- Verification:
+  - `npm run textbook:learner:quality` ✅
+  - `npm run lint` ✅
+  - `npx tsc -b --pretty false` ✅
+  - `npm run test` ✅ (119 tests / 20 files)
+  - `npm run build` ✅ (existing large-chunk warning only)
+
+## Previous Session (2026-05-18)
 
 ### ✅ STAGING READINESS + UX FOUNDATIONS PASS
 
