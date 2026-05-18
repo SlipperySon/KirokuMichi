@@ -10,6 +10,7 @@ import { Heatmap } from './Heatmap'
 import { WeakPointPanel } from './WeakPointPanel'
 import { Navigation } from '../components/Navigation'
 import { DeckTree } from '../components/DeckTree'
+import { FilteredDeckPanel } from '../components/FilteredDeckPanel'
 import { DailyGoalRing } from '../components/DailyGoalRing'
 import { EmptyState } from '../components/EmptyState'
 import { SkeletonCard } from '../components/Skeleton'
@@ -166,6 +167,48 @@ export function StudyDashboard() {
   }, [activeUserId, service, setActiveUserId, storage])
 
   useEffect(() => { void init() }, [init])
+
+  async function startCramSession(cardStateIds: number[], deckName: string) {
+    if (!userId) return
+    const cards = await service.getCardsByStateIds(userId, cardStateIds)
+    if (cards.length === 0) {
+      toast.info('No cards in this filtered deck')
+      return
+    }
+    const sessionId = await service.startSession(userId, 'cram')
+    navigate('/study/review', {
+      state: {
+        queue: cards,
+        grammarEntries: [],
+        sessionId,
+        userId,
+        cramMode: true,
+        cramDeckName: deckName,
+      },
+    })
+  }
+
+  async function startCramAll() {
+    if (!userId) return
+    const limit = settings.dailyCardLimit
+    const cards = await service.getDueCards(userId, limit, activeDeckId)
+    if (cards.length === 0) {
+      toast.info('No due cards to cram')
+      return
+    }
+    const sessionId = await service.startSession(userId, 'cram')
+    const deckName = decks.find(d => d.id === activeDeckId)?.name ?? 'All decks'
+    navigate('/study/review', {
+      state: {
+        queue: cards,
+        grammarEntries: [],
+        sessionId,
+        userId,
+        cramMode: true,
+        cramDeckName: deckName,
+      },
+    })
+  }
 
   async function startWordReview() {
     if (!userId) return
@@ -377,14 +420,20 @@ export function StudyDashboard() {
         )
       })()}
 
-      {/* Deck tree */}
+      {/* Deck tree + filtered decks */}
       {decks.length > 0 && (
-        <div className="bg-white border border-gray-200 rounded-xl p-4">
+        <div className="bg-white border border-gray-200 rounded-xl p-4 flex flex-col gap-4">
           <DeckTree
             decks={decks}
             service={service}
             userId={userId ?? 1}
             onDecksChanged={() => void init()}
+          />
+          <hr className="border-gray-100" />
+          <FilteredDeckPanel
+            service={service}
+            userId={userId ?? 1}
+            onStartCram={(cardStateIds, deckName) => void startCramSession(cardStateIds, deckName)}
           />
         </div>
       )}
@@ -427,15 +476,26 @@ export function StudyDashboard() {
         </div>
       </div>
 
-      {/* Review button */}
-      <button
-        onClick={startWordReview}
-        disabled={dueCount + newCount === 0}
-        className="w-full flex flex-col items-center px-4 py-5 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
-      >
-        <span className="text-lg">Review Cards</span>
-        <span className="text-xs mt-1 opacity-80">{dueCount} due · {availableNewCount} new</span>
-      </button>
+      {/* Review + Cram buttons */}
+      <div className="flex gap-3">
+        <button
+          onClick={startWordReview}
+          disabled={dueCount + newCount === 0}
+          className="flex-1 flex flex-col items-center px-4 py-5 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+        >
+          <span className="text-lg">Review Cards</span>
+          <span className="text-xs mt-1 opacity-80">{dueCount} due · {availableNewCount} new</span>
+        </button>
+        <button
+          onClick={startCramAll}
+          disabled={dueCount === 0}
+          className="flex-shrink-0 flex flex-col items-center px-4 py-5 bg-amber-500 text-white rounded-xl font-semibold hover:bg-amber-600 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          title="Review without affecting SRS scheduling"
+        >
+          <span className="text-sm">Cram</span>
+          <span className="text-xs mt-1 opacity-80">No schedule</span>
+        </button>
+      </div>
 
       {/* Preview due cards */}
       {previewCards.length > 0 ? (

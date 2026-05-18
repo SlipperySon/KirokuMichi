@@ -66,7 +66,8 @@ export function useReviewSession(
   service: SRSService,
   initialQueue: ReviewCard[],
   grammarMap: Map<number, GrammarQuestion>,
-  sessionId: number
+  sessionId: number,
+  cramMode = false
 ): ReviewSessionState & ReviewSessionActions {
   const [queue] = useState<ReviewCard[]>(initialQueue)
   const [currentIndex, setCurrentIndex] = useState(0)
@@ -118,13 +119,20 @@ export function useReviewSession(
   const rate = useCallback(async (rating: Rating) => {
     if (!currentCard || isNewLeech) return
 
-    // Snapshot before the SRS service mutates the row — used by undo.
-    const snapshot = await service.snapshotCardState(userId, currentCard.cardStateId)
+    let becameLeech = false
+    let snapshot: import('../srs/srsService').CardStateSnapshot | null = null
 
-    const { isNewLeech: becameLeech } = await service.reviewCard(userId, currentCard.cardStateId, rating)
+    if (cramMode) {
+      // Cram mode: don't update scheduling, just advance
+    } else {
+      // Snapshot before the SRS service mutates the row — used by undo.
+      snapshot = await service.snapshotCardState(userId, currentCard.cardStateId)
+      const result = await service.reviewCard(userId, currentCard.cardStateId, rating)
+      becameLeech = result.isNewLeech
+    }
 
     const isCorrect = rating !== 'again'
-    if (!isCorrect) {
+    if (!cramMode && !isCorrect) {
       await service.logMistake(userId, currentCard.cardId, null, currentCard.front, sessionId)
     }
 
@@ -135,8 +143,8 @@ export function useReviewSession(
     }
     setStats(newStats)
 
-    // Stash undo entry (cap 1)
-    if (snapshot) {
+    // Stash undo entry (cap 1) — only in normal mode
+    if (!cramMode && snapshot) {
       undoBufferRef.current = {
         snapshot,
         cardId: currentCard.cardId,

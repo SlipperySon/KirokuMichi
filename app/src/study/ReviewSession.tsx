@@ -24,6 +24,8 @@ interface LocationState {
   sessionId: number
   userId: number
   lessonId?: string
+  cramMode?: boolean
+  cramDeckName?: string
 }
 
 export function ReviewSession() {
@@ -43,20 +45,27 @@ export function ReviewSession() {
     service,
     state.queue,
     grammarMap,
-    state.sessionId
+    state.sessionId,
+    state.cramMode ?? false
   )
 
   const { currentCard, currentVariant, currentGrammar, phase, intervalPreviews, isNewLeech, progress } = session
   const [grammarContext, setGrammarContext] = useState<GrammarReviewContext | null>(null)
   const [showCardMenu, setShowCardMenu] = useState(false)
 
-  // Fire celebration toasts when session completes (only once)
+  const isCramMode = state.cramMode ?? false
+
+  // Fire celebration toasts when session completes (only once; skip in cram mode)
   const completionToastFiredRef = useRef(false)
   useEffect(() => {
     if (!session.isComplete || completionToastFiredRef.current) return
     completionToastFiredRef.current = true
-    const { dailyStats, settings } = useAppStore.getState()
     const reviewed = session.stats.cardsReviewed
+    if (isCramMode) {
+      toast.info(`Cram complete — ${reviewed} card${reviewed === 1 ? '' : 's'} reviewed`, 3000)
+      return
+    }
+    const { dailyStats, settings } = useAppStore.getState()
     if (dailyStats.currentStreak > 1) {
       toast.success(`🔥 ${dailyStats.currentStreak}-day streak!`, 4000)
     }
@@ -64,7 +73,7 @@ export function ReviewSession() {
       toast.success('✅ Daily goal complete!', 4000)
     }
     toast.info(`📈 Session complete — ${reviewed} card${reviewed === 1 ? '' : 's'} reviewed`, 4000)
-  }, [session.isComplete, session.stats.cardsReviewed])
+  }, [session.isComplete, session.stats.cardsReviewed, isCramMode])
 
   useEffect(() => {
     let cancelled = false
@@ -122,6 +131,12 @@ export function ReviewSession() {
 
   return (
     <div className="flex flex-col min-h-screen w-full px-4 py-6 sm:p-6 max-w-xl mx-auto">
+      {/* Cram mode banner */}
+      {isCramMode && (
+        <div className="mb-3 rounded-lg bg-amber-50 border border-amber-200 px-3 py-2 text-xs text-amber-800 font-medium text-center">
+          Cram mode — scheduling not affected{state.cramDeckName ? ` · ${state.cramDeckName}` : ''}
+        </div>
+      )}
       {/* Header with exit + undo + card menu */}
       <div className="flex flex-wrap justify-end gap-2 mb-2">
         {session.canUndo && (
