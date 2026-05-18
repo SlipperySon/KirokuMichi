@@ -639,6 +639,82 @@ const FALLBACKS: Array<{
       { japanese: 'いきなり電話がかかってきた。', english: 'A call came out of nowhere.' },
     ],
   },
+  {
+    match: /にもかかわらず/,
+    title: 'Support bridge: concession despite contrary expectation (にもかかわらず)',
+    excerpt:
+      'にもかかわらず ("despite / in spite of / notwithstanding") follows a noun or plain-form clause to assert that the result contradicts what that situation would normally imply. It is formal and often found in written Japanese. The key meaning is: X was present, but Y happened anyway — defying the expected correlation.',
+    examples: [{ japanese: '雨にもかかわらず、試合は行われた。', english: 'Despite the rain, the game was held.' }],
+  },
+  {
+    match: /に加えて|に加え|に加えた/,
+    title: 'Support bridge: adding a further point (に加えて)',
+    excerpt:
+      'に加えて ("in addition to / on top of") introduces a second element that joins the first. Unlike しかも (which intensifies), に加えて is more neutral and additive. It connects two comparable items or conditions without judgement about relative importance.',
+    examples: [{ japanese: '英語に加えて、フランス語も勉強しています。', english: 'In addition to English, I am also studying French.' }],
+  },
+  {
+    match: /に応じて|に応じた|に合わせて/,
+    title: 'Support bridge: proportional adjustment (に応じて)',
+    excerpt:
+      'に応じて ("depending on / in accordance with / according to") states that something changes proportionally or is adapted to a given factor. The subject of the main clause adjusts, responds, or is calibrated to match the noun before に応じて. Use it when the outcome scales with or fits the standard set by X.',
+    examples: [{ japanese: '能力に応じた仕事を与えられた。', english: 'I was given work suited to my abilities.' }],
+  },
+  {
+    match: /に反して|に反する|に反した/,
+    title: 'Support bridge: contrary to expectation or norm (に反して)',
+    excerpt:
+      'に反して ("contrary to / against / in opposition to") introduces a result that goes against the expectation, rule, or wish associated with the preceding noun. It is frequently used with 予想, 規則, and 意志. The meaning is similar to にもかかわらず but focuses on contradiction of a stated standard rather than the presence of an obstacle.',
+    examples: [{ japanese: '予想に反して、試験は簡単だった。', english: 'Contrary to expectations, the exam was easy.' }],
+  },
+  {
+    match: /に先立ち|に先立って|に先立つ/,
+    title: 'Support bridge: prior to / before an event (に先立ち)',
+    excerpt:
+      'に先立ち ("prior to / before / in advance of") indicates that one action is carried out ahead of a significant event. It is more formal than 前に and implies the preparatory action is specifically tied to and enabled by the upcoming event. Used widely in official announcements and ceremonies.',
+    examples: [{ japanese: '式典に先立ち、練習が行われた。', english: 'A rehearsal was held prior to the ceremony.' }],
+  },
+  {
+    match: /^とおり$|通り$|とおりに|通りに|～通り/,
+    title: 'Support bridge: as stated / as expected (とおり)',
+    excerpt:
+      'とおり ("as stated / just as / in the way that") connects a reference point — a plan, statement, observation — to the outcome that matches it. Plain-form verb or noun before とおり is the standard; what follows either confirms or performs the same pattern. Use it to signal alignment between what was said or expected and what actually happened.',
+    examples: [
+      { japanese: '計画通りに進んでいる。', english: 'Things are progressing as planned.' },
+      { japanese: '言ったとおりにやってみた。', english: 'I tried it the way you said.' },
+    ],
+  },
+  {
+    match: /^でも$|でも(?!い)/,
+    title: 'Support bridge: contrast conjunction and approximate suggestion (でも)',
+    excerpt:
+      'でも has two main uses. As a conjunction ("but / however"), it introduces a statement that contrasts with or limits the previous one — it is softer than しかし. As a follow-noun marker ("or something like / even X"), it suggests a rough, uncommitted option: コーヒーでも飲む？ = "Shall we get coffee or something?" Context distinguishes the two.',
+    examples: [
+      { japanese: 'やってみた。でも、うまくいかなかった。', english: 'I tried. But it did not go well.' },
+      { japanese: '散歩でもしない？', english: 'How about a walk or something?' },
+    ],
+  },
+  {
+    match: /つづける|続ける/,
+    title: 'Support bridge: continuing an action (続ける)',
+    excerpt:
+      'て+続ける ("keep doing / continue doing") attaches to the te-form to express that an action continues without stopping. It emphasises duration or persistence. Contrast with ている, which describes a state or a habitual action — 続ける specifically adds that the action keeps going uninterrupted.',
+    examples: [{ japanese: '3時間歩き続けた。', english: 'I kept walking for 3 hours.' }],
+  },
+  {
+    match: /からして|から見ると|から見れば/,
+    title: 'Support bridge: judgement from evidence (からして)',
+    excerpt:
+      'からして ("judging from / even / given") draws a conclusion or makes a judgement based on observable evidence. It often implies "if even X is the case, then the conclusion must be true." It is stronger than simply saying "because" — it picks out a single telling detail as a basis for the whole judgement.',
+    examples: [{ japanese: '話し方からして、外国人だとわかった。', english: 'Judging from how they spoke, I could tell they were a foreigner.' }],
+  },
+  {
+    match: /たった|たった(の)|わずか/,
+    title: 'Support bridge: small quantity emphasis (たった / わずか)',
+    excerpt:
+      'たった("only/just") emphasises that an amount is surprisingly small. たったの further intensifies the smallness. わずか is a more formal equivalent meaning "a mere / only a little." All three are placed before a quantity word and suggest the speaker finds the amount insufficient or unexpectedly small.',
+    examples: [{ japanese: 'たった5分で終わった。', english: 'It finished in just five minutes.' }],
+  },
 ]
 
 export function getMaynardSupport(grammar: GrammarItem): MaynardRef | undefined {
