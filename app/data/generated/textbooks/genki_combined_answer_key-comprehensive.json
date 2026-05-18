@@ -3,20 +3,12 @@
   "generatedAt": "2026-05-14T06:10:04.828Z",
   "statistics": {
     "vocab": 0,
-    "grammar": 29,
+    "grammar": 3,
     "dialogues": 27,
     "exercises": 3213
   },
   "vocabulary": [],
   "grammar": [
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_1_grammar_1",
-      "pattern": "I-B.(p.46)",
-      "meaning": "んぼうへん 1.たけしさんはよねんせいです。2.ソラさんは",
-      "lesson": "genki_combined_answer_key_1",
-      "source": "genki_combined_answer_key",
-      "page": 4
-    },
     {
       "id": "genki_combined_answer_key_genki_combined_answer_key_1_grammar_2",
       "pattern": "(b)1.Q:たけしさんはなんねんせいですか。A:",
@@ -24,38 +16,6 @@
       "lesson": "genki_combined_answer_key_1",
       "source": "genki_combined_answer_key",
       "page": 4
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_2_grammar_3",
-      "pattern": "かいわふんほうへん",
-      "meaning": "1.はい、そうです。2.よんじうはっさいです。 I-A. (p.67)",
-      "lesson": "genki_combined_answer_key_2",
-      "source": "genki_combined_answer_key",
-      "page": 5
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_3_grammar_4",
-      "pattern": "かいわふんほうへん",
-      "meaning": "んです。(5)あのじてんしゃはいちまんななせ I. (p.94)",
-      "lesson": "genki_combined_answer_key_3",
-      "source": "genki_combined_answer_key",
-      "page": 6
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_4_grammar_5",
-      "pattern": "かいわふんほうへん",
-      "meaning": "V-B. (p. 120) I-C. (p.116)",
-      "lesson": "genki_combined_answer_key_4",
-      "source": "genki_combined_answer_key",
-      "page": 7
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_5_grammar_6",
-      "pattern": "かいわふんほうへん",
-      "meaning": "I-A. (p.138) Ⅱ-C. (p.140)",
-      "lesson": "genki_combined_answer_key_5",
-      "source": "genki_combined_answer_key",
-      "page": 8
     },
     {
       "id": "genki_combined_answer_key_genki_combined_answer_key_6_grammar_7",
@@ -66,180 +26,12 @@
       "page": 9
     },
     {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_7_grammar_8",
-      "pattern": "たいへん",
-      "meaning": "かいわふんほうへん いです。",
-      "lesson": "genki_combined_answer_key_7",
-      "source": "genki_combined_answer_key",
-      "page": 10
-    },
-    {
       "id": "genki_combined_answer_key_genki_combined_answer_key_8_grammar_9",
       "pattern": "す。2メアりーさんは忙しいと思います。",
       "meaning": "かいわふんほうへん I-A. (p.198)",
       "lesson": "genki_combined_answer_key_8",
       "source": "genki_combined_answer_key",
       "page": 11
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_9_grammar_10",
-      "pattern": "ふんほうへん",
-      "meaning": "11.あしたの気温は八度だと言ていました。 きおんはちと",
-      "lesson": "genki_combined_answer_key_9",
-      "source": "genki_combined_answer_key",
-      "page": 12
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_10_grammar_11",
-      "pattern": "第10課",
-      "meaning": "かいわふんほうへん 1.お父さんは、友だちとよく踊りに行ったと言っ",
-      "lesson": "genki_combined_answer_key_10",
-      "source": "genki_combined_answer_key",
-      "page": 14
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_11_grammar_12",
-      "pattern": "第11課",
-      "meaning": "(1)眠くなりました。(2)元気になりました。 ふんほうへん",
-      "lesson": "genki_combined_answer_key_11",
-      "source": "genki_combined_answer_key",
-      "page": 15
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_12_grammar_13",
-      "pattern": "第12課",
-      "meaning": "広かったので、よかったです。 ふんほうへん",
-      "lesson": "genki_combined_answer_key_12",
-      "source": "genki_combined_answer_key",
-      "page": 16
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_13_grammar_14",
-      "pattern": "がわからないし、読めません。",
-      "meaning": "ぶんほう ふんぼうへん",
-      "lesson": "genki_combined_answer_key_13",
-      "source": "genki_combined_answer_key",
-      "page": 20
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_13_grammar_15",
-      "pattern": "8.うそをつくし、",
-      "meaning": "、約束を守らないし、好きじゃな やくそくまも",
-      "lesson": "genki_combined_answer_key_13",
-      "source": "genki_combined_answer_key",
-      "page": 20
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_14_grammar_16",
-      "pattern": "第14課",
-      "meaning": "てふくろ れました。友だちにバイクをもらいました。",
-      "lesson": "genki_combined_answer_key_14",
-      "source": "genki_combined_answer_key",
-      "page": 21
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_15_grammar_17",
-      "pattern": "第15課",
-      "meaning": "でいる家 かいわふんほうへん",
-      "lesson": "genki_combined_answer_key_15",
-      "source": "genki_combined_answer_key",
-      "page": 22
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_16_grammar_18",
-      "pattern": "第16課",
-      "meaning": "れました。ノお父さんにアイスクリームを買って ふんほうへん",
-      "lesson": "genki_combined_answer_key_16",
-      "source": "genki_combined_answer_key",
-      "page": 23
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_16_grammar_19",
-      "pattern": "を説明してい",
-      "meaning": "た。ストファリーに部屋を掃除してもらい せつめい",
-      "lesson": "genki_combined_answer_key_16",
-      "source": "genki_combined_answer_key",
-      "page": 23
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_17_grammar_20",
-      "pattern": "第17課",
-      "meaning": "1.カルロスさんは単語を覚えなくてもいいです。 ふんほうへん",
-      "lesson": "genki_combined_answer_key_17",
-      "source": "genki_combined_answer_key",
-      "page": 24
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_18_grammar_21",
-      "pattern": "(1)実はシンプーを使っちった。(2)実は日",
-      "meaning": "ふんほうへん I-A. (p.146)",
-      "lesson": "genki_combined_answer_key_18",
-      "source": "genki_combined_answer_key",
-      "page": 25
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_19_grammar_22",
-      "pattern": "第19課",
-      "meaning": "心んきう いらっしゃるんですか。",
-      "lesson": "genki_combined_answer_key_19",
-      "source": "genki_combined_answer_key",
-      "page": 26
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_20_grammar_23",
-      "pattern": "第20課",
-      "meaning": "Ⅱ-D. (p.195) かいわふんほうへん",
-      "lesson": "genki_combined_answer_key_20",
-      "source": "genki_combined_answer_key",
-      "page": 27
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_21_grammar_24",
-      "pattern": "第21課",
-      "meaning": "晩ご飯を食べないで、寝ました。(b)メさ かいわふんほうへん",
-      "lesson": "genki_combined_answer_key_21",
-      "source": "genki_combined_answer_key",
-      "page": 28
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_22_grammar_25",
-      "pattern": "第22課",
-      "meaning": "1.野菜を食べなさい。2.勉強しなさい。3.早 ふんほうへん",
-      "lesson": "genki_combined_answer_key_22",
-      "source": "genki_combined_answer_key",
-      "page": 29
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_23_grammar_26",
-      "pattern": "第23課",
-      "meaning": "8.A：子供の時、塾に行かされましたか。B： かいわふんほうへん",
-      "lesson": "genki_combined_answer_key_23",
-      "source": "genki_combined_answer_key",
-      "page": 30
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_1_grammar_27",
-      "pattern": "たしはにほんだいがくのがくせいです。3やま",
-      "meaning": "んぼうへん したせんせいはにほんごのせんせいです。4た",
-      "lesson": "genki_combined_answer_key_1",
-      "source": "genki_combined_answer_key",
-      "page": 34
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_13_grammar_28",
-      "pattern": "本語は難しいし、物価は高いし。2.はい、好き",
-      "meaning": "ふんぼうへん です。きれいな公園があるし、家族がいるし。",
-      "lesson": "genki_combined_answer_key_13",
-      "source": "genki_combined_answer_key",
-      "page": 51
-    },
-    {
-      "id": "genki_combined_answer_key_genki_combined_answer_key_23_grammar_29",
-      "pattern": "の説明を読んだりします。",
-      "meaning": "かいとうれい さんじっふんある",
-      "lesson": "genki_combined_answer_key_23",
-      "source": "genki_combined_answer_key",
-      "page": 63
     }
   ],
   "dialogues": [

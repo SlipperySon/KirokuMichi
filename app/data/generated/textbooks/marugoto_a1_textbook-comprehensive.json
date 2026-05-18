@@ -2,84 +2,12 @@
   "textbook": "marugoto_a1_textbook",
   "generatedAt": "2026-05-14T06:10:04.828Z",
   "statistics": {
-    "vocab": 23,
-    "grammar": 1,
+    "vocab": 3,
+    "grammar": 130,
     "dialogues": 11,
     "exercises": 936
   },
   "vocabulary": [
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_11_vocab_1",
-      "surface": "ちゃ",
-      "english": "cha",
-      "lesson": "a1_textbook_marugoto_a1_11",
-      "source": "marugoto_a1_textbook",
-      "page": 28
-    },
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_11_vocab_2",
-      "surface": "ちゅ",
-      "english": "chu",
-      "lesson": "a1_textbook_marugoto_a1_11",
-      "source": "marugoto_a1_textbook",
-      "page": 28
-    },
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_11_vocab_3",
-      "surface": "ちょ",
-      "english": "cho",
-      "lesson": "a1_textbook_marugoto_a1_11",
-      "source": "marugoto_a1_textbook",
-      "page": 28
-    },
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_11_vocab_4",
-      "surface": "シャ",
-      "english": "sha",
-      "lesson": "a1_textbook_marugoto_a1_11",
-      "source": "marugoto_a1_textbook",
-      "page": 28
-    },
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_11_vocab_5",
-      "surface": "シュ",
-      "english": "shu",
-      "lesson": "a1_textbook_marugoto_a1_11",
-      "source": "marugoto_a1_textbook",
-      "page": 28
-    },
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_11_vocab_6",
-      "surface": "ショ",
-      "english": "sho",
-      "lesson": "a1_textbook_marugoto_a1_11",
-      "source": "marugoto_a1_textbook",
-      "page": 28
-    },
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_11_vocab_7",
-      "surface": "チャ",
-      "english": "cha",
-      "lesson": "a1_textbook_marugoto_a1_11",
-      "source": "marugoto_a1_textbook",
-      "page": 28
-    },
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_11_vocab_8",
-      "surface": "チュ",
-      "english": "chu",
-      "lesson": "a1_textbook_marugoto_a1_11",
-      "source": "marugoto_a1_textbook",
-      "page": 28
-    },
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_11_vocab_9",
-      "surface": "チョ",
-      "english": "cho",
-      "lesson": "a1_textbook_marugoto_a1_11",
-      "source": "marugoto_a1_textbook",
-      "page": 28
-    },
     {
       "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_11_vocab_10",
       "surface": "どこでたべますか",
@@ -87,54 +15,6 @@
       "lesson": "a1_textbook_marugoto_a1_11",
       "source": "marugoto_a1_textbook",
       "page": 41
-    },
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_11_vocab_11",
-      "surface": "そば",
-      "english": "soba",
-      "lesson": "a1_textbook_marugoto_a1_11",
-      "source": "marugoto_a1_textbook",
-      "page": 46
-    },
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_11_vocab_12",
-      "surface": "すし",
-      "english": "sushi",
-      "lesson": "a1_textbook_marugoto_a1_11",
-      "source": "marugoto_a1_textbook",
-      "page": 47
-    },
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_11_vocab_13",
-      "surface": "エアコン",
-      "english": "eakon",
-      "lesson": "a1_textbook_marugoto_a1_11",
-      "source": "marugoto_a1_textbook",
-      "page": 53
-    },
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_11_vocab_14",
-      "surface": "テレビ",
-      "english": "terebi",
-      "lesson": "a1_textbook_marugoto_a1_11",
-      "source": "marugoto_a1_textbook",
-      "page": 53
-    },
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_11_vocab_15",
-      "surface": "ソファ",
-      "english": "sofa",
-      "lesson": "a1_textbook_marugoto_a1_11",
-      "source": "marugoto_a1_textbook",
-      "page": 53
-    },
-    {
-      "id": "marugoto_a1_textbook_marugoto_a1_45_vocab_16",
-      "surface": "れい",
-      "english": "Example",
-      "lesson": "marugoto_a1_45",
-      "source": "marugoto_a1_textbook",
-      "page": 71
     },
     {
       "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_vocab_17",
@@ -145,62 +25,4475 @@
       "page": 87
     },
     {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_vocab_18",
-      "surface": "サイズ",
-      "english": "saizu",
-      "lesson": "a1_textbook_marugoto_a1_2",
-      "source": "marugoto_a1_textbook",
-      "page": 101
-    },
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_vocab_19",
-      "surface": "埼玉",
-      "english": "Saitama",
-      "lesson": "a1_textbook_marugoto_a1_2",
-      "source": "marugoto_a1_textbook",
-      "page": 102
-    },
-    {
       "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_vocab_20",
       "surface": "広島",
       "english": "Hiroshima",
       "lesson": "a1_textbook_marugoto_a1_2",
       "source": "marugoto_a1_textbook",
       "page": 102
-    },
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_vocab_21",
-      "surface": "長崎",
-      "english": "Nagasaki",
-      "lesson": "a1_textbook_marugoto_a1_2",
-      "source": "marugoto_a1_textbook",
-      "page": 102
-    },
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_vocab_22",
-      "surface": "沖縄",
-      "english": "Okinawa",
-      "lesson": "a1_textbook_marugoto_a1_2",
-      "source": "marugoto_a1_textbook",
-      "page": 102
-    },
-    {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_vocab_23",
-      "surface": "それから",
-      "english": "Sorekara",
-      "lesson": "a1_textbook_marugoto_a1_2",
-      "source": "marugoto_a1_textbook",
-      "page": 109
     }
   ],
   "grammar": [
     {
-      "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_10_grammar_1",
-      "pattern": "s quietly as you listen.",
-      "meaning": "Remember the words that you need. Audio files URL→p17 Listen and Find",
-      "lesson": "a1_textbook_marugoto_a1_10",
-      "source": "marugoto_a1_textbook",
-      "page": 14
+      "id": "cefr_a1_1",
+      "pattern": "だ",
+      "meaning": "The casual form of 'to be', used to state that something is something else.",
+      "explanation": "だ attaches to nouns and な-adjectives to assert identity or description in casual speech. It is the plain/informal equivalent of です and is used among friends, family, or people of equal or lower social standing. Avoid it in formal situations or when speaking to strangers.",
+      "examples": [
+        {
+          "japanese": "これは本だ。",
+          "reading": "これはほんだ。",
+          "english": "This is a book."
+        },
+        {
+          "japanese": "彼は学生だ。",
+          "reading": "かれはがくせいだ。",
+          "english": "He is a student."
+        },
+        {
+          "japanese": "今日は月曜日だ。",
+          "reading": "きょうはげつようびだ。",
+          "english": "Today is Monday."
+        }
+      ],
+      "lesson": "marugoto_a1_1",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 1
+    },
+    {
+      "id": "cefr_a1_2",
+      "pattern": "です",
+      "meaning": "The polite form of 'to be', used to state that something is something else in formal or polite contexts.",
+      "explanation": "です attaches to nouns and な-adjectives to make polite statements about identity or description. It is the standard form used in most everyday conversation with people you don't know well, in classrooms, shops, and workplaces. As an A1 learner, です is the form you should default to.",
+      "examples": [
+        {
+          "japanese": "私は田中です。",
+          "reading": "わたしはたなかです。",
+          "english": "I am Tanaka."
+        },
+        {
+          "japanese": "これはペンです。",
+          "reading": "これはペンです。",
+          "english": "This is a pen."
+        },
+        {
+          "japanese": "今日はいい天気です。",
+          "reading": "きょうはいいてんきです。",
+          "english": "Today is nice weather."
+        }
+      ],
+      "lesson": "marugoto_a1_1",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 2,
+      "maynardRef": {
+        "topicId": "verb_grammar/being_です_だ_ある_いる",
+        "title": "Being: です, だ, ある, いる",
+        "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+        "examples": [
+          {
+            "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+          },
+          {
+            "japanese": "bases areなら,なり，なる,なれ andなれ.",
+            "english": "While typically used in combination with the verb particle lC, it can"
+          },
+          {
+            "japanese": "also be used in combination with the particle と, in which case its meaning",
+            "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_3",
+      "pattern": "は",
+      "meaning": "Marks the topic of the sentence — what the sentence is about.",
+      "explanation": "は (pronounced 'wa' in this grammatical role) tells the listener what the sentence is commenting on. It sets the topic at the front of the sentence and everything after describes or explains that topic. It can replace が or を in many sentences to shift emphasis from new information to known or contrasted information.",
+      "examples": [
+        {
+          "japanese": "猫は動物です。",
+          "reading": "ねこはどうぶつです。",
+          "english": "A cat is an animal."
+        },
+        {
+          "japanese": "私は日本語を勉強します。",
+          "reading": "わたしはにほんごをべんきょうします。",
+          "english": "I study Japanese."
+        },
+        {
+          "japanese": "東京は大きい都市です。",
+          "reading": "とうきょうはおおきいとしです。",
+          "english": "Tokyo is a big city."
+        }
+      ],
+      "lesson": "marugoto_a1_1",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 3
+    },
+    {
+      "id": "cefr_a1_4",
+      "pattern": "も",
+      "meaning": "Means 'also', 'too', or 'as well', adding the marked item to a group or extending a statement.",
+      "explanation": "も replaces は, が, or を to signal that the same statement applies to this item in addition to another already mentioned. In negative sentences it means 'either' or 'neither'. It can also express surprise or emphasis when the quantity or fact is unexpected.",
+      "examples": [
+        {
+          "japanese": "私も学生です。",
+          "reading": "わたしもがくせいです。",
+          "english": "I am also a student."
+        },
+        {
+          "japanese": "犬も猫も好きです。",
+          "reading": "いぬもねこもすきです。",
+          "english": "I like both dogs and cats."
+        },
+        {
+          "japanese": "彼女も来ますか。",
+          "reading": "かのじょもきますか。",
+          "english": "Is she coming too?"
+        }
+      ],
+      "lesson": "marugoto_a1_1",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 4
+    },
+    {
+      "id": "cefr_a1_5",
+      "pattern": "これ",
+      "meaning": "Means 'this' — refers to a thing close to the speaker.",
+      "explanation": "これ is used to refer to an object physically near the speaker when you don't name the object directly. It is part of the ko-so-a-do series: これ (near speaker), それ (near listener), あれ (far from both). Use これ when pointing to or holding something.",
+      "examples": [
+        {
+          "japanese": "これは何ですか。",
+          "reading": "これはなんですか。",
+          "english": "What is this?"
+        },
+        {
+          "japanese": "これは私の鞄です。",
+          "reading": "これはわたしのかばんです。",
+          "english": "This is my bag."
+        },
+        {
+          "japanese": "これはおいしいです。",
+          "reading": "これはおいしいです。",
+          "english": "This is delicious."
+        }
+      ],
+      "lesson": "marugoto_a1_1",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 5
+    },
+    {
+      "id": "cefr_a1_6",
+      "pattern": "の",
+      "meaning": "Links two nouns to show possession, belonging, or a descriptive relationship.",
+      "explanation": "の connects two nouns so that the first describes or owns the second, similar to English 'of' or the apostrophe-s ('s). The owner or category comes first, followed by の, then the thing owned or categorised. It can also nominalise verb phrases and adjective phrases to turn them into noun-like expressions.",
+      "examples": [
+        {
+          "japanese": "これは私の本です。",
+          "reading": "これはわたしのほんです。",
+          "english": "This is my book."
+        },
+        {
+          "japanese": "田中さんの車は赤いです。",
+          "reading": "たなかさんのくるまはあかいです。",
+          "english": "Tanaka-san's car is red."
+        },
+        {
+          "japanese": "日本語の授業は楽しいです。",
+          "reading": "にほんごのじゅぎょうはたのしいです。",
+          "english": "Japanese class is fun."
+        }
+      ],
+      "lesson": "marugoto_a1_1",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 6
+    },
+    {
+      "id": "cefr_a1_7",
+      "pattern": "いい",
+      "meaning": "Means 'good', 'fine', or 'nice' and is one of the most common い-adjectives in Japanese.",
+      "explanation": "いい means 'good' and behaves like a regular い-adjective when modifying nouns directly, but its conjugated forms use よ (よくない, よかった, よくて) rather than い. This irregular conjugation is important to memorise early. In casual speech いい can also mean 'it's okay' or 'no need'.",
+      "examples": [
+        {
+          "japanese": "今日はいい天気ですね。",
+          "reading": "きょうはいいてんきですね。",
+          "english": "It's nice weather today, isn't it."
+        },
+        {
+          "japanese": "この映画はよかったです。",
+          "reading": "このえいがはよかったです。",
+          "english": "This movie was good."
+        },
+        {
+          "japanese": "あなたの日本語はいいですね。",
+          "reading": "あなたのにほんごはいいですね。",
+          "english": "Your Japanese is good, isn't it."
+        }
+      ],
+      "lesson": "marugoto_a1_1",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adjective",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 7
+    },
+    {
+      "id": "cefr_a1_8",
+      "pattern": "か",
+      "meaning": "A sentence-ending particle that turns a statement into a yes/no question.",
+      "explanation": "Adding か to the end of a sentence makes it a question. In polite speech (～ます/～です) the pitch rises slightly and no question mark is needed, though one is often written. In casual speech か can sound blunt; rising intonation alone is more natural among friends.",
+      "examples": [
+        {
+          "japanese": "これはあなたの本ですか。",
+          "reading": "これはあなたのほんですか。",
+          "english": "Is this your book?"
+        },
+        {
+          "japanese": "今日は学校に行きますか。",
+          "reading": "きょうはがっこうにいきますか。",
+          "english": "Are you going to school today?"
+        },
+        {
+          "japanese": "お名前は何ですか。",
+          "reading": "おなまえはなんですか。",
+          "english": "What is your name?"
+        }
+      ],
+      "lesson": "marugoto_a1_1",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 8
+    },
+    {
+      "id": "cefr_a1_9",
+      "pattern": "でしょう",
+      "meaning": "Expresses probability ('probably') or seeks confirmation ('right?', 'isn't it?') depending on intonation.",
+      "explanation": "でしょう is the polite form of だろう and has two main uses: with falling intonation it expresses the speaker's conjecture or probability ('it's probably ~'); with rising intonation it seeks agreement or confirmation from the listener ('it's ~, right?'). It attaches to the plain form of verbs and adjectives, or directly to nouns and な-adjective stems. It is polite in register and common in both conversation and writing.",
+      "examples": [
+        {
+          "japanese": "明日は雨でしょう。",
+          "reading": "あしたはあめでしょう。",
+          "english": "It will probably rain tomorrow."
+        },
+        {
+          "japanese": "あの映画はおもしろいでしょう？",
+          "reading": "あのえいがはおもしろいでしょう？",
+          "english": "That movie is interesting, isn't it?"
+        },
+        {
+          "japanese": "田中さんはもう家に帰ったでしょう。",
+          "reading": "たなかさんはもうおうちにかえったでしょう。",
+          "english": "Mr. Tanaka has probably already gone home."
+        }
+      ],
+      "lesson": "marugoto_a1_2",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "auxiliary",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 9
+    },
+    {
+      "id": "cefr_a1_10",
+      "pattern": "が",
+      "meaning": "Marks the grammatical subject of a sentence, especially for identification, existence, or ability.",
+      "explanation": "が marks the subject performing or experiencing the action. Unlike は, が highlights or identifies the subject — use it when answering 'who?' or 'what?', with existence verbs (あります/います), and with ability or desire expressions. It is neutral in register and used in both casual and polite sentences.",
+      "examples": [
+        {
+          "japanese": "猫が庭にいます。",
+          "reading": "ねこがにわにいます。",
+          "english": "There is a cat in the garden."
+        },
+        {
+          "japanese": "だれが先生ですか。",
+          "reading": "だれがせんせいですか。",
+          "english": "Who is the teacher?"
+        },
+        {
+          "japanese": "私は日本語が好きです。",
+          "reading": "わたしはにほんごがすきです。",
+          "english": "I like Japanese."
+        }
+      ],
+      "lesson": "marugoto_a1_2",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 10
+    },
+    {
+      "id": "cefr_a1_11",
+      "pattern": "それ",
+      "meaning": "Means 'that' — refers to a thing close to the listener or just mentioned.",
+      "explanation": "それ points to something near the person you are speaking to, or to something that was just mentioned in the conversation. It is the middle distance in the ko-so-a-do series. In written or spoken dialogue it often refers back to a topic just raised by the other person.",
+      "examples": [
+        {
+          "japanese": "それは何ですか。",
+          "reading": "それはなんですか。",
+          "english": "What is that?"
+        },
+        {
+          "japanese": "それは面白いですね。",
+          "reading": "それはおもしろいですね。",
+          "english": "That is interesting, isn't it."
+        },
+        {
+          "japanese": "それを見せてください。",
+          "reading": "それをみせてください。",
+          "english": "Please show me that."
+        }
+      ],
+      "lesson": "marugoto_a1_2",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 11
+    },
+    {
+      "id": "cefr_a1_12",
+      "pattern": "る-Verb (Dictionary)",
+      "meaning": "The plain/dictionary form of Ichidan verbs, which end in る and conjugate by replacing る with the appropriate suffix.",
+      "explanation": "る-Verbs (Ichidan verbs) always end in る in dictionary form, with the vowel before る being い or え (e.g. たべる, みる). To make them polite, drop る and add ます. They are the simpler of the two main verb groups because the stem never changes.",
+      "examples": [
+        {
+          "japanese": "私は毎朝ご飯を食べます。",
+          "reading": "わたしはまいあさごはんをたべます。",
+          "english": "I eat rice every morning."
+        },
+        {
+          "japanese": "映画を見ますか。",
+          "reading": "えいがをみますか。",
+          "english": "Do you watch movies?"
+        },
+        {
+          "japanese": "七時に起きます。",
+          "reading": "しちじにおきます。",
+          "english": "I wake up at seven o'clock."
+        }
+      ],
+      "lesson": "marugoto_a1_2",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 12
+    },
+    {
+      "id": "cefr_a1_13",
+      "pattern": "がある",
+      "meaning": "Indicates that an inanimate object or thing exists or is located somewhere.",
+      "explanation": "がある is used to express the existence or presence of non-living things (objects, places, events, abstract things). The subject is marked with が, and a location is often given with に. It is neutral in register and used in both casual and polite contexts (ある / あります).",
+      "examples": [
+        {
+          "japanese": "テーブルの上に本があります。",
+          "reading": "テーブルのうえにほんがあります。",
+          "english": "There is a book on the table."
+        },
+        {
+          "japanese": "駅の近くにコンビニがある。",
+          "reading": "えきのちかくにコンビニがある。",
+          "english": "There is a convenience store near the station."
+        },
+        {
+          "japanese": "明日、授業がありますか。",
+          "reading": "あした、じゅぎょうがありますか。",
+          "english": "Is there class tomorrow?"
+        }
+      ],
+      "lesson": "marugoto_a1_2",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 13
+    },
+    {
+      "id": "cefr_a1_14",
+      "pattern": "ここ",
+      "meaning": "A place demonstrative pronoun meaning 'here' or 'this place', referring to a location close to the speaker.",
+      "explanation": "ここ refers to a place near the speaker, functioning like 'here' in English. It is the first in the ko-so-a-do demonstrative system for places: ここ (near speaker), そこ (near listener), あそこ (far from both). It can stand alone or be used with particles such as に, で, or は. Register is neutral and it is used in both polite and casual speech.",
+      "examples": [
+        {
+          "japanese": "ここは図書館です。",
+          "reading": "ここはとしょかんです。",
+          "english": "This place is a library."
+        },
+        {
+          "japanese": "私のかばんはここにあります。",
+          "reading": "わたしのかばんはここにあります。",
+          "english": "My bag is here."
+        },
+        {
+          "japanese": "ここで待ってください。",
+          "reading": "ここでまってください。",
+          "english": "Please wait here."
+        }
+      ],
+      "lesson": "marugoto_a1_2",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 14
+    },
+    {
+      "id": "cefr_a1_15",
+      "pattern": "と",
+      "meaning": "Connects two or more nouns to mean 'and', listing items together.",
+      "explanation": "The particle と is placed between nouns to join them exhaustively, meaning the list contains all the items mentioned. It works like 'and' in English when listing things: パンとミルク means 'bread and milk'. This form is neutral in register and used in both polite and casual speech. It only connects nouns, not verbs or clauses.",
+      "examples": [
+        {
+          "japanese": "テーブルの上にペンと本があります。",
+          "reading": "テーブルのうえにペンとほんがあります。",
+          "english": "There is a pen and a book on the table."
+        },
+        {
+          "japanese": "私はりんごとバナナが好きです。",
+          "reading": "わたしはりんごとバナナがすきです。",
+          "english": "I like apples and bananas."
+        },
+        {
+          "japanese": "母と父は日本人です。",
+          "reading": "ははとちちはにほんじんです。",
+          "english": "My mother and father are Japanese."
+        }
+      ],
+      "lesson": "marugoto_a1_2",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 15
+    },
+    {
+      "id": "cefr_a1_16",
+      "pattern": "の",
+      "meaning": "Turns a verb or adjective phrase into a noun, meaning 'the act of ~' or 'the thing that ~'.",
+      "explanation": "The nominalizer の follows a plain-form verb or adjective phrase and converts it into a noun phrase. This allows verb phrases to function as subjects or objects in a sentence. It is commonly used after verbs of liking, disliking, good/bad at, and perception. It is natural in both casual and polite speech.",
+      "examples": [
+        {
+          "japanese": "音楽を聴くのが好きです。",
+          "reading": "おんがくをきくのがすきです。",
+          "english": "I like listening to music."
+        },
+        {
+          "japanese": "日本語を話すのは難しいです。",
+          "reading": "にほんごをはなすのはむずかしいです。",
+          "english": "Speaking Japanese is difficult."
+        },
+        {
+          "japanese": "彼が来るのを待っています。",
+          "reading": "かれがくるのをまっています。",
+          "english": "I am waiting for him to come."
+        }
+      ],
+      "lesson": "marugoto_a1_2",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 16
+    },
+    {
+      "id": "cefr_a1_17",
+      "pattern": "～んです・のです",
+      "meaning": "Adds an explanatory or emphatic nuance, meaning 'the thing is...' or 'it's that...'.",
+      "explanation": "んです (casual) and のです (formal) wrap a plain-form clause to signal that the speaker is explaining, seeking explanation, or emphasizing a reason or situation. It softens direct statements into shared context and is very common in natural spoken Japanese. Attach の/ん directly after plain-form verbs and い-adjectives; after nouns and な-adjective stems, add な before の/ん.",
+      "examples": [
+        {
+          "japanese": "頭が痛いんです。",
+          "reading": "あたまがいたいんです。",
+          "english": "The thing is, I have a headache."
+        },
+        {
+          "japanese": "どうして遅れたんですか。",
+          "reading": "どうしておくれたんですか。",
+          "english": "Why is it that you were late?"
+        },
+        {
+          "japanese": "実は、日本語を勉強しているんです。",
+          "reading": "じつは、にほんごをべんきょうしているんです。",
+          "english": "Actually, I'm studying Japanese."
+        }
+      ],
+      "lesson": "marugoto_a1_3",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 17,
+      "maynardRef": {
+        "topicId": "verb_grammar/being_です_だ_ある_いる",
+        "title": "Being: です, だ, ある, いる",
+        "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+        "examples": [
+          {
+            "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+          },
+          {
+            "japanese": "bases areなら,なり，なる,なれ andなれ.",
+            "english": "While typically used in combination with the verb particle lC, it can"
+          },
+          {
+            "japanese": "also be used in combination with the particle と, in which case its meaning",
+            "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_18",
+      "pattern": "だろう",
+      "meaning": "Expresses probability ('probably') or seeks confirmation ('right?') in casual speech.",
+      "explanation": "だろう is the casual equivalent of でしょう. With falling intonation it means 'probably', expressing the speaker's guess or assumption. With rising intonation it seeks agreement, similar to 'isn't it?' or 'right?'. It attaches to plain-form verbs, い-adjectives, nouns, and な-adjective stems.",
+      "examples": [
+        {
+          "japanese": "明日は雨だろう。",
+          "reading": "あしたはあめだろう。",
+          "english": "It will probably rain tomorrow."
+        },
+        {
+          "japanese": "彼は学生だろう？",
+          "reading": "かれはがくせいだろう？",
+          "english": "He's a student, right?"
+        },
+        {
+          "japanese": "この本は難しいだろう。",
+          "reading": "このほんはむずかしいだろう。",
+          "english": "This book is probably difficult."
+        }
+      ],
+      "lesson": "marugoto_a1_3",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "auxiliary",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 18,
+      "maynardRef": {
+        "topicId": "verb_grammar/being_です_だ_ある_いる",
+        "title": "Being: です, だ, ある, いる",
+        "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+        "examples": [
+          {
+            "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+          },
+          {
+            "japanese": "bases areなら,なり，なる,なれ andなれ.",
+            "english": "While typically used in combination with the verb particle lC, it can"
+          },
+          {
+            "japanese": "also be used in combination with the particle と, in which case its meaning",
+            "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_19",
+      "pattern": "あれ",
+      "meaning": "Means 'that over there' — refers to a thing far from both speaker and listener.",
+      "explanation": "あれ points to something distant from both the speaker and the listener. It is the far-distance member of the ko-so-a-do series. Use it when both parties can see the object but it is clearly away from both of you, such as something across the street or at the other end of a room.",
+      "examples": [
+        {
+          "japanese": "あれは山です。",
+          "reading": "あれはやまです。",
+          "english": "That over there is a mountain."
+        },
+        {
+          "japanese": "あれは誰の車ですか。",
+          "reading": "あれはだれのくるまですか。",
+          "english": "Whose car is that over there?"
+        },
+        {
+          "japanese": "あれは大きい建物ですね。",
+          "reading": "あれはおおきいたてものですね。",
+          "english": "That is a big building, isn't it."
+        }
+      ],
+      "lesson": "marugoto_a1_3",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 19
+    },
+    {
+      "id": "cefr_a1_20",
+      "pattern": "そこ",
+      "meaning": "A place demonstrative pronoun meaning 'there' or 'that place', referring to a location near the listener.",
+      "explanation": "そこ refers to a place near the person being spoken to, functioning like 'there' in English when the place is within the listener's reach or awareness. It is the second in the ko-so-a-do place series. Use it with particles like に, で, or は just as you would with ここ. Register is neutral.",
+      "examples": [
+        {
+          "japanese": "そこに座ってください。",
+          "reading": "そこにすわってください。",
+          "english": "Please sit there."
+        },
+        {
+          "japanese": "そこは駅ですか。",
+          "reading": "そこはえきですか。",
+          "english": "Is that place the station?"
+        },
+        {
+          "japanese": "そこで何をしていますか。",
+          "reading": "そこでなにをしていますか。",
+          "english": "What are you doing there?"
+        }
+      ],
+      "lesson": "marugoto_a1_3",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 20
+    },
+    {
+      "id": "cefr_a1_21",
+      "pattern": "を",
+      "meaning": "Marks the direct object of a verb — the thing being acted upon.",
+      "explanation": "を (pronounced 'o') follows the noun that receives the action of a transitive verb. It is the direct-object marker and has no English equivalent word; it is simply omitted in translation. を is used in all registers and is essential for forming basic sentences with action verbs.",
+      "examples": [
+        {
+          "japanese": "コーヒーを飲みます。",
+          "reading": "コーヒーをのみます。",
+          "english": "I drink coffee."
+        },
+        {
+          "japanese": "本を読みますか。",
+          "reading": "ほんをよみますか。",
+          "english": "Do you read books?"
+        },
+        {
+          "japanese": "音楽を聞きます。",
+          "reading": "おんがくをききます。",
+          "english": "I listen to music."
+        }
+      ],
+      "lesson": "marugoto_a1_3",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 21
+    },
+    {
+      "id": "cefr_a1_22",
+      "pattern": "する",
+      "meaning": "する is an irregular verb meaning 'to do,' and it also turns many nouns into verbs.",
+      "explanation": "する is one of the two main irregular verbs in Japanese. It combines with many Japanese and loanword nouns to create compound verbs (e.g., 勉強する, 料理する). It is used in both polite (します) and casual (する) speech and is essential for expressing actions.",
+      "examples": [
+        {
+          "japanese": "毎日、勉強します。",
+          "reading": "まいにち、べんきょうします。",
+          "english": "I study every day."
+        },
+        {
+          "japanese": "週末に料理をします。",
+          "reading": "しゅうまつにりょうりをします。",
+          "english": "I cook on weekends."
+        },
+        {
+          "japanese": "電話します。",
+          "reading": "でんわします。",
+          "english": "I will make a phone call."
+        }
+      ],
+      "lesson": "marugoto_a1_3",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 22,
+      "maynardRef": {
+        "topicId": "verb_grammar/doing_する",
+        "title": "Doing: する",
+        "excerpt": "84 CHAPTER 2. VERB GRAMMAR\n2.5.31 Doing: する\nWe've already seen す る as irregular verb, and it has been used in enough\nexample sentences to let it be no surprise that it means \"do'\". However,\nthis isn't the only meaning for this verb. When used in combination with\na direct object – as transitive verb – す る does mean \"do', but when used\nas intransitive verb, its meaning should be considered to be \"decide on'\nor \"choose'\". To show this difference in meaning between the transitive\nたどうし じどうし\n(strictly",
+        "examples": [
+          {
+            "japanese": "2.5.31 Doing: する"
+          },
+          {
+            "japanese": "We've already seen す る as irregular verb, and it has been used in enough",
+            "english": "example sentences to let it be no surprise that it means \"do'\". However,"
+          },
+          {
+            "japanese": "a direct object – as transitive verb – す る does mean \"do', but when used",
+            "english": "as intransitive verb, its meaning should be considered to be \"decide on'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_23",
+      "pattern": "がいる",
+      "meaning": "Indicates that a person or animal exists or is present somewhere.",
+      "explanation": "がいる is used for living, animate beings — people and animals. Unlike がある, it cannot be used for objects or events. The subject takes が and the location takes に. It can also describe someone remaining in a state. Polite form is います.",
+      "examples": [
+        {
+          "japanese": "公園に子どもがいます。",
+          "reading": "こうえんにこどもがいます。",
+          "english": "There are children in the park."
+        },
+        {
+          "japanese": "部屋に猫がいる。",
+          "reading": "へやにねこがいる。",
+          "english": "There is a cat in the room."
+        },
+        {
+          "japanese": "お母さんは台所にいますか。",
+          "reading": "おかあさんはだいどころにいますか。",
+          "english": "Is your mother in the kitchen?"
+        }
+      ],
+      "lesson": "marugoto_a1_3",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 23
+    },
+    {
+      "id": "cefr_a1_24",
+      "pattern": "い-Adjectives",
+      "meaning": "A class of adjectives ending in い that directly modify nouns and conjugate to show tense and negation.",
+      "explanation": "い-adjectives end in い and can modify a noun directly before it (e.g. 大きい犬) or appear at the end of a sentence before です or だ. To make them negative, drop the final い and add くない; to make them past tense, drop い and add かった. They conjugate independently without needing a copula for plain-form sentences.",
+      "examples": [
+        {
+          "japanese": "この本は面白いです。",
+          "reading": "このほんはおもしろいです。",
+          "english": "This book is interesting."
+        },
+        {
+          "japanese": "昨日は寒くなかったです。",
+          "reading": "きのうはさむくなかったです。",
+          "english": "Yesterday was not cold."
+        },
+        {
+          "japanese": "新しいレストランは高いですか。",
+          "reading": "あたらしいレストランはたかいですか。",
+          "english": "Is the new restaurant expensive?"
+        }
+      ],
+      "lesson": "marugoto_a1_3",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adjective",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 24
+    },
+    {
+      "id": "cefr_a1_25",
+      "pattern": "で",
+      "meaning": "Marks the place where an action or event takes place, meaning 'at' or 'in'.",
+      "explanation": "The particle で marks where an action happens, such as eating at a restaurant or studying at school. It answers the question 'where does this activity occur?' Do not confuse it with に, which marks where something exists or a destination of movement. で is neutral in register and appears in both polite and casual speech.",
+      "examples": [
+        {
+          "japanese": "私は学校で日本語を勉強します。",
+          "reading": "わたしはがっこうでにほんごをべんきょうします。",
+          "english": "I study Japanese at school."
+        },
+        {
+          "japanese": "公園で友達とサッカーをした。",
+          "reading": "こうえんでともだちとサッカーをした。",
+          "english": "I played soccer with my friends at the park."
+        },
+        {
+          "japanese": "このレストランで食べましょう。",
+          "reading": "このレストランでたべましょう。",
+          "english": "Let's eat at this restaurant."
+        }
+      ],
+      "lesson": "marugoto_a1_4",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 25
+    },
+    {
+      "id": "cefr_a1_26",
+      "pattern": "う-Verb (Dictionary)",
+      "meaning": "The plain/dictionary form of Godan verbs, which end in an う-row sound and conjugate by changing that final syllable.",
+      "explanation": "う-Verbs (Godan verbs) end in う, く, ぐ, す, つ, ぬ, ぶ, む, or る (where the preceding vowel is あ, う, or お). To form the polite ます-form, change the final う-row syllable to its い-row equivalent and add ます (e.g. かく → かきます, のむ → のみます). The stem changes shape, so each ending must be learned.",
+      "examples": [
+        {
+          "japanese": "毎日日本語を書きます。",
+          "reading": "まいにちにほんごをかきます。",
+          "english": "I write Japanese every day."
+        },
+        {
+          "japanese": "水を飲みますか。",
+          "reading": "みずをのみますか。",
+          "english": "Do you drink water?"
+        },
+        {
+          "japanese": "友達と話します。",
+          "reading": "ともだちとはなします。",
+          "english": "I talk with my friend."
+        }
+      ],
+      "lesson": "marugoto_a1_4",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 26
+    },
+    {
+      "id": "cefr_a1_27",
+      "pattern": "ている①",
+      "meaning": "Expresses an ongoing action happening right now.",
+      "explanation": "Attach ている to the て-form of a verb to show that an action is currently in progress. In casual speech, ている is often shortened to てる. This is the standard way to express the English present continuous tense in Japanese.",
+      "examples": [
+        {
+          "japanese": "私は今、本を読んでいます。",
+          "reading": "わたしはいま、ほんをよんでいます。",
+          "english": "I am reading a book right now."
+        },
+        {
+          "japanese": "彼女は音楽を聴いています。",
+          "reading": "かのじょはおんがくをきいています。",
+          "english": "She is listening to music."
+        },
+        {
+          "japanese": "犬が公園で走っています。",
+          "reading": "いぬがこうえんではしっています。",
+          "english": "The dog is running in the park."
+        }
+      ],
+      "lesson": "marugoto_a1_4",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 27,
+      "maynardRef": {
+        "topicId": "more_grammar/continuative_て_form",
+        "title": "Continuative: て form",
+        "excerpt": "3.2. FURTHER INFLECTIONS 103\n3.2.2 Continuative: て form\nThe continuative in Japanese is also commonly refered to as the \"て form',\nbecause it relies on the 連用形 of classical helper verb for completion, つ,\nwhich is て. This inflection is used for at least three things in Japanese,\nof which verb chaining is probably the most frequently used. Aside from\nthis, it is also used to issue (implied) imperatives, and it can be used in\ncombination with several special verbs to create special constructions.\nba",
+        "examples": [
+          {
+            "japanese": "3.2.2 Continuative: て form"
+          },
+          {
+            "japanese": "The continuative in Japanese is also commonly refered to as the \"て form',"
+          },
+          {
+            "japanese": "because it relies on the 連用形 of classical helper verb for completion, つ,"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_28",
+      "pattern": "な-Adjectives",
+      "meaning": "A class of adjectives that behave like nouns and require な when modifying a noun directly.",
+      "explanation": "な-Adjectives (形容動詞) look like nouns but function as adjectives. When placed before a noun they take な (e.g. きれいな); when used predicatively they are followed by だ or です. They are used in both casual and polite speech depending on the ending you attach.",
+      "examples": [
+        {
+          "japanese": "ここはきれいな公園です。",
+          "reading": "ここはきれいなこうえんです。",
+          "english": "This is a beautiful park."
+        },
+        {
+          "japanese": "彼女はとても元気です。",
+          "reading": "かのじょはとてもげんきです。",
+          "english": "She is very energetic."
+        },
+        {
+          "japanese": "この部屋は静かではありません。",
+          "reading": "このへやはしずかではありません。",
+          "english": "This room is not quiet."
+        }
+      ],
+      "lesson": "marugoto_a1_4",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adjective",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 28
+    },
+    {
+      "id": "cefr_a1_29",
+      "pattern": "あそこ",
+      "meaning": "A place demonstrative pronoun meaning 'over there', referring to a location far from both speaker and listener.",
+      "explanation": "あそこ refers to a place that is physically distant from both the speaker and the listener, like 'over there' in English. It is the third in the ko-so-a-do place series. It can also be used to refer to a place that both speaker and listener know about from shared experience, even if not physically present. Register is neutral.",
+      "examples": [
+        {
+          "japanese": "あそこに大きい山があります。",
+          "reading": "あそこにおおきいやまがあります。",
+          "english": "There is a big mountain over there."
+        },
+        {
+          "japanese": "あそこがバス停です。",
+          "reading": "あそこがバスていです。",
+          "english": "That over there is the bus stop."
+        },
+        {
+          "japanese": "あそこのカフェは有名です。",
+          "reading": "あそこのカフェはゆうめいです。",
+          "english": "The café over there is famous."
+        }
+      ],
+      "lesson": "marugoto_a1_4",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 29
+    },
+    {
+      "id": "cefr_a1_30",
+      "pattern": "この",
+      "meaning": "Means 'this' and modifies a noun that is close to the speaker.",
+      "explanation": "この is a pre-noun modifier meaning 'this'. It refers to something physically or conceptually close to the speaker, and must always be followed directly by a noun. It cannot stand alone (use これ for that). この is part of the ko-so-a-do series (この・その・あの・どの).",
+      "examples": [
+        {
+          "japanese": "この本はおもしろいです。",
+          "reading": "このほんはおもしろいです。",
+          "english": "This book is interesting."
+        },
+        {
+          "japanese": "この店のラーメンは好きです。",
+          "reading": "このみせのラーメンはすきです。",
+          "english": "I like the ramen at this shop."
+        },
+        {
+          "japanese": "この映画を見ましたか。",
+          "reading": "このえいがをみましたか。",
+          "english": "Did you watch this movie?"
+        }
+      ],
+      "lesson": "marugoto_a1_4",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adjective",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 30
+    },
+    {
+      "id": "cefr_a1_31",
+      "pattern": "へいく",
+      "meaning": "Express going or heading toward a place using the direction particle へ with いく.",
+      "explanation": "The particle へ (read as え) marks the direction or destination of movement. Combined with いく (to go), it indicates that the subject is moving toward a place. It is slightly more literary than に for destinations, but both are common in everyday speech.",
+      "examples": [
+        {
+          "japanese": "学校へ行きます。",
+          "reading": "がっこうへいきます。",
+          "english": "I go to school."
+        },
+        {
+          "japanese": "明日、東京へ行きます。",
+          "reading": "あした、とうきょうへいきます。",
+          "english": "Tomorrow I will go to Tokyo."
+        },
+        {
+          "japanese": "友だちの家へ行きました。",
+          "reading": "ともだちのいえへいきました。",
+          "english": "I went to my friend's house."
+        }
+      ],
+      "lesson": "marugoto_a1_4",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 31
+    },
+    {
+      "id": "cefr_a1_32",
+      "pattern": "に",
+      "meaning": "Marks the location of existence, the destination of movement, a point in time, or the target of an action.",
+      "explanation": "The particle に has several key A1 uses: it marks where something exists (本は机の上にある — the book is on the desk), where someone or something is going (学校に行く — go to school), and specific times (七時に起きる — wake up at seven). Unlike で, に does not mark where an action takes place but rather where something is or where something is headed. It is neutral in register.",
+      "examples": [
+        {
+          "japanese": "猫はソファの上にいます。",
+          "reading": "ねこはソファのうえにいます。",
+          "english": "The cat is on the sofa."
+        },
+        {
+          "japanese": "明日、東京に行きます。",
+          "reading": "あした、とうきょうにいきます。",
+          "english": "I'm going to Tokyo tomorrow."
+        },
+        {
+          "japanese": "毎朝六時に起きます。",
+          "reading": "まいあさろくじにおきます。",
+          "english": "I wake up at six every morning."
+        }
+      ],
+      "lesson": "marugoto_a1_4",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 32
+    },
+    {
+      "id": "cefr_a1_33",
+      "pattern": "か",
+      "meaning": "Connects two or more nouns to express a choice or alternative, meaning 'or'.",
+      "explanation": "When placed between nouns, か means 'or', presenting alternatives for the listener to choose from. For example, コーヒーかお茶 means 'coffee or tea'. It is different from the sentence-ending か which forms questions. This usage is neutral in register and common in both polite and casual speech when offering or listing options.",
+      "examples": [
+        {
+          "japanese": "コーヒーか紅茶はいかがですか。",
+          "reading": "コーヒーかこうちゃはいかがですか。",
+          "english": "Would you like coffee or black tea?"
+        },
+        {
+          "japanese": "土曜日か日曜日に会いましょう。",
+          "reading": "どようびかにちようびにあいましょう。",
+          "english": "Let's meet on Saturday or Sunday."
+        },
+        {
+          "japanese": "バスか電車で行きます。",
+          "reading": "バスかでんしゃでいきます。",
+          "english": "I'll go by bus or train."
+        }
+      ],
+      "lesson": "marugoto_a1_5",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "conjunction",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 33
+    },
+    {
+      "id": "cefr_a1_34",
+      "pattern": "のがすき",
+      "meaning": "Express liking an activity by nominalizing a verb with の and following it with が好き.",
+      "explanation": "The nominalizer の turns a verb phrase into a noun-like clause, allowing it to act as the subject of が好き. The structure is [verb dictionary form] + のが好きです. This is the natural way to say you enjoy doing something. It is used in everyday polite and casual speech.",
+      "examples": [
+        {
+          "japanese": "私は音楽を聴くのが好きです。",
+          "reading": "わたしはおんがくをきくのがすきです。",
+          "english": "I like listening to music."
+        },
+        {
+          "japanese": "料理を作るのが好きですか。",
+          "reading": "りょうりをつくるのがすきですか。",
+          "english": "Do you like cooking?"
+        },
+        {
+          "japanese": "外で走るのが好きです。",
+          "reading": "そとではしるのがすきです。",
+          "english": "I like running outside."
+        }
+      ],
+      "lesson": "marugoto_a1_5",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 34
+    },
+    {
+      "id": "cefr_a1_35",
+      "pattern": "Verb + てもいい",
+      "meaning": "Expresses that something is permitted or acceptable — 'it's okay to ~', 'you may ~'.",
+      "explanation": "Attach てもいい to the て-form of a verb to grant or ask for permission. In question form (てもいいですか？), it means 'May I ~?' or 'Is it okay if I ~?'. It is polite in its ～てもいいです form and very common in everyday conversation.",
+      "examples": [
+        {
+          "japanese": "ここで写真を撮ってもいいですか？",
+          "reading": "ここでしゃしんをとってもいいですか？",
+          "english": "Is it okay to take photos here?"
+        },
+        {
+          "japanese": "このペンを使ってもいいです。",
+          "reading": "このぺんをつかってもいいです。",
+          "english": "You may use this pen."
+        },
+        {
+          "japanese": "明日、少し遅く来てもいいですか？",
+          "reading": "あした、すこしおそくきてもいいですか？",
+          "english": "Is it alright if I come a little late tomorrow?"
+        }
+      ],
+      "lesson": "marugoto_a1_5",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 35
+    },
+    {
+      "id": "cefr_a1_36",
+      "pattern": "で",
+      "meaning": "Indicates the means, tool, method, or material used to do something.",
+      "explanation": "The particle で attaches to a noun to show how or with what something is done. It covers transport, tools, language, and materials. This usage is very common in everyday polite and casual speech.",
+      "examples": [
+        {
+          "japanese": "バスで学校に行きます。",
+          "reading": "バスでがっこうにいきます。",
+          "english": "I go to school by bus."
+        },
+        {
+          "japanese": "箸でご飯を食べます。",
+          "reading": "はしでごはんをたべます。",
+          "english": "I eat rice with chopsticks."
+        },
+        {
+          "japanese": "日本語で話してください。",
+          "reading": "にほんごではなしてください。",
+          "english": "Please speak in Japanese."
+        }
+      ],
+      "lesson": "marugoto_a1_5",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 36
+    },
+    {
+      "id": "cefr_a1_37",
+      "pattern": "その",
+      "meaning": "Means 'that' and modifies a noun close to the listener or recently mentioned.",
+      "explanation": "その is a pre-noun modifier meaning 'that', referring to something near the listener or something already mentioned in the conversation. Like この, it must be followed by a noun. It contrasts with この (near speaker) and あの (far from both).",
+      "examples": [
+        {
+          "japanese": "その本は私のです。",
+          "reading": "そのほんはわたしのです。",
+          "english": "That book is mine."
+        },
+        {
+          "japanese": "その話はおもしろいですね。",
+          "reading": "そのはなしはおもしろいですね。",
+          "english": "That story is interesting, isn't it."
+        },
+        {
+          "japanese": "その人はだれですか。",
+          "reading": "そのひとはだれですか。",
+          "english": "Who is that person?"
+        }
+      ],
+      "lesson": "marugoto_a1_5",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adjective",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 37
+    },
+    {
+      "id": "cefr_a1_38",
+      "pattern": "へ",
+      "meaning": "Marks the direction or destination of movement.",
+      "explanation": "The particle へ (pronounced 'e') attaches to a place noun to indicate the direction someone or something is moving toward. It is interchangeable with に for destinations in many cases, but へ emphasizes direction or journey rather than arrival. It is used in both polite and casual speech.",
+      "examples": [
+        {
+          "japanese": "私は学校へ行きます。",
+          "reading": "わたしはがっこうへいきます。",
+          "english": "I am going to school."
+        },
+        {
+          "japanese": "東京へようこそ！",
+          "reading": "とうきょうへようこそ！",
+          "english": "Welcome to Tokyo!"
+        },
+        {
+          "japanese": "右へ曲がってください。",
+          "reading": "みぎへまがってください。",
+          "english": "Please turn to the right."
+        }
+      ],
+      "lesson": "marugoto_a1_5",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 38
+    },
+    {
+      "id": "cefr_a1_39",
+      "pattern": "くる",
+      "meaning": "くる is an irregular verb meaning 'to come' toward the speaker or a reference point.",
+      "explanation": "くる is the second main irregular verb in Japanese. Unlike いく (to go away), くる describes movement toward the speaker or toward the topic's location. It conjugates irregularly: polite form is きます, past is きました. It is used in both polite and casual registers.",
+      "examples": [
+        {
+          "japanese": "友だちが来ます。",
+          "reading": "ともだちがきます。",
+          "english": "My friend is coming."
+        },
+        {
+          "japanese": "先生はもう来ました。",
+          "reading": "せんせいはもうきました。",
+          "english": "The teacher has already come."
+        },
+        {
+          "japanese": "明日、うちに来てください。",
+          "reading": "あした、うちにきてください。",
+          "english": "Please come to my house tomorrow."
+        }
+      ],
+      "lesson": "marugoto_a1_5",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 39,
+      "maynardRef": {
+        "topicId": "conjugation_schemes/irregular_verbs_くる_来る",
+        "title": "Irregular verbs: くる (来る)",
+        "excerpt": "324 CHAPTER 7. CONJUGATION SCHEMES\n7.1.3 Irregular verbs:する (ずる/じる)\nbase する ずる じる\n未然形 さ,せ,し ざ,ぜ,じ じ\n連用形 し じ じ\n連体形 する ずる じる\n已然形 すれ ずれ じれ\n命令形 せ(よ),し(ろ),せいぜ(よ),じ(ろ),ぜい じ(よ,ろ)\nThe 未然形 for these verbs follow a few special rules.\nFor the classical negation:\nする uses the せ-未然形\nずる uses the ぜ-未然形\nFor the passive and causative:\nする uses both the せ- and さ-未然形，for せられる/される for the\npassive and させる for the causative.\nずる uses just the じ-未然形, forming じられる for the passive and じ\nさせる for the causative.\nじる uses its o",
+        "examples": [
+          {
+            "japanese": "7.1.3 Irregular verbs:する (ずる/じる)"
+          },
+          {
+            "japanese": "base する ずる じる"
+          },
+          {
+            "japanese": "未然形 さ,せ,し ざ,ぜ,じ じ"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_40",
+      "pattern": "だった・でした",
+      "meaning": "Expresses 'was' or 'were', the past tense of だ and です.",
+      "explanation": "だった is the plain past form of だ, and でした is the polite past form of です. They follow nouns and な-adjectives to express that something was a certain way in the past. でした is used in formal or polite contexts, while だった is used in casual conversation.",
+      "examples": [
+        {
+          "japanese": "昨日はいい天気でした。",
+          "reading": "きのうはいいてんきでした。",
+          "english": "Yesterday was nice weather."
+        },
+        {
+          "japanese": "子どものとき、私は元気だった。",
+          "reading": "こどものとき、わたしはげんきだった。",
+          "english": "When I was a child, I was energetic."
+        },
+        {
+          "japanese": "あの店は有名なレストランでした。",
+          "reading": "あのみせはゆうめいなレストランでした。",
+          "english": "That place was a famous restaurant."
+        }
+      ],
+      "lesson": "marugoto_a1_5",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "tense",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 40,
+      "maynardRef": {
+        "topicId": "verb_grammar/being_です_だ_ある_いる",
+        "title": "Being: です, だ, ある, いる",
+        "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+        "examples": [
+          {
+            "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+          },
+          {
+            "japanese": "bases areなら,なり，なる,なれ andなれ.",
+            "english": "While typically used in combination with the verb particle lC, it can"
+          },
+          {
+            "japanese": "also be used in combination with the particle と, in which case its meaning",
+            "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_41",
+      "pattern": "う-Verb (Past)",
+      "meaning": "Form the past tense of う-verbs by applying sound-change rules to get ました (polite) or た/だ (casual).",
+      "explanation": "う-verbs (Group 1 or godan verbs) require a stem change before adding the past ending. In polite speech, change the final sound to the い-row and add ました (e.g., 書く→書きました). In casual speech, the ending becomes た or だ depending on the verb's final consonant. Mastering these sound changes is key to Japanese verb conjugation.",
+      "examples": [
+        {
+          "japanese": "昨日、本を読みました。",
+          "reading": "きのう、ほんをよみました。",
+          "english": "I read a book yesterday."
+        },
+        {
+          "japanese": "友だちに電話しました。",
+          "reading": "ともだちにでんわしました。",
+          "english": "I called my friend."
+        },
+        {
+          "japanese": "駅まで歩きました。",
+          "reading": "えきまであるきました。",
+          "english": "I walked to the station."
+        }
+      ],
+      "lesson": "marugoto_a1_6",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "tense",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 41
+    },
+    {
+      "id": "cefr_a1_42",
+      "pattern": "もう",
+      "meaning": "Expresses that something has already happened or is no longer the case.",
+      "explanation": "もう means 'already' in affirmative sentences (e.g., もう食べました — 'already ate') and 'not anymore' or 'no longer' in negative sentences (e.g., もう食べません — 'won't eat anymore'). It is very common in everyday conversation at all registers.",
+      "examples": [
+        {
+          "japanese": "もう宿題をしました。",
+          "reading": "もうしゅくだいをしました。",
+          "english": "I already did my homework."
+        },
+        {
+          "japanese": "もうお腹がいっぱいです。",
+          "reading": "もうおなかがいっぱいです。",
+          "english": "I'm already full."
+        },
+        {
+          "japanese": "田中さんはもうここにいません。",
+          "reading": "たなかさんはもうここにいません。",
+          "english": "Tanaka-san is no longer here."
+        }
+      ],
+      "lesson": "marugoto_a1_6",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adverb",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 42
+    },
+    {
+      "id": "cefr_a1_43",
+      "pattern": "だけ",
+      "meaning": "Means 'only' or 'just', limiting a quantity, person, or thing to nothing more than what is stated.",
+      "explanation": "だけ attaches to nouns, verbs in plain form, and adjectives to indicate that something is limited to exactly that and nothing else. It is neutral in register and works in both casual and polite sentences. It is similar in meaning to しか…ない but without the negative verb requirement.",
+      "examples": [
+        {
+          "japanese": "水だけ飲みました。",
+          "reading": "みずだけのみました。",
+          "english": "I only drank water."
+        },
+        {
+          "japanese": "一つだけ食べていいですよ。",
+          "reading": "ひとつだけたべていいですよ。",
+          "english": "You can eat just one."
+        },
+        {
+          "japanese": "少しだけ時間があります。",
+          "reading": "すこしだけじかんがあります。",
+          "english": "I have just a little time."
+        }
+      ],
+      "lesson": "marugoto_a1_6",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 43,
+      "maynardRef": {
+        "topicId": "verb_grammar/being_です_だ_ある_いる",
+        "title": "Being: です, だ, ある, いる",
+        "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+        "examples": [
+          {
+            "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+          },
+          {
+            "japanese": "bases areなら,なり，なる,なれ andなれ.",
+            "english": "While typically used in combination with the verb particle lC, it can"
+          },
+          {
+            "japanese": "also be used in combination with the particle と, in which case its meaning",
+            "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_44",
+      "pattern": "が",
+      "meaning": "Connects two contrasting or unexpected clauses, meaning 'but' or 'however'.",
+      "explanation": "When used as a conjunction between two clauses, が marks a contrast or mild contradiction. It is slightly more formal than けど and appears frequently in polite written and spoken Japanese. The clause before が sets context; the clause after presents a contrasting point.",
+      "examples": [
+        {
+          "japanese": "日本語を勉強していますが、まだ上手じゃないです。",
+          "reading": "にほんごをべんきょうしていますが、まだじょうずじゃないです。",
+          "english": "I am studying Japanese, but I am not good at it yet."
+        },
+        {
+          "japanese": "この店は安いですが、おいしいです。",
+          "reading": "このみせはやすいですが、おいしいです。",
+          "english": "This restaurant is cheap, but it is delicious."
+        },
+        {
+          "japanese": "電話しましたが、出ませんでした。",
+          "reading": "でんわしましたが、でませんでした。",
+          "english": "I called, but there was no answer."
+        }
+      ],
+      "lesson": "marugoto_a1_6",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "conjunction",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 44
+    },
+    {
+      "id": "cefr_a1_45",
+      "pattern": "から",
+      "meaning": "Gives a reason or cause for an action or situation, meaning 'because' or 'since'.",
+      "explanation": "から follows a plain-form or polite-form verb or adjective to explain why something happens. It is more direct and assertive than ので and is common in both casual and polite conversation. The reason clause comes before the result clause.",
+      "examples": [
+        {
+          "japanese": "お腹が空いたから、ご飯を食べます。",
+          "reading": "おなかがすいたから、ごはんをたべます。",
+          "english": "I will eat because I am hungry."
+        },
+        {
+          "japanese": "忙しいから、行けません。",
+          "reading": "いそがしいから、いけません。",
+          "english": "I can't go because I am busy."
+        },
+        {
+          "japanese": "好きだから、毎日練習します。",
+          "reading": "すきだから、まいにちれんしゅうします。",
+          "english": "I practice every day because I like it."
+        }
+      ],
+      "lesson": "marugoto_a1_6",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "conjunction",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 45
+    },
+    {
+      "id": "cefr_a1_46",
+      "pattern": "てもいい",
+      "meaning": "Expresses permission or that it is acceptable to do something.",
+      "explanation": "てもいい attaches to the て-form of a verb and means 'it's okay to ~', 'you may ~', or 'it's fine even if ~'. It is commonly used to ask for or grant permission. The question form ～てもいいですか is a polite way to ask 'May I ~?' in everyday situations.",
+      "examples": [
+        {
+          "japanese": "ここに座ってもいいですか。",
+          "reading": "ここにすわってもいいですか。",
+          "english": "May I sit here?"
+        },
+        {
+          "japanese": "窓を開けてもいいですよ。",
+          "reading": "まどをあけてもいいですよ。",
+          "english": "It's fine to open the window."
+        },
+        {
+          "japanese": "この本を借りてもいいですか。",
+          "reading": "このほんをかりてもいいですか。",
+          "english": "May I borrow this book?"
+        }
+      ],
+      "lesson": "marugoto_a1_6",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 46
+    },
+    {
+      "id": "cefr_a1_47",
+      "pattern": "あの",
+      "meaning": "Means 'that over there' and modifies a noun distant from both speaker and listener.",
+      "explanation": "あの is a pre-noun modifier referring to something far from both the speaker and the listener — visible in the distance, or mutually known to both parties. It must be followed by a noun. When both speakers share a memory or common reference, あの can refer to something not physically present but mutually understood.",
+      "examples": [
+        {
+          "japanese": "あの山はきれいです。",
+          "reading": "あのやまはきれいです。",
+          "english": "That mountain over there is beautiful."
+        },
+        {
+          "japanese": "あの先生はやさしいです。",
+          "reading": "あのせんせいはやさしいです。",
+          "english": "That teacher (we both know) is kind."
+        },
+        {
+          "japanese": "あのレストランで食べましょう。",
+          "reading": "あのレストランでたべましょう。",
+          "english": "Let's eat at that restaurant over there."
+        }
+      ],
+      "lesson": "marugoto_a1_6",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adjective",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 47
+    },
+    {
+      "id": "cefr_a1_48",
+      "pattern": "Verb + にいく",
+      "meaning": "Expresses going somewhere for the purpose of doing something.",
+      "explanation": "Attach に to the stem of a verb (the ます-form base) followed by いく to express going somewhere with a specific purpose. The verb before に describes the intended action at the destination. This pattern is common in everyday conversation and is used in both polite and casual registers depending on how いく is conjugated.",
+      "examples": [
+        {
+          "japanese": "スーパーへ買い物をしに行きます。",
+          "reading": "スーパーへかいものをしにいきます。",
+          "english": "I am going to the supermarket to shop."
+        },
+        {
+          "japanese": "図書館へ本を借りに行きました。",
+          "reading": "としょかんへほんをかりにいきました。",
+          "english": "I went to the library to borrow a book."
+        },
+        {
+          "japanese": "友だちに会いに行きます。",
+          "reading": "ともだちにあいにいきます。",
+          "english": "I am going to meet my friend."
+        }
+      ],
+      "lesson": "marugoto_a1_6",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 48
+    },
+    {
+      "id": "cefr_a1_49",
+      "pattern": "じゃない",
+      "meaning": "Used to say something is not something else (negative of だ/です).",
+      "explanation": "じゃない is the casual negative form of だ (the copula). It attaches directly to nouns and な-adjectives to negate them. In polite speech, じゃありません or ではありません is used instead.",
+      "examples": [
+        {
+          "japanese": "これは本じゃない。",
+          "reading": "これはほんじゃない。",
+          "english": "This is not a book."
+        },
+        {
+          "japanese": "彼女は先生じゃない。",
+          "reading": "かのじょはせんせいじゃない。",
+          "english": "She is not a teacher."
+        },
+        {
+          "japanese": "ここは駅じゃない。",
+          "reading": "ここはえきじゃない。",
+          "english": "This place is not a station."
+        }
+      ],
+      "lesson": "marugoto_a1_7",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 49,
+      "maynardRef": {
+        "topicId": "verb_grammar/negative_presence_ない",
+        "title": "Negative presence: ない",
+        "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+        "examples": [
+          {
+            "japanese": "2.5.5 Negative presence: ない"
+          },
+          {
+            "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+          },
+          {
+            "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_50",
+      "pattern": "じゃなかった",
+      "meaning": "Used to say something was not something else (past negative of だ/です).",
+      "explanation": "じゃなかった is the casual past negative form of だ. It negates a noun or な-adjective in the past tense. The polite equivalent is じゃありませんでした or ではありませんでした.",
+      "examples": [
+        {
+          "japanese": "あの映画はおもしろくじゃなかった。",
+          "reading": "あのえいがはおもしろくじゃなかった。",
+          "english": "That movie was not interesting."
+        },
+        {
+          "japanese": "彼は学生じゃなかった。",
+          "reading": "かれはがくせいじゃなかった。",
+          "english": "He was not a student."
+        },
+        {
+          "japanese": "昨日は休みじゃなかった。",
+          "reading": "きのうはやすみじゃなかった。",
+          "english": "Yesterday was not a day off."
+        }
+      ],
+      "lesson": "marugoto_a1_7",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 50
+    },
+    {
+      "id": "cefr_a1_51",
+      "pattern": "る-Verb (Negative)",
+      "meaning": "The plain negative form of Ichidan verbs, expressing that an action does not or will not happen.",
+      "explanation": "To negate a る-Verb in plain (casual) speech, drop る and add ない (e.g. たべる → たべない). The polite negative is ません (たべません). Use the plain ない-form in casual conversation with friends or family, and ません in polite contexts.",
+      "examples": [
+        {
+          "japanese": "今日は肉を食べない。",
+          "reading": "きょうはにくをたべない。",
+          "english": "I'm not eating meat today."
+        },
+        {
+          "japanese": "その映画は見ません。",
+          "reading": "そのえいがはみません。",
+          "english": "I won't watch that movie."
+        },
+        {
+          "japanese": "朝はシャワーを浴びない。",
+          "reading": "あさはシャワーをあびない。",
+          "english": "I don't take a shower in the morning."
+        }
+      ],
+      "lesson": "marugoto_a1_7",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 51
+    },
+    {
+      "id": "cefr_a1_52",
+      "pattern": "から",
+      "meaning": "Marks the starting point in time, place, or sequence, meaning 'from'.",
+      "explanation": "When attached to a noun indicating a location, time, or source, から means 'from'. It pairs naturally with まで ('until/to') to describe a range. This usage appears in both polite and casual speech at all levels.",
+      "examples": [
+        {
+          "japanese": "学校から家まで歩きます。",
+          "reading": "がっこうからいえまであるきます。",
+          "english": "I walk from school to home."
+        },
+        {
+          "japanese": "朝から晩まで働きます。",
+          "reading": "あさからばんまではたらきます。",
+          "english": "I work from morning until night."
+        },
+        {
+          "japanese": "どこから来ましたか。",
+          "reading": "どこからきましたか。",
+          "english": "Where did you come from?"
+        }
+      ],
+      "lesson": "marugoto_a1_7",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 52
+    },
+    {
+      "id": "cefr_a1_53",
+      "pattern": "まえに",
+      "meaning": "Means 'before' in time or 'in front of' in space.",
+      "explanation": "まえに has two uses depending on what precedes it. After a noun + の, it means 'in front of' (location). After a verb in dictionary form, it means 'before doing' (time). Both uses are common at A1 level in polite and casual speech. The time meaning always requires the verb to be in plain present form, regardless of the tense of the main clause.",
+      "examples": [
+        {
+          "japanese": "寝る前に歯を磨きます。",
+          "reading": "ねるまえにはをみがきます。",
+          "english": "I brush my teeth before going to sleep."
+        },
+        {
+          "japanese": "駅の前に喫茶店があります。",
+          "reading": "えきのまえにきっさてんがあります。",
+          "english": "There is a café in front of the station."
+        },
+        {
+          "japanese": "食事の前に手を洗いましょう。",
+          "reading": "しょくじのまえにてをあらいましょう。",
+          "english": "Let's wash our hands before eating."
+        }
+      ],
+      "lesson": "marugoto_a1_7",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 53
+    },
+    {
+      "id": "cefr_a1_54",
+      "pattern": "けれども",
+      "meaning": "Connects two contrasting clauses, meaning 'but' or 'although'.",
+      "explanation": "けれども is a conjunction placed after a plain or polite verb/adjective form to express contrast or concession between two clauses. It is slightly more formal than でも; shorter forms けれど, けど are more casual. It can also soften a statement when used at the end of a sentence.",
+      "examples": [
+        {
+          "japanese": "日本語は難しいけれども、面白いです。",
+          "reading": "にほんごはむずかしいけれども、おもしろいです。",
+          "english": "Japanese is difficult, but it's interesting."
+        },
+        {
+          "japanese": "行きたいけれども、時間がありません。",
+          "reading": "いきたいけれども、じかんがありません。",
+          "english": "I want to go, but I don't have time."
+        },
+        {
+          "japanese": "高いけれども、買います。",
+          "reading": "たかいけれども、かいます。",
+          "english": "It's expensive, but I'll buy it."
+        }
+      ],
+      "lesson": "marugoto_a1_7",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "conjunction",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 54
+    },
+    {
+      "id": "cefr_a1_55",
+      "pattern": "のなかで～がいちばん～",
+      "meaning": "Expresses that something is the best or most ~ within a given group.",
+      "explanation": "のなかで sets the scope of comparison (among/within ~), and いちばん means 'number one' or 'most'. The adjective or noun following いちばん describes the quality being compared. This structure is polite and usable in both spoken and written contexts.",
+      "examples": [
+        {
+          "japanese": "果物のなかでりんごがいちばん好きです。",
+          "reading": "くだもののなかでりんごがいちばんすきです。",
+          "english": "Among fruits, I like apples the most."
+        },
+        {
+          "japanese": "このクラスのなかで田中さんがいちばん背が高いです。",
+          "reading": "このくらすのなかでたなかさんがいちばんせがたかいです。",
+          "english": "In this class, Tanaka-san is the tallest."
+        },
+        {
+          "japanese": "季節のなかで春がいちばんきれいです。",
+          "reading": "きせつのなかではるがいちばんきれいです。",
+          "english": "Among the seasons, spring is the most beautiful."
+        }
+      ],
+      "lesson": "marugoto_a1_7",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "comparison",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 55,
+      "maynardRef": {
+        "topicId": "more_grammar/conditional_たら_なら",
+        "title": "Conditional: たら, なら",
+        "excerpt": "114 CHAPTER 3. MORE GRAMMAR\nform, which can pair up with any verb, fz り gets its inflection specifically\nfrom the verb する, meaning '\"to do\":\nきょう がっこう い じゆぎょう で はん た\n今日は学校に行ったり、 授業に出たり、ご飯を食べたりしました。\n\"Today (I) went to school, went to class and ate.\"\nThis sentence literally reads \"Today I did: going to school, going to\nclass, eating', and shows why this is only listing representative actions -\nthere is no way to distinguish which action occurred when, in relation to\nother actions; we're literally o",
+        "examples": [
+          {
+            "japanese": "form, which can pair up with any verb, fz り gets its inflection specifically"
+          },
+          {
+            "japanese": "from the verb する, meaning '\"to do\":"
+          },
+          {
+            "japanese": "きょう がっこう い じゆぎょう で はん た"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_56",
+      "pattern": "どこ",
+      "meaning": "Used to ask about the location or destination of something or someone.",
+      "explanation": "どこ means 'where' and is used to ask about a place. It can be combined with particles like に (destination/location), で (place of action), or から (starting point). It is used in both polite and casual speech.",
+      "examples": [
+        {
+          "japanese": "トイレはどこですか。",
+          "reading": "トイレはどこですか。",
+          "english": "Where is the bathroom?"
+        },
+        {
+          "japanese": "あなたはどこに住んでいますか。",
+          "reading": "あなたはどこにすんでいますか。",
+          "english": "Where do you live?"
+        },
+        {
+          "japanese": "きのう、どこに行きましたか。",
+          "reading": "きのう、どこにいきましたか。",
+          "english": "Where did you go yesterday?"
+        }
+      ],
+      "lesson": "marugoto_a1_7",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "question",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 56
+    },
+    {
+      "id": "cefr_a1_57",
+      "pattern": "～になる・～くなる",
+      "meaning": "Expresses a change of state — something becomes a certain way.",
+      "explanation": "Use ～くなる with い-adjectives (drop い, add くなる) and ～になる with な-adjectives and nouns (add になる). This pattern describes a transition into a new state and is used in both polite and casual speech. It is one of the most common ways to describe change in Japanese.",
+      "examples": [
+        {
+          "japanese": "だんだん暖かくなりました。",
+          "reading": "だんだんあたたかくなりました。",
+          "english": "It gradually got warmer."
+        },
+        {
+          "japanese": "彼女は有名になりました。",
+          "reading": "かのじょはゆうめいになりました。",
+          "english": "She became famous."
+        },
+        {
+          "japanese": "日本語が上手くなりたいです。",
+          "reading": "にほんごがじょうずくなりたいです。",
+          "english": "I want to get better at Japanese."
+        }
+      ],
+      "lesson": "marugoto_a1_8",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 57,
+      "maynardRef": {
+        "topicId": "verb_grammar/becoming_なる",
+        "title": "Becoming: なる",
+        "excerpt": "2.5. SPECIAL VERBS 81\nこそあど meaning\nこなた this person (I/me/you/him/he/her/she).\nそなた that person (him/he, her/she).\nあなた that person over there (you).\nどなた which person (who).\nSince this set is a tad classical, there are a few things to notice. First\nof all, そなた refers to a third person (he/she), while あなた refers to second\nperson (you). Also, while somewhat classical, this set is still used in formal\nsettings. However, because it is used exclusively in formal settings it is\nconsidered distal and very",
+        "examples": [
+          {
+            "japanese": "こそあど meaning"
+          },
+          {
+            "japanese": "こなた this person (I/me/you/him/he/her/she)."
+          },
+          {
+            "japanese": "そなた that person (him/he, her/she)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_58",
+      "pattern": "Noun + まで",
+      "meaning": "Marks a noun as the endpoint of time, place, or extent — 'until,' 'to,' or 'up to.'",
+      "explanation": "The particle まで attaches directly to a noun (time word, place name, etc.) to indicate a limit or endpoint. For place it means 'as far as' or 'to'; for time it means 'until.' It pairs naturally with から (from ~ to ~). まで itself does not imply going beyond the endpoint.",
+      "examples": [
+        {
+          "japanese": "九時まで働きました。",
+          "reading": "くじまではたらきました。",
+          "english": "I worked until nine o'clock."
+        },
+        {
+          "japanese": "東京まで新幹線で行きます。",
+          "reading": "とうきょうまでしんかんせんでいきます。",
+          "english": "I'll go to Tokyo by bullet train."
+        },
+        {
+          "japanese": "月曜日から金曜日まで学校があります。",
+          "reading": "げつようびからきんようびまでがっこうがあります。",
+          "english": "There is school from Monday to Friday."
+        }
+      ],
+      "lesson": "marugoto_a1_8",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 58
+    },
+    {
+      "id": "cefr_a1_59",
+      "pattern": "たい",
+      "meaning": "Expresses the speaker's desire to perform an action.",
+      "explanation": "Attach たい to the verb stem (the ます-form base) to say you want to do something. It conjugates like an い-adjective: たいです (polite), たい (casual), たくない (negative). Use it only for the speaker's own desires; asking about others' desires requires たいですか or a different form.",
+      "examples": [
+        {
+          "japanese": "日本語を話したいです。",
+          "reading": "にほんごをはなしたいです。",
+          "english": "I want to speak Japanese."
+        },
+        {
+          "japanese": "今日は家に帰りたい。",
+          "reading": "きょうはいえにかえりたい。",
+          "english": "I want to go home today."
+        },
+        {
+          "japanese": "水が飲みたいです。",
+          "reading": "みずがのみたいです。",
+          "english": "I want to drink some water."
+        }
+      ],
+      "lesson": "marugoto_a1_8",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "auxiliary",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 59,
+      "maynardRef": {
+        "topicId": "more_grammar/desire",
+        "title": "Desire",
+        "excerpt": "3.2. FURTHER INFLECTIONS 117\n3.2.6 Desire\nFirst person desirative: たい\nUnlike the previous constructions starting with the syllable z, this inflec-\ntion doesn't involve a classical helper verb, but a helper adjective, fz い\n(which has a kanji form, 度W, but this is not used in modern Japanese).\nThis also means that unlike the previous -f, -て, -fり and たら construc-\ntions, no contractions occur with 五i段 verbs, which makes forming the first\nperson desirative very easy. Since this is an adjective, rathe",
+        "examples": [
+          {
+            "japanese": "First person desirative: たい",
+            "english": "Unlike the previous constructions starting with the syllable z, this inflec-"
+          },
+          {
+            "japanese": "tion doesn't involve a classical helper verb, but a helper adjective, fz い"
+          },
+          {
+            "japanese": "(which has a kanji form, 度W, but this is not used in modern Japanese)."
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_60",
+      "pattern": "てください",
+      "meaning": "A polite way to ask or instruct someone to do something — 'please ~'.",
+      "explanation": "Attach てください to the て-form of a verb to make a polite request or instruction. It is used in everyday polite speech, classroom settings, and service situations. It is direct but not rude, and is one of the first request forms learners acquire.",
+      "examples": [
+        {
+          "japanese": "ここに名前を書いてください。",
+          "reading": "ここになまえをかいてください。",
+          "english": "Please write your name here."
+        },
+        {
+          "japanese": "もう少しゆっくり話してください。",
+          "reading": "もうすこしゆっくりはなしてください。",
+          "english": "Please speak a little more slowly."
+        },
+        {
+          "japanese": "ドアを閉めてください。",
+          "reading": "どあをしめてください。",
+          "english": "Please close the door."
+        }
+      ],
+      "lesson": "marugoto_a1_8",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 60,
+      "maynardRef": {
+        "topicId": "more_grammar/requesting_て_てください",
+        "title": "Requesting: て, てください",
+        "excerpt": "3.2. FURTHER INFLECTIONS 133\n3.2.10 Requesting:て,てください\nImperative request\nWe already saw that we can use the verb 連用形 + てく ださい to form a\nrequest,\nにはいくだ\nコーヒーを二杯下さい。\n\"Two coffee, please.\"\nBut we can also use the plain て form to form an informal request,\nor plea:\n待って。\n\"Wait (please)\"\nか\nこれを買って?\n\"Buy this (for me)?\"\nOf course, like all requests, they can be made to sound demanding,\nso intonation counts. If we say 待て instead of 待つて, cutting out the stop\nin the middle to sound curt, then rather than a ",
+        "examples": [
+          {
+            "japanese": "3.2.10 Requesting:て,てください",
+            "english": "Imperative request"
+          },
+          {
+            "japanese": "We already saw that we can use the verb 連用形 + てく ださい to form a",
+            "english": "request,"
+          },
+          {
+            "japanese": "にはいくだ"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_61",
+      "pattern": "くらい ①",
+      "meaning": "Expresses an approximate quantity, amount, or duration.",
+      "explanation": "くらい (also written ぐらい) follows numbers, counters, or time expressions to mean 'about' or 'approximately.' It softens precision and is very common in everyday speech. Both くらい and ぐらい are correct; ぐらい is slightly more casual. It can be used after nouns or number phrases without の.",
+      "examples": [
+        {
+          "japanese": "駅まで十分くらいかかります。",
+          "reading": "えきまでじゅっぷんくらいかかります。",
+          "english": "It takes about ten minutes to the station."
+        },
+        {
+          "japanese": "リンゴを三つくらい買いました。",
+          "reading": "リンゴをみっつくらいかいました。",
+          "english": "I bought about three apples."
+        },
+        {
+          "japanese": "毎日一時間くらい勉強します。",
+          "reading": "まいにちいちじかんくらいべんきょうします。",
+          "english": "I study for about one hour every day."
+        }
+      ],
+      "lesson": "marugoto_a1_8",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 61
+    },
+    {
+      "id": "cefr_a1_62",
+      "pattern": "ので",
+      "meaning": "Connects a reason or cause to a result, meaning 'because' or 'since'.",
+      "explanation": "ので follows a plain-form verb, adjective, or noun (noun/な-adjective take なので) to give a reason for what comes after. It sounds softer and more objective than から, making it preferred in polite or formal contexts. Use it when you want to explain rather than justify.",
+      "examples": [
+        {
+          "japanese": "雨が降っているので、家にいます。",
+          "reading": "あめがふっているので、いえにいます。",
+          "english": "Since it is raining, I am staying home."
+        },
+        {
+          "japanese": "眠いので、早く寝ます。",
+          "reading": "ねむいので、はやくねます。",
+          "english": "Because I am sleepy, I will go to bed early."
+        },
+        {
+          "japanese": "明日テストがあるので、勉強します。",
+          "reading": "あしたテストがあるので、べんきょうします。",
+          "english": "I will study because there is a test tomorrow."
+        }
+      ],
+      "lesson": "marugoto_a1_8",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "conjunction",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 62
+    },
+    {
+      "id": "cefr_a1_63",
+      "pattern": "たことがある",
+      "meaning": "Express that you have had the experience of doing something at least once.",
+      "explanation": "Attach たことがある to the た-form (past plain form) of a verb. It describes a life experience rather than a recent past action — 'have ever done'. The negative form is たことがない ('have never done'). It is one of the most common ways to talk about personal experiences in Japanese.",
+      "examples": [
+        {
+          "japanese": "日本に行ったことがあります。",
+          "reading": "にほんにいったことがあります。",
+          "english": "I have been to Japan before."
+        },
+        {
+          "japanese": "お寿司を食べたことがありますか？",
+          "reading": "おすしをたべたことがありますか？",
+          "english": "Have you ever eaten sushi?"
+        },
+        {
+          "japanese": "富士山を見たことがない。",
+          "reading": "ふじさんをみたことがない。",
+          "english": "I have never seen Mount Fuji."
+        }
+      ],
+      "lesson": "marugoto_a1_8",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 63
+    },
+    {
+      "id": "cefr_a1_64",
+      "pattern": "てから",
+      "meaning": "Expresses that one action is completed before another action begins.",
+      "explanation": "てから attaches to the て-form of a verb and means 'after doing ~' or 'once ~ is done'. It emphasizes that the first action must be fully completed before the second one starts. It is used in both polite and casual speech and is common for describing routines or procedures.",
+      "examples": [
+        {
+          "japanese": "手を洗ってから、ごはんを食べます。",
+          "reading": "てをあらってから、ごはんをたべます。",
+          "english": "I wash my hands and then eat."
+        },
+        {
+          "japanese": "シャワーを浴びてから、寝ます。",
+          "reading": "シャワーをあびてから、ねます。",
+          "english": "I take a shower and then go to sleep."
+        },
+        {
+          "japanese": "宿題をしてから、テレビを見ます。",
+          "reading": "しゅくだいをしてから、テレビをみます。",
+          "english": "After doing my homework, I watch TV."
+        }
+      ],
+      "lesson": "marugoto_a1_8",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "conjunction",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 64
+    },
+    {
+      "id": "cefr_a1_65",
+      "pattern": "ないでください",
+      "meaning": "Politely ask someone not to do something.",
+      "explanation": "Attach ないでください to the negative stem of a verb (the ない-form minus ない). It is the standard polite way to make a negative request, equivalent to 'Please don't ~'. Use it in formal or semi-formal situations such as with teachers, strangers, or in written notices.",
+      "examples": [
+        {
+          "japanese": "ここで写真を撮らないでください。",
+          "reading": "ここでしゃしんをとらないでください。",
+          "english": "Please don't take photos here."
+        },
+        {
+          "japanese": "教室で食べないでください。",
+          "reading": "きょうしつでたべないでください。",
+          "english": "Please don't eat in the classroom."
+        },
+        {
+          "japanese": "大きい声で話さないでください。",
+          "reading": "おおきいこえではなさないでください。",
+          "english": "Please don't speak in a loud voice."
+        }
+      ],
+      "lesson": "marugoto_a1_9",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 65,
+      "maynardRef": {
+        "topicId": "verb_grammar/negative_presence_ない",
+        "title": "Negative presence: ない",
+        "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+        "examples": [
+          {
+            "japanese": "2.5.5 Negative presence: ない"
+          },
+          {
+            "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+          },
+          {
+            "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_66",
+      "pattern": "な",
+      "meaning": "Attached to the plain (dictionary) form of a verb to mean 'don't do' or 'do not do'.",
+      "explanation": "Adding な directly after a verb's plain form creates a strong, blunt prohibition. It is casual and often sounds harsh or commanding, so it is used mainly by people in authority, or in signs and warnings. It should not be confused with the な in な-adjectives.",
+      "examples": [
+        {
+          "japanese": "ここで走るな。",
+          "reading": "ここではしるな。",
+          "english": "Don't run here."
+        },
+        {
+          "japanese": "そんなことを言うな。",
+          "reading": "そんなことをいうな。",
+          "english": "Don't say such a thing."
+        },
+        {
+          "japanese": "心配するな。",
+          "reading": "しんぱいするな。",
+          "english": "Don't worry."
+        }
+      ],
+      "lesson": "marugoto_a1_9",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 66
+    },
+    {
+      "id": "cefr_a1_67",
+      "pattern": "てはいけない",
+      "meaning": "Express that something is not allowed or forbidden.",
+      "explanation": "Attach てはいけない (or ではいけない after で-forms) to the て-form of a verb. It states that an action is prohibited — stronger than a polite request. The casual spoken form is てはだめ. Use it for rules, warnings, and prohibitions.",
+      "examples": [
+        {
+          "japanese": "ここでタバコを吸ってはいけません。",
+          "reading": "ここでたばこをすってはいけません。",
+          "english": "You must not smoke here."
+        },
+        {
+          "japanese": "試験中に話してはいけない。",
+          "reading": "しけんちゅうにはなしてはいけない。",
+          "english": "You must not talk during the exam."
+        },
+        {
+          "japanese": "赤信号を渡ってはいけません。",
+          "reading": "あかしんごうをわたってはいけません。",
+          "english": "You must not cross on a red light."
+        }
+      ],
+      "lesson": "marugoto_a1_9",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 67,
+      "maynardRef": {
+        "topicId": "verb_grammar/negative_presence_ない",
+        "title": "Negative presence: ない",
+        "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+        "examples": [
+          {
+            "japanese": "2.5.5 Negative presence: ない"
+          },
+          {
+            "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+          },
+          {
+            "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_68",
+      "pattern": "たほうがいい",
+      "meaning": "Recommend or advise that it would be better to do something.",
+      "explanation": "Attach たほうがいい to the た-form (past plain form) of a verb to give advice or a recommendation. It is milder than an obligation — more like 'you should' or 'it'd be better if you'. Commonly used by doctors, teachers, or friends giving suggestions.",
+      "examples": [
+        {
+          "japanese": "早く寝たほうがいいですよ。",
+          "reading": "はやくねたほうがいいですよ。",
+          "english": "You should go to bed early."
+        },
+        {
+          "japanese": "医者に行ったほうがいい。",
+          "reading": "いしゃにいったほうがいい。",
+          "english": "You should go to the doctor."
+        },
+        {
+          "japanese": "傘を持っていったほうがいいですよ。",
+          "reading": "かさをもっていったほうがいいですよ。",
+          "english": "You should take an umbrella with you."
+        }
+      ],
+      "lesson": "marugoto_a1_9",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 68
+    },
+    {
+      "id": "cefr_a1_69",
+      "pattern": "ないほうがいい",
+      "meaning": "Recommend or advise that it would be better not to do something.",
+      "explanation": "Attach ないほうがいい to the plain negative (ない) form of a verb to advise against an action. It is the negative counterpart of たほうがいい and carries the meaning 'you'd better not' or 'it's better not to'. The register is casual to semi-polite.",
+      "examples": [
+        {
+          "japanese": "夜遅くに食べないほうがいいですよ。",
+          "reading": "よるおそくにたべないほうがいいですよ。",
+          "english": "You shouldn't eat late at night."
+        },
+        {
+          "japanese": "あまりテレビを見ないほうがいい。",
+          "reading": "あまりてれびをみないほうがいい。",
+          "english": "You'd better not watch too much TV."
+        },
+        {
+          "japanese": "今日は外に出ないほうがいいです。",
+          "reading": "きょうはそとにでないほうがいいです。",
+          "english": "It'd be better not to go outside today."
+        }
+      ],
+      "lesson": "marugoto_a1_9",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 69,
+      "maynardRef": {
+        "topicId": "verb_grammar/negative_presence_ない",
+        "title": "Negative presence: ない",
+        "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+        "examples": [
+          {
+            "japanese": "2.5.5 Negative presence: ない"
+          },
+          {
+            "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+          },
+          {
+            "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_70",
+      "pattern": "ましょう",
+      "meaning": "Expresses a suggestion or invitation to do something together — 'let's do ~'.",
+      "explanation": "ましょう is formed by replacing ます with ましょう on the ます-stem of a verb. It is polite and used to suggest a shared action, similar to 'shall we' or 'let's'. It is commonly used among friends, colleagues, or strangers in polite situations.",
+      "examples": [
+        {
+          "japanese": "一緒に昼ごはんを食べましょう。",
+          "reading": "いっしょにひるごはんをたべましょう。",
+          "english": "Let's eat lunch together."
+        },
+        {
+          "japanese": "そろそろ帰りましょう。",
+          "reading": "そろそろかえりましょう。",
+          "english": "Let's head home soon."
+        },
+        {
+          "japanese": "次の駅で降りましょう。",
+          "reading": "つぎのえきでおりましょう。",
+          "english": "Let's get off at the next station."
+        }
+      ],
+      "lesson": "marugoto_a1_9",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 70,
+      "maynardRef": {
+        "topicId": "more_grammar/pseudo_future_おう_よう",
+        "title": "Pseudo-future: おう/よう",
+        "excerpt": "3.2. FURTHER INFLECTIONS 121\nthe adjective 欲しい, desire, is used:\nあか\nこのドアが赤くて欲しい。\n\"(I) want this door red.\"\nIn terms of politeness 欲しい is just as direct and selfish as fい, and\nit can be softened by adding です or んです:\nつか\n使って欲しい。\n\"[I] want it made.\"\n使って欲しいです。\n\"(I) want it made (being said in a less direct manner than the above\nsentence)\"\n使って欲しいんです。\n\"(I) want it made ('There is a reason for me wanting this, it's not pure\nselfishness here, don't worry')\"\nSince 欲 し い is a normal verbal adjective, we ca",
+        "examples": [
+          {
+            "japanese": "the adjective 欲しい, desire, is used:"
+          },
+          {
+            "japanese": "このドアが赤くて欲しい。",
+            "english": "\"(I) want this door red.\""
+          },
+          {
+            "japanese": "In terms of politeness 欲しい is just as direct and selfish as fい, and"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_71",
+      "pattern": "ね",
+      "meaning": "A sentence-ending particle used to seek agreement or share a feeling with the listener.",
+      "explanation": "ね invites the listener to agree with or share the speaker's observation — similar to 'right?' or 'isn't it?' in English. It softens statements and makes conversation feel warmer. It is used in both casual and polite speech and is especially common when commenting on shared experiences.",
+      "examples": [
+        {
+          "japanese": "今日はいい天気ですね。",
+          "reading": "きょうはいいてんきですね。",
+          "english": "It's nice weather today, isn't it?"
+        },
+        {
+          "japanese": "このラーメンはおいしいね。",
+          "reading": "このラーメンはおいしいね。",
+          "english": "This ramen is tasty, right?"
+        },
+        {
+          "japanese": "田中さんは日本人ですね。",
+          "reading": "たなかさんはにほんじんですね。",
+          "english": "Mr Tanaka is Japanese, isn't he?"
+        }
+      ],
+      "lesson": "marugoto_a1_9",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 71
+    },
+    {
+      "id": "cefr_a1_72",
+      "pattern": "まだ",
+      "meaning": "Indicates that a situation or state continues to be true at the present time.",
+      "explanation": "まだ means 'still' in affirmative sentences, showing that a situation has not changed. It can also appear in negative sentences meaning 'not yet', though that combination is often expressed as まだ～ていません. Used in both polite and casual speech.",
+      "examples": [
+        {
+          "japanese": "まだ雨が降っています。",
+          "reading": "まだあめがふっています。",
+          "english": "It's still raining."
+        },
+        {
+          "japanese": "弟はまだ子どもです。",
+          "reading": "おとうとはまだこどもです。",
+          "english": "My little brother is still a child."
+        },
+        {
+          "japanese": "まだ時間がありますか。",
+          "reading": "まだじかんがありますか。",
+          "english": "Is there still time?"
+        }
+      ],
+      "lesson": "marugoto_a1_9",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adverb",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 72,
+      "maynardRef": {
+        "topicId": "verb_grammar/being_です_だ_ある_いる",
+        "title": "Being: です, だ, ある, いる",
+        "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+        "examples": [
+          {
+            "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+          },
+          {
+            "japanese": "bases areなら,なり，なる,なれ andなれ.",
+            "english": "While typically used in combination with the verb particle lC, it can"
+          },
+          {
+            "japanese": "also be used in combination with the particle と, in which case its meaning",
+            "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_73",
+      "pattern": "より～のほうが",
+      "meaning": "Compares two things, stating that one is more ~ than the other.",
+      "explanation": "より marks the item being compared against (the lesser item), while のほうが marks the item that wins the comparison. The adjective or preference follows のほうが. This is the standard polite way to make direct comparisons in Japanese.",
+      "examples": [
+        {
+          "japanese": "電車よりバスのほうが安いです。",
+          "reading": "でんしゃよりばすのほうがやすいです。",
+          "english": "Buses are cheaper than trains."
+        },
+        {
+          "japanese": "コーヒーよりお茶のほうが好きです。",
+          "reading": "こーひーよりおちゃのほうがすきです。",
+          "english": "I like tea more than coffee."
+        },
+        {
+          "japanese": "夏より冬のほうが好きです。",
+          "reading": "なつよりふゆのほうがすきです。",
+          "english": "I prefer winter over summer."
+        }
+      ],
+      "lesson": "marugoto_a1_10",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "comparison",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 73
+    },
+    {
+      "id": "cefr_a1_74",
+      "pattern": "なくちゃ・なきゃ",
+      "meaning": "Casual contracted forms meaning 'have to' or 'must do'.",
+      "explanation": "なくちゃ is a contraction of なくてはいけない and なきゃ is a contraction of なければいけない. Both are very common in casual spoken Japanese, especially among younger speakers. They express personal obligation in a relaxed, everyday register — never use them in formal writing or with superiors.",
+      "examples": [
+        {
+          "japanese": "もう行かなくちゃ！",
+          "reading": "もういかなくちゃ！",
+          "english": "I have to go now!"
+        },
+        {
+          "japanese": "宿題、やらなきゃ。",
+          "reading": "しゅくだい、やらなきゃ。",
+          "english": "I've got to do my homework."
+        },
+        {
+          "japanese": "お母さんに電話しなくちゃ。",
+          "reading": "おかあさんにでんわしなくちゃ。",
+          "english": "I have to call my mum."
+        }
+      ],
+      "lesson": "marugoto_a1_10",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 74
+    },
+    {
+      "id": "cefr_a1_75",
+      "pattern": "～ましょうか",
+      "meaning": "Used to offer to do something for someone or to suggest doing something together as a question.",
+      "explanation": "Adding か to ましょう turns it into a question, softening it into an offer ('Shall I ~?') or an open suggestion ('Shall we ~?'). Context determines whether the speaker is offering personal help or inviting joint action. It is polite and very common in service and everyday interactions.",
+      "examples": [
+        {
+          "japanese": "荷物を持ちましょうか？",
+          "reading": "にもつをもちましょうか？",
+          "english": "Shall I carry your luggage?"
+        },
+        {
+          "japanese": "窓を開けましょうか？",
+          "reading": "まどをあけましょうか？",
+          "english": "Shall I open the window?"
+        },
+        {
+          "japanese": "一緒に図書館に行きましょうか？",
+          "reading": "いっしょにとしょかんにいきましょうか？",
+          "english": "Shall we go to the library together?"
+        }
+      ],
+      "lesson": "marugoto_a1_10",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 75,
+      "maynardRef": {
+        "topicId": "more_grammar/pseudo_future_おう_よう",
+        "title": "Pseudo-future: おう/よう",
+        "excerpt": "3.2. FURTHER INFLECTIONS 121\nthe adjective 欲しい, desire, is used:\nあか\nこのドアが赤くて欲しい。\n\"(I) want this door red.\"\nIn terms of politeness 欲しい is just as direct and selfish as fい, and\nit can be softened by adding です or んです:\nつか\n使って欲しい。\n\"[I] want it made.\"\n使って欲しいです。\n\"(I) want it made (being said in a less direct manner than the above\nsentence)\"\n使って欲しいんです。\n\"(I) want it made ('There is a reason for me wanting this, it's not pure\nselfishness here, don't worry')\"\nSince 欲 し い is a normal verbal adjective, we ca",
+        "examples": [
+          {
+            "japanese": "the adjective 欲しい, desire, is used:"
+          },
+          {
+            "japanese": "このドアが赤くて欲しい。",
+            "english": "\"(I) want this door red.\""
+          },
+          {
+            "japanese": "In terms of politeness 欲しい is just as direct and selfish as fい, and"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_76",
+      "pattern": "すぎる",
+      "meaning": "Expresses that something is excessive or goes beyond an acceptable degree.",
+      "explanation": "Attach すぎる to the verb stem (ます-base) or to the stem of an い-adjective (drop い) or な-adjective (drop な/だ) to mean 'too ~' or 'excessively ~.' It conjugates as a regular る-verb: すぎます (polite), すぎた (past). It typically carries a negative nuance — the excess is problematic or undesirable.",
+      "examples": [
+        {
+          "japanese": "昨日食べすぎました。",
+          "reading": "きのうたべすぎました。",
+          "english": "I ate too much yesterday."
+        },
+        {
+          "japanese": "この問題は難しすぎます。",
+          "reading": "このもんだいはむずかしすぎます。",
+          "english": "This problem is too difficult."
+        },
+        {
+          "japanese": "コーヒーを飲みすぎないでください。",
+          "reading": "コーヒーをのみすぎないでください。",
+          "english": "Please don't drink too much coffee."
+        }
+      ],
+      "lesson": "marugoto_a1_10",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "auxiliary",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 76
+    },
+    {
+      "id": "cefr_a1_77",
+      "pattern": "のがじょうず",
+      "meaning": "Expresses that someone is good at or proficient at doing something.",
+      "explanation": "This pattern nominalizes a verb using の and pairs it with 上手 (じょうず) to express skill or proficiency in an activity. The verb before の is in plain (dictionary) form. Note: when talking about your own skill, Japanese speakers often use 得意 (とくい) instead to avoid sounding boastful, but 上手 is standard for others.",
+      "examples": [
+        {
+          "japanese": "姉はピアノを弾くのが上手です。",
+          "reading": "あねはピアノをひくのがじょうずです。",
+          "english": "My older sister is good at playing the piano."
+        },
+        {
+          "japanese": "田中さんは日本語を話すのが上手です。",
+          "reading": "たなかさんはにほんごをはなすのがじょうずです。",
+          "english": "Tanaka-san is good at speaking Japanese."
+        },
+        {
+          "japanese": "彼は絵を描くのが上手です。",
+          "reading": "かれはえをかくのがじょうずです。",
+          "english": "He is good at drawing pictures."
+        }
+      ],
+      "lesson": "marugoto_a1_10",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 77
+    },
+    {
+      "id": "cefr_a1_78",
+      "pattern": "よ",
+      "meaning": "A sentence-ending particle that asserts information or gently informs the listener of something they may not know.",
+      "explanation": "よ is added to the end of a sentence to emphasise the speaker's statement or to share new information with confidence. It can sound assertive or informative depending on tone. It is common in both casual and polite speech, but avoid overusing it as it can come across as pushy.",
+      "examples": [
+        {
+          "japanese": "このケーキはおいしいですよ。",
+          "reading": "このケーキはおいしいですよ。",
+          "english": "This cake is delicious, I tell you."
+        },
+        {
+          "japanese": "今日は寒いよ。",
+          "reading": "きょうはさむいよ。",
+          "english": "It's cold today, you know."
+        },
+        {
+          "japanese": "電車はもう来ましたよ。",
+          "reading": "でんしゃはもうきましたよ。",
+          "english": "The train has already come."
+        }
+      ],
+      "lesson": "marugoto_a1_10",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 78
+    },
+    {
+      "id": "cefr_a1_79",
+      "pattern": "たり～たりする",
+      "meaning": "Lists representative actions or states from a larger set, implying there are other similar things.",
+      "explanation": "Form たり by adding り to the plain past (た-form) of each verb, then close the list with する (or します). It signals that the examples given are not exhaustive — you are picking out a few typical items. This pattern is common in casual and polite speech alike when describing routines or varied activities.",
+      "examples": [
+        {
+          "japanese": "週末は音楽を聴いたり、本を読んだりします。",
+          "reading": "しゅうまつはおんがくをきいたり、ほんをよんだりします。",
+          "english": "On weekends I do things like listen to music and read books."
+        },
+        {
+          "japanese": "友だちと話したり、ゲームをしたりした。",
+          "reading": "ともだちとはなしたり、ゲームをしたりした。",
+          "english": "I did things like talk with friends and play games."
+        },
+        {
+          "japanese": "朝はコーヒーを飲んだり、新聞を読んだりします。",
+          "reading": "あさはコーヒーをのんだり、しんぶんをよんだりします。",
+          "english": "In the morning I do things like drink coffee and read the newspaper."
+        }
+      ],
+      "lesson": "marugoto_a1_10",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "conjunction",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 79,
+      "maynardRef": {
+        "topicId": "verb_grammar/doing_する",
+        "title": "Doing: する",
+        "excerpt": "84 CHAPTER 2. VERB GRAMMAR\n2.5.31 Doing: する\nWe've already seen す る as irregular verb, and it has been used in enough\nexample sentences to let it be no surprise that it means \"do'\". However,\nthis isn't the only meaning for this verb. When used in combination with\na direct object – as transitive verb – す る does mean \"do', but when used\nas intransitive verb, its meaning should be considered to be \"decide on'\nor \"choose'\". To show this difference in meaning between the transitive\nたどうし じどうし\n(strictly",
+        "examples": [
+          {
+            "japanese": "2.5.31 Doing: する"
+          },
+          {
+            "japanese": "We've already seen す る as irregular verb, and it has been used in enough",
+            "english": "example sentences to let it be no surprise that it means \"do'\". However,"
+          },
+          {
+            "japanese": "a direct object – as transitive verb – す る does mean \"do', but when used",
+            "english": "as intransitive verb, its meaning should be considered to be \"decide on'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_80",
+      "pattern": "つもりだ",
+      "meaning": "Expresses the speaker's intention or plan to do something.",
+      "explanation": "つもりだ follows the plain (dictionary) form of a verb to indicate that the speaker intends or plans to do something. For negative intention, use the negative plain form (〜ないつもりだ). It is used in both polite (つもりです) and casual (つもりだ) speech.",
+      "examples": [
+        {
+          "japanese": "来年、日本に行くつもりです。",
+          "reading": "らいねん、にほんにいくつもりです。",
+          "english": "I plan to go to Japan next year."
+        },
+        {
+          "japanese": "今日は早く寝るつもりです。",
+          "reading": "きょうははやくねるつもりです。",
+          "english": "I intend to go to bed early today."
+        },
+        {
+          "japanese": "お酒を飲まないつもりです。",
+          "reading": "おさけをのまないつもりです。",
+          "english": "I plan not to drink alcohol."
+        }
+      ],
+      "lesson": "marugoto_a1_10",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 80,
+      "maynardRef": {
+        "topicId": "verb_grammar/being_です_だ_ある_いる",
+        "title": "Being: です, だ, ある, いる",
+        "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+        "examples": [
+          {
+            "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+          },
+          {
+            "japanese": "bases areなら,なり，なる,なれ andなれ.",
+            "english": "While typically used in combination with the verb particle lC, it can"
+          },
+          {
+            "japanese": "also be used in combination with the particle と, in which case its meaning",
+            "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_81",
+      "pattern": "や",
+      "meaning": "Connect two or more nouns to give a non-exhaustive list of examples.",
+      "explanation": "The particle や links nouns similarly to と, but implies 'and things like' — the list is not complete. It suggests there are other items beyond what is mentioned. Use it when giving examples rather than listing everything. It is equivalent to 'such as' or 'and so on' in English.",
+      "examples": [
+        {
+          "japanese": "机の上に本やノートがあります。",
+          "reading": "つくえのうえにほんやのーとがあります。",
+          "english": "There are books, notebooks, and things like that on the desk."
+        },
+        {
+          "japanese": "スーパーでりんごやバナナを買いました。",
+          "reading": "すーぱーでりんごやばなながかいました。",
+          "english": "I bought apples, bananas, and such at the supermarket."
+        },
+        {
+          "japanese": "休みの日は映画や音楽を楽しみます。",
+          "reading": "やすみのひはえいがやおんがくをたのしみます。",
+          "english": "On my days off I enjoy things like movies and music."
+        }
+      ],
+      "lesson": "marugoto_a1_11",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 81
+    },
+    {
+      "id": "cefr_a1_82",
+      "pattern": "ませんか",
+      "meaning": "A polite, soft invitation to do something together — 'Why don't we ~?' or 'Would you like to ~?'.",
+      "explanation": "ませんか is formed by adding か to the negative ません form of a verb. It is more tentative and gentle than ましょうか, leaving more room for the listener to decline. It is commonly used to invite someone to do something or suggest an activity politely.",
+      "examples": [
+        {
+          "japanese": "今夜、映画を見ませんか？",
+          "reading": "こんや、えいがをみませんか？",
+          "english": "Would you like to watch a movie tonight?"
+        },
+        {
+          "japanese": "一緒にコーヒーを飲みませんか？",
+          "reading": "いっしょにこーひーをのみませんか？",
+          "english": "Why don't we have a coffee together?"
+        },
+        {
+          "japanese": "明日、公園を散歩しませんか？",
+          "reading": "あした、こうえんをさんぽしませんか？",
+          "english": "Would you like to take a walk in the park tomorrow?"
+        }
+      ],
+      "lesson": "marugoto_a1_11",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 82
+    },
+    {
+      "id": "cefr_a1_83",
+      "pattern": "まだ～ていません",
+      "meaning": "Expresses that an expected or anticipated action has not happened yet.",
+      "explanation": "まだ～ていません combines まだ ('still/not yet') with the negative て-form construction to say that something has not been done yet. It implies the action is expected or intended. The casual form is まだ～ていない. This pattern is very common when giving updates or status reports.",
+      "examples": [
+        {
+          "japanese": "まだ昼ごはんを食べていません。",
+          "reading": "まだひるごはんをたべていません。",
+          "english": "I still haven't eaten lunch."
+        },
+        {
+          "japanese": "宿題はまだしていません。",
+          "reading": "しゅくだいはまだしていません。",
+          "english": "I haven't done my homework yet."
+        },
+        {
+          "japanese": "その映画はまだ見ていません。",
+          "reading": "そのえいがはまだみていません。",
+          "english": "I still haven't seen that movie."
+        }
+      ],
+      "lesson": "marugoto_a1_11",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 83,
+      "maynardRef": {
+        "topicId": "verb_grammar/being_です_だ_ある_いる",
+        "title": "Being: です, だ, ある, いる",
+        "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+        "examples": [
+          {
+            "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+          },
+          {
+            "japanese": "bases areなら,なり，なる,なれ andなれ.",
+            "english": "While typically used in combination with the verb particle lC, it can"
+          },
+          {
+            "japanese": "also be used in combination with the particle と, in which case its meaning",
+            "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_84",
+      "pattern": "にする",
+      "meaning": "Expresses a decision or choice, or that something is made into / treated as something else.",
+      "explanation": "にする follows a noun to mean 'to decide on' or 'to go with' (a choice), most commonly when ordering food or selecting an option. It can also mean 'to make something into' a certain state when used with a result noun. The pattern is neutral in register and widely used in everyday conversation.",
+      "examples": [
+        {
+          "japanese": "私はラーメンにします。",
+          "reading": "わたしはラーメンにします。",
+          "english": "I'll go with ramen. / I'll have the ramen."
+        },
+        {
+          "japanese": "部屋をきれいにしました。",
+          "reading": "へやをきれいにしました。",
+          "english": "I made the room clean / tidied up the room."
+        },
+        {
+          "japanese": "どれにしますか。",
+          "reading": "どれにしますか。",
+          "english": "Which one will you go with?"
+        }
+      ],
+      "lesson": "marugoto_a1_11",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 84,
+      "maynardRef": {
+        "topicId": "verb_grammar/doing_する",
+        "title": "Doing: する",
+        "excerpt": "84 CHAPTER 2. VERB GRAMMAR\n2.5.31 Doing: する\nWe've already seen す る as irregular verb, and it has been used in enough\nexample sentences to let it be no surprise that it means \"do'\". However,\nthis isn't the only meaning for this verb. When used in combination with\na direct object – as transitive verb – す る does mean \"do', but when used\nas intransitive verb, its meaning should be considered to be \"decide on'\nor \"choose'\". To show this difference in meaning between the transitive\nたどうし じどうし\n(strictly",
+        "examples": [
+          {
+            "japanese": "2.5.31 Doing: する"
+          },
+          {
+            "japanese": "We've already seen す る as irregular verb, and it has been used in enough",
+            "english": "example sentences to let it be no surprise that it means \"do'\". However,"
+          },
+          {
+            "japanese": "a direct object – as transitive verb – す る does mean \"do', but when used",
+            "english": "as intransitive verb, its meaning should be considered to be \"decide on'"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_85",
+      "pattern": "のがへた",
+      "meaning": "Expresses that someone is bad at or unskillful at doing something.",
+      "explanation": "This pattern nominalizes a verb using の and pairs it with 下手 (へた) to say someone lacks skill in an activity. The verb before の is in plain (dictionary) form. It is used in both polite and casual contexts and is a common way to talk about abilities.",
+      "examples": [
+        {
+          "japanese": "私は歌うのが下手です。",
+          "reading": "わたしはうたうのがへたです。",
+          "english": "I am bad at singing."
+        },
+        {
+          "japanese": "弟は泳ぐのが下手です。",
+          "reading": "おとうとはおよぐのがへたです。",
+          "english": "My younger brother is bad at swimming."
+        },
+        {
+          "japanese": "私は料理するのが下手です。",
+          "reading": "わたしはりょうりするのがへたです。",
+          "english": "I am bad at cooking."
+        }
+      ],
+      "lesson": "marugoto_a1_11",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 85
+    },
+    {
+      "id": "cefr_a1_86",
+      "pattern": "なくてはいけない",
+      "meaning": "Express that something must be done or is obligatory.",
+      "explanation": "Formed by replacing ない with なくて and adding はいけない. It means the speaker is obliged to do something — 'have to' or 'must'. This form is common in everyday spoken and written Japanese. The contracted form なくちゃいけない is very frequent in casual speech.",
+      "examples": [
+        {
+          "japanese": "明日、早く起きなくてはいけません。",
+          "reading": "あした、はやくおきなくてはいけません。",
+          "english": "I have to wake up early tomorrow."
+        },
+        {
+          "japanese": "宿題をしなくてはいけない。",
+          "reading": "しゅくだいをしなくてはいけない。",
+          "english": "I have to do my homework."
+        },
+        {
+          "japanese": "薬を飲まなくてはいけません。",
+          "reading": "くすりをのまなくてはいけません。",
+          "english": "I have to take my medicine."
+        }
+      ],
+      "lesson": "marugoto_a1_11",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 86,
+      "maynardRef": {
+        "topicId": "verb_grammar/negative_presence_ない",
+        "title": "Negative presence: ない",
+        "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+        "examples": [
+          {
+            "japanese": "2.5.5 Negative presence: ない"
+          },
+          {
+            "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+          },
+          {
+            "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_87",
+      "pattern": "なくてはならない",
+      "meaning": "Express a strong obligation or necessity to do something.",
+      "explanation": "This pattern has the same meaning as なくてはいけない but sounds more formal and objective, often seen in writing, rules, or serious situations. Replace ならない with いけない for a slightly softer nuance. Both attach to the なくて form of a verb.",
+      "examples": [
+        {
+          "japanese": "パスポートを持っていかなくてはなりません。",
+          "reading": "ぱすぽーとをもっていかなくてはなりません。",
+          "english": "You must bring your passport."
+        },
+        {
+          "japanese": "この書類にサインしなくてはならない。",
+          "reading": "このしょるいにさいんしなくてはならない。",
+          "english": "I must sign this document."
+        },
+        {
+          "japanese": "毎日練習しなくてはなりません。",
+          "reading": "まいにちれんしゅうしなくてはなりません。",
+          "english": "You must practise every day."
+        }
+      ],
+      "lesson": "marugoto_a1_11",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 87,
+      "maynardRef": {
+        "topicId": "verb_grammar/negative_presence_ない",
+        "title": "Negative presence: ない",
+        "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+        "examples": [
+          {
+            "japanese": "2.5.5 Negative presence: ない"
+          },
+          {
+            "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+          },
+          {
+            "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_355",
+      "pattern": "がある + Noun",
+      "meaning": "Describe a noun by modifying it with a relative clause ending in がある, meaning 'that has' or 'with.'",
+      "explanation": "In Japanese, relative clauses come before the noun they modify. A clause ending in がある placed before a noun means 'a [noun] that has [something].' This pattern lets you add descriptive detail to nouns using the existence verb ある. It is natural in both spoken and written Japanese.",
+      "examples": [
+        {
+          "japanese": "庭がある家に住みたいです。",
+          "reading": "にわがあるいえにすみたいです。",
+          "english": "I want to live in a house with a garden."
+        },
+        {
+          "japanese": "Wi-Fiがあるカフェを探しています。",
+          "reading": "Wi-Fiがあるカフェをさがしています。",
+          "english": "I am looking for a café that has Wi-Fi."
+        },
+        {
+          "japanese": "プールがあるホテルに泊まりました。",
+          "reading": "プールがあるホテルにとまりました。",
+          "english": "I stayed at a hotel that has a pool."
+        }
+      ],
+      "lesson": "marugoto_a1_11",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 88
+    },
+    {
+      "id": "cefr_a1_356",
+      "pattern": "と",
+      "meaning": "Marks the content of what someone said, thought, or asked.",
+      "explanation": "The particle と is used after a quoted clause before verbs like 言う (to say), 思う (to think), or 聞く (to hear/ask). It can quote both direct and indirect speech. The quoted content before と can be in plain form.",
+      "examples": [
+        {
+          "japanese": "彼は「おはよう」と言った。",
+          "reading": "かれは「おはよう」といった。",
+          "english": "He said 'Good morning.'"
+        },
+        {
+          "japanese": "明日は雨だと思います。",
+          "reading": "あしたはあめだとおもいます。",
+          "english": "I think it will rain tomorrow."
+        },
+        {
+          "japanese": "先生は「勉強してください」と言いました。",
+          "reading": "せんせいは「べんきょうしてください」といいました。",
+          "english": "The teacher said 'Please study.'"
+        }
+      ],
+      "lesson": "marugoto_a1_12",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 89
+    },
+    {
+      "id": "cefr_a1_357",
+      "pattern": "Verb［た・ている］+ Noun",
+      "meaning": "A verb in plain past (た) or progressive (ている) form placed before a noun to describe or modify it.",
+      "explanation": "Japanese relative clauses come before the noun they modify, unlike English. A verb in plain た (past) or ている (ongoing/resultant) form directly precedes a noun to give it more description. This structure works like 'the [noun] that [verb-ed]' or 'the [noun] that is [verb-ing]' in English.",
+      "examples": [
+        {
+          "japanese": "昨日食べたケーキはおいしかった。",
+          "reading": "きのうたべたケーキはおいしかった。",
+          "english": "The cake I ate yesterday was delicious."
+        },
+        {
+          "japanese": "公園で遊んでいる子供たちを見た。",
+          "reading": "こうえんであそんでいるこどもたちをみた。",
+          "english": "I saw children playing in the park."
+        },
+        {
+          "japanese": "彼が書いた手紙を読みました。",
+          "reading": "かれがかいたてがみをよみました。",
+          "english": "I read the letter that he wrote."
+        }
+      ],
+      "lesson": "marugoto_a1_12",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 90,
+      "maynardRef": {
+        "topicId": "more_grammar/continuative_て_form",
+        "title": "Continuative: て form",
+        "excerpt": "3.2. FURTHER INFLECTIONS 103\n3.2.2 Continuative: て form\nThe continuative in Japanese is also commonly refered to as the \"て form',\nbecause it relies on the 連用形 of classical helper verb for completion, つ,\nwhich is て. This inflection is used for at least three things in Japanese,\nof which verb chaining is probably the most frequently used. Aside from\nthis, it is also used to issue (implied) imperatives, and it can be used in\ncombination with several special verbs to create special constructions.\nba",
+        "examples": [
+          {
+            "japanese": "3.2.2 Continuative: て form"
+          },
+          {
+            "japanese": "The continuative in Japanese is also commonly refered to as the \"て form',"
+          },
+          {
+            "japanese": "because it relies on the 連用形 of classical helper verb for completion, つ,"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_358",
+      "pattern": "って",
+      "meaning": "Casual spoken equivalent of the quotation particle と.",
+      "explanation": "って is the colloquial version of quotation と, commonly used in everyday conversation. It follows a quoted word, phrase, or plain-form clause before verbs of saying or thinking. It can also be used to bring up a topic casually, similar to 'speaking of' or 'I heard that'.",
+      "examples": [
+        {
+          "japanese": "彼女は来ないって言ってた。",
+          "reading": "かのじょはこないっていってた。",
+          "english": "She said she's not coming."
+        },
+        {
+          "japanese": "明日、テストがあるって聞いた。",
+          "reading": "あした、テストがあるってきいた。",
+          "english": "I heard there's a test tomorrow."
+        },
+        {
+          "japanese": "田中さんって、どんな人？",
+          "reading": "たなかさんって、どんなひと？",
+          "english": "What kind of person is Tanaka-san?"
+        }
+      ],
+      "lesson": "marugoto_a1_12",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 91
+    },
+    {
+      "id": "cefr_a1_359",
+      "pattern": "けっこう",
+      "meaning": "Means 'quite,' 'fairly,' or 'rather,' indicating a degree higher than expected.",
+      "explanation": "けっこう is an adverb that modifies adjectives, adverbs, or verbs to express that something is more than you might have expected — similar to 'pretty' in English. It is used in both polite and casual speech and carries a slightly surprised or impressed nuance. Place it directly before the word it modifies.",
+      "examples": [
+        {
+          "japanese": "この映画はけっこう面白かったです。",
+          "reading": "このえいがはけっこうおもしろかったです。",
+          "english": "This movie was quite interesting."
+        },
+        {
+          "japanese": "駅からけっこう遠いですね。",
+          "reading": "えきからけっこうとおいですね。",
+          "english": "It's fairly far from the station, isn't it."
+        },
+        {
+          "japanese": "今日はけっこう寒い。",
+          "reading": "きょうはけっこうさむい。",
+          "english": "It's rather cold today."
+        }
+      ],
+      "lesson": "marugoto_a1_12",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adverb",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 92
+    },
+    {
+      "id": "cefr_a1_360",
+      "pattern": "Verb + まで",
+      "meaning": "Marks a verb clause as the endpoint of an action — 'until ~ happens.'",
+      "explanation": "When まで follows a verb in plain form, it creates a time clause meaning 'until [that action/event occurs].' The verb before まで stays in the plain present tense regardless of tense in the main clause. This pattern expresses that the main action continues right up to the moment the subordinate event takes place.",
+      "examples": [
+        {
+          "japanese": "バスが来るまで待ちます。",
+          "reading": "バスがくるまでまちます。",
+          "english": "I will wait until the bus comes."
+        },
+        {
+          "japanese": "雨がやむまで、ここにいました。",
+          "reading": "あめがやむまで、ここにいました。",
+          "english": "I stayed here until the rain stopped."
+        },
+        {
+          "japanese": "先生が来るまで静かにしてください。",
+          "reading": "せんせいがくるまでしずかにしてください。",
+          "english": "Please be quiet until the teacher arrives."
+        }
+      ],
+      "lesson": "marugoto_a1_12",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "conjunction",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 93
+    },
+    {
+      "id": "cefr_a1_361",
+      "pattern": "けど・だけど",
+      "meaning": "Connects two contrasting clauses, meaning 'but' or 'however'.",
+      "explanation": "けど (and its slightly more emphatic form だけど) is a casual conjunction used to contrast two ideas or soften a statement. It follows plain-form verbs and adjectives. It is more conversational than が and very common in everyday speech.",
+      "examples": [
+        {
+          "japanese": "日本語は好きだけど、難しいです。",
+          "reading": "にほんごはすきだけど、むずかしいです。",
+          "english": "I like Japanese, but it is difficult."
+        },
+        {
+          "japanese": "行きたいけど、時間がない。",
+          "reading": "いきたいけど、じかんがない。",
+          "english": "I want to go, but I don't have time."
+        },
+        {
+          "japanese": "寒いけど、窓を開けます。",
+          "reading": "さむいけど、まどをあけます。",
+          "english": "It is cold, but I will open the window."
+        }
+      ],
+      "lesson": "marugoto_a1_12",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "conjunction",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 94,
+      "maynardRef": {
+        "topicId": "verb_grammar/being_です_だ_ある_いる",
+        "title": "Being: です, だ, ある, いる",
+        "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+        "examples": [
+          {
+            "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+          },
+          {
+            "japanese": "bases areなら,なり，なる,なれ andなれ.",
+            "english": "While typically used in combination with the verb particle lC, it can"
+          },
+          {
+            "japanese": "also be used in combination with the particle と, in which case its meaning",
+            "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_416",
+      "pattern": "Verb + て",
+      "meaning": "Links two or more actions in sequence, meaning 'and then' or 'and'.",
+      "explanation": "The て-form of a verb connects it to the next verb or clause, indicating that actions happen one after another or are performed together. For る-verbs, replace る with て; う-verbs follow conjugation rules (e.g., 書く → 書いて). It is used in both casual and polite speech and is fundamental for describing sequences of events.",
+      "examples": [
+        {
+          "japanese": "手を洗って、ご飯を食べます。",
+          "reading": "てをあらって、ごはんをたべます。",
+          "english": "I wash my hands and then eat."
+        },
+        {
+          "japanese": "駅に行って、電車に乗りました。",
+          "reading": "えきにいって、でんしゃにのりました。",
+          "english": "I went to the station and got on the train."
+        },
+        {
+          "japanese": "シャワーを浴びて、寝ます。",
+          "reading": "シャワーをあびて、ねます。",
+          "english": "I take a shower and then go to sleep."
+        }
+      ],
+      "lesson": "marugoto_a1_12",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 95
+    },
+    {
+      "id": "cefr_a1_712",
+      "pattern": "どれ",
+      "meaning": "Used to ask which item is meant when there are three or more options.",
+      "explanation": "どれ is a question word meaning 'which one' and is used when choosing from three or more items. It stands alone as a pronoun and does not directly precede a noun. It works in both polite and casual speech.",
+      "examples": [
+        {
+          "japanese": "あなたのかばんはどれですか。",
+          "reading": "あなたのかばんはどれですか。",
+          "english": "Which one is your bag?"
+        },
+        {
+          "japanese": "どれがいいですか。",
+          "reading": "どれがいいですか。",
+          "english": "Which one do you like?"
+        },
+        {
+          "japanese": "すみません、どれが田中さんのですか。",
+          "reading": "すみません、どれがたなかさんのですか。",
+          "english": "Excuse me, which one is Tanaka-san's?"
+        }
+      ],
+      "lesson": "marugoto_a1_12",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "question",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 96
+    },
+    {
+      "id": "cefr_a1_713",
+      "pattern": "どの",
+      "meaning": "Used before a noun to ask which one of three or more options is meant.",
+      "explanation": "どの directly precedes a noun and means 'which' or 'what kind of'. Unlike どれ, it must always be followed by a noun. It is used in both polite and casual registers and is common when asking for clarification.",
+      "examples": [
+        {
+          "japanese": "どのバスに乗りますか。",
+          "reading": "どのバスにのりますか。",
+          "english": "Which bus will you take?"
+        },
+        {
+          "japanese": "どの本が好きですか。",
+          "reading": "どのほんがすきですか。",
+          "english": "Which book do you like?"
+        },
+        {
+          "japanese": "どの学生が田中さんですか。",
+          "reading": "どのがくせいがたなかさんですか。",
+          "english": "Which student is Tanaka-san?"
+        }
+      ],
+      "lesson": "marugoto_a1_13",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "question",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 97
+    },
+    {
+      "id": "cefr_a1_714",
+      "pattern": "誰",
+      "meaning": "The question word meaning 'who', used to ask about a person.",
+      "explanation": "誰 (だれ) is used to ask about the identity of a person, similar to 'who' in English. It can function as a subject, object, or follow particles like が, を, or の. In very formal or written contexts, どなた is used instead as the polite equivalent.",
+      "examples": [
+        {
+          "japanese": "あの人は誰ですか。",
+          "reading": "あのひとはだれですか。",
+          "english": "Who is that person?"
+        },
+        {
+          "japanese": "誰が来ましたか。",
+          "reading": "だれがきましたか。",
+          "english": "Who came?"
+        },
+        {
+          "japanese": "これは誰のかばんですか。",
+          "reading": "これはだれのかばんですか。",
+          "english": "Whose bag is this?"
+        }
+      ],
+      "lesson": "marugoto_a1_13",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "question",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 98
+    },
+    {
+      "id": "cefr_a1_715",
+      "pattern": "たくさん",
+      "meaning": "Indicates a large quantity or amount of something.",
+      "explanation": "たくさん is an adverb meaning 'a lot,' 'many,' or 'plenty.' It can modify verbs directly (たくさん食べる) or precede の + noun (たくさんの人). It works with both countable and uncountable things and is neutral in register, suitable for both polite and casual contexts.",
+      "examples": [
+        {
+          "japanese": "昨日たくさん食べました。",
+          "reading": "きのうたくさんたべました。",
+          "english": "I ate a lot yesterday."
+        },
+        {
+          "japanese": "公園にたくさんの人がいます。",
+          "reading": "こうえんにたくさんのひとがいます。",
+          "english": "There are a lot of people in the park."
+        },
+        {
+          "japanese": "水をたくさん飲んでください。",
+          "reading": "みずをたくさんのんでください。",
+          "english": "Please drink plenty of water."
+        }
+      ],
+      "lesson": "marugoto_a1_13",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adverb",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 99
+    },
+    {
+      "id": "cefr_a1_716",
+      "pattern": "好き",
+      "meaning": "Express that you like something using 好き as a な-adjective with the subject marked by が.",
+      "explanation": "好き (すき) is a な-adjective meaning 'liked' or 'fond of.' The thing you like is marked by が, not を. The sentence structure is [person] は [thing] が 好きです. It is used in everyday polite and casual conversation to talk about preferences.",
+      "examples": [
+        {
+          "japanese": "私はねこが好きです。",
+          "reading": "わたしはねこがすきです。",
+          "english": "I like cats."
+        },
+        {
+          "japanese": "あなたはどんな音楽が好きですか。",
+          "reading": "あなたはどんなおんがくがすきですか。",
+          "english": "What kind of music do you like?"
+        },
+        {
+          "japanese": "彼はサッカーがとても好きです。",
+          "reading": "かれはサッカーがとてもすきです。",
+          "english": "He likes soccer very much."
+        }
+      ],
+      "lesson": "marugoto_a1_13",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adjective",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 100
+    },
+    {
+      "id": "cefr_a1_717",
+      "pattern": "きらい",
+      "meaning": "Express that you dislike something using きらい as a な-adjective with the subject marked by が.",
+      "explanation": "きらい (嫌い) is a な-adjective meaning 'disliked' or 'not fond of,' and it works as the direct opposite of 好き. The thing you dislike is marked by が. Note that きらい is fairly direct; Japanese speakers often soften dislike with あまり好きじゃない (don't really like) in conversation.",
+      "examples": [
+        {
+          "japanese": "私はにんじんが嫌いです。",
+          "reading": "わたしはにんじんがきらいです。",
+          "english": "I dislike carrots."
+        },
+        {
+          "japanese": "弟は虫が嫌いです。",
+          "reading": "おとうとはむしがきらいです。",
+          "english": "My younger brother dislikes insects."
+        },
+        {
+          "japanese": "あなたは何が嫌いですか。",
+          "reading": "あなたはなにがきらいですか。",
+          "english": "What do you dislike?"
+        }
+      ],
+      "lesson": "marugoto_a1_13",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adjective",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 101
+    },
+    {
+      "id": "cefr_a1_718",
+      "pattern": "なにか・なにも",
+      "meaning": "なにか means 'something' or 'anything'; なにも (with a negative verb) means 'nothing' or 'not anything'.",
+      "explanation": "なにか is used in affirmative sentences and questions to mean 'something' or 'anything'. なにも requires a negative verb form and means 'nothing at all'. Both are common in everyday polite and casual speech.",
+      "examples": [
+        {
+          "japanese": "何か食べますか？",
+          "reading": "なにかたべますか？",
+          "english": "Are you going to eat something?"
+        },
+        {
+          "japanese": "冷蔵庫に何かありますか？",
+          "reading": "れいぞうこになにかありますか？",
+          "english": "Is there anything in the fridge?"
+        },
+        {
+          "japanese": "今日は何も食べませんでした。",
+          "reading": "きょうはなにもたべませんでした。",
+          "english": "I didn't eat anything today."
+        }
+      ],
+      "lesson": "marugoto_a1_13",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 102
+    },
+    {
+      "id": "cefr_a1_719",
+      "pattern": "Adjective + の(は)",
+      "meaning": "Turns an adjective phrase into a noun-like 'one' or 'thing', used to refer back to something already understood from context.",
+      "explanation": "Adding の after an adjective nominalizes the phrase, functioning like 'the one that is...' in English. It replaces a noun that is already clear from context. This is common in both casual and polite speech and helps avoid repetition.",
+      "examples": [
+        {
+          "japanese": "赤いのはどれですか。",
+          "reading": "あかいのはどれですか。",
+          "english": "Which one is the red one?"
+        },
+        {
+          "japanese": "大きいのをください。",
+          "reading": "おおきいのをください。",
+          "english": "Please give me the big one."
+        },
+        {
+          "japanese": "安いのはありますか。",
+          "reading": "やすいのはありますか。",
+          "english": "Do you have a cheaper one?"
+        }
+      ],
+      "lesson": "marugoto_a1_13",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 103
+    },
+    {
+      "id": "cefr_a1_720",
+      "pattern": "の",
+      "meaning": "Connects two nouns to show possession or belonging, and can replace a previously mentioned noun to avoid repetition.",
+      "explanation": "の links a possessor to the thing possessed (like 's in English). It can also replace a noun when the referent is clear from context — for example, 私のカバンは青いです。あなたのは？ ('Mine is blue. What about yours?'). This makes speech more natural and avoids awkward repetition.",
+      "examples": [
+        {
+          "japanese": "これは私のかばんです。",
+          "reading": "これはわたしのかばんです。",
+          "english": "This is my bag."
+        },
+        {
+          "japanese": "私のは赤いけど、あなたのは青い。",
+          "reading": "わたしのはあかいけど、あなたのはあおい。",
+          "english": "Mine is red, but yours is blue."
+        },
+        {
+          "japanese": "あの白いのをください。",
+          "reading": "あのしろいのをください。",
+          "english": "Please give me that white one."
+        }
+      ],
+      "lesson": "marugoto_a1_13",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 104
+    },
+    {
+      "id": "cefr_a1_721",
+      "pattern": "誰か・どこか・誰も・どこも",
+      "meaning": "誰か means 'someone'; どこか means 'somewhere'; 誰も and どこも (with negatives) mean 'no one' and 'nowhere'.",
+      "explanation": "誰か and どこか are used in affirmative sentences and questions. 誰も and どこも require negative verb forms to express 'not anyone' and 'not anywhere'. These are high-frequency words used naturally in both polite and casual registers.",
+      "examples": [
+        {
+          "japanese": "誰か部屋にいますか？",
+          "reading": "だれかへやにいますか？",
+          "english": "Is someone in the room?"
+        },
+        {
+          "japanese": "週末はどこかに行きましたか？",
+          "reading": "しゅうまつはどこかにいきましたか？",
+          "english": "Did you go somewhere on the weekend?"
+        },
+        {
+          "japanese": "昨日は誰にも会いませんでした。",
+          "reading": "きのうはだれにもあいませんでした。",
+          "english": "I didn't meet anyone yesterday."
+        }
+      ],
+      "lesson": "marugoto_a1_14",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "expression",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 105
+    },
+    {
+      "id": "cefr_a1_722",
+      "pattern": "あげる",
+      "meaning": "Expresses giving something to someone else, where the giver is the speaker or someone in the speaker's group.",
+      "explanation": "あげる is used when the speaker (or someone close to the speaker) gives something to another person. The recipient is marked with に. It implies the giver is doing a favor or presenting something outward. Do not use あげる when describing receiving something yourself — use もらう in that case.",
+      "examples": [
+        {
+          "japanese": "友達にプレゼントをあげました。",
+          "reading": "ともだちにプレゼントをあげました。",
+          "english": "I gave a present to my friend."
+        },
+        {
+          "japanese": "母に花をあげます。",
+          "reading": "ははにはなをあげます。",
+          "english": "I will give flowers to my mother."
+        },
+        {
+          "japanese": "田中さんは山田さんに本をあげました。",
+          "reading": "たなかさんはやまださんにほんをあげました。",
+          "english": "Tanaka-san gave a book to Yamada-san."
+        }
+      ],
+      "lesson": "marugoto_a1_14",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 106
+    },
+    {
+      "id": "cefr_a1_723",
+      "pattern": "くれる",
+      "meaning": "Expresses someone giving something to the speaker or someone close to the speaker.",
+      "explanation": "くれる is used when the giver is someone else and the recipient is the speaker or someone in the speaker's in-group. It highlights the benefit received by the speaker. The giver is the subject and the thing given is the object marked with を.",
+      "examples": [
+        {
+          "japanese": "友達が本をくれました。",
+          "reading": "ともだちがほんをくれました。",
+          "english": "My friend gave me a book."
+        },
+        {
+          "japanese": "先生がアドバイスをくれました。",
+          "reading": "せんせいがアドバイスをくれました。",
+          "english": "My teacher gave me some advice."
+        },
+        {
+          "japanese": "母がケーキをくれました。",
+          "reading": "ははがケーキをくれました。",
+          "english": "My mother gave me a cake."
+        }
+      ],
+      "lesson": "marugoto_a1_14",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 107,
+      "maynardRef": {
+        "topicId": "more_grammar/passive_れる_られる",
+        "title": "Passive: れる/られる",
+        "excerpt": "134 CHAPTER 3. MORE GRAMMAR\n3.2.11 Passive:れる/られる\nPassive constructions are, as their name implies, constructions which de-\nscribe actions in a passive voice. Unlike \"I eat dinner\" or \"The cat is play-\ning with the squeaky toy'\", which are in active voice, they refer to phrases\nlike \"Dinner was eaten by me'\" or \"The squeaky toy was played with by\nうけみ\nthe cat\". In Japanese, this passive voice, called 受身, is achieved through\nthe use of the two helper verbs れる (for 五段 verbs) and られる (for 一段\nverbs),",
+        "examples": [
+          {
+            "japanese": "3.2.11 Passive:れる/られる",
+            "english": "Passive constructions are, as their name implies, constructions which de-"
+          },
+          {
+            "japanese": "the cat\". In Japanese, this passive voice, called 受身, is achieved through"
+          },
+          {
+            "japanese": "the use of the two helper verbs れる (for 五段 verbs) and られる (for 一段"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_724",
+      "pattern": "もらう",
+      "meaning": "Expresses the speaker receiving something from someone else.",
+      "explanation": "もらう focuses on the act of receiving from the perspective of the recipient. The giver is marked with に or から, and the thing received is marked with を. It is the counterpart to くれる and is used in both polite and casual speech.",
+      "examples": [
+        {
+          "japanese": "友達にプレゼントをもらいました。",
+          "reading": "ともだちにプレゼントをもらいました。",
+          "english": "I received a present from my friend."
+        },
+        {
+          "japanese": "先生から本をもらいました。",
+          "reading": "せんせいからほんをもらいました。",
+          "english": "I received a book from my teacher."
+        },
+        {
+          "japanese": "誕生日にケーキをもらいました。",
+          "reading": "たんじょうびにケーキをもらいました。",
+          "english": "I received a cake on my birthday."
+        }
+      ],
+      "lesson": "marugoto_a1_14",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 108
+    },
+    {
+      "id": "cefr_a1_764",
+      "pattern": "ている②",
+      "meaning": "Expresses a state that exists as the result of a completed action.",
+      "explanation": "This use of ている describes a current state that came about because an action happened — the action is done, but its result persists. For example, 結婚している means 'is married' (not 'is getting married'). It contrasts with ている① (ongoing action). Used in both polite (ています) and casual (てる) speech.",
+      "examples": [
+        {
+          "japanese": "姉は結婚しています。",
+          "reading": "あねはけっこんしています。",
+          "english": "My older sister is married."
+        },
+        {
+          "japanese": "電気がついています。",
+          "reading": "でんきがついています。",
+          "english": "The light is on."
+        },
+        {
+          "japanese": "窓が開いています。",
+          "reading": "まどがあいています。",
+          "english": "The window is open."
+        }
+      ],
+      "lesson": "marugoto_a1_14",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 109,
+      "maynardRef": {
+        "topicId": "more_grammar/continuative_て_form",
+        "title": "Continuative: て form",
+        "excerpt": "3.2. FURTHER INFLECTIONS 103\n3.2.2 Continuative: て form\nThe continuative in Japanese is also commonly refered to as the \"て form',\nbecause it relies on the 連用形 of classical helper verb for completion, つ,\nwhich is て. This inflection is used for at least three things in Japanese,\nof which verb chaining is probably the most frequently used. Aside from\nthis, it is also used to issue (implied) imperatives, and it can be used in\ncombination with several special verbs to create special constructions.\nba",
+        "examples": [
+          {
+            "japanese": "3.2.2 Continuative: て form"
+          },
+          {
+            "japanese": "The continuative in Japanese is also commonly refered to as the \"て form',"
+          },
+          {
+            "japanese": "because it relies on the 連用形 of classical helper verb for completion, つ,"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_765",
+      "pattern": "ている③",
+      "meaning": "Describe an action that someone does habitually or repeatedly as a regular pattern.",
+      "explanation": "In its third use, ている expresses a habitual or regularly repeated action, similar to 'I do X (regularly)' in English. Unlike ている① (ongoing action) or ている② (resultant state), this use focuses on routine or repeated behaviour. Context and frequency adverbs like 毎日 or よく help distinguish this meaning.",
+      "examples": [
+        {
+          "japanese": "毎朝、コーヒーを飲んでいます。",
+          "reading": "まいあさ、こーひーをのんでいます。",
+          "english": "I drink coffee every morning."
+        },
+        {
+          "japanese": "彼女は毎日日本語を勉強しています。",
+          "reading": "かのじょはまいにちにほんごをべんきょうしています。",
+          "english": "She studies Japanese every day."
+        },
+        {
+          "japanese": "週末によく映画を見ています。",
+          "reading": "しゅうまつによくえいがをみています。",
+          "english": "I often watch movies on weekends."
+        }
+      ],
+      "lesson": "marugoto_a1_14",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 110,
+      "maynardRef": {
+        "topicId": "more_grammar/continuative_て_form",
+        "title": "Continuative: て form",
+        "excerpt": "3.2. FURTHER INFLECTIONS 103\n3.2.2 Continuative: て form\nThe continuative in Japanese is also commonly refered to as the \"て form',\nbecause it relies on the 連用形 of classical helper verb for completion, つ,\nwhich is て. This inflection is used for at least three things in Japanese,\nof which verb chaining is probably the most frequently used. Aside from\nthis, it is also used to issue (implied) imperatives, and it can be used in\ncombination with several special verbs to create special constructions.\nba",
+        "examples": [
+          {
+            "japanese": "3.2.2 Continuative: て form"
+          },
+          {
+            "japanese": "The continuative in Japanese is also commonly refered to as the \"て form',"
+          },
+          {
+            "japanese": "because it relies on the 連用形 of classical helper verb for completion, つ,"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_769",
+      "pattern": "Adjective + て・Noun + で",
+      "meaning": "Connects two descriptions meaning 'and' or 'both... and...'",
+      "explanation": "い-adjectives use て-form (drop い, add くて); な-adjectives and nouns use で to link two qualities or states. This pattern is used in both polite and casual speech. It allows you to describe something with multiple attributes in a single sentence.",
+      "examples": [
+        {
+          "japanese": "この部屋は広くてきれいです。",
+          "reading": "このへやはひろくてきれいです。",
+          "english": "This room is spacious and clean."
+        },
+        {
+          "japanese": "田中さんは親切で面白い人です。",
+          "reading": "たなかさんはしんせつでおもしろいひとです。",
+          "english": "Tanaka-san is a kind and interesting person."
+        },
+        {
+          "japanese": "このケーキは甘くておいしいです。",
+          "reading": "このケーキはあまくておいしいです。",
+          "english": "This cake is sweet and delicious."
+        }
+      ],
+      "lesson": "marugoto_a1_14",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adjective",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 111
+    },
+    {
+      "id": "cefr_a1_770",
+      "pattern": "Verb + て+ B",
+      "meaning": "Links two or more actions in sequence, meaning 'and', 'and then', or 'after that'.",
+      "explanation": "The て-form of a verb connects clauses to show a natural sequence of events, similar to 'and then' in English. The tense of the whole sentence is determined by the final verb. It is neutral in register and very common at all levels of Japanese.",
+      "examples": [
+        {
+          "japanese": "朝ごはんを食べて、学校に行きます。",
+          "reading": "あさごはんをたべて、がっこうにいきます。",
+          "english": "I eat breakfast and then go to school."
+        },
+        {
+          "japanese": "図書館に行って、本を借りました。",
+          "reading": "としょかんにいって、ほんをかりました。",
+          "english": "I went to the library and borrowed a book."
+        },
+        {
+          "japanese": "コーヒーを飲んで、仕事をします。",
+          "reading": "コーヒーをのんで、しごとをします。",
+          "english": "I drink coffee and then work."
+        }
+      ],
+      "lesson": "marugoto_a1_14",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "conjunction",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 112
+    },
+    {
+      "id": "cefr_a1_771",
+      "pattern": "Adjective + て + B",
+      "meaning": "Uses the て-form of an adjective to connect it to a following clause, meaning 'and' or expressing a reason.",
+      "explanation": "The て-form of an adjective not only links two qualities but can also connect an adjective to a resulting action or state. The first clause often implies a reason or cause for the second clause. This structure is common in everyday speech at all registers.",
+      "examples": [
+        {
+          "japanese": "眠くて、勉強できません。",
+          "reading": "ねむくて、べんきょうできません。",
+          "english": "I'm sleepy and can't study."
+        },
+        {
+          "japanese": "忙しくて、電話しませんでした。",
+          "reading": "いそがしくて、でんわしませんでした。",
+          "english": "I was busy and didn't call."
+        },
+        {
+          "japanese": "嬉しくて、泣きました。",
+          "reading": "うれしくて、なきました。",
+          "english": "I was so happy that I cried."
+        }
+      ],
+      "lesson": "marugoto_a1_15",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adjective",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 113
+    },
+    {
+      "id": "cefr_a1_873",
+      "pattern": "い-Adjectives くない",
+      "meaning": "Expresses that something does NOT have a certain quality.",
+      "explanation": "To negate an い-adjective, drop the final い and add くない. This is the plain/casual negative form. Use くないです for polite speech. It works the same way for all い-adjectives.",
+      "examples": [
+        {
+          "japanese": "この映画は面白くないです。",
+          "reading": "このえいがはおもしろくないです。",
+          "english": "This movie is not interesting."
+        },
+        {
+          "japanese": "今日は寒くないです。",
+          "reading": "きょうはさむくないです。",
+          "english": "It is not cold today."
+        },
+        {
+          "japanese": "この鞄は高くない。",
+          "reading": "このかばんはたかくない。",
+          "english": "This bag is not expensive."
+        }
+      ],
+      "lesson": "marugoto_a1_15",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adjective",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 114,
+      "maynardRef": {
+        "topicId": "verb_grammar/negative_presence_ない",
+        "title": "Negative presence: ない",
+        "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+        "examples": [
+          {
+            "japanese": "2.5.5 Negative presence: ない"
+          },
+          {
+            "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+          },
+          {
+            "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_874",
+      "pattern": "い-Adjective (Past)",
+      "meaning": "Expresses that a quality or state was true in the past ('was ~').",
+      "explanation": "To make an い-adjective past tense, drop the final い and add かった (plain past) or かったです (polite past). The negative past is ～くなかった / ～くなかったです. This conjugation applies to all い-adjectives except いい (good), which becomes よかった.",
+      "examples": [
+        {
+          "japanese": "昨日は寒かったです。",
+          "reading": "きのうはさむかったです。",
+          "english": "It was cold yesterday."
+        },
+        {
+          "japanese": "その映画はおもしろかった。",
+          "reading": "そのえいがはおもしろかった。",
+          "english": "That movie was interesting."
+        },
+        {
+          "japanese": "テストは難しくなかったです。",
+          "reading": "テストはむずかしくなかったです。",
+          "english": "The test was not difficult."
+        }
+      ],
+      "lesson": "marugoto_a1_15",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adjective",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 115
+    },
+    {
+      "id": "cefr_a1_876",
+      "pattern": "い-Adjective くなかった",
+      "meaning": "Used to say something was not [adjective] in the past.",
+      "explanation": "To negate an い-adjective in the past, drop the final い and add くなかった. This is the casual past negative form. The polite equivalent is くありませんでした.",
+      "examples": [
+        {
+          "japanese": "昨日は寒くなかった。",
+          "reading": "きのうはさむくなかった。",
+          "english": "It was not cold yesterday."
+        },
+        {
+          "japanese": "その料理はおいしくなかった。",
+          "reading": "そのりょうりはおいしくなかった。",
+          "english": "That food was not delicious."
+        },
+        {
+          "japanese": "テストは難しくなかった。",
+          "reading": "テストはむずかしくなかった。",
+          "english": "The test was not difficult."
+        }
+      ],
+      "lesson": "marugoto_a1_15",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adjective",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 116
+    },
+    {
+      "id": "cefr_a1_888",
+      "pattern": "う-Verb (Negative)",
+      "meaning": "Expresses that someone does not do or will not do an action (for う-verbs).",
+      "explanation": "To negate an う-verb in the plain (dictionary) form, drop the final う-row sound and add あない. For example, 書く becomes 書かない. This is the casual register equivalent of ません, used in everyday conversation among friends and in informal contexts. Use it to say you don't habitually do something or don't plan to do something.",
+      "examples": [
+        {
+          "japanese": "私はお酒を飲まない。",
+          "reading": "わたしはおさけをのまない。",
+          "english": "I don't drink alcohol."
+        },
+        {
+          "japanese": "彼は毎日学校に行かない。",
+          "reading": "かれはまいにちがっこうにいかない。",
+          "english": "He doesn't go to school every day."
+        },
+        {
+          "japanese": "今日は本を読まない。",
+          "reading": "きょうはほんをよまない。",
+          "english": "I'm not going to read a book today."
+        }
+      ],
+      "lesson": "marugoto_a1_15",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 117
+    },
+    {
+      "id": "cefr_a1_895",
+      "pattern": "る-Verb (Past)",
+      "meaning": "Form the past tense of る-verbs by replacing る with ました (polite) or た (casual).",
+      "explanation": "る-verbs (also called Group 2 or ichidan verbs) form the past tense by simply dropping the final る and adding ました in polite speech, or た in casual speech. This is more regular than う-verb conjugation. Use the past tense to describe completed actions or past states.",
+      "examples": [
+        {
+          "japanese": "昨日、テレビを見ました。",
+          "reading": "きのう、テレビをみました。",
+          "english": "I watched TV yesterday."
+        },
+        {
+          "japanese": "朝ごはんを食べました。",
+          "reading": "あさごはんをたべました。",
+          "english": "I ate breakfast."
+        },
+        {
+          "japanese": "七時に起きました。",
+          "reading": "しちじにおきました。",
+          "english": "I woke up at seven o'clock."
+        }
+      ],
+      "lesson": "marugoto_a1_15",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "tense",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 118
+    },
+    {
+      "id": "cefr_a1_896",
+      "pattern": "る-Verb (Negative-Past)",
+      "meaning": "Expresses that a る-verb action did NOT happen in the past.",
+      "explanation": "To form the negative past of a る-verb in polite speech, replace ます with ませんでした. In plain/casual speech, replace る with なかった. Use this form to say something did not occur at a past point in time.",
+      "examples": [
+        {
+          "japanese": "昨日、ご飯を食べませんでした。",
+          "reading": "きのう、ごはんをたべませんでした。",
+          "english": "I did not eat rice yesterday."
+        },
+        {
+          "japanese": "映画を見なかった。",
+          "reading": "えいがをみなかった。",
+          "english": "I didn't watch the movie."
+        },
+        {
+          "japanese": "先生は来ませんでした。",
+          "reading": "せんせいはきませんでした。",
+          "english": "The teacher did not come."
+        }
+      ],
+      "lesson": "marugoto_a1_15",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "tense",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 119
+    },
+    {
+      "id": "cefr_a1_897",
+      "pattern": "う-Verb (Negative-Past)",
+      "meaning": "Expresses that an う-verb action did NOT happen in the past.",
+      "explanation": "For polite negative past, replace ます with ませんでした on the ます-stem. For plain/casual negative past, change the verb's final う-row sound to its あ-row equivalent and add なかった (e.g., 書く → 書かなかった). This is one of the four core tense-polarity combinations for verbs.",
+      "examples": [
+        {
+          "japanese": "昨日、学校に行きませんでした。",
+          "reading": "きのう、がっこうにいきませんでした。",
+          "english": "I did not go to school yesterday."
+        },
+        {
+          "japanese": "手紙を書かなかった。",
+          "reading": "てがみをかかなかった。",
+          "english": "I didn't write a letter."
+        },
+        {
+          "japanese": "彼は何も飲みませんでした。",
+          "reading": "かれはなにものみませんでした。",
+          "english": "He did not drink anything."
+        }
+      ],
+      "lesson": "marugoto_a1_15",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "tense",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 120
+    },
+    {
+      "id": "cefr_a1_950",
+      "pattern": "Verbs (Non-past)",
+      "meaning": "Expresses habitual actions, future intentions, or general facts.",
+      "explanation": "In Japanese, the dictionary (plain) form or ます form of a verb is used for both present habitual and future meaning — there is no separate future tense. Context and time words like 毎日 (every day) or 明日 (tomorrow) clarify the intended meaning. The ます form is polite; the plain form is casual.",
+      "examples": [
+        {
+          "japanese": "毎朝コーヒーを飲みます。",
+          "reading": "まいあさコーヒーをのみます。",
+          "english": "I drink coffee every morning."
+        },
+        {
+          "japanese": "明日、友達に会う。",
+          "reading": "あした、ともだちにあう。",
+          "english": "I will meet a friend tomorrow."
+        },
+        {
+          "japanese": "彼は毎日日本語を勉強します。",
+          "reading": "かれはまいにちにほんごをべんきょうします。",
+          "english": "He studies Japanese every day."
+        }
+      ],
+      "lesson": "marugoto_a1_16",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 121
+    },
+    {
+      "id": "cefr_a1_951",
+      "pattern": "い-Adjective (Predicate)",
+      "meaning": "Using an い-adjective at the end of a sentence to describe the subject.",
+      "explanation": "い-adjectives can end a sentence directly to describe the subject, without needing だ. In polite speech, です is added after the adjective (e.g. 高いです). In casual speech, the adjective alone is sufficient. This is one of the two main adjective types in Japanese and follows its own conjugation rules.",
+      "examples": [
+        {
+          "japanese": "この映画はおもしろいです。",
+          "reading": "このえいがはおもしろいです。",
+          "english": "This movie is interesting."
+        },
+        {
+          "japanese": "今日はとても暑いですね。",
+          "reading": "きょうはとてもあついですね。",
+          "english": "It's very hot today, isn't it?"
+        },
+        {
+          "japanese": "あのレストランは安くておいしい。",
+          "reading": "あのレストランはやすくておいしい。",
+          "english": "That restaurant is cheap and delicious."
+        }
+      ],
+      "lesson": "marugoto_a1_16",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adjective",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 122
+    },
+    {
+      "id": "cefr_a1_952",
+      "pattern": "な-Adjective だ",
+      "meaning": "Using a な-adjective with だ (or です) at the end of a sentence to describe the subject.",
+      "explanation": "な-adjectives require だ in casual speech or です in polite speech when used as predicates. Unlike い-adjectives, they do not end in い when standing alone, and they need な when directly modifying a noun (e.g. 静かな部屋). They behave similarly to nouns in their conjugation patterns.",
+      "examples": [
+        {
+          "japanese": "この部屋はきれいです。",
+          "reading": "このへやはきれいです。",
+          "english": "This room is clean."
+        },
+        {
+          "japanese": "彼はとても親切だ。",
+          "reading": "かれはとてもしんせつだ。",
+          "english": "He is very kind."
+        },
+        {
+          "japanese": "日本語の勉強は大変ですか。",
+          "reading": "にほんごのべんきょうはたいへんですか。",
+          "english": "Is studying Japanese difficult?"
+        }
+      ],
+      "lesson": "marugoto_a1_16",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adjective",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 123,
+      "maynardRef": {
+        "topicId": "verb_grammar/being_です_だ_ある_いる",
+        "title": "Being: です, だ, ある, いる",
+        "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+        "examples": [
+          {
+            "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+          },
+          {
+            "japanese": "bases areなら,なり，なる,なれ andなれ.",
+            "english": "While typically used in combination with the verb particle lC, it can"
+          },
+          {
+            "japanese": "also be used in combination with the particle と, in which case its meaning",
+            "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_953",
+      "pattern": "い-Adjective + Noun",
+      "meaning": "Places an い-adjective before a noun to describe it, equivalent to 'big book', 'cold water', etc.",
+      "explanation": "い-adjectives directly precede the noun they modify with no connector needed. This is the attributive form and looks identical to the dictionary form. Unlike な-adjectives, no な is added. The order is always adjective then noun, never reversed.",
+      "examples": [
+        {
+          "japanese": "大きい犬がいます。",
+          "reading": "おおきいいぬがいます。",
+          "english": "There is a big dog."
+        },
+        {
+          "japanese": "冷たい水をください。",
+          "reading": "つめたいみずをください。",
+          "english": "Please give me cold water."
+        },
+        {
+          "japanese": "新しいカバンを買いました。",
+          "reading": "あたらしいカバンをかいました。",
+          "english": "I bought a new bag."
+        }
+      ],
+      "lesson": "marugoto_a1_16",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adjective",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 124
+    },
+    {
+      "id": "cefr_a1_954",
+      "pattern": "な-Adjective + Noun",
+      "meaning": "Use a な-adjective directly before a noun to describe it.",
+      "explanation": "な-adjectives require な between the adjective stem and the noun they modify. This construction works in both polite and casual speech. It is one of the two main adjective types in Japanese and is used whenever you want to describe a noun with a な-adjective.",
+      "examples": [
+        {
+          "japanese": "きれいな花が咲いています。",
+          "reading": "きれいなはながさいています。",
+          "english": "Beautiful flowers are blooming."
+        },
+        {
+          "japanese": "彼女は親切な人です。",
+          "reading": "かのじょはしんせつなひとです。",
+          "english": "She is a kind person."
+        },
+        {
+          "japanese": "これは有名なレストランです。",
+          "reading": "これはゆうめいなレストランです。",
+          "english": "This is a famous restaurant."
+        }
+      ],
+      "lesson": "marugoto_a1_16",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "adjective",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 125
+    },
+    {
+      "id": "cefr_a1_955",
+      "pattern": "と",
+      "meaning": "Marks the person someone does an action together with, meaning 'with'.",
+      "explanation": "When と follows a noun referring to a person, it means 'together with' that person, indicating a joint or shared action. For example, 友達と行く means 'go with a friend'. It implies both parties participate, unlike から (from) or に (to/for). This usage is neutral in register and appears in both polite and casual contexts.",
+      "examples": [
+        {
+          "japanese": "私は家族と旅行します。",
+          "reading": "わたしはかぞくとりょこうします。",
+          "english": "I travel with my family."
+        },
+        {
+          "japanese": "友達と映画を見た。",
+          "reading": "ともだちとえいがをみた。",
+          "english": "I watched a movie with a friend."
+        },
+        {
+          "japanese": "先生と話しました。",
+          "reading": "せんせいとはなしました。",
+          "english": "I spoke with the teacher."
+        }
+      ],
+      "lesson": "marugoto_a1_16",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "particle",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 126
+    },
+    {
+      "id": "cefr_a1_1082",
+      "pattern": "ます",
+      "meaning": "The polite non-past verb ending used in formal and everyday polite speech.",
+      "explanation": "ます attaches to the verb stem to make speech polite (丁寧語). It expresses present or future actions. Its negative is ません, its past is ました, and its past negative is ませんでした. ます-form is the standard form to use when speaking to people you don't know well, teachers, or in any formal situation.",
+      "examples": [
+        {
+          "japanese": "私は学校に行きます。",
+          "reading": "わたしはがっこうにいきます。",
+          "english": "I go to school."
+        },
+        {
+          "japanese": "昨日、図書館で勉強しました。",
+          "reading": "きのう、としょかんでべんきょうしました。",
+          "english": "Yesterday I studied at the library."
+        },
+        {
+          "japanese": "今日はテレビを見ません。",
+          "reading": "きょうはテレビをみません。",
+          "english": "I won't watch TV today."
+        }
+      ],
+      "lesson": "marugoto_a1_16",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "verb-form",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 127,
+      "maynardRef": {
+        "topicId": "conjugation_schemes/special_verbs_ます",
+        "title": "Special verbs: ます",
+        "excerpt": "7.1. BASES 325\n7.1.5 Special verbs:ある\nbase form\n未然形 あら\n連用形 あり\n連体形 ある\n已然形 あれ\n命令形 あれ\n7.1.6 Special verbs: だ\nbase form\n未然形 だろ\n連用形 だつ(で)\n終止形 だ\n連体形 な\n已然形 なら\n7.1.7 Special verbs: です\nbase form\n未然形 でしよ\n連用形 でし\n連体形 です\n7.1.8 Special verbs: ます\nbase form\n未然形 ませ(ましよ)\n連用形 まし\n連体形 ます\n已然形 ますれ\n命令形 ませ (まし)",
+        "examples": [
+          {
+            "japanese": "7.1.5 Special verbs:ある",
+            "english": "base form"
+          },
+          {
+            "japanese": "未然形 あら"
+          },
+          {
+            "japanese": "連用形 あり"
+          }
+        ]
+      }
+    },
+    {
+      "id": "cefr_a1_1094",
+      "pattern": "なぜ",
+      "meaning": "A formal question word meaning 'why', used to ask for a reason.",
+      "explanation": "なぜ means 'why' and is used to ask about the reason or cause of something. It is the most formal of the three 'why' words in Japanese (なぜ、どうして、なんで) and is common in writing, formal speech, and set phrases. It is typically answered with から or ので.",
+      "examples": [
+        {
+          "japanese": "なぜ遅刻しましたか。",
+          "reading": "なぜちこくしましたか。",
+          "english": "Why were you late?"
+        },
+        {
+          "japanese": "なぜ日本語を勉強していますか。",
+          "reading": "なぜにほんごをべんきょうしていますか。",
+          "english": "Why are you studying Japanese?"
+        },
+        {
+          "japanese": "なぜ泣いているのですか。",
+          "reading": "なぜないているのですか。",
+          "english": "Why are you crying?"
+        }
+      ],
+      "lesson": "marugoto_a1_16",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "question",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 128
+    },
+    {
+      "id": "cefr_a1_1095",
+      "pattern": "どうして",
+      "meaning": "A neutral question word meaning 'why' or 'how come'.",
+      "explanation": "どうして means 'why' and sits between the formal なぜ and the casual なんで in register. It is comfortable in everyday polite conversation and is the most commonly heard 'why' word in spoken Japanese. It can also carry a nuance of 'how' in some contexts.",
+      "examples": [
+        {
+          "japanese": "どうして学校を休みましたか。",
+          "reading": "どうしてがっこうをやすみましたか。",
+          "english": "Why did you miss school?"
+        },
+        {
+          "japanese": "どうして知っているのですか。",
+          "reading": "どうしてしっているのですか。",
+          "english": "How do you know about that?"
+        },
+        {
+          "japanese": "どうして来なかったの？",
+          "reading": "どうしてこなかったの？",
+          "english": "Why didn't you come?"
+        }
+      ],
+      "lesson": "marugoto_a1_17",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "question",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 129
+    },
+    {
+      "id": "cefr_a1_1096",
+      "pattern": "なんで",
+      "meaning": "A casual spoken word meaning 'why', used among friends and in informal situations.",
+      "explanation": "なんで is the most casual way to say 'why' in Japanese and is common in everyday conversation between friends, family, or peers. It should be avoided in formal or polite situations. It often carries a slightly surprised or incredulous tone, similar to 'how come?' in English.",
+      "examples": [
+        {
+          "japanese": "なんで食べないの？",
+          "reading": "なんでたべないの？",
+          "english": "How come you're not eating?"
+        },
+        {
+          "japanese": "なんで怒ってるの？",
+          "reading": "なんでおこってるの？",
+          "english": "Why are you angry?"
+        },
+        {
+          "japanese": "なんで昨日来なかったの？",
+          "reading": "なんできのうこなかったの？",
+          "english": "Why didn't you come yesterday?"
+        }
+      ],
+      "lesson": "marugoto_a1_17",
+      "source": "cefr-a1",
+      "page": 0,
+      "category": "question",
+      "cefrLevel": "A1",
+      "jlptLevel": "N5",
+      "frequencyRank": 130
     }
   ],
   "dialogues": [
