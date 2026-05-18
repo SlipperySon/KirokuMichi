@@ -778,6 +778,548 @@ const FALLBACKS: Array<{
       { japanese: 'はたして、彼の言った通りになった。', english: 'Sure enough, it turned out just as he said.' },
     ],
   },
+  // ── Round 5 additions ─────────────────────────────────────────────────────
+  {
+    match: /ざる(?:を得ない)?|ざるを|ざるべ/,
+    title: 'Support bridge: classical negative (～ざる)',
+    excerpt:
+      '～ざる is the classical/literary negative attributive form of verbs, equivalent to modern ～ない in prenominal position. It appears in set phrases such as ざるを得ない ("cannot help but / must") and in formal writing. Understanding it unlocks a large family of literary expressions.',
+    examples: [
+      { japanese: '言わざるを得ない。', english: 'I cannot help but say it.' },
+      { japanese: '見ざる、聞かざる、言わざる。', english: 'See no evil, hear no evil, speak no evil.' },
+    ],
+  },
+  {
+    match: /のうち(?:で|に|の)?|のうちから/,
+    title: 'Support bridge: among / within (～のうち(で))',
+    excerpt:
+      'のうち(で) ("among / within / out of") selects from a defined set or range. It is used to pick one or more items from a group, or to indicate a time window during which something occurs. The で or に that follows determines whether the phrase is adverbial or adjectival.',
+    examples: [
+      { japanese: '三つのうち、どれが一番好きですか。', english: 'Among the three, which do you like best?' },
+      { japanese: '一週間のうちに終わらせます。', english: 'I will finish it within a week.' },
+    ],
+  },
+  {
+    match: /[～〜]ら|彼ら|私ら|僕ら|君ら|あなたら|子どもら|人ら/,
+    title: 'Support bridge: pluralising suffix (～ら)',
+    excerpt:
+      '～ら is an informal pluralising suffix attached to pronouns and certain nouns (彼ら, 彼女ら, 私ら, 君たち). It carries a slightly blunt or masculine register compared to ～たち. In some contexts it conveys slight contempt or distance; in others it is simply colloquial.',
+    examples: [
+      { japanese: '彼らはもう帰った。', english: 'They have already gone home.' },
+      { japanese: '子どもらが遊んでいる。', english: 'The kids are playing.' },
+    ],
+  },
+  {
+    match: /[～〜]代|[0-9〇一二三四五六七八九十百千万]+代|年代|世代/,
+    title: 'Support bridge: decade / generation / age group (～代)',
+    excerpt:
+      '～代 attached to a decade number (30代 = "one\'s thirties", 20代 = "twenties") expresses an age band. Combined with 年 it can mean an era or decade in history (1990年代 = "the 1990s"). The suffix also forms words for successive generations (二代目 = "second generation").',
+    examples: [
+      { japanese: '彼女は30代に見える。', english: 'She looks like she is in her thirties.' },
+      { japanese: '1980年代の音楽が好きです。', english: 'I like music from the 1980s.' },
+    ],
+  },
+  {
+    match: /以下|いか(?!\w)|以下の通り/,
+    title: 'Support bridge: below / under / as follows (以下)',
+    excerpt:
+      '以下 ("below / under / the following") can mean a numerical value that is less than or equal to a threshold (18歳以下 = "18 and under"), or it introduces a list ("the following"). It is the inclusive lower-bound counterpart of 未満 (exclusive: strictly less than).',
+    examples: [
+      { japanese: '18歳以下は入場できません。', english: 'Those 18 and under cannot enter.' },
+      { japanese: '以下の点に注意してください。', english: 'Please pay attention to the following points.' },
+    ],
+  },
+  {
+    match: /以外|いがい(?!\w)|以外の|以外に/,
+    title: 'Support bridge: except / besides / other than (以外)',
+    excerpt:
+      '以外 ("except for / besides / other than") excludes the preceding noun from a statement. It sets a boundary: everything outside that category is included. Common patterns: 以外に ("besides / in addition to" — pointing outward) and 以外は ("except" — pointing inward at the excluded item).',
+    examples: [
+      { japanese: '日本語以外の言語も勉強しています。', english: 'I am studying languages other than Japanese too.' },
+      { japanese: '彼以外は全員合格した。', english: 'Everyone except him passed.' },
+    ],
+  },
+  {
+    match: /お～願う|お願い(?:します|いたします)|お[ぁ-ん一-龯]+願[いう]/,
+    title: 'Support bridge: formal polite request (お～願う)',
+    excerpt:
+      'お～願う is a formal and polite request pattern: お + verb stem + 願う/願います/願えますか. The politeness level sits above ～てください, making it suitable for business or service contexts. お願いします is the lexicalised standalone version; お知らせ願います, ご確認願います follow the productive pattern.',
+    examples: [
+      { japanese: 'ご確認のほど、よろしくお願いいたします。', english: 'I humbly ask for your confirmation.' },
+      { japanese: 'こちらにご記入願います。', english: 'Please fill this in here.' },
+    ],
+  },
+  {
+    match: /および|及び/,
+    title: 'Support bridge: and / as well as (および)',
+    excerpt:
+      'および (及び) is a formal written conjunction meaning "and / as well as." It connects nouns, noun phrases, or clauses in official documents, laws, and business writing. Unlike と (spoken) or それから (sequential), および is neutral about order and implies parallel or equal status of the connected items.',
+    examples: [
+      { japanese: '名前および住所を記入してください。', english: 'Please fill in your name and address.' },
+      { japanese: '費用および日程については別途連絡します。', english: 'We will contact you separately regarding costs and the schedule.' },
+    ],
+  },
+  {
+    match: /か何か|か(?:なに|なん)か|かなにか/,
+    title: 'Support bridge: or something / something like that (か何か)',
+    excerpt:
+      'か何か ("or something / something like that") is placed after a noun to indicate an imprecise alternative or a vague member of a category. It softens the statement, suggesting the speaker does not know or care exactly which item applies. It is more casual than など and more specific-sounding than ～とか.',
+    examples: [
+      { japanese: 'お茶か何か飲みますか。', english: 'Would you like some tea or something?' },
+      { japanese: '薬か何か飲んだほうがいいよ。', english: 'You should take some medicine or something.' },
+    ],
+  },
+  {
+    match: /けっこう|結構(?!です|な)/,
+    title: 'Support bridge: quite / rather / fairly (けっこう)',
+    excerpt:
+      'けっこう as an adverb means "quite / rather / fairly / surprisingly" — indicating that the degree exceeds expectations. It is distinct from 結構です ("no thank you" or "that\'s fine"), which is an adjectival use. As a modifier it precedes い-adjectives, な-adjectives, or verbs: けっこう難しい = "quite difficult."',
+    examples: [
+      { japanese: 'この問題はけっこう難しい。', english: 'This problem is quite difficult.' },
+      { japanese: 'けっこう時間がかかった。', english: 'It took quite a bit of time.' },
+    ],
+  },
+  {
+    match: /そういう|そのような|そんな/,
+    title: 'Support bridge: that kind of / such (そういう)',
+    excerpt:
+      'そういう ("that kind of / such / that sort of") is a prenominal phrase combining そう (that way) + いう (say/call). It refers back to a situation or category just mentioned. そういう人 = "a person like that"; そういうこと = "that kind of thing / so that\'s how it is." It often signals the speaker is summing up or categorising.',
+    examples: [
+      { japanese: 'そういう問題が増えている。', english: 'That kind of problem is increasing.' },
+      { japanese: 'そういうことか、わかった。', english: 'Ah, that\'s how it is — I understand now.' },
+    ],
+  },
+  {
+    match: /たちまち/,
+    title: 'Support bridge: immediately / in an instant / at once (たちまち)',
+    excerpt:
+      'たちまち ("immediately / in an instant / before one knows it") describes an extremely rapid change of state or result. It often has a dramatic flavour — a fire spreading, a crowd gathering, a problem arising — where the swiftness itself is noteworthy. Unlike すぐに (simply "soon/right away"), たちまち implies the speed was striking.',
+    examples: [
+      { japanese: 'たちまち人々が集まってきた。', english: 'People gathered in an instant.' },
+      { japanese: 'ニュースはたちまち広まった。', english: 'The news spread in no time.' },
+    ],
+  },
+  {
+    match: /っけ|だっけ|でしたっけ/,
+    title: 'Support bridge: recollection / reminder particle (っけ)',
+    excerpt:
+      'っけ is a sentence-final particle that expresses trying to recall something or seeking confirmation of a vague memory. It conveys "let me see... was it... ?" or "remind me — wasn\'t it...?" It attaches to plain-form verbs and adjectives (行くんだっけ) or to だ (だっけ). Tone is casual and self-directed.',
+    examples: [
+      { japanese: '彼の名前、なんだっけ？', english: 'What was his name again?' },
+      { japanese: '明日は休みだっけ？', english: 'Tomorrow is a holiday, right? (I\'m trying to remember.)' },
+    ],
+  },
+  {
+    match: /でできる|からできる|で作られ|から作られ|でできた|からできた/,
+    title: 'Support bridge: made of / made from (で / から + できる)',
+    excerpt:
+      'Two particles mark the material something is made of. で indicates the material is visibly present in the final product (木でできたテーブル = a table made of wood). から indicates transformation — the original material is not obvious in the result (牛乳からバターができる = butter is made from milk). Both use できている or 作られている.',
+    examples: [
+      { japanese: 'この橋は石でできています。', english: 'This bridge is made of stone.' },
+      { japanese: 'ワインはブドウから作られます。', english: 'Wine is made from grapes.' },
+    ],
+  },
+  {
+    match: /と.*と.*どちら|どちらが.*より|[AＡ]と.*[BＢ]と|と[～〜]と/,
+    title: 'Support bridge: which is more... A or B? (と～と、どちらが)',
+    excerpt:
+      'The comparison pattern AとBとどちらが～ですか asks "which of A and B is more ～?" The answer uses AのほうがBより～です ("A is more ～ than B"). This is the standard textbook structure for binary comparisons. どちら can be replaced by どっち in casual speech.',
+    examples: [
+      { japanese: '東京と大阪とどちらが大きいですか。', english: 'Which is bigger, Tokyo or Osaka?' },
+      { japanese: '電車とバスとどちらが速いですか。', english: 'Which is faster, the train or the bus?' },
+    ],
+  },
+  {
+    match: /といい(?:ですね|ね|のに|が)?|たらいい|ばいい/,
+    title: 'Support bridge: it would be good if / I hope (といい)',
+    excerpt:
+      'といい (often written と良い or といいですね) expresses a hope or mild wish: "it would be nice if ～ / I hope ～." It attaches to the plain non-past form of verbs. The speaker does not control the outcome — this is a wish directed at circumstances or someone else. Warmer variants: といいね (casual) / といいですね (polite).',
+    examples: [
+      { japanese: '早く良くなるといいですね。', english: 'I hope you get better soon.' },
+      { japanese: '明日晴れるといいな。', english: 'I hope it\'s sunny tomorrow.' },
+    ],
+  },
+  {
+    match: /どうせ/,
+    title: 'Support bridge: anyway / after all / no matter what (どうせ)',
+    excerpt:
+      'どうせ ("anyway / after all / it\'s no use") expresses resigned acceptance or cynical inevitability. The speaker implies that a negative outcome is certain regardless of effort, or that something does not matter either way. It often precedes ～から, ～だから, or ～ならば to complete the logical consequence.',
+    examples: [
+      { japanese: 'どうせ無駄だよ。', english: 'It\'s no use anyway.' },
+      { japanese: 'どうせ来ないと思っていた。', english: 'I figured he wouldn\'t come after all.' },
+    ],
+  },
+  {
+    match: /と聞いた|ときいた|と聞きました/,
+    title: 'Support bridge: I heard that / was told that (と聞いた)',
+    excerpt:
+      'と聞いた / と聞きました ("I heard that / I was told that") reports information obtained from someone else. The と quotes the content; 聞いた is the verb of hearing. It sits between ～そうだ (based on appearance) and ～らしい (based on hearsay) in that it implies a specific act of hearing rather than general rumour.',
+    examples: [
+      { japanese: '彼は来ないと聞きました。', english: 'I heard that he is not coming.' },
+      { japanese: '試験が難しかったと聞いた。', english: 'I heard the exam was difficult.' },
+    ],
+  },
+  {
+    match: /なにやら|何やら/,
+    title: 'Support bridge: something (vague / mysterious) (なにやら)',
+    excerpt:
+      'なにやら ("something or other / I don\'t know what / somehow") conveys that the speaker perceives or senses something but cannot or does not specify what. It has a mildly mysterious or uncertain flavour, often used when describing sounds, atmosphere, or feelings that are unclear. More literary than なんか or なんとなく.',
+    examples: [
+      { japanese: '何やら変な音がする。', english: 'There\'s some kind of strange sound.' },
+      { japanese: '何やら楽しそうな話をしている。', english: 'They seem to be talking about something fun (I\'m not sure what).' },
+    ],
+  },
+  {
+    match: /に気が付く|にきがつく|気づく|気がつく/,
+    title: 'Support bridge: to notice / to become aware of (に気が付く)',
+    excerpt:
+      '気が付く / 気づく ("to notice / to become aware of / to realise") marks the moment of perception — the transition from not knowing to knowing. The に particle marks what is noticed. Compare with 知る (to come to know — more cognitive) and 分かる (to understand). 気づく is slightly more sudden; 気が付く slightly more gradual.',
+    examples: [
+      { japanese: '財布がないことに気が付いた。', english: 'I noticed that my wallet was gone.' },
+      { japanese: '間違いに気づくのが遅かった。', english: 'I was slow to notice the mistake.' },
+    ],
+  },
+  {
+    match: /にて/,
+    title: 'Support bridge: formal at / in / by / with (にて)',
+    excerpt:
+      'にて is the formal or classical equivalent of で, used in official announcements, written notices, and historical texts. It can mark location ("at"), means ("by/with"), or scope ("within"). In modern usage it appears in formal contexts: 当社にて = "at our company", 以上をもちましてにて = closing formulas in speeches.',
+    examples: [
+      { japanese: '当ホテルにてご用意いたします。', english: 'We will prepare it at this hotel.' },
+      { japanese: '締め切りは金曜日にて終了となります。', english: 'The deadline concludes on Friday.' },
+    ],
+  },
+  {
+    match: /に応えて|に応える|に応え/,
+    title: 'Support bridge: in response to / meeting expectations (に応えて)',
+    excerpt:
+      'に応えて ("in response to / meeting / living up to") indicates an action taken in fulfillment of someone\'s expectations, request, or need. The に marks the expectation or demand being met. Contrast with に応じて (adjusting to circumstances — more adaptive) — に応えて implies specifically fulfilling what was asked or hoped for.',
+    examples: [
+      { japanese: 'ご期待に応えて全力を尽くします。', english: 'I will do my best to live up to your expectations.' },
+      { japanese: '要望に応えて新機能を追加しました。', english: 'We added a new feature in response to requests.' },
+    ],
+  },
+  {
+    match: /に気をつける|に気をつけ/,
+    title: 'Support bridge: to be careful about / to pay attention to (に気をつける)',
+    excerpt:
+      'に気をつける ("to be careful about / to pay attention to / to watch out for") directs intentional awareness toward a potential risk or important detail. に marks what is being attended to. It is commonly used in instructions and warnings: 健康に気をつけてください = "Please take care of your health."',
+    examples: [
+      { japanese: '体に気をつけてね。', english: 'Take care of yourself.' },
+      { japanese: '車に気をつけてください。', english: 'Please watch out for cars.' },
+    ],
+  },
+  {
+    match: /に限らず|にかぎらず|に限った/,
+    title: 'Support bridge: not limited to / not only (に限らず)',
+    excerpt:
+      'に限らず ("not limited to / not only / beyond just") signals that the scope is broader than the stated item. It introduces a contrasting expansion: "not just X, but also Y and Z." Derived from 限る ("to limit"), the negative form opens the set rather than closing it. Formal register; often seen in written Japanese.',
+    examples: [
+      { japanese: '日本に限らず、アジア全体で問題になっている。', english: 'It is a problem not just in Japan but throughout Asia.' },
+      { japanese: '子どもに限らず、大人も楽しめる。', english: 'Not just children but adults can enjoy it too.' },
+    ],
+  },
+  {
+    match: /^ぬ$|せぬ|できぬ|知らぬ|わからぬ|おわらぬ|あらぬ|[〜～]ぬ/,
+    title: 'Support bridge: classical negative (～ぬ)',
+    excerpt:
+      '～ぬ is the classical negative auxiliary, equivalent to modern ～ない. It appears in set phrases (知らぬ存ぜぬ, 終わらぬ夢), proverbs, literary texts, and formal registers. In contemporary Japanese it survives most actively in fixed expressions and song/poetry. Conjugation: verb stem + ぬ (e.g. 行かぬ = 行かない).',
+    examples: [
+      { japanese: '知らぬが仏。', english: 'Ignorance is bliss. (lit. Not knowing is Buddha.)' },
+      { japanese: '終わらぬ旅。', english: 'A journey without end.' },
+    ],
+  },
+  {
+    match: /^まい$|するまい|すまい|くるまい|[〜～]まい|二度とまい/,
+    title: 'Support bridge: negative volitional / won\'t / it probably won\'t (まい)',
+    excerpt:
+      'まい is the classical/formal negative volitional auxiliary: "I will not / I don\'t intend to / it probably won\'t." It attaches to dictionary-form verbs (Group 1 & 2), する → するまい or すまい, くる → くるまい. It is more literary than ～ないだろう or ～ないつもりだ, and sounds resolute or resigned depending on context.',
+    examples: [
+      { japanese: 'もう二度と遅刻するまい。', english: 'I will never be late again.' },
+      { japanese: 'そんなことはあるまい。', english: 'That probably won\'t happen.' },
+    ],
+  },
+  {
+    match: /もの・もん|もの(?:ね|な|ですね|だもの|だもん)|だもん|だもの/,
+    title: 'Support bridge: explanatory / emotive sentence-final (もの・もん)',
+    excerpt:
+      'もの (or colloquial もん) as a sentence-final particle provides an explanation or justification with an emotional, slightly defensive nuance — "because / after all / it\'s just that." It is associated with feminine or childlike speech. だもの / だもん softens a complaint or excuse: 仕方ないもの = "There\'s nothing I can do about it, you know."',
+    examples: [
+      { japanese: '行きたくないもん。', english: 'I don\'t want to go (and that\'s that).' },
+      { japanese: '疲れたんだもの、仕方ないじゃない。', english: 'I\'m tired, so there\'s nothing I can do about it.' },
+    ],
+  },
+  {
+    match: /ものか|もんか|もんですか/,
+    title: 'Support bridge: no way / as if (ものか)',
+    excerpt:
+      'ものか (or emphatic もんか) is a strongly negative rhetorical expression: "as if I would! / no way!" It follows the plain form of verbs and adjectives and expresses indignant refusal or disbelief. The speaker vigorously rejects the implied proposition. In writing it sometimes appears as もの(か) with a question mark, making the rhetorical force explicit.',
+    examples: [
+      { japanese: '負けるものか！', english: 'As if I\'d lose! / No way am I losing!' },
+      { japanese: 'そんなこと信じるものか。', english: 'As if I\'d believe something like that.' },
+    ],
+  },
+  {
+    match: /も構わず|もかまわず|に構わず/,
+    title: 'Support bridge: regardless of / without minding (も構わず)',
+    excerpt:
+      'も構わず ("regardless of / without caring about / paying no heed to") indicates that someone proceeds with an action while ignoring or disregarding something that might normally be a concern. It often highlights a surprising or socially notable disregard. Derived from 構う ("to mind / to care about") + negative form.',
+    examples: [
+      { japanese: '周りの目も構わず泣き出した。', english: 'She burst into tears regardless of others\' eyes.' },
+      { japanese: '雨も構わず走り続けた。', english: 'He kept running without minding the rain.' },
+    ],
+  },
+  {
+    match: /やがて/,
+    title: 'Support bridge: before long / eventually / in time (やがて)',
+    excerpt:
+      'やがて ("before long / eventually / soon / in due course") indicates that something will happen after a natural passage of time — not immediately, but inevitably. It has a slightly literary or narrative tone, often used in storytelling or reflective writing. Contrast with そのうち (vague future) and まもなく (imminent).',
+    examples: [
+      { japanese: 'やがて春が来るだろう。', english: 'Spring will come before long.' },
+      { japanese: 'やがて彼女は真実を知った。', english: 'Eventually she learned the truth.' },
+    ],
+  },
+  {
+    match: /やら.*やら|やら[^。]*やら/,
+    title: 'Support bridge: things like... and... / whether... or... (やら～やら)',
+    excerpt:
+      'やら～やら ("things like ～ and ～ / I don\'t know whether ～ or ～") has two uses. (1) Listing: non-exhaustively lists two or more items (usually negative or burdensome) — 泣くやら笑うやら = "some crying, some laughing." (2) Uncertainty: expresses not knowing which of two possibilities applies — 夢やら現実やら = "whether a dream or reality."',
+    examples: [
+      { japanese: '嬉しいやら悲しいやら、複雑な気持ちだ。', english: 'I have mixed feelings — happy and sad all at once.' },
+      { japanese: '荷物やら書類やらで部屋がいっぱいだ。', english: 'The room is full of things like luggage and documents.' },
+    ],
+  },
+  {
+    match: /をはじめ|をはじめとして|を始め/,
+    title: 'Support bridge: starting with / including (をはじめ)',
+    excerpt:
+      'をはじめ(として) ("starting with / including / ～ and others") introduces a representative example that heads a larger group. It signals that the named item is the most prominent of many similar things. をはじめとする precedes a noun to form an adjectival phrase; をはじめとして stands alone adverbially.',
+    examples: [
+      { japanese: '東京をはじめ、日本の主要都市で開催されます。', english: 'It will be held in major Japanese cities, starting with Tokyo.' },
+      { japanese: '田中さんをはじめとするチームが優勝した。', english: 'The team headed by Tanaka won the championship.' },
+    ],
+  },
+  {
+    match: /を込めて|をこめて|込めて/,
+    title: 'Support bridge: filled with / putting in (feeling) (を込めて)',
+    excerpt:
+      'を込めて ("filled with / putting ～ into / with ～") expresses performing an action while channelling a strong feeling or intention into it. The を marks the feeling being poured in (愛情を込めて = "with love / filled with affection"). It is often used with gifts, creative work, or heartfelt actions.',
+    examples: [
+      { japanese: '心を込めて作りました。', english: 'I made it with all my heart.' },
+      { japanese: '感謝の気持ちを込めてプレゼントを贈った。', english: 'I gave a gift filled with gratitude.' },
+    ],
+  },
+  {
+    match: /を除いて|を除く|を除き/,
+    title: 'Support bridge: excluding / except for (を除いて)',
+    excerpt:
+      'を除いて / を除き ("excluding / except for / leaving out") marks what is removed from a set or consideration. It is more formal than 以外で and often used in written or official contexts. を除いた + noun forms an adjectival clause: 彼を除いた全員 = "everyone excluding him."',
+    examples: [
+      { japanese: '週末を除いて毎日開いています。', english: 'We are open every day except weekends.' },
+      { japanese: '彼女を除いて全員が賛成した。', english: 'Everyone except her agreed.' },
+    ],
+  },
+  {
+    match: /一応(?:\s*①)?/,
+    title: 'Support bridge: just in case / for now / tentatively (一応 ①)',
+    excerpt:
+      '一応 ① ("just in case / for the time being / as a formality") indicates doing something as a precaution or preliminary measure without necessarily expecting it to matter. The action is completed but the speaker implies it may not be sufficient or final. Common in phrases like 一応確認しておく = "check just to be safe."',
+    examples: [
+      { japanese: '一応、傘を持っていった。', english: 'Just in case, I brought an umbrella.' },
+      { japanese: '一応報告しておきます。', english: 'I will report it for now (as a formality).' },
+    ],
+  },
+  {
+    match: /一応\s*②|一応.*(?:最低限|基準|合格|及第)/,
+    title: 'Support bridge: meets a minimum standard / provisionally acceptable (一応 ②)',
+    excerpt:
+      '一応 ② signals that something meets a basic threshold or is provisionally acceptable — without enthusiasm. It softens a qualified approval: 一応できる = "can do it (but perhaps not perfectly)." This is distinct from use ① (just in case) — here the speaker rates adequacy rather than taking precaution.',
+    examples: [
+      { japanese: '一応完成した。', english: 'It\'s done, more or less.' },
+      { japanese: '一応使えるが、もっといい方法がある。', english: 'It\'s usable for now, but there\'s a better way.' },
+    ],
+  },
+  {
+    match: /一旦/,
+    title: 'Support bridge: once / for now / temporarily (一旦)',
+    excerpt:
+      '一旦 ("once / for the time being / temporarily") has two senses. (1) Temporal boundary: 一旦～たら/すると = "once [something happens], then..." — marks a threshold after which a new state holds. (2) Temporary pause: 一旦止める = "stop for now" — implies the action will resume. In both uses it marks a meaningful transition point.',
+    examples: [
+      { japanese: '一旦家に帰ってから、また来ます。', english: 'I\'ll go home for now and come back again.' },
+      { japanese: '一旦決めたら、変えられない。', english: 'Once you decide, you can\'t change it.' },
+    ],
+  },
+  {
+    match: /万が一|まんがいち/,
+    title: 'Support bridge: just in case / in the unlikely event (万が一)',
+    excerpt:
+      '万が一 ("just in case / in the unlikely event that / if by any chance") is a formal and emphatic version of もし. It highlights that the speaker considers the scenario unlikely or undesirable but worth preparing for. Literally "one in ten thousand," it underscores the rarity of the condition. Often paired with ～場合は or ～ても.',
+    examples: [
+      { japanese: '万が一の場合に備えて保険に入っている。', english: 'I have insurance as a precaution against the unlikely worst case.' },
+      { japanese: '万が一道に迷ったら、電話してください。', english: 'If by any chance you get lost, please call.' },
+    ],
+  },
+  {
+    match: /^中$|中(?:に|で|の|じゅう|ちゅう)|世界中|一日中|年中|会議中/,
+    title: 'Support bridge: during / throughout / all over (中)',
+    excerpt:
+      '中 (じゅう/ちゅう) adds "throughout / all over / the whole" when suffixed to time or place words. 世界中 = "throughout the world," 一日中 = "all day long," 年中 = "year-round." In the pattern ～の中で it means "among" or "inside." The reading ちゅう is common in compounds (会議中 = "during the meeting").',
+    examples: [
+      { japanese: '世界中で人気があります。', english: 'It is popular throughout the world.' },
+      { japanese: '会議中は電話に出られません。', english: 'I cannot answer the phone during the meeting.' },
+    ],
+  },
+  {
+    match: /何しろ|なにしろ|何せ|なにせ/,
+    title: 'Support bridge: anyway / after all / in any case (何しろ)',
+    excerpt:
+      '何しろ (or 何せ) introduces the most salient or decisive reason, often as an explanation or excuse: "because, above all / after all / in any case." It signals that the following clause is the most important factor. Tone ranges from resigned to emphatic. Common in spoken Japanese; slightly more formal than とにかく.',
+    examples: [
+      { japanese: '何しろ、初めての経験だから仕方ない。', english: 'After all, it\'s my first experience, so it can\'t be helped.' },
+      { japanese: '何しろ値段が安いのが一番の魅力だ。', english: 'Above all, the low price is its biggest appeal.' },
+    ],
+  },
+  // ── Round 6 additions ─────────────────────────────────────────────────────
+  {
+    match: /反面|はんめん/,
+    title: 'Support bridge: on the other hand / while (反面)',
+    excerpt:
+      '反面 ("on the other hand / while / at the same time") introduces a contrasting or negative aspect of something that was just stated positively. It highlights that a single thing has two opposing dimensions — a strength paired with a weakness, a benefit paired with a cost. More formal than が and stronger than けれど.',
+    examples: [
+      { japanese: '便利な反面、コストがかかる。', english: 'While it is convenient, on the other hand it costs a lot.' },
+      { japanese: '彼は優しい反面、優柔不断だ。', english: 'He is kind, but on the other hand he is indecisive.' },
+    ],
+  },
+  {
+    match: /向き|むき/,
+    title: 'Support bridge: suited for / facing / oriented toward (向き)',
+    excerpt:
+      '向き ("suited for / oriented toward / facing") indicates suitability for a person or purpose (初心者向き = "suitable for beginners") or physical direction (南向き = "south-facing"). Contrast with 向け: 向き describes inherent fitness, while 向け describes intentional targeting ("aimed at").',
+    examples: [
+      { japanese: 'この本は初心者向きです。', english: 'This book is suited for beginners.' },
+      { japanese: '南向きの部屋が好きです。', english: 'I like south-facing rooms.' },
+    ],
+  },
+  {
+    match: /向け|むけ/,
+    title: 'Support bridge: aimed at / targeted at (向け)',
+    excerpt:
+      '向け ("aimed at / for / targeted at") indicates that something was designed or intended for a specific audience or purpose. Unlike 向き (inherent fitness), 向け implies deliberate targeting — the creator chose that audience. 子ども向けの番組 = "a program made for children."',
+    examples: [
+      { japanese: '子ども向けの映画が公開された。', english: 'A movie aimed at children was released.' },
+      { japanese: 'このサービスはビジネス向けです。', english: 'This service is targeted at businesses.' },
+    ],
+  },
+  {
+    match: /後\(の\)|後の(?:名詞|Noun)|あとの|のちの/,
+    title: 'Support bridge: subsequent noun / post- (後(の) Noun)',
+    excerpt:
+      '後(の) + Noun creates a noun phrase meaning "subsequent / following / later" — the noun that comes after or results from a prior action. 後の祭り = "too late after the festival" (nothing can be done now). In grammar notes this pattern highlights how 後 nominalises a preceding clause: 食べた後(の)時間 = "the time after eating."',
+    examples: [
+      { japanese: '会議の後の懇親会に参加した。', english: 'I attended the social gathering after the meeting.' },
+      { japanese: '試験の後の解放感は格別だ。', english: 'The sense of liberation after the exam is special.' },
+    ],
+  },
+  {
+    match: /手前|てまえ/,
+    title: 'Support bridge: in front of / just before / for appearances (手前)',
+    excerpt:
+      '手前 has three main uses. (1) Physical location: "just before / in front of" (駅の手前 = "just before the station"). (2) Social obligation: "because of how things look / for the sake of appearances" — the speaker feels bound by what others would think (人の手前, 立場の手前). (3) Humble "my side / my end" in business Japanese.',
+    examples: [
+      { japanese: '交差点の手前で止まってください。', english: 'Please stop just before the intersection.' },
+      { japanese: '部下の手前、弱みを見せられない。', english: 'For the sake of appearances in front of my subordinates, I can\'t show weakness.' },
+    ],
+  },
+  {
+    match: /抜く|ぬく(?:ほど)?|やり抜|走り抜|頑張り抜/,
+    title: 'Support bridge: to do all the way through / to endure to the end (抜く)',
+    excerpt:
+      '抜く as a suffix verb (Verb stem + 抜く) means "to do something all the way through to the end / to persist to completion." It adds a sense of enduring difficulty or going the full distance. やり抜く = "to carry through / see it to the end"; 走り抜く = "to run all the way through."',
+    examples: [
+      { japanese: 'どんなに辛くても最後までやり抜いた。', english: 'No matter how hard it was, I carried it through to the end.' },
+      { japanese: 'マラソンを走り抜いた。', english: 'I ran the whole marathon through to the end.' },
+    ],
+  },
+  {
+    match: /^気$|気がする|気になる|気をつかう|気に入る|気(?:が|に|を)/,
+    title: 'Support bridge: feeling / spirit / attention (気)',
+    excerpt:
+      '気 (き) is one of the most productive nouns in Japanese grammar, forming dozens of set expressions. It broadly means "feeling / spirit / mind / attention." Common patterns: 気がする (I feel like / have a feeling), 気になる (to become curious / bother one), 気に入る (to take a liking to), 気をつける (to be careful). Mastering 気 compounds vastly expands expressive range.',
+    examples: [
+      { japanese: '何か忘れた気がする。', english: 'I have a feeling I forgot something.' },
+      { japanese: '彼のことが気になる。', english: 'He\'s on my mind / I\'m curious about him.' },
+    ],
+  },
+  {
+    match: /活かす|活かし|いかす|生かす/,
+    title: 'Support bridge: to make use of / to put to good use (活かす)',
+    excerpt:
+      '活かす (or 生かす) means "to make use of / to put to good use / to leverage." It implies making the most of a resource, talent, or experience — not just using it, but utilising it effectively. Common in business and self-improvement contexts: 経験を活かす = "to leverage one\'s experience."',
+    examples: [
+      { japanese: '留学の経験を仕事に活かしたい。', english: 'I want to put my study-abroad experience to good use at work.' },
+      { japanese: '彼女は才能を活かして成功した。', english: 'She succeeded by making the most of her talent.' },
+    ],
+  },
+  {
+    match: /真っ|真\(っ\)|まっすぐ|まっ白|まっ暗|まっ先/,
+    title: 'Support bridge: intensifier prefix / utterly / right- (真(っ))',
+    excerpt:
+      '真(っ) is an intensifying prefix that attaches to adjectives and nouns to mean "utterly / completely / dead / right-." 真っ白 = "pure white," 真っ暗 = "pitch dark," 真っ先 = "first of all / right away," 真っ直ぐ = "straight / directly." The small っ is not always present (真向かい = "directly opposite").',
+    examples: [
+      { japanese: '部屋が真っ暗だ。', english: 'The room is pitch dark.' },
+      { japanese: '真っ先に手を挙げた。', english: 'He was the very first to raise his hand.' },
+    ],
+  },
+  {
+    match: /精々|せいぜい/,
+    title: 'Support bridge: at most / at best / do one\'s best (精々)',
+    excerpt:
+      '精々 (せいぜい) has two distinct uses. (1) Ceiling: "at most / at best / no more than" — it sets an upper limit, often implying it is lower than hoped (精々100人くらい = "at most about 100 people"). (2) Exhortation: "do your very best" — 精々頑張ってください = "please do your utmost." Context determines which sense applies.',
+    examples: [
+      { japanese: '精々一時間で終わるだろう。', english: 'It will finish in an hour at most.' },
+      { japanese: '精々努力してください。', english: 'Please do your very best.' },
+    ],
+  },
+  {
+    match: /結果・の結果|の結果|した結果|した末/,
+    title: 'Support bridge: as a result of / after (結果・の結果)',
+    excerpt:
+      'Verb + た結果 / Noun + の結果 ("as a result of / after ～") indicates the outcome that followed from an action or process. It presents the consequence as logically or causally following from what preceded. Unlike ので (because) which explains a reason, 結果 highlights the endpoint of a chain of events.',
+    examples: [
+      { japanese: '話し合った結果、中止することにした。', english: 'As a result of the discussion, we decided to cancel.' },
+      { japanese: '努力の結果、合格した。', english: 'As a result of my efforts, I passed.' },
+    ],
+  },
+  {
+    match: /聞こえる|きこえる/,
+    title: 'Support bridge: to be audible / to sound like (聞こえる)',
+    excerpt:
+      '聞こえる ("to be audible / to sound like / to be heard") is the spontaneous potential form of 聞く. Unlike 聞く (deliberate listening), 聞こえる describes sound that reaches the ears without intent. It is also used metaphorically: ～に聞こえる = "to come across as / to sound like" (e.g. 失礼に聞こえるかもしれません = "this may sound rude").',
+    examples: [
+      { japanese: '外から音楽が聞こえる。', english: 'I can hear music from outside.' },
+      { japanese: '言い訳に聞こえるかもしれないが…', english: 'It may sound like an excuse, but...' },
+    ],
+  },
+  {
+    match: /見える|みえる/,
+    title: 'Support bridge: to be visible / to appear / to seem (見える)',
+    excerpt:
+      '見える ("to be visible / to look like / to seem") is the spontaneous potential form of 見る. Unlike 見る (deliberate looking), 見える describes what comes into view naturally. ～に見える = "to look like / to appear to be" is central: 若く見える = "to look young." See also みえる as a polite form of 来る (to come) in Kansai dialect.',
+    examples: [
+      { japanese: '山の頂上が見える。', english: 'The mountaintop is visible.' },
+      { japanese: '彼は疲れているように見える。', english: 'He looks tired.' },
+    ],
+  },
+  {
+    match: /^限り$|限り(?:は|では|において|で)|かぎり(?:は|では)/,
+    title: 'Support bridge: as long as / to the extent that / as far as (限り)',
+    excerpt:
+      '限り has several grammatical uses. (1) Conditional: 〜する限り / 〜である限り = "as long as / so long as" (alive, working, etc.). (2) Scope: 〜の限り = "to the utmost / with all one has" (力の限り = "with all one\'s strength"). (3) Knowledge boundary: 〜の限りでは / 〜が知る限り = "as far as I know."',
+    examples: [
+      { japanese: '私が知る限り、問題はない。', english: 'As far as I know, there is no problem.' },
+      { japanese: '命ある限り、頑張る。', english: 'As long as I am alive, I will keep trying.' },
+    ],
+  },
 ]
 
 export function getMaynardSupport(grammar: GrammarItem): MaynardRef | undefined {
