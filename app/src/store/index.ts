@@ -44,6 +44,8 @@ interface AppState {
   activeUserId: number | null
   lessonsCompleted: string[] // e.g., ["genki_1_1", "genki_1_2"]
   currentLesson: string | null // e.g., "genki_1_1"
+  /** Active deck filter — null means all decks */
+  activeDeckId: number | null
   /**
    * Cached daily snapshot for nav indicators. Refreshed from the SRS service on
    * mount and after each review session ends. Persisted so the UI shows a value
@@ -57,6 +59,7 @@ interface AppState {
   markLessonComplete: (lessonId: string) => void
   setCurrentLesson: (lessonId: string | null) => void
   setDailyStats: (stats: DailyStats) => void
+  setActiveDeckId: (id: number | null) => void
 }
 
 export const useAppStore = create<AppState>()(
@@ -65,6 +68,7 @@ export const useAppStore = create<AppState>()(
       activeUserId: null,
       lessonsCompleted: [],
       currentLesson: null,
+      activeDeckId: null,
       dailyStats: { currentStreak: 0, longestStreak: 0, todayReviewed: 0 },
       settings: {
         aiProvider: null,
@@ -106,6 +110,7 @@ export const useAppStore = create<AppState>()(
         })),
       setCurrentLesson: (lessonId) => set({ currentLesson: lessonId }),
       setDailyStats: (stats) => set({ dailyStats: stats }),
+      setActiveDeckId: (id) => set({ activeDeckId: id }),
     }),
     { name: 'kiroku-michi-app' }
   )

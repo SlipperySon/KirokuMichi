@@ -649,6 +649,262 @@ export class SRSService {
     return LEECH_THRESHOLD
   }
 
+  // ---------------------------------------------------------------------------
+  // Deck management
+  // ---------------------------------------------------------------------------
+
+  async getDecks(userId: number): Promise<Array<{
+    id: number; name: string; parentId: number | null; cardCount: number
+  }>> {
+    return this.storage.query(
+      `SELECT
+        d.id,
+        d.name,
+        d.parent_id AS parentId,
+        COUNT(c.id) AS cardCount
+       FROM decks d
+       LEFT JOIN cards c ON c.deck_id = d.id
+       WHERE d.user_id = ?
+       GROUP BY d.id
+       ORDER BY d.name ASC`,
+      [userId]
+    )
+  }
+
+  async ensureDefaultDeck(userId: number): Promise<number> {
+    const existing = await this.storage.query<{ id: number }>(
+      `SELECT id FROM decks WHERE user_id = ? AND name = 'Default' AND parent_id IS NULL LIMIT 1`,
+      [userId]
+    )
+    if (existing[0]) return existing[0].id
+    await this.storage.execute(
+      `INSERT INTO decks (user_id, name) VALUES (?, 'Default')`,
+      [userId]
+    )
+    const rows = await this.storage.query<{ id: number }>(
+      `SELECT id FROM decks WHERE user_id = ? AND name = 'Default' ORDER BY id DESC LIMIT 1`,
+      [userId]
+    )
+    const deckId = rows[0].id
+    // Assign all unassigned cards to Default
+    await this.storage.execute(
+      `UPDATE cards SET deck_id = ? WHERE deck_id IS NULL`,
+      [deckId]
+    )
+    return deckId
+  }
+
+  async createDeck(userId: number, name: string, parentId?: number): Promise<number> {
+    await this.storage.execute(
+      `INSERT INTO decks (user_id, name, parent_id) VALUES (?, ?, ?)`,
+      [userId, name, parentId ?? null]
+    )
+    const rows = await this.storage.query<{ id: number }>(
+      `SELECT id FROM decks WHERE user_id = ? ORDER BY id DESC LIMIT 1`,
+      [userId]
+    )
+    return rows[0].id
+  }
+
+  async renameDeck(deckId: number, name: string): Promise<void> {
+    await this.storage.execute(`UPDATE decks SET name = ? WHERE id = ?`, [name, deckId])
+  }
+
+  async deleteDeck(deckId: number, userId: number): Promise<void> {
+    // Move cards to Default deck first
+    const defaultDeck = await this.ensureDefaultDeck(userId)
+    await this.storage.execute(
+      `UPDATE cards SET deck_id = ? WHERE deck_id = ?`,
+      [defaultDeck, deckId]
+    )
+    // Move child decks to no parent
+    await this.storage.execute(
+      `UPDATE decks SET parent_id = NULL WHERE parent_id = ?`,
+      [deckId]
+    )
+    await this.storage.execute(`DELETE FROM decks WHERE id = ?`, [deckId])
+  }
+
+  async moveToDeck(cardIds: number[], deckId: number): Promise<void> {
+    if (cardIds.length === 0) return
+    const placeholders = cardIds.map(() => '?').join(',')
+    await this.storage.execute(
+      `UPDATE cards SET deck_id = ? WHERE id IN (${placeholders})`,
+      [deckId, ...cardIds]
+    )
+  }
+
+  // ---------------------------------------------------------------------------
+  // Card browsing
+  // ---------------------------------------------------------------------------
+
+  async getAllCards(userId: number, filters?: {
+    deckId?: number | null
+    searchText?: string
+    stateFilter?: string | null
+  }): Promise<Array<{
+    cardId: number; cardStateId: number | null; front: string; back: string
+    reading: string | null; deckId: number | null; deckName: string | null
+    state: string | null; due: string | null; stability: number | null
+    reps: number | null; suspended: boolean
+  }>> {
+    const conditions: string[] = []
+    const params: (string | number | null)[] = [userId]
+
+    if (filters?.deckId != null) {
+      conditions.push('c.deck_id = ?')
+      params.push(filters.deckId)
+    }
+    if (filters?.searchText) {
+      conditions.push('(c.front LIKE ? OR c.back LIKE ?)')
+      params.push(`%${filters.searchText}%`, `%${filters.searchText}%`)
+    }
+    if (filters?.stateFilter && filters.stateFilter !== 'all') {
+      if (filters.stateFilter === 'suspended') {
+        conditions.push('cs.suspended_at IS NOT NULL')
+      } else {
+        conditions.push('cs.state = ?')
+        params.push(filters.stateFilter)
+        conditions.push('cs.suspended_at IS NULL')
+      }
+    }
+
+    const where = conditions.length > 0 ? 'AND ' + conditions.join(' AND ') : ''
+
+    return this.storage.query(
+      `SELECT
+        c.id AS cardId,
+        cs.id AS cardStateId,
+        c.front,
+        c.back,
+        c.reading,
+        c.deck_id AS deckId,
+        d.name AS deckName,
+        cs.state,
+        cs.due,
+        cs.stability,
+        cs.reps,
+        CASE WHEN cs.suspended_at IS NOT NULL THEN 1 ELSE 0 END AS suspended
+       FROM cards c
+       LEFT JOIN card_states cs ON cs.card_id = c.id AND cs.user_id = ?
+       LEFT JOIN decks d ON d.id = c.deck_id
+       WHERE 1=1 ${where}
+       ORDER BY c.front ASC`,
+      params
+    )
+  }
+
+  async updateCard(cardId: number, fields: { front?: string; back?: string; reading?: string | null }): Promise<void> {
+    const sets: string[] = []
+    const params: (string | number | null)[] = []
+    if (fields.front !== undefined) { sets.push('front = ?'); params.push(fields.front) }
+    if (fields.back !== undefined) { sets.push('back = ?'); params.push(fields.back) }
+    if ('reading' in fields) { sets.push('reading = ?'); params.push(fields.reading ?? null) }
+    if (sets.length === 0) return
+    params.push(cardId)
+    await this.storage.execute(`UPDATE cards SET ${sets.join(', ')} WHERE id = ?`, params)
+  }
+
+  async deleteCards(cardIds: number[]): Promise<void> {
+    if (cardIds.length === 0) return
+    const placeholders = cardIds.map(() => '?').join(',')
+    await this.storage.execute(
+      `DELETE FROM card_states WHERE card_id IN (${placeholders})`,
+      cardIds
+    )
+    await this.storage.execute(
+      `DELETE FROM cards WHERE id IN (${placeholders})`,
+      cardIds
+    )
+  }
+
+  // ---------------------------------------------------------------------------
+  // Filtered decks
+  // ---------------------------------------------------------------------------
+
+  async createFilteredDeck(userId: number, name: string, query: string, limit: number): Promise<number> {
+    await this.storage.execute(
+      `INSERT INTO filtered_decks (user_id, name, query, card_limit) VALUES (?, ?, ?, ?)`,
+      [userId, name, query, limit]
+    )
+    const rows = await this.storage.query<{ id: number }>(
+      `SELECT id FROM filtered_decks WHERE user_id = ? ORDER BY id DESC LIMIT 1`,
+      [userId]
+    )
+    return rows[0].id
+  }
+
+  async getFilteredDecks(userId: number): Promise<Array<{ id: number; name: string; query: string; cardLimit: number }>> {
+    return this.storage.query(
+      `SELECT id, name, query, card_limit AS cardLimit FROM filtered_decks WHERE user_id = ? ORDER BY name ASC`,
+      [userId]
+    )
+  }
+
+  async deleteFilteredDeck(id: number): Promise<void> {
+    await this.storage.execute(`DELETE FROM filtered_decks WHERE id = ?`, [id])
+  }
+
+  async resolveFilteredDeck(filteredDeckId: number, userId: number): Promise<ReviewCard[]> {
+    const rows = await this.storage.query<{ id: number; name: string; query: string; cardLimit: number }>(
+      `SELECT id, name, query, card_limit AS cardLimit FROM filtered_decks WHERE id = ? AND user_id = ?`,
+      [filteredDeckId, userId]
+    )
+    if (!rows[0]) return []
+    return this.parseAndRunFilteredQuery(rows[0].query, userId, rows[0].cardLimit)
+  }
+
+  async parseAndRunFilteredQuery(query: string, userId: number, limit: number): Promise<ReviewCard[]> {
+    const tokens = query.trim().split(/\s+/)
+    const conditions: string[] = ['cs.user_id = ?']
+    const params: (string | number)[] = [userId]
+
+    for (const token of tokens) {
+      if (token === 'is:new') {
+        conditions.push("cs.state = 'new'")
+      } else if (token === 'is:due') {
+        conditions.push("cs.due <= datetime('now') AND cs.state != 'new'")
+      } else if (token === 'is:suspended') {
+        conditions.push('cs.suspended_at IS NOT NULL')
+      } else if (token.startsWith('deck:')) {
+        const deckName = token.slice(5)
+        conditions.push('d.name LIKE ?')
+        params.push(`%${deckName}%`)
+      } else if (token.startsWith('tag:')) {
+        // Tags not yet implemented, skip
+      } else if (token.length > 0) {
+        conditions.push('(c.front LIKE ? OR c.back LIKE ?)')
+        params.push(`%${token}%`, `%${token}%`)
+      }
+    }
+
+    params.push(limit)
+
+    return this.storage.query<ReviewCard>(
+      `SELECT
+        cs.id        AS cardStateId,
+        cs.card_id   AS cardId,
+        cs.state,
+        cs.lapses,
+        cs.stability,
+        cs.difficulty,
+        cs.due,
+        c.type,
+        c.front,
+        c.back,
+        c.reading,
+        c.audio_url  AS audioUrl,
+        c.jlpt_level AS jlptLevel
+       FROM card_states cs
+       JOIN cards c ON c.id = cs.card_id
+       LEFT JOIN decks d ON d.id = c.deck_id
+       WHERE ${conditions.join(' AND ')}
+       ORDER BY cs.due ASC
+       LIMIT ?`,
+      params
+    )
+  }
+
   async getStudyStats(userId: number): Promise<{
     dailyReviews: { day: string; total: number; correct: number }[]
     cardStateCounts: { new: number; learning: number; review: number; suspended: number }

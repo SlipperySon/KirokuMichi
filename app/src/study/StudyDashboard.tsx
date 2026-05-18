@@ -9,6 +9,7 @@ import { SessionRecovery } from '../srs/sessionRecovery'
 import { Heatmap } from './Heatmap'
 import { WeakPointPanel } from './WeakPointPanel'
 import { Navigation } from '../components/Navigation'
+import { DeckTree } from '../components/DeckTree'
 import { DailyGoalRing } from '../components/DailyGoalRing'
 import { EmptyState } from '../components/EmptyState'
 import { SkeletonCard } from '../components/Skeleton'
@@ -65,6 +66,8 @@ export function StudyDashboard() {
   const scheduler = settings.schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
   const [service] = useState(() => new SRSService(storage, scheduler))
 
+  const activeDeckId = useAppStore(s => s.activeDeckId)
+
   const [dueCount, setDueCount] = useState(0)
   const [newCount, setNewCount] = useState(0)
   const [availableNewCount, setAvailableNewCount] = useState(0)
@@ -74,6 +77,7 @@ export function StudyDashboard() {
   const [isLoading, setIsLoading] = useState(true)
   const [recoveryPayload, setRecoveryPayload] = useState<SessionRecoveryPayload | null>(null)
   const [previewCards, setPreviewCards] = useState<ReviewCard[]>([])
+  const [decks, setDecks] = useState<{ id: number; name: string; parentId: number | null; cardCount: number }[]>([])
   const userId = activeUserId
 
   const init = useCallback(async () => {
@@ -91,7 +95,10 @@ export function StudyDashboard() {
       setActiveUserId(uid)
     }
 
-    const [due, newC, streak, mistakes, weeklyRows, preview] = await Promise.all([
+    // Ensure Default deck exists
+    await service.ensureDefaultDeck(uid)
+
+    const [due, newC, streak, mistakes, weeklyRows, preview, deckRows] = await Promise.all([
       service.getDueCount(uid),
       service.getNewCount(uid),
       service.getStreakData(uid),
@@ -108,10 +115,12 @@ export function StudyDashboard() {
         [uid]
       ),
       service.getDueCards(uid, 3),
+      service.getDecks(uid),
     ])
     setDueCount(due)
     setNewCount(newC)
     setPreviewCards(preview)
+    setDecks(deckRows)
     // Cap new cards shown by daily limit minus due cards already scheduled
     const available = Math.max(0, settings.dailyCardLimit - due)
     setAvailableNewCount(Math.min(newC, available))
@@ -367,6 +376,18 @@ export function StudyDashboard() {
           </div>
         )
       })()}
+
+      {/* Deck tree */}
+      {decks.length > 0 && (
+        <div className="bg-white border border-gray-200 rounded-xl p-4">
+          <DeckTree
+            decks={decks}
+            service={service}
+            userId={userId ?? 1}
+            onDecksChanged={() => void init()}
+          />
+        </div>
+      )}
 
       {/* Weak-point analysis */}
       <WeakPointPanel />
