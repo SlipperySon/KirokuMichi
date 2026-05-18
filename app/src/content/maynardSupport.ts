@@ -477,6 +477,82 @@ const FALLBACKS: Array<{
       'を通じて/を通して marks the medium or experience through which something happens. を問わず broadens scope, and てはならない states a strong prohibition.',
     examples: [{ japanese: 'ボランティアを通して、多くの人に会いました。', english: 'Through volunteering, I met many people.' }],
   },
+  {
+    match: /ございます|でございます/,
+    title: 'Support bridge: formal polite predicate (keigo)',
+    excerpt:
+      'ございます is the humble-polite equivalent of あります/です, used in very formal or service contexts. でございます replaces です for extreme politeness. Treat it as the maximum-politeness variant of polite predicate closure; use it in business, hospitality, and formal writing registers.',
+    examples: [
+      { japanese: 'こちらが受付でございます。', english: 'This is the reception desk. (formal)' },
+      { japanese: 'お電話ありがとうございます。', english: 'Thank you for your call. (business)' },
+    ],
+  },
+  {
+    match: /^つつ$|つつも|つつある|つつ\(/,
+    title: 'Support bridge: simultaneous ongoing action (つつ)',
+    excerpt:
+      'つつ attaches to the verb stem to indicate two actions happening at the same time, or an ongoing process. つつも adds a sense of tension ("while/even though"), and つつある describes something in gradual progress ("is in the process of").',
+    examples: [
+      { japanese: '音楽を聴きつつ、勉強した。', english: 'I studied while listening to music.' },
+      { japanese: '気にしつつも、何も言わなかった。', english: 'Although I had it on my mind, I said nothing.' },
+      { japanese: '状況は変わりつつある。', english: 'The situation is in the process of changing.' },
+    ],
+  },
+  {
+    match: /^ては$|ていては|ては〜ては|てはならない/,
+    title: 'Support bridge: conditional te-form and repeated-action patterns',
+    excerpt:
+      'ては + negative result expresses "if you keep doing X, something bad will result." ていては adds progressive aspect ("if you are always doing X"). ては〜ては stacks two alternating actions to describe something done repeatedly. Context determines whether the tone is a warning, complaint, or factual loop.',
+    examples: [
+      { japanese: '毎日ゲームばかりしては、成績が下がる。', english: 'If you do nothing but play games every day, your grades will drop.' },
+      { japanese: '食べては寝て、食べては寝ての繰り返しだ。', english: 'It is a cycle of eating and sleeping, over and over.' },
+    ],
+  },
+  {
+    match: /しかも|さらに$|そのうえ/,
+    title: 'Support bridge: additive conjunctions (moreover / furthermore)',
+    excerpt:
+      'しかも adds a second point that reinforces or intensifies the first, often with the nuance "and what is more." さらに and そのうえ similarly pile on additional information. These are discourse connectors — they show the relationship between two adjacent points, not the grammar of individual clauses.',
+    examples: [
+      { japanese: 'このパソコンは速い。しかも、値段も安い。', english: 'This computer is fast. Moreover, it is also cheap.' },
+    ],
+  },
+  {
+    match: /つまり|要するに|換言すれば/,
+    title: 'Support bridge: reformulation and clarification (in other words)',
+    excerpt:
+      'つまり introduces a restatement or conclusion drawn from what just came before — essentially "in other words" or "that means." 要するに is more emphatic ("the point is"), and 換言すれば is formal ("to put it another way"). All three signal that the speaker is reformulating for clarity.',
+    examples: [
+      { japanese: '彼は来なかった。つまり、興味がなかったということだ。', english: 'He did not come. In other words, he was not interested.' },
+    ],
+  },
+  {
+    match: /ことなく|ずに済む|せずに済む/,
+    title: 'Support bridge: doing without / avoiding an action',
+    excerpt:
+      'ことなく means "without doing X" and implies the action was never triggered. ずに済む / せずに済む means "manage to get by without doing X" — the action that might have been expected was avoided. The key difference is that ことなく describes a path taken, while ずに済む focuses on the relief of avoidance.',
+    examples: [
+      { japanese: '一度も休むことなく、完走した。', english: 'I ran the whole race without taking a single break.' },
+      { japanese: '手術せずに済んだ。', english: 'I managed to avoid surgery.' },
+    ],
+  },
+  {
+    match: /^かい$|でしょうかい/,
+    title: 'Support bridge: masculine casual question particle (かい)',
+    excerpt:
+      'かい is a softer, slightly old-fashioned masculine version of the question particle か, commonly heard in casual speech from older male speakers. It signals curiosity or mild surprise rather than a formal inquiry. In writing and modern conversation, か or の are more common.',
+    examples: [{ japanese: 'もう行くのかい？', english: 'Are you leaving already?' }],
+  },
+  {
+    match: /おそらく|きっと$|たぶん/,
+    title: 'Support bridge: probability adverbs',
+    excerpt:
+      'おそらく ("probably"), きっと ("surely/certainly"), and たぶん ("probably/perhaps") all express degrees of speaker confidence. おそらく is the most formal and introduces some doubt; きっと expresses strong expectation; たぶん is the most casual and least certain.',
+    examples: [
+      { japanese: 'おそらく明日は雨だろう。', english: 'It will probably rain tomorrow.' },
+      { japanese: 'きっとうまくいくよ。', english: 'I am sure it will work out.' },
+    ],
+  },
 ]
 
 export function getMaynardSupport(grammar: GrammarItem): MaynardRef | undefined {
