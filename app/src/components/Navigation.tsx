@@ -14,6 +14,7 @@ export function Navigation() {
   const navItems = [
     { path: '/study', label: intl.formatMessage({ id: 'nav.study' }) },
     { path: '/study/stats', label: 'Stats' },
+    { path: '/study/browser', label: 'Browse' },
     { path: '/learn', label: intl.formatMessage({ id: 'nav.learn' }) },
     { path: '/scenarios', label: intl.formatMessage({ id: 'nav.scenarios' }) },
     { path: '/practice', label: intl.formatMessage({ id: 'nav.practice' }) },
