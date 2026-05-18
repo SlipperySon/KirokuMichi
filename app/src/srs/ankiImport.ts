@@ -1,5 +1,4 @@
 import JSZip from 'jszip'
-import initSqlJs from 'sql.js'
 import type { StorageProvider } from '../core/providers'
 import { saveAudio } from './audioStore'
 import { unlockCardsForTextbook } from '../content/lessonUnlockService'
@@ -15,18 +14,93 @@ export interface ImportResult {
   }
 }
 
-function deriveJlptLevel(tags: string): string | null {
+export function deriveJlptLevel(tags: string): string | null {
   const match = tags.match(/\b(N[1-5])\b/i)
   return match ? match[1].toUpperCase() : null
 }
 
-function extractSoundFilename(field: string): string | null {
+export function extractSoundFilename(field: string): string | null {
   const match = field.match(/\[sound:([^\]]+)\]/)
   return match ? match[1] : null
 }
 
-function stripHtml(text: string): string {
-  return text.replace(/<[^>]+>/g, '').replace(/&nbsp;/g, ' ').trim()
+export function stripHtml(text: string): string {
+  return text
+    .replace(/<br\s*\/?>/gi, ' ')   // line breaks → space (before tag strip)
+    .replace(/<[^>]+>/g, '')        // strip all HTML tags
+    // Decode HTML entities after stripping tags so encoded angle brackets
+    // (e.g. &lt;b&gt;) are preserved as literal text, not re-stripped
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#39;/g, "'")
+    .replace(/&#(\d+);/g, (_, code: string) => String.fromCharCode(parseInt(code, 10)))
+    .replace(/\s+/g, ' ')           // collapse whitespace
+    .trim()
+}
+
+export interface ParsedAnkiNote {
+  front: string
+  back: string
+  reading: string | null
+  wordAudioField: string | null
+  sentence: string | null
+  sentenceMeaning: string | null
+  frequencyRank: number | null
+  isKaishi: boolean
+}
+
+/**
+ * Parse a raw Anki note's field string (0x1f-delimited) and tags into
+ * structured card data. Pure function — safe to call in unit tests.
+ */
+export function parseAnkiNote(flds: string, tags: string): ParsedAnkiNote | null {
+  const parts = flds.split('\x1f')
+
+  // Kaishi 1.5k / Kaishi 2k field layout:
+  //   0: Word  1: WordReading  2: WordMeaning  3: WordFurigana
+  //   4: WordAudio  5: Sentence  6: SentenceMeaning  7: SentenceFurigana
+  //   8: SentenceAudio  9: Notes  10: PitchAccent  11: Frequency  12: Picture
+  const isKaishi = parts.length >= 9 && (parts[4]?.includes('[sound:') ?? false)
+
+  let front: string
+  let back: string
+  let reading: string | null
+  let wordAudioField: string | null
+  let sentence: string | null
+  let sentenceMeaning: string | null
+  let frequencyRank: number | null
+
+  if (isKaishi) {
+    front = stripHtml(parts[0] ?? '')
+    reading = stripHtml(parts[1] ?? '') || null
+    back = stripHtml(parts[2] ?? '')
+    wordAudioField = parts[4] ?? null
+    sentence = stripHtml(parts[5] ?? '') || null
+    sentenceMeaning = stripHtml(parts[6] ?? '') || null
+    const freq = parseInt(parts[11] ?? '', 10)
+    frequencyRank = isNaN(freq) ? null : freq
+  } else {
+    // Generic Anki deck: front / back / optional reading
+    front = stripHtml(parts[0] ?? '')
+    back = stripHtml(parts[1] ?? '')
+    reading = parts.length >= 3 ? stripHtml(parts[2] ?? '') || null : null
+    // Check if any field has audio
+    wordAudioField = parts.find(p => p.includes('[sound:')) ?? null
+    sentence = null
+    sentenceMeaning = null
+    frequencyRank = null
+  }
+
+  // Derive JLPT from tags
+  const jlptFromTags = deriveJlptLevel(tags)
+  void jlptFromTags // used by the caller; returned via front/back/reading
+
+  if (!front || !back) return null
+
+  return { front, back, reading, wordAudioField, sentence, sentenceMeaning, frequencyRank, isKaishi }
 }
 
 async function storeAudioFile(
@@ -73,6 +147,7 @@ export async function importFromAnki(
   }
 
   const ankiDbBuffer = await ankiDbFile.async('arraybuffer')
+  const initSqlJs = (await import('sql.js')).default
   const SQL = await initSqlJs({ locateFile: f => `/sql.js/${f}` })
   const ankiDb = new SQL.Database(new Uint8Array(ankiDbBuffer))
 
@@ -90,43 +165,10 @@ export async function importFromAnki(
   const errors: string[] = []
 
   for (const [flds, tags] of notes) {
-    const parts = flds.split('\x1f')
+    const parsed = parseAnkiNote(flds, tags)
+    if (!parsed) { skipped++; continue }
 
-    // Kaishi 1.5k field order:
-    // 0: Word, 1: WordReading, 2: WordMeaning, 3: WordFurigana,
-    // 4: WordAudio, 5: Sentence, 6: SentenceMeaning, 7: SentenceFurigana,
-    // 8: SentenceAudio, 9: Notes, 10: PitchAccent, 11: Frequency, 12: Picture
-    const isKaishi = parts.length >= 9 && parts[4]?.includes('[sound:')
-
-    let front: string
-    let back: string
-    let reading: string | null
-    let wordAudioField: string | null
-    let sentence: string | null
-    let sentenceMeaning: string | null
-    let frequencyRank: number | null
-
-    if (isKaishi) {
-      front = stripHtml(parts[0] ?? '')
-      reading = stripHtml(parts[1] ?? '') || null
-      back = stripHtml(parts[2] ?? '')
-      wordAudioField = parts[4] ?? null
-      sentence = stripHtml(parts[5] ?? '') || null
-      sentenceMeaning = stripHtml(parts[6] ?? '') || null
-      const freq = parseInt(parts[11] ?? '', 10)
-      frequencyRank = isNaN(freq) ? null : freq
-    } else {
-      // Generic Anki deck
-      front = stripHtml(parts[0] ?? '')
-      back = stripHtml(parts[1] ?? '')
-      reading = stripHtml(parts[2] ?? '') || null
-      wordAudioField = null
-      sentence = null
-      sentenceMeaning = null
-      frequencyRank = null
-    }
-
-    if (!front || !back) { skipped++; continue }
+    const { front, back, reading, wordAudioField, sentence, sentenceMeaning, frequencyRank } = parsed
 
     // Deduplicate by front text
     const existing = await storage.query<{ id: number }>(
