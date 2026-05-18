@@ -1,7 +1,16 @@
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect, useMemo, useRef } from 'react'
+import { useSearchParams } from 'react-router-dom'
+import { ListChecks } from 'lucide-react'
 import { useAppStore } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
 import { Navigation } from '../components/Navigation'
+import { Ruby } from '../components/Ruby'
+import { annotateBeginnerFurigana, isBeginnerLevel } from '../content/beginnerFurigana'
+import {
+  getSupplementalScenarios,
+  SUPPLEMENTAL_SCENARIO_SOURCES,
+  type SupplementalScenario,
+} from '../content/supplementalScenarioService'
 
 interface DialogueLine {
   speaker: string
@@ -10,11 +19,46 @@ interface DialogueLine {
 }
 
 interface Scenario {
-  id: number
+  id: number | string
   title: string
   description: string | null
   lines: DialogueLine[]
   lesson_id?: string | null  // e.g., "marugoto_a1_1"
+  textbook?: string
+  textbookKey?: string
+  level?: string
+  canDo?: string
+  sourceKind?: string
+}
+
+type ScenarioLevel = 'A1' | 'A2' | 'B1' | 'B2' | 'C1' | 'Imported'
+
+const LEVEL_ORDER: ScenarioLevel[] = ['A1', 'A2', 'B1', 'B2', 'C1', 'Imported']
+const IMPORTED_SOURCE_KEY = '__imported__'
+
+function normalizeLevel(level: string | null | undefined): ScenarioLevel | null {
+  const normalized = level?.toUpperCase()
+  return LEVEL_ORDER.includes(normalized as ScenarioLevel) ? normalized as ScenarioLevel : null
+}
+
+function scenarioLevel(scenario: Scenario): ScenarioLevel {
+  return normalizeLevel(scenario.level) ?? 'Imported'
+}
+
+function sourceKey(scenario: Scenario) {
+  return scenario.textbookKey ?? scenario.textbook ?? IMPORTED_SOURCE_KEY
+}
+
+function sourceLabel(scenario: Scenario) {
+  return scenario.textbook ?? 'Imported Scenarios'
+}
+
+function formatSourceKind(sourceKind: string) {
+  return sourceKind.replace(/_/g, ' ')
+}
+
+function catalogSourceFor(key: string) {
+  return SUPPLEMENTAL_SCENARIO_SOURCES.find(source => source.textbookKey === key)
 }
 
 function speak(text: string) {
@@ -26,12 +70,13 @@ function speak(text: string) {
   window.speechSynthesis.speak(utt)
 }
 
-function DialogueView({ scenario }: { scenario: Scenario }) {
+function DialogueView({ scenario, showFurigana }: { scenario: Scenario; showFurigana: boolean }) {
   const [step, setStep] = useState(0)
   const [revealed, setRevealed] = useState<Set<number>>(new Set())
   const bottomRef = useRef<HTMLDivElement>(null)
 
   const visibleLines = scenario.lines.slice(0, step + 1)
+  const shouldAnnotate = showFurigana && isBeginnerLevel(scenario.level)
 
   useEffect(() => {
     if (scenario.lines[step]) speak(scenario.lines[step].text)
@@ -62,7 +107,10 @@ function DialogueView({ scenario }: { scenario: Scenario }) {
                 lang="ja"
                 onClick={() => speak(line.text)}
               >
-                {line.text}
+                <Ruby
+                  text={shouldAnnotate ? annotateBeginnerFurigana(line.text) : line.text}
+                  showFurigana={shouldAnnotate}
+                />
               </p>
               {line.translation && (
                 revealed.has(i) ? (
@@ -95,10 +143,15 @@ function DialogueView({ scenario }: { scenario: Scenario }) {
 
 export function ScenarioMode() {
   const activeUserId = useAppStore(s => s.activeUserId)
+  const settings = useAppStore(s => s.settings)
+  const [searchParams, setSearchParams] = useSearchParams()
   const [storage] = useState(() => new SQLiteStorage())
   const [scenarios, setScenarios] = useState<Scenario[]>([])
   const [selected, setSelected] = useState<Scenario | null>(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [activeLevel, setActiveLevel] = useState<ScenarioLevel>(() => normalizeLevel(searchParams.get('level')) ?? 'A1')
+  const [activeSourceKey, setActiveSourceKey] = useState(() => searchParams.get('source') ?? '')
+  const [showFurigana, setShowFurigana] = useState(settings.furiganaEnabled)
 
   useEffect(() => {
     async function load() {
@@ -128,14 +181,132 @@ export function ScenarioMode() {
         [activeUserId ?? 0]
       )
 
-      setScenarios(rows.map(r => ({
+      const databaseScenarios = rows.map(r => ({
         ...r,
         lines: (() => { try { return JSON.parse(r.lines) } catch { return [] } })()
-      })))
-      setIsLoading(false)
+      }))
+      setScenarios(prev => {
+        const supplementalScenarios = prev.filter(scenario => typeof scenario.id === 'string')
+        return [...supplementalScenarios, ...databaseScenarios]
+      })
     }
     void load()
   }, [activeUserId, storage])
+
+  useEffect(() => {
+    async function loadSupplemental() {
+      const coreLessonId = searchParams.get('lesson') ?? undefined
+      const supplemental = await getSupplementalScenarios({ coreLessonId })
+      setScenarios(prev => {
+        const userScenarios = prev.filter(scenario => typeof scenario.id === 'number')
+        return [...supplemental.map(toScenario), ...userScenarios]
+      })
+      setIsLoading(false)
+    }
+    void loadSupplemental()
+  }, [searchParams])
+
+  const levelTabs = useMemo(() => {
+    const counts = new Map<ScenarioLevel, number>()
+    for (const scenario of scenarios) {
+      const level = scenarioLevel(scenario)
+      counts.set(level, (counts.get(level) ?? 0) + 1)
+    }
+    for (const source of SUPPLEMENTAL_SCENARIO_SOURCES) {
+      counts.set(source.level, counts.get(source.level) ?? 0)
+    }
+    return LEVEL_ORDER
+      .filter(level => (counts.get(level) ?? 0) > 0 || SUPPLEMENTAL_SCENARIO_SOURCES.some(source => source.level === level))
+      .map(level => ({ level, count: counts.get(level) ?? 0 }))
+  }, [scenarios])
+
+  const sourceTabs = useMemo(() => {
+    const sourceMap = new Map<string, { key: string; label: string; count: number }>()
+    for (const source of SUPPLEMENTAL_SCENARIO_SOURCES) {
+      if (source.level !== activeLevel) continue
+      sourceMap.set(source.textbookKey, { key: source.textbookKey, label: source.textbook, count: 0 })
+    }
+    for (const scenario of scenarios) {
+      if (scenarioLevel(scenario) !== activeLevel) continue
+      const key = sourceKey(scenario)
+      const existing = sourceMap.get(key)
+      if (existing) {
+        existing.count += 1
+      } else {
+        sourceMap.set(key, { key, label: catalogSourceFor(key)?.textbook ?? sourceLabel(scenario), count: 1 })
+      }
+    }
+    return [...sourceMap.values()].sort((a, b) => {
+      if (a.key === IMPORTED_SOURCE_KEY) return 1
+      if (b.key === IMPORTED_SOURCE_KEY) return -1
+      const aIndex = SUPPLEMENTAL_SCENARIO_SOURCES.findIndex(source => source.textbookKey === a.key)
+      const bIndex = SUPPLEMENTAL_SCENARIO_SOURCES.findIndex(source => source.textbookKey === b.key)
+      if (aIndex !== -1 && bIndex !== -1) return aIndex - bIndex
+      if (aIndex !== -1) return -1
+      if (bIndex !== -1) return 1
+      return a.label.localeCompare(b.label)
+    })
+  }, [activeLevel, scenarios])
+
+  useEffect(() => {
+    if (levelTabs.length === 0) return
+    const requestedLevel = normalizeLevel(searchParams.get('level'))
+    const nextLevel = requestedLevel && levelTabs.some(tab => tab.level === requestedLevel)
+      ? requestedLevel
+      : levelTabs.some(tab => tab.level === activeLevel)
+        ? activeLevel
+        : levelTabs[0].level
+
+    if (nextLevel !== activeLevel) {
+      setActiveLevel(nextLevel)
+      setActiveSourceKey('')
+    }
+  }, [activeLevel, levelTabs, searchParams])
+
+  useEffect(() => {
+    if (sourceTabs.length === 0) return
+    const requestedSource = searchParams.get('source') ?? ''
+    const nextSource = requestedSource && sourceTabs.some(tab => tab.key === requestedSource)
+      ? requestedSource
+      : sourceTabs.some(tab => tab.key === activeSourceKey)
+        ? activeSourceKey
+        : sourceTabs[0].key
+
+    if (nextSource !== activeSourceKey) {
+      setActiveSourceKey(nextSource)
+    }
+  }, [activeSourceKey, searchParams, sourceTabs])
+
+  const visibleScenarios = useMemo(() => {
+    return scenarios.filter(scenario =>
+      scenarioLevel(scenario) === activeLevel &&
+      sourceKey(scenario) === activeSourceKey
+    )
+  }, [activeLevel, activeSourceKey, scenarios])
+
+  function firstSourceKeyForLevel(level: ScenarioLevel) {
+    const scenario = scenarios.find(item => scenarioLevel(item) === level)
+    return scenario ? sourceKey(scenario) : ''
+  }
+
+  function updateScenarioTabs(nextLevel: ScenarioLevel, nextSourceKey = '') {
+    setSelected(null)
+    setActiveLevel(nextLevel)
+    setActiveSourceKey(nextSourceKey)
+
+    const params = new URLSearchParams(searchParams)
+    if (nextLevel === 'Imported') {
+      params.delete('level')
+    } else {
+      params.set('level', nextLevel)
+    }
+    if (nextSourceKey && nextSourceKey !== IMPORTED_SOURCE_KEY) {
+      params.set('source', nextSourceKey)
+    } else {
+      params.delete('source')
+    }
+    setSearchParams(params, { replace: true })
+  }
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -146,9 +317,10 @@ export function ScenarioMode() {
           {selected && (
             <button
               onClick={() => setSelected(null)}
-              className="text-sm text-indigo-600 hover:text-indigo-800"
+              className="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-sm font-semibold text-indigo-800 transition-colors hover:bg-indigo-100"
             >
-              ← All scenarios
+              <ListChecks className="h-4 w-4" aria-hidden="true" />
+              Return to Scenario List
             </button>
           )}
         </div>
@@ -158,13 +330,30 @@ export function ScenarioMode() {
         ) : selected ? (
           <div className="flex flex-col gap-4">
             <div>
-              <h2 className="text-lg font-semibold text-gray-900">{selected.title}</h2>
+              <div className="flex flex-wrap items-start justify-between gap-3">
+                <h2 className="text-lg font-semibold text-gray-900">{selected.title}</h2>
+                {isBeginnerLevel(selected.level) && (
+                  <label className="flex items-center gap-2 rounded-lg border border-indigo-100 bg-indigo-50 px-3 py-2 text-sm font-medium text-indigo-900">
+                    <input
+                      type="checkbox"
+                      checked={showFurigana}
+                      onChange={event => setShowFurigana(event.target.checked)}
+                    />
+                    Furigana
+                  </label>
+                )}
+              </div>
               {selected.description && (
                 <p className="text-sm text-gray-500 mt-1">{selected.description}</p>
               )}
+              {selected.canDo && (
+                <p className="mt-2 rounded-lg bg-indigo-50 px-3 py-2 text-sm text-indigo-900">
+                  {selected.canDo}
+                </p>
+              )}
             </div>
             <div className="bg-white border border-gray-200 rounded-2xl p-6">
-              <DialogueView key={selected.id} scenario={selected} />
+              <DialogueView key={selected.id} scenario={selected} showFurigana={showFurigana} />
             </div>
           </div>
         ) : scenarios.length === 0 ? (
@@ -172,27 +361,91 @@ export function ScenarioMode() {
             <p className="text-4xl">🎭</p>
             <p className="text-lg font-semibold text-gray-700">No scenarios yet</p>
             <p className="text-sm text-gray-500 max-w-xs">
-              Import scenario content from the Practice tab — dialogue scripts with A↔B exchanges.
+              No cleaned supplemental scenarios matched this filter yet. Try all scenarios or import a dialogue script from the Practice tab.
             </p>
           </div>
         ) : (
-          <div className="divide-y divide-gray-100 bg-white border border-gray-200 rounded-2xl overflow-hidden">
-            {scenarios.map(s => (
-              <button
-                key={s.id}
-                onClick={() => setSelected(s)}
-                className="w-full text-left px-5 py-4 hover:bg-gray-50 transition-colors"
-              >
-                <div className="font-medium text-gray-900">{s.title}</div>
-                {s.description && (
-                  <div className="text-sm text-gray-500 mt-0.5">{s.description}</div>
-                )}
-                <div className="text-xs text-indigo-400 mt-1">{s.lines.length} lines</div>
-              </button>
-            ))}
+          <div className="flex flex-col gap-4">
+            <div className="flex flex-wrap gap-2 border-b border-gray-200">
+              {levelTabs.map(tab => (
+                <button
+                  key={tab.level}
+                  onClick={() => updateScenarioTabs(tab.level, firstSourceKeyForLevel(tab.level))}
+                  className={`-mb-px px-3 py-2 text-sm font-semibold transition-colors ${
+                    activeLevel === tab.level
+                      ? 'border-b-2 border-indigo-600 text-indigo-700'
+                      : 'border-b-2 border-transparent text-gray-500 hover:text-gray-900'
+                  }`}
+                >
+                  {tab.level}
+                  <span className="ml-1 text-xs font-medium text-gray-400">{tab.count}</span>
+                </button>
+              ))}
+            </div>
+
+            {sourceTabs.length > 0 && (
+              <div className="flex gap-2 overflow-x-auto pb-1">
+                {sourceTabs.map(tab => (
+                  <button
+                    key={tab.key}
+                    onClick={() => updateScenarioTabs(activeLevel, tab.key)}
+                    className={`shrink-0 rounded-lg border px-3 py-2 text-sm font-medium transition-colors ${
+                      activeSourceKey === tab.key
+                        ? 'border-indigo-200 bg-indigo-50 text-indigo-700'
+                        : 'border-gray-200 bg-white text-gray-600 hover:border-gray-300 hover:text-gray-900'
+                    }`}
+                  >
+                    {tab.label}
+                    <span className="ml-1 text-xs text-gray-400">{tab.count}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+
+            {visibleScenarios.length === 0 ? (
+              <div className="rounded-lg border border-dashed border-gray-200 bg-white px-5 py-8 text-center text-sm text-gray-500">
+                No scenarios in this textbook tab yet.
+              </div>
+            ) : (
+              <div className="divide-y divide-gray-100 bg-white border border-gray-200 rounded-2xl overflow-hidden">
+                {visibleScenarios.map(s => (
+                  <button
+                    key={s.id}
+                    onClick={() => setSelected(s)}
+                    className="w-full text-left px-5 py-4 hover:bg-gray-50 transition-colors"
+                  >
+                    <div className="font-medium text-gray-900">{s.title}</div>
+                    {s.description && (
+                      <div className="text-sm text-gray-500 mt-0.5">{s.description}</div>
+                    )}
+                    <div className="mt-1 flex flex-wrap gap-2 text-xs text-indigo-500">
+                      {s.textbook && <span>{s.textbook}</span>}
+                      {s.level && <span>{s.level}</span>}
+                      <span>{s.lines.length} lines</span>
+                      {s.sourceKind && <span>{formatSourceKind(s.sourceKind)}</span>}
+                    </div>
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         )}
       </main>
     </div>
   )
+}
+
+function toScenario(scenario: SupplementalScenario): Scenario {
+  return {
+    id: scenario.id,
+    title: scenario.title,
+    description: scenario.description,
+    lines: scenario.lines,
+    lesson_id: scenario.coreLessonId ?? scenario.lessonId,
+    textbook: scenario.textbook,
+    textbookKey: scenario.textbookKey,
+    level: scenario.level,
+    canDo: scenario.canDo,
+    sourceKind: scenario.sourceKind,
+  }
 }

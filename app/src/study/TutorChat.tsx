@@ -6,6 +6,7 @@ import { buildTutorSystemPrompt } from '../ai/systemPrompts'
 import { getCachedWeakPoints, buildWeakPointContext } from '../ai/weakPointSummary'
 import { SQLiteStorage } from '../db/sqlite'
 import { Navigation } from '../components/Navigation'
+import { AutoGrowTextarea } from '../components/AutoGrowTextarea'
 import { ContentUpload } from './ContentUpload'
 import { ConversationPartner } from './ConversationPartner'
 import type { AIMessage } from '../core/providers'
@@ -231,9 +232,8 @@ export function TutorChat() {
       </div>
 
       <div className="p-4 border-t border-gray-200 bg-white">
-        <div className="flex gap-2">
-          <input
-            type="text"
+        <div className="flex items-end gap-2">
+          <AutoGrowTextarea
             value={input}
             onChange={e => setInput(e.target.value)}
             onKeyDown={e => {
@@ -245,13 +245,13 @@ export function TutorChat() {
             placeholder="Ask your question…"
             aria-label="Ask a question about Japanese"
             disabled={loading}
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+            className="flex-1 min-h-11 max-h-40 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
           />
           <button
             onClick={handleSend}
             disabled={!input.trim() || loading}
             aria-label="Send message"
-            className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+            className="h-11 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
           >
             <Send className="w-4 h-4" aria-hidden="true" />
           </button>

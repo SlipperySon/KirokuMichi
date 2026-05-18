@@ -372,7 +372,7 @@ export function LearningMode() {
 
         {learningMode === 'lesson' ? (
           // Study by Lesson mode - show LessonsHub
-          <LessonsHub />
+          <LessonsHub embedded />
         ) : (
           // Browse Content mode
           <>

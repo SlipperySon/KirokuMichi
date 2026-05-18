@@ -51,3 +51,18 @@ export const TEXTBOOK_FILES: Record<string, string> = {
 }
 
 export const EXTRACTION_SUMMARY = '/data/generated/textbooks/EXTRACTION_SUMMARY.json'
+
+// Curated scenario packs (hand-crafted conversation scenarios organized by textbook)
+export const SCENARIO_FILES: Record<string, string> = {
+  'genki_1': '/data/generated/scenarios/genki_1_scenarios.json',
+  'genki_1_workbook': '/data/generated/scenarios/genki_1_workbook_scenarios.json',
+  'genki_2': '/data/generated/scenarios/genki_2_scenarios.json',
+  'genki_2_workbook': '/data/generated/scenarios/genki_2_workbook_scenarios.json',
+  'marugoto_a1': '/data/generated/scenarios/marugoto_a1_scenarios.json',
+  'marugoto_a2': '/data/generated/scenarios/marugoto_a2_scenarios.json',
+  'marugoto_b1': '/data/generated/scenarios/marugoto_b1_scenarios.json',
+  'quartet_1': '/data/generated/scenarios/quartet_1_scenarios.json',
+  'quartet_1_workbook': '/data/generated/scenarios/quartet_1_workbook_scenarios.json',
+  'quartet_2': '/data/generated/scenarios/quartet_2_scenarios.json',
+  'quartet_2_workbook': '/data/generated/scenarios/quartet_2_workbook_scenarios.json',
+}

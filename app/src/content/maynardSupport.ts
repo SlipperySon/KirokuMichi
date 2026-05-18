@@ -1,0 +1,370 @@
+import type { GrammarItem } from './curriculumService'
+
+type MaynardRef = NonNullable<GrammarItem['maynardRef']>
+
+const FALLBACKS: Array<{
+  match: RegExp
+  title: string
+  excerpt: string
+  examples: MaynardRef['examples']
+}> = [
+  {
+    match: /^です$/,
+    title: 'Foundation bridge: polite predicate closure',
+    excerpt:
+      'です turns a noun or adjective-style statement into a polite complete sentence. Treat it as the polite closing frame for identifying, describing, and classifying, not as a word-for-word replacement for English “is.”',
+    examples: [{ japanese: 'これは本です。', english: 'This is a book.' }],
+  },
+  {
+    match: /^だ$/,
+    title: 'Foundation bridge: plain predicate closure',
+    excerpt:
+      'だ does the same basic sentence-closing work as です, but in plain style. It belongs with familiar speech, notes, and quoted/thought language; です is the safer classroom default.',
+    examples: [{ japanese: 'これは本だ。', english: 'This is a book. / This is a book, plain style.' }],
+  },
+  {
+    match: /^は$/,
+    title: 'Foundation bridge: topic marking',
+    excerpt:
+      'は marks what the sentence is about. The learner should separate “topic” from “subject”: after は, listen for the comment or judgment the sentence makes about that topic.',
+    examples: [{ japanese: '私は学生です。', english: 'As for me, I am a student.' }],
+  },
+  {
+    match: /^が$/,
+    title: 'Foundation bridge: subject focus',
+    excerpt:
+      'が identifies or highlights the subject inside the sentence. It often answers “which one?” or presents new information, while は sets up the topic for comment.',
+    examples: [{ japanese: '誰が来ますか。', english: 'Who is coming?' }],
+  },
+  {
+    match: /^も$/,
+    title: 'Foundation bridge: additive topic',
+    excerpt:
+      'も replaces simple topic/subject marking when the sentence adds something to an existing set. Teach it as “also/even” plus the same predicate pattern already learned.',
+    examples: [{ japanese: 'メアリーさんも学生です。', english: 'Mary is also a student.' }],
+  },
+  {
+    match: /^の$/,
+    title: 'Foundation bridge: noun linking',
+    excerpt:
+      'の links two nouns by making the first noun describe, possess, classify, or locate the second. Read A の B as “B connected to A,” then choose the natural English relationship from context.',
+    examples: [{ japanese: '日本語の本', english: 'a Japanese-language book' }],
+  },
+  {
+    match: /^か$/,
+    title: 'Foundation bridge: question ending',
+    excerpt:
+      'か turns a polite statement into a question without changing Japanese word order. Keep the sentence shape stable and let the final particle carry the question force.',
+    examples: [{ japanese: '学生ですか。', english: 'Are you a student?' }],
+  },
+  {
+    match: /^(これ|それ|あれ|ここ|そこ|あそこ|この|その|あの|どこ|どれ)/,
+    title: 'Foundation bridge: ko-so-a-do deixis',
+    excerpt:
+      'こ・そ・あ・ど words organize meaning by speaker/listener distance: こ near the speaker, そ near the listener or prior context, あ away from both, and ど for questions.',
+    examples: [{ japanese: 'これは何ですか。', english: 'What is this?' }],
+  },
+  {
+    match: /い-Adjective|い-Adjectives|い-Adjective/,
+    title: 'Foundation bridge: i-adjective predicates',
+    excerpt:
+      'い-adjectives can describe a noun directly or complete a sentence as the predicate. Their tense and negativity usually attach to the adjective itself, not to です.',
+    examples: [{ japanese: 'この本はおもしろいです。', english: 'This book is interesting.' }],
+  },
+  {
+    match: /な-Adjective|な-Adjectives|な-Adjective/,
+    title: 'Foundation bridge: na-adjective noun modification',
+    excerpt:
+      'な-adjectives use な before a noun and behave more like noun-style predicates at the end of a sentence. The な is a linking form, not part of the dictionary label.',
+    examples: [{ japanese: '静かな町です。', english: 'It is a quiet town.' }],
+  },
+  {
+    match: /ている|ている①/,
+    title: 'Foundation bridge: state or ongoing action',
+    excerpt:
+      'ている links an action to its current relevance: an action in progress, a repeated habit, or a resulting state. The key question is what condition holds now.',
+    examples: [{ japanese: '今、勉強しています。', english: 'I am studying now.' }],
+  },
+  {
+    match: /てください/,
+    title: 'Foundation bridge: polite request',
+    excerpt:
+      'てください uses the て-form to ask someone to do an action. It is a request pattern, so the social softness depends on context, relationship, and tone.',
+    examples: [{ japanese: '名前を書いてください。', english: 'Please write your name.' }],
+  },
+  {
+    match: /やすい|にくい/,
+    title: 'Support bridge: ease and difficulty',
+    excerpt:
+      'やすい and にくい attach to the verb stem to describe how easy or difficult an action is to do. The focus is the action experience, not the object by itself.',
+    examples: [{ japanese: 'この辞書は使いやすいです。', english: 'This dictionary is easy to use.' }],
+  },
+  {
+    match: /がほしい|ほしい/,
+    title: 'Support bridge: wanting an object',
+    excerpt:
+      'ほしい describes wanting a thing, so the desired object is commonly marked with が. Keep it separate from たい, which attaches to a verb when you want to do an action.',
+    examples: [{ japanese: '新しいかばんがほしいです。', english: 'I want a new bag.' }],
+  },
+  {
+    match: /てあげる|てくれる|てもらう/,
+    title: 'Support bridge: giving and receiving actions',
+    excerpt:
+      'てあげる, てくれる, and てもらう describe helpful actions as social giving and receiving. Track who benefits from the action before choosing the form.',
+    examples: [{ japanese: '友だちに本を貸してあげました。', english: 'I lent my friend a book as a favor.' }],
+  },
+  {
+    match: /^そう$|そうだ|そうです/,
+    title: 'Support bridge: appearance and hearsay',
+    excerpt:
+      'そう can describe what something looks like from visible evidence or report what someone heard. The form around そう tells you whether it means “looks” or “I hear.”',
+    examples: [{ japanese: 'このケーキはおいしそうです。', english: 'This cake looks delicious.' }],
+  },
+  {
+    match: /みたいに|みたいな|みたい/,
+    title: 'Support bridge: resemblance and examples',
+    excerpt:
+      'みたい frames something as resembling or seeming like something else. Use みたいな before a noun and みたいに before an action or description.',
+    examples: [{ japanese: '先生みたいに話したいです。', english: 'I want to speak like the teacher.' }],
+  },
+  {
+    match: /より|のほうが/,
+    title: 'Support bridge: comparison anchor',
+    excerpt:
+      'より marks the comparison baseline, while のほうが marks the side that has more of the quality. Do not translate word-by-word; identify the two sides first.',
+    examples: [{ japanese: '電車のほうがバスより速いです。', english: 'The train is faster than the bus.' }],
+  },
+  {
+    match: /ようと思う|おうと思う|つもり/,
+    title: 'Support bridge: intention',
+    excerpt:
+      'ようと思う presents an intention you are forming or holding. It is softer and more personal than a fixed schedule; pair it with context about when or why.',
+    examples: [{ japanese: '週末に京都へ行こうと思っています。', english: 'I am thinking of going to Kyoto this weekend.' }],
+  },
+  {
+    match: /^なら$|ならば/,
+    title: 'Support bridge: condition from context',
+    excerpt:
+      'なら responds to a topic, plan, or assumption already in the conversation. It often means “if that is the case,” so it is useful for giving advice.',
+    examples: [{ japanese: '京都に行くなら、お寺を見てください。', english: 'If you are going to Kyoto, please see the temples.' }],
+  },
+  {
+    match: /必要がある|なければいけない|なくてはいけない/,
+    title: 'Support bridge: necessity and obligation',
+    excerpt:
+      '必要がある states that something is necessary; なければいけない states that someone must do it. Both express pressure, but one is noun-like and the other is action-based.',
+    examples: [{ japanese: '明日までに払わなければいけません。', english: 'I have to pay by tomorrow.' }],
+  },
+  {
+    match: /し～し|し$/,
+    title: 'Support bridge: stacking reasons',
+    excerpt:
+      'し lets you stack reasons or qualities without making every reason equally formal. It often implies “among other reasons,” so it sounds natural in explanation.',
+    examples: [{ japanese: '安いし、駅に近いし、このアパートがいいです。', english: 'It is cheap and close to the station, so this apartment is good.' }],
+  },
+  {
+    match: /かどうか/,
+    title: 'Support bridge: embedded yes/no question',
+    excerpt:
+      'かどうか turns a yes/no question into a noun-like question inside a larger sentence. Use it when asking, knowing, deciding, or reporting whether something is true.',
+    examples: [{ japanese: '試験があるかどうか聞きました。', english: 'I asked whether there is a test.' }],
+  },
+  {
+    match: /てある/,
+    title: 'Support bridge: prepared resulting state',
+    excerpt:
+      'てある describes a state intentionally left prepared by someone’s action. The important idea is not just “it is done,” but “it has been done for a purpose.”',
+    examples: [{ japanese: '切符は買ってあります。', english: 'The tickets have been bought/prepared.' }],
+  },
+  {
+    match: /ようにする/,
+    title: 'Support bridge: making a habit or effort',
+    excerpt:
+      'ようにする describes making an effort to bring about a repeated habit or desired condition. It often sounds like “try to make sure that...”',
+    examples: [{ japanese: '毎日漢字を読むようにしています。', english: 'I try to read kanji every day.' }],
+  },
+  {
+    match: /ても$/,
+    title: 'Support bridge: even if',
+    excerpt:
+      'ても marks that the main result holds even if the condition happens. It is useful for exceptions, reassurance, and “no matter whether” statements.',
+    examples: [{ japanese: '忙しくても、メールしてください。', english: 'Even if you are busy, please email me.' }],
+  },
+  {
+    match: /自動詞|他動詞/,
+    title: 'Support bridge: state versus action control',
+    excerpt:
+      'Intransitive verbs describe what happened or what state exists; transitive verbs describe someone acting on something. Ask whether the sentence cares about the event/state or the actor’s control.',
+    examples: [{ japanese: 'ドアが開きました。私がドアを開けました。', english: 'The door opened. I opened the door.' }],
+  },
+  {
+    match: /お～になる|いらっしゃる|なさる|いたす/,
+    title: 'Support bridge: respect and humility',
+    excerpt:
+      'Respectful language raises the other person’s action; humble language lowers your own side. Choose the form by social direction, not by English politeness alone.',
+    examples: [{ japanese: '先生はいらっしゃいますか。', english: 'Is the teacher here?' }],
+  },
+  {
+    match: /あまり～ない|ぜんぜん/,
+    title: 'Support bridge: negative degree',
+    excerpt:
+      'あまり and ぜんぜん pair with negative forms to describe low degree or total absence. The negative ending is part of the pattern, not optional decoration.',
+    examples: [{ japanese: 'テレビはあまり見ません。', english: 'I do not watch TV much.' }],
+  },
+  {
+    match: /^もし|もし$/,
+    title: 'Support bridge: hypothetical setup',
+    excerpt:
+      'もし flags that a hypothetical condition is coming. The conditional form does the grammar work; もし helps the listener frame the sentence as “if...” early.',
+    examples: [{ japanese: 'もし雨が降ったら、映画を見ましょう。', english: 'If it rains, let’s watch a movie.' }],
+  },
+  {
+    match: /なおす/,
+    title: 'Support bridge: redoing to fix',
+    excerpt:
+      'なおす after a verb means doing the action again in order to fix or improve it. It is not just repetition; it carries the idea of correction.',
+    examples: [{ japanese: '作文を書き直しました。', english: 'I rewrote the essay.' }],
+  },
+  {
+    match: /一つだ|と考えられている|とされている/,
+    title: 'Support bridge: classifying and reporting common views',
+    excerpt:
+      'These patterns help describe something as part of a category or report how people generally understand it. They create distance between your personal opinion and a broader view.',
+    examples: [{ japanese: 'お花見は春の楽しみの一つです。', english: 'Cherry-blossom viewing is one of the pleasures of spring.' }],
+  },
+  {
+    match: /ばいい|べき|ことだ/,
+    title: 'Support bridge: advice strength',
+    excerpt:
+      'ばいい gives practical advice, べき presents a stronger “should,” and ことだ frames advice as the key thing to do. Choose by how forceful the recommendation should sound.',
+    examples: [{ japanese: '困った時は、先生に相談すればいいです。', english: 'When you are in trouble, you should ask the teacher.' }],
+  },
+  {
+    match: /ために|上で/,
+    title: 'Support bridge: purpose and conditions',
+    excerpt:
+      'ために points to the goal or purpose of an action. 上で sets a necessary condition, stage, or viewpoint before the main action can be understood.',
+    examples: [{ japanese: '留学するために、資料を集めています。', english: 'I am gathering materials in order to study abroad.' }],
+  },
+  {
+    match: /どんなに.*ても|たとえ.*ても|としても/,
+    title: 'Support bridge: concession',
+    excerpt:
+      'These forms say that the main point still holds even under a difficult or hypothetical condition. They are useful for keeping an argument stable while acknowledging pressure.',
+    examples: [{ japanese: 'どんなに忙しくても、睡眠は大切です。', english: 'No matter how busy you are, sleep is important.' }],
+  },
+  {
+    match: /に関する|に関して|に対して/,
+    title: 'Support bridge: topic and target',
+    excerpt:
+      'に関して frames the topic being discussed, while に対して points to the target of an attitude, action, or response. Both help make discussion more precise.',
+    examples: [{ japanese: '環境問題に関して意見を話しました。', english: 'We discussed opinions regarding environmental issues.' }],
+  },
+  {
+    match: /おかげで|せいで|ばかりに/,
+    title: 'Support bridge: cause with evaluation',
+    excerpt:
+      'おかげで marks a beneficial cause, while せいで and ばかりに mark a negative cause. The grammar carries the speaker’s evaluation of the result.',
+    examples: [{ japanese: '友だちのおかげで、試験に合格できました。', english: 'Thanks to my friend, I was able to pass the exam.' }],
+  },
+  {
+    match: /わけではない|とは限らない/,
+    title: 'Support bridge: partial denial',
+    excerpt:
+      'わけではない and とは限らない help avoid overstatement. They do not fully reject the idea; they reject treating it as always or completely true.',
+    examples: [{ japanese: '便利だからといって、いつも必要なわけではありません。', english: 'Just because it is convenient does not mean it is always necessary.' }],
+  },
+  {
+    match: /がたい|ような気がする|まるで.*よう/,
+    title: 'Support bridge: difficult judgment and impression',
+    excerpt:
+      'がたい expresses that something is hard to do psychologically or emotionally. ような気がする softens a judgment as an impression rather than a flat claim.',
+    examples: [{ japanese: 'その説明は信じがたいような気がします。', english: 'I feel that explanation is hard to believe.' }],
+  },
+  {
+    match: /ばかりでなく|一方で|一方だ/,
+    title: 'Support bridge: adding contrast or trend',
+    excerpt:
+      'ばかりでなく adds another point, 一方で contrasts two sides, and 一方だ describes a trend continuing in one direction. These are discussion-building connectors.',
+    examples: [{ japanese: '便利なばかりでなく、時間も節約できます。', english: 'It is not only convenient; it also saves time.' }],
+  },
+  {
+    match: /て初めて|にしては/,
+    title: 'Support bridge: realization and evaluation',
+    excerpt:
+      'て初めて marks a realization that happened only after an experience. にしては evaluates something against what would normally be expected from that category.',
+    examples: [{ japanese: '一人で住んで初めて、家族のありがたさがわかりました。', english: 'Only after living alone did I understand how grateful I am for my family.' }],
+  },
+  {
+    match: /に代わって|につれて|っぱなし|切れない/,
+    title: 'Support bridge: change and unresolved state',
+    excerpt:
+      'に代わって marks replacement, につれて marks gradual change, and っぱなし/切れない describe states or actions left unresolved. These patterns help explain process over time.',
+    examples: [{ japanese: '現金に代わって、スマホ決済が増えています。', english: 'In place of cash, smartphone payments are increasing.' }],
+  },
+  {
+    match: /から見ると|逆に|だけに/,
+    title: 'Support bridge: viewpoint and consequence',
+    excerpt:
+      'から見ると sets a viewpoint, 逆に reverses perspective, and だけに links a reason to a natural consequence. Together they help qualify an argument.',
+    examples: [{ japanese: '学生から見ると便利ですが、先生から見ると問題もあります。', english: 'From a student viewpoint it is convenient, but from a teacher viewpoint there are problems too.' }],
+  },
+  {
+    match: /ぶりに|思うように|得る/,
+    title: 'Support bridge: time gap, expectation, and possibility',
+    excerpt:
+      'ぶりに marks doing something after a time gap, 思うように compares reality with expectation, and 得る marks possibility in a formal register.',
+    examples: [{ japanese: '三年ぶりに運転しましたが、思うようにできませんでした。', english: 'I drove for the first time in three years, but I could not do it as I wanted.' }],
+  },
+  {
+    match: /だけあって|だけのことはある|さすが/,
+    title: 'Support bridge: deserved reputation',
+    excerpt:
+      'だけあって and だけのことはある explain that the result matches reputation, effort, or expectation. さすが adds praise that the expectation was fulfilled.',
+    examples: [{ japanese: '有名な店だけあって、とてもおいしかったです。', english: 'As expected of a famous shop, it was very delicious.' }],
+  },
+  {
+    match: /上は|からには|任せる|ざるを得ない|よりほかない/,
+    title: 'Support bridge: responsibility and no-choice logic',
+    excerpt:
+      '上は and からには say that once a condition or responsibility is accepted, a consequence follows. ざるを得ない and よりほかない express that no realistic alternative remains.',
+    examples: [{ japanese: '引き受けたからには、最後までやります。', english: 'Now that I accepted it, I will do it until the end.' }],
+  },
+  {
+    match: /ないではいられない|どころではない|てはいられない/,
+    title: 'Support bridge: pressure and compulsion',
+    excerpt:
+      'ないではいられない expresses an irresistible reaction, while どころではない and てはいられない show that circumstances leave no room for a lower-priority action.',
+    examples: [{ japanese: 'その話を聞いて、泣かないではいられませんでした。', english: 'Hearing that story, I could not help crying.' }],
+  },
+  {
+    match: /ようがない|からといって|ことは.*が/,
+    title: 'Support bridge: limits and qualification',
+    excerpt:
+      'ようがない says there is no way to do something. からといって rejects a jump in logic, and ことは〜が concedes one point before limiting it.',
+    examples: [{ japanese: '失敗したからといって、あきらめる必要はありません。', english: 'Just because you failed does not mean you need to give up.' }],
+  },
+  {
+    match: /を通じて|を通して|を問わず|てはならない/,
+    title: 'Support bridge: medium, scope, and prohibition',
+    excerpt:
+      'を通じて/を通して marks the medium or experience through which something happens. を問わず broadens scope, and てはならない states a strong prohibition.',
+    examples: [{ japanese: 'ボランティアを通して、多くの人に会いました。', english: 'Through volunteering, I met many people.' }],
+  },
+]
+
+export function getMaynardSupport(grammar: GrammarItem): MaynardRef | undefined {
+  if (grammar.maynardRef) return grammar.maynardRef
+  const fallback = FALLBACKS.find(entry => entry.match.test(grammar.pattern))
+  if (!fallback) return undefined
+  return {
+    topicId: `curated-support:${grammar.pattern}`,
+    title: fallback.title,
+    excerpt: fallback.excerpt,
+    examples: fallback.examples,
+  }
+}
+
+export function hasMaynardSupport(grammar: GrammarItem) {
+  return Boolean(getMaynardSupport(grammar))
+}

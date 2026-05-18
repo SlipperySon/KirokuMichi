@@ -15,6 +15,7 @@ import { Send, ChevronDown } from 'lucide-react'
 import { useAppStore } from '../store'
 import { ClientAIProvider } from '../ai/aiProvider'
 import {
+  buildCustomConversationSystemPrompt,
   buildConversationSystemPrompt,
   CONVERSATION_SCENARIOS,
   type ConversationScenario,
@@ -23,6 +24,7 @@ import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { SRSService } from '../srs/srsService'
 import { Ruby } from '../components/Ruby'
+import { AutoGrowTextarea } from '../components/AutoGrowTextarea'
 import { getTextbookScenarios, type TextbookScenario } from './textbookDialogues'
 import type { AIMessage } from '../core/providers'
 
@@ -54,9 +56,9 @@ function storageKey(scenarioId: string, isTextbook: boolean = false) {
   return `${prefix}-${scenarioId}`
 }
 
-function loadPersistedTurns(scenarioId: string): Turn[] {
+function loadPersistedTurns(scenarioId: string, isTextbook: boolean = false): Turn[] {
   try {
-    const raw = localStorage.getItem(storageKey(scenarioId))
+    const raw = localStorage.getItem(storageKey(scenarioId, isTextbook))
     if (!raw) return []
     const parsed = JSON.parse(raw) as unknown
     if (!Array.isArray(parsed)) return []
@@ -72,9 +74,9 @@ function loadPersistedTurns(scenarioId: string): Turn[] {
   }
 }
 
-function persistTurns(scenarioId: string, turns: Turn[]) {
+function persistTurns(scenarioId: string, turns: Turn[], isTextbook: boolean = false) {
   try {
-    localStorage.setItem(storageKey(scenarioId), JSON.stringify(turns.slice(-MAX_PERSISTED_TURNS)))
+    localStorage.setItem(storageKey(scenarioId, isTextbook), JSON.stringify(turns.slice(-MAX_PERSISTED_TURNS)))
   } catch {
     // ignore
   }
@@ -134,6 +136,8 @@ export function ConversationPartner({ cefrLevel = 'a2' }: ConversationPartnerPro
   const [scenario, setScenario] = useState<ConversationScenario>(CONVERSATION_SCENARIOS[0])
   const [textbookScenarios, setTextbookScenarios] = useState<TextbookScenario[]>([])
   const [selectedTextbookScenario, setSelectedTextbookScenario] = useState<TextbookScenario | null>(null)
+  const [isCustomScenario, setIsCustomScenario] = useState(false)
+  const [customScenarioDescription, setCustomScenarioDescription] = useState('')
   const [turns, setTurns] = useState<Turn[]>(() => loadPersistedTurns(scenario.id))
   const [input, setInput] = useState('')
   const [loading, setLoading] = useState(false)
@@ -149,6 +153,20 @@ export function ConversationPartner({ cefrLevel = 'a2' }: ConversationPartnerPro
   )
   const [service] = useState(() => new SRSService(storage, scheduler))
   const [sessionId, setSessionId] = useState<number | null>(null)
+  const [savedCorrections, setSavedCorrections] = useState<Set<string>>(new Set())
+
+  async function saveCorrection(c: Correction) {
+    if (!activeUserId) return
+    const key = `${c.original}→${c.corrected}`
+    if (savedCorrections.has(key)) return
+    await service.createCardFromCorrection(
+      activeUserId,
+      c.original,
+      `${c.corrected}\n${c.explanation}`,
+      c.corrected
+    )
+    setSavedCorrections(prev => new Set(prev).add(key))
+  }
 
   // Load textbook scenarios on mount
   useEffect(() => {
@@ -159,35 +177,50 @@ export function ConversationPartner({ cefrLevel = 'a2' }: ConversationPartnerPro
 
   // Reload chat when scenario changes
   useEffect(() => {
-    const key = selectedTextbookScenario
+    const key = isCustomScenario
+      ? 'custom'
+      : selectedTextbookScenario
       ? selectedTextbookScenario.id
       : scenario.id
-    const isTextbook = !!selectedTextbookScenario
-    setTurns(loadPersistedTurns(storageKey(key, isTextbook)))
+    const isTextbook = !!selectedTextbookScenario && !isCustomScenario
+    setTurns(loadPersistedTurns(key, isTextbook))
     setError(null)
     setSessionId(null)
-  }, [scenario.id, selectedTextbookScenario])
+  }, [scenario.id, selectedTextbookScenario, isCustomScenario])
 
   // Persist on change + autoscroll
   useEffect(() => {
-    const key = selectedTextbookScenario
+    const key = isCustomScenario
+      ? 'custom'
+      : selectedTextbookScenario
       ? selectedTextbookScenario.id
       : scenario.id
-    const isTextbook = !!selectedTextbookScenario
-    persistTurns(storageKey(key, isTextbook), turns)
+    const isTextbook = !!selectedTextbookScenario && !isCustomScenario
+    persistTurns(key, turns, isTextbook)
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
-  }, [turns, scenario.id, selectedTextbookScenario])
+  }, [turns, scenario.id, selectedTextbookScenario, isCustomScenario])
 
   const systemPrompt = useMemo(() => {
+    if (isCustomScenario) {
+      return buildCustomConversationSystemPrompt(customScenarioDescription, cefrLevel)
+    }
+
     if (selectedTextbookScenario) {
       // Build a dynamic system prompt for textbook scenarios
       return `You are practicing Japanese conversation from a textbook dialogue (${selectedTextbookScenario.textbook}, level ${selectedTextbookScenario.level}).
 
-The learner will practice natural conversation at their level. Respond naturally in Japanese, and after each exchange, provide corrections in structured JSON format if their Japanese has errors.
+Scenario goal: ${selectedTextbookScenario.canDo}
+Source sample: ${selectedTextbookScenario.sampleDialogue}
+Practice prompts:
+${selectedTextbookScenario.practicePrompts.map(prompt => `- ${prompt}`).join('\n')}
+
+The learner will practice natural conversation at their level. Use the scenario goal and prompts as the situation. Do not quote the source mechanically; turn it into a natural roleplay. Respond naturally in Japanese, and after each exchange, provide corrections in structured JSON format if their Japanese has errors.
 
 **Important:**
 - Respond naturally and stay in conversational context
 - Correct only real errors (grammar, vocabulary, particles)
+- Keep the roleplay anchored to the textbook scenario
+- Ask follow-up questions when the learner gives a short answer
 - Be encouraging and supportive
 - Use simple Japanese for lower levels (A1-A2), more complex for higher levels (B1+)
 - Include furigana (kanji(kana)) for characters the learner might not know yet
@@ -205,7 +238,7 @@ The learner will practice natural conversation at their level. Respond naturally
     } else {
       return buildConversationSystemPrompt(scenario, cefrLevel)
     }
-  }, [selectedTextbookScenario, scenario, cefrLevel])
+  }, [isCustomScenario, customScenarioDescription, selectedTextbookScenario, scenario, cefrLevel])
 
   const handleSend = async () => {
     const text = input.trim()
@@ -292,10 +325,12 @@ The learner will practice natural conversation at their level. Respond naturally
     setTurns([])
     setError(null)
     try {
-      const key = selectedTextbookScenario
+      const key = isCustomScenario
+        ? 'custom'
+        : selectedTextbookScenario
         ? selectedTextbookScenario.id
         : scenario.id
-      const isTextbook = !!selectedTextbookScenario
+      const isTextbook = !!selectedTextbookScenario && !isCustomScenario
       localStorage.removeItem(storageKey(key, isTextbook))
     } catch {
       // ignore
@@ -314,17 +349,32 @@ The learner will practice natural conversation at their level. Respond naturally
                 onClick={() => {
                   setScenario(s)
                   setSelectedTextbookScenario(null)
+                  setIsCustomScenario(false)
                 }}
                 className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
-                  scenario.id === s.id && !selectedTextbookScenario
+                  scenario.id === s.id && !selectedTextbookScenario && !isCustomScenario
                     ? 'bg-indigo-100 text-indigo-700'
                     : 'text-gray-600 hover:bg-gray-100'
                 }`}
                 title={s.description}
               >
-                {s.titleJa}
+                {s.title}
               </button>
             ))}
+            <button
+              onClick={() => {
+                setSelectedTextbookScenario(null)
+                setIsCustomScenario(true)
+              }}
+              className={`px-3 py-1.5 rounded-lg text-xs font-medium transition-colors ${
+                isCustomScenario
+                  ? 'bg-teal-100 text-teal-700'
+                  : 'text-gray-600 hover:bg-gray-100'
+              }`}
+              title="Start an open conversation or describe your own situation"
+            >
+              Custom
+            </button>
           </div>
 
           {/* Textbook scenario dropdown */}
@@ -334,20 +384,51 @@ The learner will practice natural conversation at their level. Respond naturally
                 📚 Textbook
                 <ChevronDown className="w-3 h-3" />
               </button>
-              <div className="hidden group-hover:block absolute right-0 mt-0 w-56 bg-white border border-gray-200 rounded-lg shadow-lg z-10 max-h-96 overflow-y-auto">
-                {textbookScenarios.map(ts => (
-                  <button
-                    key={ts.id}
-                    onClick={() => {
-                      setSelectedTextbookScenario(ts)
-                    }}
-                    className="w-full text-left px-4 py-2 hover:bg-purple-50 border-b border-gray-100 last:border-b-0 transition-colors"
-                  >
-                    <div className="text-xs font-semibold text-purple-700">{ts.textbook} ({ts.level})</div>
-                    <div className="text-xs text-gray-600 truncate">{ts.title}</div>
-                    <div className="text-xs text-gray-400 truncate">{ts.description}</div>
-                  </button>
-                ))}
+              <div className="hidden group-hover:block absolute right-0 mt-0 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-10 max-h-[28rem] overflow-y-auto">
+                {/* Group by level then textbook */}
+                {(() => {
+                  const levels = ['A1', 'A2', 'B1', 'B2'] as const
+                  const grouped = new Map<string, Map<string, typeof textbookScenarios>>()
+                  for (const level of levels) grouped.set(level, new Map())
+                  for (const ts of textbookScenarios) {
+                    const levelMap = grouped.get(ts.level) ?? new Map()
+                    const existing = levelMap.get(ts.textbook) ?? []
+                    existing.push(ts)
+                    levelMap.set(ts.textbook, existing)
+                    grouped.set(ts.level, levelMap)
+                  }
+                  return levels.map(level => {
+                    const levelMap = grouped.get(level)
+                    if (!levelMap || levelMap.size === 0) return null
+                    return (
+                      <div key={level}>
+                        <div className="sticky top-0 bg-gray-100 px-4 py-1.5 text-xs font-bold text-gray-700 border-b border-gray-200">
+                          {level}
+                        </div>
+                        {[...levelMap.entries()].map(([textbook, scenarios]) => (
+                          <div key={textbook}>
+                            <div className="px-4 py-1 text-[10px] font-semibold uppercase tracking-wider text-purple-600 bg-purple-50/50">
+                              {textbook}
+                            </div>
+                            {scenarios.map(ts => (
+                              <button
+                                key={ts.id}
+                                onClick={() => {
+                                  setSelectedTextbookScenario(ts)
+                                  setIsCustomScenario(false)
+                                }}
+                                className="w-full text-left px-4 py-1.5 hover:bg-purple-50 border-b border-gray-50 last:border-b-0 transition-colors"
+                              >
+                                <div className="text-xs text-gray-700 truncate">{ts.title}</div>
+                                <div className="text-[10px] text-gray-400 truncate">{ts.description}</div>
+                              </button>
+                            ))}
+                          </div>
+                        ))}
+                      </div>
+                    )
+                  })
+                })()}
               </div>
             </div>
           )}
@@ -363,7 +444,14 @@ The learner will practice natural conversation at their level. Respond naturally
         </div>
         <div className="flex items-center justify-between text-xs text-gray-500">
           <span>
-            {selectedTextbookScenario ? (
+            {isCustomScenario ? (
+              <>
+                <strong className="text-teal-700">Custom conversation</strong> ·{' '}
+                {customScenarioDescription.trim()
+                  ? 'Use your description as the scene.'
+                  : 'Start talking freely or describe a scene below.'}
+              </>
+            ) : selectedTextbookScenario ? (
               <>
                 <strong className="text-purple-700">{selectedTextbookScenario.textbook}</strong> ·{' '}
                 {selectedTextbookScenario.description} · <span className="text-gray-400">page {selectedTextbookScenario.page}</span>
@@ -393,16 +481,40 @@ The learner will practice natural conversation at their level. Respond naturally
             </label>
           </div>
         </div>
+        {isCustomScenario && (
+          <div className="rounded-lg border border-teal-200 bg-teal-50 p-3">
+            <label className="block text-xs font-semibold text-teal-800 mb-1" htmlFor="custom-conversation-description">
+              Conversation setup
+            </label>
+            <AutoGrowTextarea
+              id="custom-conversation-description"
+              value={customScenarioDescription}
+              onChange={e => setCustomScenarioDescription(e.target.value)}
+              placeholder="Optional: describe the scene, roleplay, topic, or register. Example: I am checking into a hotel and the staff speaks politely."
+              maxHeight={120}
+              className="w-full min-h-10 max-h-32 px-3 py-2 border border-teal-200 rounded-lg bg-white text-sm text-gray-900 placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-teal-500"
+            />
+          </div>
+        )}
       </div>
 
       {/* Messages */}
       <div className="flex-1 overflow-y-auto p-4 space-y-3" role="log" aria-live="polite">
         {turns.length === 0 && !error && (
           <div className="flex flex-col items-center justify-center h-full gap-3 text-center px-6">
-            {selectedTextbookScenario ? (
+            {isCustomScenario ? (
+              <>
+                <p className="text-teal-700 font-semibold">Custom conversation</p>
+                <p className="text-sm text-gray-500 max-w-md">
+                  {customScenarioDescription.trim()
+                    ? customScenarioDescription.trim()
+                    : 'Start with any Japanese sentence, or describe the situation above first.'}
+                </p>
+              </>
+            ) : selectedTextbookScenario ? (
               <>
                 <p className="text-purple-700 font-semibold">
-                  {selectedTextbookScenario.titleJa}
+                  {selectedTextbookScenario.title}
                 </p>
                 <p className="text-xs text-purple-600 font-medium">
                   {selectedTextbookScenario.textbook} ({selectedTextbookScenario.level})
@@ -412,12 +524,12 @@ The learner will practice natural conversation at their level. Respond naturally
             ) : (
               <>
                 <p className="text-gray-700 font-semibold">
-                  {scenario.titleJa} — {scenario.title}
+                  {scenario.title}
                 </p>
                 <p className="text-sm text-gray-500 max-w-md">{scenario.description}</p>
               </>
             )}
-            <p className="text-xs text-gray-400">Send your first Japanese line to start.</p>
+            <p className="text-xs text-gray-400">Type your first message in Japanese to start the conversation.</p>
           </div>
         )}
 
@@ -435,23 +547,37 @@ The learner will practice natural conversation at their level. Respond naturally
                       <span>✏️ {u.corrections.length} correction{u.corrections.length === 1 ? '' : 's'}</span>
                     </summary>
                     <div className="mt-2 flex flex-col gap-2">
-                      {u.corrections.map((c, j) => (
-                        <div
-                          key={j}
-                          className="bg-amber-50 border border-amber-200 rounded-lg p-2 text-xs"
-                        >
-                          <div className="flex flex-wrap items-baseline gap-1">
-                            <span className="line-through text-red-600" lang="ja">
-                              {c.original}
-                            </span>
-                            <span className="text-amber-700">→</span>
-                            <span className="text-green-700 font-semibold" lang="ja">
-                              {c.corrected}
-                            </span>
+                      {u.corrections.map((c, j) => {
+                        const corrKey = `${c.original}→${c.corrected}`
+                        const isSaved = savedCorrections.has(corrKey)
+                        return (
+                          <div
+                            key={j}
+                            className="bg-amber-50 border border-amber-200 rounded-lg p-2 text-xs"
+                          >
+                            <div className="flex items-baseline justify-between gap-1">
+                              <div className="flex flex-wrap items-baseline gap-1">
+                                <span className="line-through text-red-600" lang="ja">
+                                  {c.original}
+                                </span>
+                                <span className="text-amber-700">→</span>
+                                <span className="text-green-700 font-semibold" lang="ja">
+                                  {c.corrected}
+                                </span>
+                              </div>
+                              <button
+                                onClick={() => void saveCorrection(c)}
+                                disabled={isSaved}
+                                className="shrink-0 px-1.5 py-0.5 rounded text-xs font-medium transition-colors disabled:opacity-50"
+                                title={isSaved ? 'Saved to SRS' : 'Save to drill'}
+                              >
+                                {isSaved ? '✓' : '+'}
+                              </button>
+                            </div>
+                            <p className="text-gray-700 mt-1">{c.explanation}</p>
                           </div>
-                          <p className="text-gray-700 mt-1">{c.explanation}</p>
-                        </div>
-                      ))}
+                        )
+                      })}
                     </div>
                   </details>
                 )}
@@ -490,11 +616,35 @@ The learner will practice natural conversation at their level. Respond naturally
         <div ref={messagesEndRef} />
       </div>
 
+      {/* Session stats chip */}
+      {(() => {
+        const userTurns = turns.filter(t => t.role === 'user') as UserTurn[]
+        if (userTurns.length < 5) return null
+        const totalChars = userTurns.reduce((sum, t) => sum + t.content.length, 0)
+        const totalCorrections = userTurns.reduce((sum, t) => sum + (t.corrections?.length ?? 0), 0)
+        const correctionFree = userTurns.reduce((acc, t) => {
+          if (!t.corrections || t.corrections.length === 0) return acc + 1
+          return 0
+        }, 0)
+        return (
+          <div className="flex items-center justify-center gap-4 px-4 py-1.5 border-t border-gray-100 bg-gray-50 text-xs text-gray-500">
+            <span>{totalChars} chars written</span>
+            <span className="text-gray-300">·</span>
+            <span>{totalCorrections} correction{totalCorrections === 1 ? '' : 's'}</span>
+            {correctionFree >= 2 && (
+              <>
+                <span className="text-gray-300">·</span>
+                <span className="text-green-600 font-medium">{correctionFree} perfect in a row</span>
+              </>
+            )}
+          </div>
+        )
+      })()}
+
       {/* Input */}
       <div className="p-4 border-t border-gray-200 bg-white">
-        <div className="flex gap-2">
-          <input
-            type="text"
+        <div className="flex items-end gap-2">
+          <AutoGrowTextarea
             value={input}
             onChange={e => setInput(e.target.value)}
             onKeyDown={e => {
@@ -503,16 +653,16 @@ The learner will practice natural conversation at their level. Respond naturally
                 void handleSend()
               }
             }}
-            placeholder="日本語で書いてみてください…"
+            placeholder={isCustomScenario ? 'Start talking in Japanese...' : 'Type in Japanese...'}
             lang="ja"
             disabled={loading}
-            className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
+            className="flex-1 min-h-11 max-h-40 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500 disabled:opacity-50"
           />
           <button
             onClick={() => void handleSend()}
             disabled={!input.trim() || loading}
             aria-label="Send"
-            className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
+            className="h-11 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center gap-2"
           >
             <Send className="w-4 h-4" aria-hidden="true" />
           </button>

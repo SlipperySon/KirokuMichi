@@ -1,6 +1,6 @@
 import type { StorageProvider, SchedulerProvider, CardState, Rating } from '../core/providers'
 import { isLeech, LEECH_THRESHOLD } from '../core/scheduler'
-import type { ReviewCard, SessionStats, StreakData, HeatmapDay, GrammarQuestion, IntervalPreview } from '../study/types'
+import type { ReviewCard, SessionStats, StreakData, HeatmapDay, GrammarQuestion, IntervalPreview, GrammarReviewContext } from '../study/types'
 
 /** Full card_state snapshot used by undo-last-review. */
 export interface CardStateSnapshot {
@@ -534,6 +534,66 @@ export class SRSService {
     }
   }
 
+  async getGrammarReviewContext(grammarPointId: number): Promise<GrammarReviewContext | null> {
+    const rows = await this.storage.query<{
+      grammarPointId: number
+      jlptLevel: string
+      title: string
+      pattern: string | null
+      meaning: string | null
+      explanation: string | null
+      examplesJson: string | null
+      source: string | null
+    }>(
+      `SELECT
+        id            AS grammarPointId,
+        jlpt_level    AS jlptLevel,
+        title,
+        pattern,
+        meaning,
+        explanation,
+        examples_json AS examplesJson,
+        source
+       FROM grammar_points
+       WHERE id = ?`,
+      [grammarPointId]
+    )
+
+    const row = rows[0]
+    if (!row) return null
+
+    let rawExamples: Array<{
+      ja?: string
+      japanese?: string
+      reading?: string
+      en?: string
+      english?: string
+    }> = []
+    try {
+      rawExamples = JSON.parse(row.examplesJson ?? '[]')
+    } catch {
+      rawExamples = []
+    }
+
+    return {
+      grammarPointId: row.grammarPointId,
+      title: row.title,
+      pattern: row.pattern ?? row.title,
+      meaning: row.meaning ?? '',
+      explanation: row.explanation ?? '',
+      examples: rawExamples
+        .map(example => ({
+          japanese: example.japanese ?? example.ja ?? '',
+          reading: example.reading,
+          english: example.english ?? example.en ?? '',
+        }))
+        .filter(example => example.japanese && example.english)
+        .slice(0, 3),
+      jlptLevel: row.jlptLevel,
+      source: row.source,
+    }
+  }
+
   getIntervalPreviews(cardState: CardState): IntervalPreview {
     const ratings: Rating[] = ['again', 'hard', 'good', 'easy']
     const now = new Date()
@@ -543,6 +603,34 @@ export class SRSService {
       previews[rating] = formatInterval(result.due, now)
     }
     return previews
+  }
+
+  async createCardFromCorrection(
+    userId: number,
+    front: string,
+    back: string,
+    reading?: string
+  ): Promise<number> {
+    await this.storage.execute(
+      `INSERT OR IGNORE INTO cards (type, front, back, reading) VALUES ('correction', ?, ?, ?)`,
+      [front, back, reading ?? null]
+    )
+    const rows = await this.storage.query<{ id: number }>(
+      `SELECT id FROM cards WHERE type = 'correction' AND front = ? LIMIT 1`,
+      [front]
+    )
+    const cardId = rows[0].id
+    const existing = await this.storage.query<{ id: number }>(
+      `SELECT id FROM card_states WHERE card_id = ? AND user_id = ?`,
+      [cardId, userId]
+    )
+    if (existing.length === 0) {
+      await this.storage.execute(
+        `INSERT INTO card_states (card_id, user_id, state) VALUES (?, ?, 'new')`,
+        [cardId, userId]
+      )
+    }
+    return cardId
   }
 
   leechThreshold(): number {

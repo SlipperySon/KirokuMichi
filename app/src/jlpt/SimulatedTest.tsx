@@ -151,7 +151,7 @@ export function SimulatedTest({ service, level, onDone }: Props) {
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center justify-between">
-        <button onClick={onDone} className="text-sm text-indigo-600 hover:text-indigo-800">← Exit</button>
+        <button onClick={onDone} className="text-sm text-indigo-600 hover:text-indigo-800">← Exit to JLPT Menu</button>
         <span className={`text-sm font-mono font-bold px-3 py-1 rounded-lg ${isLow ? 'bg-red-50 text-red-600' : 'bg-gray-100 text-gray-700'}`}>
           {formatTime(timeLeft)}
         </span>

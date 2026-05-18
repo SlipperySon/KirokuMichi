@@ -6,11 +6,17 @@
 
 import { useEffect, useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import { ArrowLeft, ArrowRight, CheckCircle2, ListChecks } from 'lucide-react'
 import { useAppStore } from '../store'
 import { CEFR_BASE_TEXTBOOK, TEXTBOOK_LESSON_COUNTS, CEFR_SUPPLEMENTAL, type CEFRLevel } from '../content/cefrMapping'
 import { lessonStructureService, type LessonStructure } from '../content/lessonNormalization'
-import { curriculumService } from '../content/curriculumService'
+import { curriculumService, type Exercise, type GrammarItem, type VocabItem } from '../content/curriculumService'
+import { buildLessonIntent, type LessonIntent } from '../content/lessonIntentService'
+import { createLessonMatcher } from '../content/lessonContentUtils'
+import { applyGenkiLessonOneFoundation, applyGenkiLessonOneGrammarScope } from '../content/genkiFoundation'
 import { unlockScenariosForLesson } from '../content/scenarioUnlockService'
+import { getSupplementalScenarios } from '../content/supplementalScenarioService'
+import { getWorkbookPracticeTasks, type WorkbookPracticeTask } from '../content/workbookPracticeService'
 import { SRSService } from '../srs/srsService'
 import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
@@ -18,9 +24,11 @@ import type { ReviewCard } from './types'
 
 interface LessonPageState {
   lesson: LessonStructure | null
-  vocab: Array<{ surface: string; english: string }> | null
-  grammar: Array<{ pattern: string; meaning: string }> | null
-  exercises: Array<{ question: string }> | null
+  vocab: VocabItem[] | null
+  grammar: GrammarItem[] | null
+  exercises: Exercise[] | null
+  intent: LessonIntent | null
+  workbookPractice: WorkbookPracticeTask[]
   unlockedCards: ReviewCard[]
   loading: boolean
   error: string | null
@@ -35,6 +43,8 @@ export function LessonPage() {
     vocab: null,
     grammar: null,
     exercises: null,
+    intent: null,
+    workbookPractice: [],
     unlockedCards: [],
     loading: true,
     error: null
@@ -82,16 +92,26 @@ export function LessonPage() {
         //   original:   '1_textbook_genki_1_1'
         //   plain:      '1'
         // Match against all of them.
-        const lessonNumStr = lessonNum.toString()
-        const matchesLesson = (itemLesson: string) =>
-          itemLesson === lessonNumStr ||
-          itemLesson === lessonId ||
-          itemLesson.endsWith(`_${lessonId}`) ||
-          itemLesson === `${lessonNum}`
+        const matchesLesson = createLessonMatcher(lessonId, lessonNum)
 
-        const vocab = curriculum.vocabulary.filter(v => matchesLesson(v.lesson))
-        const grammar = curriculum.grammar.filter(g => matchesLesson(g.lesson))
+        const rawVocab = curriculum.vocabulary.filter(v => matchesLesson(v.lesson))
+        const rawGrammar = curriculum.grammar.filter(g => matchesLesson(g.lesson))
+        const vocab = applyGenkiLessonOneFoundation(lessonId, rawVocab)
+        const grammar = applyGenkiLessonOneGrammarScope(lessonId, rawGrammar)
         const exercises = curriculum.exercises.filter(e => matchesLesson(e.lesson))
+        const [scenarios, workbookPractice] = await Promise.all([
+          getSupplementalScenarios({ cefr: cefrLevel, coreLessonId: lessonId }),
+          getWorkbookPracticeTasks({ cefr: cefrLevel, lessonId, lessonNum }),
+        ])
+        const intent = buildLessonIntent({
+          cefr: cefrLevel,
+          lessonNum,
+          lessonId,
+          vocab,
+          grammar,
+          scenarios,
+          workbookPractice,
+        })
 
         // Load unlocked cards for this lesson
         let unlockedCards: ReviewCard[] = []
@@ -105,6 +125,8 @@ export function LessonPage() {
           vocab,
           grammar,
           exercises,
+          intent,
+          workbookPractice,
           unlockedCards,
           loading: false
         }))
@@ -118,7 +140,7 @@ export function LessonPage() {
     }
 
     loadLesson()
-  }, [lessonId, baseTextbook, lessonNum, activeUserId])
+  }, [lessonId, baseTextbook, lessonNum, activeUserId, srsService])
 
   if (state.loading) {
     return (
@@ -151,6 +173,9 @@ export function LessonPage() {
   const totalLessons = TEXTBOOK_LESSON_COUNTS[baseTextbook] || 1
   const hasNextLesson = lessonNum < totalLessons
   const hasPreviousLesson = lessonNum > 1
+  const teachableVocabCount = state.vocab?.length ?? 0
+  const teachableGrammarCount = state.grammar?.length ?? 0
+  const practiceTaskCount = state.workbookPractice.length
 
   const handleStudyCards = async () => {
     // Start a review session with lesson cards
@@ -211,8 +236,8 @@ export function LessonPage() {
                 )}
               </div>
               <p className="mt-2 text-gray-600">
-                {state.lesson.content.vocab} vocab • {state.lesson.content.grammar} grammar •{' '}
-                {state.lesson.content.exercises} exercises
+                {teachableVocabCount} vocab • {teachableGrammarCount} grammar •{' '}
+                {practiceTaskCount} practice tasks
               </p>
             </div>
           </div>
@@ -228,12 +253,14 @@ export function LessonPage() {
                     lessonId,
                     lessonTitle: `${state.lesson!.series} - Lesson ${state.lesson!.lesson_number}`,
                     cefrLevel: cefr,
+                    intent: state.intent ?? undefined,
+                    workbookPractice: state.workbookPractice,
                   }
                 })
               }}
               className="w-full rounded-xl bg-indigo-600 px-6 py-4 text-lg font-bold text-white hover:bg-indigo-700 transition-colors shadow-md mb-4"
             >
-              Start Lesson ({(state.vocab?.length ?? 0) + (state.grammar?.length ?? 0)} items)
+              Start Lesson ({teachableVocabCount + teachableGrammarCount} items)
             </button>
           ) : null}
 
@@ -241,34 +268,38 @@ export function LessonPage() {
           <div className="flex flex-wrap items-center gap-3">
             <button
               onClick={() => navigate('/learn/lessons')}
-              className="rounded-lg border border-gray-200 px-4 py-2 text-gray-700 hover:bg-gray-50"
+              className="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-4 py-2 font-semibold text-indigo-800 shadow-sm transition-colors hover:bg-indigo-100"
             >
-              ← Back to Lessons
+              <ListChecks className="h-4 w-4" aria-hidden="true" />
+              Return to Lesson Menu
             </button>
 
             {hasPreviousLesson && (
               <button
                 onClick={() => navigate(`/learn/lessons/${cefr}/${lessonNum - 1}`)}
-                className="rounded-lg border border-gray-200 px-4 py-2 text-gray-700 hover:bg-gray-50"
+                className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-gray-700 transition-colors hover:bg-gray-50"
               >
-                ← Previous Lesson
+                <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+                Previous Lesson
               </button>
             )}
 
             {hasNextLesson && (
               <button
                 onClick={() => navigate(`/learn/lessons/${cefr}/${lessonNum + 1}`)}
-                className="rounded-lg border border-gray-200 px-4 py-2 text-gray-700 hover:bg-gray-50"
+                className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-gray-700 transition-colors hover:bg-gray-50"
               >
-                Next Lesson →
+                Next Lesson
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </button>
             )}
 
             {!isCompleted && (
               <button
                 onClick={handleMarkComplete}
-                className="ml-auto rounded-lg bg-green-500 px-4 py-2 text-white hover:bg-green-600"
+                className="ml-auto inline-flex items-center gap-2 rounded-lg bg-green-600 px-4 py-2 font-semibold text-white transition-colors hover:bg-green-700"
               >
+                <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
                 Mark as Complete
               </button>
             )}
@@ -278,6 +309,75 @@ export function LessonPage() {
 
       {/* Content */}
       <div className="mx-auto max-w-4xl px-6 py-8">
+        {state.intent && (
+          <div className="mb-8 rounded-lg bg-white p-6 shadow">
+            <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+              <div>
+                <p className="text-sm font-semibold text-indigo-600">Lesson intent</p>
+                <h2 className="mt-1 text-xl font-bold text-gray-900">{state.intent.objective}</h2>
+              </div>
+              <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
+                {state.intent.pageRange}
+              </span>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              <IntentBlock title="Prerequisite" body={state.intent.prerequisite} />
+              <IntentBlock title="Output skill" body={state.intent.outputSkill} />
+              <IntentBlock title="Target grammar" body={state.intent.targetGrammar.join(' / ') || 'No grammar assigned yet'} />
+              <IntentBlock title="Target vocab" body={state.intent.targetVocab.join('、') || 'No vocab assigned yet'} />
+            </div>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              <div className="rounded-lg border border-indigo-100 bg-indigo-50 p-3 text-sm text-indigo-950">
+                <div className="font-semibold">Maynard coverage</div>
+                <div className="mt-1">{state.intent.maynardMatchCount}/{state.grammar?.length ?? 0} grammar points have Maynard deep explanations.</div>
+              </div>
+              <div className="rounded-lg border border-emerald-100 bg-emerald-50 p-3 text-sm text-emerald-950">
+                <div className="font-semibold">Matching scenarios</div>
+                <div className="mt-1">{state.intent.matchingScenarios.length} scenario links for output practice.</div>
+              </div>
+            </div>
+            {state.intent.matchingScenarios.length > 0 && (
+              <div className="mt-4 rounded-lg border border-gray-200 bg-gray-50 p-3">
+                <div className="text-xs font-semibold uppercase tracking-wide text-gray-500">Matching scenarios</div>
+                <div className="mt-2 grid gap-2 md:grid-cols-2">
+                  {state.intent.matchingScenarios.map(scenario => (
+                  <div key={scenario.id} className="rounded bg-white p-2 text-sm">
+                      <div className="font-semibold text-gray-900">{scenario.title}</div>
+                      <div className="text-xs text-gray-500">{scenario.source} {scenario.page > 0 ? `p. ${scenario.page}` : ''}</div>
+                      <div className="mt-1 text-gray-600">{scenario.canDo}</div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        )}
+
+        {state.workbookPractice.length > 0 && (
+          <div className="mb-8 rounded-lg bg-white p-6 shadow">
+            <h2 className="mb-4 text-xl font-bold text-gray-900">Workbook Practice ({state.workbookPractice.length})</h2>
+            <div className="space-y-3">
+              {state.workbookPractice.map(task => (
+                <div key={task.id} className="rounded-lg border border-emerald-100 bg-emerald-50 p-3 text-sm text-emerald-950">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <span className="font-semibold capitalize">{task.type.replace(/_/g, ' ')}</span>
+                    <span className="text-xs text-emerald-800">{task.source} {task.page > 0 ? `p. ${task.page}` : ''}</span>
+                  </div>
+                  <div className="mt-1 flex flex-wrap gap-2 text-xs">
+                    <span className="rounded bg-white px-2 py-0.5 font-semibold uppercase tracking-wide text-emerald-800">{task.practiceMode}</span>
+                    <span className="rounded bg-white px-2 py-0.5 text-emerald-800">{task.focus}</span>
+                  </div>
+                  <p className="mt-2 text-gray-900">{task.prompt}</p>
+                  {task.sourcePrompt && (
+                    <p className="mt-1 text-xs text-emerald-800">Source cue: {task.sourcePrompt}</p>
+                  )}
+                  <p className="mt-1 text-emerald-900">{task.support}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
+
         {/* Vocabulary Section */}
         {state.vocab && state.vocab.length > 0 && (
           <div className="mb-8 rounded-lg bg-white p-6 shadow">
@@ -287,6 +387,9 @@ export function LessonPage() {
                 <div key={idx} className="rounded bg-blue-50 p-3">
                   <div className="font-semibold text-gray-900">{item.surface}</div>
                   <div className="text-sm text-gray-600">{item.english}</div>
+                  <div className="mt-1 text-[11px] font-medium text-blue-800">
+                    {item.source.replace(/_/g, ' ')} {item.page > 0 ? `p. ${item.page}` : 'foundation'}
+                  </div>
                 </div>
               ))}
               {state.vocab.length > 15 && (
@@ -307,6 +410,12 @@ export function LessonPage() {
                 <div key={idx} className="rounded bg-purple-50 p-3">
                   <div className="font-semibold text-gray-900">{item.pattern}</div>
                   <div className="text-sm text-gray-600">{item.meaning}</div>
+                  {item.explanation && (
+                    <div className="mt-1 text-xs text-gray-500 line-clamp-2">{item.explanation}</div>
+                  )}
+                  <div className="mt-1 text-[11px] font-medium text-purple-800">
+                    {item.source.replace(/_/g, ' ')} {item.page > 0 ? `p. ${item.page}` : 'generated grammar'}
+                  </div>
                 </div>
               ))}
               {state.grammar.length > 10 && (
@@ -357,8 +466,9 @@ export function LessonPage() {
               {CEFR_SUPPLEMENTAL[cefrLevel].map(textbook => (
                 <button
                   key={textbook}
+                  onClick={() => navigate(`/scenarios?level=${cefrLevel.toUpperCase()}&source=${textbook}`)}
                   className="rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-700 hover:bg-gray-50"
-                  title={`View ${textbook}`}
+                  title={`Practice scenarios from ${textbook}`}
                 >
                   {textbook.replace(/_/g, ' ')}
                 </button>
@@ -367,6 +477,15 @@ export function LessonPage() {
           </div>
         )}
       </div>
+    </div>
+  )
+}
+
+function IntentBlock({ title, body }: { title: string; body: string }) {
+  return (
+    <div className="rounded-lg border border-gray-200 bg-gray-50 p-3">
+      <div className="text-xs font-semibold uppercase tracking-wide text-gray-500">{title}</div>
+      <div className="mt-1 text-sm leading-relaxed text-gray-900">{body}</div>
     </div>
   )
 }

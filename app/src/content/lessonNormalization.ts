@@ -1,3 +1,5 @@
+import { canonicalSourceLessonId } from './lessonContentUtils'
+
 /**
  * Lesson ID Normalization and Structure Service
  * Converts messy lesson IDs from OCR extraction to clean, normalized format
@@ -131,7 +133,16 @@ class LessonStructureService {
 
   async getLesson(normalizedId: string): Promise<LessonStructure | null> {
     await this.loadStructure()
-    return this.lessonMap.get(normalizedId) || null
+    const sourceId = canonicalSourceLessonId(normalizedId)
+    const lesson = this.lessonMap.get(sourceId) || this.lessonMap.get(normalizedId)
+    if (!lesson) return null
+    if (sourceId === normalizedId) return lesson
+
+    return {
+      ...lesson,
+      normalized_id: normalizedId,
+      lesson_number: extractLessonNumber(normalizedId),
+    }
   }
 
   async getLessonsBySeries(series: string): Promise<LessonStructure[]> {

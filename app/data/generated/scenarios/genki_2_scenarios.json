@@ -1,0 +1,574 @@
+[
+  {
+    "id": "genki_2:lesson_1:wish_list",
+    "title": "Choosing a Gift",
+    "titleJa": "プレゼントを選ぶ",
+    "description": "Use ほしい, てあげる, and comparison language to choose a gift.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_1",
+    "coreLessonId": "genki_2_1",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Ask what someone wants and suggest a gift with reasons.",
+    "participants": ["You", "Friend"],
+    "sampleDialogue": "妹さんは何がほしいと言っていましたか。",
+    "lines": [
+      { "speaker": "A", "text": "妹さんは何がほしいと言っていましたか。", "translation": "What did your younger sister say she wanted?" },
+      { "speaker": "B", "text": "新しいかばんがほしいと言っていました。", "translation": "She said she wanted a new bag." },
+      { "speaker": "A", "text": "じゃ、このかばんを買ってあげたらどうですか。軽いし、使いやすいですよ。", "translation": "Then how about buying this bag for her? It's light and easy to use." },
+      { "speaker": "B", "text": "いいですね。色もかわいいです。", "translation": "That's a good idea. The color is cute too." }
+    ],
+    "practicePrompts": [
+      "Ask what a family member or friend wants.",
+      "Recommend one gift and explain why it is easy to use or useful."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_1:easy_to_use",
+    "title": "Explaining What Is Easy",
+    "titleJa": "使いやすいもの",
+    "description": "Use やすい/にくい and など to compare everyday objects.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_1",
+    "coreLessonId": "genki_2_1",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Explain why something is easy or difficult to use.",
+    "participants": ["You", "Classmate"],
+    "sampleDialogue": "このアプリは使いやすいですか。",
+    "lines": [
+      { "speaker": "A", "text": "このアプリは使いやすいですか。", "translation": "Is this app easy to use?" },
+      { "speaker": "B", "text": "はい。漢字や文法などをすぐ調べられます。", "translation": "Yes. You can quickly look up things like kanji and grammar." },
+      { "speaker": "A", "text": "でも、説明はちょっと読みにくいですね。", "translation": "But the explanations are a little hard to read." },
+      { "speaker": "B", "text": "そうですね。先生に聞いてみましょう。", "translation": "True. Let's ask the teacher." }
+    ],
+    "practicePrompts": [
+      "Compare two apps, tools, or textbooks using やすい/にくい.",
+      "Give examples using など."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_2:it_looks_like",
+    "title": "First Impressions",
+    "titleJa": "第一印象",
+    "description": "Use そう and みたい to describe how something or someone seems.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_2",
+    "coreLessonId": "genki_2_2",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Describe appearances and explain why you think so.",
+    "participants": ["You", "Friend"],
+    "sampleDialogue": "あのレストランは高そうですね。",
+    "lines": [
+      { "speaker": "A", "text": "あのレストランは高そうですね。", "translation": "That restaurant looks expensive." },
+      { "speaker": "B", "text": "でも、学生が多いみたいですよ。安いかもしれません。", "translation": "But it seems like there are many students. It might be cheap." },
+      { "speaker": "A", "text": "じゃ、メニューを見てみましょう。", "translation": "Then let's look at the menu." },
+      { "speaker": "B", "text": "いいですね。おいしそうだったら入りましょう。", "translation": "Good idea. If it looks tasty, let's go in." }
+    ],
+    "practicePrompts": [
+      "Describe three places or people using そう or みたい.",
+      "Explain what clue made you think that."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_2:apology",
+    "title": "Apologizing Clearly",
+    "titleJa": "謝る",
+    "description": "Use てすみません and comparison language to explain a problem.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_2",
+    "coreLessonId": "genki_2_2",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Apologize for a specific action and suggest how to fix it.",
+    "participants": ["You", "Teacher"],
+    "sampleDialogue": "宿題を忘れてすみません。",
+    "lines": [
+      { "speaker": "A", "text": "先生、宿題を忘れてすみません。", "translation": "Teacher, I'm sorry for forgetting the homework." },
+      { "speaker": "B", "text": "どうして忘れたんですか。", "translation": "Why did you forget it?" },
+      { "speaker": "A", "text": "アルバイトがいつもより忙しかったんです。今日の午後出してもいいですか。", "translation": "My part-time job was busier than usual. May I turn it in this afternoon?" },
+      { "speaker": "B", "text": "いいですよ。でも、次は気をつけてください。", "translation": "That's fine. But please be careful next time." }
+    ],
+    "practicePrompts": [
+      "Apologize for being late, forgetting something, or making a mistake.",
+      "Give a reason and propose a repair."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_3:future_plan",
+    "title": "Planning Ahead",
+    "titleJa": "これからの予定",
+    "description": "Use ようと思う and ごろ to talk about near-future plans.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_3",
+    "coreLessonId": "genki_2_3",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "State an intention and ask about someone else's plan.",
+    "participants": ["You", "Friend"],
+    "sampleDialogue": "夏休みに何をしようと思っていますか。",
+    "lines": [
+      { "speaker": "A", "text": "夏休みに何をしようと思っていますか。", "translation": "What are you thinking of doing during summer break?" },
+      { "speaker": "B", "text": "京都に行こうと思っています。八月ごろ行くつもりです。", "translation": "I'm thinking of going to Kyoto. I plan to go around August." },
+      { "speaker": "A", "text": "いいですね。何を見たいですか。", "translation": "Nice. What do you want to see?" },
+      { "speaker": "B", "text": "古いお寺を見たり、おいしいものを食べたりしたいです。", "translation": "I want to see old temples and eat good food." }
+    ],
+    "practicePrompts": [
+      "Tell your partner one plan using ようと思っています.",
+      "Ask when they plan to do it using ごろ."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_3:advice_if",
+    "title": "If You Go",
+    "titleJa": "行くなら",
+    "description": "Use なら to give advice based on someone else's plan.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_3",
+    "coreLessonId": "genki_2_3",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Respond to a plan with a useful suggestion.",
+    "participants": ["You", "Classmate"],
+    "sampleDialogue": "北海道に行くなら、六月がいいですよ。",
+    "lines": [
+      { "speaker": "A", "text": "来月、北海道に行こうと思っています。", "translation": "I'm thinking of going to Hokkaido next month." },
+      { "speaker": "B", "text": "北海道に行くなら、六月がいいですよ。花がきれいです。", "translation": "If you're going to Hokkaido, June is good. The flowers are beautiful." },
+      { "speaker": "A", "text": "そうですか。何を食べたらいいですか。", "translation": "Really? What should I eat?" },
+      { "speaker": "B", "text": "ラーメンがおすすめです。", "translation": "Ramen is my recommendation." }
+    ],
+    "practicePrompts": [
+      "Tell your partner a travel or study plan.",
+      "Give advice using なら."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_4:needs_and_reasons",
+    "title": "What Needs To Be Done",
+    "titleJa": "必要なこと",
+    "description": "Use 必要がある, し, and frequency に to explain obligations.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_4",
+    "coreLessonId": "genki_2_4",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Explain what is necessary and give more than one reason.",
+    "participants": ["You", "Club member"],
+    "sampleDialogue": "大会の前に、何をする必要がありますか。",
+    "lines": [
+      { "speaker": "A", "text": "大会の前に、何をする必要がありますか。", "translation": "What do we need to do before the tournament?" },
+      { "speaker": "B", "text": "週に三回練習する必要があります。試合も近いし、みんな忙しいし。", "translation": "We need to practice three times a week. The match is close, and everyone is busy." },
+      { "speaker": "A", "text": "大変ですね。でも、早く決めてよかったです。", "translation": "That's tough. But I'm glad we decided early." },
+      { "speaker": "B", "text": "そうですね。予定をメールで送りましょう。", "translation": "Right. Let's send the schedule by email." }
+    ],
+    "practicePrompts": [
+      "Explain what you need to do before a test, trip, or event.",
+      "Give two reasons using し."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_4:glad_that",
+    "title": "Glad It Worked Out",
+    "titleJa": "よかったこと",
+    "description": "Use てよかった to talk about a good decision or result.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_4",
+    "coreLessonId": "genki_2_4",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Describe a past decision and why you are glad about it.",
+    "participants": ["You", "Friend"],
+    "sampleDialogue": "早く予約してよかったですね。",
+    "lines": [
+      { "speaker": "A", "text": "コンサートのチケット、もう売り切れたそうです。", "translation": "I heard the concert tickets are already sold out." },
+      { "speaker": "B", "text": "本当ですか。早く予約してよかったですね。", "translation": "Really? I'm glad we reserved early." },
+      { "speaker": "A", "text": "はい。友だちにも教えてよかったです。", "translation": "Yes. I'm also glad I told my friend." },
+      { "speaker": "B", "text": "楽しみですね。", "translation": "I'm looking forward to it." }
+    ],
+    "practicePrompts": [
+      "Tell your partner about something you are glad you did.",
+      "Ask a follow-up question about the result."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_5:reported_question",
+    "title": "Asking What Someone Said",
+    "titleJa": "何と聞きましたか",
+    "description": "Use かどうか and と聞いた to report questions and answers.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_5",
+    "coreLessonId": "genki_2_5",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Report what someone asked and whether something is true.",
+    "participants": ["You", "Classmate"],
+    "sampleDialogue": "先生は試験があるかどうか聞きましたか。",
+    "lines": [
+      { "speaker": "A", "text": "先生は試験があるかどうか聞きましたか。", "translation": "Did the teacher ask whether there is a test?" },
+      { "speaker": "B", "text": "はい。来週試験があると言っていました。", "translation": "Yes. The teacher said there is a test next week." },
+      { "speaker": "A", "text": "宿題も出すかどうか聞きましたか。", "translation": "Did you ask whether there will also be homework?" },
+      { "speaker": "B", "text": "聞きました。作文を書くそうです。", "translation": "I did. It seems we will write an essay." }
+    ],
+    "practicePrompts": [
+      "Report a yes/no question using かどうか.",
+      "Tell your partner what someone said or asked."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_5:prepared_state",
+    "title": "Already Prepared",
+    "titleJa": "準備してある",
+    "description": "Use てある and ようにする to describe preparation and habits.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_5",
+    "coreLessonId": "genki_2_5",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Explain what has been prepared and what habit you are trying to keep.",
+    "participants": ["You", "Roommate"],
+    "sampleDialogue": "旅行の準備はしてありますか。",
+    "lines": [
+      { "speaker": "A", "text": "旅行の準備はしてありますか。", "translation": "Have the trip preparations been done?" },
+      { "speaker": "B", "text": "はい。切符は買ってあります。最近、忘れ物をしないようにしています。", "translation": "Yes. The tickets have been bought. Recently I'm trying not to forget things." },
+      { "speaker": "A", "text": "いいですね。ホテルは予約してありますか。", "translation": "Good. Has the hotel been reserved?" },
+      { "speaker": "B", "text": "まだです。今晩予約します。", "translation": "Not yet. I'll reserve it tonight." }
+    ],
+    "practicePrompts": [
+      "List what has already been prepared using てある.",
+      "Say one habit you are trying to keep using ようにする."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_6:rules",
+    "title": "Explaining Rules",
+    "titleJa": "ルールを説明する",
+    "description": "Use なければいけない and ても to explain rules and exceptions.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_6",
+    "coreLessonId": "genki_2_6",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Explain what must be done and what is allowed even if conditions change.",
+    "participants": ["You", "New member"],
+    "sampleDialogue": "このクラブでは、何をしなければいけませんか。",
+    "lines": [
+      { "speaker": "A", "text": "このクラブでは、何をしなければいけませんか。", "translation": "In this club, what do we have to do?" },
+      { "speaker": "B", "text": "毎週、ミーティングに来なければいけません。忙しくても、連絡してください。", "translation": "You have to come to the meeting every week. Even if you're busy, please contact us." },
+      { "speaker": "A", "text": "わかりました。遅れる時はどうしますか。", "translation": "Got it. What should I do when I'll be late?" },
+      { "speaker": "B", "text": "メールを送れば大丈夫です。", "translation": "If you send an email, it's okay." }
+    ],
+    "practicePrompts": [
+      "Explain rules for a class, club, job, or home.",
+      "Add one exception with ても."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_6:transitive_intransitive",
+    "title": "What Happened?",
+    "titleJa": "何が起きた？",
+    "description": "Use transitive/intransitive pairs to describe an accident and action.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_6",
+    "coreLessonId": "genki_2_6",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Describe both a state that happened and the person who caused or fixed it.",
+    "participants": ["You", "Roommate"],
+    "sampleDialogue": "窓が開いていますよ。",
+    "lines": [
+      { "speaker": "A", "text": "窓が開いていますよ。寒いです。", "translation": "The window is open. It's cold." },
+      { "speaker": "B", "text": "すみません。私が開けました。今閉めます。", "translation": "Sorry. I opened it. I'll close it now." },
+      { "speaker": "A", "text": "ありがとうございます。電気もついていますね。", "translation": "Thanks. The light is on too." },
+      { "speaker": "B", "text": "じゃ、電気も消します。", "translation": "Then I'll turn the light off too." }
+    ],
+    "practicePrompts": [
+      "Describe one state using an intransitive verb.",
+      "Say who did the action using a transitive verb."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_7:polite_visit",
+    "title": "Visiting a Professor",
+    "titleJa": "先生の研究室で",
+    "description": "Use respectful language such as いらっしゃる and なさる in a visit.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_7",
+    "coreLessonId": "genki_2_7",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Ask politely whether a teacher or customer is available.",
+    "participants": ["You", "Office staff"],
+    "sampleDialogue": "山田先生はいらっしゃいますか。",
+    "lines": [
+      { "speaker": "A", "text": "すみません。山田先生はいらっしゃいますか。", "translation": "Excuse me. Is Professor Yamada here?" },
+      { "speaker": "B", "text": "はい、研究室にいらっしゃいます。お名前は？", "translation": "Yes, they are in their office. Your name?" },
+      { "speaker": "A", "text": "田中です。宿題について質問したいんですが。", "translation": "I'm Tanaka. I would like to ask about the homework." },
+      { "speaker": "B", "text": "少々お待ちください。", "translation": "Please wait a moment." }
+    ],
+    "practicePrompts": [
+      "Ask politely whether someone is present.",
+      "Explain why you came using んですが."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_7:humble_help",
+    "title": "Offering Help Politely",
+    "titleJa": "丁寧に手伝う",
+    "description": "Use humble language such as いたす when offering help.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_7",
+    "coreLessonId": "genki_2_7",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Offer help in a more formal situation.",
+    "participants": ["You", "Visitor"],
+    "sampleDialogue": "ご案内いたしましょうか。",
+    "lines": [
+      { "speaker": "A", "text": "受付はどちらですか。", "translation": "Where is reception?" },
+      { "speaker": "B", "text": "二階です。ご案内いたしましょうか。", "translation": "It's on the second floor. Shall I guide you?" },
+      { "speaker": "A", "text": "ありがとうございます。お願いします。", "translation": "Thank you. Please." },
+      { "speaker": "B", "text": "こちらでございます。", "translation": "This way." }
+    ],
+    "practicePrompts": [
+      "Offer help to a visitor or customer politely.",
+      "Practice one humble phrase and one respectful phrase."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_8:conditional_plan",
+    "title": "If It Rains",
+    "titleJa": "雨が降ったら",
+    "description": "Use もし and conditional planning language.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_8",
+    "coreLessonId": "genki_2_8",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Make a backup plan for a possible problem.",
+    "participants": ["You", "Friend"],
+    "sampleDialogue": "もし雨が降ったら、どうしますか。",
+    "lines": [
+      { "speaker": "A", "text": "もし雨が降ったら、どうしますか。", "translation": "If it rains, what will we do?" },
+      { "speaker": "B", "text": "公園に行かないで、映画を見ましょう。", "translation": "Instead of going to the park, let's watch a movie." },
+      { "speaker": "A", "text": "いいですね。ぜんぜん問題ありません。", "translation": "Sounds good. No problem at all." },
+      { "speaker": "B", "text": "じゃ、天気を見てから決めましょう。", "translation": "Then let's decide after checking the weather." }
+    ],
+    "practicePrompts": [
+      "Make a plan and one backup plan using もし.",
+      "Say what you will not do if the condition happens."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_8:negative_degree",
+    "title": "Not Very, Not At All",
+    "titleJa": "あまり・ぜんぜん",
+    "description": "Use あまり/ぜんぜん with negative forms to describe frequency and degree.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_8",
+    "coreLessonId": "genki_2_8",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Talk about what you do not do often or do not like much.",
+    "participants": ["You", "Classmate"],
+    "sampleDialogue": "最近、テレビをよく見ますか。",
+    "lines": [
+      { "speaker": "A", "text": "最近、テレビをよく見ますか。", "translation": "Do you watch TV often recently?" },
+      { "speaker": "B", "text": "いいえ、あまり見ません。忙しいんです。", "translation": "No, I don't watch it much. I'm busy." },
+      { "speaker": "A", "text": "スポーツはどうですか。", "translation": "How about sports?" },
+      { "speaker": "B", "text": "ぜんぜんしません。でも、散歩は好きです。", "translation": "I don't do them at all. But I like walking." }
+    ],
+    "practicePrompts": [
+      "Ask your partner about habits using よく.",
+      "Answer with あまり or ぜんぜん plus a negative form."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_9:cultural_opinion",
+    "title": "One Example of Culture",
+    "titleJa": "文化の一つ",
+    "description": "Use 一つだ and と考えられている to describe a cultural example.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_9",
+    "coreLessonId": "genki_2_9",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Describe something as one example of a broader category.",
+    "participants": ["You", "Classmate"],
+    "sampleDialogue": "お花見は日本の春の楽しみの一つだと思います。",
+    "lines": [
+      { "speaker": "A", "text": "お花見は日本の春の楽しみの一つだと思います。", "translation": "I think cherry-blossom viewing is one of the pleasures of spring in Japan." },
+      { "speaker": "B", "text": "そうですね。日本では大切な行事だと考えられています。", "translation": "Yes. In Japan, it is considered an important event." },
+      { "speaker": "A", "text": "あなたの国では、何が有名ですか。", "translation": "In your country, what is famous?" },
+      { "speaker": "B", "text": "夏の祭りが有名です。", "translation": "Summer festivals are famous." }
+    ],
+    "practicePrompts": [
+      "Describe one cultural event, food, or place from your country.",
+      "Use 一つだ to connect it to a larger category."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_9:fixing_work",
+    "title": "Doing It Again",
+    "titleJa": "やり直す",
+    "description": "Use なおす to discuss correcting or redoing work.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_9",
+    "coreLessonId": "genki_2_9",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Talk about correcting a mistake and improving the result.",
+    "participants": ["You", "Teacher"],
+    "sampleDialogue": "作文を書き直してもいいですか。",
+    "lines": [
+      { "speaker": "A", "text": "先生、作文を書き直してもいいですか。", "translation": "Teacher, may I rewrite my essay?" },
+      { "speaker": "B", "text": "もちろんです。文法の間違いを直してください。", "translation": "Of course. Please fix the grammar mistakes." },
+      { "speaker": "A", "text": "ほかにも直したほうがいいところがありますか。", "translation": "Are there any other parts I should fix?" },
+      { "speaker": "B", "text": "例をもう少し入れるといいですよ。", "translation": "It would be good to add a few more examples." }
+    ],
+    "practicePrompts": [
+      "Ask for permission to redo or fix something.",
+      "Explain what you will change."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_10:long_term_change",
+    "title": "How Things Have Changed",
+    "titleJa": "変化を説明する",
+    "description": "Use ずっと and broader descriptive language to explain change over time.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_10",
+    "coreLessonId": "genki_2_10",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Compare the past and present and explain what stayed true for a long time.",
+    "participants": ["You", "Friend"],
+    "sampleDialogue": "子どもの時から、ずっと音楽が好きです。",
+    "lines": [
+      { "speaker": "A", "text": "子どもの時から、ずっと音楽が好きです。", "translation": "I've liked music ever since I was a child." },
+      { "speaker": "B", "text": "どんな音楽を聞いていましたか。", "translation": "What kind of music did you listen to?" },
+      { "speaker": "A", "text": "昔はロックをよく聞いていましたが、今はジャズも聞きます。", "translation": "I used to listen to rock often, but now I also listen to jazz." },
+      { "speaker": "B", "text": "趣味が広くなりましたね。", "translation": "Your interests have broadened." }
+    ],
+    "practicePrompts": [
+      "Talk about something you have liked for a long time.",
+      "Compare your past and present habits."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_10:social_assumption",
+    "title": "What People Say",
+    "titleJa": "一般的に言われていること",
+    "description": "Use とされている to report a common belief or social idea.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_10",
+    "coreLessonId": "genki_2_10",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Report a common belief and then give your own view.",
+    "participants": ["You", "Classmate"],
+    "sampleDialogue": "日本では、朝ご飯は大切だとされています。",
+    "lines": [
+      { "speaker": "A", "text": "日本では、朝ご飯は大切だとされています。", "translation": "In Japan, breakfast is considered important." },
+      { "speaker": "B", "text": "あなたの国でもそうですか。", "translation": "Is it the same in your country?" },
+      { "speaker": "A", "text": "はい。でも、若い人は食べないことも多いです。", "translation": "Yes. But young people often don't eat it." },
+      { "speaker": "B", "text": "なるほど。生活が忙しいからかもしれませんね。", "translation": "I see. It may be because life is busy." }
+    ],
+    "practicePrompts": [
+      "Describe one thing that is commonly believed in your country.",
+      "Then say whether you agree or disagree."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_11:connecting_reasons",
+    "title": "Why It Happened",
+    "titleJa": "理由をつなげる",
+    "description": "Use て/で and なくて to connect reasons and results.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_11",
+    "coreLessonId": "genki_2_11",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Explain why something happened using connected clauses.",
+    "participants": ["You", "Friend"],
+    "sampleDialogue": "電車が遅れて、授業に遅れました。",
+    "lines": [
+      { "speaker": "A", "text": "どうして授業に遅れたんですか。", "translation": "Why were you late to class?" },
+      { "speaker": "B", "text": "電車が遅れて、授業に遅れました。", "translation": "The train was delayed, so I was late to class." },
+      { "speaker": "A", "text": "大変でしたね。宿題は出しましたか。", "translation": "That sounds rough. Did you turn in the homework?" },
+      { "speaker": "B", "text": "いいえ。時間がなくて、出せませんでした。", "translation": "No. I didn't have time, so I couldn't submit it." }
+    ],
+    "practicePrompts": [
+      "Explain one problem using て or なくて.",
+      "Ask your partner one follow-up question."
+    ]
+  },
+  {
+    "id": "genki_2:lesson_11:wrap_up_story",
+    "title": "Short Personal Story",
+    "titleJa": "短い経験談",
+    "description": "Use connected clauses to tell a short personal story.",
+    "textbook": "Genki 2",
+    "textbookKey": "genki_2_textbook",
+    "level": "A2",
+    "lessonId": "genki_2_11",
+    "coreLessonId": "genki_2_11",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Tell a short story with cause, sequence, and result.",
+    "participants": ["You", "Classmate"],
+    "sampleDialogue": "週末は忙しくて、よく寝られませんでした。",
+    "lines": [
+      { "speaker": "A", "text": "週末はどうでしたか。", "translation": "How was your weekend?" },
+      { "speaker": "B", "text": "忙しくて、よく寝られませんでした。土曜日にアルバイトをして、日曜日に試験の勉強をしました。", "translation": "It was busy, so I couldn't sleep much. I worked on Saturday and studied for a test on Sunday." },
+      { "speaker": "A", "text": "大変でしたね。試験はどうでしたか。", "translation": "That was tough. How was the test?" },
+      { "speaker": "B", "text": "難しかったですが、勉強してよかったです。", "translation": "It was difficult, but I'm glad I studied." }
+    ],
+    "practicePrompts": [
+      "Tell a short story about a busy day.",
+      "Use at least two connected clauses."
+    ]
+  }
+]

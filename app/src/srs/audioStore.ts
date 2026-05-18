@@ -31,7 +31,7 @@ export async function loadAudio(key: string): Promise<string | null> {
       if (!data) { resolve(null); return }
       const ext = key.split('.').pop() ?? 'mp3'
       const mime = ext === 'ogg' ? 'audio/ogg' : 'audio/mpeg'
-      resolve(URL.createObjectURL(new Blob([data], { type: mime })))
+      resolve(URL.createObjectURL(new Blob([data.slice().buffer], { type: mime })))
     }
     req.onerror = () => reject(req.error)
   })

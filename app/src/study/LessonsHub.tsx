@@ -6,8 +6,10 @@
 
 import { useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { Home } from 'lucide-react'
 import { useAppStore } from '../store'
 import { CEFR_BASE_TEXTBOOK, TEXTBOOK_LESSON_COUNTS, type CEFRLevel } from '../content/cefrMapping'
+import { Navigation } from '../components/Navigation'
 
 // Display names for each base textbook (kept in sync with cefrMapping.ts)
 const TEXTBOOK_DISPLAY_NAMES: Record<string, string> = {
@@ -83,7 +85,11 @@ function CEFRButton({
   )
 }
 
-export function LessonsHub() {
+interface LessonsHubProps {
+  embedded?: boolean
+}
+
+export function LessonsHub({ embedded = false }: LessonsHubProps) {
   const navigate = useNavigate()
   const lessonsCompleted = useAppStore(s => s.lessonsCompleted)
 
@@ -139,15 +145,28 @@ export function LessonsHub() {
     navigate(`/learn/lessons/${cefr}/1`)
   }
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-8">
-      <div className="mx-auto max-w-4xl">
+  const content = (
+    <div className={embedded ? '' : 'min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-8'}>
+      <div className={embedded ? '' : 'mx-auto max-w-4xl'}>
         {/* Header */}
         <div className="mb-12">
-          <h1 className="mb-2 text-4xl font-bold text-slate-900">Study by Lesson</h1>
-          <p className="text-lg text-slate-600">
-            Follow a structured curriculum organized by your proficiency level
-          </p>
+          <div className="flex flex-wrap items-start justify-between gap-4">
+            <div>
+              <h1 className="mb-2 text-4xl font-bold text-slate-900">Study by Lesson</h1>
+              <p className="text-lg text-slate-600">
+                Follow a structured curriculum organized by your proficiency level
+              </p>
+            </div>
+            {!embedded && (
+              <button
+                onClick={() => navigate('/learn')}
+                className="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-4 py-2 text-sm font-semibold text-indigo-800 shadow-sm transition-colors hover:bg-indigo-100"
+              >
+                <Home className="h-4 w-4" aria-hidden="true" />
+                Return to Learn Menu
+              </button>
+            )}
+          </div>
         </div>
 
         {/* CEFR Level Grid */}
@@ -195,6 +214,15 @@ export function LessonsHub() {
           </div>
         </div>
       </div>
+    </div>
+  )
+
+  if (embedded) return content
+
+  return (
+    <div className="flex min-h-screen flex-col">
+      <Navigation />
+      {content}
     </div>
   )
 }

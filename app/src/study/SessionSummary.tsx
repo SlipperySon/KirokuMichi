@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useIntl } from 'react-intl'
+import { useAppStore } from '../store'
 import type { SessionStats } from './types'
 
 interface Props {
@@ -8,6 +9,41 @@ interface Props {
   onDone: () => void
   onExportAnki: () => void
   onImportAnki: (file: File) => void
+}
+
+function CelebrationBanner({ stats }: { stats: SessionStats }) {
+  const { settings, dailyStats } = useAppStore()
+  const [visible, setVisible] = useState(true)
+
+  useEffect(() => {
+    const timer = setTimeout(() => setVisible(false), 6000)
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (!visible) return null
+
+  const messages: string[] = []
+
+  if (dailyStats.todayReviewed >= settings.dailyGoal && settings.dailyGoal > 0) {
+    messages.push('Daily goal complete!')
+  }
+
+  if (dailyStats.currentStreak >= 7) {
+    messages.push(`${dailyStats.currentStreak}-day streak!`)
+  }
+
+  const improved = stats.improvementCount ?? stats.correctCount
+  if (improved > 0 && stats.cardsReviewed > 3) {
+    messages.push(`${improved} card${improved === 1 ? '' : 's'} strengthened`)
+  }
+
+  if (messages.length === 0) return null
+
+  return (
+    <div className="animate-bounce-once bg-gradient-to-r from-amber-400 to-orange-500 text-white rounded-xl px-5 py-3 text-center font-semibold shadow-lg">
+      {messages.join(' · ')}
+    </div>
+  )
 }
 
 function formatTime(ms: number): string {
@@ -50,6 +86,7 @@ export function SessionSummary({ stats, onDone, onExportAnki, onImportAnki }: Pr
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen gap-8 p-8 max-w-md mx-auto text-center">
+      <CelebrationBanner stats={stats} />
       <h2 className="text-2xl font-bold">{intl.formatMessage({ id: 'study.summary.title' })}</h2>
 
       <div className="grid grid-cols-3 gap-4 w-full">

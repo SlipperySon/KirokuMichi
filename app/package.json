@@ -29,6 +29,8 @@
     "textbook:reviewed:report": "tsx tools/textbook-pack/report-reviewed-packs.ts",
     "textbook:reviewed:fingerprints": "tsx tools/textbook-pack/check-reviewed-fingerprints.ts",
     "textbook:reviewed:validate": "tsx tools/textbook-pack/validate-reviewed-pack.ts",
+    "textbook:vocab:quality": "tsx tools/textbook-pack/repair-genki-vocab-quality.ts",
+    "textbook:learner:quality": "tsx tools/textbook-pack/audit-learner-content-quality.ts",
     "generate": "tsx tools/generate/pipeline.ts"
   },
   "dependencies": {

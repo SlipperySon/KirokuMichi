@@ -77,7 +77,7 @@ export function PracticeTest({ service, level, questionCount = 10, onDone }: Pro
         <p className="font-medium">No practice questions yet for {level}</p>
         <p className="text-sm max-w-xs">Questions will be available after the content generation phase.</p>
         <button onClick={onDone} className="mt-2 px-6 py-2 rounded-xl bg-indigo-600 text-white text-sm font-semibold hover:bg-indigo-700">
-          Back
+          Back to JLPT Menu
         </button>
       </div>
     )
@@ -90,7 +90,7 @@ export function PracticeTest({ service, level, questionCount = 10, onDone }: Pro
   return (
     <div className="flex flex-col gap-6">
       <div className="flex items-center justify-between">
-        <button onClick={onDone} className="text-sm text-indigo-600 hover:text-indigo-800">← Exit</button>
+        <button onClick={onDone} className="text-sm text-indigo-600 hover:text-indigo-800">← Exit to JLPT Menu</button>
         <span className="text-sm font-semibold text-indigo-600">{level} Practice</span>
       </div>
 

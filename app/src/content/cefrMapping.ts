@@ -35,17 +35,17 @@ export const CEFR_SUPPLEMENTAL: Record<CEFRLevel, string[]> = {
  */
 export const TEXTBOOK_LESSON_COUNTS: Record<string, number> = {
   'genki_1_textbook': 12,
-  'genki_2_textbook': 12,
+  'genki_2_textbook': 11,
   'genki_1_workbook': 12,
-  'genki_2_workbook': 12,
-  'marugoto_a1_textbook': 8,
-  'marugoto_a2_textbook': 8,
-  'marugoto_b1_textbook': 8,
-  'marugoto_b1_workbook': 8,
-  'quartet_1_textbook': 12,
-  'quartet_1_workbook': 12,
-  'quartet_2_textbook': 12,
-  'quartet_2_workbook': 12,
+  'genki_2_workbook': 11,
+  'marugoto_a1_textbook': 9,
+  'marugoto_a2_textbook': 9,
+  'marugoto_b1_textbook': 7,
+  'marugoto_b1_workbook': 7,
+  'quartet_1_textbook': 6,
+  'quartet_1_workbook': 6,
+  'quartet_2_textbook': 6,
+  'quartet_2_workbook': 6,
   'tobira_textbook': 14,
   'authentic_japanese': 0  // TBD: C1 content not yet available
 }

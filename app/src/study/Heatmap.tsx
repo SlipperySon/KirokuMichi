@@ -47,8 +47,15 @@ export function Heatmap({ data, currentStreak }: Props) {
     }
 
     const dateStr = cursor.toISOString().split('T')[0]
-    const count = dayMap.get(dateStr)?.cardsReviewed ?? 0
-    const dayData: HeatmapDay = { date: dateStr, cardsReviewed: count, sessionCount: 0 }
+    const sourceDay = dayMap.get(dateStr)
+    const count = sourceDay?.cardsReviewed ?? 0
+    const dayData: HeatmapDay = {
+      date: dateStr,
+      cardsReviewed: count,
+      sessionCount: sourceDay?.sessionCount ?? 0,
+      vocabReviewed: sourceDay?.vocabReviewed ?? count,
+      grammarReviewed: sourceDay?.grammarReviewed ?? 0,
+    }
 
     if (group.weeks.length === 0) group.weeks.push([])
     const currentWeek = group.weeks[group.weeks.length - 1]

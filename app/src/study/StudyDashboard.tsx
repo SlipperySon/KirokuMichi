@@ -31,6 +31,20 @@ function interleaveQueue(due: ReviewCard[], newCards: ReviewCard[], limit: numbe
   return queue
 }
 
+function lessonRouteFromId(lessonId: string) {
+  const match = lessonId.match(/^(genki_[12]|quartet_[12])_(\d+)$/)
+  if (!match) return '/learn/lessons'
+  const [, series, lessonNumber] = match
+  const cefr = series === 'genki_1'
+    ? 'a1'
+    : series === 'genki_2'
+      ? 'a2'
+      : series === 'quartet_1'
+        ? 'b1'
+        : 'b2'
+  return `/learn/lessons/${cefr}/${lessonNumber}`
+}
+
 export function StudyDashboard() {
   const intl = useIntl()
   const navigate = useNavigate()
@@ -40,6 +54,9 @@ export function StudyDashboard() {
   const setActiveUserId = useAppStore(s => s.setActiveUserId)
   const dailyStats = useAppStore(s => s.dailyStats)
   const setDailyStats = useAppStore(s => s.setDailyStats)
+
+  const currentLesson = useAppStore(s => s.currentLesson)
+  const lessonsCompleted = useAppStore(s => s.lessonsCompleted)
 
   const [storage] = useState(() => new SQLiteStorage())
   const scheduler = settings.schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
@@ -53,6 +70,7 @@ export function StudyDashboard() {
   const [streakData, setStreakData] = useState<StreakData | null>(null)
   const [isLoading, setIsLoading] = useState(true)
   const [recoveryPayload, setRecoveryPayload] = useState<SessionRecoveryPayload | null>(null)
+  const [previewCards, setPreviewCards] = useState<ReviewCard[]>([])
   const userId = activeUserId
 
   const init = useCallback(async () => {
@@ -70,7 +88,7 @@ export function StudyDashboard() {
       setActiveUserId(uid)
     }
 
-    const [due, newC, streak, mistakes, weeklyRows] = await Promise.all([
+    const [due, newC, streak, mistakes, weeklyRows, preview] = await Promise.all([
       service.getDueCount(uid),
       service.getNewCount(uid),
       service.getStreakData(uid),
@@ -86,9 +104,11 @@ export function StudyDashboard() {
          GROUP BY date(started_at)`,
         [uid]
       ),
+      service.getDueCards(uid, 3),
     ])
     setDueCount(due)
     setNewCount(newC)
+    setPreviewCards(preview)
     // Cap new cards shown by daily limit minus due cards already scheduled
     const available = Math.max(0, settings.dailyCardLimit - due)
     setAvailableNewCount(Math.min(newC, available))
@@ -219,6 +239,51 @@ export function StudyDashboard() {
         </div>
       </div>
 
+      {/* Smart CTA */}
+      {(() => {
+        if (currentLesson && !lessonsCompleted.includes(currentLesson)) {
+          const label = currentLesson.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+          return (
+            <button
+              onClick={() => navigate(lessonRouteFromId(currentLesson))}
+              className="w-full flex items-center gap-3 px-5 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all shadow-md"
+            >
+              <span className="text-2xl">📖</span>
+              <div className="text-left">
+                <span className="block text-base">Continue Learning</span>
+                <span className="block text-xs opacity-80 mt-0.5">{label}</span>
+              </div>
+            </button>
+          )
+        }
+        if (dueCount > 0) {
+          return (
+            <button
+              onClick={startWordReview}
+              className="w-full flex items-center gap-3 px-5 py-4 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-xl font-semibold hover:from-indigo-700 hover:to-blue-700 transition-all shadow-md"
+            >
+              <span className="text-2xl">🧠</span>
+              <div className="text-left">
+                <span className="block text-base">Review {dueCount} Due Card{dueCount === 1 ? '' : 's'}</span>
+                <span className="block text-xs opacity-80 mt-0.5">Keep your streak alive</span>
+              </div>
+            </button>
+          )
+        }
+        return (
+          <button
+            onClick={() => navigate('/learn')}
+            className="w-full flex items-center gap-3 px-5 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-xl font-semibold hover:from-green-700 hover:to-emerald-700 transition-all shadow-md"
+          >
+            <span className="text-2xl">🎯</span>
+            <div className="text-left">
+              <span className="block text-base">Start Next Lesson</span>
+              <span className="block text-xs opacity-80 mt-0.5">All reviews complete — learn something new</span>
+            </div>
+          </button>
+        )
+      })()}
+
       {/* Stats */}
       <div className="grid grid-cols-2 gap-4">
         <div className="bg-indigo-50 rounded-xl p-4">
@@ -329,6 +394,22 @@ export function StudyDashboard() {
         <span className="text-lg">Review Cards</span>
         <span className="text-xs mt-1 opacity-80">{dueCount} due · {availableNewCount} new</span>
       </button>
+
+      {/* Preview due cards */}
+      {previewCards.length > 0 && (
+        <div className="flex gap-2">
+          {previewCards.map(card => (
+            <button
+              key={card.cardStateId}
+              onClick={startWordReview}
+              className="flex-1 bg-white border border-gray-200 rounded-lg px-3 py-2 text-center hover:border-indigo-300 hover:bg-indigo-50 transition-colors"
+            >
+              <p className="text-sm font-semibold text-gray-900 truncate" lang="ja">{card.front}</p>
+              {card.reading && <p className="text-xs text-gray-500 truncate">{card.reading}</p>}
+            </button>
+          ))}
+        </div>
+      )}
 
       {/* Mistake drill */}
       {mistakeCount > 0 && (

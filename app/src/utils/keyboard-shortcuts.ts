@@ -142,6 +142,21 @@ function persistShortcuts(customShortcuts: Map<ShortcutAction, string[]>) {
   }
 }
 
+function isEditableTarget(target: EventTarget | null) {
+  if (!(target instanceof HTMLElement)) return false
+  if (target.isContentEditable) return true
+
+  const tagName = target.tagName.toLowerCase()
+  if (tagName === 'textarea' || tagName === 'select') return true
+
+  if (tagName === 'input') {
+    const type = (target as HTMLInputElement).type.toLowerCase()
+    return !['button', 'checkbox', 'color', 'file', 'image', 'radio', 'range', 'reset', 'submit'].includes(type)
+  }
+
+  return Boolean(target.closest('[contenteditable="true"]'))
+}
+
 /**
  * Keyboard shortcut manager
  */
@@ -186,6 +201,8 @@ export class KeyboardShortcutManager {
    * Handle keydown event
    */
   private handleKeyDown(e: KeyboardEvent) {
+    if (isEditableTarget(e.target)) return
+
     const key = this.getKeyString(e)
 
     // Check custom shortcuts first

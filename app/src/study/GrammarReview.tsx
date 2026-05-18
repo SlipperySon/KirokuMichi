@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { LayoutDashboard, LogOut } from 'lucide-react'
 import { useAppStore } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
@@ -137,8 +138,9 @@ export function GrammarReview() {
           >
             {loading ? 'Loading…' : 'Start Grammar Review'}
           </button>
-          <button onClick={() => navigate('/study')} className="text-sm text-gray-400 hover:text-gray-600">
-            ← Back
+          <button onClick={() => navigate('/study')} className="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-sm font-semibold text-indigo-800 hover:bg-indigo-100">
+            <LayoutDashboard className="h-4 w-4" aria-hidden="true" />
+            Return to Study Dashboard
           </button>
         </main>
       </div>
@@ -153,7 +155,10 @@ export function GrammarReview() {
           <p className="text-4xl">🎓</p>
           <p className="text-lg font-semibold text-gray-700">No grammar points yet</p>
           <p className="text-sm text-gray-500 max-w-xs">Import grammar content from the Practice tab or explore the JLPT section.</p>
-          <button onClick={() => navigate('/study')} className="text-sm text-indigo-600 hover:text-indigo-800">← Back</button>
+          <button onClick={() => navigate('/study')} className="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-sm font-semibold text-indigo-800 hover:bg-indigo-100">
+            <LayoutDashboard className="h-4 w-4" aria-hidden="true" />
+            Return to Study Dashboard
+          </button>
         </main>
       </div>
     )
@@ -166,7 +171,10 @@ export function GrammarReview() {
       <Navigation />
       <main className="flex flex-col gap-6 p-6 max-w-xl mx-auto flex-1 w-full">
         <div className="flex items-center justify-between">
-          <button onClick={() => navigate('/study')} className="text-sm text-gray-400 hover:text-gray-600">← Exit</button>
+          <button onClick={() => navigate('/study')} className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50">
+            <LogOut className="h-4 w-4" aria-hidden="true" />
+            Exit to Study Dashboard
+          </button>
           <span className="text-sm text-gray-400">{index + 1} / {queue.length}</span>
         </div>
 

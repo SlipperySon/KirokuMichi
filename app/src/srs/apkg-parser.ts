@@ -4,7 +4,8 @@
  */
 
 import JSZip from 'jszip'
-import initSqlJs, { Database as SqlJsDatabase } from 'sql.js'
+import initSqlJs from 'sql.js'
+import type { Database as SqlJsDatabase } from 'sql.js'
 
 export interface ParsedApkg {
   dbData: Uint8Array

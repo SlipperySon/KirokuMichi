@@ -54,6 +54,17 @@ export interface GrammarQuestion {
   grammarPointId: number | null
 }
 
+export interface GrammarReviewContext {
+  grammarPointId: number
+  title: string
+  pattern: string
+  meaning: string
+  explanation: string
+  examples: Array<{ japanese: string; reading?: string; english: string }>
+  jlptLevel: string
+  source: string | null
+}
+
 export interface HeatmapDay {
   date: string
   cardsReviewed: number

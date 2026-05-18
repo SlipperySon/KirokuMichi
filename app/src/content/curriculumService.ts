@@ -13,9 +13,21 @@ export interface GrammarItem {
   id: string
   pattern: string
   meaning: string
+  explanation?: string
+  examples?: Array<{ japanese: string; reading?: string; english: string }>
+  maynardRef?: {
+    topicId: string
+    title: string
+    excerpt: string
+    examples: Array<{ japanese: string; english?: string }>
+  }
   lesson: string
   source: string
   page: number
+  category?: string
+  cefrLevel?: string
+  jlptLevel?: string
+  frequencyRank?: number
 }
 
 export interface DialogueLine {

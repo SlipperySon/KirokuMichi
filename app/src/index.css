@@ -87,6 +87,15 @@ html.dark .bg-gray-50 {
   @apply bg-gray-800;
 }
 
+html.dark .from-slate-50 {
+  --tw-gradient-from: #111827;
+  --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+}
+
+html.dark .to-slate-100 {
+  --tw-gradient-to: #1f2937 var(--tw-gradient-to-position);
+}
+
 html.dark .bg-red-50 {
   @apply bg-red-900/20;
 }
@@ -111,10 +120,20 @@ html.dark .bg-purple-50 {
   @apply bg-purple-900/20;
 }
 
+html.dark .bg-emerald-50 {
+  @apply bg-emerald-900/20;
+}
+
+html.dark .bg-orange-50 {
+  @apply bg-orange-900/20;
+}
+
 html.dark .bg-yellow-50 {
   @apply bg-yellow-900/20;
 }
 
+html.dark .text-yellow-600,
+html.dark .text-yellow-700,
 html.dark .text-yellow-800 {
   @apply text-yellow-300;
 }
@@ -136,7 +155,45 @@ html.dark .text-gray-600 {
 }
 
 html.dark .text-gray-500 {
-  @apply text-gray-500;
+  @apply text-gray-300;
+}
+
+html.dark .text-gray-400 {
+  @apply text-gray-300;
+}
+
+html.dark .text-gray-300 {
+  @apply text-gray-200;
+}
+
+html.dark .text-slate-600,
+html.dark .text-slate-500,
+html.dark .text-slate-400 {
+  @apply text-slate-300;
+}
+
+html.dark .text-slate-900,
+html.dark .text-slate-800,
+html.dark .text-slate-700 {
+  @apply text-slate-100;
+}
+
+html.dark .bg-slate-50,
+html.dark .bg-slate-100 {
+  @apply bg-slate-800;
+}
+
+html.dark .bg-slate-200 {
+  @apply bg-slate-700;
+}
+
+html.dark .border-slate-200,
+html.dark .border-slate-300 {
+  @apply border-slate-600;
+}
+
+html.dark .hover\:bg-slate-50:hover {
+  @apply bg-slate-800;
 }
 
 html.dark .text-red-700 {
@@ -147,12 +204,105 @@ html.dark .text-green-700 {
   @apply text-green-400;
 }
 
+html.dark .text-green-950,
+html.dark .text-green-900,
+html.dark .text-green-800 {
+  @apply text-green-200;
+}
+
+html.dark .text-blue-950,
+html.dark .text-blue-900,
+html.dark .text-blue-800,
+html.dark .text-blue-700,
+html.dark .text-blue-600 {
+  @apply text-blue-200;
+}
+
+html.dark .text-purple-950,
+html.dark .text-purple-900,
+html.dark .text-purple-800 {
+  @apply text-purple-200;
+}
+
 html.dark .text-amber-800 {
   @apply text-amber-300;
 }
 
+html.dark .text-red-950,
+html.dark .text-red-900,
+html.dark .text-red-800 {
+  @apply text-red-200;
+}
+
+html.dark .text-amber-950,
+html.dark .text-amber-900 {
+  @apply text-amber-200;
+}
+
+html.dark .text-indigo-600 {
+  @apply text-indigo-400;
+}
+
 html.dark .text-indigo-700 {
   @apply text-indigo-400;
+}
+
+html.dark .text-purple-600 {
+  @apply text-purple-400;
+}
+
+html.dark .text-purple-700 {
+  @apply text-purple-400;
+}
+
+html.dark .text-green-500,
+html.dark .text-green-600 {
+  @apply text-green-400;
+}
+
+html.dark .text-red-400,
+html.dark .text-red-500,
+html.dark .text-red-600 {
+  @apply text-red-400;
+}
+
+html.dark .text-amber-500,
+html.dark .text-amber-600 {
+  @apply text-amber-400;
+}
+
+html.dark .text-amber-700 {
+  @apply text-amber-400;
+}
+
+html.dark .text-amber-900 {
+  @apply text-amber-200;
+}
+
+html.dark .text-orange-500,
+html.dark .text-orange-600,
+html.dark .text-orange-700,
+html.dark .text-orange-800 {
+  @apply text-orange-400;
+}
+
+html.dark .text-indigo-950,
+html.dark .text-indigo-900,
+html.dark .text-indigo-800 {
+  @apply text-indigo-200;
+}
+
+html.dark .text-indigo-100,
+html.dark .text-indigo-300,
+html.dark .text-indigo-400,
+html.dark .text-indigo-500 {
+  @apply text-indigo-200;
+}
+
+html.dark .text-emerald-950,
+html.dark .text-emerald-900,
+html.dark .text-emerald-800 {
+  @apply text-emerald-200;
 }
 
 html.dark .placeholder-gray-400::placeholder {
@@ -161,6 +311,63 @@ html.dark .placeholder-gray-400::placeholder {
 
 html.dark .border-gray-300 {
   @apply border-gray-600;
+}
+
+html.dark .border-gray-100 {
+  @apply border-gray-700;
+}
+
+html.dark .border-indigo-100 {
+  @apply border-indigo-800;
+}
+
+html.dark .border-amber-200 {
+  @apply border-amber-700;
+}
+
+html.dark .border-amber-300 {
+  @apply border-amber-700;
+}
+
+html.dark .border-red-200 {
+  @apply border-red-800;
+}
+
+html.dark .bg-indigo-100 {
+  @apply bg-indigo-900/30;
+}
+
+html.dark .bg-amber-100 {
+  @apply bg-amber-900/30;
+}
+
+html.dark .bg-blue-100 {
+  @apply bg-blue-900/30;
+}
+
+html.dark .bg-green-100 {
+  @apply bg-green-900/30;
+}
+
+html.dark .bg-red-100 {
+  @apply bg-red-900/30;
+}
+
+html.dark .bg-orange-100 {
+  @apply bg-orange-900/30;
+}
+
+html.dark .bg-purple-100,
+html.dark .bg-purple-200 {
+  @apply bg-purple-900/30;
+}
+
+html.dark .bg-emerald-100 {
+  @apply bg-emerald-900/30;
+}
+
+html.dark .bg-gray-100 {
+  @apply bg-gray-800;
 }
 
 /* Light mode overrides — reverse the hardcoded dark classes used in components */
@@ -178,10 +385,25 @@ body.light .border-gray-600 { border-color: #e5e7eb !important; }
 body.light .text-gray-100 { color: #111827 !important; }
 body.light .text-gray-200 { color: #374151 !important; }
 body.light .text-gray-300 { color: #4b5563 !important; }
-body.light .text-gray-400 { color: #6b7280 !important; }
-body.light .text-gray-500 { color: #9ca3af !important; }
+body.light .text-gray-400 { color: #4b5563 !important; }
+body.light .text-gray-500 { color: #374151 !important; }
+body.light .text-slate-400 { color: #475569 !important; }
+body.light .text-slate-500 { color: #334155 !important; }
+body.light .text-slate-600 { color: #334155 !important; }
 body.light .hover\:bg-gray-800:hover { background-color: #e5e7eb !important; }
 body.light .hover\:bg-gray-700:hover { background-color: #d1d5db !important; }
+body.light .text-indigo-600 { color: #4338ca !important; }
+body.light .text-indigo-700 { color: #3730a3 !important; }
+body.light .text-purple-600 { color: #7c3aed !important; }
+body.light .text-purple-700 { color: #6d28d9 !important; }
+body.light .text-amber-600 { color: #d97706 !important; }
+body.light .text-amber-700 { color: #b45309 !important; }
+body.light .text-amber-900 { color: #78350f !important; }
+body.light .text-green-600 { color: #16a34a !important; }
+body.light .text-green-700 { color: #15803d !important; }
+body.light .text-red-600 { color: #dc2626 !important; }
+body.light .text-red-700 { color: #b91c1c !important; }
+body.light .text-orange-600 { color: #ea580c !important; }
 
 h1,
 h2 {
@@ -225,4 +447,14 @@ code {
   line-height: 135%;
   padding: 4px 8px;
   background: var(--code-bg);
+}
+
+@keyframes bounce-once {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  15% { transform: scale(1.05); }
+  30% { transform: scale(1); }
+}
+
+.animate-bounce-once {
+  animation: bounce-once 0.6s ease-out;
 }

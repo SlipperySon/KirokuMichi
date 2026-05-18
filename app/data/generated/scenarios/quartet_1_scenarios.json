@@ -1,0 +1,314 @@
+[
+  {
+    "id": "quartet_1:lesson_1:study_advice",
+    "title": "Study Advice",
+    "titleJa": "勉強のアドバイス",
+    "description": "Use ばいい, べき, and ことだ to give practical advice.",
+    "textbook": "Quartet 1",
+    "textbookKey": "quartet_1_textbook",
+    "level": "B1",
+    "lessonId": "quartet_1_1",
+    "coreLessonId": "quartet_1_1",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Give advice about study habits and explain the reason.",
+    "participants": ["You", "Classmate"],
+    "sampleDialogue": "単語を覚えられないなら、毎日短い例文を作ればいいと思います。",
+    "lines": [
+      { "speaker": "A", "text": "最近、単語を覚えられなくて困っています。", "translation": "Recently I cannot memorize vocabulary and I am having trouble." },
+      { "speaker": "B", "text": "毎日短い例文を作ればいいと思います。意味だけでなく、使い方も覚えるべきです。", "translation": "I think you should make short example sentences every day. You should learn not only the meaning but also how to use the words." },
+      { "speaker": "A", "text": "なるほど。続ける上で大切なことは何ですか。", "translation": "I see. What is important when continuing?" },
+      { "speaker": "B", "text": "完璧にしようとしすぎないことです。", "translation": "It is not trying too hard to make it perfect." }
+    ],
+    "practicePrompts": [
+      "Give advice to someone who is struggling with study.",
+      "Use ばいい or べき, then add one reason."
+    ]
+  },
+  {
+    "id": "quartet_1:lesson_1:rumor_context",
+    "title": "What People Say",
+    "titleJa": "そうだ・という",
+    "description": "Use そうだ and という to report information with context.",
+    "textbook": "Quartet 1",
+    "textbookKey": "quartet_1_textbook",
+    "level": "B1",
+    "lessonId": "quartet_1_1",
+    "coreLessonId": "quartet_1_1",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Report something you heard and say how reliable it seems.",
+    "participants": ["You", "Friend"],
+    "sampleDialogue": "新しい図書館は来月開くそうです。",
+    "lines": [
+      { "speaker": "A", "text": "新しい図書館は来月開くそうです。", "translation": "I heard the new library will open next month." },
+      { "speaker": "B", "text": "誰から聞いたんですか。", "translation": "Who did you hear that from?" },
+      { "speaker": "A", "text": "大学のサイトに書いてありました。学生が使いやすい場所になるということです。", "translation": "It was written on the university website. It says it will become a place that is easy for students to use." },
+      { "speaker": "B", "text": "それなら信頼できそうですね。", "translation": "In that case, it seems reliable." }
+    ],
+    "practicePrompts": [
+      "Report campus or local news using そうだ.",
+      "Add where the information came from."
+    ]
+  },
+  {
+    "id": "quartet_1:lesson_2:purpose_and_result",
+    "title": "Planning For A Purpose",
+    "titleJa": "目的のために",
+    "description": "Use ために and ということだ to explain a plan and its meaning.",
+    "textbook": "Quartet 1",
+    "textbookKey": "quartet_1_textbook",
+    "level": "B1",
+    "lessonId": "quartet_1_2",
+    "coreLessonId": "quartet_1_2",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Explain a goal, the plan for reaching it, and what it implies.",
+    "participants": ["You", "Advisor"],
+    "sampleDialogue": "将来日本で働くために、インターンに応募しようと思っています。",
+    "lines": [
+      { "speaker": "A", "text": "将来日本で働くために、インターンに応募しようと思っています。", "translation": "In order to work in Japan in the future, I am thinking of applying for an internship." },
+      { "speaker": "B", "text": "いいですね。つまり、日本語だけでなく、職場の文化も学びたいということですね。", "translation": "Good. In other words, you want to learn not only Japanese but also workplace culture." },
+      { "speaker": "A", "text": "はい。ただ、準備することがあまりに多くて不安です。", "translation": "Yes. But there are so many things to prepare that I am worried." },
+      { "speaker": "B", "text": "まず締切を確認するところから始めましょう。", "translation": "Let's start by checking the deadline." }
+    ],
+    "practicePrompts": [
+      "Explain one goal using ために.",
+      "Restate what the goal means using ということだ."
+    ]
+  },
+  {
+    "id": "quartet_1:lesson_2:even_if_busy",
+    "title": "Even If You Are Busy",
+    "titleJa": "どんなに忙しくても",
+    "description": "Use どんなに〜ても and ほど〜ない to discuss priorities.",
+    "textbook": "Quartet 1",
+    "textbookKey": "quartet_1_textbook",
+    "level": "B1",
+    "lessonId": "quartet_1_2",
+    "coreLessonId": "quartet_1_2",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Talk about a priority you keep even when conditions are difficult.",
+    "participants": ["You", "Friend"],
+    "sampleDialogue": "どんなに忙しくても、睡眠ほど大切なものはないと思います。",
+    "lines": [
+      { "speaker": "A", "text": "試験前は毎日三時間しか寝ません。", "translation": "Before exams, I only sleep three hours every day." },
+      { "speaker": "B", "text": "どんなに忙しくても、睡眠ほど大切なものはないと思います。", "translation": "No matter how busy you are, I think nothing is as important as sleep." },
+      { "speaker": "A", "text": "でも、勉強しないと不安なんです。", "translation": "But I feel anxious if I do not study." },
+      { "speaker": "B", "text": "短い時間でもいいから、計画的に休むことがあるでしょう。", "translation": "Even if it is a short time, there are times when you should rest according to a plan." }
+    ],
+    "practicePrompts": [
+      "Discuss one habit you protect even when busy.",
+      "Use どんなに〜ても and ほど〜ない."
+    ]
+  },
+  {
+    "id": "quartet_1:lesson_3:social_issue",
+    "title": "Discussing A Social Issue",
+    "titleJa": "社会問題について",
+    "description": "Use に関して, に対して, and わけではない to discuss a topic carefully.",
+    "textbook": "Quartet 1",
+    "textbookKey": "quartet_1_textbook",
+    "level": "B1",
+    "lessonId": "quartet_1_3",
+    "coreLessonId": "quartet_1_3",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Give a balanced opinion about a social topic.",
+    "participants": ["You", "Discussion partner"],
+    "sampleDialogue": "環境問題に関して、若い人の関心が高まっています。",
+    "lines": [
+      { "speaker": "A", "text": "環境問題に関して、若い人の関心が高まっていますね。", "translation": "Regarding environmental issues, young people's interest is increasing." },
+      { "speaker": "B", "text": "そうですね。ただ、みんなが行動しているわけではありません。", "translation": "Yes. However, it is not the case that everyone is taking action." },
+      { "speaker": "A", "text": "政府の対策に対してはどう思いますか。", "translation": "What do you think about government measures?" },
+      { "speaker": "B", "text": "おかげで便利になった面もありますが、まだ足りないと思います。", "translation": "There are aspects that have become convenient thanks to them, but I think it is still not enough." }
+    ],
+    "practicePrompts": [
+      "Choose a social issue and give a balanced opinion.",
+      "Use に関して or に対して, then soften one claim with わけではない."
+    ]
+  },
+  {
+    "id": "quartet_1:lesson_3:personal_experience",
+    "title": "Because Of One Experience",
+    "titleJa": "経験のおかげで",
+    "description": "Use おかげで, ばかりに, and てもかまわない to talk about experience.",
+    "textbook": "Quartet 1",
+    "textbookKey": "quartet_1_textbook",
+    "level": "B1",
+    "lessonId": "quartet_1_3",
+    "coreLessonId": "quartet_1_3",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Explain how one experience helped or caused a problem.",
+    "participants": ["You", "Friend"],
+    "sampleDialogue": "留学したおかげで、自分の意見を言えるようになりました。",
+    "lines": [
+      { "speaker": "A", "text": "留学したおかげで、自分の意見を言えるようになりました。", "translation": "Thanks to studying abroad, I became able to express my opinion." },
+      { "speaker": "B", "text": "いい経験でしたね。大変なこともありましたか。", "translation": "That was a good experience. Were there difficult things too?" },
+      { "speaker": "A", "text": "はい。準備を忘れたばかりに、最初は困りました。", "translation": "Yes. Just because I forgot to prepare, I had trouble at first." },
+      { "speaker": "B", "text": "少し失敗してもかまわないと思います。そこから学べますから。", "translation": "I think it is okay to fail a little. You can learn from it." }
+    ],
+    "practicePrompts": [
+      "Describe one experience that helped you.",
+      "Add one small problem caused by a mistake."
+    ]
+  },
+  {
+    "id": "quartet_1:lesson_4:hard_to_accept",
+    "title": "A Hard-To-Accept Situation",
+    "titleJa": "受け入れがたいこと",
+    "description": "Use がたい, こそ, and ような気がする to express a nuanced reaction.",
+    "textbook": "Quartet 1",
+    "textbookKey": "quartet_1_textbook",
+    "level": "B1",
+    "lessonId": "quartet_1_4",
+    "coreLessonId": "quartet_1_4",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Describe a difficult feeling while keeping the tone nuanced.",
+    "participants": ["You", "Friend"],
+    "sampleDialogue": "その説明は少し信じがたいような気がします。",
+    "lines": [
+      { "speaker": "A", "text": "その説明は少し信じがたいような気がします。", "translation": "I feel that explanation is a little hard to believe." },
+      { "speaker": "B", "text": "どうしてですか。", "translation": "Why?" },
+      { "speaker": "A", "text": "データが少ないからです。こういう時こそ、別の意見も聞くべきです。", "translation": "Because there is little data. Especially at a time like this, we should listen to other opinions too." },
+      { "speaker": "B", "text": "確かに、まるで一つの例だけで決めたようですね。", "translation": "True, it is as if they decided based on only one example." }
+    ],
+    "practicePrompts": [
+      "Describe something hard to believe, accept, or understand.",
+      "Use ような気がする to soften your view."
+    ]
+  },
+  {
+    "id": "quartet_1:lesson_4:not_only",
+    "title": "Not Only Convenient",
+    "titleJa": "便利なだけではない",
+    "description": "Use ばかりでなく and 別に〜ない to compare benefits and limits.",
+    "textbook": "Quartet 1",
+    "textbookKey": "quartet_1_textbook",
+    "level": "B1",
+    "lessonId": "quartet_1_4",
+    "coreLessonId": "quartet_1_4",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Compare benefits and limits of a technology or habit.",
+    "participants": ["You", "Classmate"],
+    "sampleDialogue": "スマホは便利なばかりでなく、生活を変えました。",
+    "lines": [
+      { "speaker": "A", "text": "スマホは便利なばかりでなく、生活を変えましたね。", "translation": "Smartphones are not only convenient; they changed our lives." },
+      { "speaker": "B", "text": "そうですね。でも、別に全部悪いわけではありません。", "translation": "Yes. But it is not that everything is bad." },
+      { "speaker": "A", "text": "私は、使い方に向き不向きがあると思います。", "translation": "I think there are suitable and unsuitable ways to use them." },
+      { "speaker": "B", "text": "同感です。使う時間を決めればいいと思います。", "translation": "I agree. I think we should decide when to use them." }
+    ],
+    "practicePrompts": [
+      "Discuss the good and bad sides of a tool or habit.",
+      "Use ばかりでなく and one softening expression."
+    ]
+  },
+  {
+    "id": "quartet_1:lesson_5:cause_and_limit",
+    "title": "It Is Not Always True",
+    "titleJa": "とは限らない",
+    "description": "Use せいで, とは限らない, and 一方だ to discuss trends.",
+    "textbook": "Quartet 1",
+    "textbookKey": "quartet_1_textbook",
+    "level": "B1",
+    "lessonId": "quartet_1_5",
+    "coreLessonId": "quartet_1_5",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Explain a trend while avoiding overgeneralization.",
+    "participants": ["You", "Discussion partner"],
+    "sampleDialogue": "物価が上がる一方ですが、生活が悪くなるとは限りません。",
+    "lines": [
+      { "speaker": "A", "text": "物価が上がる一方で、みんな困っていますね。", "translation": "Prices keep rising, and everyone is having trouble." },
+      { "speaker": "B", "text": "そうですが、生活が悪くなるとは限りません。働き方も変わっていますから。", "translation": "That's true, but it is not always the case that life gets worse. Work styles are also changing." },
+      { "speaker": "A", "text": "でも、交通費が高いせいで、遠くに住めない人もいます。", "translation": "But because transportation costs are high, some people cannot live far away." },
+      { "speaker": "B", "text": "確かに。たとえ給料が上がっても、支出も増えますね。", "translation": "True. Even if salaries rise, expenses also increase." }
+    ],
+    "practicePrompts": [
+      "Discuss one social or personal trend.",
+      "Use とは限らない to avoid overgeneralizing."
+    ]
+  },
+  {
+    "id": "quartet_1:lesson_5:first_time_realized",
+    "title": "Only After Trying",
+    "titleJa": "やって初めて",
+    "description": "Use て初めて and にしては to reflect on trying something.",
+    "textbook": "Quartet 1",
+    "textbookKey": "quartet_1_textbook",
+    "level": "B1",
+    "lessonId": "quartet_1_5",
+    "coreLessonId": "quartet_1_5",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Reflect on what you realized only after doing something.",
+    "participants": ["You", "Friend"],
+    "sampleDialogue": "日本語で発表して初めて、準備の大切さがわかりました。",
+    "lines": [
+      { "speaker": "A", "text": "日本語で発表して初めて、準備の大切さがわかりました。", "translation": "Only after presenting in Japanese did I understand the importance of preparation." },
+      { "speaker": "B", "text": "初めてにしては、とても上手でしたよ。", "translation": "For a first time, it was very good." },
+      { "speaker": "A", "text": "ありがとうございます。でも、緊張して言葉が出そうもありませんでした。", "translation": "Thank you. But I was nervous and felt like the words would not come out." },
+      { "speaker": "B", "text": "次はもっと自然に話せると思います。", "translation": "I think you will be able to speak more naturally next time." }
+    ],
+    "practicePrompts": [
+      "Talk about something you realized only after trying it.",
+      "Use にしては to evaluate the result."
+    ]
+  },
+  {
+    "id": "quartet_1:lesson_6:changing_role",
+    "title": "A Changing Role",
+    "titleJa": "役割の変化",
+    "description": "Use に代わって, につれて, and 一方で to discuss change.",
+    "textbook": "Quartet 1",
+    "textbookKey": "quartet_1_textbook",
+    "level": "B1",
+    "lessonId": "quartet_1_6",
+    "coreLessonId": "quartet_1_6",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Describe how a role or habit changes over time.",
+    "participants": ["You", "Classmate"],
+    "sampleDialogue": "現金に代わって、スマホ決済を使う人が増えています。",
+    "lines": [
+      { "speaker": "A", "text": "現金に代わって、スマホ決済を使う人が増えています。", "translation": "In place of cash, more people are using smartphone payments." },
+      { "speaker": "B", "text": "便利になる一方で、使いすぎる心配もありますね。", "translation": "While it becomes convenient, there is also concern about overuse." },
+      { "speaker": "A", "text": "年を取るにつれて、新しい技術を覚えるのが大変になる人もいます。", "translation": "As people get older, some find it hard to learn new technology." },
+      { "speaker": "B", "text": "だから、説明をわかりやすくすることにするべきですね。", "translation": "So we should decide to make explanations easy to understand." }
+    ],
+    "practicePrompts": [
+      "Describe one change in society, school, or daily life.",
+      "Use に代わって or につれて."
+    ]
+  },
+  {
+    "id": "quartet_1:lesson_6:bad_habit",
+    "title": "A Habit Left Unchecked",
+    "titleJa": "っぱなしの習慣",
+    "description": "Use っぱなし, くせに, and 切れない to talk about habits.",
+    "textbook": "Quartet 1",
+    "textbookKey": "quartet_1_textbook",
+    "level": "B1",
+    "lessonId": "quartet_1_6",
+    "coreLessonId": "quartet_1_6",
+    "page": 0,
+    "sourceKind": "curated",
+    "canDo": "Describe a bad habit and explain why it is hard to stop.",
+    "participants": ["You", "Roommate"],
+    "sampleDialogue": "電気をつけっぱなしにするくせに、節約したいと言っていますね。",
+    "lines": [
+      { "speaker": "A", "text": "電気をつけっぱなしにするくせに、節約したいと言っていますね。", "translation": "Even though you leave the lights on, you say you want to save money." },
+      { "speaker": "B", "text": "すみません。気をつけているつもりなんですが、直し切れません。", "translation": "Sorry. I intend to be careful, but I cannot fully fix it." },
+      { "speaker": "A", "text": "なんか、メモを貼ったらどうですか。", "translation": "Maybe you could put up a note or something." },
+      { "speaker": "B", "text": "いいですね。今日からそうすることにします。", "translation": "Good idea. I will decide to do that from today." }
+    ],
+    "practicePrompts": [
+      "Talk about a habit that is hard to fix.",
+      "Suggest one practical solution."
+    ]
+  }
+]

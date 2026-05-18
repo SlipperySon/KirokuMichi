@@ -8,7 +8,9 @@ import type { Database as SqlJsDatabase } from 'sql.js'
 import type { Card, CardId, CardType, CardQueue, NoteId, DeckId } from '../types/card'
 import type { Deck, DeckNode, DeckConfig } from '../types/deck'
 import type { Note, NoteType, NoteField, CardTemplate } from '../types/note'
-import type { CardDatabase, NoteDatabase, DeckDatabase } from '../srs/card-service'
+import type { CardDatabase } from '../srs/card-service'
+import type { NoteDatabase } from '../srs/note-service'
+import type { DeckDatabase } from '../srs/deck-service'
 import { makeCardId, makeNoteId, makeDeckId, makeNoteTypeId } from '../types/card'
 
 /**
