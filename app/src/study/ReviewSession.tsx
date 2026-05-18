@@ -91,9 +91,9 @@ export function ReviewSession() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen p-6 max-w-xl mx-auto">
+    <div className="flex flex-col min-h-screen w-full px-4 py-6 sm:p-6 max-w-xl mx-auto">
       {/* Header with exit + undo */}
-      <div className="flex justify-end gap-1 mb-2">
+      <div className="flex flex-wrap justify-end gap-2 mb-2">
         {session.canUndo && (
           <button
             onClick={() => void session.undoLastRating()}

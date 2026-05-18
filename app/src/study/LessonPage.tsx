@@ -17,6 +17,7 @@ import { applyGenkiLessonOneFoundation, applyGenkiLessonOneGrammarScope } from '
 import { unlockScenariosForLesson } from '../content/scenarioUnlockService'
 import { getSupplementalScenarios } from '../content/supplementalScenarioService'
 import { getWorkbookPracticeTasks, type WorkbookPracticeTask } from '../content/workbookPracticeService'
+import { textbookAssetService, type TextbookAsset } from '../content/textbookAssetService'
 import { SRSService } from '../srs/srsService'
 import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
@@ -29,6 +30,7 @@ interface LessonPageState {
   exercises: Exercise[] | null
   intent: LessonIntent | null
   workbookPractice: WorkbookPracticeTask[]
+  textbookAssets: TextbookAsset[]
   unlockedCards: ReviewCard[]
   loading: boolean
   error: string | null
@@ -45,6 +47,7 @@ export function LessonPage() {
     exercises: null,
     intent: null,
     workbookPractice: [],
+    textbookAssets: [],
     unlockedCards: [],
     loading: true,
     error: null
@@ -99,9 +102,11 @@ export function LessonPage() {
         const vocab = applyGenkiLessonOneFoundation(lessonId, rawVocab)
         const grammar = applyGenkiLessonOneGrammarScope(lessonId, rawGrammar)
         const exercises = curriculum.exercises.filter(e => matchesLesson(e.lesson))
-        const [scenarios, workbookPractice] = await Promise.all([
+        const assetSourceKeys = [baseTextbook, ...CEFR_SUPPLEMENTAL[cefrLevel]]
+        const [scenarios, workbookPractice, textbookAssets] = await Promise.all([
           getSupplementalScenarios({ cefr: cefrLevel, coreLessonId: lessonId }),
           getWorkbookPracticeTasks({ cefr: cefrLevel, lessonId, lessonNum }),
+          textbookAssetService.getAssetsForLessonSources(assetSourceKeys, lessonId),
         ])
         const intent = buildLessonIntent({
           cefr: cefrLevel,
@@ -127,6 +132,7 @@ export function LessonPage() {
           exercises,
           intent,
           workbookPractice,
+          textbookAssets,
           unlockedCards,
           loading: false
         }))
@@ -222,11 +228,11 @@ export function LessonPage() {
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="bg-white shadow">
-        <div className="mx-auto max-w-4xl px-6 py-8">
-          <div className="mb-6 flex items-start justify-between">
+        <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 sm:py-8">
+          <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div>
-              <div className="flex items-center gap-2">
-                <h1 className="text-3xl font-bold text-gray-900">
+              <div className="flex flex-wrap items-center gap-2">
+                <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
                   {state.lesson.series} - Lesson {state.lesson.lesson_number}
                 </h1>
                 {isCompleted && (
@@ -258,17 +264,17 @@ export function LessonPage() {
                   }
                 })
               }}
-              className="w-full rounded-xl bg-indigo-600 px-6 py-4 text-lg font-bold text-white hover:bg-indigo-700 transition-colors shadow-md mb-4"
+              className="w-full rounded-xl bg-indigo-600 px-6 py-4 text-base sm:text-lg font-bold text-white hover:bg-indigo-700 transition-colors shadow-md mb-4"
             >
               Start Lesson ({teachableVocabCount + teachableGrammarCount} items)
             </button>
           ) : null}
 
           {/* Navigation and Actions */}
-          <div className="flex flex-wrap items-center gap-3">
+          <div className="grid grid-cols-1 gap-3 sm:flex sm:flex-wrap sm:items-center">
             <button
               onClick={() => navigate('/learn/lessons')}
-              className="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-4 py-2 font-semibold text-indigo-800 shadow-sm transition-colors hover:bg-indigo-100"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-4 py-2 font-semibold text-indigo-800 shadow-sm transition-colors hover:bg-indigo-100"
             >
               <ListChecks className="h-4 w-4" aria-hidden="true" />
               Return to Lesson Menu
@@ -277,7 +283,7 @@ export function LessonPage() {
             {hasPreviousLesson && (
               <button
                 onClick={() => navigate(`/learn/lessons/${cefr}/${lessonNum - 1}`)}
-                className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-gray-700 transition-colors hover:bg-gray-50"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-gray-700 transition-colors hover:bg-gray-50"
               >
                 <ArrowLeft className="h-4 w-4" aria-hidden="true" />
                 Previous Lesson
@@ -287,7 +293,7 @@ export function LessonPage() {
             {hasNextLesson && (
               <button
                 onClick={() => navigate(`/learn/lessons/${cefr}/${lessonNum + 1}`)}
-                className="inline-flex items-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-gray-700 transition-colors hover:bg-gray-50"
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-gray-200 bg-white px-4 py-2 text-gray-700 transition-colors hover:bg-gray-50"
               >
                 Next Lesson
                 <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -297,7 +303,7 @@ export function LessonPage() {
             {!isCompleted && (
               <button
                 onClick={handleMarkComplete}
-                className="ml-auto inline-flex items-center gap-2 rounded-lg bg-green-600 px-4 py-2 font-semibold text-white transition-colors hover:bg-green-700"
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-green-600 px-4 py-2 font-semibold text-white transition-colors hover:bg-green-700 sm:ml-auto"
               >
                 <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
                 Mark as Complete
@@ -308,9 +314,9 @@ export function LessonPage() {
       </div>
 
       {/* Content */}
-      <div className="mx-auto max-w-4xl px-6 py-8">
+      <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 sm:py-8">
         {state.intent && (
-          <div className="mb-8 rounded-lg bg-white p-6 shadow">
+          <div className="mb-8 rounded-lg bg-white p-4 shadow sm:p-6">
             <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
               <div>
                 <p className="text-sm font-semibold text-indigo-600">Lesson intent</p>
@@ -354,7 +360,7 @@ export function LessonPage() {
         )}
 
         {state.workbookPractice.length > 0 && (
-          <div className="mb-8 rounded-lg bg-white p-6 shadow">
+          <div className="mb-8 rounded-lg bg-white p-4 shadow sm:p-6">
             <h2 className="mb-4 text-xl font-bold text-gray-900">Workbook Practice ({state.workbookPractice.length})</h2>
             <div className="space-y-3">
               {state.workbookPractice.map(task => (
@@ -378,9 +384,45 @@ export function LessonPage() {
           </div>
         )}
 
+        <div className="mb-8 rounded-lg bg-white p-4 shadow sm:p-6">
+          <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
+            <div>
+              <h2 className="text-xl font-bold text-gray-900">Textbook Image Assets</h2>
+              <p className="mt-1 text-sm text-gray-600">
+                Page photos and cropped figures can appear here once a user-unlocked asset manifest is generated.
+              </p>
+            </div>
+            <span className={`rounded-full px-3 py-1 text-xs font-semibold ${
+              state.textbookAssets.length > 0
+                ? 'bg-green-100 text-green-800'
+                : 'bg-slate-100 text-slate-700'
+            }`}>
+              {state.textbookAssets.length > 0 ? `${state.textbookAssets.length} ready` : 'pending'}
+            </span>
+          </div>
+          {state.textbookAssets.length > 0 ? (
+            <div className="grid gap-3 sm:grid-cols-2">
+              {state.textbookAssets.slice(0, 4).map(asset => (
+                <figure key={asset.id} className="overflow-hidden rounded-lg border border-gray-200 bg-gray-50">
+                  <img src={asset.src} alt={asset.alt} className="aspect-video w-full object-cover" loading="lazy" />
+                  <figcaption className="p-3 text-sm text-gray-700">
+                    <div className="font-semibold capitalize">{asset.kind} · p. {asset.page}</div>
+                    {asset.caption && <div className="mt-1 text-gray-600">{asset.caption}</div>}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          ) : (
+            <div className="rounded-lg border border-dashed border-slate-200 bg-slate-50 p-4 text-sm text-slate-700">
+              No image manifest is available for this lesson yet. When textbook extraction provides cropped page/photo assets,
+              this lesson already has the hook to display them with page references.
+            </div>
+          )}
+        </div>
+
         {/* Vocabulary Section */}
         {state.vocab && state.vocab.length > 0 && (
-          <div className="mb-8 rounded-lg bg-white p-6 shadow">
+          <div className="mb-8 rounded-lg bg-white p-4 shadow sm:p-6">
             <h2 className="mb-4 text-xl font-bold text-gray-900">Vocabulary ({state.vocab.length})</h2>
             <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3">
               {state.vocab.slice(0, 15).map((item, idx) => (
@@ -403,7 +445,7 @@ export function LessonPage() {
 
         {/* Grammar Section */}
         {state.grammar && state.grammar.length > 0 && (
-          <div className="mb-8 rounded-lg bg-white p-6 shadow">
+          <div className="mb-8 rounded-lg bg-white p-4 shadow sm:p-6">
             <h2 className="mb-4 text-xl font-bold text-gray-900">Grammar ({state.grammar.length})</h2>
             <div className="space-y-3">
               {state.grammar.slice(0, 10).map((item, idx) => (
@@ -428,7 +470,7 @@ export function LessonPage() {
         )}
 
         {/* Unlocked Cards Section */}
-        <div className="mb-8 rounded-lg bg-white p-6 shadow">
+        <div className="mb-8 rounded-lg bg-white p-4 shadow sm:p-6">
           <h2 className="mb-4 text-xl font-bold text-gray-900">
             Anki Cards ({state.unlockedCards.length} unlocked)
           </h2>
@@ -460,7 +502,7 @@ export function LessonPage() {
 
         {/* Supplemental Materials */}
         {CEFR_SUPPLEMENTAL[cefrLevel].length > 0 && (
-          <div className="rounded-lg bg-white p-6 shadow">
+          <div className="rounded-lg bg-white p-4 shadow sm:p-6">
             <h2 className="mb-4 text-xl font-bold text-gray-900">Supplemental Materials</h2>
             <div className="flex flex-wrap gap-2">
               {CEFR_SUPPLEMENTAL[cefrLevel].map(textbook => (

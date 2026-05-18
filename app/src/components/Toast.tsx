@@ -1,56 +1,12 @@
 /**
  * Toast notification system
  *
- * Lightweight global toast manager — no external deps. Use `useToast()` to
- * push toasts from anywhere; render `<ToastContainer />` once near the root.
- *
- * Usage:
- *   const toast = useToast()
- *   toast.success('Settings saved')
- *   toast.error('Could not connect to AI')
- *   toast.info('Card added to drill queue')
+ * Lightweight global toast renderer. Toast publishing lives in toastStore.ts
+ * so this file only exports React components and keeps fast-refresh happy.
  */
 
 import { useEffect, useState } from 'react'
-
-export type ToastKind = 'success' | 'error' | 'info'
-
-export interface Toast {
-  id: number
-  kind: ToastKind
-  message: string
-  duration: number
-}
-
-type Listener = (toasts: Toast[]) => void
-
-const listeners = new Set<Listener>()
-let toasts: Toast[] = []
-let nextId = 1
-
-function emit() {
-  for (const l of listeners) l(toasts)
-}
-
-function push(kind: ToastKind, message: string, duration = 2800) {
-  const id = nextId++
-  toasts = [...toasts, { id, kind, message, duration }]
-  emit()
-  window.setTimeout(() => {
-    toasts = toasts.filter(t => t.id !== id)
-    emit()
-  }, duration)
-}
-
-export const toast = {
-  success: (message: string, duration?: number) => push('success', message, duration),
-  error: (message: string, duration?: number) => push('error', message, duration ?? 4500),
-  info: (message: string, duration?: number) => push('info', message, duration),
-}
-
-export function useToast() {
-  return toast
-}
+import { getToasts, subscribeToasts, type Toast, type ToastKind } from './toastStore'
 
 const KIND_STYLES: Record<ToastKind, { ring: string; bg: string; icon: string; iconLabel: string }> = {
   success: {
@@ -74,14 +30,10 @@ const KIND_STYLES: Record<ToastKind, { ring: string; bg: string; icon: string; i
 }
 
 export function ToastContainer() {
-  const [items, setItems] = useState<Toast[]>(toasts)
+  const [items, setItems] = useState<Toast[]>(getToasts())
 
   useEffect(() => {
-    const listener: Listener = next => setItems([...next])
-    listeners.add(listener)
-    return () => {
-      listeners.delete(listener)
-    }
+    return subscribeToasts(next => setItems([...next]))
   }, [])
 
   if (items.length === 0) return null

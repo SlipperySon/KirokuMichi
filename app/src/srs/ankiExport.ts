@@ -1,5 +1,4 @@
 import JSZip from 'jszip'
-import initSqlJs from 'sql.js'
 import type { ReviewCard } from '../study/types'
 
 function sha1Csum(text: string): number {
@@ -13,6 +12,7 @@ function sha1Csum(text: string): number {
 }
 
 export async function exportToAnki(cards: ReviewCard[], deckName = 'KirokuMichi'): Promise<void> {
+  const initSqlJs = (await import('sql.js')).default
   const SQL = await initSqlJs({ locateFile: f => `/sql.js/${f}` })
   const db = new SQL.Database()
 

@@ -10,6 +10,9 @@ import { Heatmap } from './Heatmap'
 import { WeakPointPanel } from './WeakPointPanel'
 import { Navigation } from '../components/Navigation'
 import { DailyGoalRing } from '../components/DailyGoalRing'
+import { EmptyState } from '../components/EmptyState'
+import { SkeletonCard } from '../components/Skeleton'
+import { toast } from '../components/toastStore'
 import { calculateWeeklyGoal } from './weeklyGoals'
 import { refreshStreakSnapshot } from './streakService'
 import type { ReviewCard, GrammarQuestion, StreakData, SessionRecoveryPayload } from './types'
@@ -165,14 +168,19 @@ export function StudyDashboard() {
     const queue = interleaveQueue(due, newCards, limit).filter(
       c => c.type === 'vocabulary' || c.type === 'kanji' || c.type === 'hiragana' || c.type === 'katakana'
     )
-    if (queue.length === 0) return
+    if (queue.length === 0) {
+      toast.info('No review cards are available right now.')
+      return
+    }
     const sessionId = await service.startSession(userId, 'vocab')
+    toast.success(`Starting ${queue.length}-card review`)
     navigate('/study/review', { state: { queue, grammarEntries: [], sessionId, userId } })
   }
 
   async function resumeSession() {
     if (!recoveryPayload || !userId) return
     const queue = recoveryPayload.queue.slice(recoveryPayload.currentIndex)
+    toast.info('Review session resumed')
     navigate('/study/review', {
       state: { queue, grammarEntries: [], sessionId: recoveryPayload.sessionId, userId },
     })
@@ -183,13 +191,21 @@ export function StudyDashboard() {
     await service.endSession(recoveryPayload.sessionId, recoveryPayload.stats)
     SessionRecovery.clear()
     setRecoveryPayload(null)
+    toast.success('Previous review session saved and closed')
   }
 
   if (isLoading) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen gap-4">
-        <div className="w-10 h-10 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin" />
-        <p className="text-sm text-gray-400">Loading dashboard…</p>
+      <div className="flex flex-col min-h-screen">
+        <Navigation />
+        <main className="flex flex-col gap-4 w-full max-w-2xl mx-auto flex-1 px-4 py-6 sm:p-6">
+          <SkeletonCard />
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <SkeletonCard />
+            <SkeletonCard />
+          </div>
+          <SkeletonCard className="min-h-40" />
+        </main>
       </div>
     )
   }
@@ -197,7 +213,7 @@ export function StudyDashboard() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />
-      <main className="flex flex-col gap-8 p-6 max-w-xl mx-auto flex-1">
+      <main className="flex flex-col gap-8 w-full px-4 py-6 sm:p-6 max-w-2xl mx-auto flex-1">
         <h1 className="text-2xl font-bold">{intl.formatMessage({ id: 'study.dashboard.title' })}</h1>
 
       {/* Recovery modal */}
@@ -206,7 +222,7 @@ export function StudyDashboard() {
           <div className="bg-white rounded-2xl shadow-xl max-w-sm w-full p-6 flex flex-col gap-4">
             <h2 id="recovery-title" className="text-lg font-bold">{intl.formatMessage({ id: 'study.dashboard.resume_title' })}</h2>
             <p className="text-sm text-gray-600">{intl.formatMessage({ id: 'study.dashboard.resume_body' })}</p>
-            <div className="flex gap-3">
+            <div className="flex flex-col sm:flex-row gap-3">
               <button onClick={resumeSession} className="flex-1 px-4 py-2 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700">
                 {intl.formatMessage({ id: 'study.dashboard.resume' })}
               </button>
@@ -219,7 +235,7 @@ export function StudyDashboard() {
       )}
 
       {/* Daily goal + streak banner */}
-      <div className="bg-white border-2 border-indigo-100 rounded-xl p-4 flex items-center gap-4">
+      <div className="bg-white border-2 border-indigo-100 rounded-xl p-4 flex flex-col sm:flex-row items-start sm:items-center gap-4">
         <DailyGoalRing
           reviewed={dailyStats.todayReviewed}
           goal={settings.dailyGoal}
@@ -290,7 +306,7 @@ export function StudyDashboard() {
       })()}
 
       {/* Stats */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="bg-indigo-50 rounded-xl p-4">
           <div className="text-3xl font-bold text-indigo-600">{dueCount}</div>
           <div className="text-sm text-gray-500 mt-1">{intl.formatMessage({ id: 'study.dashboard.due' }, { count: dueCount })}</div>
@@ -401,8 +417,8 @@ export function StudyDashboard() {
       </button>
 
       {/* Preview due cards */}
-      {previewCards.length > 0 && (
-        <div className="flex gap-2">
+      {previewCards.length > 0 ? (
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
           {previewCards.map(card => (
             <button
               key={card.cardStateId}
@@ -414,7 +430,22 @@ export function StudyDashboard() {
             </button>
           ))}
         </div>
-      )}
+      ) : dueCount === 0 && availableNewCount === 0 && mistakeCount === 0 ? (
+        <EmptyState
+          compact
+          icon="✓"
+          title="Nothing due right now"
+          description="You are caught up. Start a lesson, browse scenarios, or practice a conversation."
+          action={
+            <button
+              onClick={() => navigate('/learn')}
+              className="px-4 py-2 text-sm font-semibold text-indigo-800 bg-indigo-50 rounded-lg hover:bg-indigo-100"
+            >
+              Open Learn
+            </button>
+          }
+        />
+      ) : null}
 
       {/* Mistake drill */}
       {mistakeCount > 0 && (

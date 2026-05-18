@@ -3,6 +3,8 @@ import { curriculumService } from './curriculumService'
 import { createLessonMatcher } from './lessonContentUtils'
 import { hasMaynardSupport } from './maynardSupport'
 import { getSupplementalScenarios } from './supplementalScenarioService'
+import { textbookAssetService } from './textbookAssetService'
+import { getWorkbookPracticeTasks } from './workbookPracticeService'
 
 export interface TextbookQARow {
   cefr: CEFRLevel
@@ -12,8 +14,11 @@ export interface TextbookQARow {
   vocabCount: number
   grammarCount: number
   scenarioCount: number
+  workbookTaskCount: number
   maynardMatchCount: number
+  maynardCoveragePct: number
   suspiciousVocabCount: number
+  assetCount: number
   pageRange: string
   warnings: string[]
 }
@@ -40,8 +45,11 @@ function warnings(row: Omit<TextbookQARow, 'warnings'>) {
   if (row.vocabCount === 0) result.push('missing vocab')
   if (row.grammarCount === 0) result.push('missing grammar')
   if (row.scenarioCount === 0) result.push('no scenarios')
+  if (row.workbookTaskCount === 0) result.push('no workbook output')
   if (row.maynardMatchCount === 0 && row.grammarCount > 0) result.push('no Maynard matches')
+  if (row.maynardCoveragePct > 0 && row.maynardCoveragePct < 50) result.push('low Maynard coverage')
   if (row.suspiciousVocabCount > 0) result.push('suspicious vocab')
+  if (row.assetCount === 0) result.push('no image assets')
   if (row.pageRange === 'missing') result.push('missing pages')
   return result
 }
@@ -62,7 +70,12 @@ export async function getTextbookQARows(): Promise<TextbookQARow[]> {
       const matchesLesson = createLessonMatcher(lessonId, lessonNumber)
       const vocab = curriculum.vocabulary.filter(item => matchesLesson(item.lesson))
       const grammar = curriculum.grammar.filter(item => matchesLesson(item.lesson))
-      const scenarios = await getSupplementalScenarios({ cefr, coreLessonId: lessonId })
+      const [scenarios, workbookTasks, assets] = await Promise.all([
+        getSupplementalScenarios({ cefr, coreLessonId: lessonId }),
+        getWorkbookPracticeTasks({ cefr, lessonId, lessonNum: lessonNumber }),
+        textbookAssetService.getAssetsForLesson(textbookKey, lessonId),
+      ])
+      const maynardMatchCount = grammar.filter(hasMaynardSupport).length
       const rowBase = {
         cefr,
         lessonId,
@@ -71,8 +84,11 @@ export async function getTextbookQARows(): Promise<TextbookQARow[]> {
         vocabCount: vocab.length,
         grammarCount: grammar.length,
         scenarioCount: scenarios.length,
-        maynardMatchCount: grammar.filter(hasMaynardSupport).length,
+        workbookTaskCount: workbookTasks.length,
+        maynardMatchCount,
+        maynardCoveragePct: grammar.length > 0 ? Math.round((maynardMatchCount / grammar.length) * 100) : 0,
         suspiciousVocabCount: vocab.filter(item => suspiciousVocab(item.surface, item.english)).length,
+        assetCount: assets.length,
         pageRange: pageRange([...vocab.map(item => item.page), ...grammar.map(item => item.page)]),
       }
       rows.push({ ...rowBase, warnings: warnings(rowBase) })

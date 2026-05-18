@@ -22,7 +22,7 @@ const REPORT_PATH = 'tools/textbook-pack/out/content-quality/learner-content-qua
 const ADMIN_OR_SOURCE_TEXT_RE =
   /(table of contents|copyright|isbn|publisher|answer key|https|www\.|audio file|using tobira|文法項目|読み書き編|構成されています|必要に応じて|聞く練習|漢字の練習|Listening Comprehension|KanjiPractice|Kanj|Introduction\d|Conversation and Grammar section|corresponding lesson)/i
 const STRUCTURAL_JUNK_RE = /([A-Za-z]{22,}|\d{4,}|[{}[\]\\<>|]{2,}|©|TEL|FAX)/
-const BROKEN_START_RE = /^(?:その後|また(?!\s*=>)[、。 ]|ただし|必要なら|同じ言葉|[A-Z]：|[0-9]+[.)、])/
+const BROKEN_START_RE = /^(?:その後|ただし|必要なら|同じ言葉|[A-Z]：|[0-9]+[.)、])/
 const STATEMENT_ONLY_RE = /(?:紹介しています|発表しています|書いてあります|説明しています)。?$/
 const OCR_SCAR_RE = /Pr a c|toget\b|→/
 

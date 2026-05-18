@@ -6,6 +6,7 @@ import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { SRSService } from '../srs/srsService'
 import { Navigation } from '../components/Navigation'
+import { EmptyState } from '../components/EmptyState'
 
 interface GrammarPoint {
   id: number
@@ -126,7 +127,7 @@ export function GrammarReview() {
     return (
       <div className="flex flex-col min-h-screen">
         <Navigation />
-        <main className="flex flex-col gap-6 p-6 max-w-xl mx-auto flex-1 items-center justify-center">
+        <main className="flex flex-col gap-6 px-4 py-6 sm:p-6 max-w-xl mx-auto flex-1 items-center justify-center">
           <h1 className="text-2xl font-bold text-gray-900">Grammar Review</h1>
           <p className="text-gray-500 text-center text-sm">
             Review grammar patterns with explanations and examples.
@@ -151,14 +152,18 @@ export function GrammarReview() {
     return (
       <div className="flex flex-col min-h-screen">
         <Navigation />
-        <main className="flex flex-col gap-4 p-6 max-w-xl mx-auto flex-1 items-center justify-center text-center">
-          <p className="text-4xl">🎓</p>
-          <p className="text-lg font-semibold text-gray-700">No grammar points yet</p>
-          <p className="text-sm text-gray-500 max-w-xs">Import grammar content from the Practice tab or explore the JLPT section.</p>
-          <button onClick={() => navigate('/study')} className="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-sm font-semibold text-indigo-800 hover:bg-indigo-100">
-            <LayoutDashboard className="h-4 w-4" aria-hidden="true" />
-            Return to Study Dashboard
-          </button>
+        <main className="flex flex-col gap-4 px-4 py-6 sm:p-6 max-w-xl mx-auto flex-1 items-center justify-center text-center">
+          <EmptyState
+            icon="🎓"
+            title="No grammar points yet"
+            description="Import grammar content from Practice or study a lesson to unlock grammar review."
+            action={
+              <button onClick={() => navigate('/study')} className="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-sm font-semibold text-indigo-800 hover:bg-indigo-100">
+                <LayoutDashboard className="h-4 w-4" aria-hidden="true" />
+                Return to Study Dashboard
+              </button>
+            }
+          />
         </main>
       </div>
     )
@@ -169,8 +174,8 @@ export function GrammarReview() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />
-      <main className="flex flex-col gap-6 p-6 max-w-xl mx-auto flex-1 w-full">
-        <div className="flex items-center justify-between">
+      <main className="flex flex-col gap-6 px-4 py-6 sm:p-6 max-w-xl mx-auto flex-1 w-full">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <button onClick={() => navigate('/study')} className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50">
             <LogOut className="h-4 w-4" aria-hidden="true" />
             Exit to Study Dashboard

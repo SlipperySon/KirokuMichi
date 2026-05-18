@@ -21,6 +21,11 @@ interface SelfAssessment {
   rating: 'again' | 'good'
 }
 
+interface WorkbookResponse {
+  response: string
+  completed: boolean
+}
+
 export function LessonStudy() {
   const navigate = useNavigate()
   const { state: routeState } = useLocation() as { state?: LessonStudyState }
@@ -32,7 +37,10 @@ export function LessonStudy() {
     lessonTitle: 'Lesson',
     cefrLevel: 'a1',
   }, [routeState])
-  const plan = useMemo(() => buildLessonPlan(state.vocab, state.grammar, state.lessonId), [state])
+  const plan = useMemo(
+    () => buildLessonPlan(state.vocab, state.grammar, state.lessonId, state.workbookPractice ?? []),
+    [state]
+  )
   const [stepIndex, setStepIndex] = useState(0)
   const [teachIndex, setTeachIndex] = useState(0)
   const [questionIndex, setQuestionIndex] = useState(0)
@@ -40,6 +48,7 @@ export function LessonStudy() {
   const [answers, setAnswers] = useState<AnswerRecord[]>([])
   const [isTeachRevealed, setIsTeachRevealed] = useState(false)
   const [selfAssessments, setSelfAssessments] = useState<SelfAssessment[]>([])
+  const [workbookResponses, setWorkbookResponses] = useState<Record<string, WorkbookResponse>>({})
   const [showSummary, setShowSummary] = useState(false)
 
   const currentStep = plan[stepIndex]
@@ -48,6 +57,7 @@ export function LessonStudy() {
   const percentage = totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 100
   const missedAnswers = answers.filter(answer => !answer.isCorrect)
   const selfMarkedAgain = selfAssessments.filter(item => item.rating === 'again')
+  const completedWorkbookTasks = Object.values(workbookResponses).filter(response => response.completed).length
   const lessonNumber = state.lessonId.split('_').pop() ?? '1'
   const lessonPagePath = `/learn/lessons/${state.cefrLevel}/${lessonNumber}`
 
@@ -106,6 +116,7 @@ export function LessonStudy() {
     setIsTeachRevealed(false)
     setAnswers([])
     setSelfAssessments([])
+    setWorkbookResponses({})
     setShowSummary(false)
   }
 
@@ -128,29 +139,41 @@ export function LessonStudy() {
               : 'You reviewed the lesson material.'}
           </p>
 
-          <div className="mt-6 grid grid-cols-3 gap-3 text-center">
+          <div className="mt-6 grid grid-cols-2 gap-3 text-center sm:grid-cols-4">
             <SummaryStat label="Vocab" value={state.vocab.length.toString()} tone="blue" />
             <SummaryStat label="Grammar" value={state.grammar.length.toString()} tone="purple" />
             <SummaryStat label="Recall" value={totalQuestions > 0 ? `${percentage}%` : 'Done'} tone="green" />
+            <SummaryStat label="Workbook" value={state.workbookPractice?.length ? `${completedWorkbookTasks}/${state.workbookPractice.length}` : '0'} tone="emerald" />
           </div>
 
           {state.workbookPractice && state.workbookPractice.length > 0 && (
             <div className="mt-6 rounded-lg border border-emerald-200 bg-emerald-50 p-4">
               <h2 className="font-semibold text-emerald-950">Workbook output practice</h2>
               <div className="mt-3 space-y-2">
-                {state.workbookPractice.slice(0, 4).map(task => (
+                {state.workbookPractice.slice(0, 5).map(task => {
+                  const response = workbookResponses[task.id]
+                  return (
                   <div key={task.id} className="rounded bg-white px-3 py-2 text-sm">
                     <div className="mb-1 flex flex-wrap gap-2 text-xs">
                       <span className="rounded bg-emerald-50 px-2 py-0.5 font-semibold uppercase tracking-wide text-emerald-800">{task.practiceMode}</span>
                       <span className="rounded bg-emerald-50 px-2 py-0.5 text-emerald-800">{task.focus}</span>
+                      {response?.completed && (
+                        <span className="rounded bg-green-50 px-2 py-0.5 font-semibold text-green-700">done</span>
+                      )}
                     </div>
                     <div className="font-medium text-gray-900">{task.prompt}</div>
+                    {response?.response && (
+                      <div className="mt-1 rounded bg-gray-50 px-2 py-1 text-gray-700">
+                        Your output: {response.response}
+                      </div>
+                    )}
                     {task.sourcePrompt && (
                       <div className="text-xs text-emerald-800">Source cue: {task.sourcePrompt}</div>
                     )}
                     <div className="text-gray-600">{task.support}</div>
                   </div>
-                ))}
+                  )
+                })}
               </div>
             </div>
           )}
@@ -247,6 +270,8 @@ export function LessonStudy() {
         ? 'Start Checkpoint'
         : nextStep?.kind === 'final'
           ? 'Start Mixed Review'
+          : nextStep?.kind === 'workbook'
+            ? 'Start Workbook Practice'
           : 'Finish Lesson'
 
     return (
@@ -293,6 +318,104 @@ export function LessonStudy() {
             className="flex-1 rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700"
           >
             {nextTeachLabel}
+          </button>
+        </div>
+      </LessonShell>
+    )
+  }
+
+  if (currentStep.kind === 'workbook') {
+    const completedCount = currentStep.tasks.filter(task => workbookResponses[task.id]?.completed).length
+    return (
+      <LessonShell
+        lessonTitle={state.lessonTitle}
+        stepTitle={currentStep.title}
+        goal={currentStep.goal}
+        progress={95}
+        progressLabel={`${completedCount} of ${currentStep.tasks.length} workbook tasks`}
+        onExit={() => navigate(lessonPagePath)}
+      >
+        <div className="rounded-xl bg-white p-5 shadow-lg sm:p-8">
+          <div className="mb-5">
+            <p className="text-sm font-semibold text-emerald-700">Output practice</p>
+            <h2 className="mt-1 text-xl font-bold text-gray-900">Use the workbook material now</h2>
+            <p className="mt-2 text-sm text-gray-600">
+              Write or say an answer, then mark the task done. These are production tasks, so rough output is better than silent recognition.
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            {currentStep.tasks.map((task, index) => {
+              const response = workbookResponses[task.id] ?? { response: '', completed: false }
+              return (
+                <div key={task.id} className="rounded-lg border border-emerald-100 bg-emerald-50 p-4">
+                  <div className="flex flex-wrap items-center justify-between gap-2">
+                    <div className="flex flex-wrap gap-2 text-xs">
+                      <span className="rounded bg-white px-2 py-0.5 font-semibold uppercase tracking-wide text-emerald-800">
+                        {index + 1}. {task.practiceMode}
+                      </span>
+                      <span className="rounded bg-white px-2 py-0.5 text-emerald-800">{task.focus}</span>
+                    </div>
+                    <span className="text-xs font-medium text-emerald-800">
+                      {task.source} {task.page > 0 ? `p. ${task.page}` : ''}
+                    </span>
+                  </div>
+                  <p className="mt-3 font-semibold text-gray-900">{task.prompt}</p>
+                  <p className="mt-1 text-sm text-emerald-900">{task.support}</p>
+                  {task.sourcePrompt && (
+                    <details className="mt-2 text-xs text-emerald-800">
+                      <summary className="cursor-pointer font-semibold">Source cue</summary>
+                      <p className="mt-1">{task.sourcePrompt}</p>
+                    </details>
+                  )}
+                  <textarea
+                    value={response.response}
+                    onChange={event => {
+                      const value = event.target.value
+                      setWorkbookResponses(previous => ({
+                        ...previous,
+                        [task.id]: { response: value, completed: previous[task.id]?.completed ?? false },
+                      }))
+                    }}
+                    placeholder="Write your answer, roleplay line, correction, or checkpoint response..."
+                    className="mt-3 min-h-20 w-full resize-y rounded-lg border border-emerald-200 bg-white px-3 py-2 text-sm text-gray-900 placeholder:text-gray-400 focus:border-emerald-400 focus:outline-none focus:ring-2 focus:ring-emerald-100"
+                  />
+                  <div className="mt-3 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+                    <p className="text-xs text-emerald-800">
+                      {task.type === 'correction_target'
+                        ? 'Name the error after correcting it.'
+                        : task.type === 'roleplay'
+                          ? 'Add one follow-up line if you can.'
+                          : 'One clean sentence is enough.'}
+                    </p>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setWorkbookResponses(previous => ({
+                          ...previous,
+                          [task.id]: { response: previous[task.id]?.response ?? '', completed: !response.completed },
+                        }))
+                      }}
+                      className={`rounded-lg px-3 py-2 text-sm font-semibold transition-colors ${
+                        response.completed
+                          ? 'bg-green-600 text-white hover:bg-green-700'
+                          : 'bg-white text-emerald-800 ring-1 ring-emerald-200 hover:bg-emerald-100'
+                      }`}
+                    >
+                      {response.completed ? 'Done' : 'Mark Done'}
+                    </button>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+
+          <button
+            onClick={() => moveToStep(stepIndex + 1)}
+            disabled={completedCount === 0}
+            className="mt-5 w-full rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            Finish Lesson
           </button>
         </div>
       </LessonShell>
@@ -618,11 +741,12 @@ function EmptyLessonCard() {
   )
 }
 
-function SummaryStat({ label, value, tone }: { label: string; value: string; tone: 'blue' | 'purple' | 'green' }) {
+function SummaryStat({ label, value, tone }: { label: string; value: string; tone: 'blue' | 'purple' | 'green' | 'emerald' }) {
   const classes = {
     blue: 'bg-blue-50 text-blue-700',
     purple: 'bg-purple-50 text-purple-700',
     green: 'bg-green-50 text-green-700',
+    emerald: 'bg-emerald-50 text-emerald-700',
   }
   return (
     <div className={`rounded-lg p-3 ${classes[tone]}`}>

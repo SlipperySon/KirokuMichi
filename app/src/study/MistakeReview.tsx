@@ -15,6 +15,7 @@ import { SRSService } from '../srs/srsService'
 import { Navigation } from '../components/Navigation'
 import { EmptyState } from '../components/EmptyState'
 import { SkeletonList } from '../components/Skeleton'
+import { toast } from '../components/toastStore'
 
 interface MistakeRow {
   mistakeId: number
@@ -116,16 +117,21 @@ export function MistakeReview() {
     try {
       const queue = await service.getCardsByStateIds(activeUserId, drillableStateIds)
       if (queue.length === 0) {
-        setError('No drillable cards (mistakes may be from free-form practice).')
+        const message = 'No drillable cards yet. Free-form chat mistakes need to be saved to drill first.'
+        setError(message)
+        toast.info(message)
         setStarting(false)
         return
       }
       const sessionId = await service.startSession(activeUserId, 'srs')
+      toast.success(`Starting ${queue.length}-card mistake drill`)
       navigate('/study/review', {
         state: { queue, grammarEntries: [], sessionId, userId: activeUserId, mode: 'mistake_drill' },
       })
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Failed to start drill')
+      const message = err instanceof Error ? err.message : 'Failed to start drill'
+      setError(message)
+      toast.error(message)
       setStarting(false)
     }
   }
@@ -133,7 +139,7 @@ export function MistakeReview() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />
-      <main className="flex flex-col gap-6 p-6 max-w-2xl mx-auto flex-1 w-full">
+      <main className="flex flex-col gap-6 px-4 py-6 sm:p-6 max-w-2xl mx-auto flex-1 w-full">
         <header className="flex flex-col gap-2">
           <h1 className="text-2xl font-bold text-gray-900">Mistake Review</h1>
           <p className="text-sm text-gray-600">
@@ -143,7 +149,7 @@ export function MistakeReview() {
         </header>
 
         {/* Window selector */}
-        <div className="flex gap-2" role="tablist" aria-label="Time window">
+        <div className="flex gap-2 overflow-x-auto pb-1" role="tablist" aria-label="Time window">
           {WINDOW_OPTIONS.map(opt => (
             <button
               key={opt.days}
@@ -162,7 +168,7 @@ export function MistakeReview() {
         </div>
 
         {/* Drill CTA */}
-        <div className="flex items-center justify-between gap-3 bg-amber-50 border border-amber-200 rounded-xl p-4">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 bg-amber-50 border border-amber-200 rounded-xl p-4">
           <div>
             <p className="font-semibold text-amber-900">
               {drillableStateIds.length} {drillableStateIds.length === 1 ? 'card' : 'cards'} to drill

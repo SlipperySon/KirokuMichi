@@ -85,6 +85,63 @@ describe('supplementalScenarioService', () => {
     expect(lessonNumbers.indexOf(10)).toBeGreaterThan(lessonNumbers.indexOf(9))
   })
 
+  it('loads curated scenarios for every catalog source, including workbook tabs', async () => {
+    mockFetchWithRealScenarioPacks()
+
+    const scenarios = await getSupplementalScenarios()
+    const counts = new Map<string, number>()
+    for (const scenario of scenarios) {
+      counts.set(scenario.textbookKey, (counts.get(scenario.textbookKey) ?? 0) + 1)
+    }
+
+    for (const source of SUPPLEMENTAL_SCENARIO_SOURCES) {
+      expect(counts.get(source.textbookKey) ?? 0, source.textbookKey).toBeGreaterThan(0)
+    }
+  })
+
+  it('keeps scenario core lesson links inside the app lesson ranges', async () => {
+    mockFetchWithRealScenarioPacks()
+
+    const scenarios = await getSupplementalScenarios()
+    const maxLessonsByPrefix = new Map([
+      ['genki_1', 12],
+      ['genki_2', 11],
+      ['quartet_1', 6],
+      ['quartet_2', 6],
+    ])
+
+    for (const scenario of scenarios) {
+      const coreLessonId = scenario.coreLessonId
+      if (!coreLessonId) continue
+      const prefix = [...maxLessonsByPrefix.keys()].find(key => coreLessonId.startsWith(`${key}_`))
+      expect(prefix, `${scenario.id} => ${coreLessonId}`).toBeTruthy()
+      const lessonNumber = Number(coreLessonId.split('_').at(-1))
+      expect(lessonNumber, `${scenario.id} => ${coreLessonId}`).toBeGreaterThanOrEqual(1)
+      expect(lessonNumber, `${scenario.id} => ${coreLessonId}`).toBeLessThanOrEqual(maxLessonsByPrefix.get(prefix!)!)
+    }
+  })
+
+  it('normalizes curated second-volume workbook lessons to app lesson IDs', async () => {
+    mockFetchWithRealScenarioPacks()
+
+    const genkiTwoWorkbook = await getSupplementalScenarios({
+      textbookKey: 'genki_2_workbook',
+      coreLessonId: 'genki_2_1',
+    })
+    expect(genkiTwoWorkbook).toHaveLength(2)
+    expect(genkiTwoWorkbook.every(scenario => scenario.lessonId === 'genki_2_13')).toBe(true)
+    expect(genkiTwoWorkbook.every(scenario => scenario.coreLessonId === 'genki_2_1')).toBe(true)
+
+    clearSupplementalScenarioCache()
+    const quartetTwoWorkbook = await getSupplementalScenarios({
+      textbookKey: 'quartet_2_workbook',
+      coreLessonId: 'quartet_2_1',
+    })
+    expect(quartetTwoWorkbook).toHaveLength(2)
+    expect(quartetTwoWorkbook.every(scenario => scenario.lessonId === 'quartet_2_7')).toBe(true)
+    expect(quartetTwoWorkbook.every(scenario => scenario.coreLessonId === 'quartet_2_1')).toBe(true)
+  })
+
   it('turns noisy OCR-like supplemental data into stable practice scenarios', async () => {
     mockFetchWith({
       genki_1_workbook: {

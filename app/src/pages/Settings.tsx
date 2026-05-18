@@ -4,6 +4,7 @@ import { useAppStore } from '../store'
 import { useTheme } from '../hooks/useTheme'
 import { Navigation } from '../components/Navigation'
 import { KeyboardShortcutsPanel } from '../components/KeyboardShortcutsPanel'
+import { toast } from '../components/toastStore'
 
 type ProviderType = 'anthropic' | 'openai' | 'openrouter' | 'deepseek' | 'ollama' | 'custom' | null
 type ConfigurableProvider = Exclude<ProviderType, null>
@@ -112,8 +113,10 @@ export function Settings() {
     if (!settings.aiProvider || settings.aiProvider !== 'ollama' && !settings.apiKey || settings.aiProvider === 'ollama' && !settings.apiEndpoint) {
       if (settings.aiProvider === 'ollama') {
         setTestResult({ ok: false, message: 'Please enter Ollama endpoint' })
+        toast.error('Please enter an Ollama endpoint')
       } else {
         setTestResult({ ok: false, message: 'Please configure API key' })
+        toast.error('Please configure an API key first')
       }
       return
     }
@@ -142,20 +145,21 @@ export function Settings() {
           ok: true,
           message: `✓ Connected! Response: "${data.text.substring(0, 50)}${data.text.length > 50 ? '...' : ''}"`
         })
+        toast.success('AI provider connected')
       } else {
         const error = await response.json() as { error: string }
         setTestResult({
           ok: false,
           message: `✗ Error: ${error.error || 'Unknown error'}`
         })
+        toast.error(error.error || 'AI provider test failed')
       }
     } catch (err) {
-      setTestResult({
-        ok: false,
-        message: err instanceof DOMException && err.name === 'AbortError'
-          ? '✗ Connection timed out after 90 seconds. Check the model availability or try again.'
-          : `✗ Connection failed: ${err instanceof Error ? err.message : 'Unknown error'}`
-      })
+      const message = err instanceof DOMException && err.name === 'AbortError'
+        ? '✗ Connection timed out after 90 seconds. Check the model availability or try again.'
+        : `✗ Connection failed: ${err instanceof Error ? err.message : 'Unknown error'}`
+      setTestResult({ ok: false, message })
+      toast.error(message.replace(/^✗\s*/, ''))
     } finally {
       setTestLoading(false)
     }

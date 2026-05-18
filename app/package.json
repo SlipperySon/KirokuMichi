@@ -10,6 +10,8 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
+    "qa:routes": "playwright test",
+    "verify": "npm run lint && npx tsc -b --pretty false && npm run test && npm run qa:routes && npm run build && npm run textbook:learner:quality && npm run textbook:maynard:quality && npm run textbook:assets:manifest",
     "test:ui": "vitest --ui",
     "test:watch": "vitest",
     "ocr:build": "swiftc -framework AppKit -framework PDFKit -framework Vision tools/ocr/pdf-vision-ocr.swift -o tools/ocr/pdf-vision-ocr",
@@ -31,6 +33,8 @@
     "textbook:reviewed:validate": "tsx tools/textbook-pack/validate-reviewed-pack.ts",
     "textbook:vocab:quality": "tsx tools/textbook-pack/repair-genki-vocab-quality.ts",
     "textbook:learner:quality": "tsx tools/textbook-pack/audit-learner-content-quality.ts",
+    "textbook:maynard:quality": "tsx tools/textbook-pack/audit-maynard-coverage.ts",
+    "textbook:assets:manifest": "tsx tools/textbook-pack/build-textbook-asset-manifest.ts",
     "generate": "tsx tools/generate/pipeline.ts"
   },
   "dependencies": {
@@ -52,6 +56,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.60.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@types/cors": "^2.8.19",

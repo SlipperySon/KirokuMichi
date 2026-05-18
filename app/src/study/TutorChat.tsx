@@ -7,6 +7,7 @@ import { getCachedWeakPoints, buildWeakPointContext } from '../ai/weakPointSumma
 import { SQLiteStorage } from '../db/sqlite'
 import { Navigation } from '../components/Navigation'
 import { AutoGrowTextarea } from '../components/AutoGrowTextarea'
+import { toast } from '../components/toastStore'
 import { ContentUpload } from './ContentUpload'
 import { ConversationPartner } from './ConversationPartner'
 import type { AIMessage } from '../core/providers'
@@ -124,7 +125,9 @@ export function TutorChat() {
         }
       )
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Connection failed')
+      const message = err instanceof Error ? err.message : 'Connection failed'
+      setError(message)
+      toast.error(`AI tutor failed: ${message}`)
       // Remove the user message AND placeholder assistant on error
       setMessages(prev => prev.slice(0, -2))
     } finally {
@@ -135,9 +138,9 @@ export function TutorChat() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />
-      <main className="flex flex-col h-full max-w-2xl mx-auto flex-1" aria-label="Practice">
+      <main className="flex flex-col h-full w-full max-w-2xl mx-auto flex-1" aria-label="Practice">
         <div className="p-4 border-b border-gray-200">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-3">
             <h1 className="text-2xl font-bold text-gray-900">Practice</h1>
             {tab === 'tutor' && messages.length > 0 && (
               <button
@@ -149,12 +152,12 @@ export function TutorChat() {
               </button>
             )}
           </div>
-          <div className="flex gap-1 mt-3">
+          <div className="flex gap-1 mt-3 overflow-x-auto pb-1">
             {(['tutor', 'conversation', 'upload'] as Tab[]).map(t => (
               <button
                 key={t}
                 onClick={() => setTab(t)}
-                className={`px-4 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                className={`shrink-0 px-4 py-1.5 rounded-lg text-sm font-medium transition-colors ${
                   tab === t ? 'bg-indigo-100 text-indigo-700' : 'text-gray-500 hover:bg-gray-100'
                 }`}
               >
@@ -179,7 +182,7 @@ export function TutorChat() {
         {messages.length === 0 && !error && (
           <div className="flex flex-col items-center justify-center h-full gap-4">
             <p className="text-gray-500 text-center">Ask your first question</p>
-            <div className="grid grid-cols-2 gap-2 w-full max-w-sm">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 w-full max-w-sm">
               {STARTER_PROMPTS.map(prompt => (
                 <button
                   key={prompt}
@@ -201,7 +204,7 @@ export function TutorChat() {
             className={`flex ${msg.role === 'user' ? 'justify-end' : 'justify-start'}`}
           >
             <div
-              className={`max-w-xs lg:max-w-md px-4 py-2 rounded-lg ${
+              className={`max-w-[85%] lg:max-w-md px-4 py-2 rounded-lg ${
                 msg.role === 'user'
                   ? 'bg-indigo-600 text-white'
                   : 'bg-gray-100 text-gray-900'

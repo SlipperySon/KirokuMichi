@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
 import { Navigation } from '../components/Navigation'
+import { EmptyState } from '../components/EmptyState'
+import { SkeletonList } from '../components/Skeleton'
 import { LessonsHub } from './LessonsHub'
 
 type ContentType = 'text_passage' | 'word_list' | 'grammar_point' | 'sentence_pair' | 'dialogue_script' | 'unknown'
@@ -51,10 +53,10 @@ function WordListRenderer({ item }: { item: LearningItem }) {
       </div>
       <div className="divide-y divide-gray-100">
         {words.map((w, i) => (
-          <div key={i} className="py-3 flex items-baseline gap-4">
+          <div key={i} className="py-3 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
             <span className="text-2xl font-bold text-gray-900" lang="ja">{w.word}</span>
             {w.reading && <span className="text-sm text-indigo-600" lang="ja">{w.reading}</span>}
-            {w.meaning && <span className="text-sm text-gray-500 ml-auto">{w.meaning}</span>}
+            {w.meaning && <span className="text-sm text-gray-500 sm:ml-auto">{w.meaning}</span>}
           </div>
         ))}
       </div>
@@ -340,14 +342,14 @@ export function LearningMode() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />
-      <main className="flex flex-col gap-6 p-6 max-w-4xl mx-auto flex-1 w-full">
+      <main className="flex flex-col gap-6 px-4 py-6 sm:p-6 max-w-4xl mx-auto flex-1 w-full">
         <div>
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Learn</h1>
           {/* Tab Toggle */}
-          <div className="flex gap-2 bg-gray-100 rounded-xl p-1 w-fit">
+          <div className="flex gap-2 bg-gray-100 rounded-xl p-1 w-full sm:w-fit overflow-x-auto">
             <button
               onClick={() => setLearningMode('lesson')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
+              className={`flex shrink-0 items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
                 learningMode === 'lesson'
                   ? 'bg-white text-gray-900 shadow-sm'
                   : 'text-gray-600 hover:text-gray-900'
@@ -358,7 +360,7 @@ export function LearningMode() {
             </button>
             <button
               onClick={() => setLearningMode('browse')}
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
+              className={`flex shrink-0 items-center gap-2 px-4 py-2 rounded-lg font-medium transition-all ${
                 learningMode === 'browse'
                   ? 'bg-white text-gray-900 shadow-sm'
                   : 'text-gray-600 hover:text-gray-900'
@@ -377,18 +379,21 @@ export function LearningMode() {
           // Browse Content mode
           <>
         {isLoading ? (
-          <div className="flex-1 flex flex-col items-center justify-center gap-3 py-12">
-            <div className="w-8 h-8 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin" />
-            <p className="text-sm text-gray-400">Loading lessons…</p>
-          </div>
+          <SkeletonList count={4} />
         ) : allItems.length === 0 ? (
-          <div className="flex-1 flex flex-col items-center justify-center gap-4 text-center">
-            <p className="text-4xl">📖</p>
-            <p className="text-lg font-semibold text-gray-700">No learning content yet</p>
-            <p className="text-sm text-gray-500 max-w-xs">
-              Import content from the Practice tab — textbooks, word lists, grammar notes, dialogues, or sentence pairs.
-            </p>
-          </div>
+          <EmptyState
+            icon="📖"
+            title="No learning content yet"
+            description="Import content from Practice, or open Study by Lesson to use the packaged textbook curriculum."
+            action={
+              <button
+                onClick={() => navigate('/practice')}
+                className="px-4 py-2 text-sm font-semibold text-indigo-800 bg-indigo-50 rounded-lg hover:bg-indigo-100"
+              >
+                Open Practice
+              </button>
+            }
+          />
         ) : (
           <>
             {/* Section Filter Tabs */}
@@ -412,7 +417,7 @@ export function LearningMode() {
 
             {/* Source Filter */}
             {availableSources.length > 1 && (
-              <div className="flex items-center gap-2">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                 <span className="text-xs font-medium text-gray-400 uppercase tracking-wide">Source</span>
                 <select
                   value={sourceFilter ?? ''}
@@ -439,9 +444,12 @@ export function LearningMode() {
             {/* Content area */}
             <div className="flex-1 bg-white border border-gray-200 rounded-2xl p-6 min-h-64">
               {filteredItems.length === 0 ? (
-                <div className="flex items-center justify-center h-full text-gray-400">
-                  No items in this section
-                </div>
+                <EmptyState
+                  compact
+                  icon="📚"
+                  title="No items in this section"
+                  description="Try a different content type or source filter."
+                />
               ) : (
                 <ContentRenderer key={current.id} item={current} />
               )}
@@ -459,7 +467,7 @@ export function LearningMode() {
 
             {/* Navigation */}
             {filteredItems.length > 0 && (
-              <div className="flex gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <button
                   onClick={goPrev}
                   disabled={index === 0}

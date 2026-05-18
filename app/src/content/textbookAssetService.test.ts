@@ -56,4 +56,49 @@ describe('textbookAssetService', () => {
     expect(lessonAssets.map(asset => asset.id)).toEqual(['early', 'late'])
     expect(pageAssets.map(asset => asset.id)).toEqual(['early'])
   })
+
+  it('can load assets across the base textbook and supplemental source keys for a lesson', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => ({
+      ok: true,
+      json: async () => ({
+        generatedAt: '2026-05-18T00:00:00.000Z',
+        assets: [
+          {
+            id: 'textbook',
+            textbookKey: 'genki_1_textbook',
+            lessonId: 'genki_1_1',
+            page: 45,
+            kind: 'photo',
+            src: '/data/generated/assets/textbook/textbook.jpg',
+            alt: 'Textbook photo',
+          },
+          {
+            id: 'workbook',
+            textbookKey: 'genki_1_workbook',
+            lessonId: 'genki_1_1',
+            page: 14,
+            kind: 'exercise',
+            src: '/data/generated/assets/textbook/workbook.jpg',
+            alt: 'Workbook exercise',
+          },
+          {
+            id: 'wrong-lesson',
+            textbookKey: 'genki_1_workbook',
+            lessonId: 'genki_1_2',
+            page: 22,
+            kind: 'exercise',
+            src: '/data/generated/assets/textbook/other.jpg',
+            alt: 'Other workbook exercise',
+          },
+        ],
+      }),
+    })))
+
+    const assets = await textbookAssetService.getAssetsForLessonSources(
+      ['genki_1_textbook', 'genki_1_workbook'],
+      'genki_1_1'
+    )
+
+    expect(assets.map(asset => asset.id)).toEqual(['workbook', 'textbook'])
+  })
 })

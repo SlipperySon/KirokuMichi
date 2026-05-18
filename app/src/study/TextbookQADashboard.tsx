@@ -28,9 +28,13 @@ export function TextbookQADashboard() {
     vocab: filtered.reduce((sum, row) => sum + row.vocabCount, 0),
     grammar: filtered.reduce((sum, row) => sum + row.grammarCount, 0),
     scenarios: filtered.reduce((sum, row) => sum + row.scenarioCount, 0),
+    workbook: filtered.reduce((sum, row) => sum + row.workbookTaskCount, 0),
     maynard: filtered.reduce((sum, row) => sum + row.maynardMatchCount, 0),
+    assets: filtered.reduce((sum, row) => sum + row.assetCount, 0),
     warnings: filtered.reduce((sum, row) => sum + row.warnings.length, 0),
   }), [filtered])
+
+  const maynardCoverage = totals.grammar > 0 ? Math.round((totals.maynard / totals.grammar) * 100) : 0
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -40,7 +44,10 @@ export function TextbookQADashboard() {
           <div>
             <p className="text-sm font-semibold text-indigo-600">Developer QA</p>
             <h1 className="mt-1 text-3xl font-bold text-gray-900">Textbook Coverage Dashboard</h1>
-            <p className="mt-2 text-gray-600">Lesson-by-lesson content health for vocab, grammar, scenarios, Maynard/support coverage, and suspicious extraction artifacts.</p>
+            <p className="mt-2 text-gray-600">Lesson-by-lesson content health for vocab, grammar, scenarios, workbook output, image assets, Maynard/support coverage, and suspicious extraction artifacts.</p>
+            <p className="mt-2 text-sm text-gray-500">
+              Route QA: run <code className="rounded bg-gray-100 px-1 py-0.5">npm run qa:routes</code> for desktop/mobile screenshots and no-overflow checks.
+            </p>
           </div>
           <select
             value={level}
@@ -55,12 +62,14 @@ export function TextbookQADashboard() {
           </select>
         </div>
 
-        <div className="mb-6 grid gap-3 md:grid-cols-6">
+        <div className="mb-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-8">
           <QAStat label="Lessons" value={totals.lessons} />
           <QAStat label="Vocab" value={totals.vocab} />
           <QAStat label="Grammar" value={totals.grammar} />
           <QAStat label="Scenarios" value={totals.scenarios} />
-          <QAStat label="Maynard/support" value={totals.maynard} />
+          <QAStat label="Workbook" value={totals.workbook} tone={totals.workbook > 0 ? 'green' : 'amber'} />
+          <QAStat label="Assets" value={totals.assets} tone={totals.assets > 0 ? 'green' : 'amber'} />
+          <QAStat label="Maynard %" value={maynardCoverage} suffix="%" tone={maynardCoverage >= 50 ? 'green' : 'amber'} />
           <QAStat label="Warnings" value={totals.warnings} tone={totals.warnings > 0 ? 'amber' : 'green'} />
         </div>
 
@@ -77,7 +86,9 @@ export function TextbookQADashboard() {
                     <th className="px-4 py-3">Vocab</th>
                     <th className="px-4 py-3">Grammar</th>
                     <th className="px-4 py-3">Scenarios</th>
-                    <th className="px-4 py-3">Maynard/support</th>
+                    <th className="px-4 py-3">Workbook</th>
+                    <th className="px-4 py-3">Assets</th>
+                    <th className="px-4 py-3">Maynard</th>
                     <th className="px-4 py-3">Suspicious</th>
                     <th className="px-4 py-3">Warnings</th>
                   </tr>
@@ -90,7 +101,12 @@ export function TextbookQADashboard() {
                       <td className="px-4 py-3 text-gray-900">{row.vocabCount}</td>
                       <td className="px-4 py-3 text-gray-900">{row.grammarCount}</td>
                       <td className="px-4 py-3 text-gray-900">{row.scenarioCount}</td>
-                      <td className="px-4 py-3 text-gray-900">{row.maynardMatchCount}</td>
+                      <td className="px-4 py-3 text-gray-900">{row.workbookTaskCount}</td>
+                      <td className="px-4 py-3 text-gray-900">{row.assetCount}</td>
+                      <td className="px-4 py-3 text-gray-900">
+                        {row.maynardMatchCount}/{row.grammarCount}
+                        <span className="ml-1 text-xs text-gray-500">({row.maynardCoveragePct}%)</span>
+                      </td>
                       <td className="px-4 py-3 text-gray-900">{row.suspiciousVocabCount}</td>
                       <td className="px-4 py-3">
                         {row.warnings.length > 0 ? (
@@ -111,7 +127,17 @@ export function TextbookQADashboard() {
   )
 }
 
-function QAStat({ label, value, tone = 'slate' }: { label: string; value: number; tone?: 'slate' | 'amber' | 'green' }) {
+function QAStat({
+  label,
+  value,
+  suffix = '',
+  tone = 'slate',
+}: {
+  label: string
+  value: number
+  suffix?: string
+  tone?: 'slate' | 'amber' | 'green'
+}) {
   const classes = {
     slate: 'bg-white text-slate-900',
     amber: 'bg-amber-50 text-amber-950',
@@ -119,7 +145,7 @@ function QAStat({ label, value, tone = 'slate' }: { label: string; value: number
   }
   return (
     <div className={`rounded-lg p-4 shadow ${classes[tone]}`}>
-      <div className="text-2xl font-bold">{value}</div>
+      <div className="text-2xl font-bold">{value}{suffix}</div>
       <div className="text-xs font-semibold uppercase tracking-wide opacity-80">{label}</div>
     </div>
   )

@@ -326,8 +326,8 @@ export function ScenarioMode() {
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />
-      <main className="flex flex-col gap-6 p-6 max-w-2xl mx-auto flex-1 w-full">
-        <div className="flex items-center justify-between">
+      <main className="flex flex-col gap-6 px-4 py-6 sm:p-6 max-w-2xl mx-auto flex-1 w-full">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <h1 className="text-2xl font-bold text-gray-900">Scenarios</h1>
           {selected && (
             <button
@@ -367,7 +367,7 @@ export function ScenarioMode() {
                 </p>
               )}
             </div>
-            <div className="bg-white border border-gray-200 rounded-2xl p-6">
+            <div className="bg-white border border-gray-200 rounded-2xl p-4 sm:p-6">
               <DialogueView key={selected.id} scenario={selected} showFurigana={showFurigana} />
             </div>
           </div>

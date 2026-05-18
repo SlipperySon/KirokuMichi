@@ -10,6 +10,7 @@ import { Home } from 'lucide-react'
 import { useAppStore } from '../store'
 import { CEFR_BASE_TEXTBOOK, TEXTBOOK_LESSON_COUNTS, type CEFRLevel } from '../content/cefrMapping'
 import { Navigation } from '../components/Navigation'
+import { EmptyState } from '../components/EmptyState'
 
 // Display names for each base textbook (kept in sync with cefrMapping.ts)
 const TEXTBOOK_DISPLAY_NAMES: Record<string, string> = {
@@ -46,7 +47,7 @@ function CEFRButton({
       onClick={disabled ? undefined : onClick}
       disabled={disabled}
       title={disabled ? 'Content not yet available' : undefined}
-      className={`group relative flex flex-col gap-3 rounded-lg border-2 p-6 text-left transition-all ${
+      className={`group relative flex flex-col gap-3 rounded-lg border-2 p-4 sm:p-6 text-left transition-all ${
         disabled
           ? 'cursor-not-allowed border-slate-200 bg-slate-50 opacity-60'
           : 'border-slate-200 bg-white hover:border-blue-500 hover:shadow-lg'
@@ -145,15 +146,17 @@ export function LessonsHub({ embedded = false }: LessonsHubProps) {
     navigate(`/learn/lessons/${cefr}/1`)
   }
 
+  const availableLessonCount = Object.values(stats).reduce((sum, entry) => sum + entry.total, 0)
+
   const content = (
-    <div className={embedded ? '' : 'min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 p-8'}>
+    <div className={embedded ? '' : 'min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 px-4 py-6 sm:p-8'}>
       <div className={embedded ? '' : 'mx-auto max-w-4xl'}>
         {/* Header */}
-        <div className="mb-12">
+        <div className="mb-8 sm:mb-12">
           <div className="flex flex-wrap items-start justify-between gap-4">
             <div>
-              <h1 className="mb-2 text-4xl font-bold text-slate-900">Study by Lesson</h1>
-              <p className="text-lg text-slate-600">
+              <h1 className="mb-2 text-3xl sm:text-4xl font-bold text-slate-900">Study by Lesson</h1>
+              <p className="text-base sm:text-lg text-slate-600">
                 Follow a structured curriculum organized by your proficiency level
               </p>
             </div>
@@ -170,7 +173,14 @@ export function LessonsHub({ embedded = false }: LessonsHubProps) {
         </div>
 
         {/* CEFR Level Grid */}
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        {availableLessonCount === 0 ? (
+          <EmptyState
+            icon="📚"
+            title="No lesson packs available"
+            description="Import or generate a textbook pack, then return here to study by level."
+          />
+        ) : (
+        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
           {cefrLevels.map(({ cefr, title, description }) => {
             const isDisabled = stats[cefr].total === 0
             return (
@@ -188,9 +198,10 @@ export function LessonsHub({ embedded = false }: LessonsHubProps) {
             )
           })}
         </div>
+        )}
 
         {/* Information Section */}
-        <div className="mt-12 grid gap-8 md:grid-cols-2">
+        <div className="mt-12 grid gap-4 sm:gap-8 md:grid-cols-2">
           <div className="rounded-lg bg-blue-50 p-6">
             <h3 className="mb-2 font-semibold text-blue-900">How it works</h3>
             <ul className="space-y-2 text-sm text-blue-800">

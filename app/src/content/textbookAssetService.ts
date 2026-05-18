@@ -38,9 +38,13 @@ class TextbookAssetService {
 
   async getAssetsForLesson(textbookKey: string, lessonId: string): Promise<TextbookAsset[]> {
     const manifest = await this.getManifest()
-    return manifest.assets
-      .filter(asset => asset.textbookKey === textbookKey && asset.lessonId === lessonId)
-      .sort((a, b) => a.page - b.page || a.kind.localeCompare(b.kind))
+    return this.sortAssets(manifest.assets.filter(asset => asset.textbookKey === textbookKey && asset.lessonId === lessonId))
+  }
+
+  async getAssetsForLessonSources(textbookKeys: string[], lessonId: string): Promise<TextbookAsset[]> {
+    const manifest = await this.getManifest()
+    const sourceKeys = new Set(textbookKeys)
+    return this.sortAssets(manifest.assets.filter(asset => sourceKeys.has(asset.textbookKey) && asset.lessonId === lessonId))
   }
 
   async getAssetsForPage(textbookKey: string, page: number): Promise<TextbookAsset[]> {
@@ -53,6 +57,10 @@ class TextbookAssetService {
   clearCache(): void {
     this.cache = null
     this.loadAttempted = false
+  }
+
+  private sortAssets(assets: TextbookAsset[]): TextbookAsset[] {
+    return assets.sort((a, b) => a.page - b.page || a.kind.localeCompare(b.kind) || a.id.localeCompare(b.id))
   }
 }
 

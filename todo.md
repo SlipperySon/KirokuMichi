@@ -87,14 +87,39 @@ Last updated: 2026-05-18 23:38 AEST
 
 ---
 
+## Current Session — Grammar Ordering + Anki Import Hardening (SHIPPED)
+
+- [x] Fixed lesson teach flow: grammar now interleaves with vocab (was all vocab then all grammar)
+  - `interleaveItems()` spreads grammar proportionally after each vocab item in page order
+  - Foundation items (greetings/numbers) still pin first
+  - Grammar items with real page numbers sort by page; pageless CEFR grammar fills proportionally
+  - Added second test asserting grammar is not all clumped at the end
+- [x] Hardened Anki import parsing:
+  - Extracted `stripHtml`, `deriveJlptLevel`, `extractSoundFilename`, `parseAnkiNote` as exported/tested pure functions
+  - `stripHtml` now strips tags first THEN decodes entities (fixes `&lt;b&gt;` incorrectly stripped as a tag)
+  - Adds `<br>` → space, full entity decode (`&amp;`, `&lt;`, `&gt;`, `&quot;`, `&#NNN;`), whitespace collapse
+  - Generic decks now detect `[sound:]` in any field, not just Kaishi decks
+  - `parseAnkiNote` is the single source of truth, called by `importFromAnki`
+- [x] Added 40 unit tests for Anki import edge cases:
+  - `stripHtml`: nested tags, entities, br→space, unicode, empty strings
+  - `deriveJlptLevel`: N1-N5 detection, case insensitivity, false positives
+  - `extractSoundFilename`: spaces, hyphens, unicode, embedded in larger fields
+  - `parseAnkiNote`: generic 2-field, Kaishi 1.5k, single-field (null), HTML fields, empty notes
+- [x] Verified: lint, TypeScript, 164 tests / 22 files
+
+---
+
 ## Carry-Forward — Future Polish
 
 - [x] Maynard grammar matching quality pass is runnable and current A1-B2 coverage is acceptable: `npm run textbook:maynard:quality`
 - [x] Textbook asset manifest generation is runnable and publishes available reviewed assets: `npm run textbook:assets:manifest`
 - [x] JLPT split assessment complete; no further split needed until measured route timing says otherwise
 - [x] CI wiring for `npm run verify` added under `.github/workflows/verify.yml`
+- [x] Grammar ordering improved: grammar now interleaves with vocab in lesson teach flow instead of being clumped at the end
+- [x] Anki import hardened: pure parsing functions extracted + 40 edge-case unit tests added
 - [ ] When the external extraction agent produces more textbook crops/page images, rerun `npm run textbook:assets:manifest` and `npm run verify`
 - [ ] When cleaned direct Maynard extraction/page refs land, replace broad curated support bridges with direct Maynard references where the source is reliable
+- [ ] Consider lesson-specific grammar ASSIGNMENT (currently CEFR frequency slicing; could be curated per textbook chapter) — separate from ordering which is now fixed
 
 ---
 
@@ -352,7 +377,8 @@ Last updated: 2026-05-18 23:38 AEST
 - [x] Built `replace-grammar-with-cefr.ts` script (rerunnable)
 - [x] Improve Maynard matching for remaining unmatched patterns: current `npm run textbook:maynard:quality` reports 84% app-facing support coverage and 0 low-coverage lessons
 - [ ] Replace curated fallback bridges with direct Maynard source matches where the cleaned extraction provides reliable page/topic refs
-- [ ] Consider lesson-specific grammar ordering (currently by frequency rank, not textbook chapter order)
+- [x] Grammar ordering within lessons: grammar now interleaves with vocab instead of all grammar coming after all vocab
+- [ ] Consider lesson-specific grammar ASSIGNMENT (currently CEFR frequency slicing; curating per textbook chapter is optional polish)
 - [ ] Use the cleaned Maynard extraction to improve explanation aliases and page-specific deep explanations once the other extraction agent finishes.
 
 ### Vocab Data Quality ✅ First Pass Shipped
@@ -456,7 +482,8 @@ Last updated: 2026-05-18 23:38 AEST
   - [ ] Per-category toggles work (import only vocab, skip grammar, etc.)
   - [ ] Preview collapses/expands cleanly
   - [ ] Summary tile counts are accurate
-- [ ] Test with Anki import (`.apkg`) in parallel to validate no regressions
+- [x] Anki import: pure parsing helpers extracted + 40 edge-case unit tests added (HTML, entities, Kaishi, generic, empty)
+- [ ] Test with actual .apkg file end-to-end to validate no regressions
 - **Effort:** 2-3 hours (mostly manual testing + tweaking extraction prompt if needed)
 - **Blocks:** Shipping content import feature
 

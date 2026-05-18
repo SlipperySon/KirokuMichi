@@ -93,6 +93,132 @@ const FALLBACKS: Array<{
     examples: [{ japanese: '名前を書いてください。', english: 'Please write your name.' }],
   },
   {
+    match: /のがすき|好き|きらい|ほしい|たい|たがる|がる/,
+    title: 'Support bridge: preference, desire, and observed feelings',
+    excerpt:
+      'Japanese often treats likes, wants, and feelings as states rather than direct actions. Track who experiences the feeling, then choose が, たい, ほしい, or third-person markers like がる/たがる.',
+    examples: [{ japanese: '友だちは日本語を勉強したがっています。', english: 'My friend seems to want to study Japanese.' }],
+  },
+  {
+    match: /てもいい|な$|命令形|たまえ|てはならない|ないで/,
+    title: 'Support bridge: permission, prohibition, and commands',
+    excerpt:
+      'Permission and prohibition patterns encode social force. てもいい allows an action, な and てはならない block it, and command forms vary sharply by relationship and setting.',
+    examples: [{ japanese: 'ここで写真を撮ってもいいです。', english: 'It is okay to take photos here.' }],
+  },
+  {
+    match: /で$|へ$|にいく|まで|^から$|に \(Frequency\)|ごろ|間に|途中|中を/,
+    title: 'Support bridge: particles for path, range, means, and time',
+    excerpt:
+      'Particles such as で, へ, に, から, and まで map an event to means, direction, purpose, starting point, endpoint, or time range. The same particle can shift role with the surrounding noun or verb.',
+    examples: [{ japanese: '電車で学校へ行きます。', english: 'I go to school by train.' }],
+  },
+  {
+    match: /まえに|あとで|てから|たことがある|ことがある|はじめる|おわる|ていた|ていく|ぶりに|以来|末/,
+    title: 'Support bridge: event sequence and experience over time',
+    excerpt:
+      'These patterns locate an action in a timeline: before/after order, lived experience, beginning or finishing, past continuation, forward change, or a result after a long process.',
+    examples: [{ japanese: '宿題をしてから寝ました。', english: 'I went to bed after doing my homework.' }],
+  },
+  {
+    match: /から$|ので|のに|けれども|ながら|ながらも|^と$|ば$|たら|ても|ても.*でも|にせよ|にしろ|とも/,
+    title: 'Support bridge: reason, contrast, and condition',
+    excerpt:
+      'Reason, contrast, and condition markers connect clauses by explaining why something happens, why it is surprising, or what situation must hold. Read the relationship between clauses before translating the marker.',
+    examples: [{ japanese: '雨が降ったので、家にいました。', english: 'Because it rained, I stayed home.' }],
+  },
+  {
+    match: /という|って|といってもいい|というのは|ということは|という風に|といった|とか|とか～とか/,
+    title: 'Support bridge: quoting, naming, and framing',
+    excerpt:
+      'という and related patterns let Japanese quote speech, name an idea, define a term, soften a report, or frame an example. Identify whether the clause is a quote, label, explanation, or implication.',
+    examples: [{ japanese: 'これは「おにぎり」という食べ物です。', english: 'This is a food called onigiri.' }],
+  },
+  {
+    match: /ように|ような|ようでは|ようじゃ|みたい|らしい|そうに|そうな|そうだ|げ|ふうに|風/,
+    title: 'Support bridge: resemblance, appearance, and manner',
+    excerpt:
+      'よう, みたい, らしい, そう, げ, and ふう describe resemblance, evidence, typicality, or manner. The form before and after the expression tells you which meaning is active.',
+    examples: [{ japanese: '先生が言ったように練習しました。', english: 'I practiced the way the teacher said.' }],
+  },
+  {
+    match: /くらい|ほど|あまり|あまりに|そんなに|ずっと|ほとんど|たくさん|Number|なん \+ counter|各|ごとに|につき|おおよそ/,
+    title: 'Support bridge: amount, degree, and approximation',
+    excerpt:
+      'Quantity expressions do more than count. They can mark approximation, minimum expectations, surprising degree, repetition per unit, or an amount so strong that it changes the tone of the sentence.',
+    examples: [{ japanese: '一時間くらい勉強しました。', english: 'I studied for about an hour.' }],
+  },
+  {
+    match: /誰|どこ|どの|なにか|なにも|誰か|どこか|誰も|どこも|Question-phrase \+ か|かしら|かな/,
+    title: 'Support bridge: question words inside larger meanings',
+    excerpt:
+      'Question words can ask direct questions, create indefinite meanings with か, become negative universals with も plus a negative, or express wondering at the end of a sentence.',
+    examples: [{ japanese: '何か食べたいです。', english: 'I want to eat something.' }],
+  },
+  {
+    match: /ことができる|ひつよう|必要|がひつよう|には|ようがない|かねる|得る/,
+    title: 'Support bridge: ability, necessity, and feasibility',
+    excerpt:
+      'Ability and necessity patterns tell the learner whether an action is possible, required, difficult to do, or blocked by social or practical constraints.',
+    examples: [{ japanese: 'ここで予約することができます。', english: 'You can make a reservation here.' }],
+  },
+  {
+    match: /Verb.*て|Adjective \+ て|なくて|てすみません|てよかった|てみる|てしまう|ちゃう|てくれてありがとう|て頂戴/,
+    title: 'Support bridge: te-form linking, requests, and after-effects',
+    excerpt:
+      'The て-form is a connector. It can link sequence, cause, requests, apology, trial action, completion, regret, gratitude, or a continuing result depending on the helper expression that follows.',
+    examples: [{ japanese: '窓を開けて、部屋を明るくしました。', english: 'I opened the window and made the room brighter.' }],
+  },
+  {
+    match: /う-Verb|る-Verb|Verbs \(Non-past\)|Dictionary|Negative|Negative-Past|Past|Causative-Passive|Verb\[よう\]/,
+    title: 'Foundation bridge: verb form system',
+    excerpt:
+      'Verb-form lessons teach how Japanese packages time, polarity, politeness, volition, and voice into the ending. Focus on the stem class first, then ask what the ending adds to the event.',
+    examples: [{ japanese: '昨日は行きませんでした。', english: 'I did not go yesterday.' }],
+  },
+  {
+    match: /がある|がいる|を$|に$|へいく|じゃなかった|もう|なぜ|どうして|ね$|よ$|や$|ませんか/,
+    title: 'Foundation bridge: core particles and sentence endings',
+    excerpt:
+      'Core particles and endings are small but high-value signals: existence, object marking, movement targets, social confirmation, assertion, invitations, and reason questions. Read them as relationship markers, not standalone words.',
+    examples: [{ japanese: '机の上に本があります。', english: 'There is a book on the desk.' }],
+  },
+  {
+    match: /たほうがいい|なくちゃ|なきゃ|すぎる|のがじょうず|のがへた|Adjective \+ の|もらう|あげる/,
+    title: 'Foundation bridge: advice, skill, excess, and benefit flow',
+    excerpt:
+      'These patterns move beginner Japanese into social meaning: advice, obligation, ability at an activity, excess, and who gives or receives a benefit.',
+    examples: [{ japanese: '早く寝たほうがいいです。', english: 'You should go to bed early.' }],
+  },
+  {
+    match: /く・に|さ|かた|づらい|やすい|にくい|切る|がち|ぎみ|かけ/,
+    title: 'Support bridge: form changes that create new meanings',
+    excerpt:
+      'Small form changes can turn adjectives into adverbs or nouns, verbs into “way of doing,” and stems into ease, difficulty, completion, tendency, slight condition, or half-finished action.',
+    examples: [{ japanese: 'この漢字は覚えにくいです。', english: 'This kanji is hard to memorize.' }],
+  },
+  {
+    match: /について|に比べて|に取って|として|としては|において|における|上$|上に|以上|以上に|から言うと|から見ると/,
+    title: 'Support bridge: topic, viewpoint, role, and comparison',
+    excerpt:
+      'Intermediate grammar often frames the domain of a claim: about a topic, compared with a standard, from someone’s standpoint, in a role, or within a field.',
+    examples: [{ japanese: '学生にとって、この制度は便利です。', english: 'For students, this system is convenient.' }],
+  },
+  {
+    match: /によって|による|にしたがって|につれて|に向かって|に向けて|にかけては|にかかわらず|にかかわる|に際して|にあたり|にあたって/,
+    title: 'Support bridge: relation, change, target, and circumstance',
+    excerpt:
+      'These に-based patterns connect an event to cause, agent, standard, gradual change, target, special field, regardless condition, involvement, or the occasion for action.',
+    examples: [{ japanese: '時代によって考え方が変わります。', english: 'Ways of thinking change depending on the era.' }],
+  },
+  {
+    match: /ところで|ところが|ところを見ると|ところに|ところへ|最中に|うちに|まま|ままに|きり/,
+    title: 'Support bridge: discourse shifts and marked moments',
+    excerpt:
+      'ところ and related time/state patterns mark a moment, shift the conversation, show an unexpected turn, or keep a state unchanged while another action happens.',
+    examples: [{ japanese: '出かけようとしたところに、電話が来ました。', english: 'Just as I was about to leave, a call came.' }],
+  },
+  {
     match: /やすい|にくい/,
     title: 'Support bridge: ease and difficulty',
     excerpt:

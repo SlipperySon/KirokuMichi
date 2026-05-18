@@ -3,6 +3,7 @@ import type { Rating, CardState } from '../core/providers'
 import { SRSService, type CardStateSnapshot } from '../srs/srsService'
 import { SessionRecovery } from '../srs/sessionRecovery'
 import { getKeyboardShortcutManager } from '../utils/keyboard-shortcuts'
+import { toast } from '../components/toastStore'
 import type { ReviewCard, GrammarQuestion, IntervalPreview, SessionStats } from './types'
 
 interface UndoEntry {
@@ -156,7 +157,10 @@ export function useReviewSession(
 
   const undoLastRating = useCallback(async () => {
     const entry = undoBufferRef.current
-    if (!entry) return
+    if (!entry) {
+      toast.info('Nothing to undo')
+      return
+    }
     // Restore card state in DB
     await service.revertCardState(userId, entry.snapshot)
     if (entry.wasAgainRating) {
@@ -180,6 +184,7 @@ export function useReviewSession(
       stats: entry.previousStats,
       savedAt: Date.now(),
     })
+    toast.success('Undone — rate again')
   }, [isComplete, queue, service, sessionId, userId])
 
   // Wire Ctrl/Cmd+Z to the manager's 'undo' action

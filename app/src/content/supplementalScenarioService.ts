@@ -303,7 +303,13 @@ function normalizeCoreLesson(source: SupplementalSource, lessonId: string): stri
   }
 
   if (source.textbookKey.includes('marugoto')) {
-    const normalized = source.level === 'A1' ? Math.min(12, Math.max(1, Math.ceil(lessonNumber / 2))) : lessonNumber
+    const normalized = source.level === 'A1'
+      ? Math.min(12, Math.max(1, Math.ceil(lessonNumber / 2)))
+      : source.level === 'A2'
+        ? Math.min(11, Math.max(1, lessonNumber))
+        : source.level === 'B1'
+          ? Math.min(6, Math.max(1, lessonNumber))
+          : lessonNumber
     return `${source.corePrefix}_${normalized}`
   }
 
@@ -562,10 +568,16 @@ async function loadCuratedScenarios(): Promise<SupplementalScenario[]> {
       if (!response.ok) continue
       const raw = (await response.json()) as Array<Partial<SupplementalScenario>>
       for (const entry of raw) {
+        const source = SOURCES.find(item => item.textbookKey === entry.textbookKey)
+        const lessonId = entry.lessonId ?? ''
+        const coreLessonId = source && lessonId
+          ? normalizeCoreLesson(source, lessonId)
+          : entry.coreLessonId
         results.push({
           ...entry as SupplementalScenario,
           page: entry.page ?? 0,
           lines: entry.lines ?? buildLinesFromCurated(entry),
+          coreLessonId: coreLessonId ?? entry.coreLessonId,
         })
       }
     } catch {

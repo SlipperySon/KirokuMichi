@@ -1,10 +1,50 @@
 # KirokuMichi — Current State & Active Roadmap
 
-Last updated: 2026-05-18 15:09 AEST
+Last updated: 2026-05-18 23:38 AEST
 
 ---
 
 ## What Is Built (Complete)
+
+### Route QA + Screenshots
+- `npm run verify` is the canonical full health gate: lint, TypeScript, Vitest, Playwright route QA, build, learner-facing content audit, Maynard coverage audit, and textbook asset manifest generation.
+- `npm run qa:routes` runs Playwright against the critical learner routes in desktop Chrome and mobile Pixel 5 profiles.
+- The route QA checks key route text, detects horizontal overflow, and saves screenshots under `app/tools/qa/out/route-screenshots/`.
+- Vitest route manifest tests now also protect the high-priority learner routes.
+
+### UX Polish Pass
+- Toasts are now wired into real app flows instead of only existing as an unused component: dashboard review/session actions, mistake drills, undo review, AI connection tests, tutor/conversation failures, and saved conversation corrections.
+- Shared `EmptyState`/`Skeleton` components now cover StudyDashboard, LearningMode, LessonsHub fallback, GrammarReview, ScenarioMode, and MistakeReview.
+- Mobile layout audit pass completed for dashboard, learn, lesson hub, lesson detail, scenarios, review, grammar review, mistake review, AI tutor, and conversation partner; 390px Browser smoke showed no horizontal overflow.
+- Current limitation: Browser screenshot capture timed out during this pass, so verification used DOM state plus viewport overflow checks.
+
+### Workbook Output Practice
+- Workbook tasks are now part of the actual lesson teaching flow, not just supplemental text on the lesson page or summary.
+- After teaching and recall, lessons can show a `Workbook Output` step where learners write/roleplay/correct/checkpoint responses and mark tasks complete.
+- Lesson summaries track workbook completion and preserve the learner's written output for review.
+
+### Textbook Image Asset Hook
+- Lesson pages now have a `Textbook Image Assets` section wired to `textbookAssetService`.
+- If `textbook-assets.json` exists, page/photo/diagram assets render with captions and page references.
+- If no manifest exists yet, the lesson shows a clear pending state so the future extraction pipeline has a visible destination.
+- `npm run textbook:assets:manifest` now scans reviewed-pack asset folders, copies available images to `app/data/generated/assets/textbook/`, and writes `app/data/generated/assets/textbook-assets.json`.
+- Current manifest publishes the two reviewed local assets available in the workspace: Genki I Workbook Lesson 1 listening picture choices and Quartet I Lesson 1 Miyazaki reading photo. More assets will appear automatically after the external extraction pipeline produces more reviewed crops.
+
+### Textbook QA Dashboard
+- `/dev/textbook-qa` now tracks workbook output count, image asset count, Maynard coverage percentage, suspicious vocab, page ranges, scenarios, and warnings per lesson.
+- Dashboard warnings now call out missing workbook output, missing image assets, low Maynard coverage, suspicious vocab, missing pages, and missing core content.
+- The dashboard surfaces the route QA command so future QA passes have one obvious control point.
+
+### Performance / Code Splitting
+- Vite now manually splits React/router vendor code, storage/sql.js/SRS code, and PDF tooling.
+- Anki import/export no longer statically import `sql.js`, keeping that heavy dependency lazy.
+- Latest build reduces the main app JS chunk to ~32 kB; remaining large chunks are generated JLPT data/PDF/vendor chunks that are already route/data lazy.
+- JLPT sub-splitting has been assessed and is not currently needed: the shell chunk is small and the remaining large JLPT/generated-data files are lazy route/data loads. Revisit only if measured route-load timing becomes slow.
+
+### CI
+- `.github/workflows/verify.yml` runs the app health gate on push and pull request.
+- CI installs Node 22, app dependencies, bundled Playwright Chromium, then runs `npm run verify`.
+- Playwright uses local Chrome by default, and CI can set `PLAYWRIGHT_CHANNEL=bundled` to use the installed Chromium browser.
 
 ### Core SRS
 - SQLite via sql.js, persisted to localStorage as base64 snapshot
@@ -47,7 +87,7 @@ Last updated: 2026-05-18 15:09 AEST
 - Maynard-matched grammar cards now surface a visible `Maynard Deep Dive` panel instead of hiding the reference in a collapsed disclosure.
 - Lesson teaching order is now page-aware: curated foundations come first, paginated textbook content follows source page order, and unpaged CEFR grammar is placed after paginated source material.
 - Lesson transition buttons now name the actual next action (`Next Item`, `Start Checkpoint`, `Start Mixed Review`, `Finish Lesson`) instead of always saying `Checkpoint`.
-- Current limitation: Maynard is still enrichment on matched grammar entries, not the universal source of truth for every grammar explanation. Matching coverage needs a second pass, especially for A1 basics.
+- Current limitation: Maynard is still a mix of direct references plus curated support bridges, not yet a universal page-specific Maynard source of truth.
 
 ### Lesson Intent + Maynard Explanation Engine
 - Lessons now build a structured intent plan instead of only assembling content buckets.
@@ -67,7 +107,9 @@ Last updated: 2026-05-18 15:09 AEST
 - B1/Quartet 1 and B2/Quartet 2 lessons now have authored output-skill overrides so higher-level lessons ask for supported opinions, nuanced discussion, responsibility/no-choice framing, and evidence-based qualification instead of generic scenario-bucket goals.
 - The Maynard/support bridge now covers common Genki 2 patterns such as `やすい/にくい`, `ほしい`, giving/receiving actions, `そう`, `みたい`, comparison, `ようと思う`, `なら`, necessity, `し`, `かどうか`, `てある`, `ようにする`, `ても`, transitive/intransitive verbs, honorific/humble forms, negative degree, `もし`, `なおす`, and common-view/reporting patterns.
 - The Maynard/support bridge now also covers common Quartet-style B1/B2 discussion patterns such as advice strength, purpose/conditions, concession, topic/target marking, evaluated cause, partial denial, impression, contrast/trend, realization/evaluation, change/unresolved states, viewpoint/consequence, time-gap/possibility, deserved reputation, responsibility/no-choice logic, compulsion, limits/qualification, medium/scope, and prohibition.
-- Current limitation: Maynard matching is still partial. The engine is in place, but future extraction/matching QA should improve coverage and aliases.
+- The latest pass added broader support for te-form linking, verb-form systems, core particles/endings, preference/desire, permission/prohibition, time sequence, clause relation, framing/quoting, resemblance, quantity, feasibility, viewpoint, and intermediate relation patterns.
+- `npm run textbook:maynard:quality` writes a coverage report and currently shows 637 A1-B2 grammar points, 535 supported, 84% support coverage, and 0 low-coverage lessons.
+- Current limitation: cleaned direct Maynard extraction should later replace broad curated bridges where reliable page/topic references are available.
 
 ### Textbook Coverage QA (`/dev/textbook-qa`)
 - Added a developer QA dashboard for lesson-pack coverage.
@@ -128,12 +170,19 @@ Last updated: 2026-05-18 15:09 AEST
 - Added a typed textbook asset manifest service for future user-provided page/photo assets.
 - The service can load `/data/generated/assets/textbook-assets.json` when the extraction/image pipeline produces it and can return assets by lesson or page.
 - If no asset manifest exists yet, it safely returns empty results, so UI integration can be incremental.
+- Lesson pages now load assets from the base textbook and supplemental source keys, so workbook images can appear on core lesson pages.
+- `npm run textbook:assets:manifest` generates the app-facing manifest from reviewed asset folders.
 
 ### Supplemental Scenarios (`/scenarios` + Conversation Partner)
 - Supplemental texts now feed a normalized, curated runtime scenario layer through `supplementalScenarioService.ts`.
 - The service loads generated textbook JSON, applies per-textbook page windows, rejects common OCR/front-matter/publishing noise, scores practice-like material, and emits clean `SupplementalScenario` records.
 - `/scenarios` now uses level-first tabs (`A1`, `A2`, `B1`, `B2`, etc.) with nested textbook/source tabs inside the selected level, so learners can browse by proficiency before choosing a source book.
 - Scenario source tabs are driven by an explicit catalog so the expected sources always appear even before a source has curated/generated scenarios: A1 = Genki 1 Textbook, Genki 1 Workbook, Marugoto A1; A2 = Genki 2 Textbook, Genki 2 Workbook, Marugoto A2; B1 = Quartet 1 Textbook, Quartet 1 Workbook, Marugoto B1; B2 = Quartet 2 Textbook, Quartet 2 Workbook, Tobira.
+- Curated workbook scenario packs are now loaded for Genki 1 Workbook, Genki 2 Workbook, Quartet 1 Workbook, and Quartet 2 Workbook, so workbook tabs are real practice sources rather than empty catalog placeholders.
+- Curated second-volume workbook source lessons are normalized to app lesson numbers at runtime:
+  - Genki 2 Workbook source lessons 13-23 map to app lessons 1-11.
+  - Quartet 2 Workbook source lessons 7-12 map to app lessons 1-6.
+- Scenario core lesson links are now guarded to stay inside app lesson ranges, preventing source-derived material from pointing to impossible lesson IDs such as out-of-range B1 buckets.
 - A first `/scenarios` visual QA pass checked visible A1, A2, B1, and B2 cards; the pass tightened B1/B2 rules for English can-do admin pages, worksheet checks, and example sentences that were slipping through.
 - `supplementalScenarioService.test.ts` now snapshots normalized output, verifies mapped lesson filtering/source caps, and guards against workbook comprehension checks being promoted into scenario prompts.
 - Scenario sources include Genki workbooks, Marugoto A1/A2/B1, Quartet 1/2 workbooks/textbooks, and Tobira.

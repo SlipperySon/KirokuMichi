@@ -25,13 +25,30 @@ describe('route smoke tests', () => {
 
   it('keeps critical learning routes registered', () => {
     expect(APP_ROUTE_PATHS).toEqual(expect.arrayContaining([
+      '/study',
+      '/study/review',
+      '/study/mistakes',
       '/learn',
       '/learn/lessons',
       '/learn/lessons/:cefr/:lessonNumber',
       '/learn/study',
+      '/practice',
       '/scenarios',
       '/study/grammar',
       '/dev/textbook-qa',
+    ]))
+  })
+
+  it('keeps all high-priority learner smoke routes in the route manifest', () => {
+    expect(APP_ROUTE_PATHS).toEqual(expect.arrayContaining([
+      '/study',
+      '/learn',
+      '/learn/lessons',
+      '/learn/lessons/:cefr/:lessonNumber',
+      '/scenarios',
+      '/practice',
+      '/study/grammar',
+      '/study/mistakes',
     ]))
   })
 

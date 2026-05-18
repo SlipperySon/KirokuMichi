@@ -25,6 +25,7 @@ import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { SRSService } from '../srs/srsService'
 import { Ruby } from '../components/Ruby'
 import { AutoGrowTextarea } from '../components/AutoGrowTextarea'
+import { toast } from '../components/toastStore'
 import { getTextbookScenarios, type TextbookScenario } from './textbookDialogues'
 import type { AIMessage } from '../core/providers'
 
@@ -166,6 +167,7 @@ export function ConversationPartner({ cefrLevel = 'a2' }: ConversationPartnerPro
       c.corrected
     )
     setSavedCorrections(prev => new Set(prev).add(key))
+    toast.success('Saved correction to drill')
   }
 
   // Load textbook scenarios on mount
@@ -312,7 +314,9 @@ The learner will practice natural conversation at their level. Use the scenario 
         }
       }
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Conversation failed')
+      const message = err instanceof Error ? err.message : 'Conversation failed'
+      setError(message)
+      toast.error(`Conversation failed: ${message}`)
       // Roll back the user turn so they can retry without duplicating it
       setTurns(prev => prev.slice(0, -1))
       setInput(text)
@@ -341,7 +345,7 @@ The learner will practice natural conversation at their level. Use the scenario 
     <div className="flex flex-col h-full">
       {/* Header: scenario picker */}
       <div className="border-b border-gray-200 p-4 space-y-3">
-        <div className="flex items-center justify-between gap-2">
+        <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2">
           <div className="flex flex-wrap gap-1.5">
             {CONVERSATION_SCENARIOS.map(s => (
               <button
@@ -384,7 +388,7 @@ The learner will practice natural conversation at their level. Use the scenario 
                 📚 Textbook
                 <ChevronDown className="w-3 h-3" />
               </button>
-              <div className="hidden group-hover:block absolute right-0 mt-0 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-10 max-h-[28rem] overflow-y-auto">
+              <div className="hidden group-hover:block absolute right-0 mt-0 w-[min(20rem,calc(100vw-2rem))] bg-white border border-gray-200 rounded-lg shadow-lg z-10 max-h-[28rem] overflow-y-auto">
                 {/* Group by level then textbook */}
                 {(() => {
                   const levels = ['A1', 'A2', 'B1', 'B2'] as const
@@ -442,7 +446,7 @@ The learner will practice natural conversation at their level. Use the scenario 
             </button>
           )}
         </div>
-        <div className="flex items-center justify-between text-xs text-gray-500">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 text-xs text-gray-500">
           <span>
             {isCustomScenario ? (
               <>
@@ -462,7 +466,7 @@ The learner will practice natural conversation at their level. Use the scenario 
               </>
             )}
           </span>
-          <div className="flex items-center gap-3">
+          <div className="flex flex-wrap items-center gap-3">
             <label className="flex items-center gap-1 cursor-pointer">
               <input
                 type="checkbox"
@@ -538,7 +542,7 @@ The learner will practice natural conversation at their level. Use the scenario 
             const u = turn as UserTurn
             return (
               <div key={i} className="flex flex-col items-end">
-                <div className="max-w-md px-4 py-2 rounded-2xl bg-indigo-600 text-white text-sm">
+                <div className="max-w-[85%] sm:max-w-md px-4 py-2 rounded-2xl bg-indigo-600 text-white text-sm break-words">
                   {u.content}
                 </div>
                 {u.corrections && u.corrections.length > 0 && (
@@ -587,7 +591,7 @@ The learner will practice natural conversation at their level. Use the scenario 
           const a = turn as AssistantTurn
           return (
             <div key={i} className="flex flex-col items-start">
-              <div className="max-w-md px-4 py-2 rounded-2xl bg-gray-100 text-gray-900 text-sm">
+              <div className="max-w-[85%] sm:max-w-md px-4 py-2 rounded-2xl bg-gray-100 text-gray-900 text-sm break-words">
                 <Ruby text={a.content} showFurigana={showFurigana} />
               </div>
               {showRomaji && a.romaji && (
@@ -627,7 +631,7 @@ The learner will practice natural conversation at their level. Use the scenario 
           return 0
         }, 0)
         return (
-          <div className="flex items-center justify-center gap-4 px-4 py-1.5 border-t border-gray-100 bg-gray-50 text-xs text-gray-500">
+          <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-1 px-4 py-1.5 border-t border-gray-100 bg-gray-50 text-xs text-gray-500">
             <span>{totalChars} chars written</span>
             <span className="text-gray-300">·</span>
             <span>{totalCorrections} correction{totalCorrections === 1 ? '' : 's'}</span>
