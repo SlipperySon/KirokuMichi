@@ -1,6 +1,8 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { useAppStore } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
+import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
+import { SRSService } from '../srs/srsService'
 import { importFromAnki } from '../srs/ankiImport'
 import { ClientAIProvider } from '../ai/aiProvider'
 import { toast } from '../components/toastStore'
@@ -378,6 +380,133 @@ async function importExtracted(
 }
 
 // ---------------------------------------------------------------------------
+// Known textbook detection
+// ---------------------------------------------------------------------------
+
+type TextbookKey = 'genki_1' | 'genki_2' | 'quartet_1' | 'quartet_2' | 'tobira' | 'marugoto'
+
+const TEXTBOOK_LABELS: Record<TextbookKey, string> = {
+  genki_1: 'Genki I',
+  genki_2: 'Genki II',
+  quartet_1: 'Quartet 1',
+  quartet_2: 'Quartet 2',
+  tobira: 'Tobira',
+  marugoto: 'Marugoto',
+}
+
+const TEXTBOOK_LINKS_KEY = 'kiroku-textbook-links'
+
+function getTextbookLinks(): Record<string, number> {
+  try {
+    const raw = localStorage.getItem(TEXTBOOK_LINKS_KEY)
+    if (!raw) return {}
+    return JSON.parse(raw) as Record<string, number>
+  } catch { return {} }
+}
+
+function saveTextbookLink(key: TextbookKey, deckId: number) {
+  const links = getTextbookLinks()
+  links[key] = deckId
+  localStorage.setItem(TEXTBOOK_LINKS_KEY, JSON.stringify(links))
+}
+
+function detectTextbook(filename: string): TextbookKey | null {
+  const name = filename.toLowerCase()
+  if (name.includes('genki')) {
+    if (name.includes('2') || name.includes('ii')) return 'genki_2'
+    if (name.includes('1') || name.includes('i')) return 'genki_1'
+    return 'genki_1' // default genki → volume 1
+  }
+  if (name.includes('quartet')) {
+    if (name.includes('2') || name.includes('ii')) return 'quartet_2'
+    return 'quartet_1'
+  }
+  if (name.includes('tobira')) return 'tobira'
+  if (name.includes('marugoto')) return 'marugoto'
+  return null
+}
+
+interface TextbookDetectionResult {
+  file: File
+  textbookKey: TextbookKey | null
+}
+
+interface KnownTextbooksPanelProps {
+  files: File[]
+  decks: { id: number; name: string }[]
+  onFilesChange: (files: File[]) => void
+}
+
+function KnownTextbooksPanel({ files, decks, onFilesChange }: KnownTextbooksPanelProps) {
+  const detections: TextbookDetectionResult[] = files
+    .filter(isPdfFile)
+    .map(file => ({ file, textbookKey: detectTextbook(file.name) }))
+
+  const [links, setLinks] = useState<Record<string, number>>(getTextbookLinks)
+  const [autoUnlock, setAutoUnlock] = useState<Record<string, boolean>>({})
+
+  if (detections.length === 0) return null
+
+  function handleLinkChange(key: TextbookKey, deckId: number) {
+    saveTextbookLink(key, deckId)
+    setLinks(prev => ({ ...prev, [key]: deckId }))
+  }
+
+  return (
+    <div className="flex flex-col gap-3">
+      <h3 className="text-sm font-semibold text-gray-700">Detected Textbooks</h3>
+      {detections.map(({ file, textbookKey }) => (
+        <div key={file.name} className="bg-indigo-50 border border-indigo-200 rounded-xl px-4 py-3 flex flex-col gap-2">
+          <div className="flex items-center gap-2">
+            <span className="text-indigo-600 font-semibold text-sm">
+              {textbookKey ? `${TEXTBOOK_LABELS[textbookKey]} Textbook` : 'Unknown format'}
+            </span>
+            {textbookKey ? (
+              <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Detected ✓</span>
+            ) : (
+              <span className="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">Unknown</span>
+            )}
+            <span className="text-xs text-gray-400 truncate ml-auto">{file.name}</span>
+          </div>
+
+          {textbookKey && decks.length > 0 && (
+            <div className="flex flex-col gap-2">
+              <label className="flex items-center gap-2 text-xs text-gray-600">
+                Link to Anki deck:
+                <select
+                  value={links[textbookKey] ?? ''}
+                  onChange={e => handleLinkChange(textbookKey, Number(e.target.value))}
+                  className="flex-1 px-2 py-1 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-indigo-400"
+                >
+                  <option value="">— not linked —</option>
+                  {decks.map(d => <option key={d.id} value={d.id}>{d.name}</option>)}
+                </select>
+              </label>
+
+              {links[textbookKey] && (
+                <label className="flex items-center gap-2 text-xs text-gray-600 cursor-pointer">
+                  <input
+                    type="checkbox"
+                    checked={autoUnlock[textbookKey] ?? false}
+                    onChange={e => setAutoUnlock(prev => ({ ...prev, [textbookKey]: e.target.checked }))}
+                    className="accent-indigo-600"
+                  />
+                  Auto-unlock vocabulary when studying this textbook
+                </label>
+              )}
+            </div>
+          )}
+
+          {textbookKey && decks.length === 0 && (
+            <p className="text-xs text-gray-500">Import an Anki deck first to link it to this textbook.</p>
+          )}
+        </div>
+      ))}
+    </div>
+  )
+}
+
+// ---------------------------------------------------------------------------
 // Component
 // ---------------------------------------------------------------------------
 
@@ -388,6 +517,19 @@ export function ContentUpload() {
   const { settings, activeUserId, setSessionToken } = useAppStore()
   const [storage] = useState(() => new SQLiteStorage())
   const userId = activeUserId ?? 1
+
+  const scheduler = settings.schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
+  const [service] = useState(() => new SRSService(storage, scheduler))
+  const [decks, setDecks] = useState<{ id: number; name: string }[]>([])
+
+  useEffect(() => {
+    void (async () => {
+      try {
+        const rows = await service.getDecks(userId)
+        setDecks(rows)
+      } catch { /* Decks table may not exist yet — non-fatal */ }
+    })()
+  }, [userId, service])
 
   // Anki
   const [ankiStatus, setAnkiStatus] = useState<string | null>(null)
@@ -766,6 +908,19 @@ export function ContentUpload() {
       </section>
 
       <hr className="border-gray-200" />
+
+      {/* Known textbooks detection */}
+      {selectedFiles.some(isPdfFile) && (
+        <section className="flex flex-col gap-3">
+          <KnownTextbooksPanel
+            files={selectedFiles}
+            decks={decks}
+            onFilesChange={setSelectedFiles}
+          />
+        </section>
+      )}
+
+      {selectedFiles.some(isPdfFile) && <hr className="border-gray-200" />}
 
       {/* Content import */}
       <section className="flex flex-col gap-4">

@@ -1,18 +1,24 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { ListChecks, Search } from 'lucide-react'
+import { ListChecks, Search, MessageCircle, X } from 'lucide-react'
 import { useAppStore } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
+import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
+import { SRSService } from '../srs/srsService'
+import { ClientAIProvider } from '../ai/aiProvider'
 import { Navigation } from '../components/Navigation'
 import { Ruby } from '../components/Ruby'
 import { EmptyState } from '../components/EmptyState'
 import { SkeletonList } from '../components/Skeleton'
+import { AutoGrowTextarea } from '../components/AutoGrowTextarea'
+import { toast } from '../components/toastStore'
 import { annotateBeginnerFurigana, isBeginnerLevel } from '../content/beginnerFurigana'
 import {
   getSupplementalScenarios,
   SUPPLEMENTAL_SCENARIO_SOURCES,
   type SupplementalScenario,
 } from '../content/supplementalScenarioService'
+import type { AIMessage } from '../core/providers'
 
 interface DialogueLine {
   speaker: string
@@ -143,6 +149,176 @@ function DialogueView({ scenario, showFurigana }: { scenario: Scenario; showFuri
   )
 }
 
+// ---------------------------------------------------------------------------
+// Inline live AI conversation panel for a selected scenario
+// ---------------------------------------------------------------------------
+
+interface ChatTurn {
+  role: 'user' | 'assistant'
+  content: string
+}
+
+const SCENARIO_CHAT_SYSTEM_PROMPT = (scenario: Scenario) => `You are practicing Japanese conversation based on this scenario: "${scenario.title}".
+
+${scenario.description ? `Context: ${scenario.description}` : ''}
+${scenario.lines.length > 0 ? `Sample dialogue for reference:\n${scenario.lines.map(l => `${l.speaker}: ${l.text}`).join('\n')}` : ''}
+
+Your role:
+- Stay in character as a natural Japanese conversation partner
+- Keep the conversation anchored to the scenario
+- Respond in Japanese (use furigana as "kanji(kana)" for harder kanji)
+- After each learner message, provide any corrections in this JSON format:
+{"reply":"your Japanese response","corrections":[{"original":"their mistake","corrected":"correct form","explanation":"brief reason"}]}
+- If there are no corrections, use: {"reply":"...","corrections":[]}
+- Be encouraging, natural, and supportive
+- Ask follow-up questions to keep conversation going`
+
+interface ScenarioChatPanelProps {
+  scenario: Scenario
+  onClose: () => void
+}
+
+function ScenarioChatPanel({ scenario, onClose }: ScenarioChatPanelProps) {
+  const settings = useAppStore(s => s.settings)
+  const activeUserId = useAppStore(s => s.activeUserId)
+
+  const [storage] = useState(() => new SQLiteStorage())
+  const scheduler = useMemo(
+    () => settings.schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler(),
+    [settings.schedulerAlgorithm]
+  )
+  const [service] = useState(() => new SRSService(storage, scheduler))
+
+  const [turns, setTurns] = useState<ChatTurn[]>([])
+  const [input, setInput] = useState('')
+  const [loading, setLoading] = useState(false)
+  const bottomRef = useRef<HTMLDivElement>(null)
+
+  const starters = scenario.lines.slice(0, 2).map(l => l.text).filter(Boolean)
+
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
+  }, [turns])
+
+  async function handleSend(text?: string) {
+    const msg = (text ?? input).trim()
+    if (!msg || loading) return
+    setInput('')
+    const userTurn: ChatTurn = { role: 'user', content: msg }
+    setTurns(prev => [...prev, userTurn])
+    setLoading(true)
+
+    try {
+      const ai = new ClientAIProvider(settings.sessionToken)
+      const history: AIMessage[] = turns.map(t => ({ role: t.role, content: t.content }))
+      history.push({ role: 'user', content: msg })
+      const systemPrompt = SCENARIO_CHAT_SYSTEM_PROMPT(scenario)
+      const raw = await ai.completeWithMessages(history, systemPrompt, 'fast')
+
+      // Try to parse JSON, else use raw as reply
+      let reply = raw
+      try {
+        const stripped = raw.replace(/^```(?:json)?\s*/i, '').replace(/\s*```$/i, '').trim()
+        const start = stripped.indexOf('{'); const end = stripped.lastIndexOf('}')
+        if (start !== -1 && end > start) {
+          const obj = JSON.parse(stripped.slice(start, end + 1)) as { reply?: string; corrections?: { original: string; corrected: string; explanation: string }[] }
+          if (typeof obj.reply === 'string') {
+            reply = obj.reply
+            // Log corrections if any
+            if (activeUserId && Array.isArray(obj.corrections) && obj.corrections.length > 0) {
+              for (const c of obj.corrections) {
+                try { await service.logMistake(activeUserId, null, c.original, c.corrected, null) } catch { /* ignore */ }
+              }
+            }
+          }
+        }
+      } catch { /* use raw */ }
+
+      setTurns(prev => [...prev, { role: 'assistant', content: reply }])
+    } catch (err) {
+      toast.error('Conversation failed: ' + (err instanceof Error ? err.message : 'unknown'))
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <div className="flex flex-col gap-3">
+      <div className="flex items-center justify-between">
+        <p className="text-sm font-semibold text-indigo-800">Live Practice — {scenario.title}</p>
+        <button onClick={onClose} className="p-1 text-gray-400 hover:text-gray-600" aria-label="Close chat">
+          <X className="h-4 w-4" />
+        </button>
+      </div>
+
+      {/* Starter chips */}
+      {turns.length === 0 && starters.length > 0 && (
+        <div className="flex flex-wrap gap-2">
+          {starters.map((s, i) => (
+            <button
+              key={i}
+              onClick={() => void handleSend(s)}
+              className="px-3 py-1.5 text-xs rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 transition-colors"
+              lang="ja"
+            >
+              {s}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {/* Chat history */}
+      <div className="space-y-3 max-h-72 overflow-y-auto bg-gray-50 rounded-xl p-3">
+        {turns.length === 0 && (
+          <p className="text-xs text-gray-400 text-center">Start the conversation, or tap a starter above</p>
+        )}
+        {turns.map((turn, i) => (
+          <div key={i} className={`flex gap-2 ${turn.role === 'user' ? 'flex-row-reverse' : ''}`}>
+            <div className={`max-w-xs rounded-xl px-3 py-2 text-sm ${
+              turn.role === 'user'
+                ? 'bg-indigo-600 text-white'
+                : 'bg-white border border-gray-200 text-gray-900'
+            }`} lang={turn.role === 'assistant' ? 'ja' : undefined}>
+              {turn.content}
+            </div>
+          </div>
+        ))}
+        {loading && (
+          <div className="flex gap-2">
+            <div className="bg-white border border-gray-200 rounded-xl px-3 py-2">
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: '0ms' }} />
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-gray-400 animate-bounce mx-1" style={{ animationDelay: '150ms' }} />
+              <span className="inline-block w-1.5 h-1.5 rounded-full bg-gray-400 animate-bounce" style={{ animationDelay: '300ms' }} />
+            </div>
+          </div>
+        )}
+        <div ref={bottomRef} />
+      </div>
+
+      {/* Input */}
+      <div className="flex gap-2">
+        <AutoGrowTextarea
+          value={input}
+          onChange={e => setInput(e.target.value)}
+          onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); void handleSend() } }}
+          placeholder="Type in Japanese…"
+          className="flex-1 px-3 py-2 text-sm border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-300"
+          lang="ja"
+          maxHeight={96}
+          disabled={loading}
+        />
+        <button
+          onClick={() => void handleSend()}
+          disabled={loading || !input.trim()}
+          className="px-4 py-2 bg-indigo-600 text-white rounded-xl text-sm font-semibold hover:bg-indigo-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+        >
+          Send
+        </button>
+      </div>
+    </div>
+  )
+}
+
 export function ScenarioMode() {
   const activeUserId = useAppStore(s => s.activeUserId)
   const settings = useAppStore(s => s.settings)
@@ -155,6 +331,7 @@ export function ScenarioMode() {
   const [activeSourceKey, setActiveSourceKey] = useState(() => searchParams.get('source') ?? '')
   const [showFurigana, setShowFurigana] = useState(settings.furiganaEnabled)
   const [query, setQuery] = useState('')
+  const [showLiveChat, setShowLiveChat] = useState(false)
 
   useEffect(() => {
     async function load() {
@@ -306,6 +483,7 @@ export function ScenarioMode() {
 
   function updateScenarioTabs(nextLevel: ScenarioLevel, nextSourceKey = '') {
     setSelected(null)
+    setShowLiveChat(false)
     setActiveLevel(nextLevel)
     setActiveSourceKey(nextSourceKey)
 
@@ -347,16 +525,29 @@ export function ScenarioMode() {
             <div>
               <div className="flex flex-wrap items-start justify-between gap-3">
                 <h2 className="text-lg font-semibold text-gray-900">{selected.title}</h2>
-                {isBeginnerLevel(selected.level) && (
-                  <label className="flex items-center gap-2 rounded-lg border border-indigo-100 bg-indigo-50 px-3 py-2 text-sm font-medium text-indigo-900">
-                    <input
-                      type="checkbox"
-                      checked={showFurigana}
-                      onChange={event => setShowFurigana(event.target.checked)}
-                    />
-                    Furigana
-                  </label>
-                )}
+                <div className="flex gap-2 items-center">
+                  {isBeginnerLevel(selected.level) && (
+                    <label className="flex items-center gap-2 rounded-lg border border-indigo-100 bg-indigo-50 px-3 py-2 text-sm font-medium text-indigo-900">
+                      <input
+                        type="checkbox"
+                        checked={showFurigana}
+                        onChange={event => setShowFurigana(event.target.checked)}
+                      />
+                      Furigana
+                    </label>
+                  )}
+                  <button
+                    onClick={() => setShowLiveChat(v => !v)}
+                    className={`inline-flex items-center gap-2 rounded-lg border px-3 py-2 text-sm font-semibold transition-colors ${
+                      showLiveChat
+                        ? 'border-indigo-300 bg-indigo-600 text-white hover:bg-indigo-700'
+                        : 'border-indigo-200 bg-indigo-50 text-indigo-800 hover:bg-indigo-100'
+                    }`}
+                  >
+                    <MessageCircle className="h-4 w-4" aria-hidden="true" />
+                    {showLiveChat ? 'Hide Chat' : 'Practice Live'}
+                  </button>
+                </div>
               </div>
               {selected.description && (
                 <p className="text-sm text-gray-500 mt-1">{selected.description}</p>
@@ -370,6 +561,15 @@ export function ScenarioMode() {
             <div className="bg-white border border-gray-200 rounded-2xl p-4 sm:p-6">
               <DialogueView key={selected.id} scenario={selected} showFurigana={showFurigana} />
             </div>
+
+            {showLiveChat && (
+              <div className="bg-white border border-indigo-200 rounded-2xl p-4 sm:p-6">
+                <ScenarioChatPanel
+                  scenario={selected}
+                  onClose={() => setShowLiveChat(false)}
+                />
+              </div>
+            )}
           </div>
         ) : scenarios.length === 0 ? (
           <EmptyState
