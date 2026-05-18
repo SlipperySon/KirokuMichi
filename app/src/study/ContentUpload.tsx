@@ -3,6 +3,7 @@ import { useAppStore } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
 import { importFromAnki } from '../srs/ankiImport'
 import { ClientAIProvider } from '../ai/aiProvider'
+import { toast } from '../components/toastStore'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -458,13 +459,24 @@ export function ContentUpload() {
 
   async function handleAnkiFile(file: File) {
     setAnkiLoading(true)
-    setAnkiStatus(null)
+    setAnkiStatus('Importing…')
     try {
       const result = await importFromAnki(file, storage, userId)
-      const audioNote = result.audioExtracted > 0 ? `, ${result.audioExtracted} with audio` : ''
-      setAnkiStatus(`Imported ${result.imported} cards${audioNote}, skipped ${result.skipped} duplicates`)
+      const audioNote = result.audioExtracted > 0 ? `, ${result.audioExtracted} audio files` : ''
+      const summary = `Imported ${result.imported} cards, skipped ${result.skipped}${audioNote}`
+      setAnkiStatus(summary)
+      toast.success(`📦 ${summary}`, 5000)
+      if (result.errors.length > 0) {
+        toast.error(`⚠️ ${result.errors[0]}`, 6000)
+      }
+      if (result.unlockedForLessons && result.unlockedForLessons.totalUnlocked > 0) {
+        const tb = result.unlockedForLessons.textbook.replace(/_/g, ' ')
+        toast.info(`🔓 Unlocked ${result.unlockedForLessons.totalUnlocked} lesson items for ${tb}`, 5000)
+      }
     } catch (e) {
-      setAnkiStatus(`Import failed: ${e instanceof Error ? e.message : 'unknown error'}`)
+      const msg = `Import failed: ${e instanceof Error ? e.message : 'unknown error'}`
+      setAnkiStatus(msg)
+      toast.error(msg)
     } finally {
       setAnkiLoading(false)
     }
@@ -742,7 +754,10 @@ export function ContentUpload() {
       <section className="flex flex-col gap-3">
         <h2 className="text-lg font-semibold text-gray-900">Import Anki Deck</h2>
         <p className="text-sm text-gray-500">Upload a .apkg file to import vocabulary cards with pre-recorded audio.</p>
-        <label className={`flex items-center justify-center px-4 py-3 border-2 border-dashed border-gray-300 rounded-xl text-sm text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer ${ankiLoading ? 'opacity-50 pointer-events-none' : ''}`}>
+        <label className={`flex items-center justify-center gap-2 px-4 py-3 border-2 border-dashed border-gray-300 rounded-xl text-sm text-gray-600 hover:bg-gray-50 transition-colors cursor-pointer ${ankiLoading ? 'opacity-50 pointer-events-none' : ''}`}>
+          {ankiLoading && (
+            <span className="inline-block h-4 w-4 rounded-full border-2 border-gray-400 border-t-transparent animate-spin" aria-hidden="true" />
+          )}
           {ankiLoading ? 'Importing…' : 'Choose .apkg file'}
           <input type="file" accept=".apkg" className="hidden" disabled={ankiLoading}
             onChange={e => { if (e.target.files?.[0]) void handleAnkiFile(e.target.files[0]) }} />

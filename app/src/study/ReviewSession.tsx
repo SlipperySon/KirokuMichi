@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useIntl } from 'react-intl'
 import { LogOut, RotateCcw } from 'lucide-react'
@@ -15,6 +15,7 @@ import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { SRSService } from '../srs/srsService'
 import { useAppStore } from '../store'
+import { toast } from '../components/toastStore'
 import type { ReviewCard, GrammarQuestion, GrammarReviewContext } from './types'
 
 interface LocationState {
@@ -47,6 +48,22 @@ export function ReviewSession() {
 
   const { currentCard, currentVariant, currentGrammar, phase, intervalPreviews, isNewLeech, progress } = session
   const [grammarContext, setGrammarContext] = useState<GrammarReviewContext | null>(null)
+
+  // Fire celebration toasts when session completes (only once)
+  const completionToastFiredRef = useRef(false)
+  useEffect(() => {
+    if (!session.isComplete || completionToastFiredRef.current) return
+    completionToastFiredRef.current = true
+    const { dailyStats, settings } = useAppStore.getState()
+    const reviewed = session.stats.cardsReviewed
+    if (dailyStats.currentStreak > 1) {
+      toast.success(`🔥 ${dailyStats.currentStreak}-day streak!`, 4000)
+    }
+    if (reviewed >= settings.dailyGoal && settings.dailyGoal > 0) {
+      toast.success('✅ Daily goal complete!', 4000)
+    }
+    toast.info(`📈 Session complete — ${reviewed} card${reviewed === 1 ? '' : 's'} reviewed`, 4000)
+  }, [session.isComplete, session.stats.cardsReviewed])
 
   useEffect(() => {
     let cancelled = false
