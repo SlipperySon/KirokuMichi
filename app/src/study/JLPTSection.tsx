@@ -114,7 +114,12 @@ export function JLPTSection() {
   }
 
   if (isLoading) {
-    return <div className="flex items-center justify-center min-h-screen text-gray-400">Loading JLPT content…</div>
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen gap-4">
+        <div className="w-10 h-10 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin" />
+        <p className="text-sm text-gray-400">Loading JLPT content…</p>
+      </div>
+    )
   }
 
   const duration = currentTest ? Date.now() - currentTest.startTime : 0
