@@ -147,7 +147,9 @@ content_type rules:
 3. If you cannot parse a section into any category, put it in lessons as a text_passage with the raw content as the body
 4. Preserve document order inside each array. Do not randomly reorder items.
 5. Use the same classification every time: word/translation pairs go to vocab; structural explanations go to grammar; longer passages, exercises, and dialogues go to lessons.
-6. Output must be valid JSON parseable by JSON.parse() — no trailing commas, no comments`
+6. Output must be valid JSON parseable by JSON.parse() — no trailing commas, no comments
+7. SKIP hiragana/katakana drilling sections entirely (e.g. kana chart pages, pure script-tracing exercises). KirokuMichi learners already know kana — these pages produce no usable vocab, grammar, or lessons.
+8. SKIP table-of-contents pages, copyright/publication info, back-cover blurbs, and blank pages.`
 
 // ---------------------------------------------------------------------------
 // PDF extraction
