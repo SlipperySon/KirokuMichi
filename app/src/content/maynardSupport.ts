@@ -554,7 +554,7 @@ const FALLBACKS: Array<{
     ],
   },
   {
-    match: /^ため$|ために|ための|ためだ/,
+    match: /^ため$|ために|ための|ためだ|ため\(に\)/,
     title: 'Support bridge: purpose and cause (ために)',
     excerpt:
       'ために has two distinct roles. As a purpose marker (verb dictionary form + ために), it means "in order to do X" — the subject of both clauses should be the same. As a cause marker (plain form + ために), it expresses "because of / due to X." Learners must distinguish these by context: purpose looks forward; cause explains a result already stated.',
@@ -714,6 +714,69 @@ const FALLBACKS: Array<{
     excerpt:
       'たった("only/just") emphasises that an amount is surprisingly small. たったの further intensifies the smallness. わずか is a more formal equivalent meaning "a mere / only a little." All three are placed before a quantity word and suggest the speaker finds the amount insufficient or unexpectedly small.',
     examples: [{ japanese: 'たった5分で終わった。', english: 'It finished in just five minutes.' }],
+  },
+  {
+    match: /^また$|^も又$|^また(?:は)?$/,
+    title: 'Support bridge: also / alternatively (また)',
+    excerpt:
+      'また can mean "also / in addition" (listing further items or facts) or "alternatively / or" (presenting a second option). At the sentence level it often starts a new point that parallels or continues the previous one. Context tells you whether the relationship is additive ("and also") or alternative ("or alternatively").',
+    examples: [
+      { japanese: '彼は親切だ。また、頭もいい。', english: 'He is kind. Also, he is smart.' },
+    ],
+  },
+  {
+    match: /^まず$|まず最初に|第一に/,
+    title: 'Support bridge: first of all / to begin with (まず)',
+    excerpt:
+      'まず ("first of all / to begin with") opens a sequence or sets up the first step before others follow. It frames what comes next as the starting point of a multi-step process or reasoning chain. Often followed by 次に, そして, or 最後に to complete the sequence.',
+    examples: [{ japanese: 'まず、材料を準備してください。', english: 'First of all, please prepare the ingredients.' }],
+  },
+  {
+    match: /ものの|ものを/,
+    title: 'Support bridge: concessive although (ものの)',
+    excerpt:
+      'ものの ("although / even though / however") follows a plain-form clause to acknowledge that the first part is true while introducing a contrasting or unfulfilled result. The speaker accepts X but asserts that Y did not follow as one might expect. It is more formal and literary than が or けれど.',
+    examples: [{ japanese: '努力はしたものの、結果は出なかった。', english: 'Although I made an effort, no results came.' }],
+  },
+  {
+    match: /なお①|なお②|^なお$|なお、/,
+    title: 'Support bridge: furthermore / note that (なお)',
+    excerpt:
+      'なお in discourse has two uses: (1) "furthermore / still / moreover" — it adds a related point that continues or intensifies what came before; (2) a written-language warning or note signal — "please note that / it should be mentioned that." The second usage is common in formal announcements, contracts, and academic writing.',
+    examples: [
+      { japanese: 'なお、詳細は別紙をご参照ください。', english: 'Please note that for details, please refer to the attached sheet.' },
+    ],
+  },
+  {
+    match: /にみえる|とみえる|に見える|と見える/,
+    title: 'Support bridge: appears to be / seems like (にみえる / とみえる)',
+    excerpt:
+      'にみえる ("looks like / appears to be") describes how something visually or perceptually comes across to the observer. とみえる is similar but often used in more inferential contexts — "it seems that / judging by appearance." Both are milder assertions than断言 (flat statement) and respect epistemic distance.',
+    examples: [{ japanese: '彼は疲れているとみえる。', english: 'He appears to be tired.' }],
+  },
+  {
+    match: /ほかに|ほか\(に\)|ほかにも|他にも/,
+    title: 'Support bridge: besides / in addition to (ほかに)',
+    excerpt:
+      'ほかに ("besides / in addition to / apart from") introduces additional items or alternatives beyond what has already been stated. ほかにも adds "also" to signal that the list is open. It can precede nouns or appear alone in a question: 他にありますか = "Is there anything else?"',
+    examples: [{ japanese: 'ほかに質問はありますか。', english: 'Are there any other questions?' }],
+  },
+  {
+    match: /につけ|につけて/,
+    title: 'Support bridge: whenever / every time (につけ)',
+    excerpt:
+      'につけ ("whenever / every time / each time") follows a noun or plain-form verb to express that one thing invariably accompanies or triggers another. It often describes an emotional or habitual response. The tone is reflective — each occurrence of X reliably calls up Y.',
+    examples: [{ japanese: '彼女を見るにつけ、昔のことを思い出す。', english: 'Whenever I see her, I am reminded of the past.' }],
+  },
+  {
+    match: /はたして|果たして/,
+    title: 'Support bridge: indeed, as expected / will it really? (はたして)',
+    excerpt:
+      'はたして has two opposite-facing uses. In rhetorical questions it means "really? / will it actually?" — expressing doubt about whether something is possible or true. In declarative sentences it means "indeed / as expected / sure enough" — confirming that what was hoped or feared came to pass.',
+    examples: [
+      { japanese: 'はたして間に合うだろうか。', english: 'Will it really make it in time, I wonder?' },
+      { japanese: 'はたして、彼の言った通りになった。', english: 'Sure enough, it turned out just as he said.' },
+    ],
   },
 ]
 
