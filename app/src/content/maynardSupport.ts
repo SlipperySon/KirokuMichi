@@ -553,6 +553,92 @@ const FALLBACKS: Array<{
       { japanese: 'きっとうまくいくよ。', english: 'I am sure it will work out.' },
     ],
   },
+  {
+    match: /^ため$|ために|ための|ためだ/,
+    title: 'Support bridge: purpose and cause (ために)',
+    excerpt:
+      'ために has two distinct roles. As a purpose marker (verb dictionary form + ために), it means "in order to do X" — the subject of both clauses should be the same. As a cause marker (plain form + ために), it expresses "because of / due to X." Learners must distinguish these by context: purpose looks forward; cause explains a result already stated.',
+    examples: [
+      { japanese: '日本語を勉強するために、毎日練習しています。', english: 'I practise every day in order to study Japanese.' },
+      { japanese: '病気のために、休みました。', english: 'I took a day off because of illness.' },
+    ],
+  },
+  {
+    match: /いくら.*ても|いくら.*でも|^〜でも〜でも$|〜でも.*〜でも/,
+    title: 'Support bridge: concession regardless of degree (いくら〜ても)',
+    excerpt:
+      'いくら〜ても expresses "no matter how much/many X, the result is still Y." The ても ending creates the concessive force, while いくら sets the uncapped degree. The construction signals that the outcome resists variation, regardless of how extreme the X side becomes.',
+    examples: [{ japanese: 'いくら練習しても、うまくならない。', english: 'No matter how much I practise, I do not improve.' }],
+  },
+  {
+    match: /てこそ|からこそ/,
+    title: 'Support bridge: emphatic "only because / precisely when" (てこそ / からこそ)',
+    excerpt:
+      'てこそ attaches to the te-form to say "it is only by/when doing X that Y is possible or meaningful." It asserts that X is the indispensable condition for Y. からこそ similarly emphasises that the reason for Y is specifically X — stressing the causal link. Both patterns intensify and highlight the connection.',
+    examples: [
+      { japanese: '失敗してこそ、成長できる。', english: 'It is only by failing that one can grow.' },
+      { japanese: '努力したからこそ、合格できた。', english: 'It is precisely because I worked hard that I passed.' },
+    ],
+  },
+  {
+    match: /^とうとう$|ついに$|^ようやく$/,
+    title: 'Support bridge: final result adverbs (at last / finally)',
+    excerpt:
+      'とうとう ("in the end/at last") often implies a long wait or a somewhat expected, sometimes regrettable outcome. ついに emphasises that a significant turning point has been reached. ようやく highlights difficulty overcome — "finally, after much effort." Choose based on tone: regret/inevitability → とうとう; milestone → ついに; relief after struggle → ようやく.',
+    examples: [
+      { japanese: 'とうとう試験に落ちてしまった。', english: 'In the end, I failed the exam after all.' },
+      { japanese: 'ついに夢が実現した。', english: 'At last my dream came true.' },
+    ],
+  },
+  {
+    match: /どんどん|ますます|次第に/,
+    title: 'Support bridge: progressive change adverbs',
+    excerpt:
+      'どんどん describes something advancing rapidly or accumulating quickly, often with enthusiasm or unchecked speed. ますます means "more and more" with a sense of steady intensification. 次第に describes gradual change that unfolds step by step. All three pair naturally with change-of-state verbs.',
+    examples: [
+      { japanese: '日本語がどんどん上手になっている。', english: 'My Japanese is getting better and better (rapidly).' },
+      { japanese: '気温がますます下がっている。', english: 'The temperature is falling more and more.' },
+    ],
+  },
+  {
+    match: /^など$|などの|などが|とか$|なんか/,
+    title: 'Support bridge: listing with open scope (など / とか)',
+    excerpt:
+      'など signals that the listed items are examples, not an exhaustive set — "things like X, Y, and so on." とか is more casual and often implies uncertainty ("X and that sort of thing"). Both allow the speaker to hint at a broader category without committing to a complete list.',
+    examples: [{ japanese: '果物など、健康にいい食べ物を食べています。', english: 'I eat healthy foods such as fruit and so on.' }],
+  },
+  {
+    match: /いわゆる/,
+    title: 'Support bridge: labelling with shared understanding (いわゆる)',
+    excerpt:
+      'いわゆる ("so-called / what is commonly called") introduces a term or label that both speaker and listener are expected to recognise. It can be neutral, slightly sceptical, or distancing — the nuance depends on tone. It is placed directly before the noun it modifies.',
+    examples: [{ japanese: 'これがいわゆる「少子化問題」です。', english: 'This is what is commonly called the "declining birthrate problem."' }],
+  },
+  {
+    match: /^せめて$/,
+    title: 'Support bridge: minimum expectation (せめて)',
+    excerpt:
+      'せめて expresses "at least" in the sense of a minimum hope or demand when the ideal is out of reach. It sets a floor — if not everything, then せめて this much. It commonly appears in requests, wishes, and conditions, often with potential or volitional forms.',
+    examples: [{ japanese: 'せめて一言言ってほしかった。', english: 'I wish you had at least said something.' }],
+  },
+  {
+    match: /^どうやら|らしい$|ようだ$|ようです/,
+    title: 'Support bridge: inference and appearance (どうやら / らしい / よう)',
+    excerpt:
+      'どうやら signals that the speaker is drawing a conclusion from indirect evidence — "it appears that / it seems like." らしい suggests the conclusion is based on hearsay or general impression. ようだ/ようです draws from direct observation. どうやら often precedes らしい or よう to reinforce the evidential quality.',
+    examples: [
+      { japanese: 'どうやら電車が遅れているようだ。', english: 'It seems the train is running late.' },
+    ],
+  },
+  {
+    match: /いきなり|突然|急に/,
+    title: 'Support bridge: abrupt change (いきなり / 突然 / 急に)',
+    excerpt:
+      'いきなり emphasises that something happened with no warning at all — abruptness is the focus. 突然 ("suddenly") is slightly more neutral and can describe natural events. 急に means "all at once/hurriedly" and is often used for plans that change without advance notice. All three modify verbs of change or action.',
+    examples: [
+      { japanese: 'いきなり電話がかかってきた。', english: 'A call came out of nowhere.' },
+    ],
+  },
 ]
 
 export function getMaynardSupport(grammar: GrammarItem): MaynardRef | undefined {
