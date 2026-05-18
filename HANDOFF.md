@@ -1,8 +1,8 @@
 # KirokuMichi Handoff Document
 
-**Last updated:** 2026-05-18 15:09 AEST
-**Current status:** ✅ EXTRACTION COMPLETE (54 lessons) | ✅ TIER 1 FEATURES SHIPPED (8/8) | ✅ TIER 2 UX FEATURES (9/10 shipped) | ✅ REVIEW GRAMMAR CONTEXT LIVE | ✅ REAL TEACHING FLOW V2 LIVE | ✅ LESSON INTENT + MAYNARD ENGINE LIVE | ✅ A1-B2 GRAMMAR SUPPORT FALLBACKS LIVE | ✅ ALL CURATED SCENARIOS LIVE (Genki 1/2, Quartet 1/2, Marugoto A1/A2) | ✅ A1/A2 SCENARIO FURIGANA TOGGLE LIVE | ✅ LEARNER-FACING OCR AUDIT CLEAN | ✅ TEXTBOOK QA DASHBOARD LIVE | ✅ WORKBOOK PRACTICE CLEANUP LIVE | ✅ SECOND-VOLUME LESSON MAPPING LIVE | ✅ SCENARIO NUMERIC ORDERING LIVE | ✅ SUSPICIOUS VOCAB REPORT CLEAN | ✅ GENKI 1 LESSON 1 FOUNDATION MODULE LIVE | ✅ TEXTBOOK ASSET MANIFEST SERVICE LIVE | ✅ SCENARIO LEVEL/TEXTBOOK TABS LIVE | ✅ READABILITY/NAV PASS LIVE | ✅ LINT/BUILD/TEST GREEN
-**Next phase:** improve Maynard direct matching after extraction finishes, wire real textbook image manifests into lesson pages, canonical pre-lesson pack replacement, then manual scenario/vocab QA
+**Last updated:** 2026-05-18 (current session)
+**Current status:** ✅ EXTRACTION COMPLETE (54 lessons) | ✅ TIER 1 FEATURES SHIPPED (8/8) | ✅ TIER 2 UX FEATURES (9/10 shipped) | ✅ STAGING READINESS PASS (ErrorBoundary, 404, spinners, meta tags, PWA, README, /api/health) | ✅ ALL CURATED SCENARIOS LIVE + UNIFORM (206 total, all 12 packs at 2/lesson) | ✅ B2 TOBIRA PACK LIVE (16 scenarios) | ✅ SCENARIO SEARCH LIVE | ✅ KEYBOARD HELP MODAL LIVE (press ?) | ✅ MOBILE NAV LIVE | ✅ TOAST/SKELETON/EMPTYSTATE COMPONENTS CREATED | ⚠️ TOAST NOT WIRED TO ANY SURFACE | ⚠️ EMPTYSTATE/SKELETON SWEEP INCOMPLETE (only ScenarioMode + MistakeReview done) | ⚠️ MOBILE AUDIT INCOMPLETE (only nav + root width fixed)
+**Next phase:** wire Toast to action completions, sweep EmptyState/Skeleton to remaining surfaces (StudyDashboard, LessonsHub, LearningMode, TutorChat), full mobile responsive audit of all routes
 
 > **🔄 Keep this updated:** At the end of each session, before switching AI models, update the "Last updated" date and "Current status" above. Update the Quick Status table and the "What Just Completed" section to reflect new work. This ensures seamless handoff.
 
@@ -35,7 +35,18 @@
 | **Vocab Data Quality:** OCR-spillover meaning cleanup | ✅ `unresolvedSuspicious: 0` |
 | **Learner-Facing OCR Quality:** app-facing vocab/grammar/tasks/scenarios audit | ✅ `issueCount: 0` via `npm run textbook:learner:quality` |
 | **Grammar Data Quality:** CEFR grammar replaces OCR noise, Maynard enrichment | ✅ Complete (746 entries, 705 Maynard matches) |
-| **Curated Scenarios:** Genki 1 TB (21) + WB (12), Genki 2 TB (22) + WB (11), Quartet 1/2 TB (24) + WB (12), Marugoto A1 (18), Marugoto A2 (18) | ✅ Complete |
+| **Curated Scenarios:** All 12 packs, uniform 2/lesson — A1: 66, A2: 62, B1: 38, B2: 40 (206 total) | ✅ Complete |
+| **Tobira B2 pack:** 16 scenarios, 8 lessons, 2/lesson — closes B2 gap | ✅ Live |
+| **Scenario search:** search box on /scenarios filters by title/topic/canDo | ✅ Live |
+| **Keyboard help modal:** press ? anywhere to see all shortcuts | ✅ Live |
+| **Staging readiness:** ErrorBoundary, 404 page, animated spinners, OG meta tags, PWA manifest, /api/health, README.md | ✅ Live |
+| **Mobile nav:** burger menu + drawer; compact streak chip on phones | ✅ Live |
+| **Toast component:** `useToast()` + `<ToastContainer />` built | ✅ Component exists |
+| **Toast wired to surfaces:** no surface actually fires toasts yet | ⚠️ Not done |
+| **EmptyState component:** built and used in ScenarioMode + MistakeReview | ⚠️ Partial |
+| **Skeleton loaders:** built and used in ScenarioMode + MistakeReview | ⚠️ Partial |
+| **EmptyState/Skeleton sweep:** StudyDashboard, LessonsHub, LearningMode, TutorChat still have plain text | ⚠️ Not done |
+| **Mobile responsive audit:** full per-route audit (ReviewSession, LessonPage, ConversationPartner, etc.) | ⚠️ Not done |
 | **Scenario UI:** `/scenarios` level tabs → expected textbook subtabs, plus grouped Conversation Partner dropdown | ✅ Complete |
 | **Scenario Furigana:** selected A1/A2 scenario dialogues have a toggle with ruby readings | ✅ Complete |
 | **Scenario Ordering:** numeric lesson ordering inside textbook tabs | ✅ Complete |
@@ -61,7 +72,42 @@
 
 ---
 
-## What Just Completed (2026-05-18 15:09 AEST, Current Session)
+## What Just Completed (2026-05-18, Current Session)
+
+### ✅ STAGING READINESS + UX FOUNDATIONS PASS
+
+- **ErrorBoundary** wrapping all routes — crash shows recovery UI, not blank screen
+- **404 NotFound page** with catch-all route
+- **Animated spinner** replacing bare "Loading…" across StudyDashboard, JLPTSection, LearningMode, WeakPointPanel, ScenarioMode, MistakeReview
+- **QA nav link removed** from user-facing navigation
+- **Kana onboarding placeholder** replaced with real bridging copy
+- **OG/Twitter meta tags**, `theme-color`, `apple-touch-icon` added to `index.html`
+- **Version bumped** 0.0.0 → 0.1.0
+- **`.env.example`** created documenting all required/optional env vars
+- **`/api/health` endpoint** (no auth) for uptime monitors
+- **PWA manifest** (`manifest.webmanifest`) — app is installable
+- **Root `README.md`** with stack, quick start, project layout, quality gates
+- **Mobile nav** with burger menu + drawer; compact streak chip on small screens
+- **`#root` width fix** — removed hardcoded 1126px, full-bleed on mobile
+- **Toast component** (`useToast()` + `<ToastContainer />`) — built, not yet wired
+- **Skeleton loaders** (Skeleton, SkeletonText, SkeletonCard, SkeletonList) — built
+- **EmptyState component** — built
+- **ScenarioMode:** skeleton on load, EmptyState on empty/no-search-match, search box
+- **MistakeReview:** skeleton on load, EmptyState with back-to-dashboard CTA
+- **Keyboard help modal** — press `?` anywhere to see all shortcuts
+- **Tobira B2 scenario pack** — 16 scenarios, 8 lessons, 2/lesson
+- **Genki 1 parity fix** — L4/L11/L12 each got a second scenario (was 1, now 2)
+- **All 12 scenario packs** now uniform at exactly 2 scenarios/lesson (206 total)
+
+### ⚠️ INCOMPLETE — Carry forward to next session
+
+- **Toast not wired:** `<ToastContainer />` is mounted in App.tsx but no surface calls `toast.success/error/info()`. Wire to: session resume/abandon in StudyDashboard, drill-start in MistakeReview, AI connection test result in Settings, undo in ReviewSession.
+- **EmptyState/Skeleton sweep incomplete:** only ScenarioMode + MistakeReview done. Still needed: StudyDashboard panels, LessonsHub, LearningMode lesson list, TutorChat/ConversationPartner, GrammarReview, ReviewSession completion.
+- **Mobile responsive audit incomplete:** only Navigation + root width fixed. Still need per-route audit: ReviewSession card layout, LessonPage on phone, ConversationPartner input on mobile, LessonsHub grid, ScenarioMode dialogue view.
+
+---
+
+## What Just Completed (2026-05-18 15:09 AEST, Previous Session)
 
 ### ✅ LEARNER-FACING OCR POLISH PASS
 

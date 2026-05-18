@@ -1,11 +1,40 @@
 # KirokuMichi — Active Todo List
 
-Last updated: 2026-05-18 15:09 AEST
+Last updated: 2026-05-18 (current session)
 
 **EXTRACTION STATUS:** ✅ A1 COMPLETE | ✅ A2 COMPLETE | ✅ B1-B2 COMPLETE | **54 TOTAL LESSONS EXTRACTED**
-**TIER 1 FEATURES:** ✅ 8/8 shipped | ✅ Real lesson teaching flow v2 shipped | ✅ Lesson intent + Maynard engine shipped | ✅ Supplemental scenario layer v2 shipped | ✅ Build gate green
-**TIER 2 UX FEATURES:** ✅ 9/10 shipped | TypeScript clean
-**BUG FIX PASS:** ✅ ScenarioMode crash, Marugoto A1/A2 scenarios, English UI, contrast, lesson links, scenario numeric ordering, second-volume lesson mapping, suspicious vocab cleanup, A1/A2 scenario furigana toggle, learner-facing OCR audit clean
+**TIER 1 FEATURES:** ✅ 8/8 shipped
+**TIER 2 UX FEATURES:** ✅ 9/10 shipped
+**STAGING PASS:** ✅ ErrorBoundary, 404, spinners, meta, PWA, README, /api/health, mobile nav, scenario search, keyboard modal, Tobira B2
+**INCOMPLETE (carry forward):** Toast wiring, EmptyState/Skeleton sweep, full mobile audit
+
+---
+
+## Carry-Forward — Incomplete Items (next session)
+
+### ⚠️ Toast — built but not wired
+- [ ] Wire `toast.success()` to: session resume/abandon (StudyDashboard), drill-start (MistakeReview), undo (ReviewSession), AI connection test (Settings)
+- [ ] Wire `toast.error()` to AI fetch failures in TutorChat + ConversationPartner
+
+### ⚠️ EmptyState + Skeleton sweep — only 2 of ~6 surfaces done
+- [x] ScenarioMode — skeleton + EmptyState ✅
+- [x] MistakeReview — skeleton + EmptyState ✅
+- [ ] StudyDashboard panels (weak points, recent mistakes preview)
+- [ ] LessonsHub — skeleton while lesson list loads
+- [ ] LearningMode — EmptyState when no lessons match filter
+- [ ] TutorChat / ConversationPartner — EmptyState for empty chat history
+- [ ] GrammarReview — EmptyState when no grammar cards due
+- [ ] ReviewSession complete screen — already has stats table, but no EmptyState for 0-card queue
+
+### ⚠️ Mobile responsive audit — only nav + root width done
+- [x] Navigation burger menu + drawer ✅
+- [x] `#root` width fixed (no more 1126px hardcode) ✅
+- [ ] ReviewSession — card layout on narrow screens (rating buttons too wide?)
+- [ ] LessonPage — content columns on phone
+- [ ] ConversationPartner — chat input + correction chips on mobile
+- [ ] LessonsHub — lesson grid on phone (card wrapping)
+- [ ] ScenarioMode — source tab overflow on small screens
+- [ ] StudyDashboard — heatmap overflow on mobile
 
 ---
 
