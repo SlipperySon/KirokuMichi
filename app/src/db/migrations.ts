@@ -192,6 +192,30 @@ const MIGRATIONS: string[] = [
   `CREATE INDEX IF NOT EXISTS learning_content_user_idx ON learning_content(user_id)`,
   `CREATE INDEX IF NOT EXISTS learning_content_type_idx ON learning_content(content_type)`,
   `CREATE INDEX IF NOT EXISTS learning_content_source_idx ON learning_content(source_document)`,
+
+  // Feature: Suspend/Bury mechanics
+  `ALTER TABLE card_states ADD COLUMN suspended_at DATETIME NULL`,
+  `ALTER TABLE card_states ADD COLUMN buried_until DATETIME NULL`,
+
+  // Feature: Subdeck hierarchy
+  `CREATE TABLE IF NOT EXISTS decks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL REFERENCES users(id),
+    parent_id INTEGER REFERENCES decks(id),
+    name TEXT NOT NULL,
+    created_at DATETIME DEFAULT (datetime('now'))
+  )`,
+  `ALTER TABLE cards ADD COLUMN deck_id INTEGER REFERENCES decks(id)`,
+
+  // Feature: Filtered decks
+  `CREATE TABLE IF NOT EXISTS filtered_decks (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    name TEXT NOT NULL,
+    query TEXT NOT NULL,
+    card_limit INTEGER DEFAULT 50,
+    created_at DATETIME DEFAULT (datetime('now'))
+  )`,
 ]
 
 export async function runMigrations(db: StorageProvider): Promise<void> {

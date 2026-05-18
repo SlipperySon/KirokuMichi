@@ -222,6 +222,47 @@ function initializeSchema() {
     // Column already exists
   }
 
+  try {
+    dbInstance.run(`ALTER TABLE card_states ADD COLUMN suspended_at DATETIME NULL`)
+  } catch {
+    // Column already exists
+  }
+
+  try {
+    dbInstance.run(`ALTER TABLE card_states ADD COLUMN buried_until DATETIME NULL`)
+  } catch {
+    // Column already exists
+  }
+
+  // Decks table for subdeck hierarchy
+  dbInstance.run(`
+    CREATE TABLE IF NOT EXISTS decks (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      parent_id INTEGER REFERENCES decks(id),
+      name TEXT NOT NULL,
+      created_at DATETIME DEFAULT (datetime('now'))
+    )
+  `)
+
+  try {
+    dbInstance.run(`ALTER TABLE cards ADD COLUMN deck_id INTEGER REFERENCES decks(id)`)
+  } catch {
+    // Column already exists
+  }
+
+  // Filtered decks table
+  dbInstance.run(`
+    CREATE TABLE IF NOT EXISTS filtered_decks (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      name TEXT NOT NULL,
+      query TEXT NOT NULL,
+      card_limit INTEGER DEFAULT 50,
+      created_at DATETIME DEFAULT (datetime('now'))
+    )
+  `)
+
   // Create index for lesson_id queries (after column exists)
   try {
     dbInstance.run(`

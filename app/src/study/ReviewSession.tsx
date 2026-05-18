@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useIntl } from 'react-intl'
-import { LogOut, RotateCcw } from 'lucide-react'
+import { LogOut, RotateCcw, MoreHorizontal } from 'lucide-react'
 import { useReviewSession } from './useReviewSession'
 import { CardReading } from './CardReading'
 import { CardMeaning } from './CardMeaning'
@@ -48,6 +48,7 @@ export function ReviewSession() {
 
   const { currentCard, currentVariant, currentGrammar, phase, intervalPreviews, isNewLeech, progress } = session
   const [grammarContext, setGrammarContext] = useState<GrammarReviewContext | null>(null)
+  const [showCardMenu, setShowCardMenu] = useState(false)
 
   // Fire celebration toasts when session completes (only once)
   const completionToastFiredRef = useRef(false)
@@ -107,9 +108,21 @@ export function ReviewSession() {
     }
   }
 
+  async function handleSuspend() {
+    setShowCardMenu(false)
+    await session.suspendCurrentCard()
+    toast.info('Card suspended — it will be skipped until you unsuspend it')
+  }
+
+  async function handleBury() {
+    setShowCardMenu(false)
+    await session.buryCurrentCard()
+    toast.info('Card buried until tomorrow')
+  }
+
   return (
     <div className="flex flex-col min-h-screen w-full px-4 py-6 sm:p-6 max-w-xl mx-auto">
-      {/* Header with exit + undo */}
+      {/* Header with exit + undo + card menu */}
       <div className="flex flex-wrap justify-end gap-2 mb-2">
         {session.canUndo && (
           <button
@@ -122,6 +135,41 @@ export function ReviewSession() {
             Undo
           </button>
         )}
+
+        {/* Card overflow menu */}
+        <div className="relative">
+          <button
+            onClick={() => setShowCardMenu(v => !v)}
+            className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 shadow-sm transition-colors hover:bg-slate-50"
+            aria-label="Card options"
+            aria-haspopup="menu"
+            aria-expanded={showCardMenu}
+          >
+            <MoreHorizontal className="h-4 w-4" aria-hidden="true" />
+          </button>
+          {showCardMenu && (
+            <div
+              className="absolute right-0 top-full mt-1 z-30 bg-white border border-gray-200 rounded-xl shadow-lg min-w-44 py-1"
+              role="menu"
+            >
+              <button
+                onClick={() => void handleSuspend()}
+                className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                role="menuitem"
+              >
+                Suspend card
+              </button>
+              <button
+                onClick={() => void handleBury()}
+                className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors"
+                role="menuitem"
+              >
+                Bury until tomorrow
+              </button>
+            </div>
+          )}
+        </div>
+
         <button
           onClick={handleExit}
           className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 shadow-sm transition-colors hover:bg-slate-50"

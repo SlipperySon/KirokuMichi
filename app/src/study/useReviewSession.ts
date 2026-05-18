@@ -54,6 +54,7 @@ interface ReviewSessionActions {
   reveal: () => void
   rate: (rating: Rating) => Promise<void>
   suspendCurrentCard: () => Promise<void>
+  buryCurrentCard: () => Promise<void>
   dismissLeechWarning: () => void
   handleGrammarAnswer: (isCorrect: boolean) => void
   undoLastRating: () => Promise<void>
@@ -205,6 +206,15 @@ export function useReviewSession(
     await advance(newStats, currentIndex + 1)
   }, [currentCard, currentIndex, service, stats, userId, advance])
 
+  const buryCurrentCard = useCallback(async () => {
+    if (!currentCard) return
+    await service.buryCard(userId, currentCard.cardStateId)
+    setIsNewLeech(false)
+    const newStats = { ...stats, cardsReviewed: stats.cardsReviewed + 1 }
+    setStats(newStats)
+    await advance(newStats, currentIndex + 1)
+  }, [currentCard, currentIndex, service, stats, userId, advance])
+
   const dismissLeechWarning = useCallback(async () => {
     setIsNewLeech(false)
     const newStats = { ...stats, cardsReviewed: stats.cardsReviewed + 1 }
@@ -226,6 +236,7 @@ export function useReviewSession(
     reveal,
     rate,
     suspendCurrentCard,
+    buryCurrentCard,
     dismissLeechWarning,
     handleGrammarAnswer,
     undoLastRating,

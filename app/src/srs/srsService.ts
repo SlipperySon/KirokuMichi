@@ -35,7 +35,9 @@ export class SRSService {
     this.scheduler = scheduler
   }
 
-  async getDueCards(userId: number, limit: number): Promise<ReviewCard[]> {
+  async getDueCards(userId: number, limit: number, deckId?: number | null): Promise<ReviewCard[]> {
+    const deckFilter = deckId != null ? 'AND c.deck_id = ?' : ''
+    const params: (number | string)[] = deckId != null ? [userId, deckId, limit] : [userId, limit]
     return this.storage.query<ReviewCard>(
       `SELECT
         cs.id        AS cardStateId,
@@ -56,9 +58,12 @@ export class SRSService {
        WHERE cs.user_id = ?
          AND cs.due <= datetime('now')
          AND cs.is_leech = 0
+         AND cs.suspended_at IS NULL
+         AND (cs.buried_until IS NULL OR cs.buried_until <= datetime('now'))
+         ${deckFilter}
        ORDER BY cs.due ASC
        LIMIT ?`,
-      [userId, limit]
+      params
     )
   }
 
@@ -242,14 +247,21 @@ export class SRSService {
 
   async suspendCard(userId: number, cardStateId: number): Promise<void> {
     await this.storage.execute(
-      `UPDATE card_states SET is_leech = 1 WHERE id = ? AND user_id = ?`,
+      `UPDATE card_states SET is_leech = 1, suspended_at = datetime('now') WHERE id = ? AND user_id = ?`,
       [cardStateId, userId]
     )
   }
 
   async unsuspendCard(userId: number, cardStateId: number): Promise<void> {
     await this.storage.execute(
-      `UPDATE card_states SET is_leech = 0 WHERE id = ? AND user_id = ?`,
+      `UPDATE card_states SET is_leech = 0, suspended_at = NULL WHERE id = ? AND user_id = ?`,
+      [cardStateId, userId]
+    )
+  }
+
+  async buryCard(userId: number, cardStateId: number): Promise<void> {
+    await this.storage.execute(
+      `UPDATE card_states SET buried_until = datetime('now', '+1 day') WHERE id = ? AND user_id = ?`,
       [cardStateId, userId]
     )
   }
