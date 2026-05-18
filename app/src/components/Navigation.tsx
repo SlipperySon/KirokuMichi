@@ -13,6 +13,7 @@ export function Navigation() {
 
   const navItems = [
     { path: '/study', label: intl.formatMessage({ id: 'nav.study' }) },
+    { path: '/study/stats', label: 'Stats' },
     { path: '/learn', label: intl.formatMessage({ id: 'nav.learn' }) },
     { path: '/scenarios', label: intl.formatMessage({ id: 'nav.scenarios' }) },
     { path: '/practice', label: intl.formatMessage({ id: 'nav.practice' }) },
@@ -20,8 +21,10 @@ export function Navigation() {
     { path: '/settings', label: intl.formatMessage({ id: 'nav.settings' }) },
   ]
 
-  const isActive = (path: string) =>
-    location.pathname === path || location.pathname.startsWith(path + '/')
+  const isActive = (path: string) => {
+    if (path === '/study') return location.pathname === '/study'
+    return location.pathname === path || location.pathname.startsWith(path + '/')
+  }
 
   const goalPct =
     dailyGoal > 0 ? Math.min(100, Math.round((dailyStats.todayReviewed / dailyGoal) * 100)) : 0

@@ -30,6 +30,7 @@ const LessonPage = lazy(() => import('./study/LessonPage').then(module => ({ def
 const LessonStudy = lazy(() => import('./study/LessonStudy').then(module => ({ default: module.LessonStudy })))
 const MistakeReview = lazy(() => import('./study/MistakeReview').then(module => ({ default: module.MistakeReview })))
 const TextbookQADashboard = lazy(() => import('./study/TextbookQADashboard').then(module => ({ default: module.TextbookQADashboard })))
+const StudyStats = lazy(() => import('./study/StudyStats').then(module => ({ default: module.StudyStats })))
 
 function App() {
   useTheme() // Initialize theme on mount
@@ -116,6 +117,7 @@ function App() {
               <Route path="/scenarios" element={<ScenarioMode />} />
               <Route path="/study/grammar" element={<GrammarReview />} />
               <Route path="/dev/textbook-qa" element={<TextbookQADashboard />} />
+              <Route path="/study/stats" element={<StudyStats />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

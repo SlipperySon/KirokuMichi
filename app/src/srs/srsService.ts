@@ -648,4 +648,87 @@ export class SRSService {
   leechThreshold(): number {
     return LEECH_THRESHOLD
   }
+
+  async getStudyStats(userId: number): Promise<{
+    dailyReviews: { day: string; total: number; correct: number }[]
+    cardStateCounts: { new: number; learning: number; review: number; suspended: number }
+    retention7d: number
+    retention30d: number
+    stabilityBuckets: { label: string; count: number }[]
+  }> {
+    const [dailyRows, stateRows, ret7, ret30, stabilityRows] = await Promise.all([
+      this.storage.query<{ day: string; total: number; correct: number }>(
+        `SELECT
+          date(started_at) AS day,
+          SUM(cards_reviewed) AS total,
+          SUM(correct_count) AS correct
+         FROM sessions
+         WHERE user_id = ?
+           AND started_at >= date('now', '-30 days')
+           AND ended_at IS NOT NULL
+         GROUP BY date(started_at)
+         ORDER BY day ASC`,
+        [userId]
+      ),
+      this.storage.query<{ state: string; suspended: number; count: number }>(
+        `SELECT
+          CASE WHEN suspended_at IS NOT NULL THEN 'suspended' ELSE state END AS state,
+          COUNT(*) AS count,
+          MAX(CASE WHEN suspended_at IS NOT NULL THEN 1 ELSE 0 END) AS suspended
+         FROM card_states
+         WHERE user_id = ?
+         GROUP BY CASE WHEN suspended_at IS NOT NULL THEN 'suspended' ELSE state END`,
+        [userId]
+      ),
+      this.storage.query<{ total: number; correct: number }>(
+        `SELECT SUM(cards_reviewed) AS total, SUM(correct_count) AS correct
+         FROM sessions
+         WHERE user_id = ? AND started_at >= date('now', '-7 days') AND ended_at IS NOT NULL`,
+        [userId]
+      ),
+      this.storage.query<{ total: number; correct: number }>(
+        `SELECT SUM(cards_reviewed) AS total, SUM(correct_count) AS correct
+         FROM sessions
+         WHERE user_id = ? AND started_at >= date('now', '-30 days') AND ended_at IS NOT NULL`,
+        [userId]
+      ),
+      this.storage.query<{ bucket: string; count: number }>(
+        `SELECT
+          CASE
+            WHEN stability < 1 THEN '0-1d'
+            WHEN stability < 7 THEN '1-7d'
+            WHEN stability < 30 THEN '7-30d'
+            WHEN stability < 90 THEN '30-90d'
+            ELSE '90d+'
+          END AS bucket,
+          COUNT(*) AS count
+         FROM card_states
+         WHERE user_id = ? AND state != 'new'
+         GROUP BY bucket
+         ORDER BY MIN(stability)`,
+        [userId]
+      ),
+    ])
+
+    const t7 = ret7[0] ?? { total: 0, correct: 0 }
+    const t30 = ret30[0] ?? { total: 0, correct: 0 }
+
+    const stateCounts = { new: 0, learning: 0, review: 0, suspended: 0 }
+    for (const row of stateRows) {
+      const s = row.state as keyof typeof stateCounts
+      if (s in stateCounts) stateCounts[s] += row.count
+    }
+
+    const BUCKET_ORDER = ['0-1d', '1-7d', '7-30d', '30-90d', '90d+']
+    const bucketMap = new Map(stabilityRows.map(r => [r.bucket, r.count]))
+    const stabilityBuckets = BUCKET_ORDER.map(label => ({ label, count: bucketMap.get(label) ?? 0 }))
+
+    return {
+      dailyReviews: dailyRows,
+      cardStateCounts: stateCounts,
+      retention7d: t7.total > 0 ? Math.round((t7.correct / t7.total) * 100) : 0,
+      retention30d: t30.total > 0 ? Math.round((t30.correct / t30.total) * 100) : 0,
+      stabilityBuckets,
+    }
+  }
 }
