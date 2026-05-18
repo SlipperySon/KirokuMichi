@@ -51,15 +51,21 @@ body.light :root {
 }
 
 #root {
-  width: 1126px;
+  width: 100%;
   max-width: 100%;
   margin: 0 auto;
-  text-align: center;
-  border-inline: 1px solid var(--border);
   min-height: 100svh;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+}
+
+/* Constrain main content readable width — but full-bleed on mobile */
+@media (min-width: 1024px) {
+  #root {
+    max-width: 1280px;
+    border-inline: 1px solid var(--border);
+  }
 }
 
 body {
@@ -457,4 +463,15 @@ code {
 
 .animate-bounce-once {
   animation: bounce-once 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

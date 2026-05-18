@@ -13,6 +13,8 @@ import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { SRSService } from '../srs/srsService'
 import { Navigation } from '../components/Navigation'
+import { EmptyState } from '../components/EmptyState'
+import { SkeletonList } from '../components/Skeleton'
 
 interface MistakeRow {
   mistakeId: number
@@ -188,14 +190,21 @@ export function MistakeReview() {
         )}
 
         {isLoading ? (
-          <p className="text-gray-400 text-center py-8">Loading…</p>
+          <SkeletonList count={4} />
         ) : grouped.length === 0 ? (
-          <div className="text-center py-12 bg-gray-50 rounded-xl">
-            <p className="text-gray-600">No mistakes in this window 🎉</p>
-            <p className="text-xs text-gray-500 mt-2">
-              Mistakes show up here when you rate a card "Again" during review.
-            </p>
-          </div>
+          <EmptyState
+            icon="🎉"
+            title="No mistakes in this window"
+            description="Mistakes appear here when you rate a card 'Again' during review, or after conversation corrections. Keep up the streak!"
+            action={
+              <button
+                onClick={() => navigate('/study')}
+                className="px-4 py-2 text-sm font-medium text-indigo-700 bg-indigo-50 rounded-lg hover:bg-indigo-100"
+              >
+                Back to Dashboard
+              </button>
+            }
+          />
         ) : (
           <ul className="flex flex-col gap-2">
             {grouped.map(({ rows, key }) => {

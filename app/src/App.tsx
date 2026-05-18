@@ -11,6 +11,8 @@ import { refreshStreakSnapshot } from './study/streakService'
 import { OfflineBanner } from './components/OfflineBanner'
 import { ErrorBoundary } from './components/ErrorBoundary'
 import { NotFound } from './pages/NotFound'
+import { ToastContainer } from './components/Toast'
+import { KeyboardHelpModal } from './components/KeyboardHelpModal'
 
 const OnboardingFlow = lazy(() => import('./onboarding/OnboardingFlow').then(module => ({ default: module.OnboardingFlow })))
 const StudyDashboard = lazy(() => import('./study/StudyDashboard').then(module => ({ default: module.StudyDashboard })))
@@ -118,6 +120,8 @@ function App() {
             </Routes>
           </Suspense>
         </ErrorBoundary>
+        <ToastContainer />
+        <KeyboardHelpModal />
       </BrowserRouter>
     </IntlProvider>
   )

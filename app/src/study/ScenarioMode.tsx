@@ -1,10 +1,12 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
 import { useSearchParams } from 'react-router-dom'
-import { ListChecks } from 'lucide-react'
+import { ListChecks, Search } from 'lucide-react'
 import { useAppStore } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
 import { Navigation } from '../components/Navigation'
 import { Ruby } from '../components/Ruby'
+import { EmptyState } from '../components/EmptyState'
+import { SkeletonList } from '../components/Skeleton'
 import { annotateBeginnerFurigana, isBeginnerLevel } from '../content/beginnerFurigana'
 import {
   getSupplementalScenarios,
@@ -152,6 +154,7 @@ export function ScenarioMode() {
   const [activeLevel, setActiveLevel] = useState<ScenarioLevel>(() => normalizeLevel(searchParams.get('level')) ?? 'A1')
   const [activeSourceKey, setActiveSourceKey] = useState(() => searchParams.get('source') ?? '')
   const [showFurigana, setShowFurigana] = useState(settings.furiganaEnabled)
+  const [query, setQuery] = useState('')
 
   useEffect(() => {
     async function load() {
@@ -278,11 +281,23 @@ export function ScenarioMode() {
   }, [activeSourceKey, searchParams, sourceTabs])
 
   const visibleScenarios = useMemo(() => {
-    return scenarios.filter(scenario =>
-      scenarioLevel(scenario) === activeLevel &&
-      sourceKey(scenario) === activeSourceKey
-    )
-  }, [activeLevel, activeSourceKey, scenarios])
+    const q = query.trim().toLowerCase()
+    return scenarios.filter(scenario => {
+      if (scenarioLevel(scenario) !== activeLevel) return false
+      if (sourceKey(scenario) !== activeSourceKey) return false
+      if (!q) return true
+      const hay = [
+        scenario.title,
+        scenario.description ?? '',
+        scenario.canDo ?? '',
+        scenario.textbook ?? '',
+        scenario.sourceKind ?? '',
+      ]
+        .join(' ')
+        .toLowerCase()
+      return hay.includes(q)
+    })
+  }, [activeLevel, activeSourceKey, scenarios, query])
 
   function firstSourceKeyForLevel(level: ScenarioLevel) {
     const scenario = scenarios.find(item => scenarioLevel(item) === level)
@@ -326,7 +341,7 @@ export function ScenarioMode() {
         </div>
 
         {isLoading ? (
-          <div className="flex-1 flex items-center justify-center text-gray-400">Loading…</div>
+          <SkeletonList count={5} />
         ) : selected ? (
           <div className="flex flex-col gap-4">
             <div>
@@ -357,13 +372,11 @@ export function ScenarioMode() {
             </div>
           </div>
         ) : scenarios.length === 0 ? (
-          <div className="flex-1 flex flex-col items-center justify-center gap-4 text-center">
-            <p className="text-4xl">🎭</p>
-            <p className="text-lg font-semibold text-gray-700">No scenarios yet</p>
-            <p className="text-sm text-gray-500 max-w-xs">
-              No cleaned supplemental scenarios matched this filter yet. Try all scenarios or import a dialogue script from the Practice tab.
-            </p>
-          </div>
+          <EmptyState
+            icon="🎭"
+            title="No scenarios yet"
+            description="No cleaned supplemental scenarios matched this filter. Try a different level or import a dialogue script from the Practice tab."
+          />
         ) : (
           <div className="flex flex-col gap-4">
             <div className="flex flex-wrap gap-2 border-b border-gray-200">
@@ -384,7 +397,7 @@ export function ScenarioMode() {
             </div>
 
             {sourceTabs.length > 0 && (
-              <div className="flex gap-2 overflow-x-auto pb-1">
+              <div className="flex gap-2 overflow-x-auto pb-1 -mx-1 px-1">
                 {sourceTabs.map(tab => (
                   <button
                     key={tab.key}
@@ -402,10 +415,40 @@ export function ScenarioMode() {
               </div>
             )}
 
+            {/* Search */}
+            <div className="relative">
+              <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 pointer-events-none" />
+              <input
+                type="search"
+                value={query}
+                onChange={e => setQuery(e.target.value)}
+                placeholder="Search scenarios by title, topic, or can-do…"
+                className="w-full pl-9 pr-3 py-2 text-sm border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-200 focus:border-indigo-300 placeholder:text-gray-400"
+                aria-label="Search scenarios"
+              />
+            </div>
+
             {visibleScenarios.length === 0 ? (
-              <div className="rounded-lg border border-dashed border-gray-200 bg-white px-5 py-8 text-center text-sm text-gray-500">
-                No scenarios in this textbook tab yet.
-              </div>
+              <EmptyState
+                compact
+                icon={query ? '🔍' : '📚'}
+                title={query ? 'No scenarios match your search' : 'No scenarios in this tab yet'}
+                description={
+                  query
+                    ? `Nothing matched "${query}". Try a different keyword or clear the search.`
+                    : 'Try a different textbook or level above.'
+                }
+                action={
+                  query ? (
+                    <button
+                      onClick={() => setQuery('')}
+                      className="px-4 py-2 text-sm font-medium text-indigo-700 bg-indigo-50 rounded-lg hover:bg-indigo-100"
+                    >
+                      Clear search
+                    </button>
+                  ) : undefined
+                }
+              />
             ) : (
               <div className="divide-y divide-gray-100 bg-white border border-gray-200 rounded-2xl overflow-hidden">
                 {visibleScenarios.map(s => (

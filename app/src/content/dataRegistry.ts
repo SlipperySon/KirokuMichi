@@ -65,4 +65,5 @@ export const SCENARIO_FILES: Record<string, string> = {
   'quartet_1_workbook': '/data/generated/scenarios/quartet_1_workbook_scenarios.json',
   'quartet_2': '/data/generated/scenarios/quartet_2_scenarios.json',
   'quartet_2_workbook': '/data/generated/scenarios/quartet_2_workbook_scenarios.json',
+  'tobira': '/data/generated/scenarios/tobira_scenarios.json',
 }

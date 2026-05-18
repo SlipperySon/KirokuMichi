@@ -47,6 +47,16 @@ try {
 }
 
 // Issue a session token
+// Health check — no auth required, used by uptime monitors and load balancers
+app.get('/api/health', (_req, res) => {
+  res.json({
+    status: 'ok',
+    uptime: process.uptime(),
+    timestamp: new Date().toISOString(),
+    version: process.env.npm_package_version ?? '0.1.0',
+  })
+})
+
 app.post('/api/session', (_req, res) => {
   const token = crypto.randomBytes(32).toString('hex')
   sessionTokens.add(token)
