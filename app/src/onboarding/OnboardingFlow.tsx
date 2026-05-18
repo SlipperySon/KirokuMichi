@@ -60,10 +60,15 @@ export function OnboardingFlow() {
     case 'learning':
       return (
         <div className="flex flex-col items-center justify-center min-h-screen gap-8 p-8 max-w-lg mx-auto text-center">
-          <div className="text-6xl">📚</div>
-          <h2 className="text-2xl font-bold">Kana Learning Section</h2>
-          <p className="text-gray-600">
-            This section is coming soon! For now, you can move on to learn vocabulary and grammar.
+          <div className="text-7xl">🈶</div>
+          <h2 className="text-2xl font-bold text-gray-900">Let's get you started with kana</h2>
+          <p className="text-gray-600 leading-relaxed">
+            No problem — kana takes a bit of practice. You'll build familiarity naturally as you
+            work through your first lessons. Each word is shown with furigana readings so you can
+            follow along right away.
+          </p>
+          <p className="text-sm text-gray-500">
+            You can also toggle furigana on/off any time in Settings as your reading improves.
           </p>
           <button
             onClick={() => {
@@ -72,7 +77,7 @@ export function OnboardingFlow() {
             }}
             className="px-6 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
           >
-            Continue to Next Step
+            Continue →
           </button>
         </div>
       )

@@ -9,6 +9,8 @@ import { FSRSScheduler, SM2Scheduler } from './core/scheduler'
 import { SRSService } from './srs/srsService'
 import { refreshStreakSnapshot } from './study/streakService'
 import { OfflineBanner } from './components/OfflineBanner'
+import { ErrorBoundary } from './components/ErrorBoundary'
+import { NotFound } from './pages/NotFound'
 
 const OnboardingFlow = lazy(() => import('./onboarding/OnboardingFlow').then(module => ({ default: module.OnboardingFlow })))
 const StudyDashboard = lazy(() => import('./study/StudyDashboard').then(module => ({ default: module.StudyDashboard })))
@@ -82,30 +84,40 @@ function App() {
     <IntlProvider locale="en" messages={messages.en}>
       <BrowserRouter>
         <OfflineBanner />
-        <Suspense fallback={<div className="min-h-screen bg-gray-50 p-8 text-gray-600">Loading...</div>}>
-          <Routes>
-            <Route
-              path="/"
-              element={onboardingComplete ? <Navigate to="/study" replace /> : <Navigate to="/onboarding" replace />}
-            />
-            <Route path="/onboarding" element={<OnboardingFlow />} />
-            <Route path="/study" element={<StudyDashboard />} />
-            <Route path="/study/review" element={<ReviewSession />} />
-            <Route path="/study/mistakes" element={<MistakeReview />} />
-            <Route path="/learn/lessons" element={<LessonsHub />} />
-            <Route path="/learn/lessons/:cefr/:lessonNumber" element={<LessonPage />} />
-            <Route path="/learn/study" element={<LessonStudy />} />
-            <Route path="/study/jlpt" element={<JLPTSection />} />
-            <Route path="/practice" element={<TutorChat />} />
-            <Route path="/my-content" element={<MyContent />} />
-            <Route path="/settings" element={<Settings />} />
-            <Route path="/immersion" element={<ImmersionMode />} />
-            <Route path="/learn" element={<LearningMode />} />
-            <Route path="/scenarios" element={<ScenarioMode />} />
-            <Route path="/study/grammar" element={<GrammarReview />} />
-            <Route path="/dev/textbook-qa" element={<TextbookQADashboard />} />
-          </Routes>
-        </Suspense>
+        <ErrorBoundary>
+          <Suspense
+            fallback={
+              <div className="min-h-screen bg-gray-50 flex flex-col items-center justify-center gap-4">
+                <div className="w-10 h-10 border-4 border-indigo-200 border-t-indigo-600 rounded-full animate-spin" />
+                <p className="text-sm text-gray-400">Loading…</p>
+              </div>
+            }
+          >
+            <Routes>
+              <Route
+                path="/"
+                element={onboardingComplete ? <Navigate to="/study" replace /> : <Navigate to="/onboarding" replace />}
+              />
+              <Route path="/onboarding" element={<OnboardingFlow />} />
+              <Route path="/study" element={<StudyDashboard />} />
+              <Route path="/study/review" element={<ReviewSession />} />
+              <Route path="/study/mistakes" element={<MistakeReview />} />
+              <Route path="/learn/lessons" element={<LessonsHub />} />
+              <Route path="/learn/lessons/:cefr/:lessonNumber" element={<LessonPage />} />
+              <Route path="/learn/study" element={<LessonStudy />} />
+              <Route path="/study/jlpt" element={<JLPTSection />} />
+              <Route path="/practice" element={<TutorChat />} />
+              <Route path="/my-content" element={<MyContent />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/immersion" element={<ImmersionMode />} />
+              <Route path="/learn" element={<LearningMode />} />
+              <Route path="/scenarios" element={<ScenarioMode />} />
+              <Route path="/study/grammar" element={<GrammarReview />} />
+              <Route path="/dev/textbook-qa" element={<TextbookQADashboard />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </ErrorBoundary>
       </BrowserRouter>
     </IntlProvider>
   )

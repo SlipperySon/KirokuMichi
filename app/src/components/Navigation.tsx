@@ -15,7 +15,6 @@ export function Navigation() {
     { path: '/scenarios', label: intl.formatMessage({ id: 'nav.scenarios' }) },
     { path: '/practice', label: intl.formatMessage({ id: 'nav.practice' }) },
     { path: '/immersion', label: intl.formatMessage({ id: 'nav.immersion' }) },
-    { path: '/dev/textbook-qa', label: 'QA' },
     { path: '/settings', label: intl.formatMessage({ id: 'nav.settings' }) },
   ]
 
