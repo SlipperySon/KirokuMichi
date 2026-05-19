@@ -1,8 +1,8 @@
 # KirokuMichi Handoff Document
 
-**Last updated:** 2026-05-18 23:38 AEST
-**Current status:** ✅ EXTRACTION COMPLETE (54 lessons) | ✅ TIER 1 FEATURES SHIPPED (8/8) | ✅ TIER 2 UX FEATURES (10/10 shipped — 2.2 was already live in CardGrammar) | ✅ STAGING READINESS PASS | ✅ WORKBOOK SCENARIO SOURCES LIVE | ✅ TOASTS WIRED | ✅ EMPTYSTATE/SKELETON SWEEP COMPLETE | ✅ MOBILE ROUTE AUDIT PASS COMPLETE | ✅ PLAYWRIGHT ROUTE QA + SCREENSHOTS LIVE | ✅ FULL VERIFY SCRIPT LIVE | ✅ QA DASHBOARD UPGRADED | ✅ WORKBOOK OUTPUT STEP LIVE | ✅ TEXTBOOK IMAGE MANIFEST LIVE | ✅ MAYNARD COVERAGE QA LIVE | ✅ CI VERIFY WORKFLOW LIVE | ✅ CODE SPLITTING IMPROVED
-**Next phase:** Wait for the external textbook-image/direct-Maynard extraction agent to produce more reviewed source assets, then rerun `npm run textbook:assets:manifest` and `npm run verify`.
+**Last updated:** 2026-05-19 (current session)
+**Current status:** ✅ EXTRACTION COMPLETE (54 lessons) | ✅ TIER 1 (8/8) | ✅ TIER 2 (10/10) | ✅ ANKI-CLONE REVIEW SYSTEM | ✅ MAYNARD 100% | ✅ USER-CREATED CARDS | ✅ CARD TEMPLATES | ✅ CARD BROWSER | ✅ SUBDECK HIERARCHY | ✅ FILTERED DECKS | ✅ CRAM MODE | ✅ SUSPEND/BURY | ✅ STATS & GRAPHS | ✅ SCENARIO LIVE AI | ✅ WORD SELECTION IN LESSONS | ✅ TEXTBOOK PROGRESS PANEL | ✅ AI LEARNING PATH | ✅ E2E TESTS (14/15)
+**Next phase:** Blocked items only — rerun `npm run textbook:assets:manifest` when more image crops arrive; rerun `npm run textbook:maynard:direct-refs` when cleaned extraction data lands.
 
 > **🔄 Keep this updated:** At the end of each session, before switching AI models, update the "Last updated" date and "Current status" above. Update the Quick Status table and the "What Just Completed" section to reflect new work. This ensures seamless handoff.
 
@@ -27,7 +27,16 @@
 | **Genki Answer Key:** normalized & grouped (84 pages) | ✅ Ready for linking |
 | **Marugoto Answer Keys:** included in textbook | ℹ️ N/A (embedded in pages) |
 | **Tier 1 Features:** 8 quick-win features | ✅ All shipped |
-| **Tier 2 UX Features:** 10 quick-win UX improvements | ✅ 9/10 shipped |
+| **Tier 2 UX Features:** 10 quick-win UX improvements | ✅ All shipped |
+| **Anki-Clone Review System:** suspend/bury, subdeck hierarchy, card browser, filtered decks, cram mode, stats | ✅ All shipped |
+| **User-Created Cards:** `/study/create` form with audio upload | ✅ Shipped |
+| **Custom Card Templates:** deck-scoped `{{field}}` templates, editor at `/study/templates` | ✅ Shipped |
+| **Word Selection in Lessons:** "+ Add to deck" on vocab teach cards and lesson preview | ✅ Shipped |
+| **Textbook Progress Panel:** linked-deck stats in LessonsHub | ✅ Shipped |
+| **AI Learning Path Generator:** 4-week CEFR roadmap at `/study/path` | ✅ Shipped |
+| **ScenarioMode v2:** live AI chat panel on any scenario | ✅ Shipped |
+| **Known Textbooks Panel:** filename detection + deck linking in ContentUpload | ✅ Shipped |
+| **E2E Tests:** 14/15 Playwright specs (AI chat test skipped by design) | ✅ Shipped |
 | **Lesson Teaching Flow:** predict → reveal → hook → micro-practice → self-rate → checkpoint → mixed review | ✅ v1 Live |
 | **Supplemental Scenario Layer:** curated runtime scenarios from Genki workbooks, Marugoto, Quartet, Tobira | ✅ v2 QA+Tests Live |
 | **Quality Gates:** `npm run verify` | ✅ Passing, 123 tests / 21 files + 16 Playwright checks + content audits |
@@ -61,8 +70,8 @@
 | **Lesson Navigation:** `/learn/lessons` can return to main Learn menu | ✅ Fixed |
 | **Readability/Exit Labels:** Higher contrast muted text + explicit back/exit destinations | ✅ Fixed |
 | **Genki 1 Lesson 1:** foundation greetings/numbers overlay + narrowed grammar scope | ✅ Shared module + tests |
-| **Maynard in Teaching Flow:** direct references + curated support bridges behind explicit deep-explanation buttons | ✅ Live, 84% support coverage |
-| **Lesson Intent Layer:** objective/prereq/page range/targets/output skill/scenarios/workbook tasks | ✅ Live |
+| **Maynard in Teaching Flow:** direct source refs + curated support bridges behind explicit deep-explanation buttons | ✅ Live, 100% support coverage; 353 direct refs |
+| **Lesson Intent Layer:** authored objectives/prereq/page range/targets/output skill/scenarios/workbook tasks | ✅ Live |
 | **Maynard Explanation Engine:** basic/deep/contrast/common mistake/example pattern | ✅ Live, coverage QA command added |
 | **Textbook QA Dashboard:** `/dev/textbook-qa` coverage table | ✅ Live |
 | **A1-B2 Grammar Support Fallbacks:** beginner, Genki 2, and Quartet discussion grammar get deep-support bridges while cleaned Maynard extraction is pending | ✅ Live |
@@ -79,7 +88,61 @@
 
 ---
 
-## What Just Completed (2026-05-18 23:38 AEST, Current Session)
+## What Just Completed (2026-05-19, Current Session)
+
+### ✅ USER-CREATED CARDS + CARD TEMPLATES + WORD SELECTION + TEXTBOOK PROGRESS + AI PATH + E2E TESTS
+
+- **User-Created Cards** — `/study/create` form with front/back/reading/deck/tags/note/audio upload. `createUserCard()` in SRSService. "Create" nav link.
+- **Custom Card Templates** — `card_templates` table, `renderTemplate()` with `{{field}}` substitution, `/study/templates` editor with live preview, wired into ReviewSession.
+- **Word Selection in Lessons** — `AddToDeckButton` component on vocab teach cards and lesson preview grid. Deck popover, duplicate detection ("✓ In [Deck]").
+- **Textbook Learning Subsection** — `TextbookProgress` panel in LessonsHub reads `kiroku-textbook-links` from localStorage, shows total/due/new per linked deck, Study Now / Browse Cards shortcuts.
+- **AI Learning Path Generator** — `/study/path` generates a 4-week CEFR roadmap from card snapshot via AI, stored in Zustand, Regenerate button.
+- **E2E Tests** — 14 Playwright specs: card create, card browser, deck management, scenario chat (AI test skipped by design). 166 unit tests passing.
+
+### ✅ ANKI-CLONE REVIEW SYSTEM (previous batch)
+
+- **Suspend/Bury** — `suspended_at`/`buried_until` on card_states, `⋯` overflow menu in ReviewSession, filtered from due queue.
+- **Stats & Graphs** — `/study/stats` with 30-day CSS bar chart, stability distribution, 7/30-day retention rates, card state counts.
+- **Subdeck Hierarchy** — `decks` table, DeckTree UI with create/rename/delete, `activeDeckId` in Zustand, due queue filtering.
+- **Card Browser** — `/study/browser` paginated table, sort/filter/preview/inline edit/bulk actions (suspend/bury/move/delete).
+- **Filtered Decks** — `filtered_decks` table, query parser (`is:due`, `is:new`, `deck:Name`, free text), FilteredDeckPanel.
+- **Cram Mode** — cram button on dashboard + filtered decks, skips FSRS scheduling, amber banner, no streak/goal toasts.
+- **ScenarioMode v2** — inline AI chat panel on any scenario, seeded with dialogue/can-do context, corrections logged.
+- **Known Textbooks Panel** — filename detection for Genki/Quartet/Tobira/Marugoto in ContentUpload, deck linking dropdown, localStorage persistence.
+
+### ✅ DIRECT MAYNARD SOURCE REFS
+
+- Added `npm run textbook:maynard:direct-refs`, which generates `app/src/content/maynardDirectRefs.generated.ts` from `tools/textbook-pack/out/comprehensive/maynard_grammar-comprehensive.json`.
+- Generated 42 direct Maynard topic refs with 246 aliases and page/source metadata.
+- Updated `getMaynardSupport()` to prefer pre-attached refs, then direct generated Maynard refs, then curated support bridges.
+- Lesson teaching cards now show Maynard page references beside the deep explanation toggle when a direct source ref exists.
+- `/dev/textbook-qa` and `npm run textbook:maynard:quality` now report direct vs curated vs attached Maynard support.
+- Latest Maynard QA: 637 grammar points, 637 supported, 353 direct, 73 curated, 211 attached.
+- Verification:
+  - `npx vitest run src/content/maynardSupport.test.ts src/content/textbookQAService.test.ts` ✅ (5 tests)
+  - `npx tsc -b --pretty false` ✅
+  - targeted ESLint over changed Maynard/QA/lesson files ✅
+  - `npm run textbook:maynard:quality` ✅
+
+---
+
+## Previous Session (2026-05-19 01:51 AEST)
+
+### ✅ LESSON INTENT + SCENARIO COPY POLISH
+
+- Added lesson-specific authored objectives for A1, A2, B1, and B2 lessons.
+- Polished curated scenario display text at runtime:
+  - removes trailing `Pair Work` from titles
+  - converts `Can ...` can-do statements into direct learner goals
+  - normalizes curated prompts and fallback lines with the shared text cleaner
+- Added regression coverage for authored beginner objectives and curated workbook scenario polishing.
+- Verification:
+  - `npx vitest run src/content/lessonIntentService.test.ts src/content/supplementalScenarioService.test.ts` ✅ (14 tests)
+  - `npx eslint src/content/lessonIntentService.ts src/content/lessonIntentService.test.ts src/content/supplementalScenarioService.ts src/content/supplementalScenarioService.test.ts` ✅
+
+---
+
+## Previous Session (2026-05-18 23:38 AEST)
 
 ### ✅ CONTENT QA TOOLING + ASSET MANIFEST + CI VERIFY
 

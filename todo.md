@@ -1,16 +1,81 @@
 # KirokuMichi — Active Todo List
 
-Last updated: 2026-05-18 23:38 AEST
+Last updated: 2026-05-19
 
 **EXTRACTION STATUS:** ✅ A1 COMPLETE | ✅ A2 COMPLETE | ✅ B1-B2 COMPLETE | **54 TOTAL LESSONS EXTRACTED**
 **TIER 1 FEATURES:** ✅ 8/8 shipped
-**TIER 2 UX FEATURES:** ✅ 10/10 shipped (2.2 was already live in CardGrammar — "View explanation" collapsible)
-**STAGING PASS:** ✅ ErrorBoundary, 404, spinners, meta, PWA, README, /api/health, mobile nav, scenario search, keyboard modal, Tobira B2
-**INCOMPLETE (carry forward):** Only external-source work remains: add more textbook image crops when the extraction agent produces them, then rerun the manifest/verify commands.
+**TIER 2 UX FEATURES:** ✅ 10/10 shipped
+**ANKI-CLONE SYSTEM:** ✅ Suspend/Bury | Subdeck Hierarchy | Card Browser | Filtered Decks | Cram Mode | Stats & Graphs
+**LATEST BATCH:** ✅ User-Created Cards | Custom Templates | Word Selection in Lessons | Textbook Progress Panel | AI Learning Path | E2E Tests (14/15)
+**MAYNARD:** ✅ 100% bridge coverage (637/637) — 353 direct refs | 73 curated | 211 attached
+**SCENARIO:** ✅ Live AI chat (ScenarioMode v2) | Known Textbooks Panel | Conversation Partner stats/save/history
+**BLOCKED:** Textbook image crops (external) | Improved Maynard direct refs (external) | Manual lesson corrections (human)
+
+## Remaining Buildable Work (priority order)
+
+- [ ] Content import end-to-end smoke — manual test with real PDFs
+- [ ] Specialized Textbook Pack Pipeline (2b.2) — encrypt + unlock flow (large, 8-15h)
+- [ ] Word Selection unlock flow (2c) — lesson vocab → linked Anki deck, `lesson_vocabulary` table
+- [ ] Non-Mapped PDF Routing (2d) — prompt user for routing when no textbook match
+- [ ] Textbook Learning Subsection full build (2e) — lesson progression per textbook in `/learn`
+- [ ] Hybrid Auto-Detect + Confirmation (2f) — confidence scoring for textbook/deck detection
+- [ ] Card provenance metadata — `origin_type`/`origin_ref` on cards
+- [ ] Personalized notes on cards — per-card user note, editable from review
+- [ ] Jisho dictionary linking — "Look up in Jisho" from any word/card
+- [ ] ScenarioMode v2 AI E2E test — currently skipped; enable with mock or test key
+- [ ] Stats & Graphs time window toggle (7/30/all-time)
+- [ ] AI Learning Path CEFR stage gating
+- [ ] C1/N1 post-B2 roadmap expansion
+
+## Blocked / External
+
+- [ ] More textbook image crops → rerun `npm run textbook:assets:manifest`
+- [ ] Cleaned Maynard extraction → rerun `npm run textbook:maynard:direct-refs`
+- [ ] Manual lesson corrections — 54 packs need human review
 
 ---
 
-## Current Session — Content QA Tooling, Asset Manifest, CI (SHIPPED)
+---
+
+## Current Session — Direct Maynard Source Refs (SHIPPED)
+
+- [x] Added `npm run textbook:maynard:direct-refs`.
+  - reads the local Maynard comprehensive extraction
+  - generates `app/src/content/maynardDirectRefs.generated.ts`
+  - creates 42 direct Maynard topic refs with 246 aliases and page ranges
+- [x] Updated Maynard support resolution:
+  - pre-attached refs still win
+  - direct generated Maynard refs now replace curated bridges when a confident alias matches
+  - curated support bridges remain as a fallback for patterns not yet covered by the source index
+- [x] Lesson study cards now show direct Maynard page references, e.g. `Maynard pp. 165-187`, beside the deep explanation toggle.
+- [x] Maynard QA now reports direct, curated, and attached support counts instead of only a single coverage number.
+  - latest report: 637/637 supported, 353 direct, 73 curated, 211 attached
+- [x] Updated `/dev/textbook-qa` Maynard column to show direct vs curated counts per lesson.
+- [x] Verified targeted gates:
+  - `npx vitest run src/content/maynardSupport.test.ts src/content/textbookQAService.test.ts` (5 tests)
+  - `npx tsc -b --pretty false`
+  - targeted ESLint over changed Maynard/QA/lesson files
+  - `npm run textbook:maynard:quality`
+
+---
+
+## Previous Session — Lesson Intent + Scenario Copy Polish (SHIPPED)
+
+- [x] Added lesson-specific authored objectives for A1, A2, B1, and B2 lessons so lesson intent feels less like a generic level bucket.
+- [x] Polished curated scenario display text at runtime:
+  - removes classroom artifact wording like trailing `Pair Work` from titles
+  - converts learner-facing `Can ...` can-do statements into direct action goals
+  - cleans scenario prompts and generated fallback lines through the same text normalizer
+- [x] Added regression coverage for:
+  - authored beginner lesson objectives
+  - curated workbook scenario title/can-do polishing
+- [x] Verified targeted gates:
+  - `npx vitest run src/content/lessonIntentService.test.ts src/content/supplementalScenarioService.test.ts` (14 tests)
+  - `npx eslint src/content/lessonIntentService.ts src/content/lessonIntentService.test.ts src/content/supplementalScenarioService.ts src/content/supplementalScenarioService.test.ts`
+
+---
+
+## Previous Session — Content QA Tooling, Asset Manifest, CI (SHIPPED)
 
 - [x] Added `npm run textbook:maynard:quality`
   - writes `tools/textbook-pack/out/content-quality/maynard-coverage-report.json`
