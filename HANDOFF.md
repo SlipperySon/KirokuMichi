@@ -1,6 +1,6 @@
 # KirokuMichi — Handoff Document
 
-**Last updated: 2026-05-19**
+**Last updated: 2026-05-20**
 **Status: ✅ FEATURE COMPLETE — ready for staging**
 
 > At the end of each session update the date above and the "Recent changes" section below.
@@ -54,7 +54,8 @@ cd app && npm run verify
 - ✅ Personalized notes — editable in CardBrowser + inline during review (sticky note panel on back phase)
 - ✅ Card provenance metadata (`origin_type` / `origin_ref` on all cards)
 - ✅ Jisho lookup — card ⋯ menu in review + external-link button in CardBrowser preview
-- ✅ Anki `.apkg` import — Kaishi 1.5k + generic decks, 40 unit tests
+- ✅ Anki `.apkg` import — Kaishi 1.5k + Genki official deck + generic decks, 50 unit tests
+- ✅ Genki APKG lesson-linking — `genki-L##` tags → `lesson_id` on every card; all 24 tag variants map to reachable app lessons (audited); sentence cards and duplicates also linked
 - ✅ Anki export
 - ✅ Undo last review (1-deep stack, Ctrl+Z)
 
@@ -156,4 +157,16 @@ npm run textbook:learner:quality   # App-facing content audit (vocab/grammar/tas
 npm run textbook:maynard:quality   # Maynard coverage report
 npm run textbook:assets:manifest   # Rebuild textbook image asset manifest
 npm run textbook:maynard:direct-refs  # Regenerate Maynard direct refs from extraction data
+npm run packs:build                # Encrypt canonical proof JSONs → public/packs/*.kiroku-pack
 ```
+
+---
+
+## Recent changes (2026-05-20)
+
+- **Azure Nanami Neural TTS** — `/api/tts` endpoint on Express proxy; Settings → Azure key + region; `speakViaAzure()` used in review, scenario mode, card writing with Web Speech fallback. In-memory 200-entry audio cache.
+- **Textbook pack encryption pipeline** — `tools/build-encrypted-packs.ts` + `npm run packs:build`. Reads canonical proof JSONs, produces AES-GCM `.kiroku-pack` files. Passphrases via `tools/pack-passphrases.local.json` (gitignored).
+- **Genki APKG lesson-linking** — `deriveGenkiLessonId()` maps all 24 `genki-L##` tags to app lesson IDs. Every card (vocab + sentence, including duplicates) gets `card_states.lesson_id` and `lesson_vocabulary` entry. Cards unlock as the learner completes the corresponding lesson. Audited: 0 permanently-locked cards.
+- **Unlock matcher fix** — `createLessonMatcher()` now used throughout `lessonUnlockService`; `genki_2_1` correctly matches source IDs like `genki_2_13`.
+- **Lint/hook fix** — `useEffect` in ReviewSession moved above early returns (rules-of-hooks); all stale `eslint-disable` comments removed.
+- **Test suite** — 172 unit tests + 62 E2E, lint 0 errors/warnings, `npm run verify` clean.

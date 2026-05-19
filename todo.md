@@ -1,6 +1,6 @@
 # KirokuMichi — Todo
 
-**Last updated: 2026-05-19**
+**Last updated: 2026-05-20**
 **Status: FEATURE COMPLETE — ready for staging**
 
 ---
@@ -24,9 +24,9 @@ These cannot be progressed without outside input:
 
 ## 🔲 Remaining optional work (low priority)
 
-- **Specialized Textbook Pack Pipeline** — full OCR + encrypt/unlock flow for Genki/Quartet; large project (8–15h), blocked on OCR pipeline
-- **ScenarioMode v2 AI test** — skipped in E2E; enable with mock AI server or test API key
-- **Audio playback regression tests** — behaviour is correct (imported audio → TTS fallback) but no automated test asserts the precedence order
+- **Audio playback regression tests** — behaviour correct (Azure TTS → imported audio → Web Speech fallback) but no automated test asserts precedence order
+- **Quartet/Marugoto APKG lesson-linking** — Genki official deck is fully linked; other textbook APKGs would need similar tag-based or title-based lesson ID derivation if users import them
+- **C1/N1 expansion** — Shin Kanzen Master, native immersion sources; out of current A1–B2 scope
 
 ---
 
