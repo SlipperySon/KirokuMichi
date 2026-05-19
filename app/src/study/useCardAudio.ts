@@ -2,6 +2,45 @@ import { useEffect, useRef } from 'react'
 import { loadAudio } from '../srs/audioStore'
 import { useAppStore } from '../store'
 
+/**
+ * Speak Japanese text via Azure Cognitive Services TTS (Nanami Neural).
+ * Returns true if audio played successfully, false if unavailable or errored.
+ * Called outside React so reads state directly via getState().
+ */
+export async function speakViaAzure(text: string): Promise<boolean> {
+  const { azureTtsKey, azureTtsRegion, sessionToken } = useAppStore.getState().settings
+  if (!azureTtsKey || !sessionToken) return false
+
+  try {
+    const response = await fetch('/api/tts', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'x-session-token': sessionToken,
+      },
+      body: JSON.stringify({
+        text,
+        voice: 'ja-JP-NanamiNeural',
+        azureTtsKey,
+        azureTtsRegion: azureTtsRegion || 'eastus',
+      }),
+    })
+
+    if (!response.ok) return false
+
+    const arrayBuffer = await response.arrayBuffer()
+    const audioCtx = new AudioContext()
+    const decoded = await audioCtx.decodeAudioData(arrayBuffer)
+    const source = audioCtx.createBufferSource()
+    source.buffer = decoded
+    source.connect(audioCtx.destination)
+    source.start(0)
+    return true
+  } catch {
+    return false
+  }
+}
+
 /** Cache the resolved Japanese voice between calls. */
 let cachedJaVoice: SpeechSynthesisVoice | null = null
 let voicesPromise: Promise<void> | null = null
@@ -56,6 +95,7 @@ export function useCardAudio(audioUrl: string | null | undefined, text: string, 
   const audioRef = useRef<HTMLAudioElement | null>(null)
   const ttsEnabled = useAppStore(s => s.settings.ttsEnabled)
   const ttsRate = useAppStore(s => s.settings.ttsRate)
+  const azureTtsKey = useAppStore(s => s.settings.azureTtsKey)
 
   useEffect(() => {
     if (phase !== 'back') return
@@ -80,9 +120,11 @@ export function useCardAudio(audioUrl: string | null | undefined, text: string, 
 
       // TTS fallback for cards without recorded audio
       if (ttsEnabled && text) {
-        await ensureVoices()
-        if (cancelled) return
-        speakViaTTS(text, ttsRate)
+        const azureOk = await speakViaAzure(text)
+        if (!azureOk) {
+          await ensureVoices()
+          if (!cancelled) speakViaTTS(text, ttsRate)
+        }
       }
     }
 
@@ -95,5 +137,5 @@ export function useCardAudio(audioUrl: string | null | undefined, text: string, 
         window.speechSynthesis.cancel()
       }
     }
-  }, [phase, audioUrl, text, ttsEnabled, ttsRate])
+  }, [phase, audioUrl, text, ttsEnabled, ttsRate, azureTtsKey])
 }

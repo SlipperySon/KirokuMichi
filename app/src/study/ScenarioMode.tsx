@@ -19,6 +19,7 @@ import {
   type SupplementalScenario,
 } from '../content/supplementalScenarioService'
 import type { AIMessage } from '../core/providers'
+import { speakViaAzure } from './useCardAudio'
 
 interface DialogueLine {
   speaker: string
@@ -69,13 +70,16 @@ function catalogSourceFor(key: string) {
   return SUPPLEMENTAL_SCENARIO_SOURCES.find(source => source.textbookKey === key)
 }
 
-function speak(text: string) {
-  if (!('speechSynthesis' in window)) return
-  window.speechSynthesis.cancel()
-  const utt = new SpeechSynthesisUtterance(text)
-  utt.lang = 'ja-JP'
-  utt.rate = 0.85
-  window.speechSynthesis.speak(utt)
+async function speak(text: string) {
+  const azureOk = await speakViaAzure(text)
+  if (!azureOk) {
+    if (!('speechSynthesis' in window)) return
+    window.speechSynthesis.cancel()
+    const utt = new SpeechSynthesisUtterance(text)
+    utt.lang = 'ja-JP'
+    utt.rate = 0.85
+    window.speechSynthesis.speak(utt)
+  }
 }
 
 function DialogueView({ scenario, showFurigana }: { scenario: Scenario; showFurigana: boolean }) {
@@ -298,6 +302,7 @@ function ScenarioChatPanel({ scenario, onClose }: ScenarioChatPanelProps) {
       {/* Input */}
       <div className="flex gap-2">
         <AutoGrowTextarea
+          data-testid="scenario-chat-input"
           value={input}
           onChange={e => setInput(e.target.value)}
           onKeyDown={e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); void handleSend() } }}
@@ -653,6 +658,7 @@ export function ScenarioMode() {
               <div className="divide-y divide-gray-100 bg-white border border-gray-200 rounded-2xl overflow-hidden">
                 {visibleScenarios.map(s => (
                   <button
+                    data-testid="scenario-card"
                     key={s.id}
                     onClick={() => setSelected(s)}
                     className="w-full text-left px-5 py-4 hover:bg-gray-50 transition-colors"

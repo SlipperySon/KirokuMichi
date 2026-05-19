@@ -435,6 +435,38 @@ export function Settings() {
                 </div>
               )}
 
+              {/* Azure TTS */}
+              <div>
+                <label className="block text-sm font-medium text-gray-300 mb-2 text-center">
+                  Azure TTS (Nanami Neural){' '}
+                  <a
+                    href="https://azure.microsoft.com/en-us/products/ai-services/text-to-speech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-indigo-400 hover:text-indigo-300 text-xs"
+                  >
+                    ↗ Azure
+                  </a>
+                </label>
+                <input
+                  type="password"
+                  value={settings.azureTtsKey || ''}
+                  onChange={e => updateSettings({ azureTtsKey: e.target.value || null })}
+                  placeholder="Azure Speech key"
+                  className="w-full px-3 py-2 border border-gray-600 rounded-lg bg-gray-800 text-gray-100 text-center focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2"
+                />
+                <input
+                  type="text"
+                  value={settings.azureTtsRegion || 'eastus'}
+                  onChange={e => updateSettings({ azureTtsRegion: e.target.value || 'eastus' })}
+                  placeholder="eastus"
+                  className="w-full px-3 py-2 border border-gray-600 rounded-lg bg-gray-800 text-gray-100 text-center focus:outline-none focus:ring-2 focus:ring-blue-500"
+                />
+                <p className="text-xs text-gray-500 mt-2 text-center">
+                  When set, uses Azure's ja-JP-NanamiNeural voice instead of the browser's built-in voices.
+                </p>
+              </div>
+
               {/* Hover Delay */}
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2 text-center">

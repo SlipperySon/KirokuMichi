@@ -3,6 +3,7 @@ import { useIntl } from 'react-intl'
 import type { Rating } from '../core/providers'
 import type { ReviewCard, IntervalPreview } from './types'
 import { RatingButtons } from './RatingButtons'
+import { speakViaAzure } from './useCardAudio'
 
 interface Props {
   card: ReviewCard
@@ -12,12 +13,15 @@ interface Props {
   onRate: (rating: Rating) => void
 }
 
-function speakJapanese(text: string) {
-  if (!window.speechSynthesis) return
-  window.speechSynthesis.cancel()
-  const utt = new SpeechSynthesisUtterance(text)
-  utt.lang = 'ja-JP'
-  window.speechSynthesis.speak(utt)
+async function speakJapanese(text: string) {
+  const azureOk = await speakViaAzure(text)
+  if (!azureOk) {
+    if (!window.speechSynthesis) return
+    window.speechSynthesis.cancel()
+    const utt = new SpeechSynthesisUtterance(text)
+    utt.lang = 'ja-JP'
+    window.speechSynthesis.speak(utt)
+  }
 }
 
 export function CardWriting({ card, phase, intervalPreviews, onReveal, onRate }: Props) {

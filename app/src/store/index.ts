@@ -30,6 +30,8 @@ interface Settings {
   // Text-to-speech
   ttsEnabled: boolean
   ttsRate: number
+  azureTtsKey: string | null
+  azureTtsRegion: string
 }
 
 interface DailyStats {
@@ -111,6 +113,8 @@ export const useAppStore = create<AppState>()(
         lastFreezeUsedDate: null,
         ttsEnabled: true,
         ttsRate: 0.95,
+        azureTtsKey: null,
+        azureTtsRegion: 'eastus',
       },
       onboardingComplete: false,
       updateSettings: (patch) =>

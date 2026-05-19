@@ -961,6 +961,78 @@ async function handleOllamaRequest(
   res.json({ text: data.message?.content ?? '' })
 }
 
+// Azure Cognitive Services TTS proxy
+// Simple in-memory cache keyed by sha256(text+voice), capped at 200 entries
+const ttsCache = new Map<string, Buffer>()
+const ttsCacheOrder: string[] = []
+const TTS_CACHE_MAX = 200
+
+app.post('/api/tts', requireToken, async (req, res) => {
+  const { text, voice, azureTtsKey, azureTtsRegion } = req.body as {
+    text: string
+    voice?: string
+    azureTtsKey: string
+    azureTtsRegion: string
+  }
+
+  if (!text || typeof text !== 'string') {
+    res.status(400).json({ error: 'text is required' })
+    return
+  }
+  if (!azureTtsKey || typeof azureTtsKey !== 'string') {
+    res.status(400).json({ error: 'azureTtsKey is required' })
+    return
+  }
+
+  const voiceName = voice ?? 'ja-JP-NanamiNeural'
+  const region = azureTtsRegion || 'eastus'
+  const cacheKey = crypto.createHash('sha256').update(text + voiceName).digest('hex')
+
+  if (ttsCache.has(cacheKey)) {
+    const cached = ttsCache.get(cacheKey)!
+    res.setHeader('Content-Type', 'audio/mpeg')
+    res.end(cached)
+    return
+  }
+
+  const ssml = `<speak version='1.0' xml:lang='ja-JP'><voice name='${voiceName}'>${text}</voice></speak>`
+
+  try {
+    const azureRes = await fetch(`https://${region}.tts.speech.microsoft.com/cognitiveservices/v1`, {
+      method: 'POST',
+      headers: {
+        'Ocp-Apim-Subscription-Key': azureTtsKey,
+        'Content-Type': 'application/ssml+xml',
+        'X-Microsoft-OutputFormat': 'audio-24khz-96kbitrate-mono-mp3',
+      },
+      body: ssml,
+    })
+
+    if (!azureRes.ok) {
+      const errText = await azureRes.text().catch(() => '')
+      res.status(azureRes.status).json({ error: `Azure TTS error: ${azureRes.status} ${errText}` })
+      return
+    }
+
+    const arrayBuffer = await azureRes.arrayBuffer()
+    const buffer = Buffer.from(arrayBuffer)
+
+    // Evict oldest if at cap
+    if (ttsCache.size >= TTS_CACHE_MAX) {
+      const oldest = ttsCacheOrder.shift()
+      if (oldest) ttsCache.delete(oldest)
+    }
+    ttsCache.set(cacheKey, buffer)
+    ttsCacheOrder.push(cacheKey)
+
+    res.setHeader('Content-Type', 'audio/mpeg')
+    res.end(buffer)
+  } catch (err) {
+    console.error('[tts] Azure TTS request failed:', err)
+    res.status(500).json({ error: `TTS request failed: ${err instanceof Error ? err.message : String(err)}` })
+  }
+})
+
 // Weak-point analysis trigger — client sends computed summary for logging/future server-side use
 app.post('/api/ai/analyze', requireToken, (req, res) => {
   const { userId, summary } = req.body as { userId: number; summary: unknown }
