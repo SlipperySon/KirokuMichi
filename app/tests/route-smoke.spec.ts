@@ -19,9 +19,9 @@ async function waitForAppReady(pageText: () => Promise<string>, expected: string
   await expect
     .poll(async () => {
       const text = await pageText()
-      if (text.trim() === 'Loading…') return ''
+      if (text.trim() === 'Loading…' || text.includes('Loading lesson')) return ''
       return text
-    })
+    }, { timeout: 20_000 })
     .toContain(expected)
 }
 

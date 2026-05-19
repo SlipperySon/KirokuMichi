@@ -76,7 +76,6 @@ export function CardCreate({ editCardId, editInitial, onSaved }: CardCreateProps
         setIsInitialising(false)
       }
     })()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId])
 
   async function handleSubmit(e: React.FormEvent) {
@@ -110,6 +109,8 @@ export function CardCreate({ editCardId, editInitial, onSaved }: CardCreateProps
           front: front.trim(),
           back: back.trim(),
           reading: reading.trim() || null,
+          tags: tags.trim() || null,
+          userNote: note.trim() || null,
         })
         toast.success('Card updated')
         onSaved?.()
@@ -121,6 +122,10 @@ export function CardCreate({ editCardId, editInitial, onSaved }: CardCreateProps
           reading: reading.trim() || null,
           deckId: resolvedDeckId,
           audioUrl,
+          tags: tags.trim() || null,
+          userNote: note.trim() || null,
+          originType: 'user_created',
+          originRef: 'study/create',
         })
         toast.success('Card created')
         // Reset form

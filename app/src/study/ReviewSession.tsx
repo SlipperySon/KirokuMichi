@@ -169,8 +169,13 @@ export function ReviewSession() {
       if (!cancelled) setActiveTemplate(tmpl)
     })
     return () => { cancelled = true }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
+
+  // Sync note text when current card changes (must be before early returns)
+  useEffect(() => {
+    setNoteText(currentCard?.userNote ?? '')
+    setShowNoteEditor(false)
+  }, [currentCard?.cardId])
 
   if (session.isComplete) {
     // Mark lesson as complete if this was a lesson study session
@@ -211,12 +216,6 @@ export function ReviewSession() {
     await session.buryCurrentCard()
     toast.info('Card buried until tomorrow')
   }
-
-  // Sync note text when current card changes
-  useEffect(() => {
-    setNoteText(currentCard?.userNote ?? '')
-    setShowNoteEditor(false)
-  }, [currentCard?.cardId])
 
   function openNoteEditor() {
     setShowCardMenu(false)

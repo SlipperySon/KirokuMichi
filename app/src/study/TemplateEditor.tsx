@@ -66,7 +66,6 @@ export function TemplateEditor({ deckId, deckName, onSaved, onClose }: TemplateE
         setIsInitialising(false)
       }
     })()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [userId, targetDeckId])
 
   // Load template when deck selection changes

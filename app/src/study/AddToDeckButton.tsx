@@ -9,6 +9,8 @@ interface AddToDeckButtonProps {
   front: string
   back: string
   reading?: string
+  lessonId?: string
+  originRef?: string
 }
 
 /**
@@ -16,7 +18,7 @@ interface AddToDeckButtonProps {
  * Shows a popover with deck list on click.
  * Automatically checks if the card already exists in a deck.
  */
-export function AddToDeckButton({ front, back, reading }: AddToDeckButtonProps) {
+export function AddToDeckButton({ front, back, reading, lessonId, originRef }: AddToDeckButtonProps) {
   const settings = useAppStore(s => s.settings)
   const activeUserId = useAppStore(s => s.activeUserId)
   const userId = activeUserId ?? 1
@@ -53,7 +55,6 @@ export function AddToDeckButton({ front, back, reading }: AddToDeckButtonProps) 
         setIsChecking(false)
       }
     })()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [front, userId])
 
   // Close popover on outside click
@@ -72,7 +73,15 @@ export function AddToDeckButton({ front, back, reading }: AddToDeckButtonProps) 
     setIsSaving(true)
     setShowPopover(false)
     try {
-      await service.createUserCard(userId, { front, back, reading: reading ?? null, deckId })
+      await service.createUserCard(userId, {
+        front,
+        back,
+        reading: reading ?? null,
+        deckId,
+        originType: lessonId ? 'lesson_vocab' : 'manual_add',
+        originRef: originRef ?? lessonId ?? null,
+        lessonId,
+      })
       setAddedDeckName(deckName)
       toast.success(`Added to "${deckName}"`)
     } catch (err) {
