@@ -1026,4 +1026,118 @@ export class SRSService {
       stabilityBuckets,
     }
   }
+
+  // ---------------------------------------------------------------------------
+  // Card Templates (Feature 2)
+  // ---------------------------------------------------------------------------
+
+  async getTemplate(deckId: number): Promise<{
+    id: number
+    name: string
+    frontTemplate: string
+    backTemplate: string
+    css: string
+  } | null> {
+    const rows = await this.storage.query<{
+      id: number; name: string; frontTemplate: string; backTemplate: string; css: string
+    }>(
+      `SELECT id, name, front_template AS frontTemplate, back_template AS backTemplate, css
+       FROM card_templates
+       WHERE deck_id = ?
+       ORDER BY id DESC
+       LIMIT 1`,
+      [deckId]
+    )
+    return rows[0] ?? null
+  }
+
+  async saveTemplate(
+    userId: number,
+    deckId: number,
+    template: { name?: string; frontTemplate: string; backTemplate: string; css?: string }
+  ): Promise<void> {
+    const existing = await this.storage.query<{ id: number }>(
+      `SELECT id FROM card_templates WHERE deck_id = ? AND user_id = ? LIMIT 1`,
+      [deckId, userId]
+    )
+    if (existing[0]) {
+      await this.storage.execute(
+        `UPDATE card_templates
+         SET name = ?, front_template = ?, back_template = ?, css = ?
+         WHERE id = ?`,
+        [
+          template.name ?? 'Basic',
+          template.frontTemplate,
+          template.backTemplate,
+          template.css ?? '',
+          existing[0].id,
+        ]
+      )
+    } else {
+      await this.storage.execute(
+        `INSERT INTO card_templates (user_id, deck_id, name, front_template, back_template, css)
+         VALUES (?, ?, ?, ?, ?, ?)`,
+        [
+          userId,
+          deckId,
+          template.name ?? 'Basic',
+          template.frontTemplate,
+          template.backTemplate,
+          template.css ?? '',
+        ]
+      )
+    }
+  }
+
+  async getLearningSnapshot(userId: number): Promise<{
+    totalCards: number
+    newCards: number
+    matureCards: number
+    jlptBreakdown: { N5: number; N4: number; N3: number; N2: number; N1: number }
+    lessonsCompleted: string[]
+    averageRetention: number
+  }> {
+    const [totalRow, newRow, matureRow, jlptRows, retRow] = await Promise.all([
+      this.storage.query<{ count: number }>(
+        `SELECT COUNT(*) AS count FROM card_states WHERE user_id = ?`,
+        [userId]
+      ),
+      this.storage.query<{ count: number }>(
+        `SELECT COUNT(*) AS count FROM card_states WHERE user_id = ? AND state = 'new'`,
+        [userId]
+      ),
+      this.storage.query<{ count: number }>(
+        `SELECT COUNT(*) AS count FROM card_states WHERE user_id = ? AND stability > 21`,
+        [userId]
+      ),
+      this.storage.query<{ jlpt_level: string; count: number }>(
+        `SELECT c.jlpt_level, COUNT(*) AS count
+         FROM card_states cs JOIN cards c ON c.id = cs.card_id
+         WHERE cs.user_id = ? AND c.jlpt_level IS NOT NULL
+         GROUP BY c.jlpt_level`,
+        [userId]
+      ),
+      this.storage.query<{ total: number; correct: number }>(
+        `SELECT SUM(cards_reviewed) AS total, SUM(correct_count) AS correct
+         FROM sessions WHERE user_id = ? AND started_at >= date('now', '-30 days') AND ended_at IS NOT NULL`,
+        [userId]
+      ),
+    ])
+
+    const breakdown: Record<string, number> = { N5: 0, N4: 0, N3: 0, N2: 0, N1: 0 }
+    for (const row of jlptRows) {
+      const lvl = row.jlpt_level?.toUpperCase()
+      if (lvl && lvl in breakdown) breakdown[lvl] = row.count
+    }
+
+    const t = retRow[0]
+    return {
+      totalCards: totalRow[0]?.count ?? 0,
+      newCards: newRow[0]?.count ?? 0,
+      matureCards: matureRow[0]?.count ?? 0,
+      jlptBreakdown: breakdown as { N5: number; N4: number; N3: number; N2: number; N1: number },
+      lessonsCompleted: [], // Caller should merge from Zustand store
+      averageRetention: t && t.total > 0 ? Math.round((t.correct / t.total) * 100) : 0,
+    }
+  }
 }

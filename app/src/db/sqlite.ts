@@ -273,6 +273,33 @@ function initializeSchema() {
     // Index already exists
   }
 
+  // Card templates table (Feature 2)
+  dbInstance.run(`
+    CREATE TABLE IF NOT EXISTS card_templates (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      deck_id INTEGER REFERENCES decks(id),
+      name TEXT NOT NULL DEFAULT 'Basic',
+      front_template TEXT NOT NULL DEFAULT '{{front}}',
+      back_template TEXT NOT NULL DEFAULT '{{front}}\n\n{{back}}',
+      css TEXT DEFAULT '',
+      created_at DATETIME DEFAULT (datetime('now'))
+    )
+  `)
+
+  // Idempotent migrations for cards table (Feature 2)
+  try {
+    dbInstance.run(`ALTER TABLE cards ADD COLUMN fields_json TEXT`)
+  } catch {
+    // Column already exists
+  }
+
+  try {
+    dbInstance.run(`ALTER TABLE cards ADD COLUMN template_id INTEGER REFERENCES card_templates(id)`)
+  } catch {
+    // Column already exists
+  }
+
   persist()
 }
 

@@ -7,6 +7,7 @@ import { CardReading } from './CardReading'
 import { CardMeaning } from './CardMeaning'
 import { CardWriting } from './CardWriting'
 import { CardGrammar } from './CardGrammar'
+import { RatingButtons } from './RatingButtons'
 import { LeechWarning } from './LeechWarning'
 import { SessionSummary } from './SessionSummary'
 import { exportToAnki } from '../srs/ankiExport'
@@ -14,9 +15,73 @@ import { importFromAnki } from '../srs/ankiImport'
 import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { SRSService } from '../srs/srsService'
+import { renderTemplate } from '../srs/templateRenderer'
 import { useAppStore } from '../store'
 import { toast } from '../components/toastStore'
 import type { ReviewCard, GrammarQuestion, GrammarReviewContext } from './types'
+
+interface CardTemplate {
+  id: number
+  frontTemplate: string
+  backTemplate: string
+  css: string
+}
+
+/**
+ * Templated card display — used when a deck has a custom template.
+ */
+function TemplatedCard({
+  card,
+  template,
+  phase,
+  onReveal,
+  ratingButtons,
+}: {
+  card: ReviewCard
+  template: CardTemplate
+  phase: 'front' | 'back'
+  onReveal: () => void
+  ratingButtons: React.ReactNode
+}) {
+  const fields: Record<string, string> = {
+    front: card.front,
+    back: card.back,
+    reading: card.reading ?? '',
+  }
+  const frontHtml = renderTemplate(template.frontTemplate, fields)
+  const backHtml = renderTemplate(template.backTemplate, fields)
+
+  return (
+    <div className="flex flex-col items-center gap-8 w-full max-w-md mx-auto">
+      {template.css && <style>{template.css}</style>}
+      <div className="w-full min-h-48 bg-gray-50 rounded-2xl flex flex-col items-center justify-center gap-4 p-8">
+        {phase === 'front' ? (
+          <div
+            className="text-2xl font-bold text-gray-900 text-center whitespace-pre-wrap"
+            lang="ja"
+            dangerouslySetInnerHTML={{ __html: frontHtml }}
+          />
+        ) : (
+          <div
+            className="text-lg text-gray-700 text-center whitespace-pre-wrap"
+            lang="ja"
+            dangerouslySetInnerHTML={{ __html: backHtml }}
+          />
+        )}
+      </div>
+      {phase === 'front' ? (
+        <button
+          onClick={onReveal}
+          className="w-full px-8 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
+        >
+          Show Answer
+        </button>
+      ) : (
+        ratingButtons
+      )}
+    </div>
+  )
+}
 
 interface LocationState {
   queue: ReviewCard[]
@@ -52,6 +117,8 @@ export function ReviewSession() {
   const { currentCard, currentVariant, currentGrammar, phase, intervalPreviews, isNewLeech, progress } = session
   const [grammarContext, setGrammarContext] = useState<GrammarReviewContext | null>(null)
   const [showCardMenu, setShowCardMenu] = useState(false)
+  // Template for active deck (if any)
+  const [activeTemplate, setActiveTemplate] = useState<CardTemplate | null>(null)
 
   const isCramMode = state.cramMode ?? false
 
@@ -88,6 +155,18 @@ export function ReviewSession() {
     void loadGrammarContext()
     return () => { cancelled = true }
   }, [currentGrammar?.grammarPointId, service])
+
+  // Load template for active deck on mount
+  useEffect(() => {
+    const deckId = useAppStore.getState().activeDeckId
+    if (deckId == null) return
+    let cancelled = false
+    void service.getTemplate(deckId).then(tmpl => {
+      if (!cancelled) setActiveTemplate(tmpl)
+    })
+    return () => { cancelled = true }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   if (session.isComplete) {
     // Mark lesson as complete if this was a lesson study session
@@ -209,42 +288,55 @@ export function ReviewSession() {
 
       {/* Card */}
       <div className="flex-1 flex items-center justify-center">
-        {currentVariant === 'reading' && (
-          <CardReading
+        {/* If deck has a custom template and card is vocab, use templated display */}
+        {activeTemplate && currentVariant !== 'grammar' ? (
+          <TemplatedCard
             card={currentCard}
+            template={activeTemplate}
             phase={phase}
-            intervalPreviews={intervalPreviews}
             onReveal={session.reveal}
-            onRate={session.rate}
+            ratingButtons={<RatingButtons previews={intervalPreviews} onRate={session.rate} />}
           />
-        )}
-        {currentVariant === 'meaning' && (
-          <CardMeaning
-            card={currentCard}
-            phase={phase}
-            intervalPreviews={intervalPreviews}
-            onReveal={session.reveal}
-            onRate={session.rate}
-          />
-        )}
-        {currentVariant === 'writing' && (
-          <CardWriting
-            card={currentCard}
-            phase={phase}
-            intervalPreviews={intervalPreviews}
-            onReveal={session.reveal}
-            onRate={session.rate}
-          />
-        )}
-        {currentVariant === 'grammar' && currentGrammar && (
-          <CardGrammar
-            question={currentGrammar}
-            phase={phase}
-            intervalPreviews={intervalPreviews}
-            context={grammarContext}
-            onAnswer={session.handleGrammarAnswer}
-            onRate={session.rate}
-          />
+        ) : (
+          <>
+            {currentVariant === 'reading' && (
+              <CardReading
+                card={currentCard}
+                phase={phase}
+                intervalPreviews={intervalPreviews}
+                onReveal={session.reveal}
+                onRate={session.rate}
+              />
+            )}
+            {currentVariant === 'meaning' && (
+              <CardMeaning
+                card={currentCard}
+                phase={phase}
+                intervalPreviews={intervalPreviews}
+                onReveal={session.reveal}
+                onRate={session.rate}
+              />
+            )}
+            {currentVariant === 'writing' && (
+              <CardWriting
+                card={currentCard}
+                phase={phase}
+                intervalPreviews={intervalPreviews}
+                onReveal={session.reveal}
+                onRate={session.rate}
+              />
+            )}
+            {currentVariant === 'grammar' && currentGrammar && (
+              <CardGrammar
+                question={currentGrammar}
+                phase={phase}
+                intervalPreviews={intervalPreviews}
+                context={grammarContext}
+                onAnswer={session.handleGrammarAnswer}
+                onRate={session.rate}
+              />
+            )}
+          </>
         )}
       </div>
 

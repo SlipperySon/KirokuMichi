@@ -33,6 +33,7 @@ const TextbookQADashboard = lazy(() => import('./study/TextbookQADashboard').the
 const StudyStats = lazy(() => import('./study/StudyStats').then(module => ({ default: module.StudyStats })))
 const CardBrowser = lazy(() => import('./study/CardBrowser').then(module => ({ default: module.CardBrowser })))
 const CardCreate = lazy(() => import('./study/CardCreate').then(module => ({ default: module.CardCreate })))
+const TemplateEditor = lazy(() => import('./study/TemplateEditor').then(module => ({ default: module.TemplateEditor })))
 
 function App() {
   useTheme() // Initialize theme on mount
@@ -122,6 +123,7 @@ function App() {
               <Route path="/study/stats" element={<StudyStats />} />
               <Route path="/study/browser" element={<CardBrowser />} />
               <Route path="/study/create" element={<CardCreate />} />
+              <Route path="/study/templates" element={<TemplateEditor />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
