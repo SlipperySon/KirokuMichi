@@ -373,14 +373,14 @@ export function StudyDashboard() {
         {recoveryPayload && (
           <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4" role="dialog" aria-modal="true" aria-labelledby="recovery-title">
             <div className="bg-white rounded-2xl shadow-xl max-w-sm w-full p-6 flex flex-col gap-4">
-              <h2 id="recovery-title" className="text-lg font-bold">{intl.formatMessage({ id: ‘study.dashboard.resume_title’ })}</h2>
-              <p className="text-sm text-gray-600">{intl.formatMessage({ id: ‘study.dashboard.resume_body’ })}</p>
+              <h2 id="recovery-title" className="text-lg font-bold">{intl.formatMessage({ id: 'study.dashboard.resume_title' })}</h2>
+              <p className="text-sm text-gray-600">{intl.formatMessage({ id: 'study.dashboard.resume_body' })}</p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <button onClick={resumeSession} className="flex-1 px-4 py-2 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700">
-                  {intl.formatMessage({ id: ‘study.dashboard.resume’ })}
+                  {intl.formatMessage({ id: 'study.dashboard.resume' })}
                 </button>
                 <button onClick={abandonSession} className="flex-1 px-4 py-2 border-2 border-gray-200 rounded-xl font-medium hover:bg-gray-50">
-                  {intl.formatMessage({ id: ‘study.dashboard.abandon’ })}
+                  {intl.formatMessage({ id: 'study.dashboard.abandon' })}
                 </button>
               </div>
             </div>
@@ -415,7 +415,7 @@ export function StudyDashboard() {
             {/* Smart CTA */}
             {(() => {
               if (currentLesson && !lessonsCompleted.includes(currentLesson)) {
-                const label = currentLesson.replace(/_/g, ‘ ‘).replace(/\b\w/g, c => c.toUpperCase())
+                const label = currentLesson.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
                 return (
                   <button
                     onClick={() => navigate(lessonRouteFromId(currentLesson))}
@@ -437,7 +437,7 @@ export function StudyDashboard() {
                   >
                     <span className="text-2xl">🧠</span>
                     <div className="text-left">
-                      <span className="block text-base">Review {dueCount} Due Card{dueCount === 1 ? ‘’ : ‘s’}</span>
+                      <span className="block text-base">Review {dueCount} Due Card{dueCount === 1 ? '' : 's'}</span>
                       <span className="block text-xs opacity-80 mt-0.5">Keep your streak alive</span>
                     </div>
                   </button>
@@ -445,7 +445,7 @@ export function StudyDashboard() {
               }
               return (
                 <button
-                  onClick={() => navigate(‘/learn’)}
+                  onClick={() => navigate('/learn')}
                   className="w-full flex items-center gap-3 px-5 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-xl font-semibold hover:from-green-700 hover:to-emerald-700 transition-all shadow-md"
                 >
                   <span className="text-2xl">🎯</span>
@@ -500,7 +500,7 @@ export function StudyDashboard() {
                 description="You are caught up. Start a lesson, browse scenarios, or practice a conversation."
                 action={
                   <button
-                    onClick={() => navigate(‘/learn’)}
+                    onClick={() => navigate('/learn')}
                     className="px-4 py-2 text-sm font-semibold text-indigo-800 bg-indigo-50 rounded-lg hover:bg-indigo-100"
                   >
                     Open Learn
@@ -512,10 +512,10 @@ export function StudyDashboard() {
             {/* Mistake drill */}
             {mistakeCount > 0 && (
               <button
-                onClick={() => navigate(‘/study/mistakes’)}
+                onClick={() => navigate('/study/mistakes')}
                 className="w-full flex flex-col items-center px-4 py-3 bg-white border-2 border-amber-300 text-amber-900 rounded-xl font-semibold hover:bg-amber-50 transition-colors"
               >
-                <span>Drill {mistakeCount} recent mistake{mistakeCount === 1 ? ‘’ : ‘s’}</span>
+                <span>Drill {mistakeCount} recent mistake{mistakeCount === 1 ? '' : 's'}</span>
                 <span className="text-xs mt-1 text-amber-700">Last 7 days · cards you rated Again</span>
               </button>
             )}
@@ -531,12 +531,12 @@ export function StudyDashboard() {
             </HomeSection>
 
             <div className="grid gap-4 sm:grid-cols-2">
-              <HomeSection title="Learning" description="Course flow and lessons.">
+              <HomeSection title="Learning" description="Course flow and lessons." compact>
                 {learningActions.map(action => (
                   <HomeActionButton key={action.title} action={action} onNavigate={go} />
                 ))}
               </HomeSection>
-              <HomeSection title="Practice" description="Scenarios, grammar, and AI tutor.">
+              <HomeSection title="Practice" description="Scenarios, grammar, and AI tutor." compact>
                 {practiceActions.map(action => (
                   <HomeActionButton key={action.title} action={action} onNavigate={go} />
                 ))}
@@ -551,11 +551,11 @@ export function StudyDashboard() {
             <div className="grid grid-cols-2 gap-3">
               <div className="bg-indigo-50 rounded-xl p-4">
                 <div className="text-3xl font-bold text-indigo-600 tabular-nums">{dueCount}</div>
-                <div className="text-sm text-gray-500 mt-1">{intl.formatMessage({ id: ‘study.dashboard.due’ }, { count: dueCount })}</div>
+                <div className="text-sm text-gray-500 mt-1">{intl.formatMessage({ id: 'study.dashboard.due' }, { count: dueCount })}</div>
               </div>
               <div className="bg-green-50 rounded-xl p-4">
                 <div className="text-3xl font-bold text-green-600 tabular-nums">{availableNewCount}</div>
-                <div className="text-sm text-gray-500 mt-1">{intl.formatMessage({ id: ‘study.dashboard.new’ }, { count: availableNewCount })}</div>
+                <div className="text-sm text-gray-500 mt-1">{intl.formatMessage({ id: 'study.dashboard.new' }, { count: availableNewCount })}</div>
                 {newCount > availableNewCount && (
                   <div className="text-xs text-gray-400 mt-1">+{newCount - availableNewCount} queued</div>
                 )}
@@ -586,7 +586,7 @@ export function StudyDashboard() {
                       </p>
                       <p className="text-xs text-amber-700 mt-1">
                         {settings.jlptTarget} · {weeklyGoal.weeksRemaining}w remaining
-                        {weeklyGoal.isPastDue ? ‘ (past due)’ : ‘’}
+                        {weeklyGoal.isPastDue ? ' (past due)' : ''}
                       </p>
                     </div>
                     <div className="text-xl font-bold text-amber-900 tabular-nums">{progressPct}%</div>
@@ -667,14 +667,14 @@ export function StudyDashboard() {
   )
 }
 
-function HomeSection({ title, description, children }: { title: string; description: string; children: ReactNode }) {
+function HomeSection({ title, description, children, compact }: { title: string; description: string; children: ReactNode; compact?: boolean }) {
   return (
-    <section className="rounded-xl border border-gray-200 bg-white p-4">
+    <section className="rounded-xl border border-gray-200 bg-white p-4 min-w-0">
       <div className="mb-4">
         <h2 className="text-base font-bold text-gray-950">{title}</h2>
         <p className="mt-1 text-sm text-gray-600">{description}</p>
       </div>
-      <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-3">{children}</div>
+      <div className={`grid gap-3 ${compact ? 'grid-cols-1' : 'sm:grid-cols-2 xl:grid-cols-3'}`}>{children}</div>
     </section>
   )
 }

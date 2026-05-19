@@ -7,6 +7,7 @@ export interface ReviewCard {
   reading: string | null
   audioUrl: string | null
   jlptLevel: string | null
+  userNote: string | null
   state: 'new' | 'learning' | 'review' | 'relearning'
   lapses: number
   stability: number

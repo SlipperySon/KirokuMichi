@@ -52,7 +52,8 @@ export class SRSService {
         c.back,
         c.reading,
         c.audio_url  AS audioUrl,
-        c.jlpt_level AS jlptLevel
+        c.jlpt_level AS jlptLevel,
+        c.user_note  AS userNote
        FROM card_states cs
        JOIN cards c ON c.id = cs.card_id
        WHERE cs.user_id = ?
@@ -82,7 +83,8 @@ export class SRSService {
         c.back,
         c.reading,
         c.audio_url  AS audioUrl,
-        c.jlpt_level AS jlptLevel
+        c.jlpt_level AS jlptLevel,
+        c.user_note  AS userNote
        FROM card_states cs
        JOIN cards c ON c.id = cs.card_id
        WHERE cs.user_id = ?
@@ -107,7 +109,8 @@ export class SRSService {
       c.back,
       c.reading,
       c.audio_url  AS audioUrl,
-      c.jlpt_level AS jlptLevel
+      c.jlpt_level AS jlptLevel,
+      c.user_note  AS userNote
      FROM card_states cs
      JOIN cards c ON c.id = cs.card_id
      WHERE cs.user_id = ?
@@ -387,7 +390,8 @@ export class SRSService {
         c.back,
         c.reading,
         c.audio_url  AS audioUrl,
-        c.jlpt_level AS jlptLevel
+        c.jlpt_level AS jlptLevel,
+        c.user_note  AS userNote
        FROM card_states cs
        JOIN cards c ON c.id = cs.card_id
        WHERE cs.user_id = ?
@@ -629,17 +633,26 @@ export class SRSService {
       reading?: string | null
       deckId?: number | null
       audioUrl?: string | null
+      tags?: string | null
+      userNote?: string | null
+      originType?: string | null
+      originRef?: string | null
+      lessonId?: string | null
     }
   ): Promise<number> {
     await this.storage.execute(
-      `INSERT INTO cards (type, front, back, reading, deck_id, audio_url, source)
-       VALUES ('vocabulary', ?, ?, ?, ?, ?, 'user')`,
+      `INSERT INTO cards (type, front, back, reading, deck_id, audio_url, tags, user_note, origin_type, origin_ref, source)
+       VALUES ('vocabulary', ?, ?, ?, ?, ?, ?, ?, ?, ?, 'user')`,
       [
         fields.front,
         fields.back,
         fields.reading ?? null,
         fields.deckId ?? null,
         fields.audioUrl ?? null,
+        fields.tags ?? null,
+        fields.userNote ?? null,
+        fields.originType ?? null,
+        fields.originRef ?? null,
       ]
     )
     const rows = await this.storage.query<{ id: number }>(
@@ -653,6 +666,17 @@ export class SRSService {
        VALUES (?, ?, 'new', datetime('now'), 0, 0, 0, 0, 0, 0, 0)`,
       [cardId, userId]
     )
+    if (fields.lessonId) {
+      await this.storage.execute(
+        `INSERT OR IGNORE INTO lesson_vocabulary (user_id, lesson_id, card_id, term)
+         VALUES (?, ?, ?, ?)`,
+        [userId, fields.lessonId, cardId, fields.front]
+      )
+      await this.storage.execute(
+        `UPDATE card_states SET lesson_id = ? WHERE card_id = ? AND user_id = ?`,
+        [fields.lessonId, cardId, userId]
+      )
+    }
     return cardId
   }
 
@@ -786,6 +810,7 @@ export class SRSService {
     reading: string | null; deckId: number | null; deckName: string | null
     state: string | null; due: string | null; stability: number | null
     reps: number | null; suspended: boolean
+    tags: string | null; userNote: string | null; originType: string | null; originRef: string | null
   }>> {
     const conditions: string[] = []
     const params: (string | number | null)[] = [userId]
@@ -817,6 +842,10 @@ export class SRSService {
         c.front,
         c.back,
         c.reading,
+        c.tags,
+        c.user_note AS userNote,
+        c.origin_type AS originType,
+        c.origin_ref AS originRef,
         c.deck_id AS deckId,
         d.name AS deckName,
         cs.state,
@@ -833,12 +862,14 @@ export class SRSService {
     )
   }
 
-  async updateCard(cardId: number, fields: { front?: string; back?: string; reading?: string | null }): Promise<void> {
+  async updateCard(cardId: number, fields: { front?: string; back?: string; reading?: string | null; tags?: string | null; userNote?: string | null }): Promise<void> {
     const sets: string[] = []
     const params: (string | number | null)[] = []
     if (fields.front !== undefined) { sets.push('front = ?'); params.push(fields.front) }
     if (fields.back !== undefined) { sets.push('back = ?'); params.push(fields.back) }
     if ('reading' in fields) { sets.push('reading = ?'); params.push(fields.reading ?? null) }
+    if ('tags' in fields) { sets.push('tags = ?'); params.push(fields.tags ?? null) }
+    if ('userNote' in fields) { sets.push('user_note = ?'); params.push(fields.userNote ?? null) }
     if (sets.length === 0) return
     params.push(cardId)
     await this.storage.execute(`UPDATE cards SET ${sets.join(', ')} WHERE id = ?`, params)
@@ -933,7 +964,8 @@ export class SRSService {
         c.back,
         c.reading,
         c.audio_url  AS audioUrl,
-        c.jlpt_level AS jlptLevel
+        c.jlpt_level AS jlptLevel,
+        c.user_note  AS userNote
        FROM card_states cs
        JOIN cards c ON c.id = cs.card_id
        LEFT JOIN decks d ON d.id = c.deck_id

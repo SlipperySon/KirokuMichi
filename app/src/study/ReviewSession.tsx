@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import { useIntl } from 'react-intl'
-import { LogOut, RotateCcw, MoreHorizontal } from 'lucide-react'
+import { LogOut, RotateCcw, MoreHorizontal, ExternalLink, StickyNote } from 'lucide-react'
 import { useReviewSession } from './useReviewSession'
 import { CardReading } from './CardReading'
 import { CardMeaning } from './CardMeaning'
@@ -119,6 +119,10 @@ export function ReviewSession() {
   const [showCardMenu, setShowCardMenu] = useState(false)
   // Template for active deck (if any)
   const [activeTemplate, setActiveTemplate] = useState<CardTemplate | null>(null)
+  // Inline note editing
+  const [showNoteEditor, setShowNoteEditor] = useState(false)
+  const [noteText, setNoteText] = useState<string>('')
+  const [isSavingNote, setIsSavingNote] = useState(false)
 
   const isCramMode = state.cramMode ?? false
 
@@ -208,6 +212,37 @@ export function ReviewSession() {
     toast.info('Card buried until tomorrow')
   }
 
+  // Sync note text when current card changes
+  useEffect(() => {
+    setNoteText(currentCard?.userNote ?? '')
+    setShowNoteEditor(false)
+  }, [currentCard?.cardId])
+
+  function openNoteEditor() {
+    setShowCardMenu(false)
+    setShowNoteEditor(true)
+  }
+
+  async function saveNote() {
+    if (!currentCard) return
+    setIsSavingNote(true)
+    try {
+      await service.updateCard(currentCard.cardId, { userNote: noteText.trim() || null })
+      toast.success('Note saved')
+      setShowNoteEditor(false)
+    } catch {
+      toast.error('Failed to save note')
+    } finally {
+      setIsSavingNote(false)
+    }
+  }
+
+  function openJisho() {
+    if (!currentCard) return
+    const term = encodeURIComponent(currentCard.front)
+    window.open(`https://jisho.org/search/${term}`, '_blank', 'noopener,noreferrer')
+  }
+
   return (
     <div className="flex flex-col min-h-screen w-full px-4 py-6 sm:p-6 max-w-xl mx-auto">
       {/* Cram mode banner */}
@@ -259,6 +294,23 @@ export function ReviewSession() {
                 role="menuitem"
               >
                 Bury until tomorrow
+              </button>
+              <hr className="my-1 border-gray-100" />
+              <button
+                onClick={openNoteEditor}
+                className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors flex items-center gap-2"
+                role="menuitem"
+              >
+                <StickyNote className="h-3.5 w-3.5 text-gray-400" aria-hidden />
+                {currentCard?.userNote ? 'Edit note' : 'Add note'}
+              </button>
+              <button
+                onClick={openJisho}
+                className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 transition-colors flex items-center gap-2"
+                role="menuitem"
+              >
+                <ExternalLink className="h-3.5 w-3.5 text-gray-400" aria-hidden />
+                Look up in Jisho
               </button>
             </div>
           )}
@@ -339,6 +391,44 @@ export function ReviewSession() {
           </>
         )}
       </div>
+
+      {/* Existing note display (back phase only) */}
+      {!showNoteEditor && currentCard?.userNote && phase === 'back' && (
+        <div className="mt-4 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-900 flex items-start gap-2">
+          <StickyNote className="h-4 w-4 text-amber-500 shrink-0 mt-0.5" aria-hidden />
+          <span className="whitespace-pre-wrap">{currentCard.userNote}</span>
+        </div>
+      )}
+
+      {/* Inline note editor */}
+      {showNoteEditor && (
+        <div className="mt-4 rounded-xl border border-indigo-200 bg-indigo-50 p-4 flex flex-col gap-3">
+          <p className="text-xs font-semibold text-indigo-700 uppercase tracking-wide">Card note</p>
+          <textarea
+            autoFocus
+            value={noteText}
+            onChange={e => setNoteText(e.target.value)}
+            placeholder="Add a personal note, mnemonic, or example sentence…"
+            rows={3}
+            className="w-full rounded-lg border border-indigo-200 bg-white px-3 py-2 text-sm text-gray-800 resize-none focus:outline-none focus:ring-2 focus:ring-indigo-400"
+          />
+          <div className="flex gap-2 justify-end">
+            <button
+              onClick={() => setShowNoteEditor(false)}
+              className="px-3 py-1.5 text-xs font-semibold text-gray-600 rounded-lg hover:bg-white/60 transition-colors"
+            >
+              Cancel
+            </button>
+            <button
+              onClick={() => void saveNote()}
+              disabled={isSavingNote}
+              className="px-4 py-1.5 text-xs font-semibold bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 disabled:opacity-50 transition-colors"
+            >
+              {isSavingNote ? 'Saving…' : 'Save note'}
+            </button>
+          </div>
+        </div>
+      )}
 
       {isNewLeech && (
         <LeechWarning

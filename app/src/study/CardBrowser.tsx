@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useCallback } from 'react'
-import { ChevronUp, ChevronDown, Search, X } from 'lucide-react'
+import { ChevronUp, ChevronDown, Search, X, ExternalLink } from 'lucide-react'
 import { useAppStore } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
@@ -20,6 +20,10 @@ type CardRow = {
   stability: number | null
   reps: number | null
   suspended: boolean | number
+  tags: string | null
+  userNote: string | null
+  originType: string | null
+  originRef: string | null
 }
 
 type SortKey = 'front' | 'back' | 'deckName' | 'state' | 'due' | 'stability' | 'reps'
@@ -53,6 +57,11 @@ function formatDue(due: string | null): string {
   return `in ${diffDays}d`
 }
 
+function formatOrigin(row: CardRow): string {
+  const type = row.originType?.replace(/_/g, ' ') ?? 'unknown'
+  return row.originRef ? `${type}: ${row.originRef}` : type
+}
+
 function SortIcon({ col, sortKey, sortDir }: { col: SortKey; sortKey: SortKey; sortDir: SortDir }) {
   if (col !== sortKey) return <ChevronDown className="h-3 w-3 text-gray-300" />
   return sortDir === 'asc'
@@ -62,7 +71,7 @@ function SortIcon({ col, sortKey, sortDir }: { col: SortKey; sortKey: SortKey; s
 
 interface EditFormProps {
   card: CardRow
-  onSave: (fields: { front: string; back: string; reading: string }) => Promise<void>
+  onSave: (fields: { front: string; back: string; reading: string; tags: string; userNote: string }) => Promise<void>
   onCancel: () => void
 }
 
@@ -70,6 +79,8 @@ function EditForm({ card, onSave, onCancel }: EditFormProps) {
   const [front, setFront] = useState(card.front)
   const [back, setBack] = useState(card.back)
   const [reading, setReading] = useState(card.reading ?? '')
+  const [tags, setTags] = useState(card.tags ?? '')
+  const [userNote, setUserNote] = useState(card.userNote ?? '')
 
   return (
     <div className="flex flex-col gap-3 p-4 bg-gray-50 rounded-xl border border-gray-200">
@@ -100,10 +111,27 @@ function EditForm({ card, onSave, onCancel }: EditFormProps) {
           lang="ja"
         />
       </label>
+      <label className="flex flex-col gap-1">
+        <span className="text-xs text-gray-500">Tags</span>
+        <input
+          value={tags}
+          onChange={e => setTags(e.target.value)}
+          className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-indigo-400"
+        />
+      </label>
+      <label className="flex flex-col gap-1">
+        <span className="text-xs text-gray-500">Personal note</span>
+        <textarea
+          value={userNote}
+          onChange={e => setUserNote(e.target.value)}
+          rows={2}
+          className="px-3 py-2 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-indigo-400 resize-none"
+        />
+      </label>
       <div className="flex gap-2 justify-end">
         <button onClick={onCancel} className="px-3 py-1.5 text-sm text-gray-600 hover:text-gray-800">Cancel</button>
         <button
-          onClick={() => void onSave({ front, back, reading })}
+          onClick={() => void onSave({ front, back, reading, tags, userNote })}
           className="px-4 py-1.5 bg-indigo-600 text-white text-sm rounded-lg hover:bg-indigo-700"
         >
           Save
@@ -259,9 +287,15 @@ export function CardBrowser() {
     void loadCards()
   }
 
-  async function handleSaveEdit(fields: { front: string; back: string; reading: string }) {
+  async function handleSaveEdit(fields: { front: string; back: string; reading: string; tags: string; userNote: string }) {
     if (!editingCard) return
-    await service.updateCard(editingCard.cardId, { front: fields.front, back: fields.back, reading: fields.reading || null })
+    await service.updateCard(editingCard.cardId, {
+      front: fields.front,
+      back: fields.back,
+      reading: fields.reading || null,
+      tags: fields.tags || null,
+      userNote: fields.userNote || null,
+    })
     toast.success('Card updated')
     setEditingCard(null)
     void loadCards()
@@ -476,6 +510,24 @@ export function CardBrowser() {
                       <p className="text-xs text-gray-400">Deck</p>
                       <p className="text-sm text-gray-600">{selectedCard.deckName ?? '—'}</p>
                     </div>
+                    {(selectedCard.originType || selectedCard.originRef) && (
+                      <div>
+                        <p className="text-xs text-gray-400">Origin</p>
+                        <p className="text-sm text-gray-600">{formatOrigin(selectedCard)}</p>
+                      </div>
+                    )}
+                    {selectedCard.tags && (
+                      <div>
+                        <p className="text-xs text-gray-400">Tags</p>
+                        <p className="text-sm text-gray-600">{selectedCard.tags}</p>
+                      </div>
+                    )}
+                    {selectedCard.userNote && (
+                      <div>
+                        <p className="text-xs text-gray-400">Personal note</p>
+                        <p className="text-sm text-gray-700 whitespace-pre-wrap">{selectedCard.userNote}</p>
+                      </div>
+                    )}
                     <div className="grid grid-cols-2 gap-2">
                       <div>
                         <p className="text-xs text-gray-400">State</p>
@@ -500,12 +552,23 @@ export function CardBrowser() {
                     </div>
                   </div>
 
-                  <button
-                    onClick={() => setEditingCard(selectedCard)}
-                    className="w-full px-3 py-2 text-sm bg-indigo-50 text-indigo-700 rounded-lg hover:bg-indigo-100 font-medium transition-colors"
-                  >
-                    Edit card
-                  </button>
+                  <div className="flex gap-2">
+                    <button
+                      onClick={() => setEditingCard(selectedCard)}
+                      className="flex-1 px-3 py-2 text-sm bg-indigo-50 text-indigo-700 rounded-lg hover:bg-indigo-100 font-medium transition-colors"
+                    >
+                      Edit card
+                    </button>
+                    <a
+                      href={`https://jisho.org/search/${encodeURIComponent(selectedCard.front)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      title="Look up in Jisho"
+                      className="inline-flex items-center justify-center px-3 py-2 text-sm bg-gray-50 text-gray-600 rounded-lg hover:bg-gray-100 border border-gray-200 transition-colors"
+                    >
+                      <ExternalLink className="h-4 w-4" aria-hidden />
+                    </a>
+                  </div>
                 </>
               )}
             </div>
