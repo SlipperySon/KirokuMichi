@@ -3,7 +3,8 @@ import type { ReactNode } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { FileText, ListChecks, LogOut } from 'lucide-react'
 import { useAppStore } from '../store'
-import { buildLessonPlan, type LessonStudyState, type QuizQuestion, type TeachItem } from './lessonStudyPlanner'
+import { buildLessonPlan, type LessonStudyState, type MaynardRef, type QuizQuestion, type TeachItem } from './lessonStudyPlanner'
+import { AddToDeckButton } from './AddToDeckButton'
 
 interface AnswerRecord {
   itemId: string
@@ -578,6 +579,11 @@ function TeachCard({
       <div className="space-y-5 p-8">
         <div className="text-center">
           <div className={`${isVocab ? 'text-5xl' : 'text-3xl'} font-bold text-gray-900`} lang="ja">{item.title}</div>
+          {isVocab && (
+            <div className="mt-3 flex justify-center">
+              <AddToDeckButton front={item.title} back={item.body} />
+            </div>
+          )}
         </div>
 
         <div className="rounded-lg border border-indigo-100 bg-indigo-50 p-4 text-sm text-indigo-950">
@@ -631,6 +637,9 @@ function TeachCard({
                   <div>
                     <div className="text-xs font-bold uppercase tracking-wider text-indigo-700">Maynard Available</div>
                     <div className="font-semibold text-indigo-950">{item.explanationPlan.maynardTitle}</div>
+                    {item.maynardRef && (
+                      <div className="mt-1 text-xs font-semibold text-indigo-800">{formatMaynardSource(item.maynardRef)}</div>
+                    )}
                   </div>
                   <button
                     type="button"
@@ -721,6 +730,13 @@ function TeachCard({
       </div>
     </div>
   )
+}
+
+function formatMaynardSource(ref: MaynardRef) {
+  if (ref.sourceKind === 'curated-support') return 'Curated bridge'
+  if (ref.pageStart && ref.pageEnd && ref.pageStart !== ref.pageEnd) return `Maynard pp. ${ref.pageStart}-${ref.pageEnd}`
+  if (ref.pageStart) return `Maynard p. ${ref.pageStart}`
+  return ref.sourceKind === 'direct' ? 'Maynard source reference' : 'Maynard support'
 }
 
 function ExplanationRow({ label, value, lang }: { label: string; value: string; lang?: string }) {

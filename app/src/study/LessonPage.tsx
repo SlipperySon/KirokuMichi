@@ -22,6 +22,7 @@ import { SRSService } from '../srs/srsService'
 import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import type { ReviewCard } from './types'
+import { AddToDeckButton } from './AddToDeckButton'
 
 interface LessonPageState {
   lesson: LessonStructure | null
@@ -316,13 +317,13 @@ export function LessonPage() {
       {/* Content */}
       <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 sm:py-8">
         {state.intent && (
-          <div className="mb-8 rounded-lg bg-white p-4 shadow sm:p-6">
+          <div className="mb-8 rounded-lg border border-gray-200 bg-white p-4 shadow sm:p-6">
             <div className="mb-4 flex flex-wrap items-start justify-between gap-3">
               <div>
-                <p className="text-sm font-semibold text-indigo-600">Lesson intent</p>
+                <p className="text-sm font-bold text-indigo-700">Lesson intent</p>
                 <h2 className="mt-1 text-xl font-bold text-gray-900">{state.intent.objective}</h2>
               </div>
-              <span className="rounded-full bg-slate-100 px-3 py-1 text-xs font-semibold text-slate-700">
+              <span className="rounded-full border border-slate-200 bg-slate-100 px-3 py-1 text-xs font-bold text-slate-800">
                 {state.intent.pageRange}
               </span>
             </div>
@@ -333,23 +334,23 @@ export function LessonPage() {
               <IntentBlock title="Target vocab" body={state.intent.targetVocab.join('、') || 'No vocab assigned yet'} />
             </div>
             <div className="mt-4 grid gap-3 md:grid-cols-2">
-              <div className="rounded-lg border border-indigo-100 bg-indigo-50 p-3 text-sm text-indigo-950">
+              <div className="rounded-lg border border-indigo-200 bg-indigo-50 p-3 text-sm text-indigo-950">
                 <div className="font-semibold">Maynard coverage</div>
                 <div className="mt-1">{state.intent.maynardMatchCount}/{state.grammar?.length ?? 0} grammar points have Maynard deep explanations.</div>
               </div>
-              <div className="rounded-lg border border-emerald-100 bg-emerald-50 p-3 text-sm text-emerald-950">
+              <div className="rounded-lg border border-emerald-200 bg-emerald-50 p-3 text-sm text-emerald-950">
                 <div className="font-semibold">Matching scenarios</div>
                 <div className="mt-1">{state.intent.matchingScenarios.length} scenario links for output practice.</div>
               </div>
             </div>
             {state.intent.matchingScenarios.length > 0 && (
               <div className="mt-4 rounded-lg border border-gray-200 bg-gray-50 p-3">
-                <div className="text-xs font-semibold uppercase tracking-wide text-gray-500">Matching scenarios</div>
+                <div className="text-xs font-bold uppercase tracking-wide text-gray-600">Matching scenarios</div>
                 <div className="mt-2 grid gap-2 md:grid-cols-2">
                   {state.intent.matchingScenarios.map(scenario => (
-                  <div key={scenario.id} className="rounded bg-white p-2 text-sm">
+                  <div key={scenario.id} className="rounded border border-gray-200 bg-white p-2 text-sm">
                       <div className="font-semibold text-gray-900">{scenario.title}</div>
-                      <div className="text-xs text-gray-500">{scenario.source} {scenario.page > 0 ? `p. ${scenario.page}` : ''}</div>
+                      <div className="text-xs font-medium text-gray-600">{scenario.source} {scenario.page > 0 ? `p. ${scenario.page}` : ''}</div>
                       <div className="mt-1 text-gray-600">{scenario.canDo}</div>
                     </div>
                   ))}
@@ -431,6 +432,9 @@ export function LessonPage() {
                   <div className="text-sm text-gray-600">{item.english}</div>
                   <div className="mt-1 text-[11px] font-medium text-blue-800">
                     {item.source.replace(/_/g, ' ')} {item.page > 0 ? `p. ${item.page}` : 'foundation'}
+                  </div>
+                  <div className="mt-2">
+                    <AddToDeckButton front={item.surface} back={item.english} />
                   </div>
                 </div>
               ))}
@@ -526,7 +530,7 @@ export function LessonPage() {
 function IntentBlock({ title, body }: { title: string; body: string }) {
   return (
     <div className="rounded-lg border border-gray-200 bg-gray-50 p-3">
-      <div className="text-xs font-semibold uppercase tracking-wide text-gray-500">{title}</div>
+      <div className="text-xs font-bold uppercase tracking-wide text-gray-600">{title}</div>
       <div className="mt-1 text-sm leading-relaxed text-gray-900">{body}</div>
     </div>
   )
