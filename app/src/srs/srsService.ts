@@ -617,6 +617,45 @@ export class SRSService {
     return previews
   }
 
+  /**
+   * Create a brand-new user-authored flashcard with a card_state entry.
+   * Returns the new card id.
+   */
+  async createUserCard(
+    userId: number,
+    fields: {
+      front: string
+      back: string
+      reading?: string | null
+      deckId?: number | null
+      audioUrl?: string | null
+    }
+  ): Promise<number> {
+    await this.storage.execute(
+      `INSERT INTO cards (type, front, back, reading, deck_id, audio_url, source)
+       VALUES ('vocabulary', ?, ?, ?, ?, ?, 'user')`,
+      [
+        fields.front,
+        fields.back,
+        fields.reading ?? null,
+        fields.deckId ?? null,
+        fields.audioUrl ?? null,
+      ]
+    )
+    const rows = await this.storage.query<{ id: number }>(
+      `SELECT id FROM cards ORDER BY id DESC LIMIT 1`,
+      []
+    )
+    const cardId = rows[0].id
+    await this.storage.execute(
+      `INSERT INTO card_states
+         (card_id, user_id, state, due, stability, difficulty, retrievability, reps, lapses, leech_count, is_leech)
+       VALUES (?, ?, 'new', datetime('now'), 0, 0, 0, 0, 0, 0, 0)`,
+      [cardId, userId]
+    )
+    return cardId
+  }
+
   async createCardFromCorrection(
     userId: number,
     front: string,
