@@ -34,6 +34,7 @@ const StudyStats = lazy(() => import('./study/StudyStats').then(module => ({ def
 const CardBrowser = lazy(() => import('./study/CardBrowser').then(module => ({ default: module.CardBrowser })))
 const CardCreate = lazy(() => import('./study/CardCreate').then(module => ({ default: module.CardCreate })))
 const TemplateEditor = lazy(() => import('./study/TemplateEditor').then(module => ({ default: module.TemplateEditor })))
+const LearningPath = lazy(() => import('./study/LearningPath').then(module => ({ default: module.LearningPath })))
 
 function App() {
   useTheme() // Initialize theme on mount
@@ -124,6 +125,7 @@ function App() {
               <Route path="/study/browser" element={<CardBrowser />} />
               <Route path="/study/create" element={<CardCreate />} />
               <Route path="/study/templates" element={<TemplateEditor />} />
+              <Route path="/study/path" element={<LearningPath />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>

@@ -38,6 +38,19 @@ interface DailyStats {
   todayReviewed: number
 }
 
+export interface LearningPathWeek {
+  week: number
+  focus: string
+  dailyGoal: number
+  activities: string[]
+  milestone: string
+}
+
+export interface LearningPath {
+  weeks: LearningPathWeek[]
+  generatedAt: string // ISO date
+}
+
 interface AppState {
   settings: Settings
   onboardingComplete: boolean
@@ -52,6 +65,8 @@ interface AppState {
    * immediately on cold start; refreshed values overwrite quickly.
    */
   dailyStats: DailyStats
+  /** Cached AI-generated learning path */
+  learningPath: LearningPath | null
   updateSettings: (patch: Partial<Settings>) => void
   setOnboardingComplete: (v: boolean) => void
   setSessionToken: (token: string) => void
@@ -60,6 +75,7 @@ interface AppState {
   setCurrentLesson: (lessonId: string | null) => void
   setDailyStats: (stats: DailyStats) => void
   setActiveDeckId: (id: number | null) => void
+  setLearningPath: (path: LearningPath | null) => void
 }
 
 export const useAppStore = create<AppState>()(
@@ -70,6 +86,7 @@ export const useAppStore = create<AppState>()(
       currentLesson: null,
       activeDeckId: null,
       dailyStats: { currentStreak: 0, longestStreak: 0, todayReviewed: 0 },
+      learningPath: null,
       settings: {
         aiProvider: null,
         apiKey: null,
@@ -111,6 +128,7 @@ export const useAppStore = create<AppState>()(
       setCurrentLesson: (lessonId) => set({ currentLesson: lessonId }),
       setDailyStats: (stats) => set({ dailyStats: stats }),
       setActiveDeckId: (id) => set({ activeDeckId: id }),
+      setLearningPath: (path) => set({ learningPath: path }),
     }),
     { name: 'kiroku-michi-app' }
   )
