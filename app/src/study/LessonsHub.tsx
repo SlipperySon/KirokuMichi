@@ -11,6 +11,7 @@ import { useAppStore } from '../store'
 import { CEFR_BASE_TEXTBOOK, TEXTBOOK_LESSON_COUNTS, type CEFRLevel } from '../content/cefrMapping'
 import { Navigation } from '../components/Navigation'
 import { EmptyState } from '../components/EmptyState'
+import { TextbookProgress } from './TextbookProgress'
 
 // Display names for each base textbook (kept in sync with cefrMapping.ts)
 const TEXTBOOK_DISPLAY_NAMES: Record<string, string> = {
@@ -170,6 +171,12 @@ export function LessonsHub({ embedded = false }: LessonsHubProps) {
               </button>
             )}
           </div>
+        </div>
+
+        {/* Textbook Progress Section */}
+        <div className="mb-8">
+          <h2 className="text-lg font-semibold text-slate-800 mb-3">Textbook Progress</h2>
+          <TextbookProgress />
         </div>
 
         {/* CEFR Level Grid */}
