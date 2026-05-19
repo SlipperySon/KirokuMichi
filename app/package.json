@@ -11,7 +11,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "qa:routes": "playwright test",
-    "verify": "npm run lint && npx tsc -b --pretty false && npm run test && npm run qa:routes && npm run build && npm run textbook:learner:quality && npm run textbook:maynard:quality && npm run textbook:assets:manifest",
+    "verify": "npm run lint && npx tsc -b --pretty false && npm run test && npm run qa:routes && npm run build && npm run textbook:learner:quality && npm run textbook:maynard:direct-refs && npm run textbook:maynard:quality && npm run content:import:smoke && npm run textbook:assets:manifest",
     "test:ui": "vitest --ui",
     "test:watch": "vitest",
     "ocr:build": "swiftc -framework AppKit -framework PDFKit -framework Vision tools/ocr/pdf-vision-ocr.swift -o tools/ocr/pdf-vision-ocr",
@@ -33,9 +33,12 @@
     "textbook:reviewed:validate": "tsx tools/textbook-pack/validate-reviewed-pack.ts",
     "textbook:vocab:quality": "tsx tools/textbook-pack/repair-genki-vocab-quality.ts",
     "textbook:learner:quality": "tsx tools/textbook-pack/audit-learner-content-quality.ts",
+    "textbook:maynard:direct-refs": "tsx tools/textbook-pack/build-maynard-direct-refs.ts",
     "textbook:maynard:quality": "tsx tools/textbook-pack/audit-maynard-coverage.ts",
+    "content:import:smoke": "tsx tools/content-import-smoke.ts",
     "textbook:assets:manifest": "tsx tools/textbook-pack/build-textbook-asset-manifest.ts",
-    "generate": "tsx tools/generate/pipeline.ts"
+    "generate": "tsx tools/generate/pipeline.ts",
+    "packs:build": "tsx tools/build-encrypted-packs.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.27.0",
