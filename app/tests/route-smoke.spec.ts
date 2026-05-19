@@ -5,7 +5,7 @@ import { expect, test } from '@playwright/test'
 const SCREENSHOT_DIR = path.resolve('tools/qa/out/route-screenshots')
 
 const ROUTES = [
-  { path: '/study', expectText: 'Today' },
+  { path: '/study', expectText: 'Review Cards' },
   { path: '/learn', expectText: 'Study by Lesson' },
   { path: '/learn/lessons', expectText: 'Study by Lesson' },
   { path: '/learn/lessons/a1/1', expectText: 'Start Lesson' },

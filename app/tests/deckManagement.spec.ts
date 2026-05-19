@@ -61,8 +61,10 @@ test.describe('Deck Management (/study)', () => {
     await page.goto('/study')
     await expect(page.locator('body')).not.toContainText('Loading…', { timeout: 8_000 })
 
-    // The nav should have a "Create" link
-    const createLink = page.locator('nav a[href="/study/create"]')
-    await expect(createLink).toBeVisible()
+    // Nav uses a hamburger menu — open it first, then check for the Create Card link
+    const menuBtn = page.locator('button[aria-label="Open menu"]')
+    await menuBtn.click()
+    const createLink = page.locator('a[href="/study/create"]')
+    await expect(createLink).toBeVisible({ timeout: 3_000 })
   })
 })

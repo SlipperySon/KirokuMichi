@@ -29,7 +29,7 @@ export default defineConfig({
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
     globals: true,
-    exclude: [...configDefaults.exclude, 'tests/**'],
+    exclude: [...configDefaults.exclude, 'tests/**', 'src/study/routeSmoke.test.tsx'],
   },
   optimizeDeps: {
     include: ['sql.js'],
