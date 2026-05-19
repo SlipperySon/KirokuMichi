@@ -3,9 +3,8 @@ import { expect, test } from '@playwright/test'
 /**
  * Scenario Chat E2E tests.
  *
- * The full AI-dependent flow (sending a message and getting a response) requires
- * a live AI provider. Those tests are marked `.skip` to keep CI green.
- * The structural tests (page loads, scenario list, chat panel opens) always run.
+ * These keep CI deterministic by testing the live-chat shell without sending a
+ * message to an external AI provider.
  */
 
 test.describe('ScenarioMode (/scenarios)', () => {
@@ -29,28 +28,19 @@ test.describe('ScenarioMode (/scenarios)', () => {
     ).toBeTruthy()
   })
 
-  test.skip('can open a scenario and start chat (requires AI)', async ({ page }) => {
+  test('can open a scenario and start the live chat shell', async ({ page }) => {
     await page.goto('/scenarios')
     await expect(page.locator('body')).not.toContainText('Loading…', { timeout: 10_000 })
 
-    // Click the first available scenario card
-    const scenarioCard = page.locator('[data-testid="scenario-card"], .scenario-card, button').first()
-    await scenarioCard.click()
+    await page.getByTestId('scenario-card').first().click()
 
-    // Look for "Practice Live" button
-    const practiceButton = page.locator('button:has-text("Practice"), button:has-text("Live"), button:has-text("Start")')
-    await expect(practiceButton.first()).toBeVisible({ timeout: 5_000 })
-    await practiceButton.first().click()
+    const practiceButton = page.getByRole('button', { name: 'Practice Live' })
+    await expect(practiceButton).toBeVisible({ timeout: 5_000 })
+    await practiceButton.click()
 
-    // Chat input should appear
-    const chatInput = page.locator('input[type="text"], textarea').filter({ hasText: '' })
-    await expect(chatInput.first()).toBeVisible({ timeout: 8_000 })
-
-    // Type a message
-    await chatInput.first().fill('こんにちは')
-    await chatInput.first().press('Enter')
-
-    // Wait for AI response (up to 15s)
-    await expect(page.locator('body')).toContainText('こんにちは', { timeout: 15_000 })
+    const chatInput = page.getByTestId('scenario-chat-input')
+    await expect(chatInput).toBeVisible({ timeout: 8_000 })
+    await chatInput.fill('こんにちは')
+    await expect(chatInput).toHaveValue('こんにちは')
   })
 })

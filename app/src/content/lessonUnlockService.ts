@@ -7,6 +7,7 @@ import type { StorageProvider } from '../core/providers'
 import { curriculumService } from './curriculumService'
 import { lessonStructureService } from './lessonNormalization'
 import { findBestMatch, extractLessonTerms } from './cardMatcher'
+import { coreLessonIdFromSource, createLessonMatcher } from './lessonContentUtils'
 
 export interface UnlockMatch {
   cardId: number
@@ -74,21 +75,12 @@ export async function unlockCardsForLesson(
       }
     }
 
-    // Step 3: Extract lesson terms from curriculum
-    // The curriculum uses various lesson ID formats (genki_1_1, 1_textbook_genki_1_1, etc.)
-    // So we filter by normalized_id and also try the raw lesson numbers
-    const lessonPrefixes = [
-      lessonId,  // e.g., "genki_1_1"
-      `1_textbook_${lessonId}`,  // e.g., "1_textbook_genki_1_1"
-      `${lesson.lesson_number.toString()}`,  // e.g., "1" (just number)
-    ]
-
-    const vocabForLesson = curriculum.vocabulary.filter(v =>
-      lessonPrefixes.some(prefix => v.lesson === prefix || v.lesson.includes(lessonId))
-    )
-    const grammarForLesson = curriculum.grammar.filter(g =>
-      lessonPrefixes.some(prefix => g.lesson === prefix || g.lesson.includes(lessonId))
-    )
+    // Step 3: Extract lesson terms from curriculum. Use the same source/core
+    // aliasing as LessonPage, so learner-facing routes such as genki_2_1
+    // can match textbook source IDs such as genki_2_13.
+    const matchesLesson = createLessonMatcher(lessonId, lesson.lesson_number)
+    const vocabForLesson = curriculum.vocabulary.filter(v => matchesLesson(v.lesson))
+    const grammarForLesson = curriculum.grammar.filter(g => matchesLesson(g.lesson))
     const lessonTerms = extractLessonTerms(vocabForLesson, grammarForLesson)
 
     if (lessonTerms.length === 0) {
@@ -188,7 +180,7 @@ export async function unlockCardsForTextbook(
     )
 
     for (const lesson of lessons) {
-      const result = await unlockCardsForLesson(lesson.normalized_id, userId, storage)
+      const result = await unlockCardsForLesson(coreLessonIdFromSource(lesson.normalized_id), userId, storage)
       results.push(result)
       totalUnlocked += result.unlockedCount
     }

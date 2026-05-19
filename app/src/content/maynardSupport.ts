@@ -1,4 +1,5 @@
 import type { GrammarItem } from './curriculumService'
+import { findMaynardDirectRef } from './maynardDirectRefs.generated'
 
 type MaynardRef = NonNullable<GrammarItem['maynardRef']>
 
@@ -1323,7 +1324,14 @@ const FALLBACKS: Array<{
 ]
 
 export function getMaynardSupport(grammar: GrammarItem): MaynardRef | undefined {
-  if (grammar.maynardRef) return grammar.maynardRef
+  if (grammar.maynardRef) {
+    return {
+      sourceKind: 'attached',
+      ...grammar.maynardRef,
+    }
+  }
+  const direct = findMaynardDirectRef(grammar.pattern)
+  if (direct) return direct
   const fallback = FALLBACKS.find(entry => entry.match.test(grammar.pattern))
   if (!fallback) return undefined
   return {
@@ -1331,6 +1339,8 @@ export function getMaynardSupport(grammar: GrammarItem): MaynardRef | undefined 
     title: fallback.title,
     excerpt: fallback.excerpt,
     examples: fallback.examples,
+    sourceKind: 'curated-support',
+    confidence: 'curated',
   }
 }
 

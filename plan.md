@@ -1,10 +1,31 @@
 # KirokuMichi — Current State & Active Roadmap
 
-Last updated: 2026-05-18 23:38 AEST
+Last updated: 2026-05-19 16:18 AEST
 
 ---
 
 ## What Is Built (Complete)
+
+### Current Buildable Roadmap Closeout
+- Shared textbook detection now lives in `textbookDetection.ts`, returns textbook key, label, confidence, and reason, and is covered by Vitest.
+- Content upload can persist per-file routing overrides, including known textbook matches and `custom / not mapped`, so filename auto-detection is confirmable instead of a hard requirement.
+- Anki import can receive textbook key/deck routing, records import provenance, and routes imported cards into linked decks when available.
+- Locked textbook packs have a local AES-GCM/PBKDF2 helper (`textbookPackUnlock.ts`) and an upload/unlock UI path for structured pack JSON payloads.
+- Lesson vocab additions now persist source lesson/card metadata through `lesson_vocabulary`, `origin_type`, and `origin_ref`.
+- User-created/imported/lesson-added cards can store tags, personal notes, and provenance; Card Browser surfaces and edits the user-facing parts.
+- Textbook Progress cards now show linked deck stats plus lesson completion progress from `lessonsCompleted`.
+- Study Stats has a 7 days / 30 days / all time review chart toggle.
+- AI Learning Path has a visible CEFR stage gate and includes stage-gate constraints in generated plan prompts.
+- ScenarioMode now has a deterministic E2E shell test for opening live chat and typing without depending on an external AI provider.
+- `npm run content:import:smoke` reports real-PDF fixture readiness and is included in `npm run verify`.
+- `npm run textbook:maynard:quality` now emits `commonCuratedBridges`, making remaining Maynard cleanup a concrete direct-alias target list rather than a vague extraction chore.
+
+### Direct Maynard Source References
+- `npm run textbook:maynard:direct-refs` builds a deterministic app-facing Maynard reference index from the local comprehensive Maynard extraction.
+- The generated module maps common grammar patterns and aliases to direct Maynard topics, excerpts, examples, page ranges, and source ids.
+- `getMaynardSupport()` now resolves in this order: pre-attached textbook ref, generated direct Maynard source ref, curated support bridge.
+- Lesson study deep-explanation cards show Maynard page references when a direct source ref is available.
+- The Maynard coverage audit and `/dev/textbook-qa` now distinguish direct refs from curated fallback bridges, so future cleanup can steadily reduce the curated count.
 
 ### Route QA + Screenshots
 - `npm run verify` is the canonical full health gate: lint, TypeScript, Vitest, Playwright route QA, build, learner-facing content audit, Maynard coverage audit, and textbook asset manifest generation.
@@ -87,11 +108,12 @@ Last updated: 2026-05-18 23:38 AEST
 - Maynard-matched grammar cards now surface a visible `Maynard Deep Dive` panel instead of hiding the reference in a collapsed disclosure.
 - Lesson teaching order is now page-aware: curated foundations come first, paginated textbook content follows source page order, and unpaged CEFR grammar is placed after paginated source material.
 - Lesson transition buttons now name the actual next action (`Next Item`, `Start Checkpoint`, `Start Mixed Review`, `Finish Lesson`) instead of always saying `Checkpoint`.
-- Current limitation: Maynard is still a mix of direct references plus curated support bridges, not yet a universal page-specific Maynard source of truth.
+- Current limitation: Maynard coverage is complete, but some support still comes from curated bridges or attached refs rather than direct page-specific Maynard aliases. Cleaner extraction/alias data should reduce the curated count over time.
 
 ### Lesson Intent + Maynard Explanation Engine
 - Lessons now build a structured intent plan instead of only assembling content buckets.
 - Each lesson can surface objective, prerequisite, source page range, target grammar, target vocab, output skill, matching scenarios, workbook practice tasks, and Maynard/support count.
+- A1, A2, B1, and B2 lessons now use lesson-specific authored objective wording so lesson intent reads like a course plan instead of a generic level description.
 - Grammar teaching cards now use a richer explanation plan:
   - basic explanation
   - Maynard deep explanation when matched
@@ -108,12 +130,12 @@ Last updated: 2026-05-18 23:38 AEST
 - The Maynard/support bridge now covers common Genki 2 patterns such as `やすい/にくい`, `ほしい`, giving/receiving actions, `そう`, `みたい`, comparison, `ようと思う`, `なら`, necessity, `し`, `かどうか`, `てある`, `ようにする`, `ても`, transitive/intransitive verbs, honorific/humble forms, negative degree, `もし`, `なおす`, and common-view/reporting patterns.
 - The Maynard/support bridge now also covers common Quartet-style B1/B2 discussion patterns such as advice strength, purpose/conditions, concession, topic/target marking, evaluated cause, partial denial, impression, contrast/trend, realization/evaluation, change/unresolved states, viewpoint/consequence, time-gap/possibility, deserved reputation, responsibility/no-choice logic, compulsion, limits/qualification, medium/scope, and prohibition.
 - The latest pass added broader support for te-form linking, verb-form systems, core particles/endings, preference/desire, permission/prohibition, time sequence, clause relation, framing/quoting, resemblance, quantity, feasibility, viewpoint, and intermediate relation patterns.
-- `npm run textbook:maynard:quality` writes a coverage report and currently shows 637 A1-B2 grammar points, 535 supported, 84% support coverage, and 0 low-coverage lessons.
-- Current limitation: cleaned direct Maynard extraction should later replace broad curated bridges where reliable page/topic references are available.
+- `npm run textbook:maynard:quality` writes a coverage report and currently shows 637 A1-B2 grammar points, 637 supported, 100% support coverage, 353 direct refs, 73 curated bridges, 211 attached refs, and 0 low-coverage lessons.
+- Current limitation: cleaner direct Maynard extraction should later replace remaining broad curated bridges where reliable page/topic references are available. The current audit report now lists those bridge targets under `commonCuratedBridges`.
 
 ### Textbook Coverage QA (`/dev/textbook-qa`)
 - Added a developer QA dashboard for lesson-pack coverage.
-- The dashboard reports per lesson: vocab count, grammar count, scenario count, Maynard/support count, suspicious vocab count, page range, and warnings.
+- The dashboard reports per lesson: vocab count, grammar count, scenario count, Maynard/support count with direct-vs-curated split, suspicious vocab count, page range, and warnings.
 - This is intended to make future textbook cleanup less vibes-based and to quickly spot missing pages, weird OCR, or underfilled lessons.
 - Workbook practice filtering now rejects front matter and OCR/admin text before tasks reach lesson pages.
 
@@ -175,6 +197,7 @@ Last updated: 2026-05-18 23:38 AEST
 
 ### Supplemental Scenarios (`/scenarios` + Conversation Partner)
 - Supplemental texts now feed a normalized, curated runtime scenario layer through `supplementalScenarioService.ts`.
+- Curated scenario display text is polished at runtime: classroom labels like trailing `Pair Work` are removed from titles, `Can ...` can-do statements become direct learner goals, and prompts/lines pass through the shared text cleaner.
 - The service loads generated textbook JSON, applies per-textbook page windows, rejects common OCR/front-matter/publishing noise, scores practice-like material, and emits clean `SupplementalScenario` records.
 - `/scenarios` now uses level-first tabs (`A1`, `A2`, `B1`, `B2`, etc.) with nested textbook/source tabs inside the selected level, so learners can browse by proficiency before choosing a source book.
 - Scenario source tabs are driven by an explicit catalog so the expected sources always appear even before a source has curated/generated scenarios: A1 = Genki 1 Textbook, Genki 1 Workbook, Marugoto A1; A2 = Genki 2 Textbook, Genki 2 Workbook, Marugoto A2; B1 = Quartet 1 Textbook, Quartet 1 Workbook, Marugoto B1; B2 = Quartet 2 Textbook, Quartet 2 Workbook, Tobira.
@@ -350,7 +373,7 @@ Last updated: 2026-05-18 23:38 AEST
   - Pair sources are present: Marugoto A1, Marugoto A2, Marugoto B1, and Tobira.
   - The Maynard/Yanard in-depth grammar source is present as `maynard_grammar_grammar_reference`; it is a reusable explanation preset layer, not a normal lesson sequence.
   - The only medium-confidence source is the known Genki II workbook file because its filename lacks an explicit workbook marker; prior outline/page checks classify it as Genki II workbook.
-- Future post-path expansion:
+- Blocked/external post-path expansion:
   - C1 bridge: Authentic Japanese / progressing from intermediate to advanced material.
   - Advanced nuance: Shin Kanzen Master N1.
   - Literacy: Kanji in Context for broader Joyo kanji mastery.
@@ -366,9 +389,9 @@ Last updated: 2026-05-18 23:38 AEST
 - Show explicit link status badges per upload: `Auto-linked`, `Needs confirmation`, `Unlinked`
 - Allow reversible linking after import (re-link deck, reassign textbook pair) without reuploading files
 
-#### Dictionary Linking Policy (current)
-- For now, provide **Jisho-only external lookup links** from vocab/lesson/card actions
-- Do not embed or scrape dictionary sites; open lookup externally and keep card creation/editing in-app
+#### Dictionary Linking Policy (deferred next)
+- Jisho lookup links are intentionally left out of the current closeout pass.
+- When resumed, keep it Jisho-only and external: do not embed or scrape dictionary sites; open lookup externally and keep card creation/editing in-app.
 
 ### Word Selection, Deck Import & Unlock Flows (LearningMode)
 - Users can **select/highlight words in lessons** and add them to any deck

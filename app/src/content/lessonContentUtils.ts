@@ -21,6 +21,21 @@ export function canonicalSourceLessonId(lessonId: string) {
   return lessonId
 }
 
+export function coreLessonIdFromSource(lessonId: string) {
+  const lessonNum = lessonNumberFromId(lessonId)
+  if (!lessonNum) return lessonId
+
+  if (lessonId.startsWith('genki_2_') && lessonNum >= 13 && lessonNum <= 23) {
+    return `genki_2_${lessonNum - 12}`
+  }
+
+  if (lessonId.startsWith('quartet_2_') && lessonNum >= 7 && lessonNum <= 12) {
+    return `quartet_2_${lessonNum - 6}`
+  }
+
+  return lessonId
+}
+
 function addLessonAlias(aliases: Set<string>, series: string, lessonNumber: number) {
   aliases.add(`${series}_${lessonNumber}`)
 }

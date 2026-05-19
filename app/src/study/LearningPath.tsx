@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useMemo, useState } from 'react'
 import { useAppStore, type LearningPath as LearningPathData, type LearningPathWeek } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
@@ -13,6 +13,23 @@ const WEEK_COLORS = [
   { bg: 'bg-violet-50', border: 'border-violet-200', badge: 'bg-violet-100 text-violet-700', milestone: 'text-violet-900' },
   { bg: 'bg-emerald-50', border: 'border-emerald-200', badge: 'bg-emerald-100 text-emerald-700', milestone: 'text-emerald-900' },
 ]
+
+const JLPT_TO_CEFR: Record<string, 'A1' | 'A2' | 'B1' | 'B2' | 'C1'> = {
+  N5: 'A1',
+  N4: 'A2',
+  N3: 'B1',
+  N2: 'B2',
+  N1: 'C1',
+}
+
+const STAGE_SEQUENCE = ['A1', 'A2', 'B1', 'B2'] as const
+
+interface CefrStageGate {
+  currentStage: 'A1' | 'A2' | 'B1' | 'B2'
+  targetStage: 'A1' | 'A2' | 'B1' | 'B2' | 'C1'
+  guidance: string
+  nextUnlock: string
+}
 
 function WeekCard({ week, index }: { week: LearningPathWeek; index: number }) {
   const colors = WEEK_COLORS[index % WEEK_COLORS.length]
@@ -43,6 +60,46 @@ function WeekCard({ week, index }: { week: LearningPathWeek; index: number }) {
   )
 }
 
+function inferCefrStageGate(
+  lessonsCompleted: string[],
+  jlptTarget: string,
+  totalCards: number,
+  matureCards: number,
+  averageRetention: number
+): CefrStageGate {
+  const completed = new Set(lessonsCompleted)
+  const completedA1 = lessonsCompleted.filter(id => id.startsWith('genki_1_') || id.startsWith('marugoto_a1_')).length
+  const completedA2 = lessonsCompleted.filter(id => id.startsWith('genki_2_') || id.startsWith('marugoto_a2_')).length
+  const completedB1 = lessonsCompleted.filter(id => id.startsWith('quartet_1_') || id.startsWith('marugoto_b1_')).length
+  const completedB2 = lessonsCompleted.filter(id => id.startsWith('quartet_2_') || id.startsWith('tobira_')).length
+
+  let currentStage: CefrStageGate['currentStage'] = 'A1'
+  if (completedB2 >= 2 || (matureCards >= 900 && averageRetention >= 80)) currentStage = 'B2'
+  else if (completedB1 >= 2 || (matureCards >= 550 && averageRetention >= 78)) currentStage = 'B1'
+  else if (completedA2 >= 2 || completed.has('genki_1_12') || (matureCards >= 250 && averageRetention >= 75)) currentStage = 'A2'
+  else if (completedA1 >= 2 || totalCards >= 80) currentStage = 'A1'
+
+  const targetStage = JLPT_TO_CEFR[jlptTarget] ?? 'A1'
+  const stageIndex = STAGE_SEQUENCE.indexOf(currentStage)
+  const nextStage = STAGE_SEQUENCE[Math.min(stageIndex + 1, STAGE_SEQUENCE.length - 1)]
+
+  const guidanceByStage: Record<CefrStageGate['currentStage'], string> = {
+    A1: 'Secure survival phrases, core particles, kana confidence, and simple sentence output before expanding volume.',
+    A2: 'Build everyday narration, comparisons, requests, giving/receiving, and controlled roleplay output.',
+    B1: 'Prioritise opinion structure, reasons, concessions, and paragraph-length answers with targeted review.',
+    B2: 'Focus on nuance, evidence-based explanation, formal register, and longer synthesis tasks.',
+  }
+
+  return {
+    currentStage,
+    targetStage,
+    guidance: guidanceByStage[currentStage],
+    nextUnlock: currentStage === 'B2'
+      ? 'Maintain B2 depth with Tobira/Quartet output tasks; post-B2 expansion is tracked externally.'
+      : `Unlock ${nextStage} once current lessons are stable and review retention stays above 75%.`,
+  }
+}
+
 export function LearningPath() {
   const settings = useAppStore(s => s.settings)
   const activeUserId = useAppStore(s => s.activeUserId)
@@ -56,6 +113,10 @@ export function LearningPath() {
 
   const userId = activeUserId ?? 1
   const [isGenerating, setIsGenerating] = useState(false)
+  const stageGate = useMemo(
+    () => inferCefrStageGate(lessonsCompleted, settings.jlptTarget, 0, 0, 0),
+    [lessonsCompleted, settings.jlptTarget]
+  )
 
   async function generatePath() {
     if (!settings.aiProvider) {
@@ -67,13 +128,21 @@ export function LearningPath() {
     try {
       const snapshot = await service.getLearningSnapshot(userId)
       snapshot.lessonsCompleted = lessonsCompleted
+      const generatedStageGate = inferCefrStageGate(
+        lessonsCompleted,
+        settings.jlptTarget,
+        snapshot.totalCards,
+        snapshot.matureCards,
+        snapshot.averageRetention
+      )
 
       const ai = new ClientAIProvider(settings.sessionToken)
       const response = await ai.completeWithMessages(
-        [{ role: 'user', content: JSON.stringify(snapshot, null, 2) }],
+        [{ role: 'user', content: JSON.stringify({ ...snapshot, cefrStageGate: generatedStageGate }, null, 2) }],
         `You are a Japanese learning advisor. Given the learner's stats, generate a personalised 4-week study plan with daily goals.
 Output ONLY valid JSON in this exact format (no markdown, no explanation):
 { "weeks": [{ "week": 1, "focus": "string", "dailyGoal": number, "activities": ["string", "string", "string"], "milestone": "string" }] }
+Respect the provided CEFR stage gate: do not jump beyond the current stage unless the plan explicitly earns that unlock through review stability and output practice.
 Ensure activities array has 3-4 items per week. Make the plan realistic and progressive.`,
         'reasoning'
       )
@@ -147,6 +216,20 @@ Ensure activities array has 3-4 items per week. Make the plan realistic and prog
             Configure an AI provider in Settings to generate a personalised learning path.
           </div>
         )}
+
+        <div className="bg-white border border-gray-200 rounded-2xl p-5 shadow-sm mb-6">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <h2 className="text-sm font-bold text-gray-900">CEFR Stage Gate</h2>
+              <p className="text-sm text-gray-600 mt-1">{stageGate.guidance}</p>
+            </div>
+            <div className="flex items-center gap-2 text-xs font-bold">
+              <span className="rounded-full bg-indigo-100 px-3 py-1 text-indigo-800">Current {stageGate.currentStage}</span>
+              <span className="rounded-full bg-emerald-100 px-3 py-1 text-emerald-800">Target {stageGate.targetStage}</span>
+            </div>
+          </div>
+          <p className="mt-3 text-xs text-gray-500">{stageGate.nextUnlock}</p>
+        </div>
 
         {!learningPath && !isGenerating && (
           <div className="bg-white border border-gray-200 rounded-2xl p-12 text-center shadow-sm">

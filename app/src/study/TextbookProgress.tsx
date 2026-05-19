@@ -15,6 +15,22 @@ const TEXTBOOK_DISPLAY: Record<string, string> = {
   genki_2: 'Genki II',
   quartet_1: 'Quartet 1',
   quartet_2: 'Quartet 2',
+  tobira: 'Tobira',
+  marugoto_a1: 'Marugoto A1',
+  marugoto_a2: 'Marugoto A2',
+  marugoto_b1: 'Marugoto B1',
+  marugoto: 'Marugoto',
+}
+
+const TEXTBOOK_LESSON_TOTALS: Record<string, number> = {
+  genki_1: 12,
+  genki_2: 12,
+  quartet_1: 6,
+  quartet_2: 6,
+  tobira: 8,
+  marugoto_a1: 7,
+  marugoto_a2: 6,
+  marugoto_b1: 7,
 }
 
 interface DeckStats {
@@ -28,6 +44,8 @@ interface TextbookCard {
   textbookName: string
   deckId: number
   deckName: string
+  completedLessons: number
+  lessonTotal: number | null
   stats: DeckStats | null
 }
 
@@ -36,6 +54,7 @@ export function TextbookProgress() {
   const settings = useAppStore(s => s.settings)
   const activeUserId = useAppStore(s => s.activeUserId)
   const setActiveDeckId = useAppStore(s => s.setActiveDeckId)
+  const lessonsCompleted = useAppStore(s => s.lessonsCompleted)
 
   const [storage] = useState(() => new SQLiteStorage())
   const scheduler = settings.schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
@@ -104,7 +123,10 @@ export function TextbookProgress() {
               // stats unavailable
             }
 
-            return { textbookKey, textbookName, deckId, deckName, stats }
+            const lessonTotal = TEXTBOOK_LESSON_TOTALS[textbookKey] ?? null
+            const completedLessons = countCompletedLessons(textbookKey, lessonsCompleted)
+
+            return { textbookKey, textbookName, deckId, deckName, completedLessons, lessonTotal, stats }
           })
         )
 
@@ -113,8 +135,7 @@ export function TextbookProgress() {
         setIsLoading(false)
       }
     })()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [userId])
+  }, [userId, lessonsCompleted, service])
 
   if (isLoading) {
     return (
@@ -154,6 +175,21 @@ export function TextbookProgress() {
             <p className="text-xs text-indigo-600 font-semibold uppercase tracking-wide">{card.textbookName}</p>
             <p className="text-sm font-bold text-gray-900 mt-0.5 truncate">{card.deckName}</p>
           </div>
+
+          {card.lessonTotal && (
+            <div>
+              <div className="flex items-center justify-between text-xs font-medium text-gray-600">
+                <span>Lessons</span>
+                <span>{card.completedLessons}/{card.lessonTotal}</span>
+              </div>
+              <div className="mt-1 h-2 rounded-full bg-gray-100 overflow-hidden">
+                <div
+                  className="h-full rounded-full bg-indigo-500"
+                  style={{ width: `${Math.min(100, Math.round((card.completedLessons / card.lessonTotal) * 100))}%` }}
+                />
+              </div>
+            </div>
+          )}
 
           {card.stats ? (
             <div className="grid grid-cols-3 gap-2 text-center">
@@ -202,4 +238,15 @@ export function TextbookProgress() {
       ))}
     </div>
   )
+}
+
+function countCompletedLessons(textbookKey: string, lessonsCompleted: string[]): number {
+  const prefixes = lessonPrefixesForTextbook(textbookKey)
+  if (prefixes.length === 0) return 0
+  return lessonsCompleted.filter(lessonId => prefixes.some(prefix => lessonId.startsWith(prefix))).length
+}
+
+function lessonPrefixesForTextbook(textbookKey: string): string[] {
+  if (textbookKey === 'marugoto') return ['marugoto_a1_', 'marugoto_a2_', 'marugoto_b1_']
+  return [`${textbookKey}_`]
 }

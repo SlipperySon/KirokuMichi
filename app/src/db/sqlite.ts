@@ -205,6 +205,12 @@ function initializeSchema() {
   }
 
   try {
+    dbInstance.run(`ALTER TABLE cards ADD COLUMN created_at DATETIME DEFAULT (datetime('now'))`)
+  } catch {
+    // Column already exists
+  }
+
+  try {
     dbInstance.run(`ALTER TABLE grammar_points ADD COLUMN source TEXT DEFAULT 'base'`)
   } catch {
     // Column already exists
@@ -298,6 +304,51 @@ function initializeSchema() {
     dbInstance.run(`ALTER TABLE cards ADD COLUMN template_id INTEGER REFERENCES card_templates(id)`)
   } catch {
     // Column already exists
+  }
+
+  try {
+    dbInstance.run(`ALTER TABLE cards ADD COLUMN tags TEXT`)
+  } catch {
+    // Column already exists
+  }
+
+  try {
+    dbInstance.run(`ALTER TABLE cards ADD COLUMN user_note TEXT`)
+  } catch {
+    // Column already exists
+  }
+
+  try {
+    dbInstance.run(`ALTER TABLE cards ADD COLUMN origin_type TEXT`)
+  } catch {
+    // Column already exists
+  }
+
+  try {
+    dbInstance.run(`ALTER TABLE cards ADD COLUMN origin_ref TEXT`)
+  } catch {
+    // Column already exists
+  }
+
+  dbInstance.run(`
+    CREATE TABLE IF NOT EXISTS lesson_vocabulary (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id INTEGER NOT NULL,
+      lesson_id TEXT NOT NULL,
+      card_id INTEGER NOT NULL,
+      term TEXT NOT NULL,
+      created_at DATETIME DEFAULT (datetime('now')),
+      UNIQUE(user_id, lesson_id, card_id)
+    )
+  `)
+
+  try {
+    dbInstance.run(`
+      CREATE INDEX IF NOT EXISTS lesson_vocabulary_lesson_idx
+      ON lesson_vocabulary(user_id, lesson_id)
+    `)
+  } catch {
+    // Index already exists
   }
 
   persist()

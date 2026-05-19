@@ -1,7 +1,7 @@
 import { CEFR_BASE_TEXTBOOK, TEXTBOOK_LESSON_COUNTS, type CEFRLevel } from './cefrMapping'
 import { curriculumService } from './curriculumService'
 import { createLessonMatcher } from './lessonContentUtils'
-import { hasMaynardSupport } from './maynardSupport'
+import { getMaynardSupport, hasMaynardSupport } from './maynardSupport'
 import { getSupplementalScenarios } from './supplementalScenarioService'
 import { textbookAssetService } from './textbookAssetService'
 import { getWorkbookPracticeTasks } from './workbookPracticeService'
@@ -16,6 +16,8 @@ export interface TextbookQARow {
   scenarioCount: number
   workbookTaskCount: number
   maynardMatchCount: number
+  maynardDirectCount: number
+  maynardCuratedCount: number
   maynardCoveragePct: number
   suspiciousVocabCount: number
   assetCount: number
@@ -76,6 +78,9 @@ export async function getTextbookQARows(): Promise<TextbookQARow[]> {
         textbookAssetService.getAssetsForLesson(textbookKey, lessonId),
       ])
       const maynardMatchCount = grammar.filter(hasMaynardSupport).length
+      const maynardSupportKinds = grammar.map(item => getMaynardSupport(item)?.sourceKind).filter(Boolean)
+      const maynardDirectCount = maynardSupportKinds.filter(kind => kind === 'direct').length
+      const maynardCuratedCount = maynardSupportKinds.filter(kind => kind === 'curated-support').length
       const rowBase = {
         cefr,
         lessonId,
@@ -86,6 +91,8 @@ export async function getTextbookQARows(): Promise<TextbookQARow[]> {
         scenarioCount: scenarios.length,
         workbookTaskCount: workbookTasks.length,
         maynardMatchCount,
+        maynardDirectCount,
+        maynardCuratedCount,
         maynardCoveragePct: grammar.length > 0 ? Math.round((maynardMatchCount / grammar.length) * 100) : 0,
         suspiciousVocabCount: vocab.filter(item => suspiciousVocab(item.surface, item.english)).length,
         assetCount: assets.length,

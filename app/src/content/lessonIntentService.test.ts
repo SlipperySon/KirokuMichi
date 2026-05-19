@@ -30,7 +30,7 @@ describe('buildLessonIntent', () => {
       workbookPractice: [],
     })
 
-    expect(intent.objective).toContain('connected everyday explanation')
+    expect(intent.objective).toContain('prepared states')
     expect(intent.outputSkill).toContain('Report yes/no questions')
     expect(intent.outputSkill).not.toContain('This should not')
   })
@@ -63,7 +63,7 @@ describe('buildLessonIntent', () => {
       workbookPractice: [],
     })
 
-    expect(intent.objective).toContain('supported opinions')
+    expect(intent.objective).toContain('social topics')
     expect(intent.outputSkill).toContain('Discuss social topics')
     expect(intent.outputSkill).not.toContain('This should not')
   })
@@ -79,7 +79,23 @@ describe('buildLessonIntent', () => {
       workbookPractice: [],
     })
 
-    expect(intent.objective).toContain('nuanced discussion')
+    expect(intent.objective).toContain('high-pressure topics')
     expect(intent.outputSkill).toContain('strong emotional reactions')
+  })
+
+  it('uses lesson-specific authored objectives for beginner lessons', () => {
+    const intent = buildLessonIntent({
+      cefr: 'a1',
+      lessonNum: 6,
+      lessonId: 'genki_1_6',
+      vocab: [],
+      grammar: [],
+      scenarios: [],
+      workbookPractice: [],
+    })
+
+    expect(intent.objective).toContain('て-form')
+    expect(intent.objective).toContain('requests')
+    expect(intent.outputSkill).toContain('Ask for help')
   })
 })

@@ -20,6 +20,11 @@ export interface GrammarItem {
     title: string
     excerpt: string
     examples: Array<{ japanese: string; english?: string }>
+    sourceId?: string
+    sourceKind?: 'attached' | 'direct' | 'curated-support'
+    confidence?: 'direct' | 'keyword' | 'curated'
+    pageStart?: number
+    pageEnd?: number
   }
   lesson: string
   source: string

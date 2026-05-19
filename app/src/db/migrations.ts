@@ -22,6 +22,10 @@ const MIGRATIONS: string[] = [
     frequency_rank INTEGER,
     domain TEXT,
     audio_url TEXT,
+    tags TEXT,
+    user_note TEXT,
+    origin_type TEXT,
+    origin_ref TEXT,
     created_at TEXT NOT NULL DEFAULT (datetime('now'))
   )`,
   `CREATE INDEX IF NOT EXISTS cards_jlpt_idx ON cards(jlpt_level)`,
@@ -216,6 +220,16 @@ const MIGRATIONS: string[] = [
     card_limit INTEGER DEFAULT 50,
     created_at DATETIME DEFAULT (datetime('now'))
   )`,
+  `CREATE TABLE IF NOT EXISTS lesson_vocabulary (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL REFERENCES users(id),
+    lesson_id TEXT NOT NULL,
+    card_id INTEGER NOT NULL REFERENCES cards(id),
+    term TEXT NOT NULL,
+    created_at DATETIME DEFAULT (datetime('now')),
+    UNIQUE(user_id, lesson_id, card_id)
+  )`,
+  `CREATE INDEX IF NOT EXISTS lesson_vocabulary_lesson_idx ON lesson_vocabulary(user_id, lesson_id)`,
 ]
 
 export async function runMigrations(db: StorageProvider): Promise<void> {

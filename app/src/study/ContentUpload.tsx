@@ -6,6 +6,8 @@ import { SRSService } from '../srs/srsService'
 import { importFromAnki } from '../srs/ankiImport'
 import { ClientAIProvider } from '../ai/aiProvider'
 import { toast } from '../components/toastStore'
+import { CONFIRMABLE_TEXTBOOKS, detectTextbook, TEXTBOOK_LABELS, type TextbookKey } from '../content/textbookDetection'
+import { unlockTextbookPack, type LockedTextbookPack } from '../content/textbookPackUnlock'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -383,18 +385,8 @@ async function importExtracted(
 // Known textbook detection
 // ---------------------------------------------------------------------------
 
-type TextbookKey = 'genki_1' | 'genki_2' | 'quartet_1' | 'quartet_2' | 'tobira' | 'marugoto'
-
-const TEXTBOOK_LABELS: Record<TextbookKey, string> = {
-  genki_1: 'Genki I',
-  genki_2: 'Genki II',
-  quartet_1: 'Quartet 1',
-  quartet_2: 'Quartet 2',
-  tobira: 'Tobira',
-  marugoto: 'Marugoto',
-}
-
 const TEXTBOOK_LINKS_KEY = 'kiroku-textbook-links'
+const TEXTBOOK_FILE_ROUTING_KEY = 'kiroku-textbook-file-routing'
 
 function getTextbookLinks(): Record<string, number> {
   try {
@@ -410,25 +402,27 @@ function saveTextbookLink(key: TextbookKey, deckId: number) {
   localStorage.setItem(TEXTBOOK_LINKS_KEY, JSON.stringify(links))
 }
 
-function detectTextbook(filename: string): TextbookKey | null {
-  const name = filename.toLowerCase()
-  if (name.includes('genki')) {
-    if (name.includes('2') || name.includes('ii')) return 'genki_2'
-    if (name.includes('1') || name.includes('i')) return 'genki_1'
-    return 'genki_1' // default genki → volume 1
+function getFileRouting(): Record<string, TextbookKey | 'custom'> {
+  try {
+    const raw = localStorage.getItem(TEXTBOOK_FILE_ROUTING_KEY)
+    return raw ? JSON.parse(raw) as Record<string, TextbookKey | 'custom'> : {}
+  } catch {
+    return {}
   }
-  if (name.includes('quartet')) {
-    if (name.includes('2') || name.includes('ii')) return 'quartet_2'
-    return 'quartet_1'
-  }
-  if (name.includes('tobira')) return 'tobira'
-  if (name.includes('marugoto')) return 'marugoto'
-  return null
+}
+
+function saveFileRoute(filename: string, key: TextbookKey | 'custom') {
+  const routes = getFileRouting()
+  routes[filename] = key
+  localStorage.setItem(TEXTBOOK_FILE_ROUTING_KEY, JSON.stringify(routes))
 }
 
 interface TextbookDetectionResult {
   file: File
   textbookKey: TextbookKey | null
+  confidence: number
+  reason: string
+  confirmedKey: TextbookKey | 'custom'
 }
 
 interface KnownTextbooksPanelProps {
@@ -440,7 +434,17 @@ interface KnownTextbooksPanelProps {
 function KnownTextbooksPanel({ files, decks, onFilesChange }: KnownTextbooksPanelProps) {
   const detections: TextbookDetectionResult[] = files
     .filter(isPdfFile)
-    .map(file => ({ file, textbookKey: detectTextbook(file.name) }))
+    .map(file => {
+      const detection = detectTextbook(file.name)
+      const routed = getFileRouting()[file.name]
+      return {
+        file,
+        textbookKey: detection.textbookKey,
+        confidence: detection.confidence,
+        reason: detection.reason,
+        confirmedKey: routed ?? detection.textbookKey ?? 'custom',
+      }
+    })
 
   const [links, setLinks] = useState<Record<string, number>>(getTextbookLinks)
   const [autoUnlock, setAutoUnlock] = useState<Record<string, boolean>>({})
@@ -452,30 +456,50 @@ function KnownTextbooksPanel({ files, decks, onFilesChange }: KnownTextbooksPane
     setLinks(prev => ({ ...prev, [key]: deckId }))
   }
 
+  function handleRouteChange(filename: string, key: TextbookKey | 'custom') {
+    saveFileRoute(filename, key)
+    onFilesChange([...files])
+  }
+
   return (
     <div className="flex flex-col gap-3">
       <h3 className="text-sm font-semibold text-gray-700">Detected Textbooks</h3>
-      {detections.map(({ file, textbookKey }) => (
+      {detections.map(({ file, textbookKey, confidence, reason, confirmedKey }) => (
         <div key={file.name} className="bg-indigo-50 border border-indigo-200 rounded-xl px-4 py-3 flex flex-col gap-2">
           <div className="flex items-center gap-2">
             <span className="text-indigo-600 font-semibold text-sm">
-              {textbookKey ? `${TEXTBOOK_LABELS[textbookKey]} Textbook` : 'Unknown format'}
+              {confirmedKey !== 'custom' ? `${TEXTBOOK_LABELS[confirmedKey]} Textbook` : 'Custom / unmapped PDF'}
             </span>
             {textbookKey ? (
-              <span className="text-xs bg-green-100 text-green-700 px-2 py-0.5 rounded-full">Detected ✓</span>
+              <span className={`text-xs px-2 py-0.5 rounded-full ${confidence >= 0.8 ? 'bg-green-100 text-green-700' : 'bg-amber-100 text-amber-700'}`}>
+                {Math.round(confidence * 100)}% match
+              </span>
             ) : (
               <span className="text-xs bg-gray-100 text-gray-500 px-2 py-0.5 rounded-full">Unknown</span>
             )}
             <span className="text-xs text-gray-400 truncate ml-auto">{file.name}</span>
           </div>
+          <p className="text-xs text-indigo-700/80">{reason}</p>
 
-          {textbookKey && decks.length > 0 && (
+          <label className="flex items-center gap-2 text-xs text-gray-600">
+            Route as:
+            <select
+              value={confirmedKey}
+              onChange={e => handleRouteChange(file.name, e.target.value as TextbookKey | 'custom')}
+              className="flex-1 px-2 py-1 border border-indigo-200 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-indigo-400"
+            >
+              <option value="custom">Custom / not mapped</option>
+              {CONFIRMABLE_TEXTBOOKS.map(item => <option key={item.key} value={item.key}>{item.label}</option>)}
+            </select>
+          </label>
+
+          {confirmedKey !== 'custom' && decks.length > 0 && (
             <div className="flex flex-col gap-2">
               <label className="flex items-center gap-2 text-xs text-gray-600">
                 Link to Anki deck:
                 <select
-                  value={links[textbookKey] ?? ''}
-                  onChange={e => handleLinkChange(textbookKey, Number(e.target.value))}
+                  value={links[confirmedKey] ?? ''}
+                  onChange={e => handleLinkChange(confirmedKey, Number(e.target.value))}
                   className="flex-1 px-2 py-1 border border-gray-300 rounded-lg text-sm focus:outline-none focus:ring-1 focus:ring-indigo-400"
                 >
                   <option value="">— not linked —</option>
@@ -483,12 +507,12 @@ function KnownTextbooksPanel({ files, decks, onFilesChange }: KnownTextbooksPane
                 </select>
               </label>
 
-              {links[textbookKey] && (
+              {links[confirmedKey] && (
                 <label className="flex items-center gap-2 text-xs text-gray-600 cursor-pointer">
                   <input
                     type="checkbox"
-                    checked={autoUnlock[textbookKey] ?? false}
-                    onChange={e => setAutoUnlock(prev => ({ ...prev, [textbookKey]: e.target.checked }))}
+                    checked={autoUnlock[confirmedKey] ?? true}
+                    onChange={e => setAutoUnlock(prev => ({ ...prev, [confirmedKey]: e.target.checked }))}
                     className="accent-indigo-600"
                   />
                   Auto-unlock vocabulary when studying this textbook
@@ -497,7 +521,7 @@ function KnownTextbooksPanel({ files, decks, onFilesChange }: KnownTextbooksPane
             </div>
           )}
 
-          {textbookKey && decks.length === 0 && (
+          {confirmedKey !== 'custom' && decks.length === 0 && (
             <p className="text-xs text-gray-500">Import an Anki deck first to link it to this textbook.</p>
           )}
         </div>
@@ -552,6 +576,8 @@ export function ContentUpload() {
   const [devTestResult, setDevTestResult] = useState<DevPdfTestResult | null>(null)
   const [devOcrResult, setDevOcrResult] = useState<DevPdfOcrResult | null>(null)
   const [devTestError, setDevTestError] = useState<string | null>(null)
+  const [packPassphrase, setPackPassphrase] = useState('')
+  const [packStatus, setPackStatus] = useState<string | null>(null)
 
   // Per-category enable toggles in preview
   const [importVocab, setImportVocab] = useState(true)
@@ -603,7 +629,14 @@ export function ContentUpload() {
     setAnkiLoading(true)
     setAnkiStatus('Importing…')
     try {
-      const result = await importFromAnki(file, storage, userId)
+      const routing = getFileRouting()[file.name]
+      const textbookKey = routing && routing !== 'custom' ? routing : detectTextbook(file.name).textbookKey
+      const links = getTextbookLinks()
+      const result = await importFromAnki(file, storage, userId, {
+        textbookKey,
+        deckId: textbookKey ? links[textbookKey] : null,
+        autoUnlock: true,
+      })
       const audioNote = result.audioExtracted > 0 ? `, ${result.audioExtracted} audio files` : ''
       const summary = `Imported ${result.imported} cards, skipped ${result.skipped}${audioNote}`
       setAnkiStatus(summary)
@@ -621,6 +654,32 @@ export function ContentUpload() {
       toast.error(msg)
     } finally {
       setAnkiLoading(false)
+    }
+  }
+
+  async function handleLockedPack(file: File) {
+    if (!packPassphrase.trim()) {
+      toast.error('Enter the pack passphrase first')
+      return
+    }
+    setPackStatus('Unlocking pack…')
+    try {
+      const pack = JSON.parse(await file.text()) as LockedTextbookPack
+      const unlocked = await unlockTextbookPack<ExtractionResult>(pack, packPassphrase)
+      const payload = {
+        source_title: unlocked.title,
+        vocab: unlocked.payload.vocab ?? [],
+        grammar: unlocked.payload.grammar ?? [],
+        lessons: unlocked.payload.lessons ?? [],
+      }
+      setPreview(payload)
+      setStep('preview')
+      setPackStatus(`Unlocked ${unlocked.title}`)
+      toast.success('Textbook pack unlocked')
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Could not unlock pack'
+      setPackStatus(message)
+      toast.error(message)
     }
   }
 
@@ -905,6 +964,32 @@ export function ContentUpload() {
             onChange={e => { if (e.target.files?.[0]) void handleAnkiFile(e.target.files[0]) }} />
         </label>
         {ankiStatus && <p className="text-sm text-center text-gray-600">{ankiStatus}</p>}
+      </section>
+
+      <hr className="border-gray-200" />
+
+      <section className="flex flex-col gap-3">
+        <h2 className="text-lg font-semibold text-gray-900">Unlock Textbook Pack</h2>
+        <p className="text-sm text-gray-500">Open encrypted `.kiroku-pack` files produced by the pack pipeline, then preview/import the unlocked lessons, vocab, and grammar.</p>
+        <div className="flex flex-col gap-2 rounded-xl border border-slate-200 bg-slate-50 p-4">
+          <input
+            type="password"
+            value={packPassphrase}
+            onChange={e => setPackPassphrase(e.target.value)}
+            placeholder="Pack passphrase"
+            className="px-3 py-2 border border-slate-300 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 bg-white"
+          />
+          <label className="inline-flex cursor-pointer items-center justify-center rounded-lg border border-dashed border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-50">
+            Choose .kiroku-pack
+            <input
+              type="file"
+              accept=".kiroku-pack,.json"
+              className="hidden"
+              onChange={e => { if (e.target.files?.[0]) void handleLockedPack(e.target.files[0]) }}
+            />
+          </label>
+          {packStatus && <p className="text-xs text-slate-600">{packStatus}</p>}
+        </div>
       </section>
 
       <hr className="border-gray-200" />

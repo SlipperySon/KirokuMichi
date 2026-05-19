@@ -106,6 +106,9 @@ export function TextbookQADashboard() {
                       <td className="px-4 py-3 text-gray-900">
                         {row.maynardMatchCount}/{row.grammarCount}
                         <span className="ml-1 text-xs text-gray-500">({row.maynardCoveragePct}%)</span>
+                        <div className="mt-1 text-xs text-gray-500">
+                          {row.maynardDirectCount} direct, {row.maynardCuratedCount} curated
+                        </div>
                       </td>
                       <td className="px-4 py-3 text-gray-900">{row.suspiciousVocabCount}</td>
                       <td className="px-4 py-3">

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { stripHtml, deriveJlptLevel, extractSoundFilename, parseAnkiNote } from './ankiImport'
+import { stripHtml, deriveJlptLevel, extractSoundFilename, parseAnkiNote, deriveGenkiLessonId } from './ankiImport'
 
 describe('stripHtml', () => {
   it('removes basic HTML tags', () => {
@@ -94,6 +94,22 @@ describe('extractSoundFilename', () => {
     expect(extractSoundFilename('no sound here')).toBeNull()
     expect(extractSoundFilename('')).toBeNull()
     expect(extractSoundFilename('[text:not-a-sound]')).toBeNull()
+  })
+})
+
+describe('deriveGenkiLessonId', () => {
+  it('maps Genki official app tags to learner-facing lesson ids', () => {
+    expect(deriveGenkiLessonId('genki-L00')).toBe('genki_1_1')
+    expect(deriveGenkiLessonId('vocab genki-L01')).toBe('genki_1_1')
+    expect(deriveGenkiLessonId('genki-L12')).toBe('genki_1_12')
+    expect(deriveGenkiLessonId('genki-L13')).toBe('genki_2_1')
+    expect(deriveGenkiLessonId('genki-L23')).toBe('genki_2_11')
+  })
+
+  it('returns null for non-Genki or out-of-range tags', () => {
+    expect(deriveGenkiLessonId('')).toBeNull()
+    expect(deriveGenkiLessonId('kaishi N5')).toBeNull()
+    expect(deriveGenkiLessonId('genki-L24')).toBeNull()
   })
 })
 
@@ -222,6 +238,46 @@ describe('parseAnkiNote', () => {
       // Change field 4 to not contain a sound tag → not Kaishi
       const parsed = parseAnkiNote(kaishiFlds({ 4: '' }), '')
       expect(parsed!.isKaishi).toBe(false)
+    })
+  })
+
+  describe('Genki official app deck', () => {
+    function genkiFlds(overrides: Partial<Record<number, string>> = {}): string {
+      const defaults = [
+        'Excuse me.',          // 0 English prompt
+        'すみません',          // 1 Japanese expression
+        '',                    // 2 unused
+        '',                    // 3 unused
+        '',                    // 4 unused
+        '[sound:genki.mp3]',   // 5 word audio
+        '',                    // 6 unused
+        'すみません、今何時ですか。', // 7 example sentence
+        'Excuse me, what time is it now?', // 8 sentence meaning
+      ]
+      for (const [i, v] of Object.entries(overrides)) if (v !== undefined) defaults[Number(i)] = v
+      return defaults.join('\x1f')
+    }
+
+    it('uses Japanese as the front and English as the back', () => {
+      const parsed = parseAnkiNote(genkiFlds(), 'genki-L01')
+      expect(parsed).not.toBeNull()
+      expect(parsed!.front).toBe('すみません')
+      expect(parsed!.back).toBe('Excuse me.')
+      expect(parsed!.wordAudioField).toBe('[sound:genki.mp3]')
+      expect(parsed!.sourceLessonId).toBe('genki_1_1')
+    })
+
+    it('maps Genki II official app tags to core lesson ids', () => {
+      const parsed = parseAnkiNote(genkiFlds({ 0: 'to be late', 1: '遅れる' }), 'foo genki-L13')
+      expect(parsed!.front).toBe('遅れる')
+      expect(parsed!.back).toBe('to be late')
+      expect(parsed!.sourceLessonId).toBe('genki_2_1')
+    })
+
+    it('imports official example sentences as sentence card material', () => {
+      const parsed = parseAnkiNote(genkiFlds(), 'genki-L01')
+      expect(parsed!.sentence).toBe('すみません、今何時ですか。')
+      expect(parsed!.sentenceMeaning).toBe('Excuse me, what time is it now?')
     })
   })
 

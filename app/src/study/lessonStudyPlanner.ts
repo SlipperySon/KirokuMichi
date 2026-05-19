@@ -18,6 +18,11 @@ export interface MaynardRef {
   title: string
   excerpt: string
   examples: Array<{ japanese: string; english?: string }>
+  sourceId?: string
+  sourceKind?: 'attached' | 'direct' | 'curated-support'
+  confidence?: 'direct' | 'keyword' | 'curated'
+  pageStart?: number
+  pageEnd?: number
 }
 
 export interface GrammarItem {
@@ -43,8 +48,8 @@ export interface LessonStudyState {
 }
 
 export type TeachItem =
-  | { type: 'vocab'; id: string; title: string; body: string; source?: string; page?: number; order: number }
-  | { type: 'grammar'; id: string; title: string; body: string; source?: string; page?: number; order: number; explanation?: string; examples?: GrammarExample[]; maynardRef?: MaynardRef; explanationPlan: GrammarExplanationPlan }
+  | { type: 'vocab'; id: string; title: string; body: string; source?: string; page?: number; order: number; lessonId?: string }
+  | { type: 'grammar'; id: string; title: string; body: string; source?: string; page?: number; order: number; lessonId?: string; explanation?: string; examples?: GrammarExample[]; maynardRef?: MaynardRef; explanationPlan: GrammarExplanationPlan }
 
 export interface QuizQuestion {
   itemId: string
@@ -110,9 +115,10 @@ function toTeachItems(vocab: VocabItem[], grammar: GrammarItem[]): TeachItem[] {
       source: item.source,
       page: item.page,
       order: index,
+      lessonId: item.lesson,
       explanation: item.explanation,
       examples: item.examples,
-      maynardRef: item.maynardRef,
+      maynardRef: getMaynardSupport(item),
       explanationPlan: buildGrammarExplanationPlan(item, grammar),
     }))
 
@@ -126,6 +132,7 @@ function toTeachItems(vocab: VocabItem[], grammar: GrammarItem[]): TeachItem[] {
       source: item.source,
       page: item.page,
       order: index,
+      lessonId: item.lesson,
     }))
 
   // 1. Foundation items come first in their original order (e.g. greetings/numbers overlay)
@@ -252,5 +259,6 @@ export function buildLessonPlan(
   return steps
 }
 import { buildGrammarExplanationPlan, type GrammarExplanationPlan } from '../content/maynardExplanationEngine'
+import { getMaynardSupport } from '../content/maynardSupport'
 import type { LessonIntent } from '../content/lessonIntentService'
 import type { WorkbookPracticeTask } from '../content/workbookPracticeService'

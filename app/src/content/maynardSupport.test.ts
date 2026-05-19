@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { buildGrammarExplanationPlan } from './maynardExplanationEngine'
-import { hasMaynardSupport } from './maynardSupport'
+import { getMaynardSupport, hasMaynardSupport } from './maynardSupport'
 import type { GrammarItem } from './curriculumService'
 
 function grammar(pattern: string): GrammarItem {
@@ -16,14 +16,16 @@ function grammar(pattern: string): GrammarItem {
   }
 }
 
-describe('Maynard support fallback', () => {
-  it('adds deep support for foundational grammar without a pre-attached Maynard ref', () => {
+describe('Maynard support', () => {
+  it('prefers direct Maynard source refs for foundational grammar', () => {
     const item = grammar('は')
     const plan = buildGrammarExplanationPlan(item)
+    const support = getMaynardSupport(item)
 
     expect(hasMaynardSupport(item)).toBe(true)
-    expect(plan.maynardTitle).toContain('topic')
-    expect(plan.maynardDeepExplanation).toContain('marks what the sentence is about')
+    expect(support?.sourceKind).toBe('direct')
+    expect(support?.pageStart).toBeGreaterThan(0)
+    expect(plan.maynardTitle).toContain('Essential particles')
   })
 
   it('does not invent deep support for unknown patterns', () => {
@@ -37,19 +39,21 @@ describe('Maynard support fallback', () => {
   it('adds deep support for common A2 grammar without a pre-attached Maynard ref', () => {
     const item = grammar('かどうか')
     const plan = buildGrammarExplanationPlan(item)
+    const support = getMaynardSupport(item)
 
     expect(hasMaynardSupport(item)).toBe(true)
-    expect(plan.maynardTitle).toContain('yes/no question')
-    expect(plan.maynardDeepExplanation).toContain('turns a yes/no question into a noun-like question')
+    expect(support?.sourceKind).toBe('direct')
+    expect(plan.maynardTitle).toContain('Binary choices')
   })
 
-  it('adds deep support bridges for B1 and B2 discussion grammar', () => {
+  it('keeps curated support bridges when no direct source ref is available', () => {
     const b1 = buildGrammarExplanationPlan(grammar('から見ると'), [grammar('逆に')])
     const b2 = buildGrammarExplanationPlan(grammar('ざるを得ない'))
 
-    expect(b1.maynardTitle).toContain('viewpoint')
+    expect(getMaynardSupport(grammar('せめて'))?.sourceKind).toBe('curated-support')
+    expect(b1.maynardTitle).toContain('Further particles')
     expect(b1.contrastWithNearbyGrammar).toContain('逆に')
-    expect(b2.maynardTitle).toContain('responsibility')
+    expect(getMaynardSupport(grammar('ざるを得ない'))?.sourceKind).toBe('direct')
     expect(b2.commonMistake).toContain('no realistic alternative')
   })
 })

@@ -103,6 +103,8 @@ describe('textbookQAService', () => {
     expect(rows.every(row => row.maynardCoveragePct >= 0 && row.maynardCoveragePct <= 100)).toBe(true)
     expect(rows.find(row => row.lessonId === 'genki_1_1')).toMatchObject({
       assetCount: 1,
+      maynardDirectCount: 0,
+      maynardCuratedCount: 0,
       maynardCoveragePct: 100,
     })
   })

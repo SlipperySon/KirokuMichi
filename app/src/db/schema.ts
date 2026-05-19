@@ -32,6 +32,10 @@ export const cards = sqliteTable('cards', {
   frequencyRank: integer('frequency_rank'),
   domain: text('domain'),
   audioUrl: text('audio_url'),
+  tags: text('tags'),
+  userNote: text('user_note'),
+  originType: text('origin_type'),
+  originRef: text('origin_ref'),
   createdAt: text('created_at').notNull().default(sql`(datetime('now'))`),
 }, (t) => [
   index('cards_jlpt_idx').on(t.jlptLevel),
@@ -217,4 +221,15 @@ export const learningContent = sqliteTable('learning_content', {
   index('learning_content_user_idx').on(t.userId),
   index('learning_content_type_idx').on(t.contentType),
   index('learning_content_source_idx').on(t.sourceDocument),
+])
+
+export const lessonVocabulary = sqliteTable('lesson_vocabulary', {
+  id: integer('id').primaryKey({ autoIncrement: true }),
+  userId: integer('user_id').notNull().references(() => users.id),
+  lessonId: text('lesson_id').notNull(),
+  cardId: integer('card_id').notNull().references(() => cards.id),
+  term: text('term').notNull(),
+  createdAt: text('created_at').notNull().default(sql`(datetime('now'))`),
+}, (t) => [
+  index('lesson_vocabulary_lesson_idx').on(t.userId, t.lessonId),
 ])

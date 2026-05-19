@@ -45,6 +45,21 @@ const A1_OUTPUT_SKILLS: Record<number, string> = {
   12: 'Use adjective and polite forms to explain why and ask follow-up questions.',
 }
 
+const A1_OBJECTIVES: Record<number, string> = {
+  1: 'Build the first survival layer: greetings, numbers, polite identification, and simple “what is this?” questions.',
+  2: 'Name people and objects, ask basic identity questions, and anchor answers in a simple polite sentence.',
+  3: 'Talk about daily actions with time expressions, locations, and simple likes or dislikes.',
+  4: 'Move from naming actions to arranging plans: invite someone, ask permission, and say where you will go.',
+  5: 'Add reasons and wants so short sentences can explain why you choose, like, or plan something.',
+  6: 'Use the て-form as a practical connector for requests, sequence, and everyday help.',
+  7: 'Give simple advice, compare options, and describe what someone should or should not do.',
+  8: 'Handle plans and alternatives with more flexible descriptions of people, things, and unfinished actions.',
+  9: 'Use clauses and casual reporting to describe people, explain what happened, and pass on short information.',
+  10: 'Talk about preferences, giving and receiving, and indefinite people or things in everyday choices.',
+  11: 'Connect descriptions and actions so you can tell short past events instead of isolated sentences.',
+  12: 'Pull beginner grammar together to explain reasons, answer follow-up questions, and sustain a short exchange.',
+}
+
 const A2_OUTPUT_SKILLS: Record<number, string> = {
   1: 'Ask what someone wants, compare choices, and explain what is easy or hard to use.',
   2: 'Describe first impressions, apologize for specific actions, and propose a repair.',
@@ -59,6 +74,20 @@ const A2_OUTPUT_SKILLS: Record<number, string> = {
   11: 'Tell short connected stories with cause, sequence, and result.',
 }
 
+const A2_OBJECTIVES: Record<number, string> = {
+  1: 'Use Genki II opening patterns to talk about ability, desire, comparison, and what feels easy or difficult.',
+  2: 'Describe help, favors, apologies, and first impressions so everyday exchanges sound more socially aware.',
+  3: 'State intentions, plans, and hopes, then respond to someone else’s future plan with advice or support.',
+  4: 'Explain necessity, conditions, simultaneous actions, and comparisons in practical decision-making.',
+  5: 'Report what people said, describe prepared states, and explain habits you are trying to maintain.',
+  6: 'Describe rules, exceptions, accidents, and resulting states with transitive and intransitive verb pairs.',
+  7: 'Practice respectful and humble language for visits, calls, offers, and formal workplace-style exchanges.',
+  8: 'Make backup plans, discuss unlikely events, and describe habits or states that are rare or negative.',
+  9: 'Discuss cultural examples and common views while explaining corrections, materials, and repeated practice.',
+  10: 'Compare past and present habits, describe ways of doing things, and report common social beliefs.',
+  11: 'Consolidate A2 grammar into short connected stories with cause, sequence, condition, and result.',
+}
+
 const B1_OUTPUT_SKILLS: Record<number, string> = {
   1: 'Give practical advice, report information, and explain how reliable it seems.',
   2: 'Explain goals, priorities, and what you keep doing even when conditions are difficult.',
@@ -68,6 +97,15 @@ const B1_OUTPUT_SKILLS: Record<number, string> = {
   6: 'Describe social change, role shifts, and habits that are difficult to fix.',
 }
 
+const B1_OBJECTIVES: Record<number, string> = {
+  1: 'Use Quartet I Lesson 1 to move from facts into advice, reliability, and self-introduction with detail.',
+  2: 'Explain goals, comparisons, and priorities while keeping a conversation coherent under difficult conditions.',
+  3: 'Connect personal experience to social topics and give balanced opinions with reasons and outcomes.',
+  4: 'Describe nuanced reactions and evaluate benefits, limits, and suitability in everyday technology or habits.',
+  5: 'Discuss trends and personal learning without overgeneralizing, using examples to support the point.',
+  6: 'Talk about social change, role shifts, repeated habits, and unresolved problems with appropriate nuance.',
+}
+
 const B2_OUTPUT_SKILLS: Record<number, string> = {
   1: 'Compare perspectives and describe returning to an activity after a long time.',
   2: 'Evaluate reputation, feasibility, and limitations in a realistic plan.',
@@ -75,6 +113,15 @@ const B2_OUTPUT_SKILLS: Record<number, string> = {
   4: 'Describe strong emotional reactions and urgent priorities under pressure.',
   5: 'Discuss problems with no easy fix and evaluate whether effort or reputation was deserved.',
   6: 'Explain what was learned through experience and why one responsible choice remains.',
+}
+
+const B2_OBJECTIVES: Record<number, string> = {
+  1: 'Use Quartet II Lesson 1 to compare perspectives, revisit past experience, and qualify claims with evidence.',
+  2: 'Evaluate reputation, feasibility, and limits while explaining why a plan may or may not work.',
+  3: 'Discuss responsibility, obligation, and no-choice situations without losing the emotional stakes.',
+  4: 'Handle high-pressure topics by explaining urgency, emotional reaction, and what should take priority.',
+  5: 'Analyze difficult problems, deserved outcomes, and whether effort or reputation justifies a result.',
+  6: 'Synthesize B2 grammar into experience-based explanations and responsible final choices.',
 }
 
 function outputSkill(options: {
@@ -90,18 +137,10 @@ function outputSkill(options: {
 }
 
 function objective(cefr: CEFRLevel, lessonNum: number, textbookName: string) {
-  if (cefr === 'a1' && lessonNum === 1) {
-    return 'Build the first survival layer: greetings, numbers, polite identification, and simple “what is this?” questions.'
-  }
-  if (cefr === 'a2') {
-    return `Use ${textbookName} Lesson ${lessonNum} material to move from simple survival Japanese into connected everyday explanation.`
-  }
-  if (cefr === 'b1') {
-    return `Use ${textbookName} Lesson ${lessonNum} material to build supported opinions, explanations, and short discussion turns.`
-  }
-  if (cefr === 'b2') {
-    return `Use ${textbookName} Lesson ${lessonNum} material to handle nuanced discussion with evidence, stance, and qualification.`
-  }
+  if (cefr === 'a1' && A1_OBJECTIVES[lessonNum]) return A1_OBJECTIVES[lessonNum]
+  if (cefr === 'a2' && A2_OBJECTIVES[lessonNum]) return A2_OBJECTIVES[lessonNum]
+  if (cefr === 'b1' && B1_OBJECTIVES[lessonNum]) return B1_OBJECTIVES[lessonNum]
+  if (cefr === 'b2' && B2_OBJECTIVES[lessonNum]) return B2_OBJECTIVES[lessonNum]
   return `Use ${textbookName} Lesson ${lessonNum} material to handle a ${lessonStage(cefr)}.`
 }
 

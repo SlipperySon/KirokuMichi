@@ -581,7 +581,7 @@ function TeachCard({
           <div className={`${isVocab ? 'text-5xl' : 'text-3xl'} font-bold text-gray-900`} lang="ja">{item.title}</div>
           {isVocab && (
             <div className="mt-3 flex justify-center">
-              <AddToDeckButton front={item.title} back={item.body} />
+              <AddToDeckButton front={item.title} back={item.body} lessonId={item.lessonId} originRef={item.id} />
             </div>
           )}
         </div>

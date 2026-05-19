@@ -434,7 +434,7 @@ export function LessonPage() {
                     {item.source.replace(/_/g, ' ')} {item.page > 0 ? `p. ${item.page}` : 'foundation'}
                   </div>
                   <div className="mt-2">
-                    <AddToDeckButton front={item.surface} back={item.english} />
+                    <AddToDeckButton front={item.surface} back={item.english} lessonId={lessonId} originRef={item.id} />
                   </div>
                 </div>
               ))}

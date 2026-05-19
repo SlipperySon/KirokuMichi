@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAppStore } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
@@ -15,20 +15,22 @@ interface StudyStatsData {
   stabilityBuckets: { label: string; count: number }[]
 }
 
-function BarChart({ data }: { data: { day: string; total: number; correct: number }[] }) {
+type StatsWindow = 7 | 30 | 0
+
+function BarChart({ data, windowDays }: { data: { day: string; total: number; correct: number }[]; windowDays: StatsWindow }) {
   if (data.length === 0) {
     return (
       <div className="flex items-center justify-center h-24 text-sm text-gray-400">
-        No review data in the last 30 days
+        No review data for this window
       </div>
     )
   }
 
-  // Fill in the last 30 days with zeros for missing days
+  const displayDays = windowDays === 0 ? Math.max(30, data.length) : windowDays
   const days: { day: string; total: number; correct: number }[] = []
   const now = new Date()
   const dataMap = new Map(data.map(d => [d.day, d]))
-  for (let i = 29; i >= 0; i--) {
+  for (let i = displayDays - 1; i >= 0; i--) {
     const d = new Date(now)
     d.setDate(d.getDate() - i)
     const key = d.toISOString().split('T')[0]
@@ -67,7 +69,7 @@ function BarChart({ data }: { data: { day: string; total: number; correct: numbe
         })}
       </div>
       <div className="flex justify-between text-xs text-gray-400">
-        <span>30 days ago</span>
+        <span>{windowDays === 0 ? `${displayDays} days ago` : `${windowDays} days ago`}</span>
         <span>Today</span>
       </div>
       <div className="flex gap-3 text-xs">
@@ -134,6 +136,7 @@ export function StudyStats() {
 
   const [statsData, setStatsData] = useState<StudyStatsData | null>(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [windowDays, setWindowDays] = useState<StatsWindow>(30)
 
   useEffect(() => {
     if (!activeUserId) return
@@ -147,6 +150,13 @@ export function StudyStats() {
   const totalCards = statsData
     ? statsData.cardStateCounts.new + statsData.cardStateCounts.learning + statsData.cardStateCounts.review + statsData.cardStateCounts.suspended
     : 0
+  const windowedDailyReviews = useMemo(() => {
+    if (!statsData || windowDays === 0) return statsData?.dailyReviews ?? []
+    const cutoff = new Date()
+    cutoff.setDate(cutoff.getDate() - (windowDays - 1))
+    const cutoffKey = cutoff.toISOString().split('T')[0]
+    return statsData.dailyReviews.filter(day => day.day >= cutoffKey)
+  }, [statsData, windowDays])
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -160,6 +170,21 @@ export function StudyStats() {
             ← Back
           </button>
           <h1 className="text-2xl font-bold text-gray-900">Study Statistics</h1>
+        </div>
+        <div className="flex w-fit rounded-xl bg-gray-100 p-1 text-sm">
+          {[
+            { label: '7 days', value: 7 as const },
+            { label: '30 days', value: 30 as const },
+            { label: 'All time', value: 0 as const },
+          ].map(option => (
+            <button
+              key={option.label}
+              onClick={() => setWindowDays(option.value)}
+              className={`rounded-lg px-3 py-1.5 font-semibold transition-colors ${windowDays === option.value ? 'bg-white text-gray-900 shadow-sm' : 'text-gray-500 hover:text-gray-700'}`}
+            >
+              {option.label}
+            </button>
+          ))}
         </div>
 
         {isLoading ? (
@@ -210,8 +235,10 @@ export function StudyStats() {
 
             {/* Reviews per day */}
             <div className="bg-white border border-gray-200 rounded-xl p-5">
-              <h2 className="font-semibold text-gray-900 mb-4">Reviews Per Day (Last 30 Days)</h2>
-              <BarChart data={statsData.dailyReviews} />
+              <h2 className="font-semibold text-gray-900 mb-4">
+                Reviews Per Day ({windowDays === 0 ? 'All Time' : `Last ${windowDays} Days`})
+              </h2>
+              <BarChart data={windowedDailyReviews} windowDays={windowDays} />
             </div>
 
             {/* Stability distribution */}

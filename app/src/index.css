@@ -34,12 +34,7 @@ body {
 }
 
 /* Light mode when class is removed */
-body.light {
-  background: #ffffff;
-  color: #24292f;
-}
-
-body.light :root {
+html:not(.dark) {
   --text: #57606a;
   --text-h: #24292f;
   --bg: #ffffff;
@@ -48,6 +43,11 @@ body.light :root {
   --accent: #0969da;
   --accent-bg: rgba(9, 105, 218, 0.1);
   --accent-border: rgba(9, 105, 218, 0.3);
+}
+
+body.light {
+  background: #ffffff;
+  color: #24292f;
 }
 
 #root {
@@ -115,7 +115,7 @@ html.dark .bg-amber-50 {
 }
 
 html.dark .bg-indigo-50 {
-  @apply bg-indigo-900/20;
+  @apply bg-indigo-950/40;
 }
 
 html.dark .bg-blue-50 {
@@ -127,7 +127,7 @@ html.dark .bg-purple-50 {
 }
 
 html.dark .bg-emerald-50 {
-  @apply bg-emerald-900/20;
+  @apply bg-emerald-950/40;
 }
 
 html.dark .bg-orange-50 {
@@ -148,7 +148,9 @@ html.dark .border-gray-200 {
   @apply border-gray-700;
 }
 
-html.dark .text-gray-900 {
+html.dark .text-gray-950,
+html.dark .text-gray-900,
+html.dark .text-gray-800 {
   @apply text-gray-100;
 }
 
@@ -246,11 +248,11 @@ html.dark .text-amber-900 {
 }
 
 html.dark .text-indigo-600 {
-  @apply text-indigo-400;
+  @apply text-indigo-300;
 }
 
 html.dark .text-indigo-700 {
-  @apply text-indigo-400;
+  @apply text-indigo-200;
 }
 
 html.dark .text-purple-600 {
@@ -295,7 +297,7 @@ html.dark .text-orange-800 {
 html.dark .text-indigo-950,
 html.dark .text-indigo-900,
 html.dark .text-indigo-800 {
-  @apply text-indigo-200;
+  @apply text-indigo-100;
 }
 
 html.dark .text-indigo-100,
@@ -308,7 +310,7 @@ html.dark .text-indigo-500 {
 html.dark .text-emerald-950,
 html.dark .text-emerald-900,
 html.dark .text-emerald-800 {
-  @apply text-emerald-200;
+  @apply text-emerald-100;
 }
 
 html.dark .placeholder-gray-400::placeholder {

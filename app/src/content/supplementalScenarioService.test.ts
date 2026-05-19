@@ -99,6 +99,18 @@ describe('supplementalScenarioService', () => {
     }
   })
 
+  it('polishes curated scenario titles and can-do statements for learner-facing display', async () => {
+    mockFetchWithRealScenarioPacks()
+
+    const scenarios = await getSupplementalScenarios({ textbookKey: 'genki_1_workbook' })
+    const first = scenarios.find(scenario => scenario.id === 'genki_1_wb_curated_1')
+
+    expect(first?.title).toBe('Self-Introduction')
+    expect(first?.canDo).toBe('Introduce yourself and exchange basic personal information with a partner.')
+    expect(first?.canDo).not.toMatch(/^Can\b/)
+    expect(first?.description).not.toContain('Can introduce')
+  })
+
   it('keeps scenario core lesson links inside the app lesson ranges', async () => {
     mockFetchWithRealScenarioPacks()
 

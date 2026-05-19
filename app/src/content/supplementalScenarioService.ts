@@ -420,13 +420,13 @@ function canDoFromPrompt(prompt: string, level: SupplementalScenario['level']) {
 }
 
 function promptTitleLabel(canDo: string) {
-  if (canDo.startsWith('Introduce')) return 'Introduction Task'
-  if (canDo.startsWith('Ask')) return 'Q&A Task'
-  if (canDo.startsWith('Give')) return 'Opinion Task'
-  if (canDo.startsWith('Recommend')) return 'Recommendation Task'
-  if (canDo.startsWith('Compare')) return 'Comparison Task'
-  if (canDo.startsWith('Explain')) return 'Explanation Task'
-  return 'Roleplay Task'
+  if (canDo.startsWith('Introduce')) return 'Introduction'
+  if (canDo.startsWith('Ask')) return 'Question Exchange'
+  if (canDo.startsWith('Give')) return 'Opinion Exchange'
+  if (canDo.startsWith('Recommend')) return 'Recommendation'
+  if (canDo.startsWith('Compare')) return 'Comparison'
+  if (canDo.startsWith('Explain')) return 'Explanation'
+  return 'Roleplay'
 }
 
 function isUsablePrompt(source: SupplementalSource, exercise: RawExercise) {
@@ -438,7 +438,7 @@ function scenarioFromDialogue(source: SupplementalSource, dialogue: RawDialogue,
   if (!isUsableDialogue(source, dialogue) || !dialogue.lesson) return null
   const lines = cleanDialogueLines(dialogue)
   const lessonNumber = lessonNumberFromId(dialogue.lesson)
-  const title = `${source.textbook} Practice ${lessonNumber ?? index + 1}`
+  const title = `${source.textbook} Model Conversation ${lessonNumber ?? index + 1}`
   const canDo = 'Practice the model conversation, then continue it in your own words.'
 
   return {
@@ -575,8 +575,12 @@ async function loadCuratedScenarios(): Promise<SupplementalScenario[]> {
           : entry.coreLessonId
         results.push({
           ...entry as SupplementalScenario,
+          title: polishScenarioTitle(entry.title ?? ''),
+          canDo: polishCanDo(entry.canDo ?? ''),
+          description: polishScenarioDescription(entry.description ?? '', entry.canDo ?? ''),
+          practicePrompts: polishPracticePrompts(entry.practicePrompts),
           page: entry.page ?? 0,
-          lines: entry.lines ?? buildLinesFromCurated(entry),
+          lines: polishScenarioLines(entry.lines ?? buildLinesFromCurated(entry)),
           coreLessonId: coreLessonId ?? entry.coreLessonId,
         })
       }
@@ -585,6 +589,47 @@ async function loadCuratedScenarios(): Promise<SupplementalScenario[]> {
     }
   }
   return results
+}
+
+function polishScenarioTitle(title: string) {
+  return title
+    .replace(/\s+Pair Work\b/gi, '')
+    .replace(/^Short Speech:\s*/i, 'Short Speech: ')
+    .replace(/\s+Task\s+\d+$/i, '')
+    .replace(/\s{2,}/g, ' ')
+    .trim()
+}
+
+function polishCanDo(canDo: string) {
+  const cleaned = canDo
+    .replace(/^Can\s+/i, '')
+    .replace(/^Be able to\s+/i, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+  if (!cleaned) return canDo
+  return `${cleaned.charAt(0).toUpperCase()}${cleaned.slice(1)}`
+}
+
+function polishScenarioDescription(description: string, canDo: string) {
+  const polishedCanDo = polishCanDo(canDo)
+  return description
+    .replace(canDo, polishedCanDo)
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+function polishPracticePrompts(prompts: string[] | undefined) {
+  return (prompts ?? [])
+    .map(prompt => cleanText(prompt))
+    .filter(prompt => prompt.length > 0)
+}
+
+function polishScenarioLines(lines: SupplementalScenarioLine[]) {
+  return lines.map(line => ({
+    ...line,
+    text: cleanText(line.text),
+    translation: line.translation ? cleanText(line.translation) : undefined,
+  }))
 }
 
 function buildLinesFromCurated(entry: Partial<SupplementalScenario>): SupplementalScenarioLine[] {
