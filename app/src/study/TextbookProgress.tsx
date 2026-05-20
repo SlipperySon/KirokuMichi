@@ -42,8 +42,8 @@ interface DeckStats {
 interface TextbookCard {
   textbookKey: string
   textbookName: string
-  deckId: number
-  deckName: string
+  deckId: number  // -1 = no linked deck
+  deckName: string | null
   completedLessons: number
   lessonTotal: number | null
   stats: DeckStats | null
@@ -69,67 +69,111 @@ export function TextbookProgress() {
     void (async () => {
       setIsLoading(true)
       try {
-        // Read linked textbooks from localStorage
-        const raw = localStorage.getItem('kiroku-textbook-links')
-        if (!raw) { setCards([]); return }
-
-        let links: TextbookLinks
+        // --- 1. Explicit links from localStorage (set when uploading a PDF) ---
+        let links: TextbookLinks = {}
         try {
-          links = JSON.parse(raw) as TextbookLinks
-        } catch {
-          setCards([]); return
+          const raw = localStorage.getItem('kiroku-textbook-links')
+          if (raw) links = JSON.parse(raw) as TextbookLinks
+        } catch { /* ignore */ }
+
+        // --- 2. Auto-detect from lessonsCompleted (covers APKG imports and
+        //        learners who go through lessons without linking a deck) ---
+        const autoDetected = new Set<string>()
+        for (const lessonId of lessonsCompleted) {
+          for (const key of Object.keys(TEXTBOOK_DISPLAY)) {
+            if (lessonId.startsWith(`${key}_`)) {
+              autoDetected.add(key)
+              break
+            }
+          }
+          // marugoto sub-keys
+          if (lessonId.startsWith('marugoto_')) autoDetected.add('marugoto')
         }
 
-        const entries = Object.entries(links).filter(([, deckId]) => deckId != null)
-        if (entries.length === 0) { setCards([]); return }
+        // --- 3. Auto-detect textbooks from imported lesson_vocabulary cards ---
+        //        This covers users who imported an APKG but haven't done any lessons yet
+        try {
+          const lessonRows = await service.storage.query<{ lesson_id: string }>(
+            `SELECT DISTINCT cs.lesson_id FROM card_states cs
+             WHERE cs.user_id = ? AND cs.lesson_id IS NOT NULL LIMIT 200`,
+            [userId]
+          )
+          for (const { lesson_id } of lessonRows) {
+            for (const key of Object.keys(TEXTBOOK_DISPLAY)) {
+              if (lesson_id.startsWith(`${key}_`)) {
+                autoDetected.add(key)
+                break
+              }
+            }
+          }
+        } catch { /* DB may not be ready */ }
 
-        // Load all decks for name lookup
+        // Merge: explicit links take priority; auto-detected keys with no link get deckId=-1 (no deck)
+        const allKeys = new Set([...Object.keys(links), ...autoDetected])
+        if (allKeys.size === 0) { setCards([]); return }
+
         const allDecks = await service.getDecks(userId)
         const deckById = new Map(allDecks.map(d => [d.id, d.name]))
 
-        // For each linked textbook, load deck stats
         const results: TextbookCard[] = await Promise.all(
-          entries.map(async ([textbookKey, deckId]) => {
+          [...allKeys].map(async (textbookKey) => {
+            const deckId = links[textbookKey] ?? null
             const textbookName = TEXTBOOK_DISPLAY[textbookKey] ?? textbookKey.replace(/_/g, ' ')
-            const deckName = deckById.get(deckId) ?? `Deck #${deckId}`
+            const deckName = deckId ? (deckById.get(deckId) ?? `Deck #${deckId}`) : null
 
             let stats: DeckStats | null = null
-            try {
-              const [totalRows, dueRows, newRows] = await Promise.all([
-                service.storage.query<{ count: number }>(
-                  `SELECT COUNT(*) AS count FROM cards WHERE deck_id = ?`,
-                  [deckId]
-                ),
-                service.storage.query<{ count: number }>(
-                  `SELECT COUNT(*) AS count FROM card_states cs
-                   JOIN cards c ON c.id = cs.card_id
-                   WHERE c.deck_id = ? AND cs.user_id = ?
-                     AND cs.due <= datetime('now') AND cs.state != 'new' AND cs.is_leech = 0`,
-                  [deckId, userId]
-                ),
-                service.storage.query<{ count: number }>(
-                  `SELECT COUNT(*) AS count FROM card_states cs
-                   JOIN cards c ON c.id = cs.card_id
-                   WHERE c.deck_id = ? AND cs.user_id = ? AND cs.state = 'new'`,
-                  [deckId, userId]
-                ),
-              ])
-              stats = {
-                total: totalRows[0]?.count ?? 0,
-                due: dueRows[0]?.count ?? 0,
-                newCards: newRows[0]?.count ?? 0,
-              }
-            } catch {
-              // stats unavailable
+            if (deckId) {
+              try {
+                const [totalRows, dueRows, newRows] = await Promise.all([
+                  service.storage.query<{ count: number }>(
+                    `SELECT COUNT(*) AS count FROM cards WHERE deck_id = ?`,
+                    [deckId]
+                  ),
+                  service.storage.query<{ count: number }>(
+                    `SELECT COUNT(*) AS count FROM card_states cs
+                     JOIN cards c ON c.id = cs.card_id
+                     WHERE c.deck_id = ? AND cs.user_id = ?
+                       AND cs.due <= datetime('now') AND cs.state != 'new' AND cs.is_leech = 0`,
+                    [deckId, userId]
+                  ),
+                  service.storage.query<{ count: number }>(
+                    `SELECT COUNT(*) AS count FROM card_states cs
+                     JOIN cards c ON c.id = cs.card_id
+                     WHERE c.deck_id = ? AND cs.user_id = ? AND cs.state = 'new'`,
+                    [deckId, userId]
+                  ),
+                ])
+                stats = {
+                  total: totalRows[0]?.count ?? 0,
+                  due: dueRows[0]?.count ?? 0,
+                  newCards: newRows[0]?.count ?? 0,
+                }
+              } catch { /* stats unavailable */ }
+            } else {
+              // No linked deck — count lesson_vocabulary cards for this textbook instead
+              try {
+                const prefix = textbookKey === 'marugoto'
+                  ? `marugoto_`
+                  : `${textbookKey}_`
+                const rows = await service.storage.query<{ count: number }>(
+                  `SELECT COUNT(DISTINCT lv.card_id) AS count FROM lesson_vocabulary lv
+                   WHERE lv.user_id = ? AND lv.lesson_id LIKE ?`,
+                  [userId, `${prefix}%`]
+                )
+                const total = rows[0]?.count ?? 0
+                if (total > 0) stats = { total, due: 0, newCards: total }
+              } catch { /* ignore */ }
             }
 
             const lessonTotal = TEXTBOOK_LESSON_TOTALS[textbookKey] ?? null
             const completedLessons = countCompletedLessons(textbookKey, lessonsCompleted)
 
-            return { textbookKey, textbookName, deckId, deckName, completedLessons, lessonTotal, stats }
+            return { textbookKey, textbookName, deckId: deckId ?? -1, deckName, completedLessons, lessonTotal, stats }
           })
         )
 
+        // Sort: textbooks with completed lessons first, then alphabetically
+        results.sort((a, b) => b.completedLessons - a.completedLessons || a.textbookName.localeCompare(b.textbookName))
         setCards(results)
       } finally {
         setIsLoading(false)
@@ -151,14 +195,14 @@ export function TextbookProgress() {
     return (
       <div className="rounded-xl border border-dashed border-gray-200 bg-gray-50 px-6 py-8 text-center">
         <p className="text-sm text-gray-500">
-          No linked textbooks. Go to{' '}
+          Start a lesson above to see your textbook progress here, or{' '}
           <button
             onClick={() => navigate('/my-content')}
             className="text-indigo-600 underline underline-offset-2 hover:text-indigo-700"
           >
-            Upload Content
+            import your deck
           </button>{' '}
-          to link a textbook to a deck and track your progress here.
+          to link a textbook.
         </p>
       </div>
     )
@@ -215,24 +259,35 @@ export function TextbookProgress() {
           )}
 
           <div className="flex flex-col gap-2 mt-auto">
-            <button
-              onClick={() => {
-                setActiveDeckId(card.deckId)
-                navigate('/study/review')
-              }}
-              className="w-full px-3 py-2 bg-indigo-600 text-white text-xs font-semibold rounded-lg hover:bg-indigo-700 transition-colors"
-            >
-              Study Now
-            </button>
-            <button
-              onClick={() => {
-                setActiveDeckId(card.deckId)
-                navigate('/study/browser')
-              }}
-              className="w-full px-3 py-2 border border-gray-200 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-50 transition-colors"
-            >
-              Browse Cards
-            </button>
+            {card.deckId !== -1 ? (
+              <>
+                <button
+                  onClick={() => {
+                    setActiveDeckId(card.deckId)
+                    navigate('/study/review')
+                  }}
+                  className="w-full px-3 py-2 bg-indigo-600 text-white text-xs font-semibold rounded-lg hover:bg-indigo-700 transition-colors"
+                >
+                  Study Now
+                </button>
+                <button
+                  onClick={() => {
+                    setActiveDeckId(card.deckId)
+                    navigate('/study/browser')
+                  }}
+                  className="w-full px-3 py-2 border border-gray-200 text-gray-700 text-xs font-medium rounded-lg hover:bg-gray-50 transition-colors"
+                >
+                  Browse Cards
+                </button>
+              </>
+            ) : (
+              <button
+                onClick={() => navigate('/my-content')}
+                className="w-full px-3 py-2 border border-dashed border-indigo-300 text-indigo-600 text-xs font-medium rounded-lg hover:bg-indigo-50 transition-colors"
+              >
+                Link a deck →
+              </button>
+            )}
           </div>
         </div>
       ))}
