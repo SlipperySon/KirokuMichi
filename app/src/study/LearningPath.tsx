@@ -8,10 +8,10 @@ import { Navigation } from '../components/Navigation'
 import { toast } from '../components/toastStore'
 
 const WEEK_COLORS = [
-  { bg: 'bg-indigo-50', border: 'border-indigo-200', badge: 'bg-indigo-100 text-indigo-700', milestone: 'text-indigo-900' },
-  { bg: 'bg-blue-50', border: 'border-blue-200', badge: 'bg-blue-100 text-blue-700', milestone: 'text-blue-900' },
-  { bg: 'bg-violet-50', border: 'border-violet-200', badge: 'bg-violet-100 text-violet-700', milestone: 'text-violet-900' },
-  { bg: 'bg-emerald-50', border: 'border-emerald-200', badge: 'bg-emerald-100 text-emerald-700', milestone: 'text-emerald-900' },
+  { bg: 'bg-white', border: 'border-indigo-300', badge: 'bg-indigo-600 text-white', milestone: 'text-indigo-700' },
+  { bg: 'bg-white', border: 'border-blue-300', badge: 'bg-blue-600 text-white', milestone: 'text-blue-700' },
+  { bg: 'bg-white', border: 'border-violet-300', badge: 'bg-violet-600 text-white', milestone: 'text-violet-700' },
+  { bg: 'bg-white', border: 'border-emerald-300', badge: 'bg-emerald-600 text-white', milestone: 'text-emerald-700' },
 ]
 
 const JLPT_TO_CEFR: Record<string, 'A1' | 'A2' | 'B1' | 'B2' | 'C1'> = {
@@ -46,15 +46,15 @@ function WeekCard({ week, index }: { week: LearningPathWeek; index: number }) {
       </div>
       <ul className="space-y-1.5 flex-1">
         {week.activities.map((activity, i) => (
-          <li key={i} className="text-xs text-gray-700 flex items-start gap-1.5">
-            <span className="text-gray-400 mt-0.5 flex-shrink-0">•</span>
+          <li key={i} className="text-xs text-gray-800 flex items-start gap-1.5">
+            <span className="text-gray-500 mt-0.5 flex-shrink-0">•</span>
             {activity}
           </li>
         ))}
       </ul>
-      <div className={`pt-3 border-t border-current/10`}>
+      <div className="pt-3 border-t border-gray-200">
         <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-500">Milestone</p>
-        <p className={`text-sm font-medium ${colors.milestone} mt-0.5`}>{week.milestone}</p>
+        <p className={`text-sm font-semibold ${colors.milestone} mt-0.5`}>{week.milestone}</p>
       </div>
     </div>
   )
@@ -273,8 +273,8 @@ Ensure activities array has 3-4 items per week. Make the plan realistic and prog
                 {learningPath.weeks.map((week, i) => {
                   const colors = WEEK_COLORS[i % WEEK_COLORS.length]
                   return (
-                    <div key={week.week} className={`rounded-xl p-3 ${colors.bg} border ${colors.border}`}>
-                      <p className={`text-xs font-bold ${colors.badge.split(' ')[1]}`}>Week {week.week}</p>
+                    <div key={week.week} className={`rounded-xl p-3 border ${colors.border}`}>
+                      <p className={`text-xs font-bold ${colors.milestone}`}>Week {week.week}</p>
                       <p className="text-sm font-medium text-gray-900 mt-1 leading-tight">{week.focus}</p>
                       <p className="text-xs text-gray-500 mt-1">{week.dailyGoal} cards/day</p>
                     </div>
