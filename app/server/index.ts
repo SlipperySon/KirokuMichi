@@ -7,6 +7,7 @@ import { PDFParse } from 'pdf-parse'
 import { execFile } from 'node:child_process'
 import { tmpdir } from 'node:os'
 import { promisify } from 'node:util'
+import { sanitizeReport, submitIssueReport } from './reportIssue'
 
 const app = express()
 const PORT = 3001
@@ -61,6 +62,19 @@ app.post('/api/session', (_req, res) => {
   const token = crypto.randomBytes(32).toString('hex')
   sessionTokens.add(token)
   res.json({ token })
+})
+
+app.post('/api/report', async (req, res) => {
+  try {
+    const report = sanitizeReport(req.body)
+    const result = await submitIssueReport(report)
+    res.status(result.mode === 'github' ? 201 : 202).json(result)
+  } catch (err) {
+    console.error('[report] submission failed:', err)
+    res.status(400).json({
+      error: err instanceof Error ? err.message : 'Report submission failed',
+    })
+  }
 })
 
 function requireToken(req: express.Request, res: express.Response, next: express.NextFunction) {

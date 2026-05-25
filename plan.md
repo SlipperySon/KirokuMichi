@@ -1,10 +1,29 @@
 # KirokuMichi — Current State & Active Roadmap
 
-Last updated: 2026-05-19 16:18 AEST
+Last updated: 2026-05-22 AEST
 
 ---
 
 ## What Is Built (Complete)
+
+### Staging Hosting + User Reporting
+- Vercel staging support is implemented for the Vite frontend with `app/vercel.json`; configure Vercel with app root `app`, build command `npm run build`, and output directory `dist`.
+- The SPA rewrite is in place so direct refreshes on routes such as `/learn/lessons`, `/study/browser`, and `/scenarios` serve `index.html` instead of a 404.
+- Use a staging URL first, such as `kirokumichi-staging.vercel.app` or `staging.kirokumichi.com`; reserve production later for `app.kirokumichi.com` or the final public domain.
+- Treat backend/API features separately: either keep the Express AI proxy deployed on Render/Fly/Railway, or convert small endpoints such as reporting into Vercel serverless functions.
+- In-app `Report issue` is implemented in the top/burger menu.
+- Reporting modal supports report type:
+  - bug
+  - content/OCR issue
+  - unreadable text/contrast
+  - lesson problem
+  - scenario problem
+  - suggestion
+- Reports automatically attach route, full URL, timestamp, browser/user agent, viewport, light/dark theme, app version/commit hash, current lesson, active deck, and route-derived lesson/scenario/card context where available.
+- `/api/report` is implemented in both local Express and Vercel serverless forms. It creates GitHub Issues when `GITHUB_REPORT_REPO` and `GITHUB_REPORT_TOKEN` are configured; otherwise it accepts reports in local mode for smoke testing.
+- Store GitHub report credentials only as hosting environment variables, never in the repo or client bundle.
+- Later polish: optional screenshot attachment, console-error capture, and Sentry event ID linking so runtime crashes and user reports can be correlated.
+- KirokuMichi-specific requirement: content reports should include exact textbook/source/lesson/page/item IDs where possible so OCR/content fixes are traceable rather than vague.
 
 ### Current Buildable Roadmap Closeout
 - Shared textbook detection now lives in `textbookDetection.ts`, returns textbook key, label, confidence, and reason, and is covered by Vitest.

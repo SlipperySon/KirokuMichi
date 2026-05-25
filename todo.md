@@ -1,13 +1,39 @@
 # KirokuMichi — Todo
 
-**Last updated: 2026-05-20**
-**Status: FEATURE COMPLETE — ready for staging**
+**Last updated: 2026-05-22**
+**Status: FEATURE COMPLETE — staging/reporting setup next**
 
 ---
 
 ## ✅ Everything Shipped
 
 All planned features are implemented and building cleanly. See HANDOFF.md for the full feature list.
+
+---
+
+## 🔲 Next staging setup
+
+- **External Vercel staging deploy**
+  - Configure Vercel project root as `app`.
+  - Build command: `npm run build`.
+  - Output directory: `dist`.
+  - Confirm `app/vercel.json` SPA fallback works on direct route refresh.
+  - Use staging URL first, e.g. `kirokumichi-staging.vercel.app` or `staging.kirokumichi.com`.
+
+- **Backend/API deployment decision**
+  - Decide whether to keep Express AI proxy separate on Render/Fly/Railway or convert small endpoints to Vercel serverless functions.
+  - Reporting endpoint is already implemented as both local Express `/api/report` and Vercel `app/api/report.ts`, so it can be serverless even if AI proxy remains separate.
+
+- **Report sink credentials**
+  - Configure `GITHUB_REPORT_REPO` as `owner/repo`.
+  - Configure `GITHUB_REPORT_TOKEN` with permission to create issues in that repo.
+  - Labels: `bug`, `content`, `contrast`, `lesson-flow`, `scenario`, `suggestion`.
+  - Store report credentials as hosting environment variables only.
+  - Later option: Linear/Notion/Supabase if GitHub Issues becomes too noisy.
+
+- **Runtime error tracking**
+  - Add Sentry or equivalent after staging is public.
+  - Link user reports to Sentry event IDs when an error was captured on the same page/session.
 
 ---
 

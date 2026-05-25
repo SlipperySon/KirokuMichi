@@ -11,6 +11,7 @@ import {
   Home,
   Layers,
   Library,
+  LifeBuoy,
   Menu,
   MessageCircle,
   PenSquare,
@@ -20,6 +21,7 @@ import {
   X,
 } from 'lucide-react'
 import { useAppStore } from '../store'
+import { ReportIssueModal } from './ReportIssueModal'
 
 interface NavLinkItem {
   path: string
@@ -40,6 +42,7 @@ export function Navigation() {
   const dailyGoal = useAppStore(s => s.settings.dailyGoal)
   const freezeTokens = useAppStore(s => s.settings.streakFreezeTokens)
   const [menuOpen, setMenuOpen] = useState(false)
+  const [reportOpen, setReportOpen] = useState(false)
 
   const navGroups: NavGroup[] = [
     {
@@ -155,8 +158,22 @@ export function Navigation() {
               </div>
             ))}
           </div>
+          <div className="mx-auto flex max-w-6xl justify-end border-t border-gray-100 px-3 pb-4 sm:px-4">
+            <button
+              type="button"
+              onClick={() => {
+                setMenuOpen(false)
+                setReportOpen(true)
+              }}
+              className="inline-flex items-center gap-2 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-900 transition-colors hover:bg-amber-100"
+            >
+              <LifeBuoy className="h-4 w-4" aria-hidden />
+              Report issue
+            </button>
+          </div>
         </div>
       )}
+      <ReportIssueModal open={reportOpen} onClose={() => setReportOpen(false)} />
     </nav>
   )
 }

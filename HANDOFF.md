@@ -1,7 +1,7 @@
 # KirokuMichi — Handoff Document
 
-**Last updated: 2026-05-20**
-**Status: ✅ FEATURE COMPLETE — ready for staging**
+**Last updated: 2026-05-22**
+**Status: ✅ FEATURE COMPLETE — staging/reporting setup next**
 
 > At the end of each session update the date above and the "Recent changes" section below.
 
@@ -73,8 +73,9 @@ cd app && npm run verify
 - ✅ Lesson teach flow: predict → reveal → hook → micro-practice → self-rate → checkpoint → mixed review → summary
 - ✅ Word selection in lessons ("+ Add to deck" on vocab cards; `lesson_vocabulary` + provenance stored)
 - ✅ Textbook progress panel in LessonsHub (linked-deck stats + lesson completion bars)
-- ✅ AI Learning Path Generator (`/study/path` — 4-week CEFR roadmap with stage gate)
+- ✅ AI Learning Path Generator (`/study/path` — 4-week CEFR roadmap with stage gate, current/goal level pickers, time estimate, realism rating)
 - ✅ CEFR stage gating (`inferCefrStageGate` — lesson completion + retention thresholds)
+- ✅ "Include textbook lessons" toggle — assigns Genki/Quartet/Tobira lessons to each week; stored in settings; enriches AI prompt; lessons shown on week cards
 - ✅ Scenario search, CEFR/textbook tabs, keyboard help modal (?)
 - ✅ Workbook practice tasks in lesson flow
 
@@ -111,6 +112,95 @@ cd app && npm run verify
 - ✅ CI: `.github/workflows/verify.yml` (lint → tsc → vitest → playwright → build → content audits)
 - ✅ E2E tests: 15 Playwright specs (card create, browser, deck mgmt, scenarios, custom fields)
 - ✅ Route smoke: desktop + mobile, 16 checks (`npm run qa:routes`)
+- ✅ Vercel staging config exists at `app/vercel.json`; external Vercel project still needs to be connected with root `app`, build command `npm run build`, and output `dist`.
+- ✅ User reporting menu is implemented in the top/burger menu. The `Report issue` modal posts to `/api/report`, attaches route/browser/theme/version/context metadata, and can create GitHub Issues when credentials are configured.
+
+---
+
+## Staging + user reporting setup plan
+
+### Recommended hosting path
+
+Use Vercel for the first staging build:
+
+```txt
+Root directory: app
+Build command: npm run build
+Output directory: dist
+```
+
+`app/vercel.json` is already present:
+
+```json
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
+```
+
+Use a staging URL first, such as:
+
+```txt
+kirokumichi-staging.vercel.app
+staging.kirokumichi.com
+```
+
+Keep production separate until testers have shaken out content/reporting issues.
+
+### Backend/API decision
+
+KirokuMichi has a Vite frontend plus backend/API pieces for AI/session work. For staging there are two practical options:
+
+- Frontend on Vercel, Express AI proxy on Render/Fly/Railway.
+- Frontend on Vercel, small endpoints such as `/api/report` as Vercel serverless functions, AI proxy deployed separately later.
+
+For the reporting feature, use a server-side environment variable such as `GITHUB_TOKEN`; never expose this in the client bundle.
+
+### Report issue menu
+
+The top/burger menu has a `Report issue` entry. The modal collects:
+
+- report type: bug, content/OCR issue, unreadable text/contrast, lesson problem, scenario problem, suggestion
+- short summary
+- description
+- optional contact email
+
+Auto-attach:
+
+- `window.location.pathname`
+- `window.location.href`
+- timestamp
+- browser/user agent
+- viewport size
+- theme/light/dark mode
+- app version or commit hash
+- active lesson ID, scenario ID, card ID, textbook key, page, or content item ID where available
+
+The first report sink is GitHub Issues:
+
+```txt
+User submits report
+→ /api/report
+→ GitHub issue created
+→ labels added: bug/content/contrast/lesson-flow/scenario/suggestion
+```
+
+Configure these environment variables in Vercel or the deployed API host:
+
+```txt
+GITHUB_REPORT_REPO=owner/repo
+GITHUB_REPORT_TOKEN=<token with issue creation permission>
+```
+
+If these variables are absent, `/api/report` accepts reports in local mode and logs the summary instead of failing. This is intentional for local smoke tests.
+
+Later polish:
+
+- optional screenshot attachment
+- recent console-error capture
+- Sentry event ID linking
+- admin/dev report dashboard if GitHub Issues becomes noisy
 
 ---
 
@@ -162,7 +252,17 @@ npm run packs:build                # Encrypt canonical proof JSONs → public/pa
 
 ---
 
-## Recent changes (2026-05-20)
+## Recent changes (2026-05-22)
+
+- **Staging/reporting plan added** — documented Vercel staging setup, SPA rewrite, backend deployment options, in-app `Report issue` modal requirements, automatic context metadata, GitHub Issues report sink, and later Sentry/screenshot polish.
+- **Staging/reporting implementation added** — `app/vercel.json`, `ReportIssueModal`, top-menu `Report issue` entry, local Express `/api/report`, Vercel `app/api/report.ts`, and shared GitHub Issue submission helper. Local smoke test submitted successfully in no-token local mode.
+
+## Recent changes (2026-05-20 — session 2)
+
+- **"Include textbook lessons" toggle** — `settings.includeTextbookLessons` (Zustand, persisted). `lessonSequencer.ts` fetches `lesson-structure.json`, maps CEFR range → textbook series, distributes up to 4 lessons/week into buckets. Toggle in Learning Path options panel; when on, assigned lessons are embedded in week cards and the AI prompt is enriched with the lesson list so activity wording references actual textbook content.
+- **Learning Path UX** — current/goal level dropdowns, daily commitment pill buttons, time estimate (🗓️), realism rating (5-bar meter with color), solid filled week badges (better contrast).
+
+## Recent changes (2026-05-20 — session 1)
 
 - **Azure Nanami Neural TTS** — `/api/tts` endpoint on Express proxy; Settings → Azure key + region; `speakViaAzure()` used in review, scenario mode, card writing with Web Speech fallback. In-memory 200-entry audio cache.
 - **Textbook pack encryption pipeline** — `tools/build-encrypted-packs.ts` + `npm run packs:build`. Reads canonical proof JSONs, produces AES-GCM `.kiroku-pack` files. Passphrases via `tools/pack-passphrases.local.json` (gitignored).
