@@ -2,7 +2,6 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { CEFR_BASE_TEXTBOOK, TEXTBOOK_LESSON_COUNTS, type CEFRLevel } from '../../src/content/cefrMapping'
 import { curriculumService } from '../../src/content/curriculumService'
-import { applyGenkiLessonOneFoundation, applyGenkiLessonOneGrammarScope } from '../../src/content/genkiFoundation'
 import { createLessonMatcher } from '../../src/content/lessonContentUtils'
 import { clearSupplementalScenarioCache, getSupplementalScenarios } from '../../src/content/supplementalScenarioService'
 import { getWorkbookPracticeTasks } from '../../src/content/workbookPracticeService'
@@ -73,14 +72,8 @@ async function main() {
       const lessonId = `${seriesPrefix}_${lessonNum}`
       const matchesLesson = createLessonMatcher(lessonId, lessonNum)
 
-      const vocab = applyGenkiLessonOneFoundation(
-        lessonId,
-        curriculum.vocabulary.filter(item => matchesLesson(item.lesson))
-      )
-      const grammar = applyGenkiLessonOneGrammarScope(
-        lessonId,
-        curriculum.grammar.filter(item => matchesLesson(item.lesson))
-      )
+      const vocab = curriculum.vocabulary.filter(item => matchesLesson(item.lesson))
+      const grammar = curriculum.grammar.filter(item => matchesLesson(item.lesson))
       const [tasks, scenarios] = await Promise.all([
         getWorkbookPracticeTasks({ cefr, lessonId, lessonNum, limit: 20 }),
         getSupplementalScenarios({ cefr, coreLessonId: lessonId }),
@@ -107,9 +100,9 @@ async function main() {
       }
 
       for (const task of tasks) {
-        const reason = reasonForText(`${task.prompt} ${task.support} ${task.sourcePrompt ?? ''}`)
+        const reason = reasonForText(`${task.prompt} ${task.support}`)
         if (reason) {
-          issues.push({ cefr, lessonId, type: 'task', id: task.id, reason, text: task.sourcePrompt ? `${task.prompt} [source: ${task.sourcePrompt}]` : task.prompt })
+          issues.push({ cefr, lessonId, type: 'task', id: task.id, reason, text: task.prompt })
         }
       }
 

@@ -226,6 +226,15 @@ export async function importFromAnki(
       `SELECT id FROM cards WHERE front = ? AND type = 'vocabulary' LIMIT 1`, [front]
     )
     if (existing[0]) {
+      if (sentence || sentenceMeaning) {
+        await storage.execute(
+          `UPDATE cards
+           SET example_sentence = COALESCE(example_sentence, ?),
+               example_translation = COALESCE(example_translation, ?)
+           WHERE id = ?`,
+          [sentence, sentenceMeaning, existing[0].id]
+        )
+      }
       await ensureCardState(existing[0].id, sourceLessonId)
 
       if (sentence && sentenceMeaning) {
@@ -258,9 +267,9 @@ export async function importFromAnki(
     try {
       await storage.execute(
         `INSERT OR IGNORE INTO cards
-           (type, front, back, reading, jlpt_level, frequency_rank, audio_url, deck_id, origin_type, origin_ref, created_at)
-         VALUES ('vocabulary', ?, ?, ?, ?, ?, ?, ?, 'anki_import', ?, datetime('now'))`,
-        [front, back, reading, deriveJlptLevel(tags), frequencyRank, audioUrl, options.deckId ?? null, file.name]
+           (type, front, back, reading, jlpt_level, frequency_rank, audio_url, deck_id, example_sentence, example_translation, origin_type, origin_ref, created_at)
+         VALUES ('vocabulary', ?, ?, ?, ?, ?, ?, ?, ?, ?, 'anki_import', ?, datetime('now'))`,
+        [front, back, reading, deriveJlptLevel(tags), frequencyRank, audioUrl, options.deckId ?? null, sentence, sentenceMeaning, file.name]
       )
 
       // Store sentence as a separate card if present

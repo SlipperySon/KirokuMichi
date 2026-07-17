@@ -2,6 +2,116 @@ import type { StorageProvider } from '../core/providers'
 
 let dbInstance: import('sql.js').Database | null = null
 let dbInitPromise: Promise<import('sql.js').Database> | null = null
+let persistTimer: ReturnType<typeof setTimeout> | null = null
+let persistInFlight: Promise<void> | null = null
+
+const DB_STORAGE_KEY = 'kiroku_michi_db'
+const DB_IDB_NAME = 'kiroku_michi_storage'
+const DB_IDB_STORE = 'snapshots'
+const DB_IDB_KEY = 'sqlite'
+const DB_PERSIST_DEBOUNCE_MS = 250
+
+function hasIndexedDB() {
+  return typeof indexedDB !== 'undefined'
+}
+
+function hasLocalStorage() {
+  return typeof localStorage !== 'undefined'
+}
+
+function openPersistenceDB(): Promise<IDBDatabase> {
+  return new Promise((resolve, reject) => {
+    if (!hasIndexedDB()) {
+      reject(new Error('IndexedDB is not available'))
+      return
+    }
+    const request = indexedDB.open(DB_IDB_NAME, 1)
+    request.onupgradeneeded = () => {
+      request.result.createObjectStore(DB_IDB_STORE)
+    }
+    request.onsuccess = () => resolve(request.result)
+    request.onerror = () => reject(request.error ?? new Error('Could not open IndexedDB'))
+  })
+}
+
+async function readSnapshotFromIndexedDB(): Promise<Uint8Array | null> {
+  if (!hasIndexedDB()) return null
+  const idb = await openPersistenceDB()
+  try {
+    return await new Promise((resolve, reject) => {
+      const tx = idb.transaction(DB_IDB_STORE, 'readonly')
+      const request = tx.objectStore(DB_IDB_STORE).get(DB_IDB_KEY)
+      request.onsuccess = () => {
+        const value = request.result
+        resolve(value instanceof Uint8Array ? value : value instanceof ArrayBuffer ? new Uint8Array(value) : null)
+      }
+      request.onerror = () => reject(request.error ?? new Error('Could not read SQLite snapshot'))
+    })
+  } finally {
+    idb.close()
+  }
+}
+
+async function writeSnapshotToIndexedDB(data: Uint8Array): Promise<void> {
+  const idb = await openPersistenceDB()
+  try {
+    await new Promise<void>((resolve, reject) => {
+      const tx = idb.transaction(DB_IDB_STORE, 'readwrite')
+      tx.objectStore(DB_IDB_STORE).put(data, DB_IDB_KEY)
+      tx.oncomplete = () => resolve()
+      tx.onerror = () => reject(tx.error ?? new Error('Could not persist SQLite snapshot'))
+    })
+  } finally {
+    idb.close()
+  }
+}
+
+function readSnapshotFromLocalStorage(): Uint8Array | null {
+  if (!hasLocalStorage()) return null
+  const saved = localStorage.getItem(DB_STORAGE_KEY)
+  if (!saved) return null
+  return Uint8Array.from(atob(saved), c => c.charCodeAt(0))
+}
+
+function writeSnapshotToLocalStorage(data: Uint8Array) {
+  if (!hasLocalStorage()) throw new Error('localStorage is not available')
+  let binary = ''
+  const chunkSize = 8192
+  for (let i = 0; i < data.length; i += chunkSize) {
+    binary += String.fromCharCode(...data.subarray(i, i + chunkSize))
+  }
+  localStorage.setItem(DB_STORAGE_KEY, btoa(binary))
+}
+
+async function loadPersistedSnapshot(): Promise<Uint8Array | null> {
+  try {
+    const idbSnapshot = await readSnapshotFromIndexedDB()
+    if (idbSnapshot) return idbSnapshot
+  } catch (err) {
+    console.warn('Could not read SQLite snapshot from IndexedDB:', err)
+  }
+
+  const localSnapshot = readSnapshotFromLocalStorage()
+  if (localSnapshot) {
+    void writeSnapshotToIndexedDB(localSnapshot).then(() => {
+      try {
+        if (hasLocalStorage()) localStorage.removeItem(DB_STORAGE_KEY)
+      } catch {
+        // Keep the fallback copy if removal is blocked.
+      }
+    }).catch(err => console.warn('Could not migrate SQLite snapshot to IndexedDB:', err))
+  }
+  return localSnapshot
+}
+
+function dispatchPersistenceWarning(error: unknown) {
+  if (typeof window === 'undefined') return
+  window.dispatchEvent(new CustomEvent('kiroku:persistence-error', {
+    detail: {
+      message: error instanceof Error ? error.message : 'Could not save study data',
+    },
+  }))
+}
 
 async function initDB() {
   if (dbInstance) return dbInstance
@@ -10,13 +120,12 @@ async function initDB() {
   dbInitPromise = (async () => {
     const initSqlJs = (await import('sql.js')).default
     const SQL = await initSqlJs({
-      locateFile: (file: string) => `/node_modules/sql.js/dist/${file}`,
+      locateFile: (file: string) => `/sql.js/${file}`,
     })
 
-    const saved = localStorage.getItem('kiroku_michi_db')
+    const saved = await loadPersistedSnapshot()
     if (saved) {
-      const buf = Uint8Array.from(atob(saved), c => c.charCodeAt(0))
-      dbInstance = new SQL.Database(buf)
+      dbInstance = new SQL.Database(saved)
     } else {
       dbInstance = new SQL.Database()
     }
@@ -55,6 +164,8 @@ function initializeSchema() {
       back TEXT NOT NULL,
       reading TEXT,
       audio_url TEXT,
+      example_sentence TEXT,
+      example_translation TEXT,
       jlpt_level TEXT,
       type TEXT DEFAULT 'vocabulary',
       frequency_rank INTEGER,
@@ -240,6 +351,30 @@ function initializeSchema() {
     // Column already exists
   }
 
+  dbInstance.run(`
+    CREATE TABLE IF NOT EXISTS grammar_states (
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      grammar_point_id INTEGER NOT NULL,
+      user_id INTEGER NOT NULL,
+      state TEXT DEFAULT 'new',
+      due TEXT DEFAULT (datetime('now')),
+      stability REAL DEFAULT 0,
+      difficulty REAL DEFAULT 0,
+      retrievability REAL DEFAULT 0,
+      reps INTEGER DEFAULT 0,
+      lapses INTEGER DEFAULT 0,
+      leech_count INTEGER DEFAULT 0,
+      is_leech INTEGER DEFAULT 0,
+      last_review TEXT,
+      UNIQUE(grammar_point_id, user_id)
+    )
+  `)
+
+  dbInstance.run(`
+    CREATE INDEX IF NOT EXISTS idx_grammar_states_due
+    ON grammar_states(user_id, due)
+  `)
+
   // Decks table for subdeck hierarchy
   dbInstance.run(`
     CREATE TABLE IF NOT EXISTS decks (
@@ -319,6 +454,18 @@ function initializeSchema() {
   }
 
   try {
+    dbInstance.run(`ALTER TABLE cards ADD COLUMN example_sentence TEXT`)
+  } catch {
+    // Column already exists
+  }
+
+  try {
+    dbInstance.run(`ALTER TABLE cards ADD COLUMN example_translation TEXT`)
+  } catch {
+    // Column already exists
+  }
+
+  try {
     dbInstance.run(`ALTER TABLE cards ADD COLUMN origin_type TEXT`)
   } catch {
     // Column already exists
@@ -358,13 +505,13 @@ function clearOldCards() {
   if (!dbInstance) return
 
   // Clear old imported cards on first load of new system
-  const hasCleared = localStorage.getItem('kiroku_michi_cleared_old_cards')
+  const hasCleared = hasLocalStorage() ? localStorage.getItem('kiroku_michi_cleared_old_cards') : null
   if (!hasCleared) {
     try {
       // Delete all imported cards (from old Anki import system)
       dbInstance.run(`DELETE FROM card_states`)
       dbInstance.run(`DELETE FROM cards`)
-      localStorage.setItem('kiroku_michi_cleared_old_cards', 'true')
+      if (hasLocalStorage()) localStorage.setItem('kiroku_michi_cleared_old_cards', 'true')
       console.log('Cleared old imported cards from database')
     } catch (e) {
       console.error('Error clearing old cards:', e)
@@ -372,15 +519,43 @@ function clearOldCards() {
   }
 }
 
-function persist() {
+async function persistNow() {
   if (!dbInstance) return
   const data = dbInstance.export()
-  let binary = ''
-  const chunkSize = 8192
-  for (let i = 0; i < data.length; i += chunkSize) {
-    binary += String.fromCharCode(...data.subarray(i, i + chunkSize))
+  try {
+    await writeSnapshotToIndexedDB(data)
+    try {
+      if (hasLocalStorage()) localStorage.removeItem(DB_STORAGE_KEY)
+    } catch {
+      // Non-fatal; IndexedDB has the durable copy.
+    }
+  } catch (idbErr) {
+    try {
+      writeSnapshotToLocalStorage(data)
+    } catch (localErr) {
+      dispatchPersistenceWarning(localErr)
+      throw idbErr
+    }
   }
-  localStorage.setItem('kiroku_michi_db', btoa(binary))
+}
+
+function persist() {
+  if (persistTimer !== null) clearTimeout(persistTimer)
+  persistTimer = setTimeout(() => {
+    persistTimer = null
+    persistInFlight = persistNow().catch(err => {
+      console.error('Could not persist SQLite database:', err)
+    })
+  }, DB_PERSIST_DEBOUNCE_MS)
+}
+
+async function flushPersist() {
+  if (persistTimer !== null) {
+    clearTimeout(persistTimer)
+    persistTimer = null
+  }
+  await persistNow()
+  if (persistInFlight) await persistInFlight
 }
 
 export class SQLiteStorage implements StorageProvider {
@@ -402,9 +577,13 @@ export class SQLiteStorage implements StorageProvider {
     persist()
   }
 
+  async flush(): Promise<void> {
+    await flushPersist()
+  }
+
   async close(): Promise<void> {
     if (dbInstance) {
-      persist()
+      await flushPersist()
       dbInstance.close()
       dbInstance = null
       dbInitPromise = null

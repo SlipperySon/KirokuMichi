@@ -19,7 +19,6 @@ import {
   type SupplementalScenario,
 } from '../content/supplementalScenarioService'
 import type { AIMessage } from '../core/providers'
-import { speakViaAzure } from './useCardAudio'
 
 interface DialogueLine {
   speaker: string
@@ -70,18 +69,6 @@ function catalogSourceFor(key: string) {
   return SUPPLEMENTAL_SCENARIO_SOURCES.find(source => source.textbookKey === key)
 }
 
-async function speak(text: string) {
-  const azureOk = await speakViaAzure(text)
-  if (!azureOk) {
-    if (!('speechSynthesis' in window)) return
-    window.speechSynthesis.cancel()
-    const utt = new SpeechSynthesisUtterance(text)
-    utt.lang = 'ja-JP'
-    utt.rate = 0.85
-    window.speechSynthesis.speak(utt)
-  }
-}
-
 function DialogueView({ scenario, showFurigana }: { scenario: Scenario; showFurigana: boolean }) {
   const [step, setStep] = useState(0)
   const [revealed, setRevealed] = useState<Set<number>>(new Set())
@@ -91,7 +78,6 @@ function DialogueView({ scenario, showFurigana }: { scenario: Scenario; showFuri
   const shouldAnnotate = showFurigana && isBeginnerLevel(scenario.level)
 
   useEffect(() => {
-    if (scenario.lines[step]) speak(scenario.lines[step].text)
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [step, scenario])
 
@@ -115,9 +101,8 @@ function DialogueView({ scenario, showFurigana }: { scenario: Scenario; showFuri
             </div>
             <div className={`flex-1 space-y-1 ${line.speaker === 'B' ? 'text-right' : ''}`}>
               <p
-                className="text-gray-900 cursor-pointer hover:text-indigo-700 transition-colors"
+                className="text-gray-900"
                 lang="ja"
-                onClick={() => speak(line.text)}
               >
                 <Ruby
                   text={shouldAnnotate ? annotateBeginnerFurigana(line.text) : line.text}

@@ -65,12 +65,12 @@ export function Settings() {
     setTestResult(null)
   }
 
-  const handleApiKeyChange = (key: string) => {
-    updateSettings({ apiKey: key })
-  }
-
   const handleEndpointChange = (endpoint: string) => {
     updateSettings({ apiEndpoint: endpoint })
+  }
+
+  const handleApiKeyChange = (key: string) => {
+    updateSettings({ apiKey: key || null })
   }
 
   const handleFastModelChange = (model: string) => {
@@ -110,14 +110,9 @@ export function Settings() {
   })
 
   const testConnection = async () => {
-    if (!settings.aiProvider || settings.aiProvider !== 'ollama' && !settings.apiKey || settings.aiProvider === 'ollama' && !settings.apiEndpoint) {
-      if (settings.aiProvider === 'ollama') {
-        setTestResult({ ok: false, message: 'Please enter Ollama endpoint' })
-        toast.error('Please enter an Ollama endpoint')
-      } else {
-        setTestResult({ ok: false, message: 'Please configure API key' })
-        toast.error('Please configure an API key first')
-      }
+    if (!settings.aiProvider || (settings.aiProvider === 'ollama' || settings.aiProvider === 'custom') && !settings.apiEndpoint) {
+      setTestResult({ ok: false, message: 'Please enter a provider endpoint' })
+      toast.error('Please enter a provider endpoint')
       return
     }
 
@@ -207,8 +202,7 @@ export function Settings() {
               ))}
             </div>
 
-            {/* API Key Input */}
-            {settings.aiProvider && settings.aiProvider !== 'ollama' && (
+            {settings.aiProvider && settings.aiProvider !== 'ollama' && settings.aiProvider !== 'custom' && (
               <div className="mb-6">
                 <label className="block text-sm font-medium text-gray-300 mb-2 text-center">
                   {intl.formatMessage({ id: 'settings.api_key' })}
@@ -217,17 +211,11 @@ export function Settings() {
                   type="password"
                   value={settings.apiKey || ''}
                   onChange={e => handleApiKeyChange(e.target.value)}
-                  placeholder={
-                    settings.aiProvider === 'anthropic' ? 'sk-ant-...' :
-                    settings.aiProvider === 'openai' ? 'sk-...' :
-                    settings.aiProvider === 'openrouter' ? 'sk-or-...' :
-                    settings.aiProvider === 'deepseek' ? 'sk-...' :
-                    'your-api-key'
-                  }
+                  placeholder="Optional: use your own key for this browser session"
                   className="w-full px-3 py-2 border border-gray-600 rounded-lg bg-gray-800 text-gray-100 text-center focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <p className="text-xs text-gray-500 mt-2">
-                  {intl.formatMessage({ id: 'settings.api_key_hint' })}
+                  Server keys are used by default when configured. Your key is session-only and is not saved across reloads.
                 </p>
               </div>
             )}
@@ -403,70 +391,6 @@ export function Settings() {
                 </p>
               </div>
 
-              {/* TTS Settings */}
-              <label className="relative flex items-center justify-center p-3 border border-gray-600 rounded-lg bg-gray-800 text-gray-100 cursor-pointer hover:bg-gray-700 text-center">
-                <input
-                  type="checkbox"
-                  checked={settings.ttsEnabled}
-                  onChange={e => updateSettings({ ttsEnabled: e.target.checked })}
-                  className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4"
-                />
-                <div className="px-8">
-                  <div className="font-medium text-gray-100">Use TTS for cards without audio</div>
-                  <div className="text-xs text-gray-400 mt-0.5">Browser speech synthesis fallback</div>
-                </div>
-              </label>
-
-              {settings.ttsEnabled && (
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2 text-center">
-                    TTS rate
-                  </label>
-                  <input
-                    type="range"
-                    min="0.6"
-                    max="1.4"
-                    step="0.05"
-                    value={settings.ttsRate}
-                    onChange={e => updateSettings({ ttsRate: parseFloat(e.target.value) })}
-                    className="w-full"
-                  />
-                  <p className="text-xs text-gray-500 mt-2 text-center">{settings.ttsRate.toFixed(2)}×</p>
-                </div>
-              )}
-
-              {/* Azure TTS */}
-              <div>
-                <label className="block text-sm font-medium text-gray-300 mb-2 text-center">
-                  Azure TTS (Nanami Neural){' '}
-                  <a
-                    href="https://azure.microsoft.com/en-us/products/ai-services/text-to-speech"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-indigo-400 hover:text-indigo-300 text-xs"
-                  >
-                    ↗ Azure
-                  </a>
-                </label>
-                <input
-                  type="password"
-                  value={settings.azureTtsKey || ''}
-                  onChange={e => updateSettings({ azureTtsKey: e.target.value || null })}
-                  placeholder="Azure Speech key"
-                  className="w-full px-3 py-2 border border-gray-600 rounded-lg bg-gray-800 text-gray-100 text-center focus:outline-none focus:ring-2 focus:ring-blue-500 mb-2"
-                />
-                <input
-                  type="text"
-                  value={settings.azureTtsRegion || 'eastus'}
-                  onChange={e => updateSettings({ azureTtsRegion: e.target.value || 'eastus' })}
-                  placeholder="eastus"
-                  className="w-full px-3 py-2 border border-gray-600 rounded-lg bg-gray-800 text-gray-100 text-center focus:outline-none focus:ring-2 focus:ring-blue-500"
-                />
-                <p className="text-xs text-gray-500 mt-2 text-center">
-                  When set, uses Azure's ja-JP-NanamiNeural voice instead of the browser's built-in voices.
-                </p>
-              </div>
-
               {/* Hover Delay */}
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2 text-center">
@@ -563,19 +487,6 @@ export function Settings() {
 
             {showAdvanced && (
               <div className="mt-4 pt-4 border-t border-gray-700 space-y-4">
-                <div>
-                  <label className="block text-sm font-medium text-gray-300 mb-2 text-center">Session Token</label>
-                  <input
-                    type="text"
-                    value={settings.sessionToken || ''}
-                    readOnly
-                    className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-xs font-mono text-gray-400 text-center"
-                  />
-                  <p className="text-xs text-gray-500 mt-2 text-center">
-                    This token is generated automatically. Do not share it.
-                  </p>
-                </div>
-
                 <div>
                   <label className="block text-sm font-medium text-gray-300 mb-2 text-center">Active User ID</label>
                   <div className="w-full px-3 py-2 bg-gray-800 border border-gray-700 rounded-lg text-gray-300 text-center">

@@ -1,9 +1,8 @@
-import { useEffect, useRef } from 'react'
 import { useIntl } from 'react-intl'
 import type { Rating } from '../core/providers'
 import type { ReviewCard, IntervalPreview } from './types'
 import { RatingButtons } from './RatingButtons'
-import { speakViaAzure } from './useCardAudio'
+import { playRecordedAudio } from './useCardAudio'
 
 interface Props {
   card: ReviewCard
@@ -13,40 +12,22 @@ interface Props {
   onRate: (rating: Rating) => void
 }
 
-async function speakJapanese(text: string) {
-  const azureOk = await speakViaAzure(text)
-  if (!azureOk) {
-    if (!window.speechSynthesis) return
-    window.speechSynthesis.cancel()
-    const utt = new SpeechSynthesisUtterance(text)
-    utt.lang = 'ja-JP'
-    window.speechSynthesis.speak(utt)
-  }
-}
-
 export function CardWriting({ card, phase, intervalPreviews, onReveal, onRate }: Props) {
   const intl = useIntl()
-  const hasSpoken = useRef(false)
-
-  useEffect(() => {
-    if (!hasSpoken.current && card.front) {
-      speakJapanese(card.front)
-      hasSpoken.current = true
-    }
-    return () => { window.speechSynthesis?.cancel() }
-  }, [card.front])
 
   return (
     <div className="flex flex-col items-center gap-6 w-full max-w-md mx-auto">
       <p className="text-gray-600 text-sm">{intl.formatMessage({ id: 'study.card.write_prompt' })}</p>
 
-      <button
-        onClick={() => speakJapanese(card.front)}
-        className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-lg text-sm text-gray-600 hover:bg-gray-50 transition-colors"
-      >
-        <span>▶</span>
-        {intl.formatMessage({ id: 'study.card.replay_audio' })}
-      </button>
+      {card.audioUrl && (
+        <button
+          onClick={() => { void playRecordedAudio(card.audioUrl).catch(() => {}) }}
+          className="flex items-center gap-2 px-4 py-2 border border-gray-200 rounded-lg text-sm text-gray-600 hover:bg-gray-50 transition-colors"
+        >
+          <span>▶</span>
+          {intl.formatMessage({ id: 'study.card.replay_audio' })}
+        </button>
+      )}
 
       {phase === 'front' ? (
         <>

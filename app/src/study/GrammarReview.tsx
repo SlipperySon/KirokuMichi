@@ -7,8 +7,10 @@ import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { SRSService } from '../srs/srsService'
 import { Navigation } from '../components/Navigation'
 import { EmptyState } from '../components/EmptyState'
+import type { Rating } from '../core/providers'
 
 interface GrammarPoint {
+  grammarStateId: number
   id: number
   jlpt_level: string
   title: string
@@ -24,7 +26,14 @@ interface Example {
   en: string
 }
 
-function GrammarCard({ point, onNext }: { point: GrammarPoint; onNext: () => void }) {
+const RATING_BUTTONS: Array<{ rating: Rating; label: string; className: string }> = [
+  { rating: 'again', label: 'Again', className: 'bg-red-500 hover:bg-red-600' },
+  { rating: 'hard', label: 'Hard', className: 'bg-amber-500 hover:bg-amber-600' },
+  { rating: 'good', label: 'Good', className: 'bg-emerald-600 hover:bg-emerald-700' },
+  { rating: 'easy', label: 'Easy', className: 'bg-indigo-600 hover:bg-indigo-700' },
+]
+
+function GrammarCard({ point, onRate }: { point: GrammarPoint; onRate: (rating: Rating) => void }) {
   const [revealed, setRevealed] = useState(false)
   let examples: Example[] = []
   try { examples = JSON.parse(point.examples_json ?? '[]') } catch { examples = [] }
@@ -62,12 +71,17 @@ function GrammarCard({ point, onNext }: { point: GrammarPoint; onNext: () => voi
             </div>
           )}
 
-          <button
-            onClick={onNext}
-            className="w-full px-4 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
-          >
-            Next →
-          </button>
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
+            {RATING_BUTTONS.map(button => (
+              <button
+                key={button.rating}
+                onClick={() => onRate(button.rating)}
+                className={`px-4 py-3 text-white rounded-xl font-semibold transition-colors ${button.className}`}
+              >
+                {button.label}
+              </button>
+            ))}
+          </div>
         </>
       ) : (
         <button
@@ -106,10 +120,10 @@ export function GrammarReview() {
     setLoading(false)
   }
 
-  async function handleNext() {
+  async function handleRate(rating: Rating) {
     if (!queue || sessionId === null) return
     const point = queue[index]
-    await service.markGrammarSeen(userId, point.id)
+    await service.reviewGrammar(userId, point.grammarStateId, rating)
     const next = index + 1
     setReviewed(r => r + 1)
 
@@ -156,7 +170,7 @@ export function GrammarReview() {
           <EmptyState
             icon="🎓"
             title="No grammar points yet"
-            description="Import grammar content from Practice or study a lesson to unlock grammar review."
+        description="No grammar cards are due right now. Import grammar content or come back after the scheduler spaces the next review."
             action={
               <button onClick={() => navigate('/study')} className="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-sm font-semibold text-indigo-800 hover:bg-indigo-100">
                 <LayoutDashboard className="h-4 w-4" aria-hidden="true" />
@@ -190,7 +204,7 @@ export function GrammarReview() {
           />
         </div>
 
-        <GrammarCard key={current.id} point={current} onNext={handleNext} />
+        <GrammarCard key={current.grammarStateId} point={current} onRate={handleRate} />
       </main>
     </div>
   )

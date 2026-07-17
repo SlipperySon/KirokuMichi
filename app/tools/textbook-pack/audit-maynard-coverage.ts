@@ -2,7 +2,6 @@ import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import { CEFR_BASE_TEXTBOOK, TEXTBOOK_LESSON_COUNTS, type CEFRLevel } from '../../src/content/cefrMapping'
 import { curriculumService, type GrammarItem } from '../../src/content/curriculumService'
-import { applyGenkiLessonOneGrammarScope } from '../../src/content/genkiFoundation'
 import { createLessonMatcher } from '../../src/content/lessonContentUtils'
 import { getMaynardSupport, hasMaynardSupport } from '../../src/content/maynardSupport'
 
@@ -55,10 +54,7 @@ async function main() {
     for (let lessonNum = 1; lessonNum <= lessonCount; lessonNum++) {
       const lessonId = `${seriesPrefix}_${lessonNum}`
       const matchesLesson = createLessonMatcher(lessonId, lessonNum)
-      const grammar = applyGenkiLessonOneGrammarScope(
-        lessonId,
-        curriculum.grammar.filter(item => matchesLesson(item.lesson))
-      )
+      const grammar = curriculum.grammar.filter(item => matchesLesson(item.lesson))
       const supported = grammar.filter(hasMaynardSupport)
       const supportKinds = supported.map(item => getMaynardSupport(item)?.sourceKind ?? sourceKindFromTopicId(getMaynardSupport(item)?.topicId))
       const lessonDirectCount = supportKinds.filter(kind => kind === 'direct').length

@@ -8,6 +8,7 @@ import { curriculumService } from './curriculumService'
 import { lessonStructureService } from './lessonNormalization'
 import { findBestMatch, extractLessonTerms } from './cardMatcher'
 import { coreLessonIdFromSource, createLessonMatcher } from './lessonContentUtils'
+import type { GrammarItem, VocabItem } from './curriculumService'
 
 export interface UnlockMatch {
   cardId: number
@@ -22,6 +23,83 @@ export interface UnlockResult {
   unlockedCount: number
   matches: UnlockMatch[]
   errors: string[]
+}
+
+export async function repairLessonCardLinks(
+  lessonId: string,
+  userId: number,
+  storage: StorageProvider,
+  vocab: VocabItem[],
+  grammar: GrammarItem[]
+): Promise<UnlockResult> {
+  const errors: string[] = []
+  const matches: UnlockMatch[] = []
+  const lessonTerms = extractLessonTerms(vocab, grammar)
+
+  if (lessonTerms.length === 0) {
+    return { lessonId, unlockedCount: 0, matches: [], errors: ['No lesson terms available for card repair'] }
+  }
+
+  const cards = await storage.query<{
+    cardStateId: number
+    cardId: number
+    front: string
+    reading: string | null
+  }>(
+    `SELECT
+       cs.id AS cardStateId,
+       cs.card_id AS cardId,
+       c.front,
+       c.reading
+     FROM card_states cs
+     JOIN cards c ON c.id = cs.card_id
+     WHERE cs.user_id = ?
+       AND cs.is_leech = 0
+       AND (cs.lesson_id IS NULL OR cs.lesson_id = ?)
+     ORDER BY cs.id ASC`,
+    [userId, lessonId]
+  )
+
+  const matchedStateIds = new Set<number>()
+
+  for (const card of cards) {
+    const match = findBestMatch(card.front, lessonTerms) ?? (card.reading ? findBestMatch(card.reading, lessonTerms) : null)
+    if (!match) continue
+
+    matchedStateIds.add(card.cardStateId)
+    matches.push({
+      cardId: card.cardId,
+      cardFront: card.front,
+      lessonTerm: match.lessonTerm,
+      matchType: match.matchType,
+      score: match.score,
+    })
+  }
+
+  for (const cardStateId of matchedStateIds) {
+    try {
+      await storage.execute(
+        `UPDATE card_states SET lesson_id = ? WHERE id = ? AND user_id = ?`,
+        [lessonId, cardStateId, userId]
+      )
+    } catch (error) {
+      errors.push(`Failed to link card_state ${cardStateId}: ${String(error)}`)
+    }
+  }
+
+  for (const match of matches) {
+    try {
+      await storage.execute(
+        `INSERT OR IGNORE INTO lesson_vocabulary (user_id, lesson_id, card_id, term)
+         VALUES (?, ?, ?, ?)`,
+        [userId, lessonId, match.cardId, match.lessonTerm]
+      )
+    } catch (error) {
+      errors.push(`Failed to record lesson vocabulary ${match.cardId}: ${String(error)}`)
+    }
+  }
+
+  return { lessonId, unlockedCount: matchedStateIds.size, matches, errors }
 }
 
 /**

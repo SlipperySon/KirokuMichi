@@ -51,7 +51,7 @@ export function StepAI({ onNext }: Props) {
   const intl = useIntl()
   const { settings, updateSettings } = useAppStore()
   const [provider, setProvider] = useState<ProviderType>(settings.aiProvider || null)
-  const [apiKey, setApiKey] = useState('')
+  const [apiKey, setApiKey] = useState(settings.apiKey || '')
   const [customEndpoint, setCustomEndpoint] = useState('')
   const [ollamaEndpoint, setOllamaEndpoint] = useState('http://localhost:11434')
   const [status, setStatus] = useState<'idle' | 'testing' | 'ok' | 'fail'>('idle')
@@ -59,11 +59,6 @@ export function StepAI({ onNext }: Props) {
 
   async function testConnection() {
     if (!provider || provider === 'custom' && !customEndpoint) {
-      setStatus('fail')
-      return
-    }
-
-    if ((provider === 'anthropic' || provider === 'openai' || provider === 'openrouter' || provider === 'deepseek') && !apiKey) {
       setStatus('fail')
       return
     }
@@ -82,7 +77,7 @@ export function StepAI({ onNext }: Props) {
           system: 'You are helpful.',
           tier: 'fast',
           provider,
-          apiKey,
+          apiKey: apiKey || null,
           apiEndpoint: provider === 'custom' ? customEndpoint : provider === 'ollama' ? ollamaEndpoint : null,
           fastModel: defaults.fastModel,
           powerfulModel: defaults.powerfulModel,
@@ -106,7 +101,7 @@ export function StepAI({ onNext }: Props) {
     const defaults = PROVIDER_DEFAULTS[provider]
     updateSettings({
       aiProvider: provider,
-      apiKey: provider && provider !== 'ollama' && provider !== 'custom' ? apiKey : null,
+      apiKey: provider && provider !== 'ollama' && provider !== 'custom' ? apiKey || null : null,
       apiEndpoint: provider === 'ollama' ? ollamaEndpoint : provider === 'custom' ? customEndpoint : null,
       fastModel: defaults.fastModel,
       powerfulModel: defaults.powerfulModel,
@@ -154,20 +149,11 @@ export function StepAI({ onNext }: Props) {
             type="password"
             value={apiKey}
             onChange={e => setApiKey(e.target.value)}
-            placeholder={
-              provider === 'anthropic' ? 'sk-ant-...' :
-              provider === 'openai' ? 'sk-...' :
-              provider === 'openrouter' ? 'sk-or-...' :
-              provider === 'deepseek' ? 'sk-...' :
-              'your-api-key'
-            }
+            placeholder="Optional: use your own key for this browser session"
             className="w-full px-4 py-2 border border-gray-300 rounded-lg font-mono text-sm focus:outline-none focus:ring-2 focus:ring-indigo-400"
           />
           <p className="text-xs text-gray-500 mt-1">
-            {provider === 'anthropic' && 'Get from https://console.anthropic.com/account/keys'}
-            {provider === 'openai' && 'Get from https://platform.openai.com/account/api-keys'}
-            {provider === 'openrouter' && 'Get from https://openrouter.ai/keys'}
-            {provider === 'deepseek' && 'Get from https://platform.deepseek.com/api_keys'}
+            Server keys are used by default when configured. Your key is not saved across reloads.
           </p>
         </div>
       )}
@@ -243,7 +229,7 @@ export function StepAI({ onNext }: Props) {
         {provider && provider !== null ? (
           <button
             onClick={testConnection}
-            disabled={status === 'testing' || (provider !== 'ollama' && provider !== 'custom' && !apiKey) || (provider === 'custom' && !customEndpoint) || (provider === 'ollama' && !ollamaEndpoint)}
+            disabled={status === 'testing' || (provider === 'custom' && !customEndpoint) || (provider === 'ollama' && !ollamaEndpoint)}
             className="px-8 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {status === 'testing' ? 'Testing Connection…' : 'Test & Continue'}

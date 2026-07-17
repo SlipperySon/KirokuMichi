@@ -58,6 +58,30 @@ describe('SRSService.getNewCards', () => {
   })
 })
 
+describe('SRSService.getCardsForLesson', () => {
+  it('queries Genki II lessons with app and source lesson ids', async () => {
+    const storage = makeStorage({ query: vi.fn().mockResolvedValue([]) })
+    const svc = new SRSService(storage, makeScheduler())
+
+    await svc.getCardsForLesson(USER_ID, 'genki_2_1', 20)
+
+    const [sql, params] = (storage.query as ReturnType<typeof vi.fn>).mock.calls[0] as [string, unknown[]]
+    expect(sql).toContain('cs.lesson_id IN (?, ?)')
+    expect(params).toEqual([USER_ID, 'genki_2_1', 'genki_2_13', 20])
+  })
+
+  it('keeps Genki I lesson queries exact', async () => {
+    const storage = makeStorage({ query: vi.fn().mockResolvedValue([]) })
+    const svc = new SRSService(storage, makeScheduler())
+
+    await svc.getCardsForLesson(USER_ID, 'genki_1_1')
+
+    const [sql, params] = (storage.query as ReturnType<typeof vi.fn>).mock.calls[0] as [string, unknown[]]
+    expect(sql).toContain('cs.lesson_id IN (?)')
+    expect(params).toEqual([USER_ID, 'genki_1_1'])
+  })
+})
+
 describe('SRSService.reviewCard', () => {
   function makeRowStorage(lapses: number, isLeech = 0) {
     let callCount = 0
@@ -115,6 +139,61 @@ describe('SRSService.reviewCard', () => {
 
     const { isNewLeech } = await svc.reviewCard(USER_ID, 1, 'again')
     expect(isNewLeech).toBe(false)
+  })
+})
+
+describe('SRSService grammar scheduling', () => {
+  it('seeds grammar_states before querying due grammar', async () => {
+    const storage = makeStorage({ query: vi.fn().mockResolvedValue([]) })
+    const svc = new SRSService(storage, makeScheduler())
+
+    await svc.getGrammarQueue(USER_ID, 10)
+
+    expect(storage.execute).toHaveBeenCalledWith(
+      expect.stringContaining('INSERT OR IGNORE INTO grammar_states'),
+      expect.any(Array)
+    )
+    expect(storage.query).toHaveBeenCalledWith(
+      expect.stringContaining('FROM grammar_points gp'),
+      [USER_ID, 10]
+    )
+  })
+
+  it('reviews grammar through the scheduler and updates progress history', async () => {
+    let queryCount = 0
+    const storage = makeStorage({
+      query: vi.fn().mockImplementation(() => {
+        queryCount++
+        if (queryCount === 1) {
+          return Promise.resolve([{
+            grammar_point_id: 7,
+            due: new Date().toISOString(),
+            stability: 1,
+            difficulty: 2.5,
+            retrievability: 0,
+            state: 'new',
+            reps: 0,
+            lapses: 0,
+            is_leech: 0,
+          }])
+        }
+        return Promise.resolve([])
+      }),
+    })
+    const scheduler = makeScheduler()
+    const svc = new SRSService(storage, scheduler)
+
+    await svc.reviewGrammar(USER_ID, 99, 'good')
+
+    expect(scheduler.schedule).toHaveBeenCalledOnce()
+    expect(storage.execute).toHaveBeenCalledWith(
+      expect.stringContaining('UPDATE grammar_states'),
+      expect.any(Array)
+    )
+    expect(storage.execute).toHaveBeenCalledWith(
+      expect.stringContaining('INSERT INTO grammar_progress'),
+      [USER_ID, 7]
+    )
   })
 })
 

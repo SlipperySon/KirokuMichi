@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { canonicalSourceLessonId, coreLessonIdFromSource, createLessonMatcher, lessonAliasesFor } from './lessonContentUtils'
+import { canonicalSourceLessonId, coreLessonIdFromSource, createLessonMatcher, lessonAliasesFor, storageLessonIdsFor } from './lessonContentUtils'
 
 describe('lesson content matching', () => {
   it('keeps plain Genki I lesson matching intact', () => {
@@ -7,6 +7,7 @@ describe('lesson content matching', () => {
 
     expect(matches('genki_1_3')).toBe(true)
     expect(matches('1_textbook_genki_1_3')).toBe(true)
+    expect(matches('genki_1')).toBe(false)
     expect(matches('genki_1_4')).toBe(false)
   })
 
@@ -24,6 +25,12 @@ describe('lesson content matching', () => {
     expect(coreLessonIdFromSource('genki_2_13')).toBe('genki_2_1')
     expect(coreLessonIdFromSource('genki_2_23')).toBe('genki_2_11')
     expect(coreLessonIdFromSource('genki_2_5')).toBe('genki_2_5')
+  })
+
+  it('keeps storage lesson ids to real lesson identifiers only', () => {
+    expect(storageLessonIdsFor('genki_1_1')).toEqual(['genki_1_1'])
+    expect(storageLessonIdsFor('genki_2_1')).toEqual(['genki_2_1', 'genki_2_13'])
+    expect(storageLessonIdsFor('genki_2_13')).toEqual(['genki_2_1', 'genki_2_13'])
   })
 
   it('maps app Quartet II lessons to source lesson numbers 7-12', () => {

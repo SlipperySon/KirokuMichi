@@ -4,6 +4,7 @@ import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { SRSService } from '../srs/srsService'
 import { importFromAnki } from '../srs/ankiImport'
+import { importBundledGenkiTestDeck } from '../srs/bundledGenkiImport'
 import { ClientAIProvider } from '../ai/aiProvider'
 import { toast } from '../components/toastStore'
 import { CONFIRMABLE_TEXTBOOKS, detectTextbook, TEXTBOOK_LABELS, type TextbookKey } from '../content/textbookDetection'
@@ -657,6 +658,23 @@ export function ContentUpload() {
     }
   }
 
+  async function handleBundledGenkiTestImport() {
+    setAnkiLoading(true)
+    setAnkiStatus('Importing bundled Genki test cards…')
+    try {
+      const result = await importBundledGenkiTestDeck(storage, userId)
+      const summary = `Imported ${result.imported} Genki test cards, skipped ${result.skipped}; ${result.linked}/${result.cards} bundled cards linked to lessons`
+      setAnkiStatus(summary)
+      toast.success(summary, 7000)
+    } catch (e) {
+      const msg = `Bundled Genki import failed: ${e instanceof Error ? e.message : 'unknown error'}`
+      setAnkiStatus(msg)
+      toast.error(msg)
+    } finally {
+      setAnkiLoading(false)
+    }
+  }
+
   async function handleLockedPack(file: File) {
     if (!packPassphrase.trim()) {
       toast.error('Enter the pack passphrase first')
@@ -697,7 +715,6 @@ export function ContentUpload() {
           'x-session-token': sessionToken,
         },
         body: JSON.stringify({
-          apiKey: settings.apiKey,
           fastModel: settings.fastModel,
           pageStart: GENKI_TEXTBOOK_PAGE_START,
           pageLimit: 2,
@@ -767,7 +784,7 @@ export function ContentUpload() {
       formData.append('pageStart', String(fileRanges[0]?.startPage ?? DEFAULT_PDF_PAGE_START))
       formData.append('pageLimit', String(fileRanges[0]?.pageLimit ?? DEFAULT_PDF_PAGE_LIMIT))
       formData.append('provider', settings.aiProvider || '')
-      formData.append('apiKey', settings.apiKey || '')
+      if (settings.apiKey) formData.append('apiKey', settings.apiKey)
       formData.append('fastModel', settings.fastModel)
       formData.append('system', EXTRACTION_SYSTEM_PROMPT)
       formData.append('ocrMode', 'prefer')
@@ -963,6 +980,17 @@ export function ContentUpload() {
           <input type="file" accept=".apkg" className="hidden" disabled={ankiLoading}
             onChange={e => { if (e.target.files?.[0]) void handleAnkiFile(e.target.files[0]) }} />
         </label>
+        <button
+          type="button"
+          onClick={handleBundledGenkiTestImport}
+          disabled={ankiLoading}
+          className="rounded-lg border border-amber-300 bg-amber-50 px-4 py-2 text-sm font-semibold text-amber-900 hover:bg-amber-100 disabled:cursor-not-allowed disabled:opacity-50"
+        >
+          Import bundled Genki test cards
+        </button>
+        <p className="text-xs text-gray-500">
+          Temporary testing pack: Genki I + II cards without audio/media, linked to lessons so testers do not need to upload a deck.
+        </p>
         {ankiStatus && <p className="text-sm text-center text-gray-600">{ankiStatus}</p>}
       </section>
 
@@ -1033,7 +1061,7 @@ export function ContentUpload() {
               </button>
               <button
                 onClick={handleDevFixtureTest}
-                disabled={devTestLoading || !settings.apiKey}
+                disabled={devTestLoading}
                 className="px-4 py-2 bg-slate-800 text-white rounded-lg text-sm font-semibold hover:bg-slate-700 disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 {devTestLoading ? 'Testing…' : 'Run AI test'}

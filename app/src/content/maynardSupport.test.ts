@@ -50,7 +50,7 @@ describe('Maynard support', () => {
     const b1 = buildGrammarExplanationPlan(grammar('から見ると'), [grammar('逆に')])
     const b2 = buildGrammarExplanationPlan(grammar('ざるを得ない'))
 
-    expect(getMaynardSupport(grammar('せめて'))?.sourceKind).toBe('curated-support')
+    expect(getMaynardSupport(grammar('っけ'))?.sourceKind).toBe('curated-support')
     expect(b1.maynardTitle).toContain('Further particles')
     expect(b1.contrastWithNearbyGrammar).toContain('逆に')
     expect(getMaynardSupport(grammar('ざるを得ない'))?.sourceKind).toBe('direct')

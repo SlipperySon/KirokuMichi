@@ -55,11 +55,20 @@ export function lessonAliasesFor(lessonId: string, lessonNum: number) {
   return aliases
 }
 
+export function storageLessonIdsFor(lessonId: string) {
+  const coreLessonId = coreLessonIdFromSource(lessonId)
+  const lessonNum = lessonNumberFromId(coreLessonId)
+  if (!lessonNum) return [lessonId]
+  return [...lessonAliasesFor(coreLessonId, lessonNum)].filter(alias => /\w+_\d+_\d+$/.test(alias))
+}
+
 export function createLessonMatcher(lessonId: string, lessonNum: number) {
   const aliases = lessonAliasesFor(lessonId, lessonNum)
   return (itemLesson: string) => {
     if (aliases.has(itemLesson)) return true
-    return [...aliases].some(alias => itemLesson.endsWith(`_${alias}`))
+    return [...aliases]
+      .filter(alias => alias !== lessonNum.toString())
+      .some(alias => itemLesson.endsWith(`_${alias}`))
   }
 }
 
@@ -72,7 +81,7 @@ export function formatTextbookName(textbookKey: string) {
 
 export function pageRangeFromPages(pages: number[]) {
   const valid = pages.filter(page => Number.isFinite(page) && page > 0)
-  if (valid.length === 0) return 'Unpaged generated content'
+  if (valid.length === 0) return 'No extracted page reference'
   const min = Math.min(...valid)
   const max = Math.max(...valid)
   return min === max ? `p. ${min}` : `pp. ${min}-${max}`

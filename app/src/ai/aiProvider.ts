@@ -4,7 +4,8 @@ import { useAppStore } from '../store'
 /**
  * Client-side AI proxy. All requests go through the Express server at /api/ai/complete,
  * which handles the actual API calls to any configured provider (Anthropic, OpenAI, custom, etc).
- * This keeps API keys server-side only.
+ * Hosted provider keys may come from server env vars, or from a session-only
+ * user-supplied key passed through this proxy request.
  */
 export class ClientAIProvider implements AIProvider {
   private sessionToken: string | null = null

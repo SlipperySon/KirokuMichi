@@ -54,12 +54,6 @@ export interface AIProvider {
   completeStream(prompt: string, tier: 'fast' | 'reasoning'): AsyncIterable<string>
 }
 
-export interface TTSProvider {
-  speak(text: string, lang?: string): Promise<void>
-  playAudio(url: string): Promise<void>
-  stop(): void
-}
-
 export interface KeyStorageProvider {
   get(key: string): Promise<string | null>
   set(key: string, value: string): Promise<void>

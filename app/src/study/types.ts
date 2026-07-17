@@ -1,13 +1,15 @@
 export interface ReviewCard {
   cardStateId: number
   cardId: number
-  type: 'vocabulary' | 'kanji' | 'grammar' | 'hiragana' | 'katakana'
+  type: 'vocabulary' | 'kanji' | 'grammar' | 'hiragana' | 'katakana' | 'sentence'
   front: string
   back: string
   reading: string | null
   audioUrl: string | null
   jlptLevel: string | null
   userNote: string | null
+  exampleSentence: string | null
+  exampleTranslation: string | null
   state: 'new' | 'learning' | 'review' | 'relearning'
   lapses: number
   stability: number

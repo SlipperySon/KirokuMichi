@@ -1,25 +1,189 @@
 import express from 'express'
 import cors from 'cors'
 import crypto from 'crypto'
+import * as Sentry from '@sentry/node'
 import { access, mkdtemp, readdir, readFile, rm, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { PDFParse } from 'pdf-parse'
 import { execFile } from 'node:child_process'
+import { lookup } from 'node:dns/promises'
+import net from 'node:net'
 import { tmpdir } from 'node:os'
 import { promisify } from 'node:util'
 import { sanitizeReport, submitIssueReport } from './reportIssue'
 
 const app = express()
-const PORT = 3001
-const HOST = '127.0.0.1'
+const PORT = Number(process.env.PORT || 3001)
+const HOST = process.env.HOST || (process.env.NODE_ENV === 'production' ? '0.0.0.0' : '127.0.0.1')
 const AI_REQUEST_TIMEOUT_MS = 60000
 const OCR_REQUEST_TIMEOUT_MS = 180000
+const JSON_BODY_LIMIT = '2mb'
+const PDF_UPLOAD_LIMIT = '100mb'
+const SESSION_TOKEN_TTL_MS = 12 * 60 * 60 * 1000
+const SESSION_TOKEN_MAX = 500
+const RATE_LIMIT_WINDOW_MS = 60 * 1000
+const RATE_LIMIT_MAX_REQUESTS = 120
 const execFileAsync = promisify(execFile)
 
-const sessionTokens = new Set<string>()
+if (process.env.SENTRY_DSN) {
+  Sentry.init({
+    dsn: process.env.SENTRY_DSN,
+    environment: process.env.SENTRY_ENVIRONMENT || process.env.NODE_ENV || 'development',
+    release: process.env.SENTRY_RELEASE || process.env.npm_package_version,
+    tracesSampleRate: Number(process.env.SENTRY_TRACES_SAMPLE_RATE || 0),
+  })
+  process.on('unhandledRejection', reason => {
+    Sentry.captureException(reason)
+  })
+  process.on('uncaughtException', err => {
+    Sentry.captureException(err)
+  })
+}
+
+const PROVIDER_ENDPOINTS = {
+  openai: 'https://api.openai.com/v1/chat/completions',
+  openrouter: 'https://openrouter.ai/api/v1/chat/completions',
+  deepseek: 'https://api.deepseek.com/chat/completions',
+} as const
+
+const PROVIDER_ENV_KEYS = {
+  anthropic: 'ANTHROPIC_API_KEY',
+  openai: 'OPENAI_API_KEY',
+  openrouter: 'OPENROUTER_API_KEY',
+  deepseek: 'DEEPSEEK_API_KEY',
+} as const
+
+const sessionTokens = new Map<string, number>()
+const rateLimitBuckets = new Map<string, { count: number; resetAt: number }>()
+
+function betaCodes() {
+  return (process.env.BETA_INVITE_CODES || '')
+    .split(',')
+    .map(code => code.trim())
+    .filter(Boolean)
+}
+
+function isBetaGateEnabled() {
+  return betaCodes().length > 0
+}
+
+function resolveProviderApiKey(provider: keyof typeof PROVIDER_ENV_KEYS, requestKey?: string) {
+  return process.env[PROVIDER_ENV_KEYS[provider]] || requestKey
+}
+
+function pruneExpiredSessionTokens(now = Date.now()) {
+  for (const [token, expiresAt] of sessionTokens) {
+    if (expiresAt <= now) sessionTokens.delete(token)
+  }
+}
+
+function pruneSessionTokensToCap() {
+  while (sessionTokens.size > SESSION_TOKEN_MAX) {
+    const oldest = sessionTokens.keys().next().value as string | undefined
+    if (!oldest) return
+    sessionTokens.delete(oldest)
+  }
+}
+
+function isValidSessionToken(token: string) {
+  const expiresAt = sessionTokens.get(token)
+  if (!expiresAt) return false
+  if (expiresAt <= Date.now()) {
+    sessionTokens.delete(token)
+    return false
+  }
+  return true
+}
+
+function rateLimit(options: { windowMs: number; maxRequests: number }) {
+  return (req: express.Request, res: express.Response, next: express.NextFunction) => {
+    const now = Date.now()
+    const key = req.ip || req.socket.remoteAddress || 'unknown'
+    const bucket = rateLimitBuckets.get(key)
+    if (!bucket || bucket.resetAt <= now) {
+      rateLimitBuckets.set(key, { count: 1, resetAt: now + options.windowMs })
+      next()
+      return
+    }
+
+    bucket.count += 1
+    if (bucket.count > options.maxRequests) {
+      res.setHeader('Retry-After', Math.ceil((bucket.resetAt - now) / 1000).toString())
+      res.status(429).json({ error: 'Too many requests' })
+      return
+    }
+    next()
+  }
+}
+
+function isLoopbackHostname(hostname: string) {
+  return hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1'
+}
+
+function isBlockedIpAddress(address: string) {
+  const family = net.isIP(address)
+  if (family === 4) {
+    const parts = address.split('.').map(Number)
+    const [a, b] = parts
+    return (
+      a === 0 ||
+      a === 10 ||
+      a === 127 ||
+      (a === 169 && b === 254) ||
+      (a === 172 && b >= 16 && b <= 31) ||
+      (a === 192 && b === 168) ||
+      a >= 224
+    )
+  }
+  if (family === 6) {
+    const lower = address.toLowerCase()
+    return (
+      lower === '::' ||
+      lower === '::1' ||
+      lower.startsWith('fc') ||
+      lower.startsWith('fd') ||
+      lower.startsWith('fe80:') ||
+      lower.startsWith('ff')
+    )
+  }
+  return true
+}
+
+async function validateCustomProviderEndpoint(endpoint?: string) {
+  if (!endpoint) return
+
+  let url: URL
+  try {
+    url = new URL(endpoint)
+  } catch {
+    throw new Error('Custom provider endpoint must be a valid URL')
+  }
+
+  const isLoopback = isLoopbackHostname(url.hostname)
+  if (url.protocol !== 'https:' && !(url.protocol === 'http:' && isLoopback)) {
+    throw new Error('Custom provider endpoint must use https, except localhost development endpoints')
+  }
+
+  if (isLoopback) return
+
+  const literalIpFamily = net.isIP(url.hostname)
+  const addresses = literalIpFamily
+    ? [{ address: url.hostname }]
+    : await lookup(url.hostname, { all: true, verbatim: true })
+
+  if (addresses.length === 0 || addresses.some(({ address }) => isBlockedIpAddress(address))) {
+    throw new Error('Custom provider endpoint cannot resolve to a private or link-local address')
+  }
+}
 
 const corsMiddleware = cors({
-  origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'http://localhost:5174', 'http://127.0.0.1:5174'],
+  origin: [
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+    'http://localhost:5174',
+    'http://127.0.0.1:5174',
+    ...(process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',').map(origin => origin.trim()).filter(Boolean) : []),
+  ],
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['content-type', 'x-session-token'],
 })
@@ -28,9 +192,17 @@ app.use((req, _res, next) => {
   console.log(`[http] ${req.method} ${req.path} origin=${req.headers.origin ?? 'none'}`)
   next()
 })
+app.use((_req, res, next) => {
+  res.setHeader('X-Content-Type-Options', 'nosniff')
+  res.setHeader('X-Frame-Options', 'DENY')
+  res.setHeader('Referrer-Policy', 'no-referrer')
+  res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()')
+  next()
+})
 app.use(corsMiddleware)
 app.options(/.*/, corsMiddleware)
-app.use(express.json())
+app.use('/api', rateLimit({ windowMs: RATE_LIMIT_WINDOW_MS, maxRequests: RATE_LIMIT_MAX_REQUESTS }))
+app.use(express.json({ limit: JSON_BODY_LIMIT }))
 
 // Serve curriculum data folder (lesson structures, textbook content, etc.)
 // Use process.cwd() since we run from app/ directory (npm run server)
@@ -58,9 +230,29 @@ app.get('/api/health', (_req, res) => {
   })
 })
 
+app.get('/api/beta/status', (_req, res) => {
+  res.json({ enabled: isBetaGateEnabled() })
+})
+
+app.post('/api/beta/login', (req, res) => {
+  if (!isBetaGateEnabled()) {
+    res.json({ ok: true })
+    return
+  }
+  const { code } = req.body as { code?: string }
+  const validCodes = betaCodes()
+  if (!code || !validCodes.includes(code.trim())) {
+    res.status(401).json({ error: 'Invalid beta invite code' })
+    return
+  }
+  res.json({ ok: true })
+})
+
 app.post('/api/session', (_req, res) => {
+  pruneExpiredSessionTokens()
   const token = crypto.randomBytes(32).toString('hex')
-  sessionTokens.add(token)
+  sessionTokens.set(token, Date.now() + SESSION_TOKEN_TTL_MS)
+  pruneSessionTokensToCap()
   res.json({ token })
 })
 
@@ -79,7 +271,7 @@ app.post('/api/report', async (req, res) => {
 
 function requireToken(req: express.Request, res: express.Response, next: express.NextFunction) {
   const token = req.headers['x-session-token']
-  if (typeof token !== 'string' || !sessionTokens.has(token)) {
+  if (typeof token !== 'string' || !isValidSessionToken(token)) {
     res.status(401).json({ error: 'Unauthorised' })
     return
   }
@@ -133,15 +325,15 @@ app.post('/api/ai/complete', requireToken, async (req, res) => {
         await streamAnthropicRequest(res, finalMessages, system, model, tier, apiKey, maxTokens)
       } else if (provider === 'openai') {
         await streamOpenAICompatible(res, finalMessages, system, model, tier, {
-          apiKey: apiKey || process.env.OPENAI_API_KEY,
-          endpoint: 'https://api.openai.com/v1/chat/completions',
+          apiKey: resolveProviderApiKey('openai', apiKey),
+          endpoint: PROVIDER_ENDPOINTS.openai,
           maxTokens,
           missingKeyError: 'OpenAI API key not configured',
         })
       } else if (provider === 'openrouter') {
         await streamOpenAICompatible(res, finalMessages, system, model, tier, {
-          apiKey: apiKey || process.env.OPENROUTER_API_KEY,
-          endpoint: 'https://openrouter.io/api/v1/chat/completions',
+          apiKey: resolveProviderApiKey('openrouter', apiKey),
+          endpoint: PROVIDER_ENDPOINTS.openrouter,
           maxTokens,
           extraHeaders: {
             'http-referer': 'http://localhost:5173',
@@ -151,8 +343,8 @@ app.post('/api/ai/complete', requireToken, async (req, res) => {
         })
       } else if (provider === 'deepseek') {
         await streamOpenAICompatible(res, finalMessages, system, model, tier, {
-          apiKey: apiKey || process.env.DEEPSEEK_API_KEY,
-          endpoint: 'https://api.deepseek.com/chat/completions',
+          apiKey: resolveProviderApiKey('deepseek', apiKey),
+          endpoint: PROVIDER_ENDPOINTS.deepseek,
           maxTokens,
           extraBody:
             tier === 'fast'
@@ -162,7 +354,7 @@ app.post('/api/ai/complete', requireToken, async (req, res) => {
         })
       } else if (provider === 'custom') {
         await streamOpenAICompatible(res, finalMessages, system, model, tier, {
-          apiKey,
+          apiKey: process.env.CUSTOM_PROVIDER_API_KEY,
           endpoint: apiEndpoint,
           maxTokens,
           missingKeyError: 'Custom provider API key not configured',
@@ -187,7 +379,7 @@ app.post('/api/ai/complete', requireToken, async (req, res) => {
       await handleOllamaRequest(res, finalMessages, system, model)
     } else if (provider === 'custom') {
       await handleOpenAICompatibleRequest(res, finalMessages, system, model, tier, {
-        apiKey,
+        apiKey: process.env.CUSTOM_PROVIDER_API_KEY,
         endpoint: apiEndpoint,
         maxTokens,
         missingKeyError: 'Custom provider API key not configured',
@@ -278,10 +470,10 @@ async function streamAnthropicRequest(
   system: string | undefined,
   model: string,
   tier: string,
-  providedApiKey?: string,
+  requestKey?: string,
   maxTokens?: number
 ) {
-  const apiKey = providedApiKey || process.env.ANTHROPIC_API_KEY
+  const apiKey = resolveProviderApiKey('anthropic', requestKey)
   if (!apiKey) {
     res.status(503).json({ error: 'Anthropic API key not configured' })
     return
@@ -349,6 +541,14 @@ async function streamOpenAICompatible(
   if (!options.endpoint) {
     res.status(503).json({ error: options.missingEndpointError ?? 'Provider endpoint not configured' })
     return
+  }
+  if (options.missingEndpointError) {
+    try {
+      await validateCustomProviderEndpoint(options.endpoint)
+    } catch (err) {
+      res.status(400).json({ error: err instanceof Error ? err.message : 'Invalid custom provider endpoint' })
+      return
+    }
   }
 
   const systemMsg = system ? [{ role: 'system', content: system }] : []
@@ -503,10 +703,10 @@ async function handleAnthropicRequest(
   system: string | undefined,
   model: string,
   tier: string,
-  providedApiKey?: string,
+  requestKey?: string,
   maxTokens?: number
 ) {
-  const apiKey = providedApiKey || process.env.ANTHROPIC_API_KEY
+  const apiKey = resolveProviderApiKey('anthropic', requestKey)
   if (!apiKey) {
     res.status(503).json({ error: 'Anthropic API key not configured' })
     return
@@ -800,10 +1000,10 @@ async function handleOpenAIRequest(
   system: string | undefined,
   model: string,
   tier: string,
-  providedApiKey?: string,
+  requestKey?: string,
   maxTokens?: number
 ) {
-  const apiKey = providedApiKey || process.env.OPENAI_API_KEY
+  const apiKey = resolveProviderApiKey('openai', requestKey)
   if (!apiKey) {
     res.status(503).json({ error: 'OpenAI API key not configured' })
     return
@@ -811,7 +1011,7 @@ async function handleOpenAIRequest(
 
   const systemMsg = system ? [{ role: 'system', content: system }] : []
   const openAiMessages = messages.map(m => ({ role: m.role, content: toOpenAIContent(m.content) }))
-  const response = await fetchWithTimeout('https://api.openai.com/v1/chat/completions', {
+  const response = await fetchWithTimeout(PROVIDER_ENDPOINTS.openai, {
     method: 'POST',
     headers: {
       'authorization': `Bearer ${apiKey}`,
@@ -840,10 +1040,10 @@ async function handleOpenRouterRequest(
   system: string | undefined,
   model: string,
   tier: string,
-  providedApiKey?: string,
+  requestKey?: string,
   maxTokens?: number
 ) {
-  const apiKey = providedApiKey || process.env.OPENROUTER_API_KEY
+  const apiKey = resolveProviderApiKey('openrouter', requestKey)
   if (!apiKey) {
     res.status(503).json({ error: 'OpenRouter API key not configured' })
     return
@@ -851,7 +1051,7 @@ async function handleOpenRouterRequest(
 
   const systemMsg = system ? [{ role: 'system', content: system }] : []
   const openAiMessages = messages.map(m => ({ role: m.role, content: toOpenAIContent(m.content) }))
-  const response = await fetchWithTimeout('https://openrouter.io/api/v1/chat/completions', {
+  const response = await fetchWithTimeout(PROVIDER_ENDPOINTS.openrouter, {
     method: 'POST',
     headers: {
       'authorization': `Bearer ${apiKey}`,
@@ -882,12 +1082,12 @@ async function handleDeepSeekRequest(
   system: string | undefined,
   model: string,
   tier: string,
-  providedApiKey?: string,
+  requestKey?: string,
   maxTokens?: number
 ) {
   await handleOpenAICompatibleRequest(res, messages, system, model, tier, {
-    apiKey: providedApiKey || process.env.DEEPSEEK_API_KEY,
-    endpoint: 'https://api.deepseek.com/chat/completions',
+    apiKey: resolveProviderApiKey('deepseek', requestKey),
+    endpoint: PROVIDER_ENDPOINTS.deepseek,
     maxTokens,
     extraBody: tier === 'fast'
       ? { thinking: { type: 'disabled' } }
@@ -918,6 +1118,14 @@ async function handleOpenAICompatibleRequest(
   if (!options.endpoint) {
     res.status(503).json({ error: options.missingEndpointError || 'Provider endpoint not configured' })
     return
+  }
+  if (options.missingEndpointError) {
+    try {
+      await validateCustomProviderEndpoint(options.endpoint)
+    } catch (err) {
+      res.status(400).json({ error: err instanceof Error ? err.message : 'Invalid custom provider endpoint' })
+      return
+    }
   }
 
   const systemMsg = system ? [{ role: 'system', content: system }] : []
@@ -975,78 +1183,6 @@ async function handleOllamaRequest(
   res.json({ text: data.message?.content ?? '' })
 }
 
-// Azure Cognitive Services TTS proxy
-// Simple in-memory cache keyed by sha256(text+voice), capped at 200 entries
-const ttsCache = new Map<string, Buffer>()
-const ttsCacheOrder: string[] = []
-const TTS_CACHE_MAX = 200
-
-app.post('/api/tts', requireToken, async (req, res) => {
-  const { text, voice, azureTtsKey, azureTtsRegion } = req.body as {
-    text: string
-    voice?: string
-    azureTtsKey: string
-    azureTtsRegion: string
-  }
-
-  if (!text || typeof text !== 'string') {
-    res.status(400).json({ error: 'text is required' })
-    return
-  }
-  if (!azureTtsKey || typeof azureTtsKey !== 'string') {
-    res.status(400).json({ error: 'azureTtsKey is required' })
-    return
-  }
-
-  const voiceName = voice ?? 'ja-JP-NanamiNeural'
-  const region = azureTtsRegion || 'eastus'
-  const cacheKey = crypto.createHash('sha256').update(text + voiceName).digest('hex')
-
-  if (ttsCache.has(cacheKey)) {
-    const cached = ttsCache.get(cacheKey)!
-    res.setHeader('Content-Type', 'audio/mpeg')
-    res.end(cached)
-    return
-  }
-
-  const ssml = `<speak version='1.0' xml:lang='ja-JP'><voice name='${voiceName}'>${text}</voice></speak>`
-
-  try {
-    const azureRes = await fetch(`https://${region}.tts.speech.microsoft.com/cognitiveservices/v1`, {
-      method: 'POST',
-      headers: {
-        'Ocp-Apim-Subscription-Key': azureTtsKey,
-        'Content-Type': 'application/ssml+xml',
-        'X-Microsoft-OutputFormat': 'audio-24khz-96kbitrate-mono-mp3',
-      },
-      body: ssml,
-    })
-
-    if (!azureRes.ok) {
-      const errText = await azureRes.text().catch(() => '')
-      res.status(azureRes.status).json({ error: `Azure TTS error: ${azureRes.status} ${errText}` })
-      return
-    }
-
-    const arrayBuffer = await azureRes.arrayBuffer()
-    const buffer = Buffer.from(arrayBuffer)
-
-    // Evict oldest if at cap
-    if (ttsCache.size >= TTS_CACHE_MAX) {
-      const oldest = ttsCacheOrder.shift()
-      if (oldest) ttsCache.delete(oldest)
-    }
-    ttsCache.set(cacheKey, buffer)
-    ttsCacheOrder.push(cacheKey)
-
-    res.setHeader('Content-Type', 'audio/mpeg')
-    res.end(buffer)
-  } catch (err) {
-    console.error('[tts] Azure TTS request failed:', err)
-    res.status(500).json({ error: `TTS request failed: ${err instanceof Error ? err.message : String(err)}` })
-  }
-})
-
 // Weak-point analysis trigger — client sends computed summary for logging/future server-side use
 app.post('/api/ai/analyze', requireToken, (req, res) => {
   const { userId, summary } = req.body as { userId: number; summary: unknown }
@@ -1059,7 +1195,7 @@ app.post('/api/ai/analyze', requireToken, (req, res) => {
   res.json({ ok: true })
 })
 
-app.post('/api/content/extract-pdfs', requireToken, express.raw({ type: 'multipart/form-data', limit: '300mb' }), async (req, res) => {
+app.post('/api/content/extract-pdfs', requireToken, express.raw({ type: 'multipart/form-data', limit: PDF_UPLOAD_LIMIT }), async (req, res) => {
   const startedAt = Date.now()
   try {
     const { fields, files } = parseMultipartFormData(req.headers['content-type'], req.body as Buffer)
@@ -1071,13 +1207,17 @@ app.post('/api/content/extract-pdfs', requireToken, express.raw({ type: 'multipa
       return
     }
 
-    const apiKey = fields.apiKey
+    const provider = fields.provider || 'deepseek'
+    if (provider !== 'deepseek') {
+      res.status(400).json({ error: `Server PDF extraction currently supports DeepSeek only. Received: ${provider}` })
+      return
+    }
+    const apiKey = provider === 'deepseek' ? resolveProviderApiKey('deepseek', fields.apiKey) : undefined
     if (!apiKey) {
-      res.status(400).json({ error: 'AI API key required' })
+      res.status(503).json({ error: `${provider} API key not configured on server` })
       return
     }
 
-    const provider = fields.provider || 'deepseek'
     const fastModel = fields.fastModel || 'deepseek-v4-flash'
     const pageLimit = Number(fields.pageLimit || 10)
     const pageStart = Number(fields.pageStart || 1)
@@ -1129,20 +1269,15 @@ Extract vocabulary, grammar, and lesson-like reading/dialogue content.`
     const userText = `Extract all Japanese learning content from these uploaded PDF snippets in document order. Treat related files, such as a textbook and workbook, as one shared context.\n\n${extractedParts.join('\n\n---\n\n')}`
 
     let responseText: string
-    if (provider === 'deepseek') {
-      responseText = await callOpenAICompatibleText({
-        endpoint: 'https://api.deepseek.com/chat/completions',
-        apiKey,
-        model: fastModel,
-        system,
-        userText,
-        maxTokens: 8192,
-        extraBody: { thinking: { type: 'disabled' } },
-      })
-    } else {
-      res.status(400).json({ error: `Server PDF extraction currently supports DeepSeek only. Received: ${provider}` })
-      return
-    }
+    responseText = await callOpenAICompatibleText({
+      endpoint: PROVIDER_ENDPOINTS.deepseek,
+      apiKey,
+      model: fastModel,
+      system,
+      userText,
+      maxTokens: 8192,
+      extraBody: { thinking: { type: 'disabled' } },
+    })
 
     let parsed: unknown
     try {
@@ -1151,7 +1286,7 @@ Extract vocabulary, grammar, and lesson-like reading/dialogue content.`
       console.warn(`[content] AI response was not valid JSON; attempting repair: ${err instanceof Error ? err.message : 'JSON parse failed'}`)
       try {
         const repaired = await repairJsonResponse({
-          endpoint: 'https://api.deepseek.com/chat/completions',
+          endpoint: PROVIDER_ENDPOINTS.deepseek,
           apiKey,
           model: fastModel,
           responseText,
@@ -1224,19 +1359,18 @@ app.post('/api/dev/test-pdf-ocr', requireToken, async (req, res) => {
 
 app.post('/api/dev/test-pdf-import', requireToken, async (req, res) => {
   const {
-    apiKey,
     fastModel = 'deepseek-v4-flash',
     pageLimit = 10,
     pageStart = 1,
   } = req.body as {
-    apiKey?: string
     fastModel?: string
     pageLimit?: number
     pageStart?: number
   }
 
+  const apiKey = resolveProviderApiKey('deepseek')
   if (!apiKey) {
-    res.status(400).json({ error: 'DeepSeek API key required for dev PDF test' })
+    res.status(503).json({ error: 'DeepSeek API key not configured on server' })
     return
   }
 
@@ -1304,7 +1438,7 @@ Extract vocabulary, grammar, and lesson-like reading/dialogue content. Keep the 
     }
 
     const response = await callOpenAICompatibleText({
-      endpoint: 'https://api.deepseek.com/chat/completions',
+      endpoint: PROVIDER_ENDPOINTS.deepseek,
       apiKey,
       model: fastModel,
       system,
@@ -1320,7 +1454,7 @@ Extract vocabulary, grammar, and lesson-like reading/dialogue content. Keep the 
     } catch (err) {
       try {
         const repaired = await repairJsonResponse({
-          endpoint: 'https://api.deepseek.com/chat/completions',
+          endpoint: PROVIDER_ENDPOINTS.deepseek,
           apiKey,
           model: fastModel,
           responseText: response,
@@ -1357,6 +1491,21 @@ Extract vocabulary, grammar, and lesson-like reading/dialogue content. Keep the 
     res.status(500).json({ error: err instanceof Error ? err.message : 'Dev PDF import test failed' })
   }
 })
+
+const distPath = path.join(process.cwd(), 'dist')
+try {
+  access(distPath).then(() => {
+    app.use(express.static(distPath))
+    app.get(/^(?!\/api\/).*/, (_req, res) => {
+      res.sendFile(path.join(distPath, 'index.html'))
+    })
+    console.log(`[server] ✓ Frontend dist accessible and served`)
+  }).catch(() => {
+    console.log(`[server] Frontend dist not found at ${distPath}; API-only mode`)
+  })
+} catch (err) {
+  console.error(`[server] Error setting up frontend dist folder: ${err}`)
+}
 
 async function callOpenAICompatibleText(options: {
   endpoint: string

@@ -127,6 +127,7 @@ export function CardCreate({ editCardId, editInitial, onSaved }: CardCreateProps
           originType: 'user_created',
           originRef: 'study/create',
         })
+        await storage.flush()
         toast.success('Card created')
         // Reset form
         setFront('')

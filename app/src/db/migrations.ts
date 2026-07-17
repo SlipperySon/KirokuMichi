@@ -22,6 +22,8 @@ const MIGRATIONS: string[] = [
     frequency_rank INTEGER,
     domain TEXT,
     audio_url TEXT,
+    example_sentence TEXT,
+    example_translation TEXT,
     tags TEXT,
     user_note TEXT,
     origin_type TEXT,

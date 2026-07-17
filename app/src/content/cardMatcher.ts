@@ -58,6 +58,29 @@ function extractJapanese(text: string): string {
   return cleaned.trim()
 }
 
+function compactTerm(text: string): string {
+  return extractJapanese(text)
+    .replace(/[〜~～]/g, '')
+    .replace(/[・／/]/g, '')
+    .replace(/\s+/g, '')
+    .trim()
+}
+
+export function lessonTermVariants(term: string): string[] {
+  const cleaned = extractJapanese(term)
+  const compact = compactTerm(term)
+  const variants = new Set([cleaned, compact].filter(Boolean))
+
+  for (const part of cleaned.split(/[・／/]/)) {
+    const trimmed = part.trim()
+    if (trimmed) variants.add(trimmed)
+    const compactPart = compactTerm(trimmed)
+    if (compactPart) variants.add(compactPart)
+  }
+
+  return [...variants]
+}
+
 export interface CardMatch {
   lessonTerm: string
   cardFront: string
@@ -70,8 +93,8 @@ export interface CardMatch {
  * Returns match details if matched (any of three tiers)
  */
 export function matchCardToTerm(cardFront: string, lessonTerm: string): CardMatch | null {
-  const cleanCard = extractJapanese(cardFront).toLowerCase()
-  const cleanLesson = extractJapanese(lessonTerm).toLowerCase()
+  const cleanCard = compactTerm(cardFront).toLowerCase()
+  const cleanLesson = compactTerm(lessonTerm).toLowerCase()
 
   if (!cleanCard || !cleanLesson) return null
 
@@ -137,7 +160,12 @@ export function extractLessonTerms(
   vocab: Array<{ surface: string }>,
   grammar: Array<{ pattern: string }>
 ): string[] {
-  const vocabTerms = vocab.map(v => v.surface)
-  const grammarTerms = grammar.map(g => g.pattern)
-  return [...vocabTerms, ...grammarTerms]
+  const terms = new Set<string>()
+  for (const item of vocab) {
+    for (const variant of lessonTermVariants(item.surface)) terms.add(variant)
+  }
+  for (const item of grammar) {
+    for (const variant of lessonTermVariants(item.pattern)) terms.add(variant)
+  }
+  return [...terms]
 }

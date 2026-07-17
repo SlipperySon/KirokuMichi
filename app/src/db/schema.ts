@@ -23,7 +23,7 @@ export const users = sqliteTable('users', {
 
 export const cards = sqliteTable('cards', {
   id: integer('id').primaryKey({ autoIncrement: true }),
-  type: text('type', { enum: ['vocabulary', 'kanji', 'grammar', 'hiragana', 'katakana'] }).notNull(),
+  type: text('type', { enum: ['vocabulary', 'kanji', 'grammar', 'hiragana', 'katakana', 'sentence'] }).notNull(),
   front: text('front').notNull(),
   back: text('back').notNull(),
   reading: text('reading'),
@@ -32,6 +32,8 @@ export const cards = sqliteTable('cards', {
   frequencyRank: integer('frequency_rank'),
   domain: text('domain'),
   audioUrl: text('audio_url'),
+  exampleSentence: text('example_sentence'),
+  exampleTranslation: text('example_translation'),
   tags: text('tags'),
   userNote: text('user_note'),
   originType: text('origin_type'),

@@ -1,7 +1,6 @@
 import { CEFR_SUPPLEMENTAL, type CEFRLevel } from './cefrMapping'
 import { curriculumService, type Exercise } from './curriculumService'
 import { createLessonMatcher, formatTextbookName } from './lessonContentUtils'
-import { getSupplementalScenarios } from './supplementalScenarioService'
 
 export interface WorkbookPracticeTask {
   id: string
@@ -12,7 +11,6 @@ export interface WorkbookPracticeTask {
   practiceMode: 'guided' | 'output' | 'correction' | 'checkpoint'
   focus: string
   prompt: string
-  sourcePrompt?: string
   support: string
 }
 
@@ -62,6 +60,8 @@ function cleanPrompt(text: string) {
 
 const TOO_GENERIC_PROMPT_RE =
   /(日本語で答えて|日本語で書いて|答えてください|書いてください|文を完成|会話を完成|の言葉を使って|質問に答え|Answer the questions|Complete the sentences)/i
+const TOO_GENERIC_COMPLETION_RE =
+  /(文や会話を完成|文を完成|会話を完成|Complete the sentences)/i
 const BROKEN_FRAGMENT_RE =
   /^(?:う|を|で|に|は|が|ので|から|そして|その後|また|ただし|必要なら|同じ言葉|[A-Z]：|[0-9]+[.)、])/
 
@@ -80,58 +80,12 @@ export function isUsableWorkbookExercise(exercise: Exercise) {
   if (exercise.page > 0 && exercise.page < 10) return false
   if (prompt.length < 8 || prompt.length > 180) return false
   if (BAD_WORKBOOK_PROMPT_RE.test(prompt)) return false
+  if (TOO_GENERIC_COMPLETION_RE.test(prompt)) return false
   if (BROKEN_FRAGMENT_RE.test(prompt) && !TOO_GENERIC_PROMPT_RE.test(prompt)) return false
   if (!WORKBOOK_TASK_RE.test(prompt)) return false
   if (charRatio(prompt, JAPANESE_RE) < 0.12 && charRatio(prompt, ENGLISH_RE) < 0.12) return false
   if (/[{}[\]\\<>|]{2,}|[A-Za-z]{18,}|\d{4,}/.test(prompt)) return false
   return true
-}
-
-function lessonLabel(cefr: CEFRLevel, lessonNum: number) {
-  return `${cefr.toUpperCase()} Lesson ${lessonNum}`
-}
-
-export function normalizeWorkbookPracticePrompt(prompt: string, options: {
-  cefr: CEFRLevel
-  lessonNum: number
-  type: WorkbookPracticeTask['type']
-}) {
-  const cleaned = cleanPrompt(prompt)
-  const label = lessonLabel(options.cefr, options.lessonNum)
-
-  if (/日本語で答えて|答えてください|Answer the questions|質問に答え/i.test(cleaned)) {
-    return `Answer the workbook questions in Japanese, then add one original ${label} sentence of your own.`
-  }
-
-  if (/日本語で書いて|書いてください|作文/i.test(cleaned)) {
-    return `Write two original Japanese sentences for ${label}, then read them aloud and check particles and verb endings.`
-  }
-
-  if (/会話を完成|会話/.test(cleaned)) {
-    return `Complete the workbook conversation, then roleplay it once and add one natural follow-up line.`
-  }
-
-  if (/文を完成|Complete the sentences|の言葉を使って|完成させ/.test(cleaned)) {
-    return `Complete the workbook sentences, then explain which grammar clue told you the missing form.`
-  }
-
-  if (options.type === 'correction_target' && /正し|直|まちが|誤/.test(cleaned)) {
-    return `Correct the workbook sentences, then name the grammar or particle that changed.`
-  }
-
-  return cleaned
-}
-
-function scenarioPracticePrompt(scenario: Awaited<ReturnType<typeof getSupplementalScenarios>>[number]) {
-  if (scenario.sourceKind === 'dialogue') {
-    return scenario.practicePrompts[1] || scenario.canDo
-  }
-
-  const prompt = cleanPrompt(scenario.practicePrompts[0] || '')
-  if (!prompt || /example below|read the model exchange|corresponding lesson/i.test(prompt)) {
-    return scenario.canDo
-  }
-  return prompt
 }
 
 export async function getWorkbookPracticeTasks(options: {
@@ -151,12 +105,7 @@ export async function getWorkbookPracticeTasks(options: {
       .filter(isUsableWorkbookExercise) ?? []
     exercises.slice(0, 8).forEach((exercise, index) => {
       const type = taskType(exercise, index)
-      const sourcePrompt = cleanPrompt(exercise.question)
-      const prompt = normalizeWorkbookPracticePrompt(sourcePrompt, {
-        cefr: options.cefr,
-        lessonNum: options.lessonNum,
-        type,
-      })
+      const prompt = cleanPrompt(exercise.question)
       tasks.push({
         id: `${sourceKey}:${exercise.id}`,
         source: formatTextbookName(sourceKey),
@@ -166,30 +115,10 @@ export async function getWorkbookPracticeTasks(options: {
         practiceMode: practiceModeFor(type),
         focus: focusFor(prompt, type),
         prompt,
-        sourcePrompt: prompt === sourcePrompt ? undefined : sourcePrompt,
         support: supportFor(type),
       })
     })
   }
-
-  const scenarios = await getSupplementalScenarios({ cefr: options.cefr, coreLessonId: options.lessonId })
-  scenarios.slice(0, 4).forEach(scenario => {
-    const prompt = scenarioPracticePrompt(scenario)
-    tasks.push({
-      id: `scenario:${scenario.id}`,
-      source: scenario.textbook,
-      sourceKey: scenario.textbookKey,
-      page: scenario.page,
-      type: scenario.sourceKind === 'dialogue' ? 'roleplay' : 'short_answer',
-      practiceMode: 'output',
-      focus: scenario.sourceKind === 'dialogue' ? 'spoken output' : 'short response',
-      prompt,
-      sourcePrompt: scenario.sourceKind !== 'curated' && prompt !== scenario.practicePrompts[0]
-        ? scenario.practicePrompts[0]
-        : undefined,
-      support: scenario.canDo,
-    })
-  })
 
   return tasks
     .filter(task => task.prompt.length > 0)
