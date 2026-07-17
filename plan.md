@@ -1,6 +1,392 @@
 # KirokuMichi — Current State & Active Roadmap
 
-Last updated: 2026-05-22 AEST
+Last updated: 2026-07-17 AEST
+
+---
+
+## Active Priority — Learning Environment Redesign
+
+**Goal:** Turn parallel study modes into one teachable loop so a learner always knows *what to do next* and each
+lesson closes with **evidence-based** retrieval + spaced review + production — not a dead-end summary.
+
+**Visual summary:** open the canvas
+[`learning-env-redesign.canvas.tsx`](/Users/Skipp/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/learning-env-redesign.canvas.tsx)
+beside chat.
+
+**Prior work (kept):** `studyPathPlanner` + Today’s Path panel are shipped. This redesign *uses* that planner;
+it does not replace it with AI prose parsing. FSRS remains the spacing engine (already aligned with spaced-practice research).
+
+**Non-negotiable:** Product decisions in this redesign must map to the Learning Science Foundation below.
+If a UX shortcut conflicts with a principle (e.g. mark complete without retrieval), the principle wins.
+
+---
+
+### Learning Science Foundation
+
+Design is anchored in cognitive psychology and instructed second-language acquisition (ISLA), not feature parity
+with other apps. Primary claims and how they constrain KirokuMichi:
+
+| Principle | Evidence base (representative) | Product constraint |
+|-----------|--------------------------------|--------------------|
+| **Retrieval practice (testing effect)** | Roediger & Karpicke (2006); Karpicke & Roediger (2008) | After encoding, learners must *attempt recall* before seeing answers. Passive “reveal + self-rate” alone is insufficient for durable learning. |
+| **Spaced / distributed practice** | Cepeda et al. (2006); spacing literature; FSRS/SM-2 practice | Clear **due reviews before new lesson massing** when due load is material. Encode → same-day retrieval → expanding intervals via SRS. |
+| **Successive relearning to criterion** | Rawson & Dunlosky (2011+) | A lesson is not “done” after one exposure. Weak/missed items re-enter a short retrieval set (Review N) before completion. |
+| **Desirable difficulties / generation** | Bjork; Slamecka & Graf (generation effect) | Keep **predict-before-reveal** on teach cards. Prefer cued recall over pure recognition when feasible. |
+| **Interleaving** | Rohrer & Taylor; Pan et al. | Interleave vocab + grammar in teach chunks (already in `interleaveItems`). Mix card faces in review; avoid long runs of identical prompt types. |
+| **Limited working memory / chunking** | Cowan; instructional design chunking | Keep teach sets small (`CHUNK_SIZE ≈ 5`). Intro stays short; don’t dump the full LessonPage reference corpus at session start. |
+| **Scaffolding → fading** | Wood et al.; ISLA task sequencing | Guided drills → free workbook output → scenario production. Do not jump to open AI chat before form focus. |
+| **Declarative → procedural (SAT)** | DeKeyser Skill Acquisition Theory | Explain/notice form (Maynard) → controlled practice → communicative use. Scenarios come *after* Check/Practice, not instead of them. |
+| **Pushed output** | Swain Output Hypothesis; Izumi | Production (workbook + scenario) is required for noticing gaps. Tap-through dialogue without a production prompt is weak. |
+| **Focus on form** | Long; Ellis | Brief, timely form attention inside meaning-bearing tasks — Maynard deep dives on grammar teach items, not a separate unexplained grammar silo. |
+| **Transfer-appropriate practice** | Morris et al.; L2 task research | Recognition MCQ ≠ speaking/writing skill. Session must include at least one productive step matching the day’s goal (typed output and/or scenario). |
+| **Corrective feedback** | Lyster & Ranta; ISLA CF meta-analyses | Prefer immediate correctness feedback on Check steps; for free output, at least self-check support now, tutor/rubric feedback later — never “Mark Done” with zero reflection prompt. |
+
+#### Research-aligned session architecture
+
+**Lesson session (encoding → retrieval → production):**
+
+```
+Intro (orient, activate goals)
+  → Teach (generate/predict → explain → brief form focus)     [encoding + generation]
+  → Check (retrieval with feedback; mix item types)          [testing effect]
+  → Practice (guided → free output)                          [scaffolding → fading]
+  → Review N (cued recall of weak + new; schedule into FSRS) [successive relearning + spacing start]
+  → Speak (pushed output in context)                         [output / transfer]
+  → Done (only after Review N attempted or explicitly deferred with due scheduling)
+```
+
+**Daily session (spacing protects new learning):**
+
+1. Resume unfinished session (avoid incomplete encoding)
+2. **Due retrieval first** when `dueCount` is material (distributed practice > cramming new lessons)
+3. Continue active lesson mid-flow
+4. Start next path lesson (full loop above)
+5. Production if lesson just completed and Speak not done
+6. Free browse only when caught up
+
+This matches the existing `getStudyPathAction` priority order (recovery → due review → current lesson → path lesson …) and
+**must stay that way** unless evidence for a different ordering is documented.
+
+#### Where the current app conflicts with evidence
+
+| Current behavior | Why it’s weak scientifically | Fix in this redesign |
+|------------------|------------------------------|----------------------|
+| Teach ends in self-rate without scheduled retrieval | Little spacing; ratings ≠ memory strength | Mandatory Review N + FSRS seed |
+| Lesson complete via card browse or overview checkbox | Completion ≠ learning criterion | Single Done after retrieval/production gates |
+| Grammar SRS separate from word review | Extra context-switching; weaker interleaving of form+lexis | Unified Review entry; interleaved queues over time |
+| Scenario unlock with no in-loop CTA | Output delayed/skipped → less noticing | Speak step inside lesson session |
+| MCQ-only checkpoints | Recognition < cued recall for many vocabulary goals | Keep MCQ for speed checks; Review N uses SRS card faces (reading/meaning recall) |
+| Onboarding → empty Home | No successful first retrieval cycle | First lesson + starter cards so spacing can begin day 1 |
+
+#### Explicit non-goals (not “science-washing”)
+
+- We do **not** claim Krashen-only “input is enough”; output and retrieval are first-class.
+- We do **not** optimize for engagement metrics that increase massed cramming (e.g. infinite new cards before dues).
+- We do **not** replace FSRS intervals with arbitrary “streak” pressure; streaks are motivational chrome only.
+
+---
+
+### Phase 0 — Documentation Discovery (complete 2026-07-17)
+
+#### Allowed APIs / patterns (copy from these, do not invent)
+
+| Concern | Source | Reuse |
+|---------|--------|-------|
+| Next daily action | `app/src/study/studyPathPlanner.ts` — `getStudyPathAction`, `lessonRouteFromId` | Extend kinds; keep priority model |
+| Lesson step builder | `app/src/study/lessonStudyPlanner.ts` — `buildLessonPlan`, `LessonStep` | Add intro / post-retrieve steps |
+| CEFR lesson assignment | `app/src/study/lessonSequencer.ts` — `assignLessonsToWeeks` | Keep; make UI launch lessons |
+| Active lesson state | `app/src/store/index.ts` — `currentLesson`, `setCurrentLesson` | **Must call** from LessonStudy start |
+| Lesson → cards | `SRSService.getCardsForLesson`, `createUserCard`, `unlockCardsForLesson` | Seed queue after teach |
+| Grammar SRS | `SRSService.getGrammarQueue` / `reviewGrammar` | Merge into unified Review |
+| Workbook tasks | `workbookPracticeService.getWorkbookPracticeTasks` | Keep as Practice step |
+| Scenario unlock | `scenarioUnlockService` + `LessonPage` mark-complete | Trigger from single completion path |
+| Nav structure | `app/src/components/Navigation.tsx` | Collapse to five pillars |
+| Routes | `app/src/App.tsx` | Prefer redirects over duplicate hubs |
+
+#### Anti-patterns (do not do)
+
+- Do not invent a second “today” planner that parses Learning Path `activities[]` prose.
+- Do not add a sixth top-level mode (keep tools under Library / Review).
+- Do not mark a lesson complete from card review alone (`ReviewSession.tsx` today does this — remove).
+- Do not route path CTAs to LessonPage overview when the intent is “study now” — go to `/learn/study` with state.
+- Do not leave `setCurrentLesson` unused (currently zero call sites outside the store).
+- Do not treat Writing / grammar fill-blank as live until wired in `useReviewSession.resolveVariant`.
+- Do not let “Mark Done” on workbook stand in for retrieval practice or corrective feedback.
+- Do not prioritize new lesson content over a material due-review backlog (violates spaced practice).
+- Do not unlock or push open AI chat as the *first* activity of a new grammar point (violates scaffolding → fading).
+
+#### Audit verdict (why this plan exists)
+
+1. **Strong pieces, weak wiring** — LessonStudy teach cards and FSRS work; handoffs between them do not.
+2. **Fragmented IA** — Home/Learn/Lessons/Path/Review/Grammar/Scenarios compete; Home and Review share `/study`.
+3. **Open teaching loop** — teach → check → workbook ends without auto SRS or scenario; onboarding never starts a lesson.
+4. **Muddy completion** — LessonPage, LessonStudy, and ReviewSession can each mark complete differently.
+5. **Evidence gaps** — self-rate without scheduled retrieval; recognition-heavy checks; production optional/out of band.
+
+---
+
+### Proposed layout (product IA)
+
+| Pillar | Route (target) | Job | Science role |
+|--------|----------------|-----|--------------|
+| **Today** | `/study` | One primary CTA from `getStudyPathAction`; daily goal | Spacing gate + session orchestration |
+| **Course** | `/learn` (single hub) | Textbook progress + CEFR curriculum; active lesson | Encoding + guided practice (declarative → controlled) |
+| **Review** | `/study/review` entry from Today / Course | Unified due queue: words + grammar | Retrieval practice + distributed practice |
+| **Speak** | `/scenarios` | Scenarios filtered/highlighted by last completed / current lesson | Pushed output + transfer |
+| **Library** | `/my-content`, `/study/path`, Settings, AI Tutor | Import, path generation, immersion, power tools | Materials / metacognitive planning |
+
+**Lesson session shape (Course)** — see Learning Science Foundation:
+
+```
+Intro → Teach → Check → Practice → Review N cards → Speak CTA → Done
+```
+
+- Intro: goals + target vocab/grammar (short; activate prior knowledge; no full reference dump).
+- Teach: keep predict → reveal → form focus (generation + focus on form). Maynard stays on grammar items.
+- Check: retrieval with immediate correctness feedback; interleaved item types.
+- Practice: guided → free workbook output (scaffolding → fading); require a brief self-check prompt before Done.
+- Review N: cued-recall SRS faces for weak + new lesson items; **schedules** into FSRS (successive relearning + spacing).
+- Speak: one contextual production task for this lesson’s targets.
+- Done: **only** after Review N ran (or items were scheduled due soon with an explicit “review later today” that still creates due pressure). Advances `currentLesson`.
+
+**Daily session shape (Today)** — due retrieval before new encoding:
+
+1. Resume unfinished session  
+2. Clear due reviews (unified words + grammar) when due load is material  
+3. Continue `currentLesson` mid-flow  
+4. Start next path lesson → full lesson loop  
+5. Production prompt if Speak skipped after last completion  
+6. Free study only when caught up  
+
+---
+
+### Phase 1 — Close the loop (highest leverage)
+
+**Science drivers:** retrieval practice, successive relearning, spaced practice handoff into FSRS.
+
+**What to implement**
+
+1. Call `setCurrentLesson(lessonId)` when LessonStudy starts; clear or advance on Done.
+2. After LessonStudy Check/Practice (required step, not optional footer), seed/open a lesson card review:
+   - Prefer `getCardsForLesson`; for missing cards batch-create from weak + new teach items (`createUserCard` / existing AddToDeck patterns).
+   - Map teach `again` / quiz misses into the Review N set first (criterion relearning).
+   - Navigate with the same router state shape `ReviewSession` already expects (`queue`, `sessionId`, `userId`).
+3. Single completion rule: remove `markLessonComplete` from bare card review; Done requires Review N attempt (or explicit defer that still schedules items due).
+4. Fix `TextbookProgress` “Study Now” to pass a real review queue (copy pattern from `LessonPage` “Study These Cards”).
+5. Extend `getStudyPathAction` so `current-lesson` / `path-lesson` routes prefer `/learn/study` when session state can be built, else LessonPage with auto-start intent. **Keep due-before-new priority.**
+6. Make Learning Path week `lessons[]` clickable → start that lesson.
+
+**Docs / copy sources**
+
+- `studyPathPlanner.ts` priority block (~L60–152)
+- `LessonPage.tsx` review navigation with queue state (~Study These Cards)
+- `LessonStudy.tsx` summary CTAs
+- `store/index.ts` `setCurrentLesson` / `markLessonComplete`
+
+**Verification**
+
+- [ ] Grep: `setCurrentLesson(` has call sites outside `store/index.ts`
+- [ ] Unit: `studyPathPlanner` “continue lesson” case with real store-driven input
+- [ ] Manual: Start lesson → finish → review queue opens with N cards → FSRS states update → Done marks complete once
+- [ ] Manual: TextbookProgress Study Now shows cards, not blank review
+- [ ] Learning Path lesson chip navigates into study flow
+- [ ] Science check: no lesson marked complete without a retrieval attempt or scheduled due set
+
+**Anti-pattern guards**
+
+- Do not persist lesson plan only in ephemeral `location.state` long-term without a recovery path (refresh today loses LessonStudy — acceptable short-term if Phase 3 adds session persistence).
+- Do not treat honor-system workbook “Done” as satisfying the Review N gate.
+
+---
+
+### Phase 2 — Simplify information architecture
+
+**Science drivers:** reduce extraneous cognitive load (Sweller CLT); interleave form+lexis in one Review habit.
+
+**What to implement**
+
+1. Rewrite `Navigation.tsx` groups to Today / Course / Review / Speak / Library (labels can stay localized later).
+2. Collapse duplicate hubs: `/learn/lessons` → redirect to `/learn`; remove Home’s dual Learn + Lessons CTAs.
+3. Slim StudyDashboard: hero = Today’s Path only; secondary = streak/goal; tuck card workspace under Review/Library.
+4. Surface grammar due inside Review entry (interleave or single “Start Review” that covers both) so learners are not taught “two review apps”.
+5. Keep AI Tutor under Library (or Speak submenu) — not a peer of Today/Course; never the default first step for new forms.
+
+**Docs / copy sources**
+
+- `Navigation.tsx` `navGroups`
+- `StudyDashboard.tsx` action grids
+- `LearningMode.tsx` tabs (Study by Lesson vs Browse — Browse becomes Library/My Content or a Course sub-tab)
+
+**Verification**
+
+- [ ] Route smoke / Playwright: critical paths still resolve
+- [ ] No nav item labeled both Home and Review pointing at the same URL with different meaning
+- [ ] `/learn/lessons` redirects; LessonsHub reachable once
+- [ ] Science check: one primary retrieval entry point for due words + grammar
+
+**Anti-pattern guards**
+
+- Do not delete LessonPage; demote it to reference / resume hub under Course.
+
+---
+
+### Phase 3 — Lesson session redesign
+
+**Science drivers:** generation, testing effect, scaffolding→fading, pushed output, transfer-appropriate practice.
+
+**What to implement**
+
+1. Extend `LessonStep` (or wrap `buildLessonPlan`) with `intro`, `retrieve`, and `speak` steps aligned to the science session architecture.
+2. Intro card: 3–5 bullet goals from curriculum vocab/grammar counts + Maynard availability (orient; activate prior knowledge).
+3. Strengthen Check toward retrieval: keep fast MCQ for throughput, but ensure Review N uses SRS **recall** faces (reading/meaning), not only recognition.
+4. Practice: order guided → output; add a minimal reflection/self-check cue before leaving workbook (feedback principle; full AI grading later).
+5. After Practice: Review N builds queue → `ReviewSession` with `returnTo: lessonDone`; misses stay in learning steps / short intervals.
+6. After Review N: Speak CTA deep-linking `/scenarios?...` with a **production** prompt (not tap-only) for this lesson’s targets.
+7. Persist in-progress lesson session (lessonId + step index + ratings) so refresh/resume works; Today’s Path “continue” uses it.
+8. Map teach self-rate `again` + quiz misses → priority in Review N and FSRS Again/learning steps.
+
+**Docs / copy sources**
+
+- `lessonStudyPlanner.ts` `LessonStep` union and `buildLessonPlan`
+- `LessonStudy.tsx` TeachCard 4-step flow (preserve predict-before-reveal)
+- `maynardExplanationEngine` / `getMaynardSupport` for focus-on-form depth
+
+**Verification**
+
+- [ ] New step kinds covered in `LessonStudy.test.ts`
+- [ ] Completing a lesson always runs Review N or schedules dues with explicit defer
+- [ ] Resume mid-lesson from Today works after refresh (once persistence lands)
+- [ ] Science check: session includes encoding + retrieval + at least one productive step
+
+**Anti-pattern guards**
+
+- Do not remove Maynard deep explanations from teach cards.
+- Do not reintroduce generated TTS.
+- Do not replace Recall Review N with “show answer and rate” only inside the lesson with no SRS write.
+
+---
+
+### Phase 4 — First-run teaching
+
+**Science drivers:** early successful retrieval cycles; spacing must have something to space.
+
+**What to implement**
+
+1. After placement, set `currentLesson` (or generate path with `includeTextbookLessons: true`) and land on first lesson Intro — not an empty dashboard promise.
+2. One-click / auto bundled Genki starter when deck empty (`bundledGenkiImport`) so day-1 due reviews can exist after first lesson.
+3. Caught-up Today state: “Continue Course” to next incomplete curriculum lesson, not vague `/learn`.
+4. Default `includeTextbookLessons` to true for new profiles so path weeks contain launchable lessons.
+5. Cap new-card intake relative to due load (preserve existing ~1 new per 5 due interleave or tighten) so learners cannot mass-cram past spacing.
+
+**Docs / copy sources**
+
+- `OnboardingFlow.tsx` / `StepPlacement.tsx` copy (“We'll start your study plan here”)
+- `bundledGenkiImport.ts`
+- `store` defaults for `includeTextbookLessons`
+- `StudyDashboard` new/due interleave logic
+
+**Verification**
+
+- [ ] Fresh profile: onboarding → concrete lesson within one click
+- [ ] Empty SRS: starter import available without hunting My Content
+- [ ] Path generation includes `weeks[].lessons` by default
+- [ ] Science check: first session ends with scheduled reviews, not only “lesson complete”
+
+---
+
+### Phase 5 — Verification (redesign gate)
+
+1. Confirm implementations match Phase 0 allowed APIs (no prose-parsed path activities).
+2. Confirm each shipped step still maps to the Learning Science Foundation table (no “engagement-only” shortcuts).
+3. Grep guards: `markLessonComplete` call sites; `setCurrentLesson` call sites; TextbookProgress navigate payload.
+4. Run `npm run verify` (or at least lint + Vitest + route smoke for study/learn/scenarios).
+5. Pedagogy smoke (manual): placement → lesson (teach/check/practice) → Review N (recall + FSRS write) → Speak production → next Today action prioritizes dues.
+6. Update `todo.md` Active Priority checkboxes as phases complete.
+
+---
+
+### Out of scope for this redesign
+
+- Full CEFR can-do gating before unlocking the next textbook (valuable later; needs validated can-do instruments)
+- Writing-recognition / stroke scoring (CardWriting remains placeholder until a real input path — needed for transfer to writing skill)
+- Full AI rubric grading of workbook output (keep self-check prompt now; tutor grading later)
+- Regenerating textbook OCR / image crops
+- Japanese UI locale pack (still valuable polish; not required to fix the teaching loop)
+
+---
+
+## Completed earlier — Guided Learning Path in Study (2026-06)
+
+Shipped: `studyPathPlanner`, Today’s Path on StudyDashboard, route/build health. Superseded as *active* priority by the Learning Environment Redesign above; keep the planner as the daily orchestration core.
+
+---
+
+## 🔐 Security Audit (2026-05-20)
+
+Findings from a security + general-use pass over the Express proxy, client secret handling, and dependencies.
+Items 2–5 are low-risk while the server stays bound to `127.0.0.1`, but become serious once the AI proxy is
+deployed publicly (the staging plan above calls for exactly that on Render/Fly/Railway).
+
+| # | Severity | Finding | Fix |
+|---|----------|---------|-----|
+| 1 | ✅ FIXED | **OpenRouter key sent to wrong domain.** `app/server/index.ts` now uses `https://openrouter.ai/api/v1/chat/completions` through shared provider constants for streaming and non-streaming paths. | Keep provider URLs centralized in `PROVIDER_ENDPOINTS`. |
+| 2 | ✅ MITIGATED | **SSRF via `custom` provider endpoint.** Custom endpoints now require `https`, except explicit localhost/loopback development URLs, and DNS/IP resolution rejects private, link-local, multicast, and unspecified addresses. | If public hosted custom endpoints become important, move them to server `.env` allowlists instead of client-provided URLs. |
+| 3 | ✅ FIXED | **API keys in browser localStorage, contradicting docs.** Hosted AI providers and PDF extraction can use server environment variables or tester-provided session-only keys. Custom provider auth remains server-env only. Persisted Zustand state scrubs old `apiKey` values. | Prefer server keys for controlled beta; allow BYO keys for testers who want AI without shared provider spend. |
+| 4 | ✅ MITIGATED | **Unauthenticated, unbounded session tokens.** Tokens now expire after 12 hours and are capped in memory. | Add real user auth/session gating before exposing token issuance publicly. |
+| 5 | ✅ MITIGATED | **No rate limiting / security headers.** `/api/*` now has a lightweight per-IP rate limit, common security headers, 2 MB JSON body cap, and PDF upload limit reduced to 100 MB. | Replace with platform-grade rate limiting if the proxy becomes internet-facing. |
+| 6 | ✅ FIXED | **npm audit — auto-fixable runtime/dev vulns.** `npm audit fix` updated runtime packages, then unused vulnerable dev dependencies (`drizzle-kit`, `xlsx`) were removed. Full `npm audit` now reports 0 vulnerabilities. | Keep spreadsheet parsing out of runtime unless a maintained parser is chosen. |
+
+**Good practices confirmed:** local server binds to `127.0.0.1`, production can bind via `HOST`; CORS is
+locked to localhost plus explicit `CORS_ORIGINS`; OCR helper uses `execFile` with array args + filename sanitization (no shell injection); report
+endpoint sanitizes + length-caps input with fixed labels; no secrets committed (`.env.example` only,
+passphrases + packs gitignored).
+
+**Code-health:** docs sprawl — ~15 disagreeing top-level markdowns; consolidate to one source of truth.
+tsconfig strictness (`noUnusedLocals` / `noUnusedParameters` / `erasableSyntaxOnly`) is relaxed for legacy
+Anki code; re-tighten incrementally.
+
+---
+
+## 🔇 Generated Speech Removed Before Beta (2026-06-24)
+
+The previous browser/Azure TTS fallback sounded bad and was not ready for testers. Generated speech is now
+removed from review cards, writing cards, and scenarios. The app preserves imported Anki audio and optional
+uploaded card audio only; future speech work should start behind an explicit feature flag with quality and
+cost controls.
+
+**Recommendation.** Keep generated speech out of beta. Revisit audio later only after selecting a high-quality
+engine, adding a visible opt-in control, and covering it with playback regression tests.
+
+---
+
+## 🏗️ Technical / Platform Improvements (2026-05-20)
+
+Grounded in the current code; not covered elsewhere in this plan. Ordered by impact.
+
+1. **✅ FIXED 2026-06-12 — Move DB persistence off `localStorage` → IndexedDB.**
+   `sqlite.ts` now loads/saves the raw sql.js `Uint8Array` snapshot in IndexedDB, debounces writes, migrates
+   an existing `kiroku_michi_db` localStorage snapshot forward, and raises an in-app warning if persistence
+   fails. `localStorage` remains only as a last-ditch fallback when IndexedDB is unavailable.
+2. **Run sql.js in a Web Worker.** The DB executes on the main thread, so heavy reads (CardBrowser, stats
+   aggregation, APKG parse) block rendering. Move it into a Worker to keep the UI responsive during imports
+   and large queries. Pairs naturally with #1.
+3. **Storage-quota safeguard (stopgap until #1).** Wrap `setItem` in try/catch, surface a "storage almost
+   full — export your data" warning, and stop silently dropping writes. Today a full quota fails invisibly.
+4. **First-run starter on-ramp.** The "zero content on install" decision means a new user lands on an empty
+   dashboard with nothing to review until they successfully import a deck or PDF — a steep activation cliff.
+   Bundle a small starter deck (~hundreds of N5 words) or a one-click "load a free Genki/Kaishi starter" so a
+   newcomer can review within 30 seconds. Flows directly from the locked content decision; not yet on the roadmap.
+5. **Localize the UI — Japanese first.** `react-intl` is wired across the app but `locale` is hardcoded `"en"`
+   (`App.tsx:91`) with only `en.json`. For a Japanese-learning app a Japanese UI is fitting and cheap given the
+   scaffolding — add `ja.json` + a locale switcher. Right now the i18n infrastructure buys nothing.
+6. **Accessibility pass.** Only ~27 of ~70 components use any `aria`/`role`; just 3 have `Escape`/focus
+   handling. Modals (Report Issue, keyboard help, confirm dialogs) likely lack focus traps + Esc-to-close, and
+   the rating buttons may be unlabeled for screen readers. Sweep: modal focus management, aria-labels on
+   rating/review controls, visible focus rings.
+
+**Priority:** #1 is urgent (silent data-loss waiting for a power user; degrades perf for everyone as decks
+grow). #4 is the highest-leverage *product* fix for new-user activation. #2/#3 reinforce #1; #5/#6 are
+high-value polish with the groundwork already partly in place.
 
 ---
 
@@ -22,6 +408,10 @@ Last updated: 2026-05-22 AEST
 - Reports automatically attach route, full URL, timestamp, browser/user agent, viewport, light/dark theme, app version/commit hash, current lesson, active deck, and route-derived lesson/scenario/card context where available.
 - `/api/report` is implemented in both local Express and Vercel serverless forms. It creates GitHub Issues when `GITHUB_REPORT_REPO` and `GITHUB_REPORT_TOKEN` are configured; otherwise it accepts reports in local mode for smoke testing.
 - Store GitHub report credentials only as hosting environment variables, never in the repo or client bundle.
+- Hosted AI credentials can be server environment variables (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`,
+  `OPENROUTER_API_KEY`, `DEEPSEEK_API_KEY`) or tester-provided session-only keys. Custom provider auth
+  remains server-only (`CUSTOM_PROVIDER_API_KEY`). PDF extraction currently requires server
+  `DEEPSEEK_API_KEY` or a tester-provided DeepSeek key.
 - Later polish: optional screenshot attachment, console-error capture, and Sentry event ID linking so runtime crashes and user reports can be correlated.
 - KirokuMichi-specific requirement: content reports should include exact textbook/source/lesson/page/item IDs where possible so OCR/content fixes are traceable rather than vague.
 
@@ -38,6 +428,9 @@ Last updated: 2026-05-22 AEST
 - ScenarioMode now has a deterministic E2E shell test for opening live chat and typing without depending on an external AI provider.
 - `npm run content:import:smoke` reports real-PDF fixture readiness and is included in `npm run verify`.
 - `npm run textbook:maynard:quality` now emits `commonCuratedBridges`, making remaining Maynard cleanup a concrete direct-alias target list rather than a vague extraction chore.
+- Maynard direct-reference cleanup reduced curated bridges from 73 to 5 while keeping A1-B2 support coverage at 100%.
+- Grammar review now uses scheduler-backed `grammar_states` with Again/Hard/Good/Easy ratings; `grammar_progress` remains as compatibility/history.
+- Closed beta access can be gated with comma-separated `BETA_INVITE_CODES` without adding a database.
 
 ### Direct Maynard Source References
 - `npm run textbook:maynard:direct-refs` builds a deterministic app-facing Maynard reference index from the local comprehensive Maynard extraction.
@@ -69,6 +462,17 @@ Last updated: 2026-05-22 AEST
 - If no manifest exists yet, the lesson shows a clear pending state so the future extraction pipeline has a visible destination.
 - `npm run textbook:assets:manifest` now scans reviewed-pack asset folders, copies available images to `app/data/generated/assets/textbook/`, and writes `app/data/generated/assets/textbook-assets.json`.
 - Current manifest publishes the two reviewed local assets available in the workspace: Genki I Workbook Lesson 1 listening picture choices and Quartet I Lesson 1 Miyazaki reading photo. More assets will appear automatically after the external extraction pipeline produces more reviewed crops.
+
+#### Image extraction workflow (agreed 2026-06-12)
+- Do not scan/screenshot images separately. The PDF stays the single source of truth; images are coordinate-based crops via `imageFile` + `imageSourceRef: { sourceId, pageNumber, coordinates }` on pack items, rendered by `npm run textbook:assets:crop` (pypdfium2 + PIL) and published by `npm run textbook:assets:manifest`.
+- The bottleneck is finding crop coordinates, not cropping. Plan of attack, cheapest-first:
+  1. **Deterministic candidate generation (zero model cost):** derive candidate figure regions from gaps in the grouped PaddleOCR block coverage (`tools/textbook-pack/out/grouped/`) — figures are the page regions not covered by text blocks, and the OCR boxes are already pixel-accurate.
+  2. **Haiku subagent labeling pass (cheap):** a Claude Code subagent (`model: haiku`) views each page with candidates overlaid and only classifies/filters them (keep vs decorative), matches regions to lesson items, and writes `alt`/`caption` text. No API keys — runs in-session per the project's "Claude Code native AI" rule.
+  3. **Escalation tail:** pages the Haiku pass flags as ambiguous (multi-panel layouts, figures interleaved with text) get a Sonnet/Opus pass. Precise raw-coordinate vision is an Opus-tier strength; avoid asking Haiku/Sonnet for pixel coordinates directly (their input downscales to ~1568px long edge and coordinates need scaling back to render-DPI space).
+  4. **Existing review flow stays the gate:** pad approved boxes a few px, write proposals into the corrections file, verify in the validation viewer (`npm run textbook:validation-images` + `textbook:validation-viewer`), then crop + manifest + `textbook:reviewed:validate`.
+- DPI guidance: crop at 200–300 DPI for panels learners must read (picture-choice exercises, handwriting grids); 150 DPI is fine for decorative photos.
+- Cost reality check: a full Genki volume is ~1M image-input tokens — single-digit dollars even at Opus rates, and a one-off per book. The scarce resource is human review time, so prefer the OCR-gap + label split (low correction rate) over squeezing model price.
+- Keep raw PDFs and full-page renders out of git; crops in `app/data/generated/assets/` are regenerable from PDF + coordinates, and distribution goes through the encrypted-pack path.
 
 ### Textbook QA Dashboard
 - `/dev/textbook-qa` now tracks workbook output count, image asset count, Maynard coverage percentage, suspicious vocab, page ranges, scenarios, and warnings per lesson.
@@ -446,8 +850,8 @@ Last updated: 2026-05-22 AEST
 - Audio policy for cards:
   - Preserve imported Anki audio exactly as-is
   - User-created cards can be text-only or have optional uploaded audio
-  - Future TTS is fallback-only for cards without real audio
-  - Playback precedence: imported/uploaded real audio > TTS fallback > no audio
+  - Do not synthesize fallback speech for cards without real audio
+  - Playback precedence: imported/uploaded real audio > no audio
 - For non-mapped PDFs/content imports: keep generic extraction path and prompt user where to route content (deck/grammar/lessons)
 - Extend by adding rows/entries only (no new logic paths)
 - Add provenance metadata on created cards for filtering/stats/debugging:
@@ -468,7 +872,7 @@ Last updated: 2026-05-22 AEST
 ### Other Sections (Built)
 - **TutorChat** (`/practice`): AI chat with tab switcher (Tutor | Upload Content)
 - **LearningMode** (`/learn`): sequential reader for `learning_content` table — text_passage, word_list, grammar_point, sentence_pair, dialogue_script renderers
-- **ScenarioMode** (`/scenarios`): A↔B dialogue player with browser TTS (`speechSynthesis`, lang=ja-JP, rate=0.85)
+- **ScenarioMode** (`/scenarios`): A↔B dialogue player; generated speech is disabled until a better audio plan exists
 - **JLPTSection** (`/study/jlpt`): JLPT level content browser
 - **ImmersionMode** (`/immersion`): schedule + timer gated on toggle
 - **MyContent** (`/my-content`): browse/manage user content
@@ -600,7 +1004,7 @@ Next: Manual corrections phase (A1-A2 first, then B1-B2)
 | Audio persistence | IndexedDB (`audioStore.ts`) with `idb:` key prefix | Blob URLs die on page reload |
 | API keys | Server-side only, proxied via Express | Never exposed to client |
 | Base content | Zero on install — user imports everything | Avoids bundling large data files |
-| TTS | Only in ScenarioMode (`speechSynthesis`) | Vocab cards have real audio; grammar cards are text-only |
+| Generated speech | Disabled before beta | The old browser/Azure fallback sounded poor; use imported/uploaded real audio only |
 | Grammar tracking | `grammar_progress` table (UPSERT) | Lightweight, no full SRS needed for grammar points |
 | Heatmap colours | Blue=vocab, purple=grammar, green=both | Visually separates study modes |
 
@@ -658,3 +1062,27 @@ server/
 4. **Textbook Learning subsection** — render unlocked structured lessons and unlock vocab into linked decks
 5. **Structured AI tutor lesson planning** from unlocked textbook packs plus user-provided custom content
 6. **ScenarioMode v2** — AI conversation (requires UX decision first)
+
+---
+
+## Recommended Next Ideas (2026-05-20 audit)
+
+Content (A1–B2) and the SRS are complete, so the highest-leverage work is now reliability and reach rather
+than more features. Priority-ordered:
+
+1. **Backup / Restore + cloud sync (highest value).** All state lives in one browser's localStorage +
+   IndexedDB — clearing site data wipes every SRS history with no recovery. The single biggest user risk.
+   First step: manual JSON export/import. Real fix: optional account-based sync (also unlocks multi-device).
+2. **Finish the encrypted-pack unlock flow** (= Next Steps #2 above). Half-built already
+   (`build-encrypted-packs.ts`, `textbookPackUnlock.ts`); the main differentiator over generic OCR import.
+3. **Recorded-audio regression test.** Assert imported/uploaded MP3 playback still resolves `idb:` audio and
+   does not fall back to generated speech.
+4. **Unify grammar into the scheduler.** Grammar uses a lightweight `grammar_progress` UPSERT, not FSRS;
+   folding it into the real scheduler gives grammar proper spacing.
+5. **Pitch-accent display (OJAD-style),** shown visually without generated audio until a better voice plan is chosen.
+6. **Offline-aware AI features.** Already a PWA; AI surfaces should show a clear offline state while
+   review/lessons keep working without the proxy.
+7. **Live "time-to-goal" dashboard widget.** Reuse the Learning Path realism + month-estimate logic to show a
+   retention-forecast / projection tile on the dashboard.
+8. **Longer-term (external/blocked):** C1/N1 expansion (Shin Kanzen Master, Kanji in Context); handwriting
+   input graded against pack answer-keys.
