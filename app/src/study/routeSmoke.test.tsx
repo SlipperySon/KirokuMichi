@@ -26,6 +26,7 @@ describe('route smoke tests', () => {
   it('keeps critical learning routes registered', () => {
     expect(APP_ROUTE_PATHS).toEqual(expect.arrayContaining([
       '/study',
+      '/study/srs',
       '/study/review',
       '/study/mistakes',
       '/learn',
@@ -42,6 +43,7 @@ describe('route smoke tests', () => {
   it('keeps all high-priority learner smoke routes in the route manifest', () => {
     expect(APP_ROUTE_PATHS).toEqual(expect.arrayContaining([
       '/study',
+      '/study/srs',
       '/learn',
       '/learn/lessons',
       '/learn/lessons/:cefr/:lessonNumber',
@@ -56,7 +58,7 @@ describe('route smoke tests', () => {
     renderAppSurface(<LessonsHub />)
 
     expect(screen.getByRole('heading', { name: 'Study by Lesson' })).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /Learn Menu/i })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /Return to Course/i })).toBeInTheDocument()
   })
 
   it('renders the lesson study flow when route state is present', () => {
@@ -65,8 +67,8 @@ describe('route smoke tests', () => {
         initialEntries={[{
           pathname: '/learn/study',
           state: {
-            vocab: [{ id: 'v1', surface: 'こんにちは', english: 'hello', lesson: 'genki_1_1', source: 'genki_1_foundation', page: 0 }],
-            grammar: [{ id: 'g1', pattern: 'です', meaning: 'polite to be', lesson: 'genki_1_1', source: 'cefr', page: 0 }],
+            vocab: [{ id: 'v1', surface: '学生', english: 'student', lesson: 'genki_1_1', source: 'genki_1_textbook', page: 32 }],
+            grammar: [{ id: 'g1', pattern: 'です', meaning: 'polite to be', lesson: 'genki_1_1', source: 'genki_1_textbook', page: 34 }],
             lessonId: 'genki_1_1',
             lessonTitle: 'Genki I - Lesson 1',
             cefrLevel: 'a1',

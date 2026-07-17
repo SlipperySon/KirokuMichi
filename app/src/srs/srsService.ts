@@ -1,6 +1,7 @@
 import type { StorageProvider, SchedulerProvider, CardState, Rating } from '../core/providers'
 import { isLeech, LEECH_THRESHOLD } from '../core/scheduler'
 import type { ReviewCard, SessionStats, StreakData, HeatmapDay, GrammarQuestion, IntervalPreview, GrammarReviewContext } from '../study/types'
+import { storageLessonIdsFor } from '../content/lessonContentUtils'
 
 /** Full card_state snapshot used by undo-last-review. */
 export interface CardStateSnapshot {
@@ -15,6 +16,21 @@ export interface CardStateSnapshot {
   leechCount: number
   isLeech: number
   lastReview: string | null
+}
+
+export interface GrammarReviewItem {
+  grammarStateId: number
+  id: number
+  jlpt_level: string
+  title: string
+  pattern: string
+  meaning: string
+  explanation: string
+  examples_json: string
+  state: string
+  due: string
+  reps: number
+  lapses: number
 }
 
 function formatInterval(due: Date, now = new Date()): string {
@@ -53,7 +69,9 @@ export class SRSService {
         c.reading,
         c.audio_url  AS audioUrl,
         c.jlpt_level AS jlptLevel,
-        c.user_note  AS userNote
+        c.user_note  AS userNote,
+        c.example_sentence AS exampleSentence,
+        c.example_translation AS exampleTranslation
        FROM card_states cs
        JOIN cards c ON c.id = cs.card_id
        WHERE cs.user_id = ?
@@ -84,7 +102,9 @@ export class SRSService {
         c.reading,
         c.audio_url  AS audioUrl,
         c.jlpt_level AS jlptLevel,
-        c.user_note  AS userNote
+        c.user_note  AS userNote,
+        c.example_sentence AS exampleSentence,
+        c.example_translation AS exampleTranslation
        FROM card_states cs
        JOIN cards c ON c.id = cs.card_id
        WHERE cs.user_id = ?
@@ -96,6 +116,8 @@ export class SRSService {
   }
 
   async getCardsForLesson(userId: number, lessonId: string, limit?: number): Promise<ReviewCard[]> {
+    const lessonIds = storageLessonIdsFor(lessonId)
+    const lessonPlaceholders = lessonIds.map(() => '?').join(', ')
     const query = `SELECT
       cs.id        AS cardStateId,
       cs.card_id   AS cardId,
@@ -110,16 +132,20 @@ export class SRSService {
       c.reading,
       c.audio_url  AS audioUrl,
       c.jlpt_level AS jlptLevel,
-      c.user_note  AS userNote
+      c.user_note  AS userNote,
+      c.example_sentence AS exampleSentence,
+      c.example_translation AS exampleTranslation
      FROM card_states cs
      JOIN cards c ON c.id = cs.card_id
      WHERE cs.user_id = ?
-       AND cs.lesson_id = ?
+       AND cs.lesson_id IN (${lessonPlaceholders})
        AND cs.is_leech = 0
+       AND cs.suspended_at IS NULL
+       AND (cs.buried_until IS NULL OR cs.buried_until <= datetime('now'))
      ORDER BY cs.state ASC, cs.due ASC, cs.id ASC
      ${limit ? 'LIMIT ?' : ''}`
 
-    const params = limit ? [userId, lessonId, limit] : [userId, lessonId]
+    const params = limit ? [userId, ...lessonIds, limit] : [userId, ...lessonIds]
     return this.storage.query<ReviewCard>(query, params)
   }
 
@@ -391,7 +417,9 @@ export class SRSService {
         c.reading,
         c.audio_url  AS audioUrl,
         c.jlpt_level AS jlptLevel,
-        c.user_note  AS userNote
+        c.user_note  AS userNote,
+        c.example_sentence AS exampleSentence,
+        c.example_translation AS exampleTranslation
        FROM card_states cs
        JOIN cards c ON c.id = cs.card_id
        WHERE cs.user_id = ?
@@ -477,37 +505,135 @@ export class SRSService {
     return { currentStreak, longestStreak, days }
   }
 
-  async getGrammarQueue(userId: number, limit: number): Promise<{ id: number; jlpt_level: string; title: string; pattern: string; meaning: string; explanation: string; examples_json: string }[]> {
-    // Prioritise unseen points, then least recently seen
+  async ensureGrammarStates(userId: number): Promise<void> {
+    const initial = this.scheduler.getNewCard()
+    await this.storage.execute(
+      `INSERT OR IGNORE INTO grammar_states
+        (grammar_point_id, user_id, state, due, stability, difficulty, retrievability, reps, lapses)
+       SELECT gp.id, ?, 'new', datetime('now'), ?, ?, ?, 0, 0
+       FROM grammar_points gp`,
+      [
+        userId,
+        initial.stability,
+        initial.difficulty,
+        initial.retrievability,
+      ]
+    )
+  }
+
+  async getGrammarQueue(userId: number, limit: number): Promise<GrammarReviewItem[]> {
+    await this.ensureGrammarStates(userId)
     return this.storage.query(
-      `SELECT gp.id, gp.jlpt_level, gp.title, gp.pattern, gp.meaning, gp.explanation, gp.examples_json
+      `SELECT
+         gs.id AS grammarStateId,
+         gp.id,
+         gp.jlpt_level,
+         gp.title,
+         gp.pattern,
+         gp.meaning,
+         gp.explanation,
+         gp.examples_json,
+         gs.state,
+         gs.due,
+         gs.reps,
+         gs.lapses
        FROM grammar_points gp
-       LEFT JOIN grammar_progress prog ON prog.grammar_point_id = gp.id AND prog.user_id = ?
-       ORDER BY prog.times_seen ASC, prog.last_seen_at ASC, gp.frequency_rank ASC
+       JOIN grammar_states gs ON gs.grammar_point_id = gp.id AND gs.user_id = ?
+       WHERE gs.due <= datetime('now')
+         AND gs.is_leech = 0
+       ORDER BY
+         CASE gs.state WHEN 'new' THEN 0 WHEN 'learning' THEN 1 WHEN 'relearning' THEN 2 ELSE 3 END,
+         gs.due ASC,
+         gp.frequency_rank ASC,
+         gp.id ASC
        LIMIT ?`,
       [userId, limit]
     )
   }
 
   async getGrammarDueCount(userId: number): Promise<number> {
+    await this.ensureGrammarStates(userId)
     const rows = await this.storage.query<{ count: number }>(
-      `SELECT COUNT(*) AS count FROM grammar_points gp
-       LEFT JOIN grammar_progress prog ON prog.grammar_point_id = gp.id AND prog.user_id = ?
-       WHERE prog.times_seen IS NULL OR prog.last_seen_at < date('now', '-1 day')`,
+      `SELECT COUNT(*) AS count
+       FROM grammar_states
+       WHERE user_id = ?
+         AND due <= datetime('now')
+         AND is_leech = 0`,
       [userId]
     )
     return rows[0]?.count ?? 0
   }
 
-  async markGrammarSeen(userId: number, grammarPointId: number): Promise<void> {
+  async reviewGrammar(userId: number, grammarStateId: number, rating: Rating): Promise<{ isNewLeech: boolean }> {
+    const rows = await this.storage.query<{
+      grammar_point_id: number
+      due: string
+      stability: number
+      difficulty: number
+      retrievability: number
+      state: string
+      reps: number
+      lapses: number
+      is_leech: number
+    }>(
+      `SELECT grammar_point_id, due, stability, difficulty, retrievability, state, reps, lapses, is_leech
+       FROM grammar_states
+       WHERE id = ? AND user_id = ?`,
+      [grammarStateId, userId]
+    )
+    const row = rows[0]
+    if (!row) throw new Error(`grammar_state ${grammarStateId} not found`)
+
+    const result = this.scheduler.schedule({
+      due: new Date(row.due),
+      stability: row.stability,
+      difficulty: row.difficulty,
+      retrievability: row.retrievability,
+      state: row.state as CardState['state'],
+      reps: row.reps,
+      lapses: row.lapses,
+    }, rating)
+    const wasLeech = row.is_leech === 1
+    const newIsLeech = isLeech(result.lapses)
+
+    await this.storage.execute(
+      `UPDATE grammar_states SET
+        due = ?,
+        stability = ?,
+        difficulty = ?,
+        retrievability = ?,
+        state = ?,
+        reps = ?,
+        lapses = ?,
+        leech_count = ?,
+        is_leech = ?,
+        last_review = datetime('now')
+       WHERE id = ? AND user_id = ?`,
+      [
+        result.due.toISOString(),
+        result.stability,
+        result.difficulty,
+        result.retrievability,
+        result.state,
+        result.reps,
+        result.lapses,
+        result.lapses,
+        newIsLeech ? 1 : 0,
+        grammarStateId,
+        userId,
+      ]
+    )
+
     await this.storage.execute(
       `INSERT INTO grammar_progress (user_id, grammar_point_id, last_seen_at, times_seen)
        VALUES (?, ?, datetime('now'), 1)
        ON CONFLICT(user_id, grammar_point_id) DO UPDATE SET
          last_seen_at = datetime('now'),
          times_seen = times_seen + 1`,
-      [userId, grammarPointId]
+      [userId, row.grammar_point_id]
     )
+
+    return { isNewLeech: newIsLeech && !wasLeech }
   }
 
   async getLearnedCardIds(userId: number): Promise<number[]> {
@@ -635,14 +761,16 @@ export class SRSService {
       audioUrl?: string | null
       tags?: string | null
       userNote?: string | null
+      exampleSentence?: string | null
+      exampleTranslation?: string | null
       originType?: string | null
       originRef?: string | null
       lessonId?: string | null
     }
   ): Promise<number> {
     await this.storage.execute(
-      `INSERT INTO cards (type, front, back, reading, deck_id, audio_url, tags, user_note, origin_type, origin_ref, source)
-       VALUES ('vocabulary', ?, ?, ?, ?, ?, ?, ?, ?, ?, 'user')`,
+      `INSERT INTO cards (type, front, back, reading, deck_id, audio_url, tags, user_note, example_sentence, example_translation, origin_type, origin_ref, source)
+       VALUES ('vocabulary', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'user')`,
       [
         fields.front,
         fields.back,
@@ -651,6 +779,8 @@ export class SRSService {
         fields.audioUrl ?? null,
         fields.tags ?? null,
         fields.userNote ?? null,
+        fields.exampleSentence ?? null,
+        fields.exampleTranslation ?? null,
         fields.originType ?? null,
         fields.originRef ?? null,
       ]
@@ -862,7 +992,7 @@ export class SRSService {
     )
   }
 
-  async updateCard(cardId: number, fields: { front?: string; back?: string; reading?: string | null; tags?: string | null; userNote?: string | null }): Promise<void> {
+  async updateCard(cardId: number, fields: { front?: string; back?: string; reading?: string | null; tags?: string | null; userNote?: string | null; exampleSentence?: string | null; exampleTranslation?: string | null }): Promise<void> {
     const sets: string[] = []
     const params: (string | number | null)[] = []
     if (fields.front !== undefined) { sets.push('front = ?'); params.push(fields.front) }
@@ -870,6 +1000,8 @@ export class SRSService {
     if ('reading' in fields) { sets.push('reading = ?'); params.push(fields.reading ?? null) }
     if ('tags' in fields) { sets.push('tags = ?'); params.push(fields.tags ?? null) }
     if ('userNote' in fields) { sets.push('user_note = ?'); params.push(fields.userNote ?? null) }
+    if ('exampleSentence' in fields) { sets.push('example_sentence = ?'); params.push(fields.exampleSentence ?? null) }
+    if ('exampleTranslation' in fields) { sets.push('example_translation = ?'); params.push(fields.exampleTranslation ?? null) }
     if (sets.length === 0) return
     params.push(cardId)
     await this.storage.execute(`UPDATE cards SET ${sets.join(', ')} WHERE id = ?`, params)
@@ -965,7 +1097,9 @@ export class SRSService {
         c.reading,
         c.audio_url  AS audioUrl,
         c.jlpt_level AS jlptLevel,
-        c.user_note  AS userNote
+        c.user_note  AS userNote,
+        c.example_sentence AS exampleSentence,
+        c.example_translation AS exampleTranslation
        FROM card_states cs
        JOIN cards c ON c.id = cs.card_id
        LEFT JOIN decks d ON d.id = c.deck_id

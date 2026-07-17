@@ -19,6 +19,7 @@ import { renderTemplate } from '../srs/templateRenderer'
 import { useAppStore } from '../store'
 import { toast } from '../components/toastStore'
 import type { ReviewCard, GrammarQuestion, GrammarReviewContext } from './types'
+import { unlockScenariosForLesson } from '../content/scenarioUnlockService'
 
 interface CardTemplate {
   id: number
@@ -43,10 +44,13 @@ function TemplatedCard({
   onReveal: () => void
   ratingButtons: React.ReactNode
 }) {
+  const usageExample = useUsageExample(card)
   const fields: Record<string, string> = {
     front: card.front,
     back: card.back,
     reading: card.reading ?? '',
+    exampleSentence: usageExample?.sentence ?? card.exampleSentence ?? '',
+    exampleTranslation: usageExample?.translation ?? card.exampleTranslation ?? '',
   }
   const frontHtml = renderTemplate(template.frontTemplate, fields)
   const backHtml = renderTemplate(template.backTemplate, fields)
@@ -56,17 +60,33 @@ function TemplatedCard({
       {template.css && <style>{template.css}</style>}
       <div className="w-full min-h-48 bg-gray-50 rounded-2xl flex flex-col items-center justify-center gap-4 p-8">
         {phase === 'front' ? (
-          <div
-            className="text-2xl font-bold text-gray-900 text-center whitespace-pre-wrap"
-            lang="ja"
-            dangerouslySetInnerHTML={{ __html: frontHtml }}
-          />
+          <>
+            <div
+              className="text-2xl font-bold text-gray-900 text-center whitespace-pre-wrap"
+              lang="ja"
+              dangerouslySetInnerHTML={{ __html: frontHtml }}
+            />
+            {usageExample && (
+              <div className="w-full rounded-lg border border-indigo-100 bg-white px-4 py-3 text-center">
+                <p className="text-xs font-semibold uppercase text-indigo-500">In context</p>
+                <p className="mt-1 text-lg text-gray-900" lang="ja">{usageExample.sentence}</p>
+              </div>
+            )}
+          </>
         ) : (
-          <div
-            className="text-lg text-gray-700 text-center whitespace-pre-wrap"
-            lang="ja"
-            dangerouslySetInnerHTML={{ __html: backHtml }}
-          />
+          <>
+            <div
+              className="text-lg text-gray-700 text-center whitespace-pre-wrap"
+              lang="ja"
+              dangerouslySetInnerHTML={{ __html: backHtml }}
+            />
+            {usageExample?.translation && (
+              <div className="w-full rounded-lg border border-indigo-100 bg-white px-4 py-3 text-center">
+                <p className="text-xs font-semibold uppercase text-indigo-500">Context translation</p>
+                <p className="mt-1 text-sm text-gray-500">{usageExample.translation}</p>
+              </div>
+            )}
+          </>
         )}
       </div>
       {phase === 'front' ? (
@@ -89,14 +109,39 @@ interface LocationState {
   sessionId: number
   userId: number
   lessonId?: string
+  /** Only set when finishing the lesson Cards step — not for casual lesson card study. */
+  markCompleteOnFinish?: boolean
+  returnTo?: string
   cramMode?: boolean
   cramDeckName?: string
 }
 
 export function ReviewSession() {
+  const navigate = useNavigate()
+  const location = useLocation()
+  const state = location.state as LocationState | null
+
+  if (!state?.queue || state.userId == null || state.sessionId == null) {
+    return (
+      <div className="flex min-h-screen flex-col items-center justify-center gap-4 bg-gray-50 p-6">
+        <p className="text-center text-gray-700">No review session is loaded. Start a review from Today or a lesson.</p>
+        <button
+          type="button"
+          onClick={() => navigate('/study')}
+          className="rounded-lg bg-indigo-600 px-4 py-2 font-semibold text-white hover:bg-indigo-700"
+        >
+          Back to Today
+        </button>
+      </div>
+    )
+  }
+
+  return <ReviewSessionActive state={state} />
+}
+
+function ReviewSessionActive({ state }: { state: LocationState }) {
   const intl = useIntl()
   const navigate = useNavigate()
-  const { state } = useLocation() as { state: LocationState }
   const { settings, markLessonComplete } = useAppStore()
 
   const [storage] = useState(() => new SQLiteStorage())
@@ -178,20 +223,22 @@ export function ReviewSession() {
   }, [currentCard?.cardId])
 
   if (session.isComplete) {
-    // Mark lesson as complete if this was a lesson study session
-    if (state.lessonId) {
+    if (state.markCompleteOnFinish && state.lessonId) {
       markLessonComplete(state.lessonId)
+      void unlockScenariosForLesson(state.lessonId, state.userId, storage).catch(() => {
+        /* non-blocking */
+      })
     }
 
     return (
       <SessionSummary
         stats={session.stats}
         totalCards={state.queue.length}
-        onDone={() => navigate('/study')}
+        onDone={() => navigate(state.returnTo ?? '/study')}
         onExportAnki={() => exportToAnki(state.queue)}
         onImportAnki={async (file) => {
           await importFromAnki(file, storage, state.userId)
-          navigate('/study')
+          navigate(state.returnTo ?? '/study')
         }}
       />
     )

@@ -1,10 +1,20 @@
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
 import { useLocation, useNavigate } from 'react-router-dom'
 import { FileText, ListChecks, LogOut } from 'lucide-react'
 import { useAppStore } from '../store'
 import { buildLessonPlan, type LessonStudyState, type MaynardRef, type QuizQuestion, type TeachItem } from './lessonStudyPlanner'
 import { AddToDeckButton } from './AddToDeckButton'
+import { SQLiteStorage } from '../db/sqlite'
+import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
+import { SRSService } from '../srs/srsService'
+import {
+  buildLessonReviewQueue,
+  ensureLessonCards,
+  priorityFrontsFromLessonSignals,
+} from './lessonCardBridge'
+import { toast } from '../components/toastStore'
+import { unlockScenariosForLesson } from '../content/scenarioUnlockService'
 
 interface AnswerRecord {
   itemId: string
@@ -31,6 +41,16 @@ export function LessonStudy() {
   const navigate = useNavigate()
   const { state: routeState } = useLocation() as { state?: LessonStudyState }
   const markComplete = useAppStore(s => s.markLessonComplete)
+  const setCurrentLesson = useAppStore(s => s.setCurrentLesson)
+  const settings = useAppStore(s => s.settings)
+  const activeUserId = useAppStore(s => s.activeUserId)
+  const userId = activeUserId ?? 1
+
+  const [storage] = useState(() => new SQLiteStorage())
+  const scheduler = settings.schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
+  const [service] = useState(() => new SRSService(storage, scheduler))
+  const [isStartingCards, setIsStartingCards] = useState(false)
+
   const state = useMemo<LessonStudyState>(() => routeState ?? {
     vocab: [],
     grammar: [],
@@ -52,6 +72,13 @@ export function LessonStudy() {
   const [workbookResponses, setWorkbookResponses] = useState<Record<string, WorkbookResponse>>({})
   const [showSummary, setShowSummary] = useState(false)
 
+  useEffect(() => {
+    if (!routeState?.lessonId) return
+    // Ignore weak-point drill ids like genki_1_1_drill for current-lesson tracking
+    if (routeState.lessonId.endsWith('_drill')) return
+    setCurrentLesson(routeState.lessonId)
+  }, [routeState?.lessonId, setCurrentLesson])
+
   const currentStep = plan[stepIndex]
   const totalQuestions = answers.length
   const correctAnswers = answers.filter(answer => answer.isCorrect).length
@@ -65,7 +92,7 @@ export function LessonStudy() {
   if (!routeState) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-gray-50 p-6">
-        <button onClick={() => navigate('/learn/lessons')} className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700">
+        <button onClick={() => navigate('/learn')} className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700">
           <ListChecks className="h-5 w-5" aria-hidden="true" />
           Return to Lesson Menu
         </button>
@@ -88,6 +115,7 @@ export function LessonStudy() {
   function answerQuestion(question: QuizQuestion, answer: string) {
     if (selectedAnswer !== null) return
     setSelectedAnswer(answer)
+    const isCorrect = answer === question.correctAnswer
     setAnswers(previous => [
       ...previous,
       {
@@ -95,9 +123,55 @@ export function LessonStudy() {
         prompt: question.prompt,
         correctAnswer: question.correctAnswer,
         selectedAnswer: answer,
-        isCorrect: answer === question.correctAnswer,
+        isCorrect,
       },
     ])
+    if (!isCorrect) {
+      void service.logMistake(userId, null, answer, question.correctAnswer, null).catch(() => {
+        /* non-blocking */
+      })
+    }
+  }
+
+  async function continueToCards() {
+    if (isStartingCards) return
+    setIsStartingCards(true)
+    try {
+      await ensureLessonCards(service, userId, state.lessonId, state.vocab, state.grammar)
+      const priorityFronts = priorityFrontsFromLessonSignals({
+        vocab: state.vocab,
+        grammar: state.grammar,
+        againItemIds: selfMarkedAgain.map(item => item.itemId),
+        missedItemIds: missedAnswers.map(answer => answer.itemId),
+      })
+      const queue = await buildLessonReviewQueue(service, userId, state.lessonId, { priorityFronts })
+      if (queue.length === 0) {
+        toast.info('No linked cards yet — lesson marked complete. Import or add cards to space this material.')
+        markComplete(state.lessonId)
+        try {
+          await unlockScenariosForLesson(state.lessonId, userId, storage)
+        } catch { /* ignore */ }
+        navigate(lessonPagePath)
+        return
+      }
+      const sessionId = await service.startSession(userId, 'lesson')
+      toast.success(`Reviewing ${queue.length} lesson card${queue.length === 1 ? '' : 's'}`)
+      navigate('/study/review', {
+        state: {
+          queue,
+          grammarEntries: [],
+          sessionId,
+          userId,
+          lessonId: state.lessonId,
+          markCompleteOnFinish: true,
+          returnTo: lessonPagePath,
+        },
+      })
+    } catch (error) {
+      toast.error(`Could not start card review: ${String(error)}`)
+    } finally {
+      setIsStartingCards(false)
+    }
   }
 
   function continueQuiz(questions: QuizQuestion[]) {
@@ -168,9 +242,6 @@ export function LessonStudy() {
                         Your output: {response.response}
                       </div>
                     )}
-                    {task.sourcePrompt && (
-                      <div className="text-xs text-emerald-800">Source cue: {task.sourcePrompt}</div>
-                    )}
                     <div className="text-gray-600">{task.support}</div>
                   </div>
                   )
@@ -208,7 +279,18 @@ export function LessonStudy() {
           )}
 
           <div className="mt-6 flex flex-col gap-3">
-            {/* Drill weak points — immediate reinforcement */}
+            <button
+              type="button"
+              disabled={isStartingCards}
+              onClick={() => { void continueToCards() }}
+              className="rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700 disabled:opacity-60"
+            >
+              {isStartingCards ? 'Preparing cards…' : 'Continue to Cards (spaced review)'}
+            </button>
+            <p className="text-center text-xs text-gray-500">
+              Reviews weak and new lesson cards with the Anki-style scheduler before marking complete.
+            </p>
+            {/* Drill weak points — immediate reinforcement (re-encode); Cards step still preferred */}
             {(missedAnswers.length > 0 || selfMarkedAgain.length > 0) && (
               <button
                 onClick={() => {
@@ -232,18 +314,9 @@ export function LessonStudy() {
                 }}
                 className="rounded-lg bg-amber-500 px-4 py-3 font-semibold text-white hover:bg-amber-600"
               >
-                Drill {missedAnswers.length + selfMarkedAgain.length} Weak Points Now
+                Re-study {missedAnswers.length + selfMarkedAgain.length} Weak Points First
               </button>
             )}
-            <button
-              onClick={() => {
-                markComplete(state.lessonId)
-                navigate(lessonPagePath)
-              }}
-              className="rounded-lg bg-green-600 px-4 py-3 font-semibold text-white hover:bg-green-700"
-            >
-              Mark Complete and Return to Lesson Page
-            </button>
             <button onClick={restartLesson} className="rounded-lg border border-gray-200 px-4 py-3 font-semibold text-gray-700 hover:bg-gray-50">
               Study Again
             </button>
@@ -363,12 +436,6 @@ export function LessonStudy() {
                   </div>
                   <p className="mt-3 font-semibold text-gray-900">{task.prompt}</p>
                   <p className="mt-1 text-sm text-emerald-900">{task.support}</p>
-                  {task.sourcePrompt && (
-                    <details className="mt-2 text-xs text-emerald-800">
-                      <summary className="cursor-pointer font-semibold">Source cue</summary>
-                      <p className="mt-1">{task.sourcePrompt}</p>
-                    </details>
-                  )}
                   <textarea
                     value={response.response}
                     onChange={event => {
@@ -435,7 +502,7 @@ export function LessonStudy() {
         onExit={() => navigate(lessonPagePath)}
       >
         <div className="rounded-xl bg-white p-8 text-center shadow-lg">
-          <p className="text-gray-600">No recall questions were generated for this set.</p>
+          <p className="text-gray-600">No recall questions are available for this set.</p>
           <button onClick={() => moveToStep(stepIndex + 1)} className="mt-5 rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700">
             Continue
           </button>
@@ -724,7 +791,7 @@ function TeachCard({
         )}
         {item.source && (
           <div className="text-center text-xs text-gray-500">
-            Source: {item.source.replace(/_/g, ' ')} {item.page && item.page > 0 ? `· p. ${item.page}` : '· generated foundation'}
+            Source: {item.source.replace(/_/g, ' ')} {item.page && item.page > 0 ? `· p. ${item.page}` : '· extracted content'}
           </div>
         )}
       </div>

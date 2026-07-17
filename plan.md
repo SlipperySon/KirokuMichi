@@ -19,6 +19,11 @@ it does not replace it with AI prose parsing. FSRS remains the spacing engine (a
 **Non-negotiable:** Product decisions in this redesign must map to the Learning Science Foundation below.
 If a UX shortcut conflicts with a principle (e.g. mark complete without retrieval), the principle wins.
 
+**Anki clone = retrieval engine (not a side app):** The existing SRS stack (`SRSService`, `ReviewSession`,
+FSRS ratings, decks, suspend/bury, undo, leeches, Card Browser) is the **spaced-retrieval substrate** for
+Course and Today. Lessons encode and practice; the Anki clone schedules and retrieves. Learners should feel
+one study habit, not “textbook mode” vs “Anki mode.”
+
 ---
 
 ### Learning Science Foundation
@@ -43,23 +48,23 @@ with other apps. Primary claims and how they constrain KirokuMichi:
 
 #### Research-aligned session architecture
 
-**Lesson session (encoding → retrieval → production):**
+**Lesson session (encoding → Anki retrieval → production):**
 
 ```
 Intro (orient, activate goals)
   → Teach (generate/predict → explain → brief form focus)     [encoding + generation]
   → Check (retrieval with feedback; mix item types)          [testing effect]
   → Practice (guided → free output)                          [scaffolding → fading]
-  → Review N (cued recall of weak + new; schedule into FSRS) [successive relearning + spacing start]
+  → Cards (Anki ReviewSession; FSRS writes)                  [successive relearning + spacing]
   → Speak (pushed output in context)                         [output / transfer]
-  → Done (only after Review N attempted or explicitly deferred with due scheduling)
+  → Done (only after Cards attempted or defer-with-schedule)
 ```
 
 **Daily session (spacing protects new learning):**
 
 1. Resume unfinished session (avoid incomplete encoding)
-2. **Due retrieval first** when `dueCount` is material (distributed practice > cramming new lessons)
-3. Continue active lesson mid-flow
+2. **Due Anki retrieval first** when `dueCount` is material (distributed practice > cramming new lessons)
+3. Continue active lesson mid-rail
 4. Start next path lesson (full loop above)
 5. Production if lesson just completed and Speak not done
 6. Free browse only when caught up
@@ -77,12 +82,91 @@ This matches the existing `getStudyPathAction` priority order (recovery → due 
 | Scenario unlock with no in-loop CTA | Output delayed/skipped → less noticing | Speak step inside lesson session |
 | MCQ-only checkpoints | Recognition < cued recall for many vocabulary goals | Keep MCQ for speed checks; Review N uses SRS card faces (reading/meaning recall) |
 | Onboarding → empty Home | No successful first retrieval cycle | First lesson + starter cards so spacing can begin day 1 |
+| Anki clone parallel to lessons | Spacing engine unused after teach; double UI tax | Lesson session ends in real `ReviewSession`; dues return via Today |
+| LessonPage reference dump before Start | Extraneous load (CLT); delays first retrieval | Start opens session Intro; overview becomes optional reference |
+| Teach self-rate then separate Anki rate | Two rating systems; first never schedules | Self-rate seeds SRS queue; authoritative scheduling only in Review N |
+| Weak-point drill re-runs LessonStudy only | Re-encoding ≠ retrieval to criterion | Weak items → Anki cram/learning-steps queue |
 
 #### Explicit non-goals (not “science-washing”)
 
 - We do **not** claim Krashen-only “input is enough”; output and retrieval are first-class.
 - We do **not** optimize for engagement metrics that increase massed cramming (e.g. infinite new cards before dues).
 - We do **not** replace FSRS intervals with arbitrary “streak” pressure; streaks are motivational chrome only.
+- We do **not** rebuild Anki elsewhere — extend `ReviewSession` / `SRSService` rather than a third card UI.
+
+---
+
+### Anki clone integration (how Review fits the plan)
+
+The Anki-compatible stack is already the research-aligned spacing engine. The redesign **embeds** it.
+
+| Anki-clone capability | Where it lives today | Role in the learning plan |
+|-----------------------|----------------------|---------------------------|
+| FSRS / SM-2 `reviewCard` | `srsService.ts` | Authoritative memory strength after Review N and daily dues |
+| Due + new interleave (1:5) | `StudyDashboard.interleaveQueue` | Today’s Path “Start Review”; protect spacing |
+| Lesson-linked cards | `getCardsForLesson`, `lesson_id`, `unlockCardsForLesson` | Review N source of truth after teach |
+| Manual add | `AddToDeckButton` / `createUserCard` | Auto-batch on lesson start for missing vocab; keep manual as escape hatch |
+| Again / Hard / Good / Easy | `ReviewSession` | Only ratings that write schedules (teach self-rate is a *seed*, not a schedule) |
+| Learning steps / relearn | SRS states | Successive relearning for quiz misses + teach `again` |
+| Suspend / bury / undo / leech | ReviewSession card menu | Available during Review N and daily review (power tools stay) |
+| Decks / Browser / filtered / cram | Study hub tools | Library / Review sub-tools; TextbookProgress uses real queues |
+| Grammar SRS | `/study/grammar` | Merge into unified Review entry over time (Phase 2) |
+| Mistakes log | `logMistake` on Again | Also log LessonStudy quiz misses → MistakeReview |
+
+**Required handoff API (implement; do not invent a parallel scheduler):**
+
+```
+ensureLessonCards(userId, lessonId, teachItems)  // unlock + createUserCard for gaps
+buildLessonReviewQueue(userId, lessonId, {
+  priorityIds,   // teach again + quiz misses first
+  mode: 'intro' | 'due',
+}) → ReviewCard[]   // filters suspended/buried; caps size
+openReviewSession({ queue, lessonId, returnTo: 'lesson-speak' | 'today' })
+```
+
+Copy patterns from: `LessonPage.handleStudyCards`, `StudyDashboard.startWordReview`, `AddToDeckButton`.
+
+---
+
+### Smooth lesson flow (fix clunk)
+
+**Current clunk (anti-pattern):**
+
+```
+Course hub → LessonPage (long scroll: overview, workbook list, images, truncated vocab…)
+  → Start Lesson → LessonStudy (teach/check/workbook) → Summary (Mark Complete)
+  → (optional) back to LessonPage → Study These Cards → ReviewSession
+  → (optional) Scenarios elsewhere
+```
+
+Problems: high extraneous load before encoding; three mental apps; completion without retrieval;
+Anki features unused in the lesson path; refresh loses `/learn/study` state.
+
+**Target continuous session (one progress rail):**
+
+```
+Today/Course "Start lesson"
+  → [1/6] Intro          short goals + “N cards will enter your deck”
+  → [2/6] Teach          predict → reveal → form focus (chunks of ~5)
+  → [3/6] Check          retrieval + immediate feedback (checkpoints + final)
+  → [4/6] Practice       guided → free workbook + brief self-check
+  → [5/6] Cards (Anki)   ReviewSession UI: weak/new first, FSRS writes, Again/Hard/Good/Easy
+  → [6/6] Speak          one production prompt / scenario CTA
+  → Done                 mark complete once; set next currentLesson; return Today
+```
+
+**Flow rules (clunk killers):**
+
+1. **Start skips the reference dump** — Course lesson row / Today CTA opens `/learn/study` (or LessonPage with `?autostart=1`). LessonPage becomes optional “Reference” after/during session, not the front door.
+2. **One shell, one progress indicator** — step titles above; Back leaves session with resume save; no bounce to hub between Teach and Cards.
+3. **Cards step is the real Anki UI** — reuse `ReviewSession` / `useReviewSession` (same rating keys, undo, suspend). Do not invent a second flashcard widget inside LessonStudy.
+4. **Teach `again` / quiz miss → priority in Cards queue** — then remaining new lesson cards; schedule via `reviewCard` only here.
+5. **Auto-ensure cards before Cards step** — `repairLessonCardLinks` + create missing vocab/grammar cards so Review N is never “0 cards — go import.”
+6. **Done is after Cards** (or explicit “Schedule for later today” that still creates due pressure). Remove auto-complete from bare ReviewSession.
+7. **Speak is in-rail** — one deep link / embedded prompt; tap-through dialogue alone does not satisfy the step.
+8. **Daily return path** — next day, Today’s Path uses Anki dues first; lesson-linked cards reappear naturally via FSRS (distributed practice).
+
+**Session length hygiene (WM / fatigue):** Cap Review N to ~8–15 cards for intro pass; leftover new cards stay `new` for later dues rather than marathon massing (spacing > coverage theater).
 
 ---
 
@@ -92,36 +176,43 @@ This matches the existing `getStudyPathAction` priority order (recovery → due 
 
 | Concern | Source | Reuse |
 |---------|--------|-------|
-| Next daily action | `app/src/study/studyPathPlanner.ts` — `getStudyPathAction`, `lessonRouteFromId` | Extend kinds; keep priority model |
-| Lesson step builder | `app/src/study/lessonStudyPlanner.ts` — `buildLessonPlan`, `LessonStep` | Add intro / post-retrieve steps |
+| Next daily action | `app/src/study/studyPathPlanner.ts` — `getStudyPathAction`, `lessonRouteFromId` | Extend with `lesson-review` kind; keep due-before-new |
+| Lesson step builder | `app/src/study/lessonStudyPlanner.ts` — `buildLessonPlan`, `LessonStep` | Add `intro` / wire to Cards+Speak; keep chunking |
 | CEFR lesson assignment | `app/src/study/lessonSequencer.ts` — `assignLessonsToWeeks` | Keep; make UI launch lessons |
-| Active lesson state | `app/src/store/index.ts` — `currentLesson`, `setCurrentLesson` | **Must call** from LessonStudy start |
-| Lesson → cards | `SRSService.getCardsForLesson`, `createUserCard`, `unlockCardsForLesson` | Seed queue after teach |
-| Grammar SRS | `SRSService.getGrammarQueue` / `reviewGrammar` | Merge into unified Review |
-| Workbook tasks | `workbookPracticeService.getWorkbookPracticeTasks` | Keep as Practice step |
-| Scenario unlock | `scenarioUnlockService` + `LessonPage` mark-complete | Trigger from single completion path |
-| Nav structure | `app/src/components/Navigation.tsx` | Collapse to five pillars |
-| Routes | `app/src/App.tsx` | Prefer redirects over duplicate hubs |
+| Active lesson state | `app/src/store/index.ts` — `currentLesson`, `setCurrentLesson` | **Must call** from lesson session start |
+| Anki review UI | `ReviewSession.tsx`, `useReviewSession.ts` | **Cards step** — do not fork a second rater |
+| Anki scheduling | `SRSService.reviewCard`, due/new getters, suspend/bury/undo | Authoritative writes only here |
+| Lesson → cards | `getCardsForLesson`, `createUserCard`, `unlockCardsForLesson`, `repairLessonCardLinks` | `ensureLessonCards` + `buildLessonReviewQueue` |
+| Lesson card launch pattern | `LessonPage.handleStudyCards`, `StudyDashboard.startWordReview` / `interleaveQueue` | Copy router state shape |
+| Grammar SRS | `getGrammarQueue` / `reviewGrammar` | Merge into unified Review |
+| Workbook tasks | `workbookPracticeService.getWorkbookPracticeTasks` | Practice step |
+| Scenario unlock | `scenarioUnlockService` | After Done / Speak gate |
+| Nav structure | `Navigation.tsx` | Five pillars |
+| Routes | `App.tsx` | Prefer redirects; LessonPage = reference |
 
 #### Anti-patterns (do not do)
 
 - Do not invent a second “today” planner that parses Learning Path `activities[]` prose.
 - Do not add a sixth top-level mode (keep tools under Library / Review).
 - Do not mark a lesson complete from card review alone (`ReviewSession.tsx` today does this — remove).
-- Do not route path CTAs to LessonPage overview when the intent is “study now” — go to `/learn/study` with state.
+- Do not route path CTAs to LessonPage overview when the intent is “study now” — open the continuous lesson session.
 - Do not leave `setCurrentLesson` unused (currently zero call sites outside the store).
 - Do not treat Writing / grammar fill-blank as live until wired in `useReviewSession.resolveVariant`.
 - Do not let “Mark Done” on workbook stand in for retrieval practice or corrective feedback.
 - Do not prioritize new lesson content over a material due-review backlog (violates spaced practice).
 - Do not unlock or push open AI chat as the *first* activity of a new grammar point (violates scaffolding → fading).
+- Do not build a parallel flashcard UI inside LessonStudy — embed/navigate to `ReviewSession`.
+- Do not force learners through the full LessonPage reference scroll before encoding.
+- Do not treat teach self-rate as a substitute for FSRS `reviewCard`.
 
 #### Audit verdict (why this plan exists)
 
-1. **Strong pieces, weak wiring** — LessonStudy teach cards and FSRS work; handoffs between them do not.
-2. **Fragmented IA** — Home/Learn/Lessons/Path/Review/Grammar/Scenarios compete; Home and Review share `/study`.
-3. **Open teaching loop** — teach → check → workbook ends without auto SRS or scenario; onboarding never starts a lesson.
-4. **Muddy completion** — LessonPage, LessonStudy, and ReviewSession can each mark complete differently.
-5. **Evidence gaps** — self-rate without scheduled retrieval; recognition-heavy checks; production optional/out of band.
+1. **Strong pieces, weak wiring** — LessonStudy teach cards and Anki/FSRS work; handoffs between them do not.
+2. **Anki clone orphaned from Course** — spacing engine unused after teach; TextbookProgress Study Now broken.
+3. **Clunky lesson front door** — LessonPage dump → separate LessonStudy → optional cards → scenarios elsewhere.
+4. **Fragmented IA** — Home/Learn/Lessons/Path/Review/Grammar/Scenarios compete.
+5. **Muddy completion** — three paths can mark complete; none require retrieval criterion.
+6. **Evidence gaps** — self-rate without schedule writes; recognition-heavy checks; production optional.
 
 ---
 
@@ -129,189 +220,158 @@ This matches the existing `getStudyPathAction` priority order (recovery → due 
 
 | Pillar | Route (target) | Job | Science role |
 |--------|----------------|-----|--------------|
-| **Today** | `/study` | One primary CTA from `getStudyPathAction`; daily goal | Spacing gate + session orchestration |
-| **Course** | `/learn` (single hub) | Textbook progress + CEFR curriculum; active lesson | Encoding + guided practice (declarative → controlled) |
-| **Review** | `/study/review` entry from Today / Course | Unified due queue: words + grammar | Retrieval practice + distributed practice |
-| **Speak** | `/scenarios` | Scenarios filtered/highlighted by last completed / current lesson | Pushed output + transfer |
-| **Library** | `/my-content`, `/study/path`, Settings, AI Tutor | Import, path generation, immersion, power tools | Materials / metacognitive planning |
+| **Today** | `/study` | One CTA from `getStudyPathAction`; daily goal | Spacing gate; launches Anki dues or lesson session |
+| **Course** | `/learn` (single hub) | Curriculum + active lesson; Reference optional | Encoding + guided practice |
+| **Review** | Anki `ReviewSession` + Browser/decks | Unified due queue (words + grammar over time) | Retrieval + distributed practice |
+| **Speak** | `/scenarios` | Lesson-tied production | Pushed output + transfer |
+| **Library** | import, path, Settings, AI Tutor | Materials / planning | Metacognition |
 
-**Lesson session shape (Course)** — see Learning Science Foundation:
+**Lesson session** — continuous rail (see Smooth lesson flow):
 
 ```
-Intro → Teach → Check → Practice → Review N cards → Speak CTA → Done
+Intro → Teach → Check → Practice → Cards (Anki ReviewSession) → Speak → Done
 ```
 
-- Intro: goals + target vocab/grammar (short; activate prior knowledge; no full reference dump).
-- Teach: keep predict → reveal → form focus (generation + focus on form). Maynard stays on grammar items.
-- Check: retrieval with immediate correctness feedback; interleaved item types.
-- Practice: guided → free workbook output (scaffolding → fading); require a brief self-check prompt before Done.
-- Review N: cued-recall SRS faces for weak + new lesson items; **schedules** into FSRS (successive relearning + spacing).
-- Speak: one contextual production task for this lesson’s targets.
-- Done: **only** after Review N ran (or items were scheduled due soon with an explicit “review later today” that still creates due pressure). Advances `currentLesson`.
-
-**Daily session shape (Today)** — due retrieval before new encoding:
+**Daily session** — due Anki retrieval before new encoding:
 
 1. Resume unfinished session  
-2. Clear due reviews (unified words + grammar) when due load is material  
-3. Continue `currentLesson` mid-flow  
-4. Start next path lesson → full lesson loop  
-5. Production prompt if Speak skipped after last completion  
+2. Clear due reviews (Anki queue; later include grammar) when due load is material  
+3. Continue `currentLesson` mid-rail  
+4. Start next path lesson → full rail  
+5. Speak if skipped after last completion  
 6. Free study only when caught up  
 
 ---
 
-### Phase 1 — Close the loop (highest leverage)
+### Phase 1 — Close the Anki↔lesson loop (highest leverage)
 
-**Science drivers:** retrieval practice, successive relearning, spaced practice handoff into FSRS.
+**Science drivers:** retrieval practice, successive relearning, spaced practice via existing FSRS.
 
 **What to implement**
 
-1. Call `setCurrentLesson(lessonId)` when LessonStudy starts; clear or advance on Done.
-2. After LessonStudy Check/Practice (required step, not optional footer), seed/open a lesson card review:
-   - Prefer `getCardsForLesson`; for missing cards batch-create from weak + new teach items (`createUserCard` / existing AddToDeck patterns).
-   - Map teach `again` / quiz misses into the Review N set first (criterion relearning).
-   - Navigate with the same router state shape `ReviewSession` already expects (`queue`, `sessionId`, `userId`).
-3. Single completion rule: remove `markLessonComplete` from bare card review; Done requires Review N attempt (or explicit defer that still schedules items due).
-4. Fix `TextbookProgress` “Study Now” to pass a real review queue (copy pattern from `LessonPage` “Study These Cards”).
-5. Extend `getStudyPathAction` so `current-lesson` / `path-lesson` routes prefer `/learn/study` when session state can be built, else LessonPage with auto-start intent. **Keep due-before-new priority.**
-6. Make Learning Path week `lessons[]` clickable → start that lesson.
+1. Call `setCurrentLesson(lessonId)` when the lesson session starts; advance on Done.
+2. Add `ensureLessonCards` + `buildLessonReviewQueue` (wrappers around existing SRS APIs).
+3. After Practice, **Cards step** opens real `ReviewSession` with queue, `lessonId`, `returnTo: lesson-speak|today`:
+   - Priority: teach `again` + quiz misses, then other new/due lesson cards (cap 8–15).
+   - Ratings call `reviewCard` (Anki clone remains source of truth).
+4. LessonStudy summary: replace “optional weak drill only” with primary **Continue to Cards**; weak drill = Anki cram of those card ids.
+5. Single completion rule: remove `markLessonComplete` from bare ReviewSession; Done only from lesson rail after Cards (or defer-with-schedule).
+6. Fix `TextbookProgress` Study Now — copy `startWordReview` / `handleStudyCards` queue state; honor `activeDeckId`.
+7. Extend `getStudyPathAction` with post-lesson `lesson-review` when intro cards remain; keep due-before-new.
+8. Learning Path week lessons clickable → **session start**, not overview dump.
+9. Log LessonStudy quiz misses via `logMistake` when a card id exists.
 
 **Docs / copy sources**
 
-- `studyPathPlanner.ts` priority block (~L60–152)
-- `LessonPage.tsx` review navigation with queue state (~Study These Cards)
-- `LessonStudy.tsx` summary CTAs
-- `store/index.ts` `setCurrentLesson` / `markLessonComplete`
+- `LessonPage.handleStudyCards`, `StudyDashboard.startWordReview` / `interleaveQueue`
+- `ReviewSession` location state contract
+- `AddToDeckButton` / `createUserCard` field shapes
+- `lessonUnlockService.repairLessonCardLinks` / `unlockCardsForLesson`
 
 **Verification**
 
-- [ ] Grep: `setCurrentLesson(` has call sites outside `store/index.ts`
-- [ ] Unit: `studyPathPlanner` “continue lesson” case with real store-driven input
-- [ ] Manual: Start lesson → finish → review queue opens with N cards → FSRS states update → Done marks complete once
-- [ ] Manual: TextbookProgress Study Now shows cards, not blank review
-- [ ] Learning Path lesson chip navigates into study flow
-- [ ] Science check: no lesson marked complete without a retrieval attempt or scheduled due set
+- [ ] Grep: `setCurrentLesson(` call sites outside store
+- [ ] Manual: Start lesson → … → Cards shows Anki UI → ratings change `card_states` → Done once
+- [ ] TextbookProgress Study Now shows cards
+- [ ] Quiz miss appears in Mistakes when linked
+- [ ] Science check: no complete without retrieval attempt or scheduled dues
+- [ ] No second flashcard component introduced
 
 **Anti-pattern guards**
 
-- Do not persist lesson plan only in ephemeral `location.state` long-term without a recovery path (refresh today loses LessonStudy — acceptable short-term if Phase 3 adds session persistence).
-- Do not treat honor-system workbook “Done” as satisfying the Review N gate.
+- Ephemeral `location.state` OK short-term; Phase 3 adds resume persistence.
+- Workbook Done ≠ Cards gate.
 
 ---
 
 ### Phase 2 — Simplify information architecture
 
-**Science drivers:** reduce extraneous cognitive load (Sweller CLT); interleave form+lexis in one Review habit.
+**Science drivers:** reduce extraneous cognitive load (Sweller CLT); one Review habit.
 
 **What to implement**
 
-1. Rewrite `Navigation.tsx` groups to Today / Course / Review / Speak / Library (labels can stay localized later).
-2. Collapse duplicate hubs: `/learn/lessons` → redirect to `/learn`; remove Home’s dual Learn + Lessons CTAs.
-3. Slim StudyDashboard: hero = Today’s Path only; secondary = streak/goal; tuck card workspace under Review/Library.
-4. Surface grammar due inside Review entry (interleave or single “Start Review” that covers both) so learners are not taught “two review apps”.
-5. Keep AI Tutor under Library (or Speak submenu) — not a peer of Today/Course; never the default first step for new forms.
-
-**Docs / copy sources**
-
-- `Navigation.tsx` `navGroups`
-- `StudyDashboard.tsx` action grids
-- `LearningMode.tsx` tabs (Study by Lesson vs Browse — Browse becomes Library/My Content or a Course sub-tab)
+1. Nav → Today / Course / Review / Speak / Library.
+2. Collapse `/learn/lessons` → `/learn`; remove dual Learn+Lessons Home CTAs.
+3. Slim StudyDashboard: Today’s Path hero; Anki Browser/Create/Templates under Review/Library.
+4. Unified Review entry for words + grammar (interleave or single Start Review).
+5. AI Tutor under Library — never first step for new forms.
+6. Label Review clearly as the Anki-style SRS home (due count, deck scope) so Course ≠ Review confusion ends.
 
 **Verification**
 
-- [ ] Route smoke / Playwright: critical paths still resolve
-- [ ] No nav item labeled both Home and Review pointing at the same URL with different meaning
-- [ ] `/learn/lessons` redirects; LessonsHub reachable once
-- [ ] Science check: one primary retrieval entry point for due words + grammar
-
-**Anti-pattern guards**
-
-- Do not delete LessonPage; demote it to reference / resume hub under Course.
+- [ ] Route smoke still green
+- [ ] One primary retrieval entry for dues
+- [ ] LessonPage reachable as Reference, not required front door
 
 ---
 
-### Phase 3 — Lesson session redesign
+### Phase 3 — Smooth research-backed lesson rail
 
-**Science drivers:** generation, testing effect, scaffolding→fading, pushed output, transfer-appropriate practice.
+**Science drivers:** generation, testing effect, scaffolding→fading, pushed output, CLT (cut dump).
 
 **What to implement**
 
-1. Extend `LessonStep` (or wrap `buildLessonPlan`) with `intro`, `retrieve`, and `speak` steps aligned to the science session architecture.
-2. Intro card: 3–5 bullet goals from curriculum vocab/grammar counts + Maynard availability (orient; activate prior knowledge).
-3. Strengthen Check toward retrieval: keep fast MCQ for throughput, but ensure Review N uses SRS **recall** faces (reading/meaning), not only recognition.
-4. Practice: order guided → output; add a minimal reflection/self-check cue before leaving workbook (feedback principle; full AI grading later).
-5. After Practice: Review N builds queue → `ReviewSession` with `returnTo: lessonDone`; misses stay in learning steps / short intervals.
-6. After Review N: Speak CTA deep-linking `/scenarios?...` with a **production** prompt (not tap-only) for this lesson’s targets.
-7. Persist in-progress lesson session (lessonId + step index + ratings) so refresh/resume works; Today’s Path “continue” uses it.
-8. Map teach self-rate `again` + quiz misses → priority in Review N and FSRS Again/learning steps.
-
-**Docs / copy sources**
-
-- `lessonStudyPlanner.ts` `LessonStep` union and `buildLessonPlan`
-- `LessonStudy.tsx` TeachCard 4-step flow (preserve predict-before-reveal)
-- `maynardExplanationEngine` / `getMaynardSupport` for focus-on-form depth
+1. Continuous session shell with 6-step progress rail; persist step index + assessments for resume.
+2. `intro` step: 3–5 goals + “N cards will enter your review deck” (activate prior knowledge; no full dump).
+3. Autostart from Course/Today; LessonPage = Reference tab/drawer during or after session.
+4. Keep Teach predict→reveal→Maynard; keep Check MCQ for speed; Cards step uses recall faces (reading/meaning).
+5. Practice: guided → output + self-check cue.
+6. Cards: embed or seamless navigate to `ReviewSession` **without hub bounce**; return to Speak in-rail.
+7. Speak: production-required prompt tied to lesson targets.
+8. Cap intro Review N; leave remainder as `new` for spaced days.
+9. Optional later: cycle writing variant for kanji in `resolveVariant`.
 
 **Verification**
 
-- [ ] New step kinds covered in `LessonStudy.test.ts`
-- [ ] Completing a lesson always runs Review N or schedules dues with explicit defer
-- [ ] Resume mid-lesson from Today works after refresh (once persistence lands)
-- [ ] Science check: session includes encoding + retrieval + at least one productive step
+- [ ] `LessonStudy.test.ts` covers rail steps / resume
+- [ ] Fresh start → Done without visiting LessonPage sections scroll
+- [ ] Refresh mid-session resumes via Today
+- [ ] Science check: encoding + Anki retrieval + production in one session
 
 **Anti-pattern guards**
 
-- Do not remove Maynard deep explanations from teach cards.
-- Do not reintroduce generated TTS.
-- Do not replace Recall Review N with “show answer and rate” only inside the lesson with no SRS write.
+- Keep Maynard; no generated TTS; no parallel card UI; no LessonPage-forced preface.
 
 ---
 
 ### Phase 4 — First-run teaching
 
-**Science drivers:** early successful retrieval cycles; spacing must have something to space.
+**Science drivers:** early successful retrieval cycles; Anki needs cards to space.
 
 **What to implement**
 
-1. After placement, set `currentLesson` (or generate path with `includeTextbookLessons: true`) and land on first lesson Intro — not an empty dashboard promise.
-2. One-click / auto bundled Genki starter when deck empty (`bundledGenkiImport`) so day-1 due reviews can exist after first lesson.
-3. Caught-up Today state: “Continue Course” to next incomplete curriculum lesson, not vague `/learn`.
-4. Default `includeTextbookLessons` to true for new profiles so path weeks contain launchable lessons.
-5. Cap new-card intake relative to due load (preserve existing ~1 new per 5 due interleave or tighten) so learners cannot mass-cram past spacing.
-
-**Docs / copy sources**
-
-- `OnboardingFlow.tsx` / `StepPlacement.tsx` copy (“We'll start your study plan here”)
-- `bundledGenkiImport.ts`
-- `store` defaults for `includeTextbookLessons`
-- `StudyDashboard` new/due interleave logic
+1. Placement → first lesson Intro (autostart).
+2. Auto/one-click `bundledGenkiImport` when empty so Cards step and next-day dues work.
+3. Caught-up Today → next curriculum lesson session.
+4. Default `includeTextbookLessons: true`.
+5. Keep/tighten 1-new-per-5-due interleave so Anki dues are not starved.
 
 **Verification**
 
-- [ ] Fresh profile: onboarding → concrete lesson within one click
-- [ ] Empty SRS: starter import available without hunting My Content
-- [ ] Path generation includes `weeks[].lessons` by default
-- [ ] Science check: first session ends with scheduled reviews, not only “lesson complete”
+- [ ] Day-1 session ends with scheduled Anki reviews
+- [ ] Path weeks include launchable lessons
 
 ---
 
 ### Phase 5 — Verification (redesign gate)
 
-1. Confirm implementations match Phase 0 allowed APIs (no prose-parsed path activities).
-2. Confirm each shipped step still maps to the Learning Science Foundation table (no “engagement-only” shortcuts).
-3. Grep guards: `markLessonComplete` call sites; `setCurrentLesson` call sites; TextbookProgress navigate payload.
-4. Run `npm run verify` (or at least lint + Vitest + route smoke for study/learn/scenarios).
-5. Pedagogy smoke (manual): placement → lesson (teach/check/practice) → Review N (recall + FSRS write) → Speak production → next Today action prioritizes dues.
-6. Update `todo.md` Active Priority checkboxes as phases complete.
+1. Match Phase 0 allowed APIs (Anki stack reused, not forked).
+2. Each step still maps to Learning Science Foundation.
+3. Grep: `markLessonComplete` sites; `setCurrentLesson` sites; TextbookProgress payload; no duplicate card rater.
+4. `npm run verify` (or lint + Vitest + route smoke).
+5. Pedagogy smoke: placement → lesson rail → Anki Cards (FSRS write) → Speak → next day Today prioritizes dues.
+6. Update `todo.md` checkboxes as phases complete.
 
 ---
 
 ### Out of scope for this redesign
 
-- Full CEFR can-do gating before unlocking the next textbook (valuable later; needs validated can-do instruments)
-- Writing-recognition / stroke scoring (CardWriting remains placeholder until a real input path — needed for transfer to writing skill)
-- Full AI rubric grading of workbook output (keep self-check prompt now; tutor grading later)
+- Full CEFR can-do gating before unlocking the next textbook
+- Full handwriting recognition / stroke scoring (enable writing *variant* later; scoring later)
+- Full AI rubric grading of workbook output (self-check now)
 - Regenerating textbook OCR / image crops
-- Japanese UI locale pack (still valuable polish; not required to fix the teaching loop)
+- Japanese UI locale pack
+- Replacing FSRS with a custom scheduler
 
 ---
 

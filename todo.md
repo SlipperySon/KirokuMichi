@@ -13,33 +13,32 @@ All planned features are implemented and building cleanly. See HANDOFF.md for th
 
 ## 🔥 Current priority — Learning Environment Redesign
 
-Full phased plan + **Learning Science Foundation** lives in `plan.md` (Active Priority). Visual summary:
-`~/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/learning-env-redesign.canvas.tsx`
+Full plan + science foundation + **Anki integration** + **smooth lesson rail**: `plan.md`.
+Canvas: `~/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/learning-env-redesign.canvas.tsx`
 
-**Design rule:** product decisions must map to retrieval practice, spaced practice, successive relearning,
-scaffolding→fading, and pushed output (see plan.md citations). Engagement shortcuts that skip retrieval lose.
+**Design rules:** retrieval / spacing / relearning / scaffolding→fading / pushed output win over engagement shortcuts.
+**Anki clone** (`ReviewSession` + FSRS) is the only card scheduler — embed it as the Cards step; do not fork a second rater.
 
-**Phase 1 — Close the loop** (retrieval + FSRS handoff)
-- [ ] Wire `setCurrentLesson` on LessonStudy start / advance on Done
-- [ ] Post-lesson “Review N” handoff with real `ReviewSession` queue state + FSRS writes
-- [ ] Single lesson-completion path (Done only after retrieval attempt or scheduled dues)
-- [ ] Fix TextbookProgress → review queue
-- [ ] Path lesson CTAs open study flow; Learning Path chips clickable
-- [ ] Keep due-before-new priority in `getStudyPathAction`
+**Phase 1 — Close Anki↔lesson loop**
+- [x] `setCurrentLesson` on session start
+- [x] `ensureLessonCards` + `buildLessonReviewQueue` (wrap existing SRS APIs)
+- [x] Cards step = real `ReviewSession` (weak/misses first, cap 8–15, FSRS writes)
+- [x] Single Done rule (remove auto-complete from bare card review)
+- [x] Fix TextbookProgress Study Now queue; path lessons autostart session
+- [x] Log quiz misses to mistakes when card-linked
+- [x] Keep due-before-new in `getStudyPathAction`
 
-**Phase 2 — Simplify IA** (cut extraneous load; one Review habit)
-- [ ] Nav: Today / Course / Review / Speak / Library
-- [ ] Collapse `/learn` vs `/learn/lessons`; slim Home CTAs
-- [ ] Unify grammar into Review mental model
+**Phase 2 — Simplify IA**
+- [x] Nav: Today / Course / Review (Anki home) / Speak / Library
+- [x] Collapse Learn hubs; LessonPage = Reference, not front door
 
-**Phase 3 — Lesson session redesign** (encode → retrieve → produce)
-- [ ] Intro → Teach → Check → Practice → Review N → Speak → Done
-- [ ] Persist mid-lesson session for resume
-- [ ] Strengthen Check/Review toward recall; workbook self-check; Speak requires production
+**Phase 3 — Smooth research-backed rail**
+- [ ] Intro → Teach → Check → Practice → Cards → Speak → Done (one progress rail)
+- [ ] Autostart skips LessonPage dump; persist/resume mid-session
+- [ ] Speak requires production
 
-**Phase 4 — First-run teaching** (day-1 spacing cycle)
-- [ ] Onboarding → first lesson; starter deck; default textbook lessons on path
-- [ ] Preserve/tighten new-vs-due interleave so dues are not starved
+**Phase 4 — First-run**
+- [ ] Onboarding → first Intro; starter deck; default textbook lessons on path
 
 **Earlier (done):** Study path planner + Today’s Path panel on Home.
 

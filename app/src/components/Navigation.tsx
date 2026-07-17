@@ -28,6 +28,8 @@ interface NavLinkItem {
   label: string
   description: string
   icon: ComponentType<{ className?: string; 'aria-hidden'?: boolean }>
+  /** Exact pathname match only (avoids Today lighting up for all /study/*). */
+  exact?: boolean
 }
 
 interface NavGroup {
@@ -46,18 +48,22 @@ export function Navigation() {
 
   const navGroups: NavGroup[] = [
     {
-      title: 'Start',
+      title: 'Today',
       items: [
-        { path: '/study', label: 'Home', description: 'Today, streak, and next action', icon: Home },
-        { path: '/learn', label: 'Learn', description: 'Courses, lessons, and textbook paths', icon: GraduationCap },
-        { path: '/scenarios', label: 'Scenarios', description: 'Roleplay and practical dialogue', icon: MessageCircle },
-        { path: '/practice', label: 'AI Tutor', description: 'Ask questions or practise output', icon: Sparkles },
+        { path: '/study', label: 'Today', description: 'Next action, streak, and daily goal', icon: Home, exact: true },
       ],
     },
     {
-      title: 'Cards',
+      title: 'Course',
       items: [
-        { path: '/study', label: 'Review', description: 'Due cards and daily study flow', icon: Brain },
+        { path: '/learn', label: 'Course', description: 'Textbook curriculum and active lesson', icon: GraduationCap },
+        { path: '/study/path', label: 'Learning Path', description: 'CEFR-guided weekly plan', icon: BookOpen },
+      ],
+    },
+    {
+      title: 'Review',
+      items: [
+        { path: '/study/srs', label: 'Review', description: 'Anki-style SRS — words and grammar', icon: Brain },
         { path: '/study/browser', label: 'Card Browser', description: 'Search, edit, move, suspend', icon: LibraryBig },
         { path: '/study/create', label: 'Create Card', description: 'Add your own card or audio', icon: PenSquare },
         { path: '/study/templates', label: 'Templates', description: 'Deck card layouts and fields', icon: Layers },
@@ -66,19 +72,31 @@ export function Navigation() {
       ],
     },
     {
+      title: 'Speak',
+      items: [
+        { path: '/scenarios', label: 'Scenarios', description: 'Roleplay and practical dialogue', icon: MessageCircle },
+      ],
+    },
+    {
       title: 'Library',
       items: [
         { path: '/my-content', label: 'My Content', description: 'Import PDFs, decks, and packs', icon: Upload },
         { path: '/immersion', label: 'Immersion', description: 'Turn native text into study material', icon: Library },
-        { path: '/study/path', label: 'Learning Path', description: 'CEFR-guided weekly plan', icon: BookOpen },
+        { path: '/practice', label: 'AI Tutor', description: 'Ask questions or practise output', icon: Sparkles },
         { path: '/settings', label: 'Settings', description: 'App, AI, audio, and shortcuts', icon: Settings },
       ],
     },
   ]
 
-  const isActive = (path: string) => {
-    if (path === '/study') return location.pathname === '/study'
-    return location.pathname === path || location.pathname.startsWith(path + '/')
+  const isActive = (item: NavLinkItem) => {
+    if (item.exact) return location.pathname === item.path
+    if (item.path === '/learn') {
+      return location.pathname === '/learn' || location.pathname.startsWith('/learn/')
+    }
+    if (item.path === '/study/srs') {
+      return location.pathname === '/study/srs' || location.pathname === '/study/grammar'
+    }
+    return location.pathname === item.path || location.pathname.startsWith(item.path + '/')
   }
 
   const goalPct =
@@ -128,25 +146,26 @@ export function Navigation() {
 
       {menuOpen && (
         <div className="border-t border-gray-200 bg-white shadow-lg">
-          <div className="mx-auto grid max-w-6xl gap-4 px-3 py-4 sm:px-4 md:grid-cols-3">
+          <div className="mx-auto grid max-w-6xl gap-4 px-3 py-4 sm:px-4 md:grid-cols-3 lg:grid-cols-5">
             {navGroups.map(group => (
               <div key={group.title}>
                 <h2 className="px-2 text-xs font-bold uppercase tracking-wide text-gray-500">{group.title}</h2>
                 <div className="mt-2 grid gap-1">
                   {group.items.map(item => {
                     const Icon = item.icon
+                    const active = isActive(item)
                     return (
                       <Link
                         key={`${group.title}-${item.path}-${item.label}`}
                         to={item.path}
                         onClick={() => setMenuOpen(false)}
                         className={`flex gap-3 rounded-lg px-2 py-2.5 transition-colors ${
-                          isActive(item.path)
+                          active
                             ? 'bg-indigo-50 text-indigo-900'
                             : 'text-gray-800 hover:bg-gray-50'
                         }`}
                       >
-                        <Icon className={`mt-0.5 h-4 w-4 shrink-0 ${isActive(item.path) ? 'text-indigo-700' : 'text-gray-500'}`} aria-hidden />
+                        <Icon className={`mt-0.5 h-4 w-4 shrink-0 ${active ? 'text-indigo-700' : 'text-gray-500'}`} aria-hidden />
                         <span className="min-w-0">
                           <span className="block text-sm font-semibold">{item.label}</span>
                           <span className="block text-xs leading-5 text-gray-500">{item.description}</span>

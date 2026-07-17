@@ -1,11 +1,14 @@
 import { useMemo, useState } from 'react'
-import { useAppStore, type LearningPath as LearningPathData, type LearningPathWeek } from '../store'
+import { useNavigate } from 'react-router-dom'
+import { useAppStore, type LearningPath as LearningPathData, type LearningPathWeek, type AssignedLesson } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { SRSService } from '../srs/srsService'
 import { ClientAIProvider } from '../ai/aiProvider'
 import { Navigation } from '../components/Navigation'
 import { toast } from '../components/toastStore'
+import { assignLessonsToWeeks } from './lessonSequencer'
+import { lessonRouteFromId } from './studyPathPlanner'
 
 // ---------------------------------------------------------------------------
 // Constants
@@ -176,7 +179,15 @@ function inferCefrStageGate(
 // WeekCard
 // ---------------------------------------------------------------------------
 
-function WeekCard({ week, index }: { week: LearningPathWeek; index: number }) {
+function WeekCard({
+  week,
+  index,
+  onStartLesson,
+}: {
+  week: LearningPathWeek
+  index: number
+  onStartLesson?: (lessonId: string) => void
+}) {
   const colors = WEEK_COLORS[index % WEEK_COLORS.length]
   return (
     <div className={`flex-shrink-0 w-64 rounded-2xl border ${colors.border} ${colors.bg} p-5 flex flex-col gap-3`}>
@@ -197,6 +208,27 @@ function WeekCard({ week, index }: { week: LearningPathWeek; index: number }) {
           </li>
         ))}
       </ul>
+      {week.lessons && week.lessons.length > 0 && (
+        <div className="pt-3 border-t border-gray-100">
+          <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-400 mb-1.5">Lessons</p>
+          <ul className="space-y-1">
+            {week.lessons.map(l => (
+              <li key={l.id}>
+                <button
+                  type="button"
+                  onClick={() => onStartLesson?.(l.id)}
+                  className="flex w-full items-center gap-1.5 rounded-md px-1 py-1 text-left text-xs text-indigo-800 hover:bg-indigo-50"
+                >
+                  <span className="w-4 h-4 rounded bg-indigo-100 text-indigo-700 text-[10px] font-bold flex items-center justify-center flex-shrink-0">
+                    {l.lessonNumber}
+                  </span>
+                  <span className="truncate">{l.series} — Lesson {l.lessonNumber}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
       <div className="pt-3 border-t border-gray-200">
         <p className="text-[11px] font-semibold uppercase tracking-wide text-gray-500">Milestone</p>
         <p className={`text-sm font-semibold ${colors.milestone} mt-0.5`}>{week.milestone}</p>
@@ -212,6 +244,7 @@ function WeekCard({ week, index }: { week: LearningPathWeek; index: number }) {
 const DAILY_MINUTE_OPTIONS = [10, 15, 20, 30, 45, 60, 90]
 
 export function LearningPath() {
+  const navigate = useNavigate()
   const settings = useAppStore(s => s.settings)
   const activeUserId = useAppStore(s => s.activeUserId)
   const lessonsCompleted = useAppStore(s => s.lessonsCompleted)
@@ -224,6 +257,8 @@ export function LearningPath() {
 
   const userId = activeUserId ?? 1
   const [isGenerating, setIsGenerating] = useState(false)
+  const updateSettings = useAppStore(s => s.updateSettings)
+  const includeTextbookLessons = settings.includeTextbookLessons
 
   // Auto-detected stage gate (used as default for manual pickers)
   const stageGate = useMemo(
@@ -281,6 +316,22 @@ export function LearningPath() {
         snapshot.matureCards, snapshot.averageRetention
       )
 
+      // Optionally pre-assign textbook lessons to weeks
+      let weeklyLessons: AssignedLesson[][] = Array.from({ length: 4 }, () => [])
+      if (includeTextbookLessons) {
+        try {
+          weeklyLessons = await assignLessonsToWeeks(currentLevel, goalLevel, lessonsCompleted)
+        } catch {
+          // Non-fatal — continue without lesson assignments
+        }
+      }
+
+      const lessonContext = includeTextbookLessons && weeklyLessons.some(w => w.length > 0)
+        ? `\nTextbook lesson assignments for each week:\n${weeklyLessons.map((wl, i) =>
+            `Week ${i + 1}: ${wl.length > 0 ? wl.map(l => `${l.series} Lesson ${l.lessonNumber}`).join(', ') : 'no new lessons'}`
+          ).join('\n')}\nInclude these lessons in the activities and adjust dailyGoal to also account for lesson time (+5 cards/day per lesson).`
+        : ''
+
       const ai = new ClientAIProvider(settings.sessionToken)
       const response = await ai.completeWithMessages(
         [{
@@ -293,13 +344,14 @@ export function LearningPath() {
             dailyStudyMinutes: dailyMinutes,
             estimatedTimeToGoal: formatTimeEstimate(estimateMonths(currentLevel, goalLevel, dailyMinutes)),
             realism: realismRating.label,
+            includeTextbookLessons,
           }, null, 2),
         }],
         `You are a Japanese learning advisor. Given the learner's stats, generate a personalised 4-week study plan.
 The learner has self-reported their current level as "${currentLevel}" and their goal as "${goalLevel}".
 They can study ${dailyMinutes} minutes per day. Reaching their goal is estimated to take ${formatTimeEstimate(estimateMonths(currentLevel, goalLevel, dailyMinutes))} at this pace.
 Realism rating: ${realismRating.label} — ${realismRating.description}
-
+${lessonContext}
 Output ONLY valid JSON in this exact format (no markdown, no explanation):
 { "weeks": [{ "week": 1, "focus": "string", "dailyGoal": number, "activities": ["string", "string", "string"], "milestone": "string" }] }
 
@@ -316,8 +368,15 @@ Ensure activities array has 3-4 items per week. Make the plan realistic and prog
 
       if (!parsed.weeks || !Array.isArray(parsed.weeks)) throw new Error('Invalid response format')
 
+      const weeksWithLessons = parsed.weeks.slice(0, 4).map((w, i) => ({
+        ...w,
+        ...(includeTextbookLessons && weeklyLessons[i]?.length > 0
+          ? { lessons: weeklyLessons[i] }
+          : {}),
+      }))
+
       const path: LearningPathData = {
-        weeks: parsed.weeks.slice(0, 4),
+        weeks: weeksWithLessons,
         generatedAt: new Date().toISOString(),
       }
       setLearningPath(path)
@@ -431,6 +490,30 @@ Ensure activities array has 3-4 items per week. Make the plan realistic and prog
             </div>
           </div>
 
+          {/* Include textbook lessons toggle */}
+          <div className="mt-4 pt-4 border-t border-gray-100 flex items-center justify-between gap-3">
+            <div>
+              <p className="text-sm font-semibold text-gray-800">Include textbook lessons</p>
+              <p className="text-xs text-gray-500 mt-0.5">
+                Assign specific Genki / Quartet / Tobira lessons to each week of the plan
+              </p>
+            </div>
+            <button
+              role="switch"
+              aria-checked={includeTextbookLessons}
+              onClick={() => updateSettings({ includeTextbookLessons: !includeTextbookLessons })}
+              className={`relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 ${
+                includeTextbookLessons ? 'bg-indigo-600' : 'bg-gray-200'
+              }`}
+            >
+              <span
+                className={`pointer-events-none inline-block h-5 w-5 rounded-full bg-white shadow transform transition-transform ${
+                  includeTextbookLessons ? 'translate-x-5' : 'translate-x-0'
+                }`}
+              />
+            </button>
+          </div>
+
           {/* Time estimate + realism */}
           {goalIsValid && (
             <div className="mt-5 pt-4 border-t border-gray-100 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -520,7 +603,12 @@ Ensure activities array has 3-4 items per week. Make the plan realistic and prog
             {/* Week cards */}
             <div className="flex gap-4 overflow-x-auto pb-4 -mx-1 px-1">
               {learningPath.weeks.map((week, i) => (
-                <WeekCard key={week.week} week={week} index={i} />
+                <WeekCard
+                  key={week.week}
+                  week={week}
+                  index={i}
+                  onStartLesson={(lessonId) => navigate(lessonRouteFromId(lessonId, { autostart: true }))}
+                />
               ))}
             </div>
 

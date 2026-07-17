@@ -4,6 +4,8 @@ import { useAppStore } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { SRSService } from '../srs/srsService'
+import { toast } from '../components/toastStore'
+import type { ReviewCard } from './types'
 
 /** Keys stored in localStorage['kiroku-textbook-links'] */
 interface TextbookLinks {
@@ -72,7 +74,7 @@ export function TextbookProgress() {
         // --- 1. Explicit links from localStorage (set when uploading a PDF) ---
         let links: TextbookLinks = {}
         try {
-          const raw = localStorage.getItem('kiroku-textbook-links')
+          const raw = typeof localStorage === 'undefined' ? null : localStorage.getItem('kiroku-textbook-links')
           if (raw) links = JSON.parse(raw) as TextbookLinks
         } catch { /* ignore */ }
 
@@ -262,9 +264,16 @@ export function TextbookProgress() {
             {card.deckId !== -1 ? (
               <>
                 <button
+                  type="button"
                   onClick={() => {
-                    setActiveDeckId(card.deckId)
-                    navigate('/study/review')
+                    void startDeckReview({
+                      service,
+                      userId,
+                      deckId: card.deckId,
+                      limit: settings.dailyCardLimit || 20,
+                      setActiveDeckId,
+                      navigate,
+                    })
                   }}
                   className="w-full px-3 py-2 bg-indigo-600 text-white text-xs font-semibold rounded-lg hover:bg-indigo-700 transition-colors"
                 >
@@ -304,4 +313,66 @@ function countCompletedLessons(textbookKey: string, lessonsCompleted: string[]):
 function lessonPrefixesForTextbook(textbookKey: string): string[] {
   if (textbookKey === 'marugoto') return ['marugoto_a1_', 'marugoto_a2_', 'marugoto_b1_']
   return [`${textbookKey}_`]
+}
+
+async function loadDeckReviewQueue(
+  service: SRSService,
+  userId: number,
+  deckId: number,
+  limit: number,
+): Promise<ReviewCard[]> {
+  const due = await service.getDueCards(userId, limit, deckId)
+  if (due.length >= limit) return due.slice(0, limit)
+
+  const extras = await service.storage.query<ReviewCard>(
+    `SELECT
+      cs.id AS cardStateId, cs.card_id AS cardId, cs.state, cs.lapses,
+      cs.stability, cs.difficulty, cs.due, c.type, c.front, c.back, c.reading,
+      c.audio_url AS audioUrl, c.jlpt_level AS jlptLevel, c.user_note AS userNote,
+      c.example_sentence AS exampleSentence, c.example_translation AS exampleTranslation
+     FROM card_states cs
+     JOIN cards c ON c.id = cs.card_id
+     WHERE cs.user_id = ?
+       AND c.deck_id = ?
+       AND cs.is_leech = 0
+       AND cs.suspended_at IS NULL
+       AND (cs.buried_until IS NULL OR cs.buried_until <= datetime('now'))
+     ORDER BY CASE cs.state WHEN 'new' THEN 0 WHEN 'learning' THEN 1 WHEN 'relearning' THEN 1 ELSE 2 END, cs.due ASC
+     LIMIT ?`,
+    [userId, deckId, limit],
+  )
+
+  const seen = new Set(due.map(card => card.cardStateId))
+  const queue = [...due]
+  for (const card of extras) {
+    if (seen.has(card.cardStateId)) continue
+    queue.push(card)
+    if (queue.length >= limit) break
+  }
+  return queue
+}
+
+async function startDeckReview(input: {
+  service: SRSService
+  userId: number
+  deckId: number
+  limit: number
+  setActiveDeckId: (id: number | null) => void
+  navigate: ReturnType<typeof useNavigate>
+}) {
+  input.setActiveDeckId(input.deckId)
+  const queue = await loadDeckReviewQueue(input.service, input.userId, input.deckId, input.limit)
+  if (queue.length === 0) {
+    toast.info('No cards available in this textbook deck yet.')
+    return
+  }
+  const sessionId = await input.service.startSession(input.userId, 'vocab')
+  input.navigate('/study/review', {
+    state: {
+      queue,
+      grammarEntries: [],
+      sessionId,
+      userId: input.userId,
+    },
+  })
 }

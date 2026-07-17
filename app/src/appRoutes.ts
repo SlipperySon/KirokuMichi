@@ -2,6 +2,7 @@ export const APP_ROUTE_PATHS = [
   '/',
   '/onboarding',
   '/study',
+  '/study/srs',
   '/study/review',
   '/study/mistakes',
   '/study/stats',

@@ -2,17 +2,10 @@ import { useState, useEffect, useCallback, type ComponentType, type ReactNode } 
 import { useNavigate } from 'react-router-dom'
 import { useIntl } from 'react-intl'
 import {
-  BarChart3,
-  BookOpen,
   Brain,
-  LibraryBig,
-  FileText,
   GraduationCap,
-  Layers,
   MessageCircle,
-  PenSquare,
   Sparkles,
-  Upload,
 } from 'lucide-react'
 import { useAppStore } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
@@ -30,6 +23,7 @@ import { SkeletonCard } from '../components/Skeleton'
 import { toast } from '../components/toastStore'
 import { calculateWeeklyGoal } from './weeklyGoals'
 import { refreshStreakSnapshot } from './streakService'
+import { getStudyPathAction } from './studyPathPlanner'
 import type { ReviewCard, GrammarQuestion, StreakData, SessionRecoveryPayload } from './types'
 
 function interleaveQueue(due: ReviewCard[], newCards: ReviewCard[], limit: number): ReviewCard[] {
@@ -47,20 +41,6 @@ function interleaveQueue(due: ReviewCard[], newCards: ReviewCard[], limit: numbe
     pos++
   }
   return queue
-}
-
-function lessonRouteFromId(lessonId: string) {
-  const match = lessonId.match(/^(genki_[12]|quartet_[12])_(\d+)$/)
-  if (!match) return '/learn/lessons'
-  const [, series, lessonNumber] = match
-  const cefr = series === 'genki_1'
-    ? 'a1'
-    : series === 'genki_2'
-      ? 'a2'
-      : series === 'quartet_1'
-        ? 'b1'
-        : 'b2'
-  return `/learn/lessons/${cefr}/${lessonNumber}`
 }
 
 interface HomeAction {
@@ -93,6 +73,7 @@ export function StudyDashboard() {
 
   const currentLesson = useAppStore(s => s.currentLesson)
   const lessonsCompleted = useAppStore(s => s.lessonsCompleted)
+  const learningPath = useAppStore(s => s.learningPath)
 
   const [storage] = useState(() => new SQLiteStorage())
   const scheduler = settings.schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
@@ -103,98 +84,110 @@ export function StudyDashboard() {
   const [dueCount, setDueCount] = useState(0)
   const [newCount, setNewCount] = useState(0)
   const [availableNewCount, setAvailableNewCount] = useState(0)
+  const [grammarDueCount, setGrammarDueCount] = useState(0)
   const [mistakeCount, setMistakeCount] = useState(0)
   const [weeklyReviewedCount, setWeeklyReviewedCount] = useState(0)
   const [streakData, setStreakData] = useState<StreakData | null>(null)
   const [isLoading, setIsLoading] = useState(true)
+  const [loadError, setLoadError] = useState<string | null>(null)
   const [recoveryPayload, setRecoveryPayload] = useState<SessionRecoveryPayload | null>(null)
   const [previewCards, setPreviewCards] = useState<ReviewCard[]>([])
   const [decks, setDecks] = useState<{ id: number; name: string; parentId: number | null; cardCount: number }[]>([])
   const userId = activeUserId
 
   const init = useCallback(async () => {
-    // Ensure DB is ready and user row exists
-    let uid = activeUserId
-    if (!uid) {
-      const rows = await storage.query<{ id: number }>('SELECT id FROM users LIMIT 1')
-      if (rows[0]) {
-        uid = rows[0].id
-      } else {
-        await storage.execute(`INSERT INTO users (jlpt_level, study_mode, hover_delay_ms, hiragana_complete, onboarding_complete) VALUES ('N5','standard',2000,0,1)`)
-        const r = await storage.query<{ id: number }>('SELECT id FROM users ORDER BY id DESC LIMIT 1')
-        uid = r[0].id
-      }
-      setActiveUserId(uid)
-    }
-
-    // Ensure Default deck exists
-    await service.ensureDefaultDeck(uid)
-
-    const [due, newC, streak, mistakes, weeklyRows, preview, deckRows] = await Promise.all([
-      service.getDueCount(uid),
-      service.getNewCount(uid),
-      service.getStreakData(uid),
-      service.getRecentMistakeCount(uid, 7),
-      storage.query<{ date: string; cardsReviewed: number }>(
-        `SELECT
-          date(started_at) AS date,
-          SUM(cards_reviewed) AS cardsReviewed
-         FROM sessions
-         WHERE user_id = ?
-           AND started_at >= date('now', 'weekday 1', '-7 days')
-           AND ended_at IS NOT NULL
-         GROUP BY date(started_at)`,
-        [uid]
-      ),
-      service.getDueCards(uid, 3),
-      service.getDecks(uid),
-    ])
-    setDueCount(due)
-    setNewCount(newC)
-    setPreviewCards(preview)
-    setDecks(deckRows)
-    // Cap new cards shown by daily limit minus due cards already scheduled
-    const available = Math.max(0, settings.dailyCardLimit - due)
-    setAvailableNewCount(Math.min(newC, available))
-    setStreakData(streak)
-    setMistakeCount(mistakes)
-
-    // Refresh cached daily snapshot (used by Navigation badge) so it stays in
-    // sync after a review session completes. Read settings via getState() to
-    // avoid stale closure values without forcing settings into the useCallback
-    // deps (which would re-run init on every settings keystroke).
+    setLoadError(null)
+    setIsLoading(true)
     try {
-      const latest = useAppStore.getState().settings
-      const { snapshot, patch } = await refreshStreakSnapshot(service, uid, {
-        streakFreezeTokens: latest.streakFreezeTokens,
-        lastStreakAward: latest.lastStreakAward,
-        lastFreezeUsedDate: latest.lastFreezeUsedDate,
-      })
-      setDailyStats(snapshot)
-      if (Object.keys(patch).length > 0) updateSettings(patch)
-    } catch {
-      // Non-fatal
-    }
+      // Ensure DB is ready and user row exists
+      let uid = activeUserId
+      if (!uid) {
+        const rows = await storage.query<{ id: number }>('SELECT id FROM users LIMIT 1')
+        if (rows[0]) {
+          uid = rows[0].id
+        } else {
+          await storage.execute(`INSERT INTO users (jlpt_level, study_mode, hover_delay_ms, hiragana_complete, onboarding_complete) VALUES ('N5','standard',2000,0,1)`)
+          const r = await storage.query<{ id: number }>('SELECT id FROM users ORDER BY id DESC LIMIT 1')
+          uid = r[0].id
+        }
+        setActiveUserId(uid)
+      }
 
-    const reviewedThisWeek = weeklyRows.reduce((sum, row) => sum + (row.cardsReviewed ?? 0), 0)
-    setWeeklyReviewedCount(reviewedThisWeek)
+      // Ensure Default deck exists
+      await service.ensureDefaultDeck(uid)
 
-    // Check for recovery
-    const payload = SessionRecovery.load()
-    if (payload && !SessionRecovery.isStale(payload)) {
-      const openSession = await storage.query<{ id: number }>(
-        `SELECT id FROM sessions WHERE id = ? AND ended_at IS NULL`, [payload.sessionId]
-      )
-      if (openSession.length > 0) {
-        setRecoveryPayload(payload)
-      } else {
+      const [due, newC, grammarDue, streak, mistakes, weeklyRows, preview, deckRows] = await Promise.all([
+        service.getDueCount(uid),
+        service.getNewCount(uid),
+        service.getGrammarDueCount(uid),
+        service.getStreakData(uid),
+        service.getRecentMistakeCount(uid, 7),
+        storage.query<{ date: string; cardsReviewed: number }>(
+          `SELECT
+            date(started_at) AS date,
+            SUM(cards_reviewed) AS cardsReviewed
+           FROM sessions
+           WHERE user_id = ?
+             AND started_at >= date('now', 'weekday 1', '-7 days')
+             AND ended_at IS NOT NULL
+           GROUP BY date(started_at)`,
+          [uid]
+        ),
+        service.getDueCards(uid, 3),
+        service.getDecks(uid),
+      ])
+      setDueCount(due)
+      setNewCount(newC)
+      setGrammarDueCount(grammarDue)
+      setPreviewCards(preview)
+      setDecks(deckRows)
+      // Cap new cards shown by daily limit minus due cards already scheduled
+      const available = Math.max(0, settings.dailyCardLimit - due)
+      setAvailableNewCount(Math.min(newC, available))
+      setStreakData(streak)
+      setMistakeCount(mistakes)
+
+      // Refresh cached daily snapshot (used by Navigation badge) so it stays in
+      // sync after a review session completes. Read settings via getState() to
+      // avoid stale closure values without forcing settings into the useCallback
+      // deps (which would re-run init on every settings keystroke).
+      try {
+        const latest = useAppStore.getState().settings
+        const { snapshot, patch } = await refreshStreakSnapshot(service, uid, {
+          streakFreezeTokens: latest.streakFreezeTokens,
+          lastStreakAward: latest.lastStreakAward,
+          lastFreezeUsedDate: latest.lastFreezeUsedDate,
+        })
+        setDailyStats(snapshot)
+        if (Object.keys(patch).length > 0) updateSettings(patch)
+      } catch {
+        // Non-fatal
+      }
+
+      const reviewedThisWeek = weeklyRows.reduce((sum, row) => sum + (row.cardsReviewed ?? 0), 0)
+      setWeeklyReviewedCount(reviewedThisWeek)
+
+      // Check for recovery
+      const payload = SessionRecovery.load()
+      if (payload && !SessionRecovery.isStale(payload)) {
+        const openSession = await storage.query<{ id: number }>(
+          `SELECT id FROM sessions WHERE id = ? AND ended_at IS NULL`, [payload.sessionId]
+        )
+        if (openSession.length > 0) {
+          setRecoveryPayload(payload)
+        } else {
+          SessionRecovery.clear()
+        }
+      } else if (payload) {
         SessionRecovery.clear()
       }
-    } else if (payload) {
-      SessionRecovery.clear()
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Could not load the study dashboard'
+      setLoadError(message)
+      toast.error(message)
+    } finally {
+      setIsLoading(false)
     }
-
-    setIsLoading(false)
   }, [activeUserId, service, setActiveUserId, storage])
 
   useEffect(() => { void init() }, [init])
@@ -281,65 +274,41 @@ export function StudyDashboard() {
     navigate(path)
   }
 
-  const cardActions: HomeAction[] = [
-    {
-      title: 'Review Cards',
-      description: 'Run your normal due-card session.',
-      onClick: () => void startWordReview(),
-      icon: Brain,
-      tone: 'indigo',
-      meta: `${dueCount} due · ${availableNewCount} new`,
-      disabled: dueCount + newCount === 0,
-    },
-    {
-      title: 'Card Browser',
-      description: 'Search, edit, suspend, move, and inspect cards.',
-      path: '/study/browser',
-      icon: LibraryBig,
-      tone: 'slate',
-    },
-    {
-      title: 'Create Card',
-      description: 'Add a custom card with reading, tags, note, or audio.',
-      path: '/study/create',
-      icon: PenSquare,
-      tone: 'emerald',
-    },
-    {
-      title: 'Templates',
-      description: 'Edit deck card layouts and custom fields.',
-      path: '/study/templates',
-      icon: Layers,
-      tone: 'slate',
-    },
-    {
-      title: 'Mistake Drill',
-      description: 'Practise recent misses while they are still fresh.',
-      path: '/study/mistakes',
-      icon: FileText,
-      tone: mistakeCount > 0 ? 'amber' : 'slate',
-      meta: mistakeCount > 0 ? `${mistakeCount} recent` : 'None recent',
-    },
-    {
-      title: 'Card Stats',
-      description: 'Retention, maturity, and review history.',
-      path: '/study/stats',
-      icon: BarChart3,
-      tone: 'slate',
-    },
-  ]
+  const pathAction = getStudyPathAction({
+    learningPath,
+    currentLesson,
+    lessonsCompleted,
+    dueCount,
+    availableNewCount,
+    grammarDueCount,
+    mistakeCount,
+    reviewedToday: dailyStats.todayReviewed,
+    dailyGoal: settings.dailyGoal,
+    hasRecovery: Boolean(recoveryPayload),
+  })
+
+  function runPathAction() {
+    if (pathAction.kind === 'recovery') {
+      void resumeSession()
+      return
+    }
+    if (pathAction.kind === 'review') {
+      void startWordReview()
+      return
+    }
+    if (pathAction.route) {
+      navigate(pathAction.route)
+    }
+  }
 
   const learningActions: HomeAction[] = [
-    { title: 'Learn', description: 'Open the course home and textbook progress.', path: '/learn', icon: GraduationCap, tone: 'indigo' },
-    { title: 'Lessons', description: 'Browse A1-B2 lesson packs and page-ordered content.', path: '/learn/lessons', icon: BookOpen, tone: 'slate' },
+    { title: 'Course', description: 'Textbook curriculum and lesson study.', path: '/learn', icon: GraduationCap, tone: 'indigo' },
     { title: 'Learning Path', description: 'Generate a CEFR-gated weekly plan.', path: '/study/path', icon: Sparkles, tone: 'emerald' },
-    { title: 'My Content', description: 'Import decks, PDFs, and textbook packs.', path: '/my-content', icon: Upload, tone: 'slate' },
   ]
 
   const practiceActions: HomeAction[] = [
     { title: 'Scenarios', description: 'Roleplay textbook and workbook situations.', path: '/scenarios', icon: MessageCircle, tone: 'indigo' },
-    { title: 'AI Tutor', description: 'Ask grammar questions or practise conversation.', path: '/practice', icon: Sparkles, tone: 'emerald' },
-    { title: 'Grammar Review', description: 'Study grammar cards separately from vocab.', path: '/study/grammar', icon: BookOpen, tone: 'slate' },
+    { title: 'Review hub', description: 'Anki-style words + grammar SRS.', path: '/study/srs', icon: Brain, tone: 'slate' },
   ]
 
   if (isLoading) {
@@ -358,6 +327,30 @@ export function StudyDashboard() {
     )
   }
 
+  if (loadError) {
+    return (
+      <div className="flex flex-col min-h-screen">
+        <Navigation />
+        <main className="flex w-full max-w-2xl mx-auto flex-1 flex-col gap-4 px-4 py-6 sm:p-6">
+          <EmptyState
+            icon={<Brain className="mx-auto h-10 w-10 text-indigo-500" />}
+            title="Study dashboard could not load"
+            description={loadError}
+            action={
+              <button
+                type="button"
+                onClick={() => void init()}
+                className="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700"
+              >
+                Try again
+              </button>
+            }
+          />
+        </main>
+      </div>
+    )
+  }
+
   return (
     <div className="flex flex-col min-h-screen">
       <Navigation />
@@ -365,7 +358,7 @@ export function StudyDashboard() {
 
         {/* Page header */}
         <div className="flex flex-col gap-1">
-          <p className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Home</p>
+          <p className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Today</p>
           <h1 className="text-2xl font-bold text-gray-950">KirokuMichi</h1>
         </div>
 
@@ -412,53 +405,45 @@ export function StudyDashboard() {
               </div>
             </div>
 
-            {/* Smart CTA */}
-            {(() => {
-              if (currentLesson && !lessonsCompleted.includes(currentLesson)) {
-                const label = currentLesson.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
-                return (
-                  <button
-                    onClick={() => navigate(lessonRouteFromId(currentLesson))}
-                    className="w-full flex items-center gap-3 px-5 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 text-white rounded-xl font-semibold hover:from-purple-700 hover:to-indigo-700 transition-all shadow-md"
-                  >
-                    <span className="text-2xl">📖</span>
-                    <div className="text-left">
-                      <span className="block text-base">Continue Learning</span>
-                      <span className="block text-xs opacity-80 mt-0.5">{label}</span>
-                    </div>
-                  </button>
-                )
-              }
-              if (dueCount > 0) {
-                return (
-                  <button
-                    onClick={startWordReview}
-                    className="w-full flex items-center gap-3 px-5 py-4 bg-gradient-to-r from-indigo-600 to-blue-600 text-white rounded-xl font-semibold hover:from-indigo-700 hover:to-blue-700 transition-all shadow-md"
-                  >
-                    <span className="text-2xl">🧠</span>
-                    <div className="text-left">
-                      <span className="block text-base">Review {dueCount} Due Card{dueCount === 1 ? '' : 's'}</span>
-                      <span className="block text-xs opacity-80 mt-0.5">Keep your streak alive</span>
-                    </div>
-                  </button>
-                )
-              }
-              return (
-                <button
-                  onClick={() => navigate('/learn')}
-                  className="w-full flex items-center gap-3 px-5 py-4 bg-gradient-to-r from-green-600 to-emerald-600 text-white rounded-xl font-semibold hover:from-green-700 hover:to-emerald-700 transition-all shadow-md"
-                >
-                  <span className="text-2xl">🎯</span>
-                  <div className="text-left">
-                    <span className="block text-base">Start Next Lesson</span>
-                    <span className="block text-xs opacity-80 mt-0.5">All reviews complete — learn something new</span>
+            {/* Learning path-guided next step */}
+            <section className="bg-white border border-indigo-100 rounded-xl p-4 shadow-sm">
+              <div className="flex items-start gap-3">
+                <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-indigo-50 text-indigo-700">
+                  <Sparkles className="h-5 w-5" aria-hidden="true" />
+                </div>
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-center gap-2">
+                    <p className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Today's Path</p>
+                    {pathAction.meta && (
+                      <span className="rounded-full bg-slate-100 px-2 py-0.5 text-xs font-semibold text-slate-600">
+                        {pathAction.meta}
+                      </span>
+                    )}
                   </div>
-                </button>
-              )
-            })()}
+                  <h2 className="mt-1 text-lg font-bold text-gray-950">{pathAction.title}</h2>
+                  <p className="mt-1 text-sm text-gray-600">{pathAction.description}</p>
+                  <div className="mt-4 flex flex-col gap-2 sm:flex-row">
+                    <button
+                      type="button"
+                      onClick={runPathAction}
+                      className="inline-flex items-center justify-center rounded-lg bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-700"
+                    >
+                      {pathAction.actionLabel}
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => navigate('/study/path')}
+                      className="inline-flex items-center justify-center rounded-lg border border-gray-200 bg-white px-4 py-2.5 text-sm font-semibold text-gray-700 hover:bg-gray-50"
+                    >
+                      View Plan
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
 
-            {/* Review / Cram buttons */}
-            <div className="flex gap-3">
+            {/* Review / Cram / Grammar */}
+            <div className="flex flex-col gap-3 sm:flex-row">
               <button
                 onClick={startWordReview}
                 disabled={dueCount + newCount === 0}
@@ -467,6 +452,16 @@ export function StudyDashboard() {
                 <span>Review Cards</span>
                 <span className="text-xs mt-1 opacity-80">{dueCount} due · {availableNewCount} new</span>
               </button>
+              {grammarDueCount > 0 && (
+                <button
+                  type="button"
+                  onClick={() => navigate('/study/grammar')}
+                  className="flex flex-col items-center rounded-xl border-2 border-violet-200 bg-violet-50 px-4 py-4 font-semibold text-violet-900 hover:bg-violet-100 sm:min-w-[8rem]"
+                >
+                  <span className="text-sm">Grammar</span>
+                  <span className="mt-1 text-xs opacity-80">{grammarDueCount} due</span>
+                </button>
+              )}
               <button
                 onClick={startCramAll}
                 disabled={dueCount === 0}
@@ -503,7 +498,7 @@ export function StudyDashboard() {
                     onClick={() => navigate('/learn')}
                     className="px-4 py-2 text-sm font-semibold text-indigo-800 bg-indigo-50 rounded-lg hover:bg-indigo-100"
                   >
-                    Open Learn
+                    Open Course
                   </button>
                 }
               />
@@ -523,25 +518,26 @@ export function StudyDashboard() {
             {/* Weak-point analysis */}
             <WeakPointPanel />
 
-            {/* Nav sections */}
-            <HomeSection title="Card Workspace" description="SRS, browser, templates, and stats.">
-              {cardActions.map(action => (
-                <HomeActionButton key={action.title} action={action} onNavigate={go} />
-              ))}
-            </HomeSection>
-
+            {/* Compact secondary nav — tools live under Review / Library */}
             <div className="grid gap-4 sm:grid-cols-2">
-              <HomeSection title="Learning" description="Course flow and lessons." compact>
+              <HomeSection title="Course" description="Curriculum and weekly plan." compact>
                 {learningActions.map(action => (
                   <HomeActionButton key={action.title} action={action} onNavigate={go} />
                 ))}
               </HomeSection>
-              <HomeSection title="Practice" description="Scenarios, grammar, and AI tutor." compact>
+              <HomeSection title="More" description="Speak and Anki review hub." compact>
                 {practiceActions.map(action => (
                   <HomeActionButton key={action.title} action={action} onNavigate={go} />
                 ))}
               </HomeSection>
             </div>
+            <button
+              type="button"
+              onClick={() => navigate('/study/srs')}
+              className="rounded-xl border border-gray-200 bg-white px-4 py-3 text-left text-sm font-semibold text-gray-800 hover:bg-gray-50"
+            >
+              Open Review hub (browser, templates, stats) →
+            </button>
           </div>
 
           {/* RIGHT — overview zone */}

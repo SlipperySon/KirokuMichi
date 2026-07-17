@@ -344,7 +344,7 @@ export function LearningMode() {
       <Navigation />
       <main className="flex flex-col gap-6 px-4 py-6 sm:p-6 max-w-4xl mx-auto flex-1 w-full">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 mb-4">Learn</h1>
+          <h1 className="text-2xl font-bold text-gray-900 mb-4">Course</h1>
           {/* Tab Toggle */}
           <div className="flex gap-2 bg-gray-100 rounded-xl p-1 w-full sm:w-fit overflow-x-auto">
             <button
@@ -355,7 +355,6 @@ export function LearningMode() {
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
-              <span>📚</span>
               <span>Study by Lesson</span>
             </button>
             <button
@@ -366,8 +365,7 @@ export function LearningMode() {
                   : 'text-gray-600 hover:text-gray-900'
               }`}
             >
-              <span>📖</span>
-              <span>Browse Content</span>
+              <span>Imported content</span>
             </button>
           </div>
         </div>
@@ -384,13 +382,13 @@ export function LearningMode() {
           <EmptyState
             icon="📖"
             title="No learning content yet"
-            description="Import content from Practice, or open Study by Lesson to use the packaged textbook curriculum."
+            description="Import content from My Content, or stay on Study by Lesson for the packaged textbook curriculum."
             action={
               <button
-                onClick={() => navigate('/practice')}
+                onClick={() => navigate('/my-content')}
                 className="px-4 py-2 text-sm font-semibold text-indigo-800 bg-indigo-50 rounded-lg hover:bg-indigo-100"
               >
-                Open Practice
+                Open My Content
               </button>
             }
           />

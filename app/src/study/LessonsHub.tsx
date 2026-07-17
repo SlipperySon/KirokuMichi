@@ -4,11 +4,14 @@
  * Users select their proficiency level (A1-C1) to access lessons
  */
 
-import { useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Home } from 'lucide-react'
+import { BookOpen, Dumbbell, Home, Layers } from 'lucide-react'
 import { useAppStore } from '../store'
 import { CEFR_BASE_TEXTBOOK, TEXTBOOK_LESSON_COUNTS, type CEFRLevel } from '../content/cefrMapping'
+import { curriculumService } from '../content/curriculumService'
+import { createLessonMatcher } from '../content/lessonContentUtils'
+import { getWorkbookPracticeTasks } from '../content/workbookPracticeService'
 import { Navigation } from '../components/Navigation'
 import { EmptyState } from '../components/EmptyState'
 import { TextbookProgress } from './TextbookProgress'
@@ -91,9 +94,19 @@ interface LessonsHubProps {
   embedded?: boolean
 }
 
+interface LessonShortcut {
+  cefr: CEFRLevel
+  lessonNumber: number
+  lessonId: string
+  vocabCount: number
+  grammarCount: number
+  practiceCount: number
+}
+
 export function LessonsHub({ embedded = false }: LessonsHubProps) {
   const navigate = useNavigate()
   const lessonsCompleted = useAppStore(s => s.lessonsCompleted)
+  const [lessonShortcuts, setLessonShortcuts] = useState<LessonShortcut[]>([])
 
   // CEFR levels — descriptions derived from CEFR_BASE_TEXTBOOK so labels stay in sync
   const TIERS: Record<CEFRLevel, string> = {
@@ -149,6 +162,40 @@ export function LessonsHub({ embedded = false }: LessonsHubProps) {
 
   const availableLessonCount = Object.values(stats).reduce((sum, entry) => sum + entry.total, 0)
 
+  useEffect(() => {
+    let cancelled = false
+    void (async () => {
+      const summaries: LessonShortcut[] = []
+      for (const cefr of ['a1', 'a2', 'b1', 'b2'] as CEFRLevel[]) {
+        const baseTextbook = CEFR_BASE_TEXTBOOK[cefr]
+        const total = TEXTBOOK_LESSON_COUNTS[baseTextbook] ?? 0
+        const curriculum = await curriculumService.getTextbookCurriculum(baseTextbook)
+        if (!curriculum || total === 0) continue
+
+        const seriesPrefix = baseTextbook.split('_').slice(0, -1).join('_')
+        for (let lessonNumber = 1; lessonNumber <= total; lessonNumber += 1) {
+          const lessonId = `${seriesPrefix}_${lessonNumber}`
+          const matchesLesson = createLessonMatcher(lessonId, lessonNumber)
+          const rawVocab = curriculum.vocabulary.filter(item => matchesLesson(item.lesson))
+          const rawGrammar = curriculum.grammar.filter(item => matchesLesson(item.lesson))
+          const workbookPractice = await getWorkbookPracticeTasks({ cefr, lessonId, lessonNum: lessonNumber })
+          summaries.push({
+            cefr,
+            lessonNumber,
+            lessonId,
+            vocabCount: rawVocab.length,
+            grammarCount: rawGrammar.length,
+            practiceCount: workbookPractice.length,
+          })
+        }
+      }
+      if (!cancelled) setLessonShortcuts(summaries)
+    })()
+    return () => {
+      cancelled = true
+    }
+  }, [])
+
   const content = (
     <div className={embedded ? '' : 'min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 px-4 py-6 sm:p-8'}>
       <div className={embedded ? '' : 'mx-auto max-w-4xl'}>
@@ -167,7 +214,7 @@ export function LessonsHub({ embedded = false }: LessonsHubProps) {
                 className="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-4 py-2 text-sm font-semibold text-indigo-800 shadow-sm transition-colors hover:bg-indigo-100"
               >
                 <Home className="h-4 w-4" aria-hidden="true" />
-                Return to Learn Menu
+                Return to Course
               </button>
             )}
           </div>
@@ -205,6 +252,60 @@ export function LessonsHub({ embedded = false }: LessonsHubProps) {
             )
           })}
         </div>
+        )}
+
+        {lessonShortcuts.length > 0 && (
+          <div className="mt-8">
+            <h2 className="mb-3 text-lg font-semibold text-slate-800">Lesson Menu</h2>
+            <div className="grid gap-3 md:grid-cols-2">
+              {cefrLevels.filter(({ cefr }) => stats[cefr].total > 0).map(({ cefr, title, description }) => {
+                const lessons = lessonShortcuts.filter(lesson => lesson.cefr === cefr)
+                if (lessons.length === 0) return null
+                return (
+                  <section key={cefr} className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+                    <div className="mb-3 flex items-start justify-between gap-3">
+                      <div>
+                        <h3 className="text-base font-bold text-slate-950">{title}</h3>
+                        <p className="text-xs font-medium text-slate-500">{description}</p>
+                      </div>
+                      <span className="rounded bg-slate-100 px-2 py-1 text-xs font-bold text-slate-600">{lessons.length}</span>
+                    </div>
+                    <div className="grid gap-2">
+                      {lessons.map(lesson => (
+                        <button
+                          key={lesson.lessonId}
+                          type="button"
+                          onClick={() => navigate(`/learn/lessons/${lesson.cefr}/${lesson.lessonNumber}`)}
+                          className="flex flex-col gap-2 rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-left transition-colors hover:border-indigo-300 hover:bg-indigo-50"
+                        >
+                          <div className="flex items-center justify-between gap-2">
+                            <span className="text-sm font-bold text-slate-900">Lesson {lesson.lessonNumber}</span>
+                            <span className={lessonsCompleted.includes(lesson.lessonId) ? 'text-xs font-bold text-emerald-700' : 'text-xs font-medium text-slate-500'}>
+                              {lessonsCompleted.includes(lesson.lessonId) ? 'Completed' : 'Open'}
+                            </span>
+                          </div>
+                          <div className="flex flex-wrap gap-2 text-xs font-semibold text-slate-700">
+                            <span className="inline-flex items-center gap-1 rounded bg-white px-2 py-1">
+                              <BookOpen className="h-3.5 w-3.5" aria-hidden="true" />
+                              {lesson.vocabCount} vocab
+                            </span>
+                            <span className="inline-flex items-center gap-1 rounded bg-white px-2 py-1">
+                              <Layers className="h-3.5 w-3.5" aria-hidden="true" />
+                              {lesson.grammarCount} grammar
+                            </span>
+                            <span className="inline-flex items-center gap-1 rounded bg-white px-2 py-1">
+                              <Dumbbell className="h-3.5 w-3.5" aria-hidden="true" />
+                              {lesson.practiceCount} practice
+                            </span>
+                          </div>
+                        </button>
+                      ))}
+                    </div>
+                  </section>
+                )
+              })}
+            </div>
+          </div>
         )}
 
         {/* Information Section */}
