@@ -1,7 +1,8 @@
 import type { SRSService } from '../srs/srsService'
-import type { ReviewCard } from './types'
+import type { ReviewCard, GrammarQuestion } from './types'
 import type { VocabItem, GrammarItem } from './lessonStudyPlanner'
 import { repairLessonCardLinks } from '../content/lessonUnlockService'
+import { grammarCardFields, grammarEntriesFromCards } from './grammarCardBuilder'
 
 export const LESSON_INTRO_REVIEW_CAP = 12
 
@@ -52,9 +53,13 @@ export function vocabToSeedItems(vocab: VocabItem[]): LessonCardSeedItem[] {
   }))
 }
 
+export interface LessonReviewPayload {
+  queue: ReviewCard[]
+  grammarEntries: [number, GrammarQuestion][]
+}
+
 /**
- * Ensure lesson vocab exists as SRS cards linked to the lesson.
- * Repairs existing Anki links first, then creates missing vocab cards.
+ * Ensure lesson vocab + grammar exist as SRS cards linked to the lesson.
  */
 export async function ensureLessonCards(
   service: SRSService,
@@ -62,9 +67,10 @@ export async function ensureLessonCards(
   lessonId: string,
   vocab: VocabItem[],
   grammar: GrammarItem[] = [],
-): Promise<{ linked: number; created: number }> {
+): Promise<{ linked: number; created: number; grammarCreated: number }> {
   const repair = await repairLessonCardLinks(lessonId, userId, service.storage, vocab, grammar)
   let created = 0
+  let grammarCreated = 0
 
   const existing = await service.getCardsForLesson(userId, lessonId)
   const existingFronts = new Set(existing.map(card => normalizeFront(card.front)))
@@ -75,7 +81,6 @@ export async function ensureLessonCards(
     const key = normalizeFront(item.front)
     if (!key || existingFronts.has(key)) continue
 
-    // Also skip if an unlinked card with the same front already exists — link it instead.
     const rows = await service.storage.query<{ cardStateId: number; cardId: number }>(
       `SELECT cs.id AS cardStateId, cs.card_id AS cardId
        FROM card_states cs
@@ -106,12 +111,35 @@ export async function ensureLessonCards(
       lessonId,
       originType: 'lesson_vocab',
       originRef: item.originRef ?? item.id,
+      cardType: 'vocabulary',
     })
     existingFronts.add(key)
     created += 1
   }
 
-  return { linked: repair.unlockedCount, created }
+  for (const item of grammar.filter(g => g.pattern && g.meaning)) {
+    const fields = grammarCardFields(item)
+    const key = normalizeFront(fields.front)
+    if (!key || existingFronts.has(key)) continue
+
+    await service.createUserCard(userId, {
+      front: fields.front,
+      back: fields.back,
+      deckId,
+      lessonId,
+      originType: 'lesson_grammar',
+      originRef: item.id,
+      exampleSentence: fields.exampleSentence,
+      exampleTranslation: fields.exampleTranslation,
+      cardType: 'grammar',
+    })
+    existingFronts.add(key)
+    grammarCreated += 1
+  }
+
+  await service.activateGrammarForLesson(userId, grammar)
+
+  return { linked: repair.unlockedCount, created, grammarCreated }
 }
 
 /**
@@ -153,6 +181,44 @@ export async function buildLessonReviewQueue(
     if (queue.length >= limit) break
   }
   return queue
+}
+
+/** Build review queue + grammar cloze entries for ReviewSession. */
+export async function buildLessonReviewPayload(
+  service: SRSService,
+  userId: number,
+  lessonId: string,
+  vocab: VocabItem[],
+  grammar: GrammarItem[],
+  options: BuildLessonReviewQueueOptions = {},
+): Promise<LessonReviewPayload> {
+  const queue = await buildLessonReviewQueue(service, userId, lessonId, options)
+  const grammarByFront = new Map(grammar.map(g => [g.pattern, g]))
+  const patterns = grammar.map(g => g.pattern).filter(Boolean)
+  const grammarEntries = grammarEntriesFromCards(queue, grammarByFront, patterns)
+  return { queue, grammarEntries }
+}
+
+/** Mark deferred lesson cards as due today (spacing commitment without finishing intro review now). */
+export async function commitDeferredLessonCards(
+  service: SRSService,
+  userId: number,
+  lessonId: string,
+  vocab: VocabItem[],
+  grammar: GrammarItem[],
+): Promise<number> {
+  await ensureLessonCards(service, userId, lessonId, vocab, grammar)
+  await service.storage.execute(
+    `UPDATE card_states
+     SET due = datetime('now'), state = CASE WHEN state = 'review' THEN state ELSE 'new' END
+     WHERE user_id = ? AND lesson_id = ?`,
+    [userId, lessonId],
+  )
+  const rows = await service.storage.query<{ count: number }>(
+    `SELECT COUNT(*) AS count FROM card_states WHERE user_id = ? AND lesson_id = ?`,
+    [userId, lessonId],
+  )
+  return rows[0]?.count ?? 0
 }
 
 /** Pure helper for tests: order cards with priority fronts first. */

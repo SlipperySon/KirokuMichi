@@ -1,7 +1,7 @@
 # KirokuMichi — Todo
 
 **Last updated: 2026-07-17**
-**Status: ACTIVE PRIORITY — Learning Environment Redesign (teachable loop + IA)**
+**Status: PHASE 6 SHIPPED — Pedagogy hardening + redesign gate (Phases 1–6)**
 
 ---
 
@@ -39,6 +39,23 @@ Canvas: `~/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/learning-e
 
 **Phase 4 — First-run**
 - [x] Onboarding → first Intro; starter deck; default textbook lessons on path
+
+**Phase 5 — Verification (redesign gate)**
+- [x] Anki stack reused (ReviewSession + FSRS); no parallel lesson card rater
+- [x] Rail steps map to Learning Science Foundation
+- [x] Single Done rule: complete only after Speak (`LessonStudy.finishLesson`); Reference page no longer checkbox-completes
+- [x] Today priority: dues before new lessons; 5-due∶1-new interleave
+- [x] Gate tests + lint/tsc/vitest/route smoke
+
+**Phase 6 — Pedagogy hardening (audit → A standard)**
+- [x] Cards non-optional: review now or `commitDeferredLessonCards` queues on Today; completion gated
+- [x] Speak + workbook production validation (Japanese script, lesson targets)
+- [x] Grammar SRS: lesson grammar cards + cloze in ReviewSession; grammar points due stagger (+7d default, lesson-scoped activation)
+- [x] Typed free-recall in checkpoints; writing variant every 7th card; GrammarReview meaning hidden until reveal
+- [x] Day-1 session budget (`firstSessionBudget`) caps first lesson rail
+- [x] Unit tests: productionValidation, typedRecall, firstSessionBudget, grammarCardBuilder
+- [x] Sentence cards use listen-then-type (`CardListening` + bundled audio / TTS fallback)
+- [x] Scenario Live Practice counts toward Speak completion when launched from lesson rail
 
 **Earlier (done):** Study path planner + Today’s Path panel on Home.
 

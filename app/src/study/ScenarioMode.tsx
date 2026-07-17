@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
-import { useSearchParams } from 'react-router-dom'
-import { ListChecks, Search, MessageCircle, X } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
+import { ListChecks, Search, MessageCircle, X, ArrowLeft } from 'lucide-react'
 import { useAppStore } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
@@ -19,6 +19,7 @@ import {
   type SupplementalScenario,
 } from '../content/supplementalScenarioService'
 import type { AIMessage } from '../core/providers'
+import { tryCompleteScenarioPractice, hasScenarioPractice } from './scenarioPracticeGate'
 
 interface DialogueLine {
   speaker: string
@@ -164,10 +165,13 @@ Your role:
 
 interface ScenarioChatPanelProps {
   scenario: Scenario
+  lessonId?: string | null
+  fromSpeak?: boolean
   onClose: () => void
+  onPracticeComplete?: () => void
 }
 
-function ScenarioChatPanel({ scenario, onClose }: ScenarioChatPanelProps) {
+function ScenarioChatPanel({ scenario, lessonId, fromSpeak, onClose, onPracticeComplete }: ScenarioChatPanelProps) {
   const settings = useAppStore(s => s.settings)
   const activeUserId = useAppStore(s => s.activeUserId)
 
@@ -192,6 +196,15 @@ function ScenarioChatPanel({ scenario, onClose }: ScenarioChatPanelProps) {
   async function handleSend(text?: string) {
     const msg = (text ?? input).trim()
     if (!msg || loading) return
+    if (lessonId && fromSpeak && !hasScenarioPractice(lessonId)) {
+      const completed = tryCompleteScenarioPractice(lessonId, msg)
+      if (!completed) {
+        toast.error('Send at least one message in Japanese (3+ characters) to complete Speak practice.')
+        return
+      }
+      onPracticeComplete?.()
+      toast.success('Scenario practice recorded — return to finish the lesson.')
+    }
     setInput('')
     const userTurn: ChatTurn = { role: 'user', content: msg }
     setTurns(prev => [...prev, userTurn])
@@ -239,6 +252,13 @@ function ScenarioChatPanel({ scenario, onClose }: ScenarioChatPanelProps) {
           <X className="h-4 w-4" />
         </button>
       </div>
+      {fromSpeak && lessonId && (
+        <p className="rounded-lg bg-emerald-50 px-3 py-2 text-xs text-emerald-900">
+          {hasScenarioPractice(lessonId)
+            ? 'Speak practice complete — return to the lesson to mark it done.'
+            : 'Send one message in Japanese to satisfy the lesson Speak step.'}
+        </p>
+      )}
 
       {/* Starter chips */}
       {turns.length === 0 && starters.length > 0 && (
@@ -310,6 +330,7 @@ function ScenarioChatPanel({ scenario, onClose }: ScenarioChatPanelProps) {
 }
 
 export function ScenarioMode() {
+  const navigate = useNavigate()
   const activeUserId = useAppStore(s => s.activeUserId)
   const settings = useAppStore(s => s.settings)
   const [searchParams, setSearchParams] = useSearchParams()
@@ -322,6 +343,11 @@ export function ScenarioMode() {
   const [showFurigana, setShowFurigana] = useState(settings.furiganaEnabled)
   const [query, setQuery] = useState('')
   const [showLiveChat, setShowLiveChat] = useState(false)
+  const [practiceRecorded, setPracticeRecorded] = useState(false)
+
+  const fromSpeak = searchParams.get('from') === 'speak'
+  const speakLessonId = searchParams.get('lesson')
+  const returnTo = searchParams.get('returnTo')
 
   useEffect(() => {
     async function load() {
@@ -466,6 +492,23 @@ export function ScenarioMode() {
     })
   }, [activeLevel, activeSourceKey, scenarios, query])
 
+  useEffect(() => {
+    if (!fromSpeak || selected || isLoading || !speakLessonId) return
+    const match = scenarios.find(scenario =>
+      scenario.lesson_id === speakLessonId
+      || scenario.lesson_id?.endsWith(`_${speakLessonId.split('_').pop() ?? ''}`),
+    )
+    if (match) {
+      setSelected(match)
+      setShowLiveChat(true)
+    }
+  }, [fromSpeak, isLoading, scenarios, selected, speakLessonId])
+
+  useEffect(() => {
+    if (!speakLessonId) return
+    setPracticeRecorded(hasScenarioPractice(speakLessonId))
+  }, [speakLessonId, showLiveChat])
+
   function firstSourceKeyForLevel(level: ScenarioLevel) {
     const scenario = scenarios.find(item => scenarioLevel(item) === level)
     return scenario ? sourceKey(scenario) : ''
@@ -497,16 +540,35 @@ export function ScenarioMode() {
       <main className="flex flex-col gap-6 px-4 py-6 sm:p-6 max-w-2xl mx-auto flex-1 w-full">
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <h1 className="text-2xl font-bold text-gray-900">Scenarios</h1>
-          {selected && (
-            <button
-              onClick={() => setSelected(null)}
-              className="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-sm font-semibold text-indigo-800 transition-colors hover:bg-indigo-100"
-            >
-              <ListChecks className="h-4 w-4" aria-hidden="true" />
-              Return to Scenario List
-            </button>
-          )}
+          <div className="flex flex-wrap gap-2">
+            {fromSpeak && returnTo && (
+              <button
+                onClick={() => navigate(returnTo)}
+                className="inline-flex items-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-3 py-2 text-sm font-semibold text-emerald-900 transition-colors hover:bg-emerald-100"
+              >
+                <ArrowLeft className="h-4 w-4" aria-hidden="true" />
+                Back to lesson Speak
+              </button>
+            )}
+            {selected && (
+              <button
+                onClick={() => setSelected(null)}
+                className="inline-flex items-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-3 py-2 text-sm font-semibold text-indigo-800 transition-colors hover:bg-indigo-100"
+              >
+                <ListChecks className="h-4 w-4" aria-hidden="true" />
+                Return to Scenario List
+              </button>
+            )}
+          </div>
         </div>
+
+        {fromSpeak && speakLessonId && (
+          <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-900">
+            {practiceRecorded
+              ? 'Live Practice complete for this lesson. Return to Speak to mark the lesson done.'
+              : 'Complete Live Practice with at least one Japanese message, or type a sentence back on the lesson Speak step.'}
+          </div>
+        )}
 
         {isLoading ? (
           <SkeletonList count={5} />
@@ -556,7 +618,10 @@ export function ScenarioMode() {
               <div className="bg-white border border-indigo-200 rounded-2xl p-4 sm:p-6">
                 <ScenarioChatPanel
                   scenario={selected}
+                  lessonId={speakLessonId}
+                  fromSpeak={fromSpeak}
                   onClose={() => setShowLiveChat(false)}
+                  onPracticeComplete={() => setPracticeRecorded(true)}
                 />
               </div>
             )}

@@ -9,12 +9,20 @@ import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { SRSService } from '../srs/srsService'
 import {
-  buildLessonReviewQueue,
-  ensureLessonCards,
+  buildLessonReviewPayload,
+  commitDeferredLessonCards,
   priorityFrontsFromLessonSignals,
 } from './lessonCardBridge'
+import { applyFirstSessionBudget, isFirstSessionCandidate } from './firstSessionBudget'
+import {
+  speakRequiredFragments,
+  validateJapaneseProduction,
+  validateWorkbookTask,
+} from './productionValidation'
+import { gradeTypedRecall } from './typedRecall'
 import { toast } from '../components/toastStore'
 import { unlockScenariosForLesson } from '../content/scenarioUnlockService'
+import { clearScenarioPractice, hasScenarioPractice } from './scenarioPracticeGate'
 import {
   clearLessonSession,
   LESSON_RAIL_PHASES,
@@ -52,6 +60,7 @@ export function LessonStudy() {
   const { state: routeState } = useLocation() as { state?: LessonStudyState }
   const markComplete = useAppStore(s => s.markLessonComplete)
   const setCurrentLesson = useAppStore(s => s.setCurrentLesson)
+  const lessonsCompleted = useAppStore(s => s.lessonsCompleted)
   const settings = useAppStore(s => s.settings)
   const activeUserId = useAppStore(s => s.activeUserId)
   const userId = activeUserId ?? 1
@@ -82,10 +91,6 @@ export function LessonStudy() {
     cefrLevel: 'a1',
   }, [initialLesson])
 
-  const plan = useMemo(
-    () => buildLessonPlan(state.vocab, state.grammar, state.lessonId, state.workbookPractice ?? []),
-    [state]
-  )
   const [stepIndex, setStepIndex] = useState(0)
   const [teachIndex, setTeachIndex] = useState(0)
   const [questionIndex, setQuestionIndex] = useState(0)
@@ -97,9 +102,20 @@ export function LessonStudy() {
   const [speakResponse, setSpeakResponse] = useState('')
   const [speakCompleted, setSpeakCompleted] = useState(false)
   const [cardsCompleted, setCardsCompleted] = useState(false)
+  const [cardsDeferred, setCardsDeferred] = useState(false)
+  const [typedAnswer, setTypedAnswer] = useState('')
+  const [speakError, setSpeakError] = useState<string | null>(null)
+  const [workbookError, setWorkbookError] = useState<string | null>(null)
   const [showDone, setShowDone] = useState(false)
 
-  // Hydrate from persistence / after-cards return
+  const rawPlan = useMemo(
+    () => buildLessonPlan(state.vocab, state.grammar, state.lessonId, state.workbookPractice ?? []),
+    [state]
+  )
+  const plan = useMemo(
+    () => applyFirstSessionBudget(rawPlan, isFirstSessionCandidate(lessonsCompleted, state.lessonId)),
+    [rawPlan, lessonsCompleted, state.lessonId]
+  )
   useEffect(() => {
     const lessonId = routeState?.lessonId || resumeId
     if (!lessonId || lessonId.endsWith('_drill')) {
@@ -118,15 +134,20 @@ export function LessonStudy() {
       setSpeakResponse(snap.speakResponse)
       setSpeakCompleted(snap.speakCompleted)
       setCardsCompleted(snap.cardsCompleted)
+      setCardsDeferred(snap.cardsDeferred ?? false)
     }
 
     if (afterCards && snap) {
-      const speakIdx = buildLessonPlan(
-        snap.lesson.vocab,
-        snap.lesson.grammar,
-        snap.lesson.lessonId,
-        snap.lesson.workbookPractice ?? [],
-      ).findIndex(step => step.kind === 'speak')
+      const snapPlan = applyFirstSessionBudget(
+        buildLessonPlan(
+          snap.lesson.vocab,
+          snap.lesson.grammar,
+          snap.lesson.lessonId,
+          snap.lesson.workbookPractice ?? [],
+        ),
+        isFirstSessionCandidate(lessonsCompleted, snap.lesson.lessonId),
+      )
+      const speakIdx = snapPlan.findIndex(step => step.kind === 'speak')
       setCardsCompleted(true)
       if (speakIdx >= 0) setStepIndex(speakIdx)
       const next = new URLSearchParams(searchParams)
@@ -136,7 +157,7 @@ export function LessonStudy() {
     }
 
     setHydrated(true)
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps -- hydrate once on mount
+  }, [])
 
   useEffect(() => {
     if (!state.lessonId || state.lessonId.endsWith('_drill')) return
@@ -158,6 +179,7 @@ export function LessonStudy() {
       speakResponse,
       speakCompleted,
       cardsCompleted,
+      cardsDeferred,
       updatedAt: new Date().toISOString(),
     }
     saveLessonSession(snapshot)
@@ -173,6 +195,7 @@ export function LessonStudy() {
     speakResponse,
     speakCompleted,
     cardsCompleted,
+    cardsDeferred,
   ])
 
   const currentStep = plan[stepIndex]
@@ -214,13 +237,16 @@ export function LessonStudy() {
     setTeachIndex(0)
     setQuestionIndex(0)
     setSelectedAnswer(null)
+    setTypedAnswer('')
     setIsTeachRevealed(false)
   }
 
-  function answerQuestion(question: QuizQuestion, answer: string) {
+  function submitQuizAnswer(question: QuizQuestion, answer: string) {
     if (selectedAnswer !== null) return
     setSelectedAnswer(answer)
-    const isCorrect = answer === question.correctAnswer
+    const isCorrect = question.recallMode === 'typed'
+      ? gradeTypedRecall(answer, question.correctAnswer)
+      : answer === question.correctAnswer
     setAnswers(previous => [
       ...previous,
       {
@@ -238,21 +264,32 @@ export function LessonStudy() {
     }
   }
 
+  function answerQuestion(question: QuizQuestion, answer: string) {
+    submitQuizAnswer(question, answer)
+  }
+
   async function continueToCards() {
     if (isStartingCards) return
     setIsStartingCards(true)
     try {
-      await ensureLessonCards(service, userId, state.lessonId, state.vocab, state.grammar)
       const priorityFronts = priorityFrontsFromLessonSignals({
         vocab: state.vocab,
         grammar: state.grammar,
         againItemIds: selfMarkedAgain.map(item => item.itemId),
         missedItemIds: missedAnswers.map(answer => answer.itemId),
       })
-      const queue = await buildLessonReviewQueue(service, userId, state.lessonId, { priorityFronts })
+      const { queue, grammarEntries } = await buildLessonReviewPayload(
+        service,
+        userId,
+        state.lessonId,
+        state.vocab,
+        state.grammar,
+        { priorityFronts },
+      )
       if (queue.length === 0) {
-        toast.info('No linked cards — continuing to Speak. Add or import cards later for spacing.')
-        setCardsCompleted(true)
+        await commitDeferredLessonCards(service, userId, state.lessonId, state.vocab, state.grammar)
+        setCardsDeferred(true)
+        toast.info('Cards queued on Today — continue to Speak.')
         const speakIdx = plan.findIndex(step => step.kind === 'speak')
         moveToStep(speakIdx >= 0 ? speakIdx : stepIndex + 1)
         return
@@ -262,7 +299,7 @@ export function LessonStudy() {
       navigate('/study/review', {
         state: {
           queue,
-          grammarEntries: [],
+          grammarEntries,
           sessionId,
           userId,
           lessonId: state.lessonId,
@@ -277,11 +314,42 @@ export function LessonStudy() {
     }
   }
 
+  async function scheduleCardsForLater() {
+    if (isStartingCards) return
+    setIsStartingCards(true)
+    try {
+      const count = await commitDeferredLessonCards(service, userId, state.lessonId, state.vocab, state.grammar)
+      setCardsDeferred(true)
+      toast.success(count > 0 ? `${count} lesson cards queued on Today` : 'Lesson cards saved for Today')
+      const speakIdx = plan.findIndex(step => step.kind === 'speak')
+      moveToStep(speakIdx >= 0 ? speakIdx : stepIndex + 1)
+    } catch (error) {
+      toast.error(`Could not queue cards: ${String(error)}`)
+    } finally {
+      setIsStartingCards(false)
+    }
+  }
+
   async function finishLesson() {
+    if (!cardsCompleted && !cardsDeferred) {
+      toast.error('Complete Cards review or queue them on Today before finishing.')
+      return
+    }
+    const speakValidation = validateJapaneseProduction(speakResponse, {
+      minChars: 3,
+      requiredFragments: speakRequiredFragments(state.grammar, state.vocab),
+    })
+    const scenarioPracticeDone = hasScenarioPractice(state.lessonId)
+    if (!speakValidation.ok && !scenarioPracticeDone) {
+      setSpeakError(`${speakValidation.message} Or complete Live Practice in a related scenario.`)
+      return
+    }
+    setSpeakError(null)
     markComplete(state.lessonId)
     try {
       await unlockScenariosForLesson(state.lessonId, userId, storage)
     } catch { /* ignore */ }
+    clearScenarioPractice(state.lessonId)
     clearLessonSession(state.lessonId)
     setShowDone(true)
   }
@@ -292,6 +360,7 @@ export function LessonStudy() {
     } else {
       setQuestionIndex(previous => previous + 1)
       setSelectedAnswer(null)
+      setTypedAnswer('')
     }
   }
 
@@ -308,6 +377,10 @@ export function LessonStudy() {
     setSpeakResponse('')
     setSpeakCompleted(false)
     setCardsCompleted(false)
+    setCardsDeferred(false)
+    setTypedAnswer('')
+    setSpeakError(null)
+    setWorkbookError(null)
     setShowDone(false)
   }
 
@@ -335,7 +408,7 @@ export function LessonStudy() {
             {totalQuestions > 0
               ? `${correctAnswers}/${totalQuestions} recall checks correct (${percentage}%).`
               : 'You finished the lesson rail.'}
-            {cardsCompleted ? ' Cards were reviewed in SRS.' : ''}
+            {cardsCompleted ? ' Cards were reviewed in SRS.' : cardsDeferred ? ' Cards were queued on Today.' : ''}
           </p>
           <div className="mt-6 grid grid-cols-2 gap-3 text-center sm:grid-cols-4">
             <SummaryStat label="Vocab" value={state.vocab.length.toString()} tone="blue" />
@@ -421,7 +494,7 @@ export function LessonStudy() {
           <p className="text-sm font-semibold text-indigo-600">Spaced retrieval</p>
           <h2 className="mt-1 text-xl font-bold text-gray-900">Review lesson cards</h2>
           <p className="mt-2 text-sm text-gray-600">
-            Uses the existing Anki-style ReviewSession (Again / Hard / Good / Easy). Weak and missed items first, capped for this intro pass.
+            Uses the existing Anki-style ReviewSession (Again / Hard / Good / Easy). Weak and missed items first, capped for this intro pass. You must review now or queue cards on Today before finishing.
           </p>
           {(missedAnswers.length > 0 || selfMarkedAgain.length > 0) && (
             <p className="mt-3 rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-900">
@@ -438,13 +511,11 @@ export function LessonStudy() {
           </button>
           <button
             type="button"
-            onClick={() => {
-              setCardsCompleted(true)
-              moveToStep(stepIndex + 1)
-            }}
-            className="mt-3 w-full rounded-lg border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50"
+            disabled={isStartingCards}
+            onClick={() => { void scheduleCardsForLater() }}
+            className="mt-3 w-full rounded-lg border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50 disabled:opacity-60"
           >
-            Schedule for later today (skip for now)
+            {isStartingCards ? 'Queuing cards…' : 'Queue on Today (review later)'}
           </button>
         </div>
       </LessonShell>
@@ -452,6 +523,14 @@ export function LessonStudy() {
   }
 
   if (currentStep.kind === 'speak') {
+    const speakValidation = validateJapaneseProduction(speakResponse, {
+      minChars: 3,
+      requiredFragments: speakRequiredFragments(state.grammar, state.vocab),
+    })
+    const scenarioPracticeDone = hasScenarioPractice(state.lessonId)
+    const canFinishSpeak = (speakValidation.ok || scenarioPracticeDone) && (cardsCompleted || cardsDeferred)
+    const speakReturnTo = `/learn/study?resume=${encodeURIComponent(state.lessonId)}`
+
     return (
       <LessonShell
         {...shellProps}
@@ -467,38 +546,46 @@ export function LessonStudy() {
           <p className="mt-1 text-sm text-gray-600">{currentStep.support}</p>
           <textarea
             value={speakResponse}
-            onChange={event => setSpeakResponse(event.target.value)}
+            onChange={event => {
+              setSpeakResponse(event.target.value)
+              setSpeakError(null)
+            }}
             placeholder="Type your sentence here…"
             className="mt-4 min-h-28 w-full resize-y rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-900 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-100"
             lang="ja"
           />
-          <label className="mt-3 flex items-center gap-2 text-sm text-gray-700">
-            <input
-              type="checkbox"
-              checked={speakCompleted}
-              onChange={event => setSpeakCompleted(event.target.checked)}
-            />
-            I produced something (even if rough)
-          </label>
+          {speakError && (
+            <p className="mt-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{speakError}</p>
+          )}
+          <p className="mt-2 text-xs text-gray-500">
+            Type a sentence here, or use Live Practice below with real Japanese output.
+          </p>
+          {scenarioPracticeDone && (
+            <p className="mt-2 rounded-lg bg-emerald-50 px-3 py-2 text-sm text-emerald-900">
+              Scenario Live Practice recorded — you can finish the lesson.
+            </p>
+          )}
           <button
             type="button"
-            onClick={() => navigate(`/scenarios?lesson=${encodeURIComponent(currentStep.scenarioLessonId)}`)}
+            onClick={() => navigate(
+              `/scenarios?lesson=${encodeURIComponent(currentStep.scenarioLessonId)}&from=speak&returnTo=${encodeURIComponent(speakReturnTo)}`,
+            )}
             className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-900 hover:bg-emerald-100"
           >
             <MessageCircle className="h-4 w-4" aria-hidden />
-            Open related scenarios (optional)
+            Practice Live in a scenario
           </button>
           <button
             type="button"
-            disabled={speakResponse.trim().length === 0 && !speakCompleted}
-            onClick={() => {
-              setSpeakCompleted(true)
-              void finishLesson()
-            }}
+            disabled={!canFinishSpeak}
+            onClick={() => { void finishLesson() }}
             className="mt-3 w-full rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-40"
           >
             Mark lesson complete
           </button>
+          {!cardsCompleted && !cardsDeferred && (
+            <p className="mt-2 text-center text-xs text-amber-800">Finish or queue Cards before completing the lesson.</p>
+          )}
         </div>
       </LessonShell>
     )
@@ -635,6 +722,15 @@ export function LessonStudy() {
                     <button
                       type="button"
                       onClick={() => {
+                        const text = response.response
+                        if (!response.completed) {
+                          const check = validateWorkbookTask(text)
+                          if (!check.ok) {
+                            setWorkbookError(`${task.prompt.slice(0, 40)}… — ${check.message}`)
+                            return
+                          }
+                          setWorkbookError(null)
+                        }
                         setWorkbookResponses(previous => ({
                           ...previous,
                           [task.id]: { response: previous[task.id]?.response ?? '', completed: !response.completed },
@@ -653,6 +749,10 @@ export function LessonStudy() {
               )
             })}
           </div>
+
+          {workbookError && (
+            <p className="mt-3 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-800">{workbookError}</p>
+          )}
 
           <button
             onClick={() => moveToStep(stepIndex + 1)}
@@ -704,7 +804,10 @@ export function LessonStudy() {
   }
 
   const hasAnswered = selectedAnswer !== null
-  const isCorrect = selectedAnswer === question.correctAnswer
+  const isCorrect = question.recallMode === 'typed'
+    ? gradeTypedRecall(selectedAnswer ?? '', question.correctAnswer)
+    : selectedAnswer === question.correctAnswer
+  const isTypedRecall = question.recallMode === 'typed'
   const progress = plan.length > 0 ? ((stepIndex + 1) / plan.length) * 100 : 0
 
   return (
@@ -718,10 +821,34 @@ export function LessonStudy() {
       <div className="rounded-xl bg-white p-8 shadow-lg">
         <div className="text-center">
           <p className="text-sm text-gray-500">{question.promptLabel}</p>
-          <p className="mt-2 text-3xl font-bold text-gray-900" lang="ja">{question.prompt}</p>
+          <p className={`mt-2 font-bold text-gray-900 ${isTypedRecall ? 'text-xl' : 'text-3xl'}`} lang={isTypedRecall ? undefined : 'ja'}>
+            {question.prompt}
+          </p>
           <p className="mt-2 text-xs text-gray-400">{questionIndex + 1}/{questions.length}</p>
         </div>
 
+        {isTypedRecall ? (
+          <div className="mt-6">
+            <textarea
+              value={typedAnswer}
+              onChange={event => setTypedAnswer(event.target.value)}
+              placeholder="Type the Japanese…"
+              disabled={hasAnswered}
+              className="min-h-24 w-full resize-y rounded-lg border border-gray-200 px-3 py-2 text-lg text-gray-900 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-100 disabled:opacity-60"
+              lang="ja"
+            />
+            {!hasAnswered && (
+              <button
+                type="button"
+                disabled={typedAnswer.trim().length === 0}
+                onClick={() => submitQuizAnswer(question, typedAnswer)}
+                className="mt-4 w-full rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-40"
+              >
+                Check answer
+              </button>
+            )}
+          </div>
+        ) : (
         <div className="mt-6 space-y-3">
           {question.options.map((option, index) => {
             const tone = !hasAnswered
@@ -745,6 +872,7 @@ export function LessonStudy() {
             )
           })}
         </div>
+        )}
 
         {hasAnswered && (
           <div className={`mt-5 rounded-lg p-4 text-center ${isCorrect ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}>

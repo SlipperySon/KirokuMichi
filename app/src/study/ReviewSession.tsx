@@ -7,6 +7,7 @@ import { CardReading } from './CardReading'
 import { CardMeaning } from './CardMeaning'
 import { CardWriting } from './CardWriting'
 import { CardGrammar } from './CardGrammar'
+import { CardListening } from './CardListening'
 import { RatingButtons } from './RatingButtons'
 import { LeechWarning } from './LeechWarning'
 import { SessionSummary } from './SessionSummary'
@@ -418,6 +419,15 @@ function ReviewSessionActive({ state }: { state: LocationState }) {
             )}
             {currentVariant === 'writing' && (
               <CardWriting
+                card={currentCard}
+                phase={phase}
+                intervalPreviews={intervalPreviews}
+                onReveal={session.reveal}
+                onRate={session.rate}
+              />
+            )}
+            {currentVariant === 'listening' && (
+              <CardListening
                 card={currentCard}
                 phase={phase}
                 intervalPreviews={intervalPreviews}

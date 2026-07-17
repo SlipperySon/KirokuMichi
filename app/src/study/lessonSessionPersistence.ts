@@ -26,6 +26,7 @@ export interface LessonSessionSnapshot {
   speakResponse: string
   speakCompleted: boolean
   cardsCompleted: boolean
+  cardsDeferred: boolean
   updatedAt: string
 }
 

@@ -1,6 +1,7 @@
 import { buildGrammarExplanationPlan, type GrammarExplanationPlan } from '../content/maynardExplanationEngine'
 import { getMaynardSupport } from '../content/maynardSupport'
 import type { WorkbookPracticeTask } from '../content/workbookPracticeService'
+import { injectTypedRecall } from './typedRecall'
 
 export interface VocabItem {
   id: string
@@ -61,6 +62,7 @@ export interface QuizQuestion {
   promptLabel: string
   correctAnswer: string
   options: string[]
+  recallMode?: 'mcq' | 'typed'
 }
 
 export type LessonStep =
@@ -249,8 +251,8 @@ export function buildLessonPlan(
       steps.push({
         kind: 'checkpoint',
         title: `Checkpoint ${chunkNumber}`,
-        goal: 'Quick recall before the next set. Misses will be prioritized in Cards.',
-        questions: checkpoint,
+        goal: 'Quick recall before the next set. First item is free recall; misses prioritized in Cards.',
+        questions: injectTypedRecall(checkpoint, chunk, `${lessonId}:checkpoint:${chunkNumber}`),
       })
     }
   }

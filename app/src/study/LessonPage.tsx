@@ -13,7 +13,6 @@ import { lessonStructureService, type LessonStructure } from '../content/lessonN
 import { curriculumService, type Exercise, type GrammarItem, type VocabItem } from '../content/curriculumService'
 import { createLessonMatcher, pageRangeFromPages } from '../content/lessonContentUtils'
 import { hasMaynardSupport } from '../content/maynardSupport'
-import { unlockScenariosForLesson } from '../content/scenarioUnlockService'
 import { repairLessonCardLinks } from '../content/lessonUnlockService'
 import { getWorkbookPracticeTasks, type WorkbookPracticeTask } from '../content/workbookPracticeService'
 import { textbookAssetService, type TextbookAsset } from '../content/textbookAssetService'
@@ -77,7 +76,6 @@ export function LessonPage() {
   const scheduler = settings.schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
   const [srsService] = useState(() => new SRSService(storage, scheduler))
 
-  const markComplete = useAppStore(s => s.markLessonComplete)
   const lessonsCompleted = useAppStore(s => s.lessonsCompleted)
   const activeUserId = useAppStore(s => s.activeUserId)
 
@@ -286,43 +284,27 @@ export function LessonPage() {
   }
 
   const handleStudyCards = async () => {
-    // Start a review session with lesson cards
+    // Start a review session with lesson cards (does not complete the lesson)
     if (!activeUserId) {
       setState(prev => ({ ...prev, error: 'No user ID found' }))
       return
     }
 
     try {
-      // Start a new session
       const sessionId = await srsService.startSession(activeUserId, 'lesson')
-
-      // Navigate to review session with lesson context
       navigate('/study/review', {
         state: {
           queue: state.unlockedCards,
           grammarEntries: [],
           sessionId,
           userId: activeUserId,
-          lessonId
-        }
+          lessonId,
+          markCompleteOnFinish: false,
+          returnTo: `/learn/lessons/${cefrLevel}/${lessonNum}`,
+        },
       })
     } catch (error) {
       setState(prev => ({ ...prev, error: `Failed to start review: ${String(error)}` }))
-    }
-  }
-
-  const handleMarkComplete = async () => {
-    markComplete(lessonId)
-    // Unlock corresponding scenarios when lesson is completed
-    if (activeUserId) {
-      try {
-        const result = await unlockScenariosForLesson(lessonId, activeUserId, storage)
-        if (result.unlockedCount > 0) {
-          console.log(`Unlocked ${result.unlockedCount} scenarios from ${result.practiceBookName}`)
-        }
-      } catch (error) {
-        console.error('Failed to unlock scenarios:', error)
-      }
     }
   }
 
@@ -409,11 +391,22 @@ export function LessonPage() {
 
             {!isCompleted && (
               <button
-                onClick={handleMarkComplete}
-                className="inline-flex items-center justify-center gap-2 rounded-lg bg-green-600 px-4 py-2 font-semibold text-white transition-colors hover:bg-green-700 sm:ml-auto"
+                onClick={() => {
+                  navigate('/learn/study', {
+                    state: {
+                      vocab: state.vocab || [],
+                      grammar: state.grammar || [],
+                      lessonId,
+                      lessonTitle: `${state.lesson.series} - Lesson ${state.lesson.lesson_number}`,
+                      cefrLevel: cefr,
+                      workbookPractice: state.workbookPractice,
+                    },
+                  })
+                }}
+                className="inline-flex items-center justify-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-2 font-semibold text-emerald-900 transition-colors hover:bg-emerald-100 sm:ml-auto"
               >
                 <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
-                Mark as Complete
+                Complete via lesson rail
               </button>
             )}
           </div>

@@ -40,14 +40,16 @@ function GrammarCard({ point, onRate }: { point: GrammarPoint; onRate: (rating: 
 
   return (
     <div className="flex flex-col gap-6">
-      {/* Pattern front */}
       <div className="bg-indigo-50 rounded-2xl p-6 flex flex-col gap-2">
         <div className="flex items-center gap-2">
           <span className="text-xs font-bold text-indigo-400 uppercase tracking-wide">{point.jlpt_level}</span>
           <span className="text-xs text-gray-400">{point.title}</span>
         </div>
         <p className="text-2xl font-bold text-indigo-800 font-mono" lang="ja">{point.pattern}</p>
-        <p className="text-base text-gray-700">{point.meaning}</p>
+        {!revealed && (
+          <p className="text-sm text-indigo-700">Recall the meaning before revealing the explanation.</p>
+        )}
+        {revealed && <p className="text-base text-gray-700">{point.meaning}</p>}
       </div>
 
       {revealed ? (
@@ -88,7 +90,7 @@ function GrammarCard({ point, onRate }: { point: GrammarPoint; onRate: (rating: 
           onClick={() => setRevealed(true)}
           className="w-full px-4 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
         >
-          Show Explanation
+          Reveal meaning & explanation
         </button>
       )}
     </div>

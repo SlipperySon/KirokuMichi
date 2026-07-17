@@ -373,6 +373,7 @@ async function startDeckReview(input: {
       grammarEntries: [],
       sessionId,
       userId: input.userId,
+      markCompleteOnFinish: false,
     },
   })
 }

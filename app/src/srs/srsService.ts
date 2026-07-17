@@ -510,7 +510,7 @@ export class SRSService {
     await this.storage.execute(
       `INSERT OR IGNORE INTO grammar_states
         (grammar_point_id, user_id, state, due, stability, difficulty, retrievability, reps, lapses)
-       SELECT gp.id, ?, 'new', datetime('now'), ?, ?, ?, 0, 0
+       SELECT gp.id, ?, 'new', datetime('now', '+7 days'), ?, ?, ?, 0, 0
        FROM grammar_points gp`,
       [
         userId,
@@ -519,6 +519,29 @@ export class SRSService {
         initial.retrievability,
       ]
     )
+  }
+
+  /** Bring lesson-taught grammar points into the due queue without flooding the entire catalog. */
+  async activateGrammarForLesson(
+    userId: number,
+    grammar: Array<{ pattern: string; meaning: string }>,
+  ): Promise<void> {
+    if (grammar.length === 0) return
+    await this.ensureGrammarStates(userId)
+    for (const item of grammar) {
+      if (!item.pattern?.trim()) continue
+      await this.storage.execute(
+        `UPDATE grammar_states
+         SET due = datetime('now'), state = CASE WHEN state = 'review' THEN state ELSE 'new' END
+         WHERE user_id = ?
+           AND grammar_point_id IN (
+             SELECT id FROM grammar_points
+             WHERE pattern = ? OR title LIKE ?
+             LIMIT 1
+           )`,
+        [userId, item.pattern.trim(), `%${item.pattern.trim()}%`],
+      )
+    }
   }
 
   async getGrammarQueue(userId: number, limit: number): Promise<GrammarReviewItem[]> {
@@ -766,12 +789,15 @@ export class SRSService {
       originType?: string | null
       originRef?: string | null
       lessonId?: string | null
+      cardType?: ReviewCard['type']
     }
   ): Promise<number> {
+    const cardType = fields.cardType ?? 'vocabulary'
     await this.storage.execute(
       `INSERT INTO cards (type, front, back, reading, deck_id, audio_url, tags, user_note, example_sentence, example_translation, origin_type, origin_ref, source)
-       VALUES ('vocabulary', ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'user')`,
+       VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'user')`,
       [
+        cardType,
         fields.front,
         fields.back,
         fields.reading ?? null,

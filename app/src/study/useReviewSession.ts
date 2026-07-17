@@ -18,11 +18,19 @@ interface UndoEntry {
   becameLeech: boolean
 }
 
-export type CardVariant = 'reading' | 'meaning' | 'writing' | 'grammar'
+export type CardVariant = 'reading' | 'meaning' | 'writing' | 'grammar' | 'listening'
+
+export function resolveCardVariant(card: ReviewCard): CardVariant {
+  if (card.type === 'grammar') return 'grammar'
+  if (card.type === 'sentence') return 'listening'
+  const bucket = card.cardStateId % 7
+  if (bucket === 0) return 'writing'
+  if (bucket <= 4) return 'reading'
+  return 'meaning'
+}
 
 function resolveVariant(card: ReviewCard): CardVariant {
-  if (card.type === 'grammar') return 'grammar'
-  return card.cardStateId % 5 < 3 ? 'reading' : 'meaning'
+  return resolveCardVariant(card)
 }
 
 function cardStateFrom(card: ReviewCard): CardState {

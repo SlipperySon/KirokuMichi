@@ -9,6 +9,8 @@ Last updated: 2026-07-17 AEST
 **Goal:** Turn parallel study modes into one teachable loop so a learner always knows *what to do next* and each
 lesson closes with **evidence-based** retrieval + spaced review + production — not a dead-end summary.
 
+**Status (2026-07-17):** Phases 1–5 complete — redesign gate passed. See Phase 5 gate table below.
+
 **Visual summary:** open the canvas
 [`learning-env-redesign.canvas.tsx`](/Users/Skipp/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/learning-env-redesign.canvas.tsx)
 beside chat.
@@ -361,6 +363,20 @@ Intro → Teach → Check → Practice → Cards (Anki ReviewSession) → Speak 
 4. `npm run verify` (or lint + Vitest + route smoke).
 5. Pedagogy smoke: placement → lesson rail → Anki Cards (FSRS write) → Speak → next day Today prioritizes dues.
 6. Update `todo.md` checkboxes as phases complete.
+
+**Gate result (2026-07-17)**
+
+| Check | Result |
+|-------|--------|
+| Cards step = `ReviewSession` + FSRS `reviewCard` | Pass — LessonStudy navigates to `/study/review`; teach self-rate is seed only |
+| No LessonPage checkbox complete | Pass — Reference CTA is “Complete via lesson rail” |
+| `markCompleteOnFinish` default false | Pass — lesson Cards, TextbookProgress, Reference Study Cards |
+| Done only after Speak | Pass — `LessonStudy.finishLesson` |
+| `setCurrentLesson` on rail start + onboarding | Pass |
+| Science rail Intro→Speak | Pass — `buildLessonPlan` + `LESSON_RAIL_PHASES` |
+| Today: dues before lessons | Pass — `getStudyPathAction` + `redesignGate.test.ts` |
+| 5 due : 1 new | Pass — `interleaveDueAndNew` |
+| Automated tests | `redesignGate.test.ts` + existing unit/route smoke |
 
 ---
 

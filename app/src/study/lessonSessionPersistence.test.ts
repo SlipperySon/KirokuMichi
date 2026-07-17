@@ -26,6 +26,7 @@ function sampleSnapshot(overrides: Partial<LessonSessionSnapshot> = {}): LessonS
     speakResponse: '',
     speakCompleted: false,
     cardsCompleted: false,
+    cardsDeferred: false,
     updatedAt: '2026-07-17T00:00:00.000Z',
     ...overrides,
   }
