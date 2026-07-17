@@ -3,17 +3,13 @@ import { expect, test } from '@playwright/test'
 test.describe('Deck Management (/study)', () => {
   test('study dashboard renders and shows DeckTree', async ({ page }) => {
     await page.goto('/study')
-
-    // Wait for the dashboard to finish loading (allow up to 12s)
-    await page.waitForFunction(
-      () => document.body.innerText.trim() !== 'Loading…',
-      { timeout: 12_000 }
-    )
-
-    // The study dashboard should display meaningful content
-    // It may show study stats, due count, deck tree, etc.
-    const bodyText = await page.locator('body').innerText()
-    expect(bodyText.trim().length).toBeGreaterThan(20)
+    await expect
+      .poll(async () => {
+        const text = await page.locator('body').innerText()
+        if (text.trim() === 'Loading…') return ''
+        return text
+      }, { timeout: 15_000 })
+      .toMatch(/Review Cards|Today|Due|Deck/i)
   })
 
   test('create a new deck via the + button in DeckTree', async ({ page }) => {

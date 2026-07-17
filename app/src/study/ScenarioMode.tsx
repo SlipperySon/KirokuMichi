@@ -1,5 +1,5 @@
 import { useState, useEffect, useMemo, useRef } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useSearchParams } from 'react-router-dom'
 import { ListChecks, Search, MessageCircle, X, ArrowLeft } from 'lucide-react'
 import { useAppStore } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
