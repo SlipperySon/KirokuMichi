@@ -1,3 +1,7 @@
+import { buildGrammarExplanationPlan, type GrammarExplanationPlan } from '../content/maynardExplanationEngine'
+import { getMaynardSupport } from '../content/maynardSupport'
+import type { WorkbookPracticeTask } from '../content/workbookPracticeService'
+
 export interface VocabItem {
   id: string
   surface: string
@@ -43,7 +47,6 @@ export interface LessonStudyState {
   lessonId: string
   lessonTitle: string
   cefrLevel: string
-  intent?: LessonIntent
   workbookPractice?: WorkbookPracticeTask[]
 }
 
@@ -61,10 +64,13 @@ export interface QuizQuestion {
 }
 
 export type LessonStep =
+  | { kind: 'intro'; title: string; goal: string; vocabCount: number; grammarCount: number; estimatedCards: number; targets: string[] }
   | { kind: 'teach'; title: string; goal: string; items: TeachItem[] }
   | { kind: 'checkpoint'; title: string; goal: string; questions: QuizQuestion[] }
   | { kind: 'final'; title: string; goal: string; questions: QuizQuestion[] }
   | { kind: 'workbook'; title: string; goal: string; tasks: WorkbookPracticeTask[] }
+  | { kind: 'cards'; title: string; goal: string }
+  | { kind: 'speak'; title: string; goal: string; prompt: string; support: string; scenarioLessonId: string }
 
 const CHUNK_SIZE = 5
 
@@ -135,18 +141,9 @@ function toTeachItems(vocab: VocabItem[], grammar: GrammarItem[]): TeachItem[] {
       lessonId: item.lesson,
     }))
 
-  // 1. Foundation items come first in their original order (e.g. greetings/numbers overlay)
-  const foundation = vocabMapped
-    .filter(v => v.source === 'genki_1_foundation')
-    .sort((a, b) => a.order - b.order)
-
-  // 2. Regular vocab sorted by textbook page number (earlier chapters first)
   const regularVocab = vocabMapped
-    .filter(v => v.source !== 'genki_1_foundation')
     .sort((a, b) => (a.page ?? 0) - (b.page ?? 0) || a.order - b.order)
 
-  // 3. Grammar sorted: items with known page numbers first (by page), then
-  //    pageless CEFR grammar in their original lesson-frequency order.
   const grammarSorted = [...grammarMapped].sort((a, b) => {
     const ap = a.page ?? 0
     const bp = b.page ?? 0
@@ -156,10 +153,7 @@ function toTeachItems(vocab: VocabItem[], grammar: GrammarItem[]): TeachItem[] {
     return a.order - b.order
   })
 
-  // Interleave grammar evenly into the sorted vocab sequence so that learners
-  // see a mix of vocabulary and grammar points rather than all vocab then all
-  // grammar. Foundation items are always first.
-  return [...foundation, ...interleaveItems(regularVocab, grammarSorted)]
+  return interleaveItems(regularVocab, grammarSorted)
 }
 
 function buildQuestion(item: TeachItem, pool: TeachItem[], salt: string): QuizQuestion | null {
@@ -208,11 +202,38 @@ export function buildLessonPlan(
   workbookPractice: WorkbookPracticeTask[] = []
 ): LessonStep[] {
   const items = toTeachItems(vocab, grammar)
-  if (items.length === 0) {
-    return [{ kind: 'teach', title: 'Lesson Preview', goal: 'No teachable items were found for this lesson yet.', items: [] }]
+  const targets = [
+    ...grammar.filter(g => g.pattern).slice(0, 3).map(g => g.pattern),
+    ...vocab.filter(v => v.surface).slice(0, 3).map(v => v.surface),
+  ].slice(0, 5)
+
+  const intro: LessonStep = {
+    kind: 'intro',
+    title: 'Lesson goals',
+    goal: 'Orient to what you will learn, then encode → check → practice → review cards → speak.',
+    vocabCount: vocab.filter(v => v.surface && v.english).length,
+    grammarCount: grammar.filter(g => g.pattern && g.meaning).length,
+    estimatedCards: Math.min(12, vocab.filter(v => v.surface && v.english).length),
+    targets,
   }
 
-  const steps: LessonStep[] = []
+  if (items.length === 0) {
+    return [
+      intro,
+      { kind: 'teach', title: 'Lesson Preview', goal: 'No teachable items were found for this lesson yet.', items: [] },
+      { kind: 'cards', title: 'Cards', goal: 'Review any linked cards in the Anki-style SRS.' },
+      {
+        kind: 'speak',
+        title: 'Speak',
+        goal: 'Produce one short utterance with today’s targets.',
+        prompt: 'Write one simple sentence using something from this lesson.',
+        support: 'One clean sentence is enough. Rough output beats silent recognition.',
+        scenarioLessonId: lessonId,
+      },
+    ]
+  }
+
+  const steps: LessonStep[] = [intro]
   for (let start = 0; start < items.length; start += CHUNK_SIZE) {
     const chunk = items.slice(start, start + CHUNK_SIZE)
     const chunkNumber = Math.floor(start / CHUNK_SIZE) + 1
@@ -228,7 +249,7 @@ export function buildLessonPlan(
       steps.push({
         kind: 'checkpoint',
         title: `Checkpoint ${chunkNumber}`,
-        goal: 'Quick recall before the next set. Misses will be shown again in the summary.',
+        goal: 'Quick recall before the next set. Misses will be prioritized in Cards.',
         questions: checkpoint,
       })
     }
@@ -246,19 +267,39 @@ export function buildLessonPlan(
 
   const outputTasks = workbookPractice.filter(task => task.practiceMode !== 'guided').slice(0, 4)
   const guidedTasks = workbookPractice.filter(task => task.practiceMode === 'guided').slice(0, 2)
-  const tasks = [...outputTasks, ...guidedTasks].slice(0, 5)
+  const tasks = [...guidedTasks, ...outputTasks].slice(0, 5)
   if (tasks.length > 0) {
     steps.push({
       kind: 'workbook',
       title: 'Workbook Output',
-      goal: 'Turn the workbook prompts into actual production before finishing the lesson.',
+      goal: 'Turn the workbook prompts into actual production before Cards.',
       tasks,
     })
   }
 
+  steps.push({
+    kind: 'cards',
+    title: 'Cards',
+    goal: 'Spaced retrieval with the Anki-style scheduler. Weak and new items first (capped).',
+  })
+
+  const focusGrammar = grammar.find(g => g.pattern && g.meaning)
+  const focusVocab = vocab.find(v => v.surface && v.english)
+  const speakPrompt = focusGrammar
+    ? `Write one short sentence using「${focusGrammar.pattern}」(${focusGrammar.meaning}).`
+    : focusVocab
+      ? `Write one short sentence that uses「${focusVocab.surface}」(${focusVocab.english}).`
+      : 'Write one short sentence using something you learned in this lesson.'
+
+  steps.push({
+    kind: 'speak',
+    title: 'Speak',
+    goal: 'Pushed output — produce language so you notice gaps before finishing.',
+    prompt: speakPrompt,
+    support: 'Say it aloud if you can, then type it. Optional: open a linked scenario after you write something.',
+    scenarioLessonId: lessonId,
+  })
+
   return steps
 }
-import { buildGrammarExplanationPlan, type GrammarExplanationPlan } from '../content/maynardExplanationEngine'
-import { getMaynardSupport } from '../content/maynardSupport'
-import type { LessonIntent } from '../content/lessonIntentService'
-import type { WorkbookPracticeTask } from '../content/workbookPracticeService'
+

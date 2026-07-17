@@ -2,6 +2,7 @@ import { useIntl } from 'react-intl'
 
 interface Props {
   onDone: () => void
+  busy?: boolean
 }
 
 function detectPlatform(): 'macos' | 'windows' | 'ios' | 'android' | 'other' {
@@ -13,7 +14,7 @@ function detectPlatform(): 'macos' | 'windows' | 'ios' | 'android' | 'other' {
   return 'other'
 }
 
-export function StepIME({ onDone }: Props) {
+export function StepIME({ onDone, busy = false }: Props) {
   const intl = useIntl()
   const platform = detectPlatform()
 
@@ -42,11 +43,12 @@ export function StepIME({ onDone }: Props) {
       <div className="flex flex-col gap-3 w-full">
         <button
           onClick={onDone}
-          className="px-8 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
+          disabled={busy}
+          className="px-8 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-60"
         >
-          {intl.formatMessage({ id: 'onboarding.ime.done' })}
+          {busy ? 'Starting your first lesson…' : intl.formatMessage({ id: 'onboarding.ime.done' })}
         </button>
-        <button onClick={onDone} className="text-gray-500 hover:text-gray-700 text-sm">
+        <button onClick={onDone} disabled={busy} className="text-gray-500 hover:text-gray-700 text-sm disabled:opacity-60">
           {intl.formatMessage({ id: 'onboarding.ime.skip' })}
         </button>
       </div>

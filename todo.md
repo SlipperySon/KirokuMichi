@@ -33,12 +33,12 @@ Canvas: `~/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/learning-e
 - [x] Collapse Learn hubs; LessonPage = Reference, not front door
 
 **Phase 3 — Smooth research-backed rail**
-- [ ] Intro → Teach → Check → Practice → Cards → Speak → Done (one progress rail)
-- [ ] Autostart skips LessonPage dump; persist/resume mid-session
-- [ ] Speak requires production
+- [x] Intro → Teach → Check → Practice → Cards → Speak → Done (one progress rail)
+- [x] Autostart skips LessonPage dump; persist/resume mid-session
+- [x] Speak requires production
 
 **Phase 4 — First-run**
-- [ ] Onboarding → first Intro; starter deck; default textbook lessons on path
+- [x] Onboarding → first Intro; starter deck; default textbook lessons on path
 
 **Earlier (done):** Study path planner + Today’s Path panel on Home.
 

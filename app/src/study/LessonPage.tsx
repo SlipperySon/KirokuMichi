@@ -24,6 +24,7 @@ import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { toast } from '../components/toastStore'
 import type { ReviewCard } from './types'
 import { AddToDeckButton } from './AddToDeckButton'
+import { hasResumableLessonSession } from './lessonSessionPersistence'
 
 interface LessonPageState {
   lesson: LessonStructure | null
@@ -264,6 +265,7 @@ export function LessonPage() {
   }
 
   const isCompleted = lessonsCompleted.includes(lessonId)
+  const canResumeRail = hasResumableLessonSession(lessonId)
   const totalLessons = TEXTBOOK_LESSON_COUNTS[baseTextbook] || 1
   const hasNextLesson = lessonNum < totalLessons
   const hasPreviousLesson = lessonNum > 1
@@ -331,7 +333,8 @@ export function LessonPage() {
         <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 sm:py-8">
           <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
             <div>
-              <div className="flex flex-wrap items-center gap-2">
+              <p className="text-xs font-semibold uppercase tracking-wide text-indigo-600">Lesson reference</p>
+              <div className="mt-1 flex flex-wrap items-center gap-2">
                 <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
                   {state.lesson.series} - Lesson {state.lesson.lesson_number}
                 </h1>
@@ -342,6 +345,9 @@ export function LessonPage() {
                 )}
               </div>
               <p className="mt-2 text-gray-600">
+                Optional overview while studying. Start opens the continuous lesson rail — you do not need to scroll this page first.
+              </p>
+              <p className="mt-1 text-sm text-gray-500">
                 {teachableVocabCount} vocab • {teachableGrammarCount} grammar •{' '}
                 {practiceTaskCount} practice tasks
               </p>
@@ -365,7 +371,9 @@ export function LessonPage() {
               }}
               className="w-full rounded-xl bg-indigo-600 px-6 py-4 text-base sm:text-lg font-bold text-white hover:bg-indigo-700 transition-colors shadow-md mb-4"
             >
-              Start Lesson ({teachableVocabCount + teachableGrammarCount} items)
+              {canResumeRail
+                ? 'Resume Lesson Rail'
+                : `Start Lesson (${teachableVocabCount + teachableGrammarCount} items)`}
             </button>
           ) : null}
 
@@ -376,7 +384,7 @@ export function LessonPage() {
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-4 py-2 font-semibold text-indigo-800 shadow-sm transition-colors hover:bg-indigo-100"
             >
               <ListChecks className="h-4 w-4" aria-hidden="true" />
-              Return to Lesson Menu
+              Return to Course
             </button>
 
             {hasPreviousLesson && (

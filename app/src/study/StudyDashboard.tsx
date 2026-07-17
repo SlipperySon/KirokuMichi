@@ -24,24 +24,13 @@ import { toast } from '../components/toastStore'
 import { calculateWeeklyGoal } from './weeklyGoals'
 import { refreshStreakSnapshot } from './streakService'
 import { getStudyPathAction } from './studyPathPlanner'
+import { hasResumableLessonSession } from './lessonSessionPersistence'
+import { interleaveDueAndNew } from './reviewInterleave'
+import {
+  countUserCardStates,
+  ensureStarterDeckIfEmpty,
+} from './firstRunBootstrap'
 import type { ReviewCard, GrammarQuestion, StreakData, SessionRecoveryPayload } from './types'
-
-function interleaveQueue(due: ReviewCard[], newCards: ReviewCard[], limit: number): ReviewCard[] {
-  const queue: ReviewCard[] = []
-  let di = 0, ni = 0, pos = 0
-  while (queue.length < limit && (di < due.length || ni < newCards.length)) {
-    // Insert 1 new card every 5 positions
-    if (ni < newCards.length && pos > 0 && pos % 5 === 0) {
-      queue.push(newCards[ni++])
-    } else if (di < due.length) {
-      queue.push(due[di++])
-    } else if (ni < newCards.length) {
-      queue.push(newCards[ni++])
-    }
-    pos++
-  }
-  return queue
-}
 
 interface HomeAction {
   title: string
@@ -93,6 +82,8 @@ export function StudyDashboard() {
   const [recoveryPayload, setRecoveryPayload] = useState<SessionRecoveryPayload | null>(null)
   const [previewCards, setPreviewCards] = useState<ReviewCard[]>([])
   const [decks, setDecks] = useState<{ id: number; name: string; parentId: number | null; cardCount: number }[]>([])
+  const [emptyDeck, setEmptyDeck] = useState(false)
+  const [importingStarter, setImportingStarter] = useState(false)
   const userId = activeUserId
 
   const init = useCallback(async () => {
@@ -146,6 +137,8 @@ export function StudyDashboard() {
       setAvailableNewCount(Math.min(newC, available))
       setStreakData(streak)
       setMistakeCount(mistakes)
+      const cardStates = await countUserCardStates(storage, uid)
+      setEmptyDeck(cardStates === 0)
 
       // Refresh cached daily snapshot (used by Navigation badge) so it stays in
       // sync after a review session completes. Read settings via getState() to
@@ -241,7 +234,7 @@ export function StudyDashboard() {
       service.getDueCards(userId, limit),
       service.getNewCards(userId, Math.max(0, limit - (await service.getDueCount(userId)))),
     ])
-    const queue = interleaveQueue(due, newCards, limit).filter(
+    const queue = interleaveDueAndNew(due, newCards, limit).filter(
       c => c.type === 'vocabulary' || c.type === 'kanji' || c.type === 'hiragana' || c.type === 'katakana'
     )
     if (queue.length === 0) {
@@ -274,6 +267,24 @@ export function StudyDashboard() {
     navigate(path)
   }
 
+  async function importStarterDeck() {
+    if (!userId || importingStarter) return
+    setImportingStarter(true)
+    try {
+      const result = await ensureStarterDeckIfEmpty(storage, userId)
+      if (!result) {
+        toast.info('You already have cards — no starter import needed.')
+      } else {
+        toast.success(`Imported ${result.imported} Genki starter cards (${result.linked} lesson-linked)`)
+      }
+      await init()
+    } catch (error) {
+      toast.error(`Could not import starter deck: ${String(error)}`)
+    } finally {
+      setImportingStarter(false)
+    }
+  }
+
   const pathAction = getStudyPathAction({
     learningPath,
     currentLesson,
@@ -285,6 +296,7 @@ export function StudyDashboard() {
     reviewedToday: dailyStats.todayReviewed,
     dailyGoal: settings.dailyGoal,
     hasRecovery: Boolean(recoveryPayload),
+    hasResumableLesson: Boolean(currentLesson && hasResumableLessonSession(currentLesson)),
   })
 
   function runPathAction() {
@@ -404,6 +416,25 @@ export function StudyDashboard() {
                 )}
               </div>
             </div>
+
+            {/* Starter deck — first-run Anki fuel */}
+            {emptyDeck && (
+              <section className="rounded-xl border border-amber-200 bg-amber-50 p-4 shadow-sm">
+                <p className="text-xs font-semibold uppercase tracking-widest text-amber-800">Starter deck</p>
+                <h2 className="mt-1 text-lg font-bold text-amber-950">Import Genki cards for Anki reviews</h2>
+                <p className="mt-1 text-sm text-amber-900">
+                  Your Cards step and next-day dues need a deck. One click loads the bundled Genki starter pack and links cards to lessons.
+                </p>
+                <button
+                  type="button"
+                  disabled={importingStarter}
+                  onClick={() => { void importStarterDeck() }}
+                  className="mt-3 inline-flex items-center justify-center rounded-lg bg-amber-700 px-4 py-2.5 text-sm font-semibold text-white hover:bg-amber-800 disabled:opacity-60"
+                >
+                  {importingStarter ? 'Importing…' : 'Import Genki starter deck'}
+                </button>
+              </section>
+            )}
 
             {/* Learning path-guided next step */}
             <section className="bg-white border border-indigo-100 rounded-xl p-4 shadow-sm">

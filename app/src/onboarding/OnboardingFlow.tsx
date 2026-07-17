@@ -9,17 +9,69 @@ import { StepPlacement } from './StepPlacement'
 import { StepGoal } from './StepGoal'
 import { StepIME } from './StepIME'
 import type { OnboardingStep, JlptLevel } from './types'
+import type { CEFRLevel } from './placement-data'
+import { SQLiteStorage } from '../db/sqlite'
+import {
+  buildStarterLearningPath,
+  ensureStarterDeckIfEmpty,
+  firstLessonAutostartRoute,
+  starterLessonIdFromCefr,
+  type PlacementCefr,
+} from '../study/firstRunBootstrap'
+import { toast } from '../components/toastStore'
 
 export function OnboardingFlow() {
   const navigate = useNavigate()
-  const { updateSettings, setOnboardingComplete } = useAppStore()
+  const { updateSettings, setOnboardingComplete, setCurrentLesson, setLearningPath, activeUserId, setActiveUserId } = useAppStore()
   const [step, setStep] = useState<OnboardingStep>('welcome')
   const [placementLevel, setPlacementLevel] = useState<JlptLevel>('N5')
+  const [placementCefr, setPlacementCefr] = useState<PlacementCefr>('A1')
   const [needsKanaLearning, setNeedsKanaLearning] = useState(false)
+  const [finishing, setFinishing] = useState(false)
 
-  function finish() {
-    setOnboardingComplete(true)
-    navigate('/study', { replace: true })
+  async function finish() {
+    if (finishing) return
+    setFinishing(true)
+    try {
+      updateSettings({ includeTextbookLessons: true })
+
+      const storage = new SQLiteStorage()
+      let userId = activeUserId
+      if (!userId) {
+        await storage.execute(
+          `INSERT INTO users (jlpt_level, study_mode, hover_delay_ms, hiragana_complete, onboarding_complete)
+           VALUES (?, 'standard', 2000, 0, 1)`,
+          [placementLevel],
+        )
+        const rows = await storage.query<{ id: number }>(`SELECT id FROM users ORDER BY id DESC LIMIT 1`)
+        userId = rows[0]?.id ?? 1
+        setActiveUserId(userId)
+      }
+
+      const path = await buildStarterLearningPath(placementCefr)
+      setLearningPath(path)
+
+      const firstLessonId = starterLessonIdFromCefr(placementCefr)
+      setCurrentLesson(firstLessonId)
+
+      try {
+        const imported = await ensureStarterDeckIfEmpty(storage, userId)
+        if (imported && imported.imported > 0) {
+          toast.success(`Imported ${imported.imported} starter cards for Anki reviews`)
+        }
+      } catch {
+        toast.info('You can import Genki starter cards from Today or the lesson page.')
+      }
+
+      setOnboardingComplete(true)
+      navigate(firstLessonAutostartRoute(placementCefr), { replace: true })
+    } catch (error) {
+      toast.error(`Could not finish setup: ${String(error)}`)
+      setOnboardingComplete(true)
+      navigate('/study', { replace: true })
+    } finally {
+      setFinishing(false)
+    }
   }
 
   switch (step) {
@@ -85,8 +137,9 @@ export function OnboardingFlow() {
     case 'placement':
       return (
         <StepPlacement
-          onDone={(jlptLevel, _cefrLevel) => {
+          onDone={(jlptLevel, cefrLevel: CEFRLevel) => {
             setPlacementLevel(jlptLevel)
+            setPlacementCefr(cefrLevel)
             updateSettings({ jlptTarget: jlptLevel })
             setStep('prefs')
           }}
@@ -108,7 +161,12 @@ export function OnboardingFlow() {
       )
 
     case 'ime':
-      return <StepIME onDone={finish} />
+      return (
+        <StepIME
+          onDone={() => { void finish() }}
+          busy={finishing}
+        />
+      )
 
     default:
       return null

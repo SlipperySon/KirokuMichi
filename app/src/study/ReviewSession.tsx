@@ -20,6 +20,7 @@ import { useAppStore } from '../store'
 import { toast } from '../components/toastStore'
 import type { ReviewCard, GrammarQuestion, GrammarReviewContext } from './types'
 import { unlockScenariosForLesson } from '../content/scenarioUnlockService'
+import { useUsageExample } from './useUsageExample'
 
 interface CardTemplate {
   id: number

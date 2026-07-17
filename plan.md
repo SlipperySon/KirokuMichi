@@ -323,10 +323,10 @@ Intro → Teach → Check → Practice → Cards (Anki ReviewSession) → Speak 
 
 **Verification**
 
-- [ ] `LessonStudy.test.ts` covers rail steps / resume
-- [ ] Fresh start → Done without visiting LessonPage sections scroll
-- [ ] Refresh mid-session resumes via Today
-- [ ] Science check: encoding + Anki retrieval + production in one session
+- [x] `LessonStudy.test.ts` covers rail steps / resume
+- [x] Fresh start → Done without visiting LessonPage sections scroll
+- [x] Refresh mid-session resumes via Today
+- [x] Science check: encoding + Anki retrieval + production in one session
 
 **Anti-pattern guards**
 
@@ -348,8 +348,8 @@ Intro → Teach → Check → Practice → Cards (Anki ReviewSession) → Speak 
 
 **Verification**
 
-- [ ] Day-1 session ends with scheduled Anki reviews
-- [ ] Path weeks include launchable lessons
+- [x] Day-1 session ends with scheduled Anki reviews
+- [x] Path weeks include launchable lessons
 
 ---
 

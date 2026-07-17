@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import type { ReactNode } from 'react'
-import { useLocation, useNavigate } from 'react-router-dom'
-import { FileText, ListChecks, LogOut } from 'lucide-react'
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom'
+import { FileText, ListChecks, MessageCircle } from 'lucide-react'
 import { useAppStore } from '../store'
 import { buildLessonPlan, type LessonStudyState, type MaynardRef, type QuizQuestion, type TeachItem } from './lessonStudyPlanner'
 import { AddToDeckButton } from './AddToDeckButton'
@@ -15,6 +15,15 @@ import {
 } from './lessonCardBridge'
 import { toast } from '../components/toastStore'
 import { unlockScenariosForLesson } from '../content/scenarioUnlockService'
+import {
+  clearLessonSession,
+  LESSON_RAIL_PHASES,
+  loadLessonSession,
+  railPhaseFromStepKind,
+  saveLessonSession,
+  type LessonRailPhase,
+  type LessonSessionSnapshot,
+} from './lessonSessionPersistence'
 
 interface AnswerRecord {
   itemId: string
@@ -39,6 +48,7 @@ interface WorkbookResponse {
 
 export function LessonStudy() {
   const navigate = useNavigate()
+  const [searchParams, setSearchParams] = useSearchParams()
   const { state: routeState } = useLocation() as { state?: LessonStudyState }
   const markComplete = useAppStore(s => s.markLessonComplete)
   const setCurrentLesson = useAppStore(s => s.setCurrentLesson)
@@ -50,14 +60,28 @@ export function LessonStudy() {
   const scheduler = settings.schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
   const [service] = useState(() => new SRSService(storage, scheduler))
   const [isStartingCards, setIsStartingCards] = useState(false)
+  const [hydrated, setHydrated] = useState(false)
 
-  const state = useMemo<LessonStudyState>(() => routeState ?? {
+  const resumeId = searchParams.get('resume')
+  const afterCards = searchParams.get('after') === 'cards'
+
+  const initialLesson = useMemo(() => {
+    if (routeState?.lessonId) return routeState
+    if (resumeId) {
+      const snap = loadLessonSession(resumeId)
+      if (snap) return snap.lesson
+    }
+    return null
+  }, [routeState, resumeId])
+
+  const state = useMemo<LessonStudyState>(() => initialLesson ?? {
     vocab: [],
     grammar: [],
     lessonId: '',
     lessonTitle: 'Lesson',
     cefrLevel: 'a1',
-  }, [routeState])
+  }, [initialLesson])
+
   const plan = useMemo(
     () => buildLessonPlan(state.vocab, state.grammar, state.lessonId, state.workbookPractice ?? []),
     [state]
@@ -70,14 +94,86 @@ export function LessonStudy() {
   const [isTeachRevealed, setIsTeachRevealed] = useState(false)
   const [selfAssessments, setSelfAssessments] = useState<SelfAssessment[]>([])
   const [workbookResponses, setWorkbookResponses] = useState<Record<string, WorkbookResponse>>({})
-  const [showSummary, setShowSummary] = useState(false)
+  const [speakResponse, setSpeakResponse] = useState('')
+  const [speakCompleted, setSpeakCompleted] = useState(false)
+  const [cardsCompleted, setCardsCompleted] = useState(false)
+  const [showDone, setShowDone] = useState(false)
+
+  // Hydrate from persistence / after-cards return
+  useEffect(() => {
+    const lessonId = routeState?.lessonId || resumeId
+    if (!lessonId || lessonId.endsWith('_drill')) {
+      setHydrated(true)
+      return
+    }
+
+    const snap = loadLessonSession(lessonId)
+    if (snap) {
+      setStepIndex(snap.stepIndex)
+      setTeachIndex(snap.teachIndex)
+      setQuestionIndex(snap.questionIndex)
+      setAnswers(snap.answers)
+      setSelfAssessments(snap.selfAssessments)
+      setWorkbookResponses(snap.workbookResponses)
+      setSpeakResponse(snap.speakResponse)
+      setSpeakCompleted(snap.speakCompleted)
+      setCardsCompleted(snap.cardsCompleted)
+    }
+
+    if (afterCards && snap) {
+      const speakIdx = buildLessonPlan(
+        snap.lesson.vocab,
+        snap.lesson.grammar,
+        snap.lesson.lessonId,
+        snap.lesson.workbookPractice ?? [],
+      ).findIndex(step => step.kind === 'speak')
+      setCardsCompleted(true)
+      if (speakIdx >= 0) setStepIndex(speakIdx)
+      const next = new URLSearchParams(searchParams)
+      next.delete('after')
+      setSearchParams(next, { replace: true })
+      toast.success('Cards done — finish with Speak')
+    }
+
+    setHydrated(true)
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps -- hydrate once on mount
 
   useEffect(() => {
-    if (!routeState?.lessonId) return
-    // Ignore weak-point drill ids like genki_1_1_drill for current-lesson tracking
-    if (routeState.lessonId.endsWith('_drill')) return
-    setCurrentLesson(routeState.lessonId)
-  }, [routeState?.lessonId, setCurrentLesson])
+    if (!state.lessonId || state.lessonId.endsWith('_drill')) return
+    setCurrentLesson(state.lessonId)
+  }, [state.lessonId, setCurrentLesson])
+
+  // Persist progress
+  useEffect(() => {
+    if (!hydrated || !state.lessonId || state.lessonId.endsWith('_drill')) return
+    const snapshot: LessonSessionSnapshot = {
+      version: 1,
+      lesson: state,
+      stepIndex,
+      teachIndex,
+      questionIndex,
+      answers,
+      selfAssessments,
+      workbookResponses,
+      speakResponse,
+      speakCompleted,
+      cardsCompleted,
+      updatedAt: new Date().toISOString(),
+    }
+    saveLessonSession(snapshot)
+  }, [
+    hydrated,
+    state,
+    stepIndex,
+    teachIndex,
+    questionIndex,
+    answers,
+    selfAssessments,
+    workbookResponses,
+    speakResponse,
+    speakCompleted,
+    cardsCompleted,
+  ])
 
   const currentStep = plan[stepIndex]
   const totalQuestions = answers.length
@@ -88,21 +184,30 @@ export function LessonStudy() {
   const completedWorkbookTasks = Object.values(workbookResponses).filter(response => response.completed).length
   const lessonNumber = state.lessonId.split('_').pop() ?? '1'
   const lessonPagePath = `/learn/lessons/${state.cefrLevel}/${lessonNumber}`
+  const activeRail = currentStep ? railPhaseFromStepKind(currentStep.kind) : 'intro'
 
-  if (!routeState) {
+  if (!initialLesson) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-gray-50 p-6">
         <button onClick={() => navigate('/learn')} className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700">
           <ListChecks className="h-5 w-5" aria-hidden="true" />
-          Return to Lesson Menu
+          Return to Course
         </button>
+      </div>
+    )
+  }
+
+  if (!hydrated || !currentStep) {
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-gray-50 p-6 text-sm text-gray-500">
+        Loading lesson…
       </div>
     )
   }
 
   function moveToStep(nextStepIndex: number) {
     if (nextStepIndex >= plan.length) {
-      setShowSummary(true)
+      setShowDone(true)
       return
     }
     setStepIndex(nextStepIndex)
@@ -146,12 +251,10 @@ export function LessonStudy() {
       })
       const queue = await buildLessonReviewQueue(service, userId, state.lessonId, { priorityFronts })
       if (queue.length === 0) {
-        toast.info('No linked cards yet — lesson marked complete. Import or add cards to space this material.')
-        markComplete(state.lessonId)
-        try {
-          await unlockScenariosForLesson(state.lessonId, userId, storage)
-        } catch { /* ignore */ }
-        navigate(lessonPagePath)
+        toast.info('No linked cards — continuing to Speak. Add or import cards later for spacing.')
+        setCardsCompleted(true)
+        const speakIdx = plan.findIndex(step => step.kind === 'speak')
+        moveToStep(speakIdx >= 0 ? speakIdx : stepIndex + 1)
         return
       }
       const sessionId = await service.startSession(userId, 'lesson')
@@ -163,8 +266,8 @@ export function LessonStudy() {
           sessionId,
           userId,
           lessonId: state.lessonId,
-          markCompleteOnFinish: true,
-          returnTo: lessonPagePath,
+          markCompleteOnFinish: false,
+          returnTo: `/learn/study?resume=${encodeURIComponent(state.lessonId)}&after=cards`,
         },
       })
     } catch (error) {
@@ -172,6 +275,15 @@ export function LessonStudy() {
     } finally {
       setIsStartingCards(false)
     }
+  }
+
+  async function finishLesson() {
+    markComplete(state.lessonId)
+    try {
+      await unlockScenariosForLesson(state.lessonId, userId, storage)
+    } catch { /* ignore */ }
+    clearLessonSession(state.lessonId)
+    setShowDone(true)
   }
 
   function continueQuiz(questions: QuizQuestion[]) {
@@ -184,6 +296,7 @@ export function LessonStudy() {
   }
 
   function restartLesson() {
+    clearLessonSession(state.lessonId)
     setStepIndex(0)
     setTeachIndex(0)
     setQuestionIndex(0)
@@ -192,7 +305,10 @@ export function LessonStudy() {
     setAnswers([])
     setSelfAssessments([])
     setWorkbookResponses({})
-    setShowSummary(false)
+    setSpeakResponse('')
+    setSpeakCompleted(false)
+    setCardsCompleted(false)
+    setShowDone(false)
   }
 
   function rateTeachItem(item: TeachItem, rating: SelfAssessment['rating']) {
@@ -202,7 +318,14 @@ export function LessonStudy() {
     ])
   }
 
-  if (showSummary) {
+  const shellProps = {
+    lessonTitle: state.lessonTitle,
+    activeRail,
+    referencePath: lessonPagePath,
+    onExit: () => navigate(lessonPagePath),
+  }
+
+  if (showDone) {
     return (
       <div className="flex min-h-screen items-center justify-center bg-gray-50 p-6">
         <div className="w-full max-w-xl rounded-xl bg-white p-8 shadow-lg">
@@ -211,122 +334,173 @@ export function LessonStudy() {
           <p className="mt-2 text-gray-600">
             {totalQuestions > 0
               ? `${correctAnswers}/${totalQuestions} recall checks correct (${percentage}%).`
-              : 'You reviewed the lesson material.'}
+              : 'You finished the lesson rail.'}
+            {cardsCompleted ? ' Cards were reviewed in SRS.' : ''}
           </p>
-
           <div className="mt-6 grid grid-cols-2 gap-3 text-center sm:grid-cols-4">
             <SummaryStat label="Vocab" value={state.vocab.length.toString()} tone="blue" />
             <SummaryStat label="Grammar" value={state.grammar.length.toString()} tone="purple" />
             <SummaryStat label="Recall" value={totalQuestions > 0 ? `${percentage}%` : 'Done'} tone="green" />
             <SummaryStat label="Workbook" value={state.workbookPractice?.length ? `${completedWorkbookTasks}/${state.workbookPractice.length}` : '0'} tone="emerald" />
           </div>
-
-          {state.workbookPractice && state.workbookPractice.length > 0 && (
-            <div className="mt-6 rounded-lg border border-emerald-200 bg-emerald-50 p-4">
-              <h2 className="font-semibold text-emerald-950">Workbook output practice</h2>
-              <div className="mt-3 space-y-2">
-                {state.workbookPractice.slice(0, 5).map(task => {
-                  const response = workbookResponses[task.id]
-                  return (
-                  <div key={task.id} className="rounded bg-white px-3 py-2 text-sm">
-                    <div className="mb-1 flex flex-wrap gap-2 text-xs">
-                      <span className="rounded bg-emerald-50 px-2 py-0.5 font-semibold uppercase tracking-wide text-emerald-800">{task.practiceMode}</span>
-                      <span className="rounded bg-emerald-50 px-2 py-0.5 text-emerald-800">{task.focus}</span>
-                      {response?.completed && (
-                        <span className="rounded bg-green-50 px-2 py-0.5 font-semibold text-green-700">done</span>
-                      )}
-                    </div>
-                    <div className="font-medium text-gray-900">{task.prompt}</div>
-                    {response?.response && (
-                      <div className="mt-1 rounded bg-gray-50 px-2 py-1 text-gray-700">
-                        Your output: {response.response}
-                      </div>
-                    )}
-                    <div className="text-gray-600">{task.support}</div>
-                  </div>
-                  )
-                })}
-              </div>
-            </div>
-          )}
-
-          {missedAnswers.length > 0 && (
-            <div className="mt-6 rounded-lg border border-amber-200 bg-amber-50 p-4">
-              <h2 className="font-semibold text-amber-900">Weak points to review</h2>
-              <div className="mt-3 space-y-2">
-                {missedAnswers.slice(0, 5).map((answer, index) => (
-                  <div key={`${answer.itemId}-${index}`} className="rounded bg-white px-3 py-2 text-sm">
-                    <div className="font-medium text-gray-900">{answer.prompt}</div>
-                    <div className="text-gray-600">Answer: {answer.correctAnswer}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
-          {selfMarkedAgain.length > 0 && (
-            <div className="mt-4 rounded-lg border border-blue-200 bg-blue-50 p-4">
-              <h2 className="font-semibold text-blue-900">Marked for another pass</h2>
-              <div className="mt-3 space-y-2">
-                {selfMarkedAgain.slice(0, 5).map(item => (
-                  <div key={item.itemId} className="rounded bg-white px-3 py-2 text-sm">
-                    <div className="font-medium text-gray-900" lang={item.type === 'vocab' ? 'ja' : undefined}>{item.title}</div>
-                    <div className="text-gray-600">{item.body}</div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-
           <div className="mt-6 flex flex-col gap-3">
-            <button
-              type="button"
-              disabled={isStartingCards}
-              onClick={() => { void continueToCards() }}
-              className="rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700 disabled:opacity-60"
-            >
-              {isStartingCards ? 'Preparing cards…' : 'Continue to Cards (spaced review)'}
-            </button>
-            <p className="text-center text-xs text-gray-500">
-              Reviews weak and new lesson cards with the Anki-style scheduler before marking complete.
-            </p>
-            {/* Drill weak points — immediate reinforcement (re-encode); Cards step still preferred */}
-            {(missedAnswers.length > 0 || selfMarkedAgain.length > 0) && (
-              <button
-                onClick={() => {
-                  const weakIds = new Set([
-                    ...missedAnswers.map(a => a.itemId),
-                    ...selfMarkedAgain.map(a => a.itemId),
-                  ])
-                  const weakVocab = state.vocab.filter(v => weakIds.has(`vocab:${v.id}`))
-                  const weakGrammar = state.grammar.filter(g => weakIds.has(`grammar:${g.id}`))
-                  navigate('/learn/study', {
-                    state: {
-                      vocab: weakVocab,
-                      grammar: weakGrammar,
-                      lessonId: `${state.lessonId}_drill`,
-                      lessonTitle: `${state.lessonTitle} — Weak Points`,
-                      cefrLevel: state.cefrLevel,
-                    },
-                    replace: true,
-                  })
-                  restartLesson()
-                }}
-                className="rounded-lg bg-amber-500 px-4 py-3 font-semibold text-white hover:bg-amber-600"
-              >
-                Re-study {missedAnswers.length + selfMarkedAgain.length} Weak Points First
-              </button>
-            )}
-            <button onClick={restartLesson} className="rounded-lg border border-gray-200 px-4 py-3 font-semibold text-gray-700 hover:bg-gray-50">
-              Study Again
+            <button onClick={() => navigate('/study')} className="rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700">
+              Back to Today
             </button>
             <button onClick={() => navigate(lessonPagePath)} className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50">
               <FileText className="h-4 w-4" aria-hidden="true" />
-              Return to Lesson Page
+              Open lesson reference
+            </button>
+            <button onClick={restartLesson} className="rounded-lg border border-gray-200 px-4 py-3 font-semibold text-gray-700 hover:bg-gray-50">
+              Study Again
             </button>
           </div>
         </div>
       </div>
+    )
+  }
+
+  if (currentStep.kind === 'intro') {
+    return (
+      <LessonShell
+        {...shellProps}
+        stepTitle={currentStep.title}
+        goal={currentStep.goal}
+        progress={5}
+        progressLabel="Orient"
+      >
+        <div className="rounded-xl bg-white p-6 shadow-lg sm:p-8">
+          <p className="text-sm font-semibold text-indigo-600">What you will do</p>
+          <h2 className="mt-1 text-xl font-bold text-gray-900">Encode → check → practice → cards → speak</h2>
+          <div className="mt-5 grid grid-cols-3 gap-3 text-center">
+            <div className="rounded-lg bg-blue-50 p-3">
+              <div className="text-2xl font-bold text-blue-700">{currentStep.vocabCount}</div>
+              <div className="text-xs text-gray-600">Vocab</div>
+            </div>
+            <div className="rounded-lg bg-purple-50 p-3">
+              <div className="text-2xl font-bold text-purple-700">{currentStep.grammarCount}</div>
+              <div className="text-xs text-gray-600">Grammar</div>
+            </div>
+            <div className="rounded-lg bg-indigo-50 p-3">
+              <div className="text-2xl font-bold text-indigo-700">~{currentStep.estimatedCards}</div>
+              <div className="text-xs text-gray-600">Cards into SRS</div>
+            </div>
+          </div>
+          {currentStep.targets.length > 0 && (
+            <div className="mt-5">
+              <p className="text-xs font-semibold uppercase tracking-wide text-gray-500">Targets</p>
+              <ul className="mt-2 space-y-1">
+                {currentStep.targets.map(target => (
+                  <li key={target} className="rounded bg-gray-50 px-3 py-2 text-sm text-gray-900" lang="ja">{target}</li>
+                ))}
+              </ul>
+            </div>
+          )}
+          <button
+            type="button"
+            onClick={() => moveToStep(stepIndex + 1)}
+            className="mt-6 w-full rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700"
+          >
+            Start teaching
+          </button>
+        </div>
+      </LessonShell>
+    )
+  }
+
+  if (currentStep.kind === 'cards') {
+    return (
+      <LessonShell
+        {...shellProps}
+        stepTitle={currentStep.title}
+        goal={currentStep.goal}
+        progress={80}
+        progressLabel="Anki SRS"
+      >
+        <div className="rounded-xl bg-white p-6 shadow-lg sm:p-8">
+          <p className="text-sm font-semibold text-indigo-600">Spaced retrieval</p>
+          <h2 className="mt-1 text-xl font-bold text-gray-900">Review lesson cards</h2>
+          <p className="mt-2 text-sm text-gray-600">
+            Uses the existing Anki-style ReviewSession (Again / Hard / Good / Easy). Weak and missed items first, capped for this intro pass.
+          </p>
+          {(missedAnswers.length > 0 || selfMarkedAgain.length > 0) && (
+            <p className="mt-3 rounded-lg bg-amber-50 px-3 py-2 text-sm text-amber-900">
+              {missedAnswers.length + selfMarkedAgain.length} weak item{missedAnswers.length + selfMarkedAgain.length === 1 ? '' : 's'} will be prioritized.
+            </p>
+          )}
+          <button
+            type="button"
+            disabled={isStartingCards}
+            onClick={() => { void continueToCards() }}
+            className="mt-6 w-full rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700 disabled:opacity-60"
+          >
+            {isStartingCards ? 'Preparing cards…' : 'Start Cards review'}
+          </button>
+          <button
+            type="button"
+            onClick={() => {
+              setCardsCompleted(true)
+              moveToStep(stepIndex + 1)
+            }}
+            className="mt-3 w-full rounded-lg border border-gray-200 px-4 py-3 text-sm font-semibold text-gray-700 hover:bg-gray-50"
+          >
+            Schedule for later today (skip for now)
+          </button>
+        </div>
+      </LessonShell>
+    )
+  }
+
+  if (currentStep.kind === 'speak') {
+    return (
+      <LessonShell
+        {...shellProps}
+        stepTitle={currentStep.title}
+        goal={currentStep.goal}
+        progress={95}
+        progressLabel="Production"
+      >
+        <div className="rounded-xl bg-white p-6 shadow-lg sm:p-8">
+          <p className="text-sm font-semibold text-emerald-700">Pushed output</p>
+          <h2 className="mt-1 text-xl font-bold text-gray-900">Produce before you finish</h2>
+          <p className="mt-3 font-medium text-gray-900">{currentStep.prompt}</p>
+          <p className="mt-1 text-sm text-gray-600">{currentStep.support}</p>
+          <textarea
+            value={speakResponse}
+            onChange={event => setSpeakResponse(event.target.value)}
+            placeholder="Type your sentence here…"
+            className="mt-4 min-h-28 w-full resize-y rounded-lg border border-gray-200 px-3 py-2 text-sm text-gray-900 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-100"
+            lang="ja"
+          />
+          <label className="mt-3 flex items-center gap-2 text-sm text-gray-700">
+            <input
+              type="checkbox"
+              checked={speakCompleted}
+              onChange={event => setSpeakCompleted(event.target.checked)}
+            />
+            I produced something (even if rough)
+          </label>
+          <button
+            type="button"
+            onClick={() => navigate(`/scenarios?lesson=${encodeURIComponent(currentStep.scenarioLessonId)}`)}
+            className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-900 hover:bg-emerald-100"
+          >
+            <MessageCircle className="h-4 w-4" aria-hidden />
+            Open related scenarios (optional)
+          </button>
+          <button
+            type="button"
+            disabled={speakResponse.trim().length === 0 && !speakCompleted}
+            onClick={() => {
+              setSpeakCompleted(true)
+              void finishLesson()
+            }}
+            className="mt-3 w-full rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-40"
+          >
+            Mark lesson complete
+          </button>
+        </div>
+      </LessonShell>
     )
   }
 
@@ -346,16 +520,19 @@ export function LessonStudy() {
           ? 'Start Mixed Review'
           : nextStep?.kind === 'workbook'
             ? 'Start Workbook Practice'
-          : 'Finish Lesson'
+            : nextStep?.kind === 'cards'
+              ? 'Continue to Cards'
+              : nextStep?.kind === 'speak'
+                ? 'Continue to Speak'
+                : 'Continue'
 
     return (
       <LessonShell
-        lessonTitle={state.lessonTitle}
+        {...shellProps}
         stepTitle={currentStep.title}
         goal={currentStep.goal}
         progress={progress}
         progressLabel={`Item ${globalItemIndex} of ${totalTeachItems} (${item?.type === 'grammar' ? 'Grammar' : 'Vocab'})`}
-        onExit={() => navigate(lessonPagePath)}
       >
         {item ? (
           <TeachCard
@@ -402,12 +579,11 @@ export function LessonStudy() {
     const completedCount = currentStep.tasks.filter(task => workbookResponses[task.id]?.completed).length
     return (
       <LessonShell
-        lessonTitle={state.lessonTitle}
+        {...shellProps}
         stepTitle={currentStep.title}
         goal={currentStep.goal}
-        progress={95}
+        progress={70}
         progressLabel={`${completedCount} of ${currentStep.tasks.length} workbook tasks`}
-        onExit={() => navigate(lessonPagePath)}
       >
         <div className="rounded-xl bg-white p-5 shadow-lg sm:p-8">
           <div className="mb-5">
@@ -483,7 +659,24 @@ export function LessonStudy() {
             disabled={completedCount === 0}
             className="mt-5 w-full rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-40"
           >
-            Finish Lesson
+            Continue to Cards
+          </button>
+        </div>
+      </LessonShell>
+    )
+  }
+
+  if (currentStep.kind !== 'checkpoint' && currentStep.kind !== 'final') {
+    return (
+      <LessonShell
+        {...shellProps}
+        stepTitle="Lesson"
+        goal="Unexpected step — continue or exit to reference."
+        progress={0}
+      >
+        <div className="rounded-xl bg-white p-8 text-center shadow-lg">
+          <button onClick={() => moveToStep(stepIndex + 1)} className="rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700">
+            Continue
           </button>
         </div>
       </LessonShell>
@@ -495,11 +688,10 @@ export function LessonStudy() {
   if (!question) {
     return (
       <LessonShell
-        lessonTitle={state.lessonTitle}
+        {...shellProps}
         stepTitle={currentStep.title}
         goal="This checkpoint has no available recall questions."
         progress={100}
-        onExit={() => navigate(lessonPagePath)}
       >
         <div className="rounded-xl bg-white p-8 text-center shadow-lg">
           <p className="text-gray-600">No recall questions are available for this set.</p>
@@ -517,11 +709,11 @@ export function LessonStudy() {
 
   return (
     <LessonShell
-      lessonTitle={state.lessonTitle}
+      {...shellProps}
       stepTitle={currentStep.title}
       goal={currentStep.goal}
       progress={progress}
-      onExit={() => navigate(lessonPagePath)}
+      progressLabel={`${questionIndex + 1}/${questions.length}`}
     >
       <div className="rounded-xl bg-white p-8 shadow-lg">
         <div className="text-center">
@@ -577,6 +769,7 @@ function LessonShell({
   goal,
   progress,
   progressLabel,
+  activeRail,
   onExit,
   children,
 }: {
@@ -585,28 +778,61 @@ function LessonShell({
   goal: string
   progress: number
   progressLabel?: string
+  activeRail: LessonRailPhase
+  referencePath?: string
   onExit: () => void
   children: ReactNode
 }) {
+  const railIndex = LESSON_RAIL_PHASES.findIndex(phase => phase.id === activeRail)
+
   return (
     <div className="flex min-h-screen flex-col bg-gray-50">
-      <div className="border-b border-gray-200 bg-white px-6 py-4">
+      <div className="border-b border-gray-200 bg-white px-4 py-4 sm:px-6">
         <div className="mx-auto flex max-w-xl items-start justify-between gap-4">
-          <div>
+          <div className="min-w-0">
             <p className="text-sm font-semibold text-indigo-600">{stepTitle}</p>
             <h1 className="text-lg font-bold text-gray-900">{lessonTitle}</h1>
             <p className="mt-1 text-sm text-gray-500">{goal}</p>
           </div>
-          <button onClick={onExit} className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50">
-            <LogOut className="h-4 w-4" aria-hidden="true" />
-            Exit to Lesson Page
+          <button
+            type="button"
+            onClick={onExit}
+            className="inline-flex shrink-0 items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50"
+          >
+            <FileText className="h-4 w-4" aria-hidden="true" />
+            Reference
           </button>
         </div>
+        <nav aria-label="Lesson progress" className="mx-auto mt-4 max-w-xl">
+          <ol className="flex items-center gap-1">
+            {LESSON_RAIL_PHASES.map((phase, index) => {
+              const done = index < railIndex
+              const current = index === railIndex
+              return (
+                <li key={phase.id} className="flex min-w-0 flex-1 flex-col items-center gap-1">
+                  <div
+                    className={`h-1.5 w-full rounded-full ${
+                      done || current ? 'bg-indigo-500' : 'bg-gray-200'
+                    }`}
+                    aria-hidden
+                  />
+                  <span
+                    className={`truncate text-[10px] font-semibold uppercase tracking-wide sm:text-xs ${
+                      current ? 'text-indigo-700' : done ? 'text-indigo-500' : 'text-gray-400'
+                    }`}
+                  >
+                    {phase.label}
+                  </span>
+                </li>
+              )
+            })}
+          </ol>
+        </nav>
       </div>
-      <div className="relative h-1.5 w-full bg-gray-200">
-        <div className="h-1.5 bg-indigo-500 transition-all" style={{ width: `${Math.min(100, Math.max(0, progress))}%` }} />
+      <div className="relative h-1 w-full bg-gray-200">
+        <div className="h-1 bg-indigo-400 transition-all" style={{ width: `${Math.min(100, Math.max(0, progress))}%` }} />
         {progressLabel && (
-          <p className="absolute right-2 top-2.5 text-xs text-gray-400">{progressLabel}</p>
+          <p className="absolute right-2 top-2 text-xs text-gray-400">{progressLabel}</p>
         )}
       </div>
       <div className="flex flex-1 items-center justify-center p-6">

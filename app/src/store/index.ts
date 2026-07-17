@@ -27,11 +27,8 @@ interface Settings {
   lastStreakAward: number
   /** ISO date (YYYY-MM-DD) of the last day a freeze token was consumed (so we only consume once per gap). */
   lastFreezeUsedDate: string | null
-  // Text-to-speech
-  ttsEnabled: boolean
-  ttsRate: number
-  azureTtsKey: string | null
-  azureTtsRegion: string
+  // Learning path
+  includeTextbookLessons: boolean
 }
 
 interface DailyStats {
@@ -40,12 +37,19 @@ interface DailyStats {
   todayReviewed: number
 }
 
+export interface AssignedLesson {
+  id: string       // normalized_id e.g. "genki_1_5"
+  series: string   // e.g. "Genki I"
+  lessonNumber: number
+}
+
 export interface LearningPathWeek {
   week: number
   focus: string
   dailyGoal: number
   activities: string[]
   milestone: string
+  lessons?: AssignedLesson[]  // populated when includeTextbookLessons is on
 }
 
 export interface LearningPath {
@@ -111,10 +115,7 @@ export const useAppStore = create<AppState>()(
         streakFreezeTokens: 0,
         lastStreakAward: 0,
         lastFreezeUsedDate: null,
-        ttsEnabled: true,
-        ttsRate: 0.95,
-        azureTtsKey: null,
-        azureTtsRegion: 'eastus',
+        includeTextbookLessons: true,
       },
       onboardingComplete: false,
       updateSettings: (patch) =>
@@ -134,6 +135,29 @@ export const useAppStore = create<AppState>()(
       setActiveDeckId: (id) => set({ activeDeckId: id }),
       setLearningPath: (path) => set({ learningPath: path }),
     }),
-    { name: 'kiroku-michi-app' }
+    {
+      name: 'kiroku-michi-app',
+      migrate: (persisted) => {
+        if (!persisted || typeof persisted !== 'object') return persisted
+        const state = persisted as AppState
+        const settings = state.settings ?? ({} as AppState['settings'])
+        return {
+          ...state,
+          settings: {
+            ...settings,
+            apiKey: null,
+            // Phase 4: textbook lessons on by default for first-run paths
+            includeTextbookLessons: settings.includeTextbookLessons ?? true,
+          },
+        }
+      },
+      partialize: (state) => ({
+        ...state,
+        settings: {
+          ...state.settings,
+          apiKey: null,
+        },
+      }),
+    }
   )
 )

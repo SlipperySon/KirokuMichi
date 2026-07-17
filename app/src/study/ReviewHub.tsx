@@ -16,19 +16,7 @@ import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { SRSService } from '../srs/srsService'
 import { useAppStore } from '../store'
 import type { ReviewCard } from './types'
-
-function interleaveQueue(due: ReviewCard[], news: ReviewCard[], limit: number): ReviewCard[] {
-  const queue: ReviewCard[] = []
-  let di = 0
-  let ni = 0
-  while (queue.length < limit && (di < due.length || ni < news.length)) {
-    for (let i = 0; i < 5 && di < due.length && queue.length < limit; i++) {
-      queue.push(due[di++])
-    }
-    if (ni < news.length && queue.length < limit) queue.push(news[ni++])
-  }
-  return queue
-}
+import { interleaveDueAndNew } from './reviewInterleave'
 
 /**
  * Unified Anki-style SRS home: word dues + grammar dues + card tools.
@@ -81,7 +69,7 @@ export function ReviewHub() {
       service.getDueCards(userId, dueLimit, activeDeckId),
       service.getNewCards(userId, Math.max(0, limit)),
     ])
-    const queue = interleaveQueue(due, news, limit).filter(
+    const queue = interleaveDueAndNew(due, news, limit).filter(
       c => c.type === 'vocabulary' || c.type === 'kanji' || c.type === 'hiragana' || c.type === 'katakana',
     )
     if (queue.length === 0) {

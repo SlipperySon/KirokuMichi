@@ -1,4 +1,5 @@
 import type { LearningPath } from '../store'
+import { nextCurriculumLessonId } from './firstRunBootstrap'
 
 export type StudyPathActionKind =
   | 'recovery'
@@ -31,9 +32,14 @@ export interface StudyPathPlannerInput {
   reviewedToday: number
   dailyGoal: number
   hasRecovery: boolean
+  /** Mid-lesson rail snapshot exists (localStorage). Prefer resume over LessonPage autostart. */
+  hasResumableLesson?: boolean
 }
 
-export function lessonRouteFromId(lessonId: string, options?: { autostart?: boolean }) {
+export function lessonRouteFromId(lessonId: string, options?: { autostart?: boolean; resume?: boolean }) {
+  if (options?.resume) {
+    return `/learn/study?resume=${encodeURIComponent(lessonId)}`
+  }
   const match = lessonId.match(/^(genki_[12]|quartet_[12])_(\d+)$/)
   if (!match) return '/learn'
   const [, series, lessonNumber] = match
@@ -85,14 +91,17 @@ export function getStudyPathAction(input: StudyPathPlannerInput): StudyPathActio
   }
 
   if (input.currentLesson && !completed.has(input.currentLesson)) {
+    const resume = Boolean(input.hasResumableLesson)
     return {
       kind: 'current-lesson',
       title: `Continue ${formatLessonLabel(input.currentLesson)}`,
-      description: 'Finish the active lesson sections, then review its linked cards.',
-      actionLabel: 'Continue Lesson',
-      route: lessonRouteFromId(input.currentLesson, { autostart: true }),
+      description: resume
+        ? 'Resume your in-progress lesson rail (teach → check → practice → cards → speak).'
+        : 'Finish the active lesson sections, then review its linked cards.',
+      actionLabel: resume ? 'Resume Lesson' : 'Continue Lesson',
+      route: lessonRouteFromId(input.currentLesson, resume ? { resume: true } : { autostart: true }),
       lessonId: input.currentLesson,
-      meta: 'Active lesson',
+      meta: resume ? 'Resume rail' : 'Active lesson',
     }
   }
 
@@ -106,6 +115,22 @@ export function getStudyPathAction(input: StudyPathPlannerInput): StudyPathActio
       route: lessonRouteFromId(nextLesson.id, { autostart: true }),
       lessonId: nextLesson.id,
       meta: 'Learning Path',
+    }
+  }
+
+  // Path window caught up (or lessons list empty) — keep textbook momentum.
+  if (input.learningPath) {
+    const nextCurriculum = nextCurriculumLessonId(input.lessonsCompleted)
+    if (nextCurriculum) {
+      return {
+        kind: 'path-lesson',
+        title: `Start ${formatLessonLabel(nextCurriculum)}`,
+        description: 'Your saved path weeks are caught up — continue the textbook curriculum.',
+        actionLabel: 'Start Next Lesson',
+        route: lessonRouteFromId(nextCurriculum, { autostart: true }),
+        lessonId: nextCurriculum,
+        meta: 'Curriculum',
+      }
     }
   }
 
