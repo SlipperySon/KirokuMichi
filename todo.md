@@ -56,6 +56,7 @@ Canvas: `~/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/learning-e
 - [x] Unit tests: productionValidation, typedRecall, firstSessionBudget, grammarCardBuilder
 - [x] Sentence cards use listen-then-type (`CardListening` + bundled audio / TTS fallback)
 - [x] Scenario Live Practice counts toward Speak completion when launched from lesson rail
+- [x] Playwright lesson-rail smoke (`npm run qa:lesson-rail`)
 
 **Earlier (done):** Study path planner + Today’s Path panel on Home.
 

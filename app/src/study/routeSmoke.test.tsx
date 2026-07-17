@@ -61,25 +61,27 @@ describe('route smoke tests', () => {
     expect(screen.getByRole('button', { name: /Return to Course/i })).toBeInTheDocument()
   })
 
-  it('renders the lesson study flow when route state is present', () => {
+  it('renders the lesson study intro when route state is present', () => {
     render(
-      <MemoryRouter
-        initialEntries={[{
-          pathname: '/learn/study',
-          state: {
-            vocab: [{ id: 'v1', surface: '学生', english: 'student', lesson: 'genki_1_1', source: 'genki_1_textbook', page: 32 }],
-            grammar: [{ id: 'g1', pattern: 'です', meaning: 'polite to be', lesson: 'genki_1_1', source: 'genki_1_textbook', page: 34 }],
-            lessonId: 'genki_1_1',
-            lessonTitle: 'Genki I - Lesson 1',
-            cefrLevel: 'a1',
-          },
-        }]}
-      >
-        <LessonStudy />
-      </MemoryRouter>
+      <IntlProvider locale="en" messages={messages.en}>
+        <MemoryRouter
+          initialEntries={[{
+            pathname: '/learn/study',
+            state: {
+              vocab: [{ id: 'v1', surface: '学生', english: 'student', lesson: 'genki_1_1', source: 'genki_1_textbook', page: 32 }],
+              grammar: [{ id: 'g1', pattern: 'です', meaning: 'polite to be', lesson: 'genki_1_1', source: 'genki_1_textbook', page: 34 }],
+              lessonId: 'genki_1_1',
+              lessonTitle: 'Genki I - Lesson 1',
+              cefrLevel: 'a1',
+            },
+          }]}
+        >
+          <LessonStudy />
+        </MemoryRouter>
+      </IntlProvider>
     )
 
-    expect(screen.getByText('Step 1: Predict')).toBeInTheDocument()
-    expect(screen.getByText('Reveal Teaching')).toBeInTheDocument()
+    expect(screen.getByText(/Encode → check → practice → cards → speak/i)).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Start teaching' })).toBeInTheDocument()
   })
 })

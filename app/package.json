@@ -12,6 +12,7 @@
     "preview": "vite preview",
     "test": "vitest run",
     "qa:routes": "playwright test",
+    "qa:lesson-rail": "playwright test tests/lesson-rail-smoke.spec.ts",
     "verify": "npm run lint && npx tsc -b --pretty false && npm run test && npm run qa:routes && npm run build && npm run textbook:learner:quality && npm run textbook:maynard:direct-refs && npm run textbook:maynard:quality && npm run content:import:smoke && npm run textbook:assets:manifest",
     "test:ui": "vitest --ui",
     "test:watch": "vitest",
