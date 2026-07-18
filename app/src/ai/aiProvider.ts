@@ -58,7 +58,7 @@ export class ClientAIProvider implements AIProvider {
   }
 
   private async refreshSessionToken() {
-    const response = await fetch('/api/session', { method: 'POST' })
+    const response = await fetch('/api/session', { method: 'POST', credentials: 'include' })
     if (!response.ok) return
     const data = await response.json() as { token: string }
     this.sessionToken = data.token
@@ -72,6 +72,7 @@ export class ClientAIProvider implements AIProvider {
 
     return fetch('/api/ai/complete', {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'content-type': 'application/json',
         'x-session-token': this.sessionToken,

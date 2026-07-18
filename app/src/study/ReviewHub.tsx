@@ -96,7 +96,7 @@ export function ReviewHub() {
           <p className="text-xs font-semibold uppercase tracking-widest text-indigo-600">Review</p>
           <h1 className="mt-1 text-2xl font-bold text-gray-950">Anki-style SRS</h1>
           <p className="mt-1 text-sm text-gray-600">
-            Spaced retrieval for words and grammar. This is the same scheduler used after lessons.
+            Spaced retrieval for words and lesson cards. Catalog grammar stays on its own track when due.
           </p>
         </div>
 
@@ -126,17 +126,20 @@ export function ReviewHub() {
               <Brain className="h-4 w-4" aria-hidden />
               Review words
             </span>
-            <span className="mt-1 text-xs opacity-80">{dueCount} due · {newCount} new</span>
+            <span className="mt-1 text-xs opacity-80">
+              {dueCount} due · {newCount} new
+              {grammarDueCount > 0 ? ` · ${grammarDueCount} grammar after` : ''}
+            </span>
           </button>
           <button
             type="button"
             onClick={() => navigate('/study/grammar')}
             disabled={grammarDueCount === 0}
-            className="flex flex-1 flex-col items-center rounded-xl border-2 border-violet-200 bg-violet-50 px-4 py-4 font-semibold text-violet-900 hover:bg-violet-100 disabled:cursor-not-allowed disabled:opacity-40"
+            className="flex flex-1 flex-col items-center rounded-xl border border-violet-200 bg-white px-4 py-4 font-semibold text-violet-900 hover:bg-violet-50 disabled:cursor-not-allowed disabled:opacity-40"
           >
             <span className="inline-flex items-center gap-2">
               <BookOpen className="h-4 w-4" aria-hidden />
-              Review grammar
+              Catalog grammar
             </span>
             <span className="mt-1 text-xs opacity-80">
               {grammarDueCount > 0 ? `${grammarDueCount} due` : 'Nothing due'}

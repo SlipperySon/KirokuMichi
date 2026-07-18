@@ -21,6 +21,12 @@ describe('scenarioPracticeGate', () => {
     expect(hasScenarioPractice('genki_1_1')).toBe(false)
   })
 
+  it('requires at least 8 characters for Speak completion', () => {
+    expect(tryCompleteScenarioPractice('genki_1_1', '学生です')).toBe(false)
+    expect(hasScenarioPractice('genki_1_1')).toBe(false)
+    expect(tryCompleteScenarioPractice('genki_1_1', 'わたしは学生です')).toBe(true)
+  })
+
   it('clears practice markers', () => {
     markScenarioPracticeComplete('genki_1_1')
     clearScenarioPractice('genki_1_1')

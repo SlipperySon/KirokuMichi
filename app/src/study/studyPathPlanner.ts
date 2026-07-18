@@ -78,12 +78,15 @@ export function getStudyPathAction(input: StudyPathPlannerInput): StudyPathActio
   }
 
   if (input.dueCount > 0) {
+    const grammarNote = input.grammarDueCount > 0
+      ? ` Also ${input.grammarDueCount} grammar point${input.grammarDueCount === 1 ? '' : 's'} due (Review → Grammar after words).`
+      : ''
     return {
       kind: 'review',
       title: `Review ${input.dueCount} due card${input.dueCount === 1 ? '' : 's'}`,
-      description: input.availableNewCount > 0
+      description: (input.availableNewCount > 0
         ? `Clear reviews first, then mix in up to ${input.availableNewCount} new card${input.availableNewCount === 1 ? '' : 's'}.`
-        : 'Clear reviews first so the path does not outrun memory.',
+        : 'Clear reviews first so the path does not outrun memory.') + grammarNote,
       actionLabel: 'Start Review',
       route: '/study/review',
       meta: `${input.reviewedToday}/${input.dailyGoal} today`,
@@ -135,10 +138,11 @@ export function getStudyPathAction(input: StudyPathPlannerInput): StudyPathActio
   }
 
   if (input.grammarDueCount > 0) {
+    // Catalog grammar_states only — lesson grammar already rides in SRS word/grammar cards.
     return {
       kind: 'grammar',
       title: `Review ${input.grammarDueCount} grammar point${input.grammarDueCount === 1 ? '' : 's'}`,
-      description: 'Grammar reviews are due separately from vocabulary cards.',
+      description: 'No word cards are due. Catalog grammar reviews are separate from lesson SRS cards.',
       actionLabel: 'Study Grammar',
       route: '/study/grammar',
       meta: 'Grammar SRS',

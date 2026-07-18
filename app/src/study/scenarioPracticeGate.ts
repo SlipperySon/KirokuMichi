@@ -35,7 +35,7 @@ export function clearScenarioPractice(lessonId: string): void {
 
 /** Returns true when the learner sent valid pushed output in scenario chat. */
 export function tryCompleteScenarioPractice(lessonId: string, message: string): boolean {
-  const check = validateJapaneseProduction(message, { minChars: 3 })
+  const check = validateJapaneseProduction(message, { minChars: 8 })
   if (!check.ok) return false
   markScenarioPracticeComplete(lessonId)
   return true

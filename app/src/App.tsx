@@ -56,21 +56,26 @@ function App() {
   const setDailyStats = useAppStore(s => s.setDailyStats)
   const [betaGateEnabled, setBetaGateEnabled] = useState<boolean | null>(null)
 
-  // Bootstrap session token on app mount
+  // Bootstrap session token on app mount (requires beta grant cookie when beta is enabled)
   useEffect(() => {
-    if (!sessionToken) {
-      fetch('/api/session', { method: 'POST' })
-        .then(r => r.json())
-        .then(({ token }) => setSessionToken(token))
-        .catch(() => {
-          // Silently fail — user can still use app without AI
-        })
-    }
-  }, [sessionToken, setSessionToken])
+    if (sessionToken) return
+    if (betaGateEnabled === null) return
+    if (betaGateEnabled && getBetaAccess() !== 'granted') return
+
+    fetch('/api/session', { method: 'POST', credentials: 'include' })
+      .then(async response => {
+        if (!response.ok) return
+        const data = await response.json() as { token: string }
+        setSessionToken(data.token)
+      })
+      .catch(() => {
+        // Silently fail — user can still use app without AI
+      })
+  }, [sessionToken, setSessionToken, betaGateEnabled])
 
   useEffect(() => {
     let cancelled = false
-    void fetch('/api/beta/status')
+    void fetch('/api/beta/status', { credentials: 'include' })
       .then(response => response.json() as Promise<{ enabled: boolean }>)
       .then(data => {
         if (!cancelled) setBetaGateEnabled(data.enabled)

@@ -106,6 +106,7 @@ export function ReportIssueModal({ open, onClose }: ReportIssueModalProps) {
 
       const response = await fetch('/api/report', {
         method: 'POST',
+        credentials: 'include',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify(payload),
       })

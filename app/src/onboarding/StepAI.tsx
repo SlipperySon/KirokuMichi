@@ -68,6 +68,7 @@ export function StepAI({ onNext }: Props) {
       const defaults = PROVIDER_DEFAULTS[provider]
       const response = await fetch('/api/ai/complete', {
         method: 'POST',
+        credentials: 'include',
         headers: {
           'content-type': 'application/json',
           'x-session-token': settings.sessionToken ?? '',

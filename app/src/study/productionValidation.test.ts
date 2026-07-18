@@ -17,6 +17,11 @@ describe('productionValidation', () => {
     expect(result.ok).toBe(true)
   })
 
+  it('enforces speak minChars of 8 when requested', () => {
+    expect(validateJapaneseProduction('学生です', { minChars: 8 }).ok).toBe(false)
+    expect(validateJapaneseProduction('わたしは学生です', { minChars: 8 }).ok).toBe(true)
+  })
+
   it('requires lesson fragment in speak validation', () => {
     const result = validateJapaneseProduction('こんにちは', {
       requiredFragments: ['です'],

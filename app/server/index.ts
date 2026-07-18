@@ -54,7 +54,12 @@ const PROVIDER_ENV_KEYS = {
 } as const
 
 const sessionTokens = new Map<string, number>()
+const betaGrants = new Map<string, number>()
 const rateLimitBuckets = new Map<string, { count: number; resetAt: number }>()
+
+const BETA_GRANT_COOKIE = 'kiroku-beta-grant'
+const BETA_GRANT_TTL_MS = 30 * 24 * 60 * 60 * 1000
+const BETA_GRANT_MAX = 500
 
 function betaCodes() {
   return (process.env.BETA_INVITE_CODES || '')
@@ -95,6 +100,81 @@ function isValidSessionToken(token: string) {
   return true
 }
 
+function pruneExpiredBetaGrants(now = Date.now()) {
+  for (const [token, expiresAt] of betaGrants) {
+    if (expiresAt <= now) betaGrants.delete(token)
+  }
+}
+
+function pruneBetaGrantsToCap() {
+  while (betaGrants.size > BETA_GRANT_MAX) {
+    const oldest = betaGrants.keys().next().value as string | undefined
+    if (!oldest) return
+    betaGrants.delete(oldest)
+  }
+}
+
+function isValidBetaGrant(token: string) {
+  const expiresAt = betaGrants.get(token)
+  if (!expiresAt) return false
+  if (expiresAt <= Date.now()) {
+    betaGrants.delete(token)
+    return false
+  }
+  return true
+}
+
+function parseCookies(req: express.Request): Record<string, string> {
+  const header = req.headers.cookie
+  if (!header) return {}
+  const out: Record<string, string> = {}
+  for (const part of header.split(';')) {
+    const idx = part.indexOf('=')
+    if (idx === -1) continue
+    const key = part.slice(0, idx).trim()
+    const value = part.slice(idx + 1).trim()
+    try {
+      out[key] = decodeURIComponent(value)
+    } catch {
+      out[key] = value
+    }
+  }
+  return out
+}
+
+function getBetaGrantToken(req: express.Request): string | null {
+  const cookies = parseCookies(req)
+  const fromCookie = cookies[BETA_GRANT_COOKIE]
+  if (fromCookie) return fromCookie
+  const auth = req.headers.authorization
+  if (typeof auth === 'string' && auth.toLowerCase().startsWith('bearer ')) {
+    const token = auth.slice(7).trim()
+    return token || null
+  }
+  return null
+}
+
+function hasValidBetaGrant(req: express.Request) {
+  if (!isBetaGateEnabled()) return true
+  const grant = getBetaGrantToken(req)
+  return Boolean(grant && isValidBetaGrant(grant))
+}
+
+function issueBetaGrant(res: express.Response) {
+  pruneExpiredBetaGrants()
+  const grant = crypto.randomBytes(32).toString('hex')
+  betaGrants.set(grant, Date.now() + BETA_GRANT_TTL_MS)
+  pruneBetaGrantsToCap()
+  res.cookie(BETA_GRANT_COOKIE, grant, {
+    httpOnly: true,
+    sameSite: 'lax',
+    secure: process.env.NODE_ENV === 'production',
+    maxAge: BETA_GRANT_TTL_MS,
+    path: '/',
+  })
+  return grant
+}
+
 function rateLimit(options: { windowMs: number; maxRequests: number }) {
   return (req: express.Request, res: express.Response, next: express.NextFunction) => {
     const now = Date.now()
@@ -120,6 +200,17 @@ function isLoopbackHostname(hostname: string) {
   return hostname === 'localhost' || hostname === '127.0.0.1' || hostname === '::1'
 }
 
+function mappedIpv4FromV6(address: string): string | null {
+  const lower = address.toLowerCase()
+  const dotted = lower.match(/:ffff:(\d{1,3}(?:\.\d{1,3}){3})$/)
+  if (dotted) return dotted[1]
+  const hex = lower.match(/:ffff:([0-9a-f]{1,4}):([0-9a-f]{1,4})$/)
+  if (!hex) return null
+  const hi = parseInt(hex[1], 16)
+  const lo = parseInt(hex[2], 16)
+  return `${(hi >> 8) & 255}.${hi & 255}.${(lo >> 8) & 255}.${lo & 255}`
+}
+
 function isBlockedIpAddress(address: string) {
   const family = net.isIP(address)
   if (family === 4) {
@@ -136,6 +227,9 @@ function isBlockedIpAddress(address: string) {
     )
   }
   if (family === 6) {
+    // Treat ::ffff:x.x.x.x (and hex form) as the underlying IPv4 for private checks.
+    const mapped = mappedIpv4FromV6(address)
+    if (mapped) return isBlockedIpAddress(mapped)
     const lower = address.toLowerCase()
     return (
       lower === '::' ||
@@ -185,7 +279,8 @@ const corsMiddleware = cors({
     ...(process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',').map(origin => origin.trim()).filter(Boolean) : []),
   ],
   methods: ['GET', 'POST', 'OPTIONS'],
-  allowedHeaders: ['content-type', 'x-session-token'],
+  allowedHeaders: ['content-type', 'x-session-token', 'authorization'],
+  credentials: true,
 })
 
 app.use((req, _res, next) => {
@@ -210,6 +305,14 @@ const dataPath = path.join(process.cwd(), 'data')
 console.log(`[server] Serving /data from ${dataPath}`)
 try {
   access(dataPath).then(() => {
+    // Production: keep curriculum JSON available, but do not expose packaging artifacts.
+    app.use('/data', (req, res, next) => {
+      if (process.env.NODE_ENV === 'production' && /\.apkg$/i.test(req.path)) {
+        res.status(404).end()
+        return
+      }
+      next()
+    })
     app.use('/data', express.static(dataPath))
     console.log(`[server] ✓ Data folder accessible and served`)
   }).catch(() => {
@@ -245,10 +348,15 @@ app.post('/api/beta/login', (req, res) => {
     res.status(401).json({ error: 'Invalid beta invite code' })
     return
   }
+  issueBetaGrant(res)
   res.json({ ok: true })
 })
 
-app.post('/api/session', (_req, res) => {
+app.post('/api/session', (req, res) => {
+  if (isBetaGateEnabled() && !hasValidBetaGrant(req)) {
+    res.status(401).json({ error: 'Beta access required' })
+    return
+  }
   pruneExpiredSessionTokens()
   const token = crypto.randomBytes(32).toString('hex')
   sessionTokens.set(token, Date.now() + SESSION_TOKEN_TTL_MS)
@@ -257,6 +365,10 @@ app.post('/api/session', (_req, res) => {
 })
 
 app.post('/api/report', async (req, res) => {
+  if (isBetaGateEnabled() && !hasValidBetaGrant(req)) {
+    res.status(401).json({ error: 'Beta access required' })
+    return
+  }
   try {
     const report = sanitizeReport(req.body)
     const result = await submitIssueReport(report)
@@ -270,9 +382,21 @@ app.post('/api/report', async (req, res) => {
 })
 
 function requireToken(req: express.Request, res: express.Response, next: express.NextFunction) {
+  if (isBetaGateEnabled() && !hasValidBetaGrant(req)) {
+    res.status(401).json({ error: 'Beta access required' })
+    return
+  }
   const token = req.headers['x-session-token']
   if (typeof token !== 'string' || !isValidSessionToken(token)) {
     res.status(401).json({ error: 'Unauthorised' })
+    return
+  }
+  next()
+}
+
+function blockDevInProduction(_req: express.Request, res: express.Response, next: express.NextFunction) {
+  if (process.env.NODE_ENV === 'production') {
+    res.status(404).json({ error: 'Not found' })
     return
   }
   next()
@@ -553,6 +677,7 @@ async function streamOpenAICompatible(
 
   const systemMsg = system ? [{ role: 'system', content: system }] : []
   const openAiMessages = messages.map(m => ({ role: m.role, content: toOpenAIContent(m.content) }))
+  // Custom providers: redirect:'manual' so Location hops cannot SSRF private IPs without re-checks.
   const upstream = await fetchWithTimeout(options.endpoint, {
     method: 'POST',
     headers: {
@@ -567,7 +692,13 @@ async function streamOpenAICompatible(
       stream: true,
       ...options.extraBody,
     }),
+    ...(options.missingEndpointError ? { redirect: 'manual' as RequestRedirect } : {}),
   })
+
+  if (options.missingEndpointError && upstream.status >= 300 && upstream.status < 400) {
+    res.status(400).json({ error: 'Custom provider endpoint redirects are not allowed' })
+    return
+  }
 
   if (!upstream.ok || !upstream.body) {
     const err = await upstream.text()
@@ -1130,6 +1261,7 @@ async function handleOpenAICompatibleRequest(
 
   const systemMsg = system ? [{ role: 'system', content: system }] : []
   const openAiMessages = messages.map(m => ({ role: m.role, content: toOpenAIContent(m.content) }))
+  // Custom providers: redirect:'manual' so Location hops cannot SSRF private IPs without re-checks.
   const response = await fetchWithTimeout(options.endpoint, {
     method: 'POST',
     headers: {
@@ -1142,7 +1274,13 @@ async function handleOpenAICompatibleRequest(
       messages: [...systemMsg, ...openAiMessages],
       ...options.extraBody,
     }),
+    ...(options.missingEndpointError ? { redirect: 'manual' as RequestRedirect } : {}),
   })
+
+  if (options.missingEndpointError && response.status >= 300 && response.status < 400) {
+    res.status(400).json({ error: 'Custom provider endpoint redirects are not allowed' })
+    return
+  }
 
   if (!response.ok) {
     const err = await response.text()
@@ -1313,7 +1451,7 @@ Extract vocabulary, grammar, and lesson-like reading/dialogue content.`
   }
 })
 
-app.post('/api/dev/test-pdf-ocr', requireToken, async (req, res) => {
+app.post('/api/dev/test-pdf-ocr', blockDevInProduction, requireToken, async (req, res) => {
   const { pageLimit = 2, pageStart = 1 } = req.body as { pageLimit?: number; pageStart?: number }
   const startedAt = Date.now()
 
@@ -1357,7 +1495,7 @@ app.post('/api/dev/test-pdf-ocr', requireToken, async (req, res) => {
   }
 })
 
-app.post('/api/dev/test-pdf-import', requireToken, async (req, res) => {
+app.post('/api/dev/test-pdf-import', blockDevInProduction, requireToken, async (req, res) => {
   const {
     fastModel = 'deepseek-v4-flash',
     pageLimit = 10,

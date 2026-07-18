@@ -16,9 +16,36 @@ interface UndoEntry {
   previousStats: SessionStats
   /** Was the rated card a new leech? (so we can clear that flag.) */
   becameLeech: boolean
+  /** Queue before Again requeue (if any). */
+  previousQueue?: ReviewCard[]
+  /** cardStateId whose requeue count was incremented (if any). */
+  requeuedCardStateId?: number
 }
 
 export type CardVariant = 'reading' | 'meaning' | 'writing' | 'grammar' | 'listening'
+
+/** Max times a single card may be re-inserted after Again in one session. */
+export const MAX_AGAIN_REQUEUES = 2
+
+/** Default positions ahead to re-insert an Again card (clamped to end). */
+export const AGAIN_REQUEUE_OFFSET = 4
+
+/**
+ * Plan where to re-insert the current card after an Again rating.
+ * Returns an absolute splice index in the *current* queue (before insert),
+ * or null when requeue should be skipped (cap reached / nowhere useful).
+ */
+export function planAgainRequeue(
+  index: number,
+  length: number,
+  requeueCount: number,
+  offset = AGAIN_REQUEUE_OFFSET,
+): number | null {
+  if (requeueCount >= MAX_AGAIN_REQUEUES) return null
+  if (length <= 0 || index < 0 || index >= length) return null
+  const steps = Math.max(1, offset)
+  return Math.min(index + steps, length)
+}
 
 export function resolveCardVariant(card: ReviewCard): CardVariant {
   if (card.type === 'grammar') return 'grammar'
@@ -77,7 +104,7 @@ export function useReviewSession(
   sessionId: number,
   cramMode = false
 ): ReviewSessionState & ReviewSessionActions {
-  const [queue] = useState<ReviewCard[]>(initialQueue)
+  const [queue, setQueue] = useState<ReviewCard[]>(initialQueue)
   const [currentIndex, setCurrentIndex] = useState(0)
   const [phase, setPhase] = useState<'front' | 'back'>('front')
   const [isNewLeech, setIsNewLeech] = useState(false)
@@ -91,6 +118,8 @@ export function useReviewSession(
   /** One-deep undo buffer — only the most-recent rating is undoable. */
   const undoBufferRef = useRef<UndoEntry | null>(null)
   const [canUndo, setCanUndo] = useState(false)
+  /** Per-card Again requeue counts for this session (keyed by cardStateId). */
+  const requeueCountsRef = useRef<Map<number, number>>(new Map())
 
   const currentCard = isComplete ? null : (queue[currentIndex] ?? null)
   const currentVariant = currentCard ? resolveVariant(currentCard) : 'reading'
@@ -108,8 +137,12 @@ export function useReviewSession(
     setPhase('back')
   }, [])
 
-  const advance = useCallback(async (newStats: SessionStats, newIndex: number) => {
-    if (newIndex >= queue.length) {
+  const advance = useCallback(async (
+    newStats: SessionStats,
+    newIndex: number,
+    activeQueue: ReviewCard[] = queue,
+  ) => {
+    if (newIndex >= activeQueue.length) {
       await service.endSession(sessionId, newStats)
       SessionRecovery.clear()
       setIsComplete(true)
@@ -119,7 +152,7 @@ export function useReviewSession(
       setGrammarAnswerCorrect(null)
       SessionRecovery.save({
         sessionId, userId, mode: 'srs',
-        queue, currentIndex: newIndex, stats: newStats, savedAt: Date.now(),
+        queue: activeQueue, currentIndex: newIndex, stats: newStats, savedAt: Date.now(),
       })
     }
   }, [queue, service, sessionId, userId])
@@ -151,6 +184,20 @@ export function useReviewSession(
     }
     setStats(newStats)
 
+    let nextQueue = queue
+    let requeuedCardStateId: number | undefined
+    if (!cramMode && rating === 'again') {
+      const priorCount = requeueCountsRef.current.get(currentCard.cardStateId) ?? 0
+      const insertAt = planAgainRequeue(currentIndex, queue.length, priorCount)
+      if (insertAt !== null) {
+        nextQueue = [...queue]
+        nextQueue.splice(insertAt, 0, currentCard)
+        requeueCountsRef.current.set(currentCard.cardStateId, priorCount + 1)
+        requeuedCardStateId = currentCard.cardStateId
+        setQueue(nextQueue)
+      }
+    }
+
     // Stash undo entry (cap 1) — only in normal mode
     if (!cramMode && snapshot) {
       undoBufferRef.current = {
@@ -160,6 +207,8 @@ export function useReviewSession(
         previousIndex: currentIndex,
         previousStats: stats,
         becameLeech,
+        previousQueue: requeuedCardStateId !== undefined ? queue : undefined,
+        requeuedCardStateId,
       }
       setCanUndo(true)
     }
@@ -169,8 +218,8 @@ export function useReviewSession(
       return
     }
 
-    await advance(newStats, currentIndex + 1)
-  }, [currentCard, currentIndex, isNewLeech, service, sessionId, stats, userId, advance])
+    await advance(newStats, currentIndex + 1, nextQueue)
+  }, [currentCard, currentIndex, isNewLeech, cramMode, queue, service, sessionId, stats, userId, advance])
 
   const undoLastRating = useCallback(async () => {
     const entry = undoBufferRef.current
@@ -184,6 +233,16 @@ export function useReviewSession(
       // Best-effort: drop the mistake log we just inserted
       await service.deleteLatestMistakeForCard(userId, entry.cardId)
     }
+    const restoredQueue = entry.previousQueue ?? queue
+    if (entry.previousQueue) {
+      setQueue(entry.previousQueue)
+    }
+    if (entry.requeuedCardStateId !== undefined) {
+      const counts = requeueCountsRef.current
+      const n = counts.get(entry.requeuedCardStateId) ?? 0
+      if (n <= 1) counts.delete(entry.requeuedCardStateId)
+      else counts.set(entry.requeuedCardStateId, n - 1)
+    }
     // Restore UI state
     setStats(entry.previousStats)
     setCurrentIndex(entry.previousIndex)
@@ -196,7 +255,7 @@ export function useReviewSession(
       sessionId,
       userId,
       mode: 'srs',
-      queue,
+      queue: restoredQueue,
       currentIndex: entry.previousIndex,
       stats: entry.previousStats,
       savedAt: Date.now(),

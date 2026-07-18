@@ -26,6 +26,17 @@ describe('studyPathPlanner', () => {
     expect(action.route).toBe('/study/review')
   })
 
+  it('mentions grammar due on the review action without switching to grammar first', () => {
+    const action = getStudyPathAction({
+      ...baseInput,
+      dueCount: 4,
+      grammarDueCount: 2,
+    })
+
+    expect(action.kind).toBe('review')
+    expect(action.description).toContain('2 grammar')
+  })
+
   it('continues an active incomplete lesson before starting path lessons', () => {
     const action = getStudyPathAction({
       ...baseInput,

@@ -588,7 +588,7 @@ export function ContentUpload() {
   const fileInputRef = useRef<HTMLInputElement>(null)
 
   async function refreshSessionToken() {
-    const response = await fetch('/api/session', { method: 'POST' })
+    const response = await fetch('/api/session', { method: 'POST', credentials: 'include' })
     if (!response.ok) throw new Error('Could not refresh session token')
     const data = await response.json() as { token: string }
     setSessionToken(data.token)
@@ -599,7 +599,7 @@ export function ContentUpload() {
     const controller = new AbortController()
     const timeoutId = window.setTimeout(() => controller.abort(), timeoutMs)
     try {
-      return await fetch(url, { ...init, signal: controller.signal })
+      return await fetch(url, { ...init, credentials: init.credentials ?? 'include', signal: controller.signal })
     } finally {
       window.clearTimeout(timeoutId)
     }
@@ -790,6 +790,7 @@ export function ContentUpload() {
       formData.append('ocrMode', 'prefer')
       return fetch('/api/content/extract-pdfs', {
         method: 'POST',
+        credentials: 'include',
         headers: { 'x-session-token': sessionToken },
         body: formData,
       })

@@ -193,13 +193,14 @@ function ScenarioChatPanel({ scenario, lessonId, fromSpeak, onClose, onPracticeC
     bottomRef.current?.scrollIntoView({ behavior: 'smooth' })
   }, [turns])
 
-  async function handleSend(text?: string) {
+  async function handleSend(text?: string, options?: { fromStarter?: boolean }) {
     const msg = (text ?? input).trim()
     if (!msg || loading) return
-    if (lessonId && fromSpeak && !hasScenarioPractice(lessonId)) {
+    // Starter chips seed conversation only — they do not count as Speak practice.
+    if (lessonId && fromSpeak && !options?.fromStarter && !hasScenarioPractice(lessonId)) {
       const completed = tryCompleteScenarioPractice(lessonId, msg)
       if (!completed) {
-        toast.error('Send at least one message in Japanese (3+ characters) to complete Speak practice.')
+        toast.error('Send at least one message in Japanese (8+ characters) to complete Speak practice.')
         return
       }
       onPracticeComplete?.()
@@ -256,7 +257,7 @@ function ScenarioChatPanel({ scenario, lessonId, fromSpeak, onClose, onPracticeC
         <p className="rounded-lg bg-emerald-50 px-3 py-2 text-xs text-emerald-900">
           {hasScenarioPractice(lessonId)
             ? 'Speak practice complete — return to the lesson to mark it done.'
-            : 'Send one message in Japanese to satisfy the lesson Speak step.'}
+            : 'Send one typed message in Japanese (8+ characters) to satisfy the lesson Speak step.'}
         </p>
       )}
 
@@ -266,7 +267,7 @@ function ScenarioChatPanel({ scenario, lessonId, fromSpeak, onClose, onPracticeC
           {starters.map((s, i) => (
             <button
               key={i}
-              onClick={() => void handleSend(s)}
+              onClick={() => void handleSend(s, { fromStarter: true })}
               className="px-3 py-1.5 text-xs rounded-full border border-indigo-200 bg-indigo-50 text-indigo-700 hover:bg-indigo-100 transition-colors"
               lang="ja"
             >

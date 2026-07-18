@@ -1,6 +1,6 @@
 # KirokuMichi — Current State & Active Roadmap
 
-Last updated: 2026-07-17 AEST
+Last updated: 2026-07-18 AEST
 
 ---
 
@@ -9,10 +9,14 @@ Last updated: 2026-07-17 AEST
 **Goal:** Turn parallel study modes into one teachable loop so a learner always knows *what to do next* and each
 lesson closes with **evidence-based** retrieval + spaced review + production — not a dead-end summary.
 
-**Status (2026-07-17):** Phases 1–5 complete — redesign gate passed. See Phase 5 gate table below.
+**Status (2026-07-18):** Phases 1–7 complete (redesign gate + pedagogy hardening + research enforcement +
+security harden). Next priorities: staging deploy, backup/sync, content packs. Full audit canvas:
+[`research-security-audit.canvas.tsx`](/Users/Skipp/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/research-security-audit.canvas.tsx).
 
-**Visual summary:** open the canvas
+**Visual summary:** open the canvases
 [`learning-env-redesign.canvas.tsx`](/Users/Skipp/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/learning-env-redesign.canvas.tsx)
+and
+[`research-security-audit.canvas.tsx`](/Users/Skipp/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/research-security-audit.canvas.tsx)
 beside chat.
 
 **Prior work (kept):** `studyPathPlanner` + Today’s Path panel are shipped. This redesign *uses* that planner;
@@ -380,11 +384,89 @@ Intro → Teach → Check → Practice → Cards (Anki ReviewSession) → Speak 
 
 ---
 
+### Phase 6 — Pedagogy hardening (shipped 2026-07-17)
+
+Closed the audit gaps that made completion mostly recognition + self-report:
+
+- Cards non-optional: review now or `commitDeferredLessonCards` (queue on Today); Done gated on cards completed/deferred
+- Speak + workbook: `productionValidation` (Japanese script + lesson fragments)
+- Grammar into SRS: lesson grammar cards + cloze via `grammarCardBuilder` / `buildLessonReviewPayload`
+- Typed free-recall in checkpoints; writing variant every 7th card; GrammarReview meaning hidden until reveal
+- Day-1 budget: `firstSessionBudget` (Intro + 1 teach chunk + Check + Cards + Speak)
+- Sentence listen-then-type (`CardListening`); scenario Live Practice can satisfy Speak
+- Playwright: `tests/lesson-rail-smoke.spec.ts` + `npm run qa:lesson-rail` (API+Vite in `playwright.config.ts`)
+
+---
+
+### Phase 7 — Research enforcement + security harden (ACTIVE — 2026-07-18 audit)
+
+**Audit verdict:** Architecture **B** / pedagogy enforcement **C+**. Methods are research-*shaped* and several are
+genuinely applied (dues-first Today, FSRS writes, rail order, Check answers, Speak Japanese gate). Gaps remain where
+the Foundation’s own rule (“principle wins over UX shortcut”) is still soft. Security is acceptable on localhost;
+**High** risk if staging is internet-facing with server AI keys.
+
+**Canvas:** [`research-security-audit.canvas.tsx`](/Users/Skipp/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/research-security-audit.canvas.tsx)
+
+#### Mechanism grades (research-aligned AND enforced)
+
+| Mechanism | Grade | Applied today | Remaining gap |
+|-----------|-------|---------------|---------------|
+| Retrieval practice | C+ | Check requires attempt; typed recall on checkpoints | Cards mostly reveal+self-rate; Final MCQ-only; defer / `?after=cards` bypass |
+| Spacing (FSRS / dues-first) | B+ | Today priority + `reviewCard` writes | Same-day Cards optional via Queue on Today |
+| Successive relearning to criterion | D | Weak items prioritized once in Cards queue | Again does **not** requeue in-session |
+| Predict-before-reveal / generation | D | Teach instructional copy only | No typed prediction required before Reveal |
+| Interleaving | B | Teach vocab↔grammar; 5 due∶1 new | GrammarReview still a parallel silo |
+| Pushed output | C | Speak/workbook Japanese-script gate | Presence bar; scenario starters; no rubric |
+| Transfer-appropriate practice | C | Speak gates Done | Recognition still dominates Check/Cards |
+| Form + meaning (Maynard) | B− | Strong inside grammar teach | Standalone GrammarReview not merged |
+| Corrective feedback | C | Immediate on Check | Workbook/Speak = length/script only |
+
+#### Pedagogy findings → Phase 7 work
+
+| Sev | Finding | Fix |
+|-----|---------|-----|
+| Critical | No relearning to criterion | Requeue Again cards in-session, or block Done until weak intro-pass items rated Good |
+| Critical | Cards completion spoofable | Harden Cards return (signed/opaque token); do not trust bare `?after=cards`; clarify defer = incomplete until dues cleared |
+| High | Teach predict is honor-system | Require typed (or spoken) attempt before Reveal on Teach |
+| High | Most Anki faces are passive | Gate Writing reveal on non-empty attempt; increase productive face share; don’t let Listening grade be ignored by self-rate Easy |
+| High | Speak bar is presence-only | Raise bar beyond presence; disallow starter-chip-only Speak satisfaction; optional light rubric later |
+| Med | Final Check recognition-only | Inject typed recall into Final (or replace a slice of MCQ) |
+| Med | Grammar still parallel SRS | Merge GrammarReview into unified Review queue / Today interleave |
+
+#### Security findings → Phase 7 work (before public staging)
+
+| Sev | Status | Finding | Fix |
+|-----|--------|---------|-----|
+| High | Open | Unauthenticated `POST /api/session` unlocks AI proxy → burns server keys | Stop free minting; bind AI to beta/auth (HttpOnly signed cookie or equivalent) |
+| High | Open | Beta gate is client-only (`localStorage` / cookie); APIs never check beta | Enforce beta/auth on server for AI / PDF / report |
+| High | Partial | Custom-provider SSRF residuals (redirects, `::ffff:`, DNS rebinding) | `redirect: 'manual'` or re-validate hops; block mapped IPv4; env endpoint allowlist |
+| High | Open | Stored XSS via card templates (`renderTemplate` strips `<script>` only) + `dangerouslySetInnerHTML` | Escape-by-default or DOMPurify; stop entity-decode-after-strip feeding HTML |
+| Med | Open | Unauthenticated `/api/report` can spam GitHub Issues | Auth + stricter rate limit; sanitize metadata |
+| Med | Open | `/api/dev/*` behind freely obtained session token | Disable in production builds |
+| Med | Open | Unauthenticated `/data` static tree (incl. large `.apkg`) | Auth, allowlist, or don’t serve packaging artifacts |
+| Low | Open | Prompt injection into tutor/scenario system prompts | Bound impact; don’t treat as auth bypass |
+
+**Still holding from 2026-06 security pass:** OpenRouter URL correct; `apiKey` scrubbed from Zustand persist; JSON/PDF body limits + basic rate limit; `npm audit` 0. Session tokens remain free (mitigated TTL/cap only). SSRF only partially mitigated.
+
+#### Phase 7 acceptance
+
+- [x] Again on lesson Cards requeues (or equivalent criterion) before Speak Done
+- [x] `?after=cards` cannot mark Cards complete without a verified Cards session return
+- [x] Teach and Writing require an attempt before reveal
+- [x] Speak cannot be satisfied by scenario starter chips alone / presence paste without lesson target when targets exist
+- [x] AI/PDF/report endpoints reject requests without server-validated beta/auth
+- [x] Custom provider fetch blocks redirects to private IPs and `::ffff:` mapped addresses
+- [x] Card template HTML path sanitized (no executable markup from fields)
+- [x] Playwright + unit coverage for the above; `npm run qa:routes` green
+
+**Phase 7 result (2026-07-18):** Implemented — Again requeue (`planAgainRequeue`, max 2); one-time `cardsReturnToken` in sessionStorage; Teach/Writing attempt-before-reveal; scenario starters do not complete Speak; Final gets typed recall; beta grant HttpOnly cookie gates session/AI/PDF/report when `BETA_INVITE_CODES` set; SSRF `::ffff:` + `redirect: 'manual'`; template field HTML escape; prod blocks `/api/dev/*` and `/data/*.apkg`.
+---
+
 ### Out of scope for this redesign
 
 - Full CEFR can-do gating before unlocking the next textbook
 - Full handwriting recognition / stroke scoring (enable writing *variant* later; scoring later)
-- Full AI rubric grading of workbook output (self-check now)
+- Full AI rubric grading of workbook output (self-check now; light rubric optional in Phase 7+)
 - Regenerating textbook OCR / image crops
 - Japanese UI locale pack
 - Replacing FSRS with a custom scheduler
@@ -397,11 +479,16 @@ Shipped: `studyPathPlanner`, Today’s Path on StudyDashboard, route/build healt
 
 ---
 
-## 🔐 Security Audit (2026-05-20)
+## 🔐 Security Audit (2026-05-20; refreshed 2026-07-18)
 
 Findings from a security + general-use pass over the Express proxy, client secret handling, and dependencies.
 Items 2–5 are low-risk while the server stays bound to `127.0.0.1`, but become serious once the AI proxy is
 deployed publicly (the staging plan above calls for exactly that on Render/Fly/Railway).
+
+**2026-07-18 refresh:** Full-tree audit confirms several 2026-06 mitigations still hold, but public staging
+remains High risk until Phase 7 security work lands. See **Phase 7 — Research enforcement + security harden**
+above and canvas
+[`research-security-audit.canvas.tsx`](/Users/Skipp/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/research-security-audit.canvas.tsx).
 
 | # | Severity | Finding | Fix |
 |---|----------|---------|-----|
@@ -1132,12 +1219,14 @@ server/
 
 ## Next Steps (Priority Order)
 
+0. **Phase 7 (active)** — research enforcement + security harden before public staging (see Phase 7 above)
 1. **Genki 1 specialized pack proof** — evaluate PaddleOCR vs Apple Vision, generate canonical Lesson 1 JSON, validate it
 2. **Encrypted pack + local unlock flow** — user uploads Genki textbook/workbook to unlock the encrypted pack
 3. **Known Textbooks panel** — route Genki uploads into unlock flow; keep generic PDF import as fallback
 4. **Textbook Learning subsection** — render unlocked structured lessons and unlock vocab into linked decks
 5. **Structured AI tutor lesson planning** from unlocked textbook packs plus user-provided custom content
-6. **ScenarioMode v2** — AI conversation (requires UX decision first)
+6. **Backup / restore (or sync)** — localStorage wipe risk; highest remaining product-data priority after Phase 7
+7. **ScenarioMode v2 polish** — already partially shipped; raise production bar per Phase 7
 
 ---
 

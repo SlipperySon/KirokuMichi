@@ -23,6 +23,7 @@ import { gradeTypedRecall } from './typedRecall'
 import { toast } from '../components/toastStore'
 import { unlockScenariosForLesson } from '../content/scenarioUnlockService'
 import { clearScenarioPractice, hasScenarioPractice } from './scenarioPracticeGate'
+import { clearCardsReturnToken, consumeCardsReturnToken, issueCardsReturnToken } from './cardsReturnToken'
 import {
   clearLessonSession,
   LESSON_RAIL_PHASES,
@@ -73,6 +74,7 @@ export function LessonStudy() {
 
   const resumeId = searchParams.get('resume')
   const afterCards = searchParams.get('after') === 'cards'
+  const cardsToken = searchParams.get('cardsToken')
 
   const initialLesson = useMemo(() => {
     if (routeState?.lessonId) return routeState
@@ -147,13 +149,21 @@ export function LessonStudy() {
         ),
         isFirstSessionCandidate(lessonsCompleted, snap.lesson.lessonId),
       )
-      const speakIdx = snapPlan.findIndex(step => step.kind === 'speak')
-      setCardsCompleted(true)
-      if (speakIdx >= 0) setStepIndex(speakIdx)
       const next = new URLSearchParams(searchParams)
       next.delete('after')
+      next.delete('cardsToken')
       setSearchParams(next, { replace: true })
-      toast.success('Cards done — finish with Speak')
+
+      if (consumeCardsReturnToken(snap.lesson.lessonId, cardsToken)) {
+        const speakIdx = snapPlan.findIndex(step => step.kind === 'speak')
+        setCardsCompleted(true)
+        if (speakIdx >= 0) setStepIndex(speakIdx)
+        toast.success('Cards done — finish with Speak')
+      } else {
+        const cardsIdx = snapPlan.findIndex(step => step.kind === 'cards')
+        if (cardsIdx >= 0) setStepIndex(cardsIdx)
+        toast.error('Could not verify Cards return — stay on Cards and start review again.')
+      }
     }
 
     setHydrated(true)
@@ -295,6 +305,7 @@ export function LessonStudy() {
         return
       }
       const sessionId = await service.startSession(userId, 'lesson')
+      const token = issueCardsReturnToken(state.lessonId, sessionId)
       toast.success(`Reviewing ${queue.length} lesson card${queue.length === 1 ? '' : 's'}`)
       navigate('/study/review', {
         state: {
@@ -304,7 +315,7 @@ export function LessonStudy() {
           userId,
           lessonId: state.lessonId,
           markCompleteOnFinish: false,
-          returnTo: `/learn/study?resume=${encodeURIComponent(state.lessonId)}&after=cards`,
+          returnTo: `/learn/study?resume=${encodeURIComponent(state.lessonId)}&after=cards&cardsToken=${encodeURIComponent(token)}`,
         },
       })
     } catch (error) {
@@ -336,7 +347,7 @@ export function LessonStudy() {
       return
     }
     const speakValidation = validateJapaneseProduction(speakResponse, {
-      minChars: 3,
+      minChars: 8,
       requiredFragments: speakRequiredFragments(state.grammar, state.vocab),
     })
     const scenarioPracticeDone = hasScenarioPractice(state.lessonId)
@@ -350,6 +361,7 @@ export function LessonStudy() {
       await unlockScenariosForLesson(state.lessonId, userId, storage)
     } catch { /* ignore */ }
     clearScenarioPractice(state.lessonId)
+    clearCardsReturnToken(state.lessonId)
     clearLessonSession(state.lessonId)
     setShowDone(true)
   }
@@ -524,7 +536,7 @@ export function LessonStudy() {
 
   if (currentStep.kind === 'speak') {
     const speakValidation = validateJapaneseProduction(speakResponse, {
-      minChars: 3,
+      minChars: 8,
       requiredFragments: speakRequiredFragments(state.grammar, state.vocab),
     })
     const scenarioPracticeDone = hasScenarioPractice(state.lessonId)
@@ -989,6 +1001,8 @@ function TeachCard({
 }) {
   const isVocab = item.type === 'vocab'
   const [showMaynard, setShowMaynard] = useState(false)
+  const [prediction, setPrediction] = useState('')
+  const canReveal = prediction.trim().length >= 1
   return (
     <div className="overflow-hidden rounded-xl bg-white shadow-lg">
       <div className={`flex items-center justify-between px-6 py-3 ${isVocab ? 'bg-blue-50' : 'bg-purple-50'}`}>
@@ -1014,10 +1028,23 @@ function TeachCard({
               ? 'Before revealing the meaning, say the word out loud and make your best guess. Look for kanji, kana shape, or anything familiar.'
               : 'Before revealing the use, identify the fixed part of the pattern and imagine what kind of sentence it might create.'}
           </p>
+          {!revealed && (
+            <textarea
+              value={prediction}
+              onChange={event => setPrediction(event.target.value)}
+              placeholder={isVocab ? 'Your meaning guess…' : 'Your pattern guess…'}
+              className="mt-3 min-h-20 w-full resize-y rounded-lg border border-indigo-200 bg-white px-3 py-2 text-sm text-gray-900 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-100"
+            />
+          )}
         </div>
 
         {!revealed ? (
-          <button onClick={onReveal} className="w-full rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700">
+          <button
+            type="button"
+            onClick={onReveal}
+            disabled={!canReveal}
+            className="w-full rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-40"
+          >
             Reveal Teaching
           </button>
         ) : (

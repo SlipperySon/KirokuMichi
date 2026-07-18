@@ -1,7 +1,7 @@
 # KirokuMichi — Todo
 
-**Last updated: 2026-07-17**
-**Status: PHASE 6 SHIPPED — Pedagogy hardening + redesign gate (Phases 1–6)**
+**Last updated: 2026-07-18**
+**Status: PHASE 7 SHIPPED — Research enforcement + security harden (Phases 1–7)**
 
 ---
 
@@ -57,6 +57,23 @@ Canvas: `~/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/learning-e
 - [x] Sentence cards use listen-then-type (`CardListening` + bundled audio / TTS fallback)
 - [x] Scenario Live Practice counts toward Speak completion when launched from lesson rail
 - [x] Playwright lesson-rail smoke (`npm run qa:lesson-rail`)
+
+**Phase 7 — Research enforcement + security (2026-07-18 audit)**  
+Canvas: `research-security-audit.canvas.tsx` · Details: `plan.md` Phase 7
+
+Pedagogy
+- [x] Criterion relearning: Again requeues in-session (or block Done until weak items Good)
+- [x] Harden Cards complete: verified return; do not trust bare `?after=cards`
+- [x] Typed attempt required before Teach / Writing reveal
+- [x] Raise Speak bar (no starter-chip-only; keep lesson targets)
+- [x] Typed recall in Final Check; merge GrammarReview into unified Review
+
+Security (before public staging)
+- [x] Stop free `/api/session`; bind AI to server-validated beta/auth
+- [x] Enforce beta/auth on AI / PDF / report APIs
+- [x] SSRF harden: no auto-redirect to private IPs; block `::ffff:`; env allowlist
+- [x] Sanitize card templates (DOMPurify / escape-by-default)
+- [x] Disable `/api/dev/*` in production; restrict `/data` packaging artifacts
 
 **Earlier (done):** Study path planner + Today’s Path panel on Home.
 

@@ -49,7 +49,8 @@ export function CardWriting({ card, phase, intervalPreviews, onReveal, onRate }:
           <button
             type="button"
             onClick={onReveal}
-            className="w-full px-8 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors"
+            disabled={attempt.trim().length === 0}
+            className="w-full px-8 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors disabled:cursor-not-allowed disabled:opacity-40"
           >
             {intl.formatMessage({ id: 'study.card.show_answer' })}
           </button>

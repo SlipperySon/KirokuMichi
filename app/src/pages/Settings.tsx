@@ -82,7 +82,7 @@ export function Settings() {
   }
 
   const refreshSessionToken = async () => {
-    const response = await fetch('/api/session', { method: 'POST' })
+    const response = await fetch('/api/session', { method: 'POST', credentials: 'include' })
     if (!response.ok) throw new Error('Could not refresh session token')
     const data = await response.json() as { token: string }
     updateSettings({ sessionToken: data.token })
@@ -91,6 +91,7 @@ export function Settings() {
 
   const requestTestConnection = (token: string, signal: AbortSignal) => fetch('/api/ai/complete', {
     method: 'POST',
+    credentials: 'include',
     headers: {
       'content-type': 'application/json',
       'x-session-token': token

@@ -118,6 +118,28 @@ describe('buildLessonPlan', () => {
     expect(workbookStep.tasks[0].prompt).toContain('Introduce yourself')
   })
 
+  it('injects typed recall into final mixed review', () => {
+    const plan = buildLessonPlan(
+      [
+        { id: 'v1', surface: '学生', english: 'student', lesson: 'genki_1_1', source: 'genki_1_textbook', page: 32 },
+        { id: 'v2', surface: '先生', english: 'teacher', lesson: 'genki_1_1', source: 'genki_1_textbook', page: 33 },
+        { id: 'v3', surface: '大学', english: 'university', lesson: 'genki_1_1', source: 'genki_1_textbook', page: 34 },
+        { id: 'v4', surface: '本', english: 'book', lesson: 'genki_1_1', source: 'genki_1_textbook', page: 35 },
+      ],
+      [
+        { id: 'g1', pattern: 'です', meaning: 'polite to be', lesson: 'genki_1_1', source: 'genki_1_textbook', page: 34 },
+        { id: 'g2', pattern: 'は', meaning: 'topic marker', lesson: 'genki_1_1', source: 'genki_1_textbook', page: 35 },
+        { id: 'g3', pattern: 'か', meaning: 'question marker', lesson: 'genki_1_1', source: 'genki_1_textbook', page: 36 },
+      ],
+      'genki_1_1',
+    )
+    const final = plan.find(step => step.kind === 'final')
+    expect(final?.kind).toBe('final')
+    if (final?.kind !== 'final') return
+    expect(final.questions.some(q => q.recallMode === 'typed')).toBe(true)
+    expect(final.questions[0]?.recallMode).toBe('typed')
+  })
+
   it('maps step kinds onto the six-phase progress rail', () => {
     expect(railPhaseFromStepKind('intro')).toBe('intro')
     expect(railPhaseFromStepKind('teach')).toBe('teach')

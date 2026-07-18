@@ -481,7 +481,10 @@ export function StudyDashboard() {
                 className="flex-1 flex flex-col items-center px-4 py-4 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 <span>Review Cards</span>
-                <span className="text-xs mt-1 opacity-80">{dueCount} due · {availableNewCount} new</span>
+                <span className="text-xs mt-1 opacity-80">
+                  {dueCount} due · {availableNewCount} new
+                  {grammarDueCount > 0 ? ` · ${grammarDueCount} grammar due` : ''}
+                </span>
               </button>
               {grammarDueCount > 0 && (
                 <button

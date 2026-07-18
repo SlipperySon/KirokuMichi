@@ -1,16 +1,28 @@
 /**
  * Simple Anki-style template renderer.
- * Replaces {{fieldName}} placeholders with values from the fields map.
- * Strips <script> tags for safety.
+ * Replaces {{fieldName}} placeholders with HTML-escaped field values.
+ * Strips <script> tags from the template structure for safety.
  */
+
+/** Escape field values so card content cannot inject markup/scripts. */
+export function escapeHtml(value: string): string {
+  return value
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
 export function renderTemplate(template: string, fields: Record<string, string>): string {
-  // Replace {{fieldName}} with field values
+  // Replace {{fieldName}} with escaped field values
   let result = template.replace(/\{\{([^}]+)\}\}/g, (_match, key: string) => {
     const trimmed = key.trim()
-    return fields[trimmed] ?? ''
+    const value = fields[trimmed] ?? ''
+    return escapeHtml(value)
   })
 
-  // Strip <script> tags (basic XSS protection)
+  // Strip <script> tags from template structure (basic XSS protection)
   result = result.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
 
   return result

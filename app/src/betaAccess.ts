@@ -1,5 +1,10 @@
 export const BETA_ACCESS_KEY = 'kiroku-beta-access'
 
+/**
+ * Client-side UX gate flag only. Server auth for AI/PDF/report uses the
+ * HttpOnly `kiroku-beta-grant` cookie set by POST /api/beta/login.
+ */
+
 function canUseLocalStorage() {
   return typeof window !== 'undefined' && typeof window.localStorage !== 'undefined'
 }

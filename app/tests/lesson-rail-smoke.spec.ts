@@ -64,7 +64,7 @@ async function openResumedLesson(page: Page) {
   await expect(page.locator('body')).not.toContainText('Loading lesson', { timeout: 20_000 })
 }
 
-test.describe('lesson rail Phase 6 smoke', () => {
+test.describe('lesson rail Phase 6–7 smoke', () => {
   test('queues Cards on Today then requires Japanese Speak output to finish', async ({ page }) => {
     await seedLessonSession(page, cardsSnapshot())
     await openResumedLesson(page)
@@ -87,6 +87,28 @@ test.describe('lesson rail Phase 6 smoke', () => {
     await expect(finish).toBeEnabled()
     await finish.click()
     await expect(page.getByText('Lesson complete')).toBeVisible({ timeout: 10_000 })
+  })
+
+  test('bare ?after=cards without token does not mark Cards complete', async ({ page }) => {
+    await seedLessonSession(page, cardsSnapshot())
+    await page.goto(`/learn/study?resume=${encodeURIComponent(LESSON_ID)}&after=cards`)
+    await expect(page.locator('body')).not.toContainText('Loading lesson', { timeout: 20_000 })
+    await expect(page.getByRole('heading', { name: 'Review lesson cards' })).toBeVisible({ timeout: 15_000 })
+    await expect(page.getByText('Lesson complete')).toHaveCount(0)
+  })
+
+  test('valid cardsToken after Cards marks Speak ready', async ({ page }) => {
+    await page.addInitScript(({ snap, lessonId }) => {
+      localStorage.setItem(`kiroku-lesson-session:${lessonId}`, JSON.stringify(snap))
+      sessionStorage.setItem(
+        `kiroku-cards-return:${lessonId}`,
+        JSON.stringify({ token: 'smoke-cards-token', sessionId: '1' }),
+      )
+    }, { snap: cardsSnapshot(), lessonId: LESSON_ID })
+
+    await page.goto(`/learn/study?resume=${encodeURIComponent(LESSON_ID)}&after=cards&cardsToken=smoke-cards-token`)
+    await expect(page.locator('body')).not.toContainText('Loading lesson', { timeout: 20_000 })
+    await expect(page.getByRole('heading', { name: 'Produce before you finish' })).toBeVisible({ timeout: 15_000 })
   })
 
   test('scenario Live Practice can satisfy Speak without typing on the rail', async ({ page }) => {

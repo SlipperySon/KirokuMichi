@@ -263,7 +263,7 @@ export function buildLessonPlan(
       kind: 'final',
       title: 'Mixed Review',
       goal: 'Final pass across the whole lesson, mixed so recognition is not tied to order.',
-      questions: finalReview,
+      questions: injectTypedRecall(finalReview, items, `${lessonId}:final`),
     })
   }
 
