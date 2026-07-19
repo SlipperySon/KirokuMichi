@@ -16,7 +16,7 @@ import { importFromAnki } from '../srs/ankiImport'
 import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { SRSService } from '../srs/srsService'
-import { renderTemplate } from '../srs/templateRenderer'
+import { renderTemplate, sanitizeTemplateCss } from '../srs/templateRenderer'
 import { useAppStore } from '../store'
 import { toast } from '../components/toastStore'
 import type { ReviewCard, GrammarQuestion, GrammarReviewContext } from './types'
@@ -59,7 +59,7 @@ function TemplatedCard({
 
   return (
     <div className="flex flex-col items-center gap-8 w-full max-w-md mx-auto">
-      {template.css && <style>{template.css}</style>}
+      {template.css && <style>{sanitizeTemplateCss(template.css)}</style>}
       <div className="w-full min-h-48 bg-gray-50 rounded-2xl flex flex-col items-center justify-center gap-4 p-8">
         {phase === 'front' ? (
           <>

@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest'
-import { escapeHtml, extractFieldNames, renderTemplate } from './templateRenderer'
+import {
+  escapeHtml,
+  extractFieldNames,
+  renderTemplate,
+  sanitizeTemplateCss,
+  sanitizeTemplateHtml,
+} from './templateRenderer'
 
 describe('escapeHtml', () => {
   it('escapes &, <, >, ", and \'', () => {
@@ -27,8 +33,24 @@ describe('renderTemplate', () => {
     expect(html).toBe('<p>ok</p>')
   })
 
+  it('strips event-handler attributes and disallowed tags', () => {
+    const html = sanitizeTemplateHtml('<div onclick="steal()"><img src=x onerror=alert(1)><b>ok</b></div>')
+    expect(html).not.toContain('onclick')
+    expect(html).not.toContain('img')
+    expect(html).toContain('<b>ok</b>')
+  })
+
   it('uses empty string for missing fields', () => {
     expect(renderTemplate('{{missing}}', {})).toBe('')
+  })
+})
+
+describe('sanitizeTemplateCss', () => {
+  it('blocks import and url()', () => {
+    const css = sanitizeTemplateCss('@import url("https://evil.test/x.css"); .x { color: red; background: url(https://evil.test/a) }')
+    expect(css).not.toMatch(/@import/i)
+    expect(css).not.toContain('https://evil.test')
+    expect(css).toContain('color: red')
   })
 })
 

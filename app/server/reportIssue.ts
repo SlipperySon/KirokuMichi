@@ -1,3 +1,5 @@
+import { sanitizeReportMetadata } from './securityGuards'
+
 export type ReportType =
   | 'bug'
   | 'content'
@@ -37,9 +39,7 @@ export function sanitizeReport(input: unknown): IssueReport {
   const summary = clean(body.summary, 140)
   const details = clean(body.details, 5000)
   const contact = clean(body.contact ?? '', 200) || null
-  const metadata = body.metadata && typeof body.metadata === 'object'
-    ? body.metadata as Record<string, unknown>
-    : {}
+  const metadata = sanitizeReportMetadata(body.metadata)
 
   if (!summary) throw new Error('Summary is required')
   if (!details) throw new Error('Details are required')

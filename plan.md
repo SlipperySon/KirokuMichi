@@ -398,7 +398,7 @@ Closed the audit gaps that made completion mostly recognition + self-report:
 
 ---
 
-### Phase 7 — Research enforcement + security harden (ACTIVE — 2026-07-18 audit)
+### Phase 7 — Research enforcement + security harden (SHIPPED — 2026-07-18 audit)
 
 **Audit verdict:** Architecture **B** / pedagogy enforcement **C+**. Methods are research-*shaped* and several are
 genuinely applied (dues-first Today, FSRS writes, rail order, Check answers, Speak Japanese gate). Gaps remain where
@@ -460,6 +460,24 @@ the Foundation’s own rule (“principle wins over UX shortcut”) is still sof
 - [x] Playwright + unit coverage for the above; `npm run qa:routes` green
 
 **Phase 7 result (2026-07-18):** Implemented — Again requeue (`planAgainRequeue`, max 2); one-time `cardsReturnToken` in sessionStorage; Teach/Writing attempt-before-reveal; scenario starters do not complete Speak; Final gets typed recall; beta grant HttpOnly cookie gates session/AI/PDF/report when `BETA_INVITE_CODES` set; SSRF `::ffff:` + `redirect: 'manual'`; template field HTML escape; prod blocks `/api/dev/*` and `/data/*.apkg`.
+
+### Phase 8 — Staging security harden (ACTIVE — 2026-07-20 audit)
+
+**Canvas:** [`security-audit-2026-07.canvas.tsx`](/Users/Skipp/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/security-audit-2026-07.canvas.tsx)
+
+Residual High/Med items after Phase 7:
+
+| Sev | Fix |
+|-----|-----|
+| High | AI/PDF quotas + model allowlist + maxTokens cap |
+| High | Template-structure XSS + CSS sanitize (not just field escape) |
+| High | Custom provider: allowlist; never forward `CUSTOM_PROVIDER_API_KEY` to client URL |
+| Med | Drop `.apkg` from tree; `/data` extension allowlist in production |
+| Med | Invite login backoff; dedicated `/api/report` rate limit + metadata sanitize |
+| Should | HttpOnly session cookie instead of localStorage `sessionToken` (stretch) |
+
+**Always set `BETA_INVITE_CODES` on staging/prod.**
+
 ---
 
 ### Out of scope for this redesign
@@ -1219,14 +1237,14 @@ server/
 
 ## Next Steps (Priority Order)
 
-0. **Phase 7 (active)** — research enforcement + security harden before public staging (see Phase 7 above)
+0. **Phase 8 (active)** — staging security harden (quotas, template XSS, custom-provider key policy, `/data`)
 1. **Genki 1 specialized pack proof** — evaluate PaddleOCR vs Apple Vision, generate canonical Lesson 1 JSON, validate it
 2. **Encrypted pack + local unlock flow** — user uploads Genki textbook/workbook to unlock the encrypted pack
 3. **Known Textbooks panel** — route Genki uploads into unlock flow; keep generic PDF import as fallback
 4. **Textbook Learning subsection** — render unlocked structured lessons and unlock vocab into linked decks
 5. **Structured AI tutor lesson planning** from unlocked textbook packs plus user-provided custom content
-6. **Backup / restore (or sync)** — localStorage wipe risk; highest remaining product-data priority after Phase 7
-7. **ScenarioMode v2 polish** — already partially shipped; raise production bar per Phase 7
+6. **Backup / restore (or sync)** — localStorage wipe risk; highest remaining product-data priority after Phase 8
+7. **ScenarioMode v2 polish** — already partially shipped; raise production bar per Phase 7/8
 
 ---
 

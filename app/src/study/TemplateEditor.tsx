@@ -3,7 +3,7 @@ import { useAppStore } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { SRSService } from '../srs/srsService'
-import { renderTemplate } from '../srs/templateRenderer'
+import { renderTemplate, sanitizeTemplateCss, sanitizeTemplateHtml } from '../srs/templateRenderer'
 import { Navigation } from '../components/Navigation'
 import { toast } from '../components/toastStore'
 
@@ -97,9 +97,9 @@ export function TemplateEditor({ deckId, deckName, onSaved, onClose }: TemplateE
     setIsLoading(true)
     try {
       await service.saveTemplate(userId, selectedDeckId, {
-        frontTemplate,
-        backTemplate,
-        css,
+        frontTemplate: sanitizeTemplateHtml(frontTemplate),
+        backTemplate: sanitizeTemplateHtml(backTemplate),
+        css: sanitizeTemplateCss(css),
       })
       toast.success('Template saved')
       onSaved?.()
@@ -204,7 +204,7 @@ export function TemplateEditor({ deckId, deckName, onSaved, onClose }: TemplateE
           Live preview (sample card: 食べる / to eat)
         </div>
         {/* Inject custom CSS */}
-        {css && <style>{css}</style>}
+        {css && <style>{sanitizeTemplateCss(css)}</style>}
         <div className="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-gray-200">
           <div className="p-4">
             <p className="text-xs text-gray-400 mb-2 font-medium uppercase tracking-wide">Front</p>

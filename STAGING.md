@@ -20,7 +20,8 @@ Set these in the Render service dashboard. Do not commit real values.
 - `DEEPSEEK_API_KEY`: required for server PDF extraction.
 - `GITHUB_REPORT_REPO`: report sink in `owner/repo` form.
 - `GITHUB_REPORT_TOKEN`: GitHub token with permission to create issues in the report repo.
-- `BETA_INVITE_CODES`: comma-separated invite codes for closed beta access.
+- `BETA_INVITE_CODES`: **always set on staging/prod** — comma-separated invite codes for closed beta access.
+  Without this, `/api/session` mints freely and AI/PDF burn server keys.
 
 Configure at least one hosted AI provider used by the app, or let testers enter their own API key in Settings:
 
@@ -33,7 +34,9 @@ Express proxy for that request, and scrubbed from persisted Zustand state. Refre
 
 Optional:
 
-- `CUSTOM_PROVIDER_API_KEY`: auth for the OpenAI-compatible custom provider.
+- `CUSTOM_PROVIDER_API_KEY` + `CUSTOM_PROVIDER_ENDPOINT` (or `CUSTOM_PROVIDER_ENDPOINTS`):
+  server key is only used for those allowlisted URLs; never for arbitrary client endpoints.
+- `AI_MODEL_ALLOWLIST`: optional comma-separated model names (defaults to a safe built-in pattern).
 - `SENTRY_DSN`: server-side Sentry DSN.
 - `SENTRY_ENVIRONMENT`: `staging`.
 - `SENTRY_RELEASE`: app release/commit identifier.

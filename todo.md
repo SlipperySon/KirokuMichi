@@ -1,7 +1,7 @@
 # KirokuMichi — Todo
 
-**Last updated: 2026-07-18**
-**Status: PHASE 7 SHIPPED — Research enforcement + security harden (Phases 1–7)**
+**Last updated: 2026-07-20**
+**Status: PHASE 8 MOSTLY SHIPPED — Staging security harden (HttpOnly session cookie still optional stretch)**
 
 ---
 
@@ -74,6 +74,21 @@ Security (before public staging)
 - [x] SSRF harden: no auto-redirect to private IPs; block `::ffff:`; env allowlist
 - [x] Sanitize card templates (DOMPurify / escape-by-default)
 - [x] Disable `/api/dev/*` in production; restrict `/data` packaging artifacts
+
+**Phase 8 — Staging security harden (2026-07-20 audit)**  
+Canvas: `security-audit-2026-07.canvas.tsx`
+
+Must for public / closed beta
+- [x] Always document: set `BETA_INVITE_CODES` on staging/prod
+- [x] Per-user / per-IP AI + PDF quotas; model allowlist
+- [x] Sanitize or disallow raw HTML in card templates + css
+- [x] Remove `.apkg` from deploy tree; harden `/data` allowlist
+
+Should soon
+- [x] Custom provider: env endpoint allowlist; never forward server custom key to client URL
+- [x] Stronger invite login backoff
+- [x] Dedicated rate limit on `/api/report`
+- [ ] Prefer HttpOnly session cookie over localStorage token (optional stretch)
 
 **Earlier (done):** Study path planner + Today’s Path panel on Home.
 

@@ -11,6 +11,24 @@ import net from 'node:net'
 import { tmpdir } from 'node:os'
 import { promisify } from 'node:util'
 import { sanitizeReport, submitIssueReport } from './reportIssue'
+import {
+  AI_QUOTA_MAX,
+  AI_QUOTA_WINDOW_MS,
+  BETA_LOGIN_MAX_ATTEMPTS,
+  BETA_LOGIN_WINDOW_MS,
+  PDF_MAX_FILES,
+  PDF_MAX_PAGES,
+  PDF_QUOTA_MAX,
+  PDF_QUOTA_WINDOW_MS,
+  REPORT_QUOTA_MAX,
+  REPORT_QUOTA_WINDOW_MS,
+  assertModelAllowed,
+  checkRateBucket,
+  clampMaxTokens,
+  isDataPathAllowed,
+  resolveCustomProviderAuth,
+  type RateBucket,
+} from './securityGuards'
 
 const app = express()
 const PORT = Number(process.env.PORT || 3001)
@@ -18,7 +36,7 @@ const HOST = process.env.HOST || (process.env.NODE_ENV === 'production' ? '0.0.0
 const AI_REQUEST_TIMEOUT_MS = 60000
 const OCR_REQUEST_TIMEOUT_MS = 180000
 const JSON_BODY_LIMIT = '2mb'
-const PDF_UPLOAD_LIMIT = '100mb'
+const PDF_UPLOAD_LIMIT = process.env.NODE_ENV === 'production' ? '25mb' : '100mb'
 const SESSION_TOKEN_TTL_MS = 12 * 60 * 60 * 1000
 const SESSION_TOKEN_MAX = 500
 const RATE_LIMIT_WINDOW_MS = 60 * 1000
@@ -55,7 +73,7 @@ const PROVIDER_ENV_KEYS = {
 
 const sessionTokens = new Map<string, number>()
 const betaGrants = new Map<string, number>()
-const rateLimitBuckets = new Map<string, { count: number; resetAt: number }>()
+const rateLimitBuckets = new Map<string, RateBucket>()
 
 const BETA_GRANT_COOKIE = 'kiroku-beta-grant'
 const BETA_GRANT_TTL_MS = 30 * 24 * 60 * 60 * 1000
@@ -175,25 +193,42 @@ function issueBetaGrant(res: express.Response) {
   return grant
 }
 
-function rateLimit(options: { windowMs: number; maxRequests: number }) {
-  return (req: express.Request, res: express.Response, next: express.NextFunction) => {
-    const now = Date.now()
-    const key = req.ip || req.socket.remoteAddress || 'unknown'
-    const bucket = rateLimitBuckets.get(key)
-    if (!bucket || bucket.resetAt <= now) {
-      rateLimitBuckets.set(key, { count: 1, resetAt: now + options.windowMs })
-      next()
-      return
-    }
+function clientIp(req: express.Request) {
+  return req.ip || req.socket.remoteAddress || 'unknown'
+}
 
-    bucket.count += 1
-    if (bucket.count > options.maxRequests) {
-      res.setHeader('Retry-After', Math.ceil((bucket.resetAt - now) / 1000).toString())
+function rateLimit(options: {
+  windowMs: number
+  maxRequests: number
+  keyPrefix?: string
+  keyFn?: (req: express.Request) => string
+}) {
+  return (req: express.Request, res: express.Response, next: express.NextFunction) => {
+    const prefix = options.keyPrefix ?? 'api'
+    const id = options.keyFn?.(req) ?? clientIp(req)
+    const result = checkRateBucket(rateLimitBuckets, `${prefix}:${id}`, options.windowMs, options.maxRequests)
+    if (!result.ok) {
+      res.setHeader('Retry-After', result.retryAfterSec.toString())
       res.status(429).json({ error: 'Too many requests' })
       return
     }
     next()
   }
+}
+
+function enforceQuota(
+  req: express.Request,
+  res: express.Response,
+  options: { prefix: string; windowMs: number; maxRequests: number; identity?: string },
+): boolean {
+  const id = options.identity ?? clientIp(req)
+  const result = checkRateBucket(rateLimitBuckets, `${options.prefix}:${id}`, options.windowMs, options.maxRequests)
+  if (!result.ok) {
+    res.setHeader('Retry-After', result.retryAfterSec.toString())
+    res.status(429).json({ error: 'Rate limit exceeded for this action' })
+    return false
+  }
+  return true
 }
 
 function isLoopbackHostname(hostname: string) {
@@ -305,9 +340,9 @@ const dataPath = path.join(process.cwd(), 'data')
 console.log(`[server] Serving /data from ${dataPath}`)
 try {
   access(dataPath).then(() => {
-    // Production: keep curriculum JSON available, but do not expose packaging artifacts.
+    // Curriculum JSON/assets only — never packaging dumps (.apkg, .sql).
     app.use('/data', (req, res, next) => {
-      if (process.env.NODE_ENV === 'production' && /\.apkg$/i.test(req.path)) {
+      if (!isDataPathAllowed(req.path, process.env.NODE_ENV === 'production')) {
         res.status(404).end()
         return
       }
@@ -337,20 +372,28 @@ app.get('/api/beta/status', (_req, res) => {
   res.json({ enabled: isBetaGateEnabled() })
 })
 
-app.post('/api/beta/login', (req, res) => {
-  if (!isBetaGateEnabled()) {
+app.post(
+  '/api/beta/login',
+  rateLimit({
+    windowMs: BETA_LOGIN_WINDOW_MS,
+    maxRequests: BETA_LOGIN_MAX_ATTEMPTS,
+    keyPrefix: 'beta-login',
+  }),
+  (req, res) => {
+    if (!isBetaGateEnabled()) {
+      res.json({ ok: true })
+      return
+    }
+    const { code } = req.body as { code?: string }
+    const validCodes = betaCodes()
+    if (!code || !validCodes.includes(code.trim())) {
+      res.status(401).json({ error: 'Invalid beta invite code' })
+      return
+    }
+    issueBetaGrant(res)
     res.json({ ok: true })
-    return
-  }
-  const { code } = req.body as { code?: string }
-  const validCodes = betaCodes()
-  if (!code || !validCodes.includes(code.trim())) {
-    res.status(401).json({ error: 'Invalid beta invite code' })
-    return
-  }
-  issueBetaGrant(res)
-  res.json({ ok: true })
-})
+  },
+)
 
 app.post('/api/session', (req, res) => {
   if (isBetaGateEnabled() && !hasValidBetaGrant(req)) {
@@ -364,22 +407,30 @@ app.post('/api/session', (req, res) => {
   res.json({ token })
 })
 
-app.post('/api/report', async (req, res) => {
-  if (isBetaGateEnabled() && !hasValidBetaGrant(req)) {
-    res.status(401).json({ error: 'Beta access required' })
-    return
-  }
-  try {
-    const report = sanitizeReport(req.body)
-    const result = await submitIssueReport(report)
-    res.status(result.mode === 'github' ? 201 : 202).json(result)
-  } catch (err) {
-    console.error('[report] submission failed:', err)
-    res.status(400).json({
-      error: err instanceof Error ? err.message : 'Report submission failed',
-    })
-  }
-})
+app.post(
+  '/api/report',
+  rateLimit({
+    windowMs: REPORT_QUOTA_WINDOW_MS,
+    maxRequests: REPORT_QUOTA_MAX,
+    keyPrefix: 'report',
+  }),
+  async (req, res) => {
+    if (isBetaGateEnabled() && !hasValidBetaGrant(req)) {
+      res.status(401).json({ error: 'Beta access required' })
+      return
+    }
+    try {
+      const report = sanitizeReport(req.body)
+      const result = await submitIssueReport(report)
+      res.status(result.mode === 'github' ? 201 : 202).json(result)
+    } catch (err) {
+      console.error('[report] submission failed:', err)
+      res.status(400).json({
+        error: err instanceof Error ? err.message : 'Report submission failed',
+      })
+    }
+  },
+)
 
 function requireToken(req: express.Request, res: express.Response, next: express.NextFunction) {
   if (isBetaGateEnabled() && !hasValidBetaGrant(req)) {
@@ -432,6 +483,16 @@ app.post('/api/ai/complete', requireToken, async (req, res) => {
     prompt?: string
   }
 
+  const sessionToken = typeof req.headers['x-session-token'] === 'string' ? req.headers['x-session-token'] : clientIp(req)
+  if (!enforceQuota(req, res, {
+    prefix: 'ai',
+    windowMs: AI_QUOTA_WINDOW_MS,
+    maxRequests: AI_QUOTA_MAX,
+    identity: `${clientIp(req)}:${sessionToken.slice(0, 16)}`,
+  })) {
+    return
+  }
+
   // Build messages: use provided messages array, or legacy prompt->user message
   const finalMessages = messages || (prompt ? [{ role: 'user', content: prompt }] : [])
   if (!finalMessages.length) {
@@ -440,25 +501,32 @@ app.post('/api/ai/complete', requireToken, async (req, res) => {
   }
 
   const model = tier === 'reasoning' ? powerfulModel : fastModel
+  const modelError = assertModelAllowed(model)
+  if (modelError) {
+    res.status(400).json({ error: modelError })
+    return
+  }
+  const cappedMaxTokens =
+    clampMaxTokens(maxTokens ?? (tier === 'reasoning' ? 8192 : 2048)) ?? 2048
   console.log(`[ai] request provider=${provider} model=${model} tier=${tier} messages=${finalMessages.length} stream=${stream}`)
 
   try {
     if (stream) {
       // Streaming code path — supported for Anthropic + OpenAI-compatible providers.
       if (provider === 'anthropic') {
-        await streamAnthropicRequest(res, finalMessages, system, model, tier, apiKey, maxTokens)
+        await streamAnthropicRequest(res, finalMessages, system, model, tier, apiKey, cappedMaxTokens)
       } else if (provider === 'openai') {
         await streamOpenAICompatible(res, finalMessages, system, model, tier, {
           apiKey: resolveProviderApiKey('openai', apiKey),
           endpoint: PROVIDER_ENDPOINTS.openai,
-          maxTokens,
+          maxTokens: cappedMaxTokens,
           missingKeyError: 'OpenAI API key not configured',
         })
       } else if (provider === 'openrouter') {
         await streamOpenAICompatible(res, finalMessages, system, model, tier, {
           apiKey: resolveProviderApiKey('openrouter', apiKey),
           endpoint: PROVIDER_ENDPOINTS.openrouter,
-          maxTokens,
+          maxTokens: cappedMaxTokens,
           extraHeaders: {
             'http-referer': 'http://localhost:5173',
             'x-title': 'KirokuMichi',
@@ -469,7 +537,7 @@ app.post('/api/ai/complete', requireToken, async (req, res) => {
         await streamOpenAICompatible(res, finalMessages, system, model, tier, {
           apiKey: resolveProviderApiKey('deepseek', apiKey),
           endpoint: PROVIDER_ENDPOINTS.deepseek,
-          maxTokens,
+          maxTokens: cappedMaxTokens,
           extraBody:
             tier === 'fast'
               ? { thinking: { type: 'disabled' } }
@@ -477,10 +545,17 @@ app.post('/api/ai/complete', requireToken, async (req, res) => {
           missingKeyError: 'DeepSeek API key not configured',
         })
       } else if (provider === 'custom') {
+        let custom
+        try {
+          custom = resolveCustomProviderAuth({ requestEndpoint: apiEndpoint, requestApiKey: apiKey })
+        } catch (err) {
+          res.status(400).json({ error: err instanceof Error ? err.message : 'Invalid custom provider' })
+          return
+        }
         await streamOpenAICompatible(res, finalMessages, system, model, tier, {
-          apiKey: process.env.CUSTOM_PROVIDER_API_KEY,
-          endpoint: apiEndpoint,
-          maxTokens,
+          apiKey: custom.apiKey,
+          endpoint: custom.endpoint,
+          maxTokens: cappedMaxTokens,
           missingKeyError: 'Custom provider API key not configured',
           missingEndpointError: 'Custom provider endpoint not configured',
         })
@@ -492,20 +567,27 @@ app.post('/api/ai/complete', requireToken, async (req, res) => {
     }
 
     if (provider === 'anthropic') {
-      await handleAnthropicRequest(res, finalMessages, system, model, tier, apiKey, maxTokens)
+      await handleAnthropicRequest(res, finalMessages, system, model, tier, apiKey, cappedMaxTokens)
     } else if (provider === 'openai') {
-      await handleOpenAIRequest(res, finalMessages, system, model, tier, apiKey, maxTokens)
+      await handleOpenAIRequest(res, finalMessages, system, model, tier, apiKey, cappedMaxTokens)
     } else if (provider === 'openrouter') {
-      await handleOpenRouterRequest(res, finalMessages, system, model, tier, apiKey, maxTokens)
+      await handleOpenRouterRequest(res, finalMessages, system, model, tier, apiKey, cappedMaxTokens)
     } else if (provider === 'deepseek') {
-      await handleDeepSeekRequest(res, finalMessages, system, model, tier, apiKey, maxTokens)
+      await handleDeepSeekRequest(res, finalMessages, system, model, tier, apiKey, cappedMaxTokens)
     } else if (provider === 'ollama') {
       await handleOllamaRequest(res, finalMessages, system, model)
     } else if (provider === 'custom') {
+      let custom
+      try {
+        custom = resolveCustomProviderAuth({ requestEndpoint: apiEndpoint, requestApiKey: apiKey })
+      } catch (err) {
+        res.status(400).json({ error: err instanceof Error ? err.message : 'Invalid custom provider' })
+        return
+      }
       await handleOpenAICompatibleRequest(res, finalMessages, system, model, tier, {
-        apiKey: process.env.CUSTOM_PROVIDER_API_KEY,
-        endpoint: apiEndpoint,
-        maxTokens,
+        apiKey: custom.apiKey,
+        endpoint: custom.endpoint,
+        maxTokens: cappedMaxTokens,
         missingKeyError: 'Custom provider API key not configured',
         missingEndpointError: 'Custom provider endpoint not configured',
       })
@@ -1336,12 +1418,26 @@ app.post('/api/ai/analyze', requireToken, (req, res) => {
 app.post('/api/content/extract-pdfs', requireToken, express.raw({ type: 'multipart/form-data', limit: PDF_UPLOAD_LIMIT }), async (req, res) => {
   const startedAt = Date.now()
   try {
+    const sessionToken = typeof req.headers['x-session-token'] === 'string' ? req.headers['x-session-token'] : clientIp(req)
+    if (!enforceQuota(req, res, {
+      prefix: 'pdf',
+      windowMs: PDF_QUOTA_WINDOW_MS,
+      maxRequests: PDF_QUOTA_MAX,
+      identity: `${clientIp(req)}:${sessionToken.slice(0, 16)}`,
+    })) {
+      return
+    }
+
     const { fields, files } = parseMultipartFormData(req.headers['content-type'], req.body as Buffer)
     const pdfFiles = files.filter(file =>
       file.contentType === 'application/pdf' || file.filename.toLowerCase().endsWith('.pdf')
     )
     if (pdfFiles.length === 0) {
       res.status(400).json({ error: 'No PDF files uploaded' })
+      return
+    }
+    if (pdfFiles.length > PDF_MAX_FILES) {
+      res.status(400).json({ error: `Too many PDFs (max ${PDF_MAX_FILES} per request)` })
       return
     }
 
@@ -1357,8 +1453,13 @@ app.post('/api/content/extract-pdfs', requireToken, express.raw({ type: 'multipa
     }
 
     const fastModel = fields.fastModel || 'deepseek-v4-flash'
-    const pageLimit = Number(fields.pageLimit || 10)
-    const pageStart = Number(fields.pageStart || 1)
+    const modelError = assertModelAllowed(fastModel)
+    if (modelError) {
+      res.status(400).json({ error: modelError })
+      return
+    }
+    const pageLimit = Math.min(Math.max(1, Number(fields.pageLimit || 10) || 10), PDF_MAX_PAGES)
+    const pageStart = Math.max(1, Number(fields.pageStart || 1) || 1)
     const ocrMode = fields.ocrMode || 'auto'
     const fileRanges = parsePdfFileRanges(fields.fileRanges, pdfFiles, pageStart, pageLimit)
     const system = fields.system || `You are a Japanese learning content extractor. Return valid JSON only with this shape:

@@ -24,3 +24,7 @@ dist-ssr
 *.sw?
 tools/pack-passphrases.local.json
 public/packs/
+
+# Packaging dumps — never ship in deploy /data
+data/**/*.apkg
+dist/data/**/*.apkg
