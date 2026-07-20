@@ -486,7 +486,7 @@ export function StudyDashboard() {
             {/* Review / Cram / Grammar */}
             <div className="flex flex-col gap-3 sm:flex-row">
               <button
-                onClick={startWordReview}
+                onClick={() => { void startWordReview() }}
                 disabled={dueCount + newCount === 0}
                 className="flex-1 flex flex-col items-center px-4 py-4 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               >
@@ -523,7 +523,7 @@ export function StudyDashboard() {
                 {previewCards.map(card => (
                   <button
                     key={card.cardStateId}
-                    onClick={startWordReview}
+                    onClick={() => { void startWordReview() }}
                     className="bg-white border border-gray-200 rounded-lg px-3 py-2 text-center hover:border-indigo-300 hover:bg-indigo-50 transition-colors"
                   >
                     <p className="text-sm font-semibold text-gray-900 truncate" lang="ja">{card.front}</p>

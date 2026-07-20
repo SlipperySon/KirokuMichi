@@ -7,6 +7,7 @@ const vocabItem: TeachItem = {
   type: 'vocab',
   title: '学生',
   body: 'student',
+  order: 0,
 }
 
 describe('typedRecall', () => {

@@ -402,7 +402,9 @@ export function LessonPage() {
                       vocab: state.vocab || [],
                       grammar: state.grammar || [],
                       lessonId,
-                      lessonTitle: `${state.lesson.series} - Lesson ${state.lesson.lesson_number}`,
+                      lessonTitle: state.lesson
+                        ? `${state.lesson.series} - Lesson ${state.lesson.lesson_number}`
+                        : `Lesson ${lessonId}`,
                       cefrLevel: cefr,
                       workbookPractice: state.workbookPractice,
                     },

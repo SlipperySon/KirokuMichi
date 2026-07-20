@@ -34,7 +34,7 @@ describe('productionValidation', () => {
     expect(
       speakRequiredFragments(
         [{ id: 'g', pattern: 'です', meaning: 'to be', lesson: 'l', source: 's', page: 1 }],
-        [{ surface: '学生', english: 'student', lesson: 'l', source: 's', page: 1 }],
+        [{ surface: '学生' }],
       ),
     ).toEqual(['です'])
   })

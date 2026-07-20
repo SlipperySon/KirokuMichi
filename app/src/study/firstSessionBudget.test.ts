@@ -22,11 +22,12 @@ describe('firstSessionBudget', () => {
       {
         id: 'wb1',
         type: 'roleplay',
-        practiceMode: 'speak',
+        practiceMode: 'output',
         focus: 'greeting',
         prompt: 'Greet',
         support: 'Use です',
         source: 'workbook',
+        sourceKey: 'genki_1_workbook',
         page: 12,
       },
     ])
