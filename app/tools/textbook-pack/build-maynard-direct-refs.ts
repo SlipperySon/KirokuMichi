@@ -1,4 +1,4 @@
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs'
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 
 interface MaynardTopic {
@@ -197,6 +197,31 @@ function seed(id: string, topicId: string, aliases: string[], confidence: 'direc
 
 function main() {
   const sourcePath = resolve(process.cwd(), SOURCE_PATH)
+  const outPath = resolve(process.cwd(), OUT_PATH)
+
+  // CI checkouts do not include gitignored textbook-pack/out OCR dumps.
+  // Keep the committed generated file when the Maynard source is absent.
+  if (!existsSync(sourcePath)) {
+    if (existsSync(outPath)) {
+      console.log(
+        JSON.stringify(
+          {
+            skipped: true,
+            reason: 'Maynard comprehensive source missing; keeping existing generated refs',
+            sourcePath: SOURCE_PATH,
+            outPath: OUT_PATH,
+          },
+          null,
+          2,
+        ),
+      )
+      return
+    }
+    throw new Error(
+      `Missing Maynard source at ${SOURCE_PATH}. Run textbook OCR/group/comprehensive for maynard_grammar, or commit ${OUT_PATH}.`,
+    )
+  }
+
   const source = JSON.parse(readFileSync(sourcePath, 'utf8')) as MaynardComprehensive
   const refs = SEEDS.map(refSeed => {
     const topic = source.topicIndex[refSeed.topicId]
@@ -292,7 +317,6 @@ function main() {
     '',
   ].join('\n')
 
-  const outPath = resolve(process.cwd(), OUT_PATH)
   mkdirSync(dirname(outPath), { recursive: true })
   writeFileSync(outPath, output)
   console.log(JSON.stringify({ outPath: OUT_PATH, refs: refs.length, aliases: Object.keys(aliasIndex).length }, null, 2))
