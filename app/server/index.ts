@@ -335,27 +335,22 @@ app.use('/api', rateLimit({ windowMs: RATE_LIMIT_WINDOW_MS, maxRequests: RATE_LI
 app.use(express.json({ limit: JSON_BODY_LIMIT }))
 
 // Serve curriculum data folder (lesson structures, textbook content, etc.)
-// Use process.cwd() since we run from app/ directory (npm run server)
+// Mount synchronously so Playwright/health-ready servers never race a 502 on /data/*
+// (vite proxies /data here; async access().then() left early requests unhandled).
 const dataPath = path.join(process.cwd(), 'data')
 console.log(`[server] Serving /data from ${dataPath}`)
-try {
-  access(dataPath).then(() => {
-    // Curriculum JSON/assets only — never packaging dumps (.apkg, .sql).
-    app.use('/data', (req, res, next) => {
-      if (!isDataPathAllowed(req.path, process.env.NODE_ENV === 'production')) {
-        res.status(404).end()
-        return
-      }
-      next()
-    })
-    app.use('/data', express.static(dataPath))
-    console.log(`[server] ✓ Data folder accessible and served`)
-  }).catch(() => {
-    console.error(`[server] ✗ Data folder not found at ${dataPath}`)
-  })
-} catch (err) {
-  console.error(`[server] Error setting up data folder: ${err}`)
-}
+app.use('/data', (req, res, next) => {
+  if (!isDataPathAllowed(req.path, process.env.NODE_ENV === 'production')) {
+    res.status(404).end()
+    return
+  }
+  next()
+})
+app.use('/data', express.static(dataPath))
+void access(dataPath)
+  .then(() => console.log(`[server] ✓ Data folder accessible and served`))
+  .catch(() => console.error(`[server] ✗ Data folder not found at ${dataPath}`))
+
 
 // Issue a session token
 // Health check — no auth required, used by uptime monitors and load balancers
