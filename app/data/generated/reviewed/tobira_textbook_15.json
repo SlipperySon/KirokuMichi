@@ -1,0 +1,647 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "tobira_textbook",
+  "title": "tobira_textbook / tobira_textbook_15",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "tobira_textbook_15_draft",
+      "appLessonId": "tobira_textbook_15",
+      "title": "tobira textbook 15",
+      "qualityTier": "draft",
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "cefr_b2_1078",
+          "pattern": "おおよそ",
+          "meaning": "Approximately, roughly, or about — used to express an estimate or a general outline rather than an exact figure.",
+          "explanation": "おおよそ functions as an adverb meaning 'roughly' or 'approximately' when modifying quantities, and can also mean 'the general gist' or 'outline' when used as a noun (おおよその内容). It is slightly more formal than だいたい and appears more often in written or polished spoken Japanese. It signals that the speaker is giving an approximation, not a precise value.",
+          "examples": [
+            {
+              "japanese": "工事が終わるまでにおおよそ三ヶ月かかる見込みだ。",
+              "reading": "こうじがおわるまでにおおよそさんかげつかかるみこみだ。",
+              "english": "The construction is expected to take approximately three months to complete."
+            },
+            {
+              "japanese": "話のおおよそは理解できたが、細部はまだ不明だ。",
+              "reading": "はなしのおおよそはりかいできたが、さいぶはまだふめいだ。",
+              "english": "I got the general gist of the story, but the details are still unclear."
+            },
+            {
+              "japanese": "参加者はおおよそ百名ほどになる予定です。",
+              "reading": "さんかしゃはおおよそひゃくめいほどになるよていです。",
+              "english": "We expect roughly one hundred participants."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_1079",
+          "pattern": "～ざる",
+          "meaning": "A classical/literary negative verb form meaning 'not doing ~' or 'un~'.",
+          "explanation": "ざる is a classical negative auxiliary that attaches to the plain negative stem of a verb (same position as ない). It is the attributive form of ざり (classical ず), so it modifies nouns directly. It appears in set expressions and formal or literary writing rather than everyday speech. Common set phrases include 知らざる (unknown), 見えざる (invisible), and 許されざる (unforgivable).",
+          "examples": [
+            {
+              "japanese": "それは許されざる行為だと、誰もが感じていた。",
+              "reading": "それはゆるされざるこういだと、だれもがかんじていた。",
+              "english": "Everyone felt that it was an unforgivable act."
+            },
+            {
+              "japanese": "見えざる力が、この世界を動かしているのかもしれない。",
+              "reading": "みえざるちからが、このせかいをうごかしているのかもしれない。",
+              "english": "An invisible force may be moving this world."
+            },
+            {
+              "japanese": "知らざる者には、真実を語ることができない。",
+              "reading": "しらざるものには、しんじつをかたることができない。",
+              "english": "One cannot speak the truth to those who do not know."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_1080",
+          "pattern": "ならともかく",
+          "meaning": "If it&#x27;s (A), sure, but (B), Putting aside (A), (B)",
+          "explanation": "Grammar explanation for ならともかく",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/conditional_たら_なら",
+            "title": "Conditional: たら, なら",
+            "excerpt": "114 CHAPTER 3. MORE GRAMMAR\nform, which can pair up with any verb, fz り gets its inflection specifically\nfrom the verb する, meaning '\"to do\":\nきょう がっこう い じゆぎょう で はん た\n今日は学校に行ったり、 授業に出たり、ご飯を食べたりしました。\n\"Today (I) went to school, went to class and ate.\"\nThis sentence literally reads \"Today I did: going to school, going to\nclass, eating', and shows why this is only listing representative actions -\nthere is no way to distinguish which action occurred when, in relation to\nother actions; we're literally o",
+            "examples": [
+              {
+                "japanese": "form, which can pair up with any verb, fz り gets its inflection specifically"
+              },
+              {
+                "japanese": "from the verb する, meaning '\"to do\":"
+              },
+              {
+                "japanese": "きょう がっこう い じゆぎょう で はん た"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_1087",
+          "pattern": "なにやら",
+          "meaning": "Refers vaguely to something unspecified, often with an uncertain or mysterious nuance.",
+          "explanation": "なにやら is an adverb or pronoun meaning 'something or other' — used when the speaker is uncertain, vague, or deliberately imprecise about what something is. It often conveys a sense of unease, curiosity, or mystery. It is somewhat literary and appears more in written or narrated contexts than in casual conversation, though it can appear in spoken Japanese as well.",
+          "examples": [
+            {
+              "japanese": "暗い廊下の奥から、なにやら音が聞こえてきた。",
+              "reading": "くらいろうかのおくから、なにやらおとがきこえてきた。",
+              "english": "Some kind of sound could be heard from the back of the dark hallway."
+            },
+            {
+              "japanese": "彼はなにやら難しそうな本を読んでいた。",
+              "reading": "かれはなにやらむずかしそうなほんをよんでいた。",
+              "english": "He was reading some kind of book that looked difficult."
+            },
+            {
+              "japanese": "会議室からなにやら言い争う声がしていた。",
+              "reading": "かいぎしつからなにやらいいあらそうこえがしていた。",
+              "english": "There was some kind of arguing voice coming from the conference room."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_1090",
+          "pattern": "次第に",
+          "meaning": "Describes something that changes gradually or progressively over time.",
+          "explanation": "次第に is an adverb meaning 'gradually' or 'little by little,' used to describe a slow, continuous change in state or degree. It is neutral in register and works naturally in both spoken and written Japanese. It typically precedes a verb or adjective describing the resulting state.",
+          "examples": [
+            {
+              "japanese": "春になって、気温が次第に上がってきた。",
+              "reading": "はるになって、きおんがしだいにあがってきた。",
+              "english": "As spring arrived, the temperature gradually began to rise."
+            },
+            {
+              "japanese": "日本語を勉強し続けていたら、次第に聞き取れるようになった。",
+              "reading": "にほんごをべんきょうしつづけていたら、しだいにききとれるようになった。",
+              "english": "As I kept studying Japanese, I gradually became able to understand what I heard."
+            },
+            {
+              "japanese": "最初は緊張していたが、話すうちに次第にリラックスできた。",
+              "reading": "さいしょはきんちょうしていたが、はなすうちにしだいにリラックスできた。",
+              "english": "I was nervous at first, but as I kept talking, I gradually relaxed."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_1092",
+          "pattern": "～て頂戴",
+          "meaning": "A casual, often feminine or motherly way to ask someone to do something.",
+          "explanation": "て頂戴 is the casual equivalent of てください, formed by attaching 頂戴 to the て-form of a verb. It is predominantly used by women and in contexts involving children, close family, or informal settings. Using it with strangers or in formal situations would sound out of place or overly intimate.",
+          "examples": [
+            {
+              "japanese": "早くここに来て頂戴。",
+              "reading": "はやくここにきてちょうだい。",
+              "english": "Come here quickly, please."
+            },
+            {
+              "japanese": "この荷物を部屋まで運んで頂戴。",
+              "reading": "このにもつをへやまではこんでちょうだい。",
+              "english": "Please carry this luggage to the room."
+            },
+            {
+              "japanese": "もう少し静かにして頂戴よ。",
+              "reading": "もうすこししずかにしてちょうだいよ。",
+              "english": "Please be a little quieter, would you?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_1093",
+          "pattern": "～に値する",
+          "meaning": "Be worthy of, Deserving of, Amounts to",
+          "explanation": "Grammar explanation for ～に値する",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/doing_する",
+            "title": "Doing: する",
+            "excerpt": "84 CHAPTER 2. VERB GRAMMAR\n2.5.31 Doing: する\nWe've already seen す る as irregular verb, and it has been used in enough\nexample sentences to let it be no surprise that it means \"do'\". However,\nthis isn't the only meaning for this verb. When used in combination with\na direct object – as transitive verb – す る does mean \"do', but when used\nas intransitive verb, its meaning should be considered to be \"decide on'\nor \"choose'\". To show this difference in meaning between the transitive\nたどうし じどうし\n(strictly",
+            "examples": [
+              {
+                "japanese": "2.5.31 Doing: する"
+              },
+              {
+                "japanese": "We've already seen す る as irregular verb, and it has been used in enough",
+                "english": "example sentences to let it be no surprise that it means \"do'\". However,"
+              },
+              {
+                "japanese": "a direct object – as transitive verb – す る does mean \"do', but when used",
+                "english": "as intransitive verb, its meaning should be considered to be \"decide on'"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_1097",
+          "pattern": "～ばと思います",
+          "meaning": "Expresses a polite wish or hope that something would happen, often used to make indirect requests or express personal desires.",
+          "explanation": "Formed by attaching the conditional ば-form of a verb to と思います. This construction softens a request or desire, making it sound humble and indirect. It is polite in register and commonly used in formal speech, business settings, or when the speaker wants to avoid sounding demanding.",
+          "examples": [
+            {
+              "japanese": "もう少し早く連絡していただければと思います。",
+              "reading": "もうすこしはやくれんらくしていただければとおもいます。",
+              "english": "I would appreciate it if you could contact me a little sooner."
+            },
+            {
+              "japanese": "ご意見をいただければと思います。",
+              "reading": "ごいけんをいただければとおもいます。",
+              "english": "I would be grateful if I could receive your opinion."
+            },
+            {
+              "japanese": "次回はもっと多くの方にご参加いただければと思います。",
+              "reading": "じかいはもっとおおくのかたにごさんかいただければとおもいます。",
+              "english": "I hope that more people will be able to participate next time."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/conditional_たら_なら",
+            "title": "Conditional: たら, なら",
+            "excerpt": "114 CHAPTER 3. MORE GRAMMAR\nform, which can pair up with any verb, fz り gets its inflection specifically\nfrom the verb する, meaning '\"to do\":\nきょう がっこう い じゆぎょう で はん た\n今日は学校に行ったり、 授業に出たり、ご飯を食べたりしました。\n\"Today (I) went to school, went to class and ate.\"\nThis sentence literally reads \"Today I did: going to school, going to\nclass, eating', and shows why this is only listing representative actions -\nthere is no way to distinguish which action occurred when, in relation to\nother actions; we're literally o",
+            "examples": [
+              {
+                "japanese": "form, which can pair up with any verb, fz り gets its inflection specifically"
+              },
+              {
+                "japanese": "from the verb する, meaning '\"to do\":"
+              },
+              {
+                "japanese": "きょう がっこう い じゆぎょう で はん た"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "tobira_textbook_15_dialogue_0",
+          "type": "dialogue",
+          "title": "Dialogue textbook_tobira_textbook_15",
+          "text": "内容質問: 本文を読んだ後で、考えてみよう。\nんばい: テロや戦争の抑止につながったりすると思いますか。\nこうょう: うけん\nでんき: さくせい\nhttp: //pioneer.jp/environment/tamate\nマンガ: 瑞境玉手箱\n登場人物: ヒオちん\nスピ: 画：斎藤雨泉",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 376
+          }
+        },
+        {
+          "id": "tobira_textbook_15_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue textbook_tobira_textbook_15",
+          "text": "本文: 。この村は「安全」で「衛生的」で、何から何まであらゆることが「平等」です。【読2:11.41-42】\n説明: with全部,すべてorみんな.\n英訳: anything and everything; all; all kinds\n本文: いろいろ満されることによってかえって悩んでしまう「精神の時代」に入りました。【読2:1.46-47】\n說明: 加えてis used when an opposite result comes about, contrary to one's expectation.\n英訳: on the contrary; rather\nA: 「日本村」の住民であると同時に「世界村」の員であることを～【読2:11.65-66】\nいちいん: と同時 means that something takes place at the same time as other actions or events, or that something\n説明: is the case while something else is also the case.\n英訳: as soon as; the moment; at the same time; also; as well\na: {V/A}-plain.non-pastと同時に：{考える/考ない/考えている}と同時に;難しい}と同時に\nb: {ANa/N}{である/じやない/ではない}と同時に：大切{である/じやない/ではない}と同時に;問題\n文型: {であるじやないではない子と同時に\nC: VNNと同時に：終戦と同時に;叫び声と同時に\nしゆうせん: さけこ元\n本文: 何て名前だったっけ?【討:1.5】\nt: is a question marker. It is used only in very casual conversation. Note that after the non-past\n説明: forms of verbs, adjectives and ~ない, hmust be used before つけ, as seen in 文型.\na: {V/A}-plain.non-pastんだっけ：行くんだっけ;大きいんだっけ\nb: {V/A}-plain.past(んだ)っけ:行っ(んだ)っけ;大きかっ(んだ)っけ\nC: {ANa/N/QW}(なん)だっけ:上手(なん)だっけ;学生(なん)だっけ;いつ(なん)だっけ\n文型: d.{ANaN}じないんだっけ：上手じないだっけ:学生じないだっけ\ne: {ANaN/QW}だった(んだ)っけ：上手だった(んだ)っけ;学生だっ(んだ)っけ;いつだっ（ん\nf: {ANaN}じなかっ(んだ)っけ:上手じやなかっ(んだ)っけ;大学生じなかっ(んだ)っけ",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 380
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5136",
+          "label": "practice",
+          "prompt": "地球温暖化と戦争以外で、今、世界で問題になっていること、あるいは、問題にすべ",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5137",
+          "label": "practice",
+          "prompt": "きことは何だと思いますか。二つ挙げなさい。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5138",
+          "label": "practice",
+          "prompt": "ワンガリ・マタイという人についてインタットや本で調て、下の表を完成し",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5139",
+          "label": "practice",
+          "prompt": "①リンク集をクリック",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5140",
+          "label": "practice",
+          "prompt": "[本文を読む前に2]",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5141",
+          "label": "practice",
+          "prompt": "http:/tobira.9640.jp/tobiralogin",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5142",
+          "label": "practice",
+          "prompt": "②[教科書に出てくるイをクッ",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5143",
+          "label": "practice",
+          "prompt": "③[第15課]をクリック",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5144",
+          "label": "practice",
+          "prompt": "下のa~cの中から、この言葉の意味を",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5145",
+          "label": "practice",
+          "prompt": "一番よく表している文を選びましょう。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5146",
+          "label": "practice",
+          "prompt": "a.食べ物や飲み物がたくさんあって嬉",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5147",
+          "label": "practice",
+          "prompt": "その他に分かったこと(二つ)",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5148",
+          "label": "practice",
+          "prompt": "b.何かを全部使わなかったり、食べ物",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5149",
+          "label": "practice",
+          "prompt": "や飲み物を残したり、まだ使えう",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5150",
+          "label": "practice",
+          "prompt": "なものを捨ててしまったりすること",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5151",
+          "label": "practice",
+          "prompt": "をよくないと思う気持ち。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5152",
+          "label": "practice",
+          "prompt": "会いたいと思った人が近くにいなく",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5153",
+          "label": "practice",
+          "prompt": "て、残念だと思う気持ち。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5154",
+          "label": "practice",
+          "prompt": "あなたの国のリサイクル制度について調べて、下の表を完成しなさい。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5155",
+          "label": "practice",
+          "prompt": "あなたの国ではどんな物がサイクルできますか。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5156",
+          "label": "practice",
+          "prompt": "あなたが他にリサイクルできたらいと思う物は",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5157",
+          "label": "practice",
+          "prompt": "あなたは、リサイクルの他に、何か環境",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5158",
+          "label": "practice",
+          "prompt": "のためにしていることがありますか。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5159",
+          "label": "practice",
+          "prompt": "どんなことをしていますか。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5160",
+          "label": "practice",
+          "prompt": "何をすればいと思いますか。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_15_exercise_5161",
+          "label": "practice",
+          "prompt": "課世界と私の国の未来",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 363
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_15_exercise_5162",
+          "label": "practice",
+          "prompt": "世界がもし100人の村だったら",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 363
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_15_exercise_5163",
+          "label": "practice",
+          "prompt": "20年後、自分はどこに住んで何をしているだろうか。50年後、私たちの国はどんなふうになってい",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 363
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_15_exercise_5164",
+          "label": "practice",
+          "prompt": "るだろうか。世界の未来はどうなっているだろうか。誰もが少なくとも一度は、このような疑問を持っ",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 363
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_15_exercise_5165",
+          "label": "practice",
+          "prompt": "たことがあるのではないだろうか。しかし、この疑問に答えることは簡単ではない。明るい未来を予測",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 363
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_15_exercise_5166",
+          "label": "practice",
+          "prompt": "する人もいれば、暗い未来を予測する人もいる。未来は決まっているものではなく、現在の私たちの行",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 363
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_15_exercise_5167",
+          "label": "practice",
+          "prompt": "動次第で、明るくもなれば、暗くもなる。この課では三つの読み物を通して、今の私たちの周りにある",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 363
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_15_exercise_5168",
+          "label": "practice",
+          "prompt": "問題を考えながら、自分の国と世界の未来、そして、これからの可能性について考えてみよう。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 363
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_15_exercise_5169",
+          "label": "practice",
+          "prompt": "『世界がもし100人の村だったら・集",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 363
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_15_exercise_5170",
+          "label": "practice",
+          "prompt": "池田香代子・マンハウス [編著]",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 363
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_15_exercise_5171",
+          "label": "practice",
+          "prompt": "世界には67億人の人がいますが、もしもそれを100人の村に縮めるとどうなるでしよう。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 363
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_15_exercise_5172",
+          "label": "practice",
+          "prompt": "100人のうち、50人が女性です。50人が男性です。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 363
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_15_exercise_5173",
+          "label": "practice",
+          "prompt": "28人が子どもで、72人が大人です。そのうち、7人がお年寄りです。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 363
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_15_exercise_5174",
+          "label": "practice",
+          "prompt": "90人が異性愛者で、10人が同性愛者です。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 363
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_15_exercise_5175",
+          "label": "practice",
+          "prompt": "83人が有色人種で、17人が白人です。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 363
+          }
+        }
+      ]
+    }
+  ]
+}

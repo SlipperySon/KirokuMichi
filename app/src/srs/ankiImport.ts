@@ -153,7 +153,14 @@ export async function importFromAnki(
   file: File,
   storage: StorageProvider,
   userId: number,
-  options: { textbookKey?: string | null; deckId?: number | null; autoUnlock?: boolean; extractAudio?: boolean } = {}
+  options: {
+    textbookKey?: string | null
+    deckId?: number | null
+    autoUnlock?: boolean
+    extractAudio?: boolean
+    /** When true (default if no deckId), place cards under Extra Anki decks. */
+    asExtraDeck?: boolean
+  } = {}
 ): Promise<ImportResult> {
   const buffer = await file.arrayBuffer()
   const zip = await JSZip.loadAsync(buffer)
@@ -184,6 +191,16 @@ export async function importFromAnki(
 
   if (!result[0]) {
     return { imported: 0, skipped: 0, errors: [], audioExtracted: 0 }
+  }
+
+  // Resolve deck: explicit textbook deck, or Extra Anki decks subsection.
+  let resolvedDeckId = options.deckId ?? null
+  const preferExtra = options.asExtraDeck !== false && resolvedDeckId == null
+  if (preferExtra) {
+    const { SRSService } = await import('./srsService')
+    const { FSRSScheduler } = await import('../core/scheduler')
+    const svc = new SRSService(storage, new FSRSScheduler())
+    resolvedDeckId = await svc.ensureExtraDeck(userId, file.name)
   }
 
   const notes = result[0].values as [string, string][]
@@ -230,9 +247,15 @@ export async function importFromAnki(
         await storage.execute(
           `UPDATE cards
            SET example_sentence = COALESCE(example_sentence, ?),
-               example_translation = COALESCE(example_translation, ?)
+               example_translation = COALESCE(example_translation, ?),
+               deck_id = COALESCE(deck_id, ?)
            WHERE id = ?`,
-          [sentence, sentenceMeaning, existing[0].id]
+          [sentence, sentenceMeaning, resolvedDeckId, existing[0].id]
+        )
+      } else if (resolvedDeckId != null) {
+        await storage.execute(
+          `UPDATE cards SET deck_id = COALESCE(deck_id, ?) WHERE id = ?`,
+          [resolvedDeckId, existing[0].id]
         )
       }
       await ensureCardState(existing[0].id, sourceLessonId)
@@ -241,7 +264,7 @@ export async function importFromAnki(
         await storage.execute(
           `INSERT OR IGNORE INTO cards (type, front, back, jlpt_level, deck_id, origin_type, origin_ref, created_at)
            VALUES ('sentence', ?, ?, ?, ?, 'anki_import', ?, datetime('now'))`,
-          [sentence, sentenceMeaning, deriveJlptLevel(tags), options.deckId ?? null, file.name]
+          [sentence, sentenceMeaning, deriveJlptLevel(tags), resolvedDeckId, file.name]
         )
         const sentenceRows = await storage.query<{ id: number }>(
           `SELECT id FROM cards WHERE front = ? AND type = 'sentence' LIMIT 1`,
@@ -269,7 +292,7 @@ export async function importFromAnki(
         `INSERT OR IGNORE INTO cards
            (type, front, back, reading, jlpt_level, frequency_rank, audio_url, deck_id, example_sentence, example_translation, origin_type, origin_ref, created_at)
          VALUES ('vocabulary', ?, ?, ?, ?, ?, ?, ?, ?, ?, 'anki_import', ?, datetime('now'))`,
-        [front, back, reading, deriveJlptLevel(tags), frequencyRank, audioUrl, options.deckId ?? null, sentence, sentenceMeaning, file.name]
+        [front, back, reading, deriveJlptLevel(tags), frequencyRank, audioUrl, resolvedDeckId, sentence, sentenceMeaning, file.name]
       )
 
       // Store sentence as a separate card if present
@@ -278,7 +301,7 @@ export async function importFromAnki(
         await storage.execute(
           `INSERT OR IGNORE INTO cards (type, front, back, jlpt_level, deck_id, origin_type, origin_ref, created_at)
            VALUES ('sentence', ?, ?, ?, ?, 'anki_import', ?, datetime('now'))`,
-          [sentence, sentenceMeaning, deriveJlptLevel(tags), options.deckId ?? null, file.name]
+          [sentence, sentenceMeaning, deriveJlptLevel(tags), resolvedDeckId, file.name]
         )
         const sentenceRows = await storage.query<{ id: number }>(
           `SELECT id FROM cards WHERE front = ? AND type = 'sentence' ORDER BY id DESC LIMIT 1`,
@@ -323,11 +346,11 @@ export async function importFromAnki(
 
   for (const textbook of options.autoUnlock === false ? [] : textbooksToTry) {
     try {
-      const result = await unlockCardsForTextbook(textbook, userId, storage)
-      if (result.totalUnlocked > 0) {
+      const unlockResult = await unlockCardsForTextbook(textbook, userId, storage)
+      if (unlockResult.totalUnlocked > 0) {
         unlockedForLessons = {
           textbook,
-          totalUnlocked: result.totalUnlocked
+          totalUnlocked: unlockResult.totalUnlocked
         }
         break // Stop after first textbook with matches
       }

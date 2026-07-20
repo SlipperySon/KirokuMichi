@@ -1,0 +1,851 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "genki_1_textbook",
+  "title": "genki_1_textbook / genki_1_4",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "genki_1_4_draft",
+      "appLessonId": "genki_1_4",
+      "title": "genki 1 4",
+      "qualityTier": "draft",
+      "vocabulary": [
+        {
+          "id": "genki_1_textbook_genki_1_4_vocab_26",
+          "surface": "土曜日",
+          "reading": null,
+          "meaning": "Saturday",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 318
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_vocab_27",
+          "surface": "土",
+          "reading": null,
+          "meaning": "soil; earth",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 318
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_vocab_28",
+          "surface": "下さい",
+          "reading": null,
+          "meaning": "Please give/do...",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 318
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_vocab_29",
+          "surface": "三時半",
+          "reading": null,
+          "meaning": "half past three",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 318
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "cefr_a1_34",
+          "pattern": "のがすき",
+          "meaning": "Express liking an activity by nominalizing a verb with の and following it with が好き.",
+          "explanation": "The nominalizer の turns a verb phrase into a noun-like clause, allowing it to act as the subject of が好き. The structure is [verb dictionary form] + のが好きです. This is the natural way to say you enjoy doing something. It is used in everyday polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "私は音楽を聴くのが好きです。",
+              "reading": "わたしはおんがくをきくのがすきです。",
+              "english": "I like listening to music."
+            },
+            {
+              "japanese": "料理を作るのが好きですか。",
+              "reading": "りょうりをつくるのがすきですか。",
+              "english": "Do you like cooking?"
+            },
+            {
+              "japanese": "外で走るのが好きです。",
+              "reading": "そとではしるのがすきです。",
+              "english": "I like running outside."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_35",
+          "pattern": "Verb + てもいい",
+          "meaning": "Expresses that something is permitted or acceptable — 'it's okay to ~', 'you may ~'.",
+          "explanation": "Attach てもいい to the て-form of a verb to grant or ask for permission. In question form (てもいいですか？), it means 'May I ~?' or 'Is it okay if I ~?'. It is polite in its ～てもいいです form and very common in everyday conversation.",
+          "examples": [
+            {
+              "japanese": "ここで写真を撮ってもいいですか？",
+              "reading": "ここでしゃしんをとってもいいですか？",
+              "english": "Is it okay to take photos here?"
+            },
+            {
+              "japanese": "このペンを使ってもいいです。",
+              "reading": "このぺんをつかってもいいです。",
+              "english": "You may use this pen."
+            },
+            {
+              "japanese": "明日、少し遅く来てもいいですか？",
+              "reading": "あした、すこしおそくきてもいいですか？",
+              "english": "Is it alright if I come a little late tomorrow?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_36",
+          "pattern": "で",
+          "meaning": "Indicates the means, tool, method, or material used to do something.",
+          "explanation": "The particle で attaches to a noun to show how or with what something is done. It covers transport, tools, language, and materials. This usage is very common in everyday polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "バスで学校に行きます。",
+              "reading": "バスでがっこうにいきます。",
+              "english": "I go to school by bus."
+            },
+            {
+              "japanese": "箸でご飯を食べます。",
+              "reading": "はしでごはんをたべます。",
+              "english": "I eat rice with chopsticks."
+            },
+            {
+              "japanese": "日本語で話してください。",
+              "reading": "にほんごではなしてください。",
+              "english": "Please speak in Japanese."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_37",
+          "pattern": "その",
+          "meaning": "Means 'that' and modifies a noun close to the listener or recently mentioned.",
+          "explanation": "その is a pre-noun modifier meaning 'that', referring to something near the listener or something already mentioned in the conversation. Like この, it must be followed by a noun. It contrasts with この (near speaker) and あの (far from both).",
+          "examples": [
+            {
+              "japanese": "その本は私のです。",
+              "reading": "そのほんはわたしのです。",
+              "english": "That book is mine."
+            },
+            {
+              "japanese": "その話はおもしろいですね。",
+              "reading": "そのはなしはおもしろいですね。",
+              "english": "That story is interesting, isn't it."
+            },
+            {
+              "japanese": "その人はだれですか。",
+              "reading": "そのひとはだれですか。",
+              "english": "Who is that person?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_38",
+          "pattern": "へ",
+          "meaning": "Marks the direction or destination of movement.",
+          "explanation": "The particle へ (pronounced 'e') attaches to a place noun to indicate the direction someone or something is moving toward. It is interchangeable with に for destinations in many cases, but へ emphasizes direction or journey rather than arrival. It is used in both polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "私は学校へ行きます。",
+              "reading": "わたしはがっこうへいきます。",
+              "english": "I am going to school."
+            },
+            {
+              "japanese": "東京へようこそ！",
+              "reading": "とうきょうへようこそ！",
+              "english": "Welcome to Tokyo!"
+            },
+            {
+              "japanese": "右へ曲がってください。",
+              "reading": "みぎへまがってください。",
+              "english": "Please turn to the right."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_39",
+          "pattern": "くる",
+          "meaning": "くる is an irregular verb meaning 'to come' toward the speaker or a reference point.",
+          "explanation": "くる is the second main irregular verb in Japanese. Unlike いく (to go away), くる describes movement toward the speaker or toward the topic's location. It conjugates irregularly: polite form is きます, past is きました. It is used in both polite and casual registers.",
+          "examples": [
+            {
+              "japanese": "友だちが来ます。",
+              "reading": "ともだちがきます。",
+              "english": "My friend is coming."
+            },
+            {
+              "japanese": "先生はもう来ました。",
+              "reading": "せんせいはもうきました。",
+              "english": "The teacher has already come."
+            },
+            {
+              "japanese": "明日、うちに来てください。",
+              "reading": "あした、うちにきてください。",
+              "english": "Please come to my house tomorrow."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "conjugation_schemes/irregular_verbs_くる_来る",
+            "title": "Irregular verbs: くる (来る)",
+            "excerpt": "324 CHAPTER 7. CONJUGATION SCHEMES\n7.1.3 Irregular verbs:する (ずる/じる)\nbase する ずる じる\n未然形 さ,せ,し ざ,ぜ,じ じ\n連用形 し じ じ\n連体形 する ずる じる\n已然形 すれ ずれ じれ\n命令形 せ(よ),し(ろ),せいぜ(よ),じ(ろ),ぜい じ(よ,ろ)\nThe 未然形 for these verbs follow a few special rules.\nFor the classical negation:\nする uses the せ-未然形\nずる uses the ぜ-未然形\nFor the passive and causative:\nする uses both the せ- and さ-未然形，for せられる/される for the\npassive and させる for the causative.\nずる uses just the じ-未然形, forming じられる for the passive and じ\nさせる for the causative.\nじる uses its o",
+            "examples": [
+              {
+                "japanese": "7.1.3 Irregular verbs:する (ずる/じる)"
+              },
+              {
+                "japanese": "base する ずる じる"
+              },
+              {
+                "japanese": "未然形 さ,せ,し ざ,ぜ,じ じ"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_40",
+          "pattern": "だった・でした",
+          "meaning": "Expresses 'was' or 'were', the past tense of だ and です.",
+          "explanation": "だった is the plain past form of だ, and でした is the polite past form of です. They follow nouns and な-adjectives to express that something was a certain way in the past. でした is used in formal or polite contexts, while だった is used in casual conversation.",
+          "examples": [
+            {
+              "japanese": "昨日はいい天気でした。",
+              "reading": "きのうはいいてんきでした。",
+              "english": "Yesterday was nice weather."
+            },
+            {
+              "japanese": "子どものとき、私は元気だった。",
+              "reading": "こどものとき、わたしはげんきだった。",
+              "english": "When I was a child, I was energetic."
+            },
+            {
+              "japanese": "あの店は有名なレストランでした。",
+              "reading": "あのみせはゆうめいなレストランでした。",
+              "english": "That place was a famous restaurant."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_41",
+          "pattern": "う-Verb (Past)",
+          "meaning": "Form the past tense of う-verbs by applying sound-change rules to get ました (polite) or た/だ (casual).",
+          "explanation": "う-verbs (Group 1 or godan verbs) require a stem change before adding the past ending. In polite speech, change the final sound to the い-row and add ました (e.g., 書く→書きました). In casual speech, the ending becomes た or だ depending on the verb's final consonant. Mastering these sound changes is key to Japanese verb conjugation.",
+          "examples": [
+            {
+              "japanese": "昨日、本を読みました。",
+              "reading": "きのう、ほんをよみました。",
+              "english": "I read a book yesterday."
+            },
+            {
+              "japanese": "友だちに電話しました。",
+              "reading": "ともだちにでんわしました。",
+              "english": "I called my friend."
+            },
+            {
+              "japanese": "駅まで歩きました。",
+              "reading": "えきまであるきました。",
+              "english": "I walked to the station."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_42",
+          "pattern": "もう",
+          "meaning": "Expresses that something has already happened or is no longer the case.",
+          "explanation": "もう means 'already' in affirmative sentences (e.g., もう食べました — 'already ate') and 'not anymore' or 'no longer' in negative sentences (e.g., もう食べません — 'won't eat anymore'). It is very common in everyday conversation at all registers.",
+          "examples": [
+            {
+              "japanese": "もう宿題をしました。",
+              "reading": "もうしゅくだいをしました。",
+              "english": "I already did my homework."
+            },
+            {
+              "japanese": "もうお腹がいっぱいです。",
+              "reading": "もうおなかがいっぱいです。",
+              "english": "I'm already full."
+            },
+            {
+              "japanese": "田中さんはもうここにいません。",
+              "reading": "たなかさんはもうここにいません。",
+              "english": "Tanaka-san is no longer here."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_43",
+          "pattern": "だけ",
+          "meaning": "Means 'only' or 'just', limiting a quantity, person, or thing to nothing more than what is stated.",
+          "explanation": "だけ attaches to nouns, verbs in plain form, and adjectives to indicate that something is limited to exactly that and nothing else. It is neutral in register and works in both casual and polite sentences. It is similar in meaning to しか…ない but without the negative verb requirement.",
+          "examples": [
+            {
+              "japanese": "水だけ飲みました。",
+              "reading": "みずだけのみました。",
+              "english": "I only drank water."
+            },
+            {
+              "japanese": "一つだけ食べていいですよ。",
+              "reading": "ひとつだけたべていいですよ。",
+              "english": "You can eat just one."
+            },
+            {
+              "japanese": "少しだけ時間があります。",
+              "reading": "すこしだけじかんがあります。",
+              "english": "I have just a little time."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_44",
+          "pattern": "が",
+          "meaning": "Connects two contrasting or unexpected clauses, meaning 'but' or 'however'.",
+          "explanation": "When used as a conjunction between two clauses, が marks a contrast or mild contradiction. It is slightly more formal than けど and appears frequently in polite written and spoken Japanese. The clause before が sets context; the clause after presents a contrasting point.",
+          "examples": [
+            {
+              "japanese": "日本語を勉強していますが、まだ上手じゃないです。",
+              "reading": "にほんごをべんきょうしていますが、まだじょうずじゃないです。",
+              "english": "I am studying Japanese, but I am not good at it yet."
+            },
+            {
+              "japanese": "この店は安いですが、おいしいです。",
+              "reading": "このみせはやすいですが、おいしいです。",
+              "english": "This restaurant is cheap, but it is delicious."
+            },
+            {
+              "japanese": "電話しましたが、出ませんでした。",
+              "reading": "でんわしましたが、でませんでした。",
+              "english": "I called, but there was no answer."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "genki_1_4_dialogue_0",
+          "type": "dialogue",
+          "title": "Dialogue genki_1_4",
+          "text": "We: will learn just one more ko-so-a-do set: koko, soko, asoko, and doko are words for places.\n二二: here, near me\nそこ: there, near you\nあそこ: over there\nどこ: where\nYou: can ask for directions by saying:\nExcuse: me. Where is the post office?\nSumimasen: Yuubinkyoku wa\ndoko: desu ka.\nYou: can point toward the post ofice and say:\nasoko: desu.\nWe: will learn how to give more specific directions in Lesson 4.\nだれの: Noun\nIn: Lesson 1, we learned how to say things like Mearii san no denwa bangoo (Mary's phone num-\nlongs: to. The question word for \"who\" is dare, and for \"whose,\" we add the particle no and say dare\nno: A：これはだれのかばんですか。\nWhose: bag is this?\nKore: wa dare no kaban desu ka.\nB: それは\nThat: is Sora's bag.\nSore: wa Sora san no\nkaban: desu.\nIn: Lesson 1, we learned how to say \"Item A is this, item B is that.\" We now learn how to say \"Item\nA: is this, and item B is this, too.\" The word for\"too\"in Japanese is particle mo.\nTakeshi: is a Japanese person.\nTakeshi: san wa nihonjin desu.\nYui: is Japanese, too.\nYui: san mo\nnihonjin: desu.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_4_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue genki_1_4",
+          "text": "はじ: In this lesson, we will.\nAsk: and describe where things/people are\nTalk: about things that happened in the past\nTalk: about habitual actions in the past\n会話: Di a\nI: Mary goes downtown.ko4-01/02\nま元: 4メアリー:\nIn: the evening, at Mary's host family's house.ko4-03/04\nとう: えいが\nとう: 5メアりー：わかりません。だから、一人で本屋\nひとり: ほんや\nひと: 8メアリー：1\nてら: しゃしん",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 111
+          }
+        },
+        {
+          "id": "genki_1_4_dialogue_2",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_4",
+          "text": "Nouns: Activities\ngame: アルバイト\nかいもの: 買い物\nshopping: クラス\nclass: People and Things\nperson: こども\n子供: child\nあなた: you\nいす: chair\nflower: レポート\nパン: bread\nPlaces: おてら\ntemple: こうえん\n公園: park\nsupermarket: バスてい\nバス停: bus stop\nhospital: ホテル\nレストラン: restaurant",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 113
+          }
+        },
+        {
+          "id": "genki_1_4_dialogue_3",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_4",
+          "text": "Location: Wor d s\nみぎ: right (~の)\nひだり: left (~の)\nまえ: front (~の)\nうしろ: back(~の)\nうえ: on(~の)\nした: under(~の)\nちかく: near; nearby(~の)\nとなり: next(~の)\nあいだ: between (Aと Bの)\nつくえの上: $a$\nC: よこはま\nとうきよう: つくえの下\nなか: やまださんの\nやまださんの: となり\nやまださんと: さとうさんの間\nあいだ: やまださん\nさとうさん: やまださんの前",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "genki_1_4_dialogue_4",
+          "type": "dialogue",
+          "title": "Dialogue genki_1_4",
+          "text": "と: The particle Y has two functions. One is to connect two nouns A and B.\nI: speak Japanese and English.\nにほんこ: えいこ\nはな: 京都と大阪に行きました。\nI: went to Kyoto and Osaka.\nきょうと: おおさか\nい: The other meaning ofY is\"together with\"; it describes with whom you do something.\nMary: will go to Korea with Sora.\nExpression: Notes\nposite: X.\" You may also hear another word that is used in the sense of across,\nIf: something is behind X, or farther away from a street and cannot be directly\nseen: because of the intervening X, in addition to calling it Xの後, you can also\nうし: describe it as beingX のうら.\nMary: saying あ.えis like the incredulous\"what?\" that you use when you\nhave: heard something that is hard to believe. あ is used when you have sud-\ndenly: noticed or remembered something. The small  at the end of these little\nwords: indicates that these words, when pronounced, are very short.\nNot: using tなtAs we learned in Lesson 1 (Expression Notes on page 45), the\nuse: of the word あな is limited. Japanese speakers usually go without explicitly\nA: 今週の週末、何をしますか。\nWhat: are you going to do this weekend?\nこんしゆう: しうまつ\nなに: B：買い物をします。\nI: am going shopping.\nIf: you know the name of the person you are talking to, use their name plus\nor: boss. Using terms of address other than their title like先生(teacher) and社",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 122
+          }
+        },
+        {
+          "id": "genki_1_4_dialogue_5",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_4",
+          "text": "Culture: Notes\n日本の祝日: Japanese National Holidays\nしのくじつ: As of February 2020.\n元日: New Year's Day\nがつついたち: かんじつ\n成人の日: Coming-of-Age Day\nがつだいつようび: せいじん\nひ: (Celebrates people who turn 20 years old in that year)\n建国記念の日: National Foundation Day\nにち: けんくきねん\nひ: 2月23日\n天皇誕生日: Emperor's Birthday\nてんのうたんじょうび: 3月20日ごろ\n春分の日: Vernal Equinox Day\nがつはつか: Lhふh\nひ: 4月29日\n昭和の日: Showa Day\n憲法記念日: Constitution Day\nがつみっか: けんぼうきねんび\nみどりの日: Greenery Day\nこどもの日: Children's Day\n海の日: Marine Day\nがつだいげつようび: 8月11日\n山の日: Mountain Day\n敬老の日: Respect-for-the-Aged Day\nがつだいげつようび: けいろう\nひ: 9月23日ごろ\n秋分の日: Autumnal Equinox Day\nHealth: and Sports Day\n文化の日: Culture Day\nがつみっか: ぶんか\nひ: 11月23日\n勤労感謝の日: LaborThanksgiving Day\nr: 3: The third Monday\nThe: period around April 29 to May 5 encompasses several holidays and is called ゴ—ルデン\nperiod: (For the names of months and days, see p. 127.)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 123
+          }
+        },
+        {
+          "id": "genki_1_4_dialogue_6",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_4",
+          "text": "C: Look at Takeshi's schedule for the week and answer the following questions.  Ko4-09\nSchool: After School\nMonday: Chinese English Computer\nTuesday: History\nClub: activity\nWednesday: Chinese English Computer\nThursday: History\nClub: activity\nFriday: English (TEST)\nParty: Saturday\nNO: SCHOOL\nDate: Sunday\nNO: SCHOOL\nclub: activity\nparty: パーティー\ntest: テスト\nQ: 月曜日に中国語のクラスがありますか。\nExample: げつようびちうこくこ\nA: はい、あります。\nげつようび: えいご\nかようび: 3.木曜日に中国語のクラスがありますか。\nもくようび: ちごくこ\nどよび: 5.水日に何がありますか。\nD: Pair Work—Write down your next week's schedule and ask each other what plans you\nhave: on each day of the week.\nExample: A：月曜日に何がありますか。\nB: 日本語のクラスがあリます。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 125
+          }
+        },
+        {
+          "id": "genki_1_4_dialogue_7",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_4",
+          "text": "C: Pair Work—Ask and answer questions to find where the buildings are.\nOne: student looks at map A. The other student looks at map B (p. 126). Don't look at the\nExample: A：すみません。公園はどこですか。\nこうえん: B：公園はホテルのとなりです。\nこうえん: A：ありがとうございます。\nB: いいえ。\nMapA: Ask where the following\nplaces: are.\nホテル: コンビニ\n公園: 4.本屋\nE: だいがく\nほんや: 2.バス停\n銀行: 図書館\nてい: ゆうびんきよく\nレストラン: きんこう\nとしょかん: 3.高校\nせんせい: だいがくせい\nA: Look at the information about Professor Yamashita 25 years ago and answer the\nExample: Q：山下先生は大学生でしたか。\nやましせんせいだいがくせい: A：はい、大学生でした。\nだいがくせい: Q：山下先生は十九歳でしたか。\nやましたせんせい: じうきさい\nA: いいえ、\nじゆうきうさい: 1.山下先生は子供でしたか。\nやましせんせい: こども\nやましせんせい: せんこうえいご\nやましせんせい: いちねんせい\nやましたせんせい: せんこうれきし\nやましせんせい: がくせい",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 127
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1176",
+          "label": "practice",
+          "prompt": "ここ/そこ/あそこ/どこ",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1177",
+          "label": "practice",
+          "prompt": "We will learn just one more ko-so-a-do set: koko, soko, asoko, and doko are words for places.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1178",
+          "label": "practice",
+          "prompt": "here, near me",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1179",
+          "label": "practice",
+          "prompt": "there, near you",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1180",
+          "label": "practice",
+          "prompt": "over there",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1181",
+          "label": "practice",
+          "prompt": "You can ask for directions by saying:",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1182",
+          "label": "practice",
+          "prompt": "すません。ゆうびんきよくはどこですか。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1183",
+          "label": "practice",
+          "prompt": "Excuse me. Where is the post office?",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1184",
+          "label": "practice",
+          "prompt": "Sumimasen.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1185",
+          "label": "practice",
+          "prompt": "Yuubinkyoku wa",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1186",
+          "label": "practice",
+          "prompt": "doko desu ka.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1187",
+          "label": "practice",
+          "prompt": "You can point toward the post ofice and say:",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1188",
+          "label": "practice",
+          "prompt": "(ゆうびんきよくは）あそこです。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1189",
+          "label": "practice",
+          "prompt": "(The post office is) right over there.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1190",
+          "label": "practice",
+          "prompt": "(Yuubinkyoku wa)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1191",
+          "label": "practice",
+          "prompt": "asoko desu.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1192",
+          "label": "practice",
+          "prompt": "We will learn how to give more specific directions in Lesson 4.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1193",
+          "label": "practice",
+          "prompt": "In Lesson 1, we learned how to say things like Mearii san no denwa bangoo (Mary's phone num-",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1194",
+          "label": "practice",
+          "prompt": "ber) and Takeshi san no okaasan (Takeshi's mother). We now learn how to ask who something be-",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1195",
+          "label": "practice",
+          "prompt": "longs to. The question word for \"who\" is dare, and for \"whose,\" we add the particle no and say dare",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1196",
+          "label": "practice",
+          "prompt": "A：これはだれのかばんですか。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1197",
+          "label": "practice",
+          "prompt": "Whose bag is this?",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1198",
+          "label": "practice",
+          "prompt": "Kore wa dare no kaban desu ka.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1199",
+          "label": "practice",
+          "prompt": "うさんのかばんです。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1200",
+          "label": "practice",
+          "prompt": "That is Sora's bag.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1201",
+          "label": "practice",
+          "prompt": "Sore wa Sora san no",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1202",
+          "label": "practice",
+          "prompt": "kaban desu.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1203",
+          "label": "practice",
+          "prompt": "In Lesson 1, we learned how to say \"Item A is this, item B is that.\" We now learn how to say \"Item",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1204",
+          "label": "practice",
+          "prompt": "A is this, and item B is this, too.\" The word for\"too\"in Japanese is particle mo.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1205",
+          "label": "practice",
+          "prompt": "たけしさんはにほんじんです。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1206",
+          "label": "practice",
+          "prompt": "Takeshi is a Japanese person.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1207",
+          "label": "practice",
+          "prompt": "Takeshi san wa nihonjin desu.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1208",
+          "label": "practice",
+          "prompt": "ゆいさんもにほんじんです。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1209",
+          "label": "practice",
+          "prompt": "Yui is Japanese, too.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1210",
+          "label": "practice",
+          "prompt": "Yui san mo",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1211",
+          "label": "practice",
+          "prompt": "nihonjin desu.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1722",
+          "label": "practice",
+          "prompt": "We learned in Lesson 2 that we use the particle も in reference to the second item which shares a",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 120
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1723",
+          "label": "practice",
+          "prompt": "common attribute with the fi rst. You can also use も when two or more people perform the same",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 120
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1724",
+          "label": "practice",
+          "prompt": "私はきのう京都に行きました。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 120
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_4_exercise_1725",
+          "label": "practice",
+          "prompt": "I went to Kyoto yesterday.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 120
+          }
+        }
+      ]
+    }
+  ]
+}

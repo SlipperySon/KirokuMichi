@@ -1,0 +1,791 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "genki_2_textbook",
+  "title": "genki_2_textbook / genki_2_23",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "genki_2_23_draft",
+      "appLessonId": "genki_2_23",
+      "title": "genki 2 23",
+      "qualityTier": "draft",
+      "vocabulary": [
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_23_vocab_11",
+          "surface": "ことわぎ",
+          "reading": null,
+          "meaning": "Japanese Proverbs",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 280
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_vocab_55",
+          "surface": "顔文字と絵文字",
+          "reading": null,
+          "meaning": "Emoticons and Emoji",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 348
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_vocab_56",
+          "surface": "悲しい",
+          "reading": null,
+          "meaning": "sad",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 348
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_vocab_57",
+          "surface": "変な",
+          "reading": null,
+          "meaning": "strange",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 348
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_vocab_58",
+          "surface": "比べる",
+          "reading": null,
+          "meaning": "to compare",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 348
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_vocab_59",
+          "surface": "感動する",
+          "reading": null,
+          "meaning": "to be moved",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 348
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_vocab_60",
+          "surface": "調べる",
+          "reading": null,
+          "meaning": "to look into",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 349
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "cefr_a2_773",
+          "pattern": "Verb[て]・Noun[で] + B",
+          "meaning": "Indicate the means, method, or instrument by which something is done.",
+          "explanation": "The で-particle shows how an action is accomplished—with what tool, by what method, or using what transportation. Works with both nouns (バスで = by bus) and て-form verbs (歩いて = by walking). Essential for describing the manner or means of doing something in everyday contexts.",
+          "examples": [
+            {
+              "japanese": "バスで学校に行きます。",
+              "reading": "ばすでがっこうにいきます。",
+              "english": "I go to school by bus."
+            },
+            {
+              "japanese": "ペンで書いてください。",
+              "reading": "ぺんでかいてください。",
+              "english": "Please write with a pen."
+            },
+            {
+              "japanese": "歩いて公園に着きました。",
+              "reading": "あるいてこうえんについきました。",
+              "english": "I arrived at the park by walking."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_774",
+          "pattern": "なくて",
+          "meaning": "The negative て-form of verbs and adjectives, meaning 'not ~ and' or 'because not ~.'",
+          "explanation": "なくて is formed by replacing the final い of ない with くて. For い-adjectives, drop い and add くなくて; for な-adjectives and nouns, use じゃなくて. It connects clauses in sequence or expresses a reason for a negative state. It is neutral in register and extremely common.",
+          "examples": [
+            {
+              "japanese": "お金がなくて、旅行に行けません。",
+              "reading": "おかねがなくて、りょこうにいけません。",
+              "english": "I don't have money, so I can't travel."
+            },
+            {
+              "japanese": "宿題をしなくて、先生に怒られました。",
+              "reading": "しゅくだいをしなくて、せんせいにおこられました。",
+              "english": "Because I didn't do my homework, I was scolded by the teacher."
+            },
+            {
+              "japanese": "この部屋は静かじゃなくて、勉強しにくいです。",
+              "reading": "このへやはしずかじゃなくて、べんきょうしにくいです。",
+              "english": "This room isn't quiet, so it's hard to study."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_775",
+          "pattern": "なくて",
+          "meaning": "なくて expresses cause-and-effect or sequential negative conditions in natural conversation.",
+          "explanation": "While なくて shares its form with the previous conjugation entry, this entry focuses on its practical use in expressing reasons and natural spoken connections. It is softer than ので or から and often implies an emotional or personal consequence. Common in casual and polite speech alike.",
+          "examples": [
+            {
+              "japanese": "熱があって、学校に行けなくて、悲しかったです。",
+              "reading": "ねつがあって、がっこうにいけなくて、かなしかったです。",
+              "english": "I had a fever and couldn't go to school, so I was sad."
+            },
+            {
+              "japanese": "彼女が来なくて、パーティーはつまらなかった。",
+              "reading": "かのじょがこなくて、パーティーはつまらなかった。",
+              "english": "She didn't come, so the party was boring."
+            },
+            {
+              "japanese": "財布を持ってこなくて、困りました。",
+              "reading": "さいふをもってこなくて、こまりました。",
+              "english": "I didn't bring my wallet, so I was in trouble."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_776",
+          "pattern": "Verb[て] + B",
+          "meaning": "Connects two clauses to show sequence, cause, contrast, or parallel actions.",
+          "explanation": "The te-form allows you to link multiple clauses in one sentence. It can express sequential actions (and then), cause-and-effect (and so), contrasts (but), or parallel states (and). The relationship between clauses depends on context and the main predicate.",
+          "examples": [
+            {
+              "japanese": "朝起きて、顔を洗いました",
+              "reading": "あさおきて、かおをあらいました",
+              "english": "I woke up in the morning and washed my face"
+            },
+            {
+              "japanese": "雨が降って、寒いです",
+              "reading": "あめがふって、さむいです",
+              "english": "It's raining and therefore it's cold"
+            },
+            {
+              "japanese": "漢字は難しくて、ひらがなは簡単です",
+              "reading": "かんじはむずかしくて、ひらがなはかんたんです",
+              "english": "Kanji is difficult, but hiragana is easy"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_777",
+          "pattern": "Verb[て]",
+          "meaning": "Please do (for me) - casual/informal request",
+          "explanation": "The te-form of a verb used alone (without ください) expresses a casual request or plea. It is less formal than ～てください but still appropriate for friends, family, or people you know well. The tone and politeness depend on context and intonation.",
+          "examples": [
+            {
+              "japanese": "ちょっと手伝ってくれない？",
+              "reading": "ちょっと てつだって くれない？",
+              "english": "Would you help me out for a moment?"
+            },
+            {
+              "japanese": "ちょっと待ってよ。",
+              "reading": "ちょっと まって よ。",
+              "english": "Wait just a moment, will you?"
+            },
+            {
+              "japanese": "これを見てみて。",
+              "reading": "これを みて みて。",
+              "english": "Look at this for me."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_778",
+          "pattern": "Verb[ないで]",
+          "meaning": "To request not to do something, or to express doing something without another action.",
+          "explanation": "This pattern is used for casual requests not to do something. It can also mean 'without' doing an action or 'instead of' doing something. The tone is softer and more casual than a direct negative command, making it appropriate for gentle requests.",
+          "examples": [
+            {
+              "japanese": "待たないで、先に行ってください",
+              "reading": "またないで、さきにいってください",
+              "english": "Please don't wait; go ahead first"
+            },
+            {
+              "japanese": "電話しないで、メールで連絡してください",
+              "reading": "でんわしないで、めーるでれんらくしてください",
+              "english": "Instead of calling, please contact me by email"
+            },
+            {
+              "japanese": "子どもが寝ないで、夜遅くまで遊んでいます",
+              "reading": "こどもがねないで、よるおそくまであそんでいます",
+              "english": "The child doesn't sleep and plays until late at night"
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_1032",
+          "pattern": "命令形",
+          "meaning": "A verb form used to express direct commands or instructions",
+          "explanation": "The imperative form is used to give commands or strong instructions in casual situations. It's formed differently for different verb types and is generally considered direct or even rude without softening words like ください or なさい. This form is not typically used in polite conversations.",
+          "examples": [
+            {
+              "japanese": "本をすぐに読みなさい。",
+              "reading": "ほんをすぐによみなさい。",
+              "english": "Read the book right away."
+            },
+            {
+              "japanese": "早く来てください。",
+              "reading": "はやくきてください。",
+              "english": "Please come early."
+            },
+            {
+              "japanese": "静かにしてください。",
+              "reading": "しずかにしてください。",
+              "english": "Please be quiet."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_1083",
+          "pattern": "く・に",
+          "meaning": "Converts adjectives into adverbs to describe how an action is performed, like '～ly' in English.",
+          "explanation": "い-adjectives form adverbs by replacing the final い with く (e.g., 速い → 速く, 'fast → quickly'), while な-adjectives form adverbs by adding に after the adjective stem (e.g., 静か → 静かに, 'quiet → quietly'). These adverbs directly modify verbs or other adjectives. This pattern is fundamental to Japanese and used in all registers.",
+          "examples": [
+            {
+              "japanese": "もっとゆっくり話してください。",
+              "reading": "もっとゆっくりはなしてください。",
+              "english": "Please speak more slowly."
+            },
+            {
+              "japanese": "彼女は静かに図書館を出ました。",
+              "reading": "かのじょはしずかにとしょかんをでました。",
+              "english": "She quietly left the library."
+            },
+            {
+              "japanese": "今日は早く起きました。",
+              "reading": "きょうははやくおきました。",
+              "english": "I woke up early today."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_1098",
+          "pattern": "づらい",
+          "meaning": "Attached to a verb stem to express that an action is difficult, painful, or uncomfortable to carry out, often due to emotional or physical burden.",
+          "explanation": "づらい attaches to the verb stem like にくい but carries a more personal, subjective nuance — the difficulty involves discomfort, awkwardness, or emotional pain rather than just objective hardness. It also conjugates as an い-adjective. More common in casual and written speech.",
+          "examples": [
+            {
+              "japanese": "そんなことは言いづらいです。",
+              "reading": "そんなことはいいづらいです。",
+              "english": "That kind of thing is hard to say."
+            },
+            {
+              "japanese": "この靴は歩きづらいです。",
+              "reading": "このくつはあるきづらいです。",
+              "english": "These shoes are hard to walk in."
+            },
+            {
+              "japanese": "彼に会いづらい気持ちがあります。",
+              "reading": "かれにあいづらいきもちがあります。",
+              "english": "I have a feeling that makes it hard to face him."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "genki_2_23_dialogue_0",
+          "type": "dialogue",
+          "title": "Dialogue genki_2_11",
+          "text": "文法: Grammar\nぼう: ほしい\nLmeans: \"(I) want (something).\" lLfollows the -adjective conjugation pattern. The\nobject: of desire is usually followed by the particle . In negative sentences, the particle l is also\nused: いい成績がほしいです。\nせいせき: I want a good grade.\nこともとき: When I was young, I wanted a Pokémon game.\nQ: プレゼントがほしい?\nDo: you want a present?\nA: ううん、ほしくない。\nI: want X.\nわたし: Lis like t=(I want to do...), which we studied in Lesson 11, and its use is mostly limited\nto: the first person, the speaker.' So, we use l L  to say \"I want this\" but not for\"Mary wants\nthat: \" To talk about somebody else's wishes or desires, you either quote that person's expression of\nあたら: Yasmin says she wants a new phone.\nあ及: Ami probably doesn't want a stufed animal.\nOr: you can replace with the derived verb, which indicates that you can tell by\nthe: way the person acts that they want something. is likeがin the first example\nin: the form lがてい.Unlike , the particle after the objectofdesire isを.\nAmong: the words we have learned so far,な(sad),L(glad), and=(painful) are similarly\nlimited: to first-person descriptions.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 58
+          }
+        },
+        {
+          "id": "genki_2_23_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue genki_2_23",
+          "text": "別れ: Good-bye\nわか: In this lesson, we will.\nComplain: about doing something undesirable\nReminisce: about the past\nMake: a resolution for a new phase of life\nSay: farewell\nMary: and her host family at their last dinner together.K23-01/02\nお母さん: メりがいなくなるとさびしくなるね。\nかあ: 2メり一：でも、来年大学を卒業したら、また日本に戻ってきますから。\nらいねんだいがくそつきよう: にほんもど\nお父さん: 私たちもメり一がいて、とても楽しかったよ。\nとう: わたし\nたの: お母さん：\nかあ: くにかえ\nお父さん: じあ、この夏はメリカに行くことにう。\nい: お母さん：そうね。\nOn: the way to the airport.\nたけし: この年、いろいろなことがあったね。\nいちねん: 2メアリー：そそう。デートの時、よく待たされた。\nやくそく: はしよ\nおこ: 4メアリー：\nた: 5たけし：\nはじ: いっしよ\nいた: 7たけし：",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 258
+          }
+        },
+        {
+          "id": "genki_2_23_dialogue_2",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_23",
+          "text": "NoUns: くっした\n靴下: socks\nただ: free of charge\ndinner: ばしよ\n場所: place\nstairs: しがっこう\n小学校: elementary school\ninterview: けんこう\n健康: health\nideal: るすばん\n留守番: looking after a house during\nclass: cancellation\nかいがいりこう: 海外旅行\ntrip: to a foreign country\nぼんおどり: 盆踊り\nBon: dance (Japanese traditional\nおもいで: 思い出\nmemory: しゃかい\n社会: society\nresult: ちようさ\n調查: survey\nまずい: (food is) terrible\nあめがやむ: 雨がやむ\nthe: rain stops\nto: be different; to be wrong\nなくなる: to be lost; to disappear(~)",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 260
+          }
+        },
+        {
+          "id": "genki_2_23_dialogue_3",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_23",
+          "text": "文法: Grammar\npassive: sentences when you want to say that you were made to do, or harassed or talked into do-\nうたうた: (I didn't want to sing because I'm not a good singer, but) I was forced to sing.\nた: やさい\nた: (I don't want to eat vegetables because I don't like them, but) I am (always) made to eat\nvegetables: You make the causative-passive forms this way:\n食べる: 食べさせられる\n話す: 話させられる\nおよ: 待たされる\nぶ: 遊ばされる\nあそ: 読まされる\n入: 買わさる\nか: 取らされる\nする: させられる\nくるこさせられる: In the table above, you must have noticed that the causative-passive morphology in ru-verbs,\npassive: forms: -(s)ase-rare. In u-verbs other than those that end with す, however, the causative-\npassive: suffix -asare is shorter than the sum of the causative (-ase) and the passive (-rare) suffixes.\nThe: more transparently combinative aserare form, such as書れ, is indeed grammatical, but causative-\npassive: verbs of the asare form, such as書かされる, are much more common.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 262
+          }
+        },
+        {
+          "id": "genki_2_23_dialogue_4",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_23",
+          "text": "meaning: 雨が降っても、バーべキューをします。\nWe: will have a barbecue, even if it rains.\nWe: will not have a barbecue if it rains.\nあつ: I will not turn on the air conditioner, even if it is hot.\nあつ: I will turn on the air conditioner, if it is hot.\nことも: Even a child will get it. (You will be able to understand it, even if you are a child.)\nことも: If you are a child, you will not get it.\nYou: can form a ても clause by adding も to the verb or adjective te-form. With な-adjectives and\nadjective: t=ら and ても forms look quite distinct.\nCompare: . verbs:\n買う: 買っても\nか: .W-adjectives:\n悲: しくても(×悲かっても)\nかな: .な-adjectives:\n元気でも: （×元気だっても)\nげんき: げんき\n学生でも: （×学生だっても）\n学生だったら: がくせい\nがくせい: がくせい\nがくせい: You can put a question word like fれ or in a ても clause and have a generalized concessive clause mean-\nNo: matter who I asked, they didn't tell me.\n书: いつ行っても、東京はにやかです。\nとうき上う: No matter when you visit, Tokyo is lively.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 264
+          }
+        },
+        {
+          "id": "genki_2_23_dialogue_5",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_23",
+          "text": "r: a c ti\nれん: しゆう\nA: Change the following into the causative-passive forms.\nね: 1.食べる\nせわ: 3.受ける\nB: Kenta and Yui are forced to do the following by each other. Describe the pictures using\nthe: causative-passive forms.\nExample: けんたさんはゆいさんに荷物を持たされます。\nSale: STATION\n荷物を持つ: 買い物に付き合う\n駅に迎えに行く: 高い服を買う\n犬の世話をする: お弁当を作る\n夕食をおごる: アイロンをかける\nべんとううく: ゆうしよく",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 268
+          }
+        },
+        {
+          "id": "genki_2_23_dialogue_6",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_23",
+          "text": "じゃんけん: Chlt h(rock scissors paper) is a children's game. Players call out \"Jan, ken, pon\"\nand: make one of three forms with one hand: rock, scissors, or paper.\"Rock\" breaks\nmine: who will be \"it\" in games of tag or who will go first in selecting teams.\nCphlth: ほん!\nあいこて: かっt=!\nE: Group Work—Talk with your classmates about what you were forced to do when you\nwere: children. Then discuss whether you would make your children do the same or not.\nYou: can use the cues in I-C (p. 261) as topics of your talk.\nExample: 每日勉強する\nまいにちべんきょう: →A：子供の時、每日両親に勉強させられた?\nこどもときまいにちょうしん: べんきよう\nB: うん、させられた。\nA: じやあ、自分の子供にも每日勉強させる?\nとも: まいにちべんきよう\nB: もちろん。毎日塾に行かせて、遅くまで勉強させる。\nべんきよう: A：それはかわいそうだよ。私だったら、子供がやりたいことを\nす: がっき\nA: Make sentences using ~ても.k23-12\nExample: 学生がうるさい\nがくせい: がくせい\n学生がうるさい: がくせい\n学生が授業中に寝ている: 絶対に怒りません。\nがくせいしもんこた: 3.学生に文句を言われる\n山下先生: 4.学生がカンニングする\nやましせんせい: がくせい",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 270
+          }
+        },
+        {
+          "id": "genki_2_23_dialogue_7",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_23",
+          "text": "D: Complete the following sentences using ても or でも.\n日本語の勉強を続けることにしました: Grammar 3\nにほん: べんきよう\nA: The semester is over and people are leaving. Say what they have decided to do, using\nExample: × I) —: will go back to her country and continue her study of Japanese\nくにかえ: にほんこ\nやましせんせい: 6.メアリーさんのホストファミリー:willgo to theU.S.to seeMary\nB: Pair Work—You have just found that your class was canceled. Talk with your partner\nabout: what you want to do together. Decide at least two activities and report to the\nclass: what you have decided to do.\nExample: A：山下先生の授業、休講になったって。\nやましせんせいじきょうきこう: B:本当?じゃあ、うちでア二メを見ない?\nA: ア二メはちよっと……映画を見ない?\nReport: to the class:\nえいがあと: 食べることにしました。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 272
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3407",
+          "label": "practice",
+          "prompt": "The basic makeup of a causative-passive sentence is like this:",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3408",
+          "label": "practice",
+          "prompt": "Causative-passive sentence",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3409",
+          "label": "practice",
+          "prompt": "車を洗わされました。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3410",
+          "label": "practice",
+          "prompt": "(puppet master)に",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3411",
+          "label": "practice",
+          "prompt": "I was tricked by my girlfriend into washing her car.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3412",
+          "label": "practice",
+          "prompt": "· The puppet is forced into performing an action. Marked with  or が.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3413",
+          "label": "practice",
+          "prompt": "· The puppet master wields power over, and manipulates, the puppet.The",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3414",
+          "label": "practice",
+          "prompt": "particle isに.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3415",
+          "label": "practice",
+          "prompt": "· The action forced upon the puppet is described with a causative-passive verb.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3416",
+          "label": "practice",
+          "prompt": "If you compare a causative-passive sentence with a causative sentence, you notice that the actors",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3417",
+          "label": "practice",
+          "prompt": "are switched between the two:",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3418",
+          "label": "practice",
+          "prompt": "Causative-passive:",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3419",
+          "label": "practice",
+          "prompt": "友だちに宿題を手伝わされました。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3420",
+          "label": "practice",
+          "prompt": "I was forced by my friend into helping him with",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3421",
+          "label": "practice",
+          "prompt": "his homework.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3422",
+          "label": "practice",
+          "prompt": "Causative:",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3423",
+          "label": "practice",
+          "prompt": "私に宿題を手伝わせました。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3424",
+          "label": "practice",
+          "prompt": "My friend made me help him with his homework.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3425",
+          "label": "practice",
+          "prompt": "Compare a causative-passive sentence with a plain (noncausative, nonpassive) sentence. These two",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3426",
+          "label": "practice",
+          "prompt": "types of sentences have the same subject. You add the \"puppet master\" role to a plain sentence and",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3427",
+          "label": "practice",
+          "prompt": "make the verb longer, and you get a causative-passive sentence.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3428",
+          "label": "practice",
+          "prompt": "Causative-passive:まなはお母さんに勉強させられました。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3429",
+          "label": "practice",
+          "prompt": "Mana was ordered by her mother to study.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_23_exercise_3430",
+          "label": "practice",
+          "prompt": "Mana studied.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 263
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_23_exercise_3431",
+          "label": "practice",
+          "prompt": "\"Aて も B\"is\"B, even if A.\"That is, B is still true in case of A(so is certainly true if A is not the",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 264
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_23_exercise_3432",
+          "label": "practice",
+          "prompt": "case). Compare て も sentences with t=i sentences, which have a more straightforward \"if-then\"",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 264
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_23_exercise_3433",
+          "label": "practice",
+          "prompt": "雨が降っても、バーべキューをします。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 264
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_23_exercise_3434",
+          "label": "practice",
+          "prompt": "We will have a barbecue, even if it rains.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 264
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_23_exercise_3435",
+          "label": "practice",
+          "prompt": "雨が降ったら、バーべーーをしません。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 264
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_23_exercise_3436",
+          "label": "practice",
+          "prompt": "We will not have a barbecue if it rains.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 264
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_23_exercise_3437",
+          "label": "practice",
+          "prompt": "暑くても、エアコンをつけません。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 264
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_23_exercise_3438",
+          "label": "practice",
+          "prompt": "I will not turn on the air conditioner, even if it is hot.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 264
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_23_exercise_3439",
+          "label": "practice",
+          "prompt": "暑かったら、エアコンをつけます。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 264
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_23_exercise_3440",
+          "label": "practice",
+          "prompt": "I will turn on the air conditioner, if it is hot.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 264
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_23_exercise_3441",
+          "label": "practice",
+          "prompt": "子供でも、わかります。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 264
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_23_exercise_3442",
+          "label": "practice",
+          "prompt": "Even a child will get it. (You will be able to understand it, even if you are a child.)",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 264
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_23_exercise_3443",
+          "label": "practice",
+          "prompt": "子供だったら、わかりません。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 264
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_23_exercise_3444",
+          "label": "practice",
+          "prompt": "If you are a child, you will not get it.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 264
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_23_exercise_3445",
+          "label": "practice",
+          "prompt": "You can form a ても clause by adding も to the verb or adjective te-form. With な-adjectives and",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 264
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_23_exercise_3446",
+          "label": "practice",
+          "prompt": "nouns, you have でも. Note that verb tら and ても forms look very much like each other, but",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 264
+          }
+        }
+      ]
+    }
+  ]
+}

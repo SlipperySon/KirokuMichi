@@ -39,6 +39,10 @@
     "textbook:maynard:quality": "tsx tools/textbook-pack/audit-maynard-coverage.ts",
     "content:import:smoke": "tsx tools/content-import-smoke.ts",
     "textbook:assets:manifest": "tsx tools/textbook-pack/build-textbook-asset-manifest.ts",
+    "textbook:learner:publish": "tsx tools/textbook-pack/publish-learner-packs.ts",
+    "textbook:learner:book2-gold": "tsx tools/textbook-pack/build-book2-gold-packs.ts",
+    "textbook:learner:genki-gold-enrich": "tsx tools/textbook-pack/build-genki-l2-and-enrich-l13.ts",
+    "textbook:learner:quartet-gold-enrich": "tsx tools/textbook-pack/build-quartet-l2-and-enrich-l7.ts",
     "generate": "tsx tools/generate/pipeline.ts",
     "packs:build": "tsx tools/build-encrypted-packs.ts"
   },

@@ -58,7 +58,7 @@ const pack: CanonicalTextbookPack = {
   lessons: [lesson],
 }
 
-const outFile = resolveAppPath(options.outFile ?? path.join('app/tools/textbook-pack/out/canonical-proofs', `${options.textbookKey}_lesson_${options.lessonNumber}.json`))
+const outFile = resolveAppPath(options.outFile ?? path.join('tools/textbook-pack/out/canonical-proofs', `${options.textbookKey}_lesson_${options.lessonNumber}.json`))
 await writeJson(outFile, pack)
 console.log(`wrote ${path.relative(process.cwd(), outFile)}`)
 console.log(
@@ -145,7 +145,7 @@ function parseQuartetVocabRow(rawColumns: string[]): { surface: string; reading?
   const columns = rawColumns.map(cleanCell).filter(Boolean)
   if (columns.length < 3) return null
   const joined = columns.join(' ')
-  if (/Tango_|覚える単語|覚え単語|例文|第\s*1\s*課/i.test(joined)) return null
+  if (/Tango_|覚える単語|覚え単語|例文|第\s*\d+\s*課/i.test(joined)) return null
   if (columns.some((column) => /^(単語|読み|意味|漢行|新出|[0-9]{3,})$/i.test(column))) return null
 
   const meaningIndex = columns.findLastIndex((column) => /[A-Za-z]/.test(column))
@@ -348,8 +348,8 @@ function parseArgs(rawArgs: string[]): CliOptions {
   const options: CliOptions = {
     textbookKey: 'quartet_1',
     lessonNumber: 1,
-    manifestPath: 'app/tools/textbook-pack/out/source-manifest.json',
-    groupedRoot: 'app/tools/textbook-pack/out/grouped',
+    manifestPath: 'tools/textbook-pack/out/source-manifest.json',
+    groupedRoot: 'tools/textbook-pack/out/grouped',
     outFile: null,
   }
 

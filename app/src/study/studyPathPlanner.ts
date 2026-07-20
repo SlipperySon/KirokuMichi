@@ -1,11 +1,16 @@
 import type { LearningPath } from '../store'
 import { nextCurriculumLessonId } from './firstRunBootstrap'
+import { formatLessonLabel, lessonRouteFromId } from './studyPathRoutes'
 
 export type StudyPathActionKind =
   | 'recovery'
   | 'review'
+  | 'catch-up'
+  | 'finish-speak'
+  | 'cards-deferred'
   | 'current-lesson'
   | 'path-lesson'
+  | 'extra-decks'
   | 'grammar'
   | 'mistakes'
   | 'generate-path'
@@ -19,14 +24,20 @@ export interface StudyPathAction {
   route?: string
   lessonId?: string
   meta?: string
+  /** When kind is review/catch-up, which lane to study. */
+  reviewLane?: 'path' | 'all'
 }
 
 export interface StudyPathPlannerInput {
   learningPath: LearningPath | null
   currentLesson: string | null
   lessonsCompleted: string[]
+  /** Path-lane dues (lesson-linked + non-extra). Drives Today by default. */
   dueCount: number
   availableNewCount: number
+  /** Extra Anki deck dues (unlinked imports). Do not block path unless opted in. */
+  extraDueCount?: number
+  includeExtraInToday?: boolean
   grammarDueCount: number
   mistakeCount: number
   reviewedToday: number
@@ -34,29 +45,14 @@ export interface StudyPathPlannerInput {
   hasRecovery: boolean
   /** Mid-lesson rail snapshot exists (localStorage). Prefer resume over LessonPage autostart. */
   hasResumableLesson?: boolean
+  /** Durable skip flags when learner deferred Cards or left before Speak. */
+  cardsDeferredLessonId?: string | null
+  speakPendingLessonId?: string | null
+  /** Soft escalation: when path dues exceed this, force catch-up mode. */
+  dueBacklogThreshold?: number
 }
 
-export function lessonRouteFromId(lessonId: string, options?: { autostart?: boolean; resume?: boolean }) {
-  if (options?.resume) {
-    return `/learn/study?resume=${encodeURIComponent(lessonId)}`
-  }
-  const match = lessonId.match(/^(genki_[12]|quartet_[12])_(\d+)$/)
-  if (!match) return '/learn'
-  const [, series, lessonNumber] = match
-  const cefr = series === 'genki_1'
-    ? 'a1'
-    : series === 'genki_2'
-      ? 'a2'
-      : series === 'quartet_1'
-        ? 'b1'
-        : 'b2'
-  const base = `/learn/lessons/${cefr}/${lessonNumber}`
-  return options?.autostart ? `${base}?autostart=1` : base
-}
-
-export function formatLessonLabel(lessonId: string) {
-  return lessonId.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
-}
+export { formatLessonLabel, lessonRouteFromId }
 
 function nextPathLesson(learningPath: LearningPath | null, completed: Set<string>) {
   return learningPath?.weeks
@@ -64,8 +60,15 @@ function nextPathLesson(learningPath: LearningPath | null, completed: Set<string
     .find(lesson => !completed.has(lesson.id)) ?? null
 }
 
+const DEFAULT_BACKLOG_THRESHOLD = 80
+
 export function getStudyPathAction(input: StudyPathPlannerInput): StudyPathAction {
   const completed = new Set(input.lessonsCompleted)
+  const includeExtra = Boolean(input.includeExtraInToday)
+  const extraDue = input.extraDueCount ?? 0
+  const effectiveDue = includeExtra ? input.dueCount + extraDue : input.dueCount
+  const reviewLane: 'path' | 'all' = includeExtra ? 'all' : 'path'
+  const backlogThreshold = input.dueBacklogThreshold ?? DEFAULT_BACKLOG_THRESHOLD
 
   if (input.hasRecovery) {
     return {
@@ -77,19 +80,69 @@ export function getStudyPathAction(input: StudyPathPlannerInput): StudyPathActio
     }
   }
 
-  if (input.dueCount > 0) {
+  if (effectiveDue >= backlogThreshold) {
+    return {
+      kind: 'catch-up',
+      title: `Catch-up: ${effectiveDue} cards due`,
+      description:
+        'Review backlog is high. Clear path reviews before new lessons so spacing is not starved.',
+      actionLabel: 'Start Catch-up Review',
+      route: '/study/review',
+      meta: 'Catch-up',
+      reviewLane,
+    }
+  }
+
+  if (effectiveDue > 0) {
     const grammarNote = input.grammarDueCount > 0
       ? ` Also ${input.grammarDueCount} grammar point${input.grammarDueCount === 1 ? '' : 's'} due (Review → Grammar after words).`
       : ''
+    const extraNote =
+      !includeExtra && extraDue > 0
+        ? ` (${extraDue} Extra deck card${extraDue === 1 ? '' : 's'} wait under Review → Extra).`
+        : includeExtra && extraDue > 0
+          ? ` Includes ${extraDue} from Extra decks.`
+          : ''
     return {
       kind: 'review',
-      title: `Review ${input.dueCount} due card${input.dueCount === 1 ? '' : 's'}`,
+      title: `Review ${effectiveDue} due card${effectiveDue === 1 ? '' : 's'}`,
       description: (input.availableNewCount > 0
         ? `Clear reviews first, then mix in up to ${input.availableNewCount} new card${input.availableNewCount === 1 ? '' : 's'}.`
-        : 'Clear reviews first so the path does not outrun memory.') + grammarNote,
+        : 'Clear reviews first so the path does not outrun memory.') + grammarNote + extraNote,
       actionLabel: 'Start Review',
       route: '/study/review',
       meta: `${input.reviewedToday}/${input.dailyGoal} today`,
+      reviewLane,
+    }
+  }
+
+  // Skip debt: Cards deferred or Speak left unfinished — before starting a different lesson.
+  const speakLesson = input.speakPendingLessonId
+  if (speakLesson && !completed.has(speakLesson)) {
+    return {
+      kind: 'finish-speak',
+      title: `Finish speaking — ${formatLessonLabel(speakLesson)}`,
+      description:
+        'You skipped or left Speak. Production is required before this lesson counts as done.',
+      actionLabel: 'Resume Speak',
+      route: lessonRouteFromId(speakLesson, { resume: true }),
+      lessonId: speakLesson,
+      meta: 'Speak pending',
+    }
+  }
+
+  const deferredLesson = input.cardsDeferredLessonId
+  if (deferredLesson && !completed.has(deferredLesson)) {
+    return {
+      kind: 'cards-deferred',
+      title: `Review deferred cards — ${formatLessonLabel(deferredLesson)}`,
+      description:
+        'You queued Cards for later. Those items are due now — clear them before new encoding.',
+      actionLabel: 'Review Lesson Cards',
+      route: '/study/review',
+      lessonId: deferredLesson,
+      meta: 'Cards deferred',
+      reviewLane: 'path',
     }
   }
 
@@ -137,8 +190,20 @@ export function getStudyPathAction(input: StudyPathPlannerInput): StudyPathActio
     }
   }
 
+  // Extra decks only after path is clear (unless already included above).
+  if (!includeExtra && extraDue > 0) {
+    return {
+      kind: 'extra-decks',
+      title: `Study Extra Anki decks (${extraDue} due)`,
+      description:
+        'Path reviews are clear. Optional imported decks live under Review → Extra and do not block lessons.',
+      actionLabel: 'Open Extra Decks',
+      route: '/study/srs#extra-decks',
+      meta: 'Extra Anki',
+    }
+  }
+
   if (input.grammarDueCount > 0) {
-    // Catalog grammar_states only — lesson grammar already rides in SRS word/grammar cards.
     return {
       kind: 'grammar',
       title: `Review ${input.grammarDueCount} grammar point${input.grammarDueCount === 1 ? '' : 's'}`,
@@ -174,7 +239,7 @@ export function getStudyPathAction(input: StudyPathPlannerInput): StudyPathActio
   return {
     kind: 'free-study',
     title: 'Choose your next study block',
-    description: 'Your path is caught up for now. Browse lessons, scenarios, or add new content.',
+    description: 'Your path is caught up for now. Browse lessons, scenarios, Extra decks, or add new content.',
     actionLabel: 'Open Learn',
     route: '/learn',
     meta: 'Caught up',

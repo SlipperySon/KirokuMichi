@@ -52,6 +52,9 @@ export const TEXTBOOK_FILES: Record<string, string> = {
 
 export const EXTRACTION_SUMMARY = '/data/generated/textbooks/EXTRACTION_SUMMARY.json'
 
+/** Published learner packs index (gold + draft). See npm run textbook:learner:publish */
+export const REVIEWED_PACK_INDEX = '/data/generated/reviewed/index.json'
+
 // Curated scenario packs (hand-crafted conversation scenarios organized by textbook)
 export const SCENARIO_FILES: Record<string, string> = {
   'genki_1': '/data/generated/scenarios/genki_1_scenarios.json',

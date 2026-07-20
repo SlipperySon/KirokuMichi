@@ -1,0 +1,876 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "genki_1_textbook",
+  "title": "genki_1_textbook / genki_1_6",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "genki_1_6_draft",
+      "appLessonId": "genki_1_6",
+      "title": "genki 1 6",
+      "qualityTier": "draft",
+      "vocabulary": [
+        {
+          "id": "genki_1_textbook_genki_1_6_vocab_36",
+          "surface": "私のすきなレストラン",
+          "reading": null,
+          "meaning": "My Favorite Restaurant",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 327
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_vocab_37",
+          "surface": "出る",
+          "reading": null,
+          "meaning": "to exit",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 327
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_vocab_38",
+          "surface": "五分",
+          "reading": null,
+          "meaning": "five minutes",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 328
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_vocab_39",
+          "surface": "先月",
+          "reading": null,
+          "meaning": "last month",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 328
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_vocab_40",
+          "surface": "学生",
+          "reading": null,
+          "meaning": "student",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 328
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "cefr_a1_56",
+          "pattern": "どこ",
+          "meaning": "Used to ask about the location or destination of something or someone.",
+          "explanation": "どこ means 'where' and is used to ask about a place. It can be combined with particles like に (destination/location), で (place of action), or から (starting point). It is used in both polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "トイレはどこですか。",
+              "reading": "トイレはどこですか。",
+              "english": "Where is the bathroom?"
+            },
+            {
+              "japanese": "あなたはどこに住んでいますか。",
+              "reading": "あなたはどこにすんでいますか。",
+              "english": "Where do you live?"
+            },
+            {
+              "japanese": "きのう、どこに行きましたか。",
+              "reading": "きのう、どこにいきましたか。",
+              "english": "Where did you go yesterday?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_57",
+          "pattern": "～になる・～くなる",
+          "meaning": "Expresses a change of state — something becomes a certain way.",
+          "explanation": "Use ～くなる with い-adjectives (drop い, add くなる) and ～になる with な-adjectives and nouns (add になる). This pattern describes a transition into a new state and is used in both polite and casual speech. It is one of the most common ways to describe change in Japanese.",
+          "examples": [
+            {
+              "japanese": "だんだん暖かくなりました。",
+              "reading": "だんだんあたたかくなりました。",
+              "english": "It gradually got warmer."
+            },
+            {
+              "japanese": "彼女は有名になりました。",
+              "reading": "かのじょはゆうめいになりました。",
+              "english": "She became famous."
+            },
+            {
+              "japanese": "日本語が上手くなりたいです。",
+              "reading": "にほんごがじょうずくなりたいです。",
+              "english": "I want to get better at Japanese."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/becoming_なる",
+            "title": "Becoming: なる",
+            "excerpt": "2.5. SPECIAL VERBS 81\nこそあど meaning\nこなた this person (I/me/you/him/he/her/she).\nそなた that person (him/he, her/she).\nあなた that person over there (you).\nどなた which person (who).\nSince this set is a tad classical, there are a few things to notice. First\nof all, そなた refers to a third person (he/she), while あなた refers to second\nperson (you). Also, while somewhat classical, this set is still used in formal\nsettings. However, because it is used exclusively in formal settings it is\nconsidered distal and very",
+            "examples": [
+              {
+                "japanese": "こそあど meaning"
+              },
+              {
+                "japanese": "こなた this person (I/me/you/him/he/her/she)."
+              },
+              {
+                "japanese": "そなた that person (him/he, her/she)."
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_58",
+          "pattern": "Noun + まで",
+          "meaning": "Marks a noun as the endpoint of time, place, or extent — 'until,' 'to,' or 'up to.'",
+          "explanation": "The particle まで attaches directly to a noun (time word, place name, etc.) to indicate a limit or endpoint. For place it means 'as far as' or 'to'; for time it means 'until.' It pairs naturally with から (from ~ to ~). まで itself does not imply going beyond the endpoint.",
+          "examples": [
+            {
+              "japanese": "九時まで働きました。",
+              "reading": "くじまではたらきました。",
+              "english": "I worked until nine o'clock."
+            },
+            {
+              "japanese": "東京まで新幹線で行きます。",
+              "reading": "とうきょうまでしんかんせんでいきます。",
+              "english": "I'll go to Tokyo by bullet train."
+            },
+            {
+              "japanese": "月曜日から金曜日まで学校があります。",
+              "reading": "げつようびからきんようびまでがっこうがあります。",
+              "english": "There is school from Monday to Friday."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_59",
+          "pattern": "たい",
+          "meaning": "Expresses the speaker's desire to perform an action.",
+          "explanation": "Attach たい to the verb stem (the ます-form base) to say you want to do something. It conjugates like an い-adjective: たいです (polite), たい (casual), たくない (negative). Use it only for the speaker's own desires; asking about others' desires requires たいですか or a different form.",
+          "examples": [
+            {
+              "japanese": "日本語を話したいです。",
+              "reading": "にほんごをはなしたいです。",
+              "english": "I want to speak Japanese."
+            },
+            {
+              "japanese": "今日は家に帰りたい。",
+              "reading": "きょうはいえにかえりたい。",
+              "english": "I want to go home today."
+            },
+            {
+              "japanese": "水が飲みたいです。",
+              "reading": "みずがのみたいです。",
+              "english": "I want to drink some water."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/desire",
+            "title": "Desire",
+            "excerpt": "3.2. FURTHER INFLECTIONS 117\n3.2.6 Desire\nFirst person desirative: たい\nUnlike the previous constructions starting with the syllable z, this inflec-\ntion doesn't involve a classical helper verb, but a helper adjective, fz い\n(which has a kanji form, 度W, but this is not used in modern Japanese).\nThis also means that unlike the previous -f, -て, -fり and たら construc-\ntions, no contractions occur with 五i段 verbs, which makes forming the first\nperson desirative very easy. Since this is an adjective, rathe",
+            "examples": [
+              {
+                "japanese": "First person desirative: たい",
+                "english": "Unlike the previous constructions starting with the syllable z, this inflec-"
+              },
+              {
+                "japanese": "tion doesn't involve a classical helper verb, but a helper adjective, fz い"
+              },
+              {
+                "japanese": "(which has a kanji form, 度W, but this is not used in modern Japanese)."
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_60",
+          "pattern": "てください",
+          "meaning": "A polite way to ask or instruct someone to do something — 'please ~'.",
+          "explanation": "Attach てください to the て-form of a verb to make a polite request or instruction. It is used in everyday polite speech, classroom settings, and service situations. It is direct but not rude, and is one of the first request forms learners acquire.",
+          "examples": [
+            {
+              "japanese": "ここに名前を書いてください。",
+              "reading": "ここになまえをかいてください。",
+              "english": "Please write your name here."
+            },
+            {
+              "japanese": "もう少しゆっくり話してください。",
+              "reading": "もうすこしゆっくりはなしてください。",
+              "english": "Please speak a little more slowly."
+            },
+            {
+              "japanese": "ドアを閉めてください。",
+              "reading": "どあをしめてください。",
+              "english": "Please close the door."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/requesting_て_てください",
+            "title": "Requesting: て, てください",
+            "excerpt": "3.2. FURTHER INFLECTIONS 133\n3.2.10 Requesting:て,てください\nImperative request\nWe already saw that we can use the verb 連用形 + てく ださい to form a\nrequest,\nにはいくだ\nコーヒーを二杯下さい。\n\"Two coffee, please.\"\nBut we can also use the plain て form to form an informal request,\nor plea:\n待って。\n\"Wait (please)\"\nか\nこれを買って?\n\"Buy this (for me)?\"\nOf course, like all requests, they can be made to sound demanding,\nso intonation counts. If we say 待て instead of 待つて, cutting out the stop\nin the middle to sound curt, then rather than a ",
+            "examples": [
+              {
+                "japanese": "3.2.10 Requesting:て,てください",
+                "english": "Imperative request"
+              },
+              {
+                "japanese": "We already saw that we can use the verb 連用形 + てく ださい to form a",
+                "english": "request,"
+              },
+              {
+                "japanese": "にはいくだ"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_61",
+          "pattern": "くらい ①",
+          "meaning": "Expresses an approximate quantity, amount, or duration.",
+          "explanation": "くらい (also written ぐらい) follows numbers, counters, or time expressions to mean 'about' or 'approximately.' It softens precision and is very common in everyday speech. Both くらい and ぐらい are correct; ぐらい is slightly more casual. It can be used after nouns or number phrases without の.",
+          "examples": [
+            {
+              "japanese": "駅まで十分くらいかかります。",
+              "reading": "えきまでじゅっぷんくらいかかります。",
+              "english": "It takes about ten minutes to the station."
+            },
+            {
+              "japanese": "リンゴを三つくらい買いました。",
+              "reading": "リンゴをみっつくらいかいました。",
+              "english": "I bought about three apples."
+            },
+            {
+              "japanese": "毎日一時間くらい勉強します。",
+              "reading": "まいにちいちじかんくらいべんきょうします。",
+              "english": "I study for about one hour every day."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_62",
+          "pattern": "ので",
+          "meaning": "Connects a reason or cause to a result, meaning 'because' or 'since'.",
+          "explanation": "ので follows a plain-form verb, adjective, or noun (noun/な-adjective take なので) to give a reason for what comes after. It sounds softer and more objective than から, making it preferred in polite or formal contexts. Use it when you want to explain rather than justify.",
+          "examples": [
+            {
+              "japanese": "雨が降っているので、家にいます。",
+              "reading": "あめがふっているので、いえにいます。",
+              "english": "Since it is raining, I am staying home."
+            },
+            {
+              "japanese": "眠いので、早く寝ます。",
+              "reading": "ねむいので、はやくねます。",
+              "english": "Because I am sleepy, I will go to bed early."
+            },
+            {
+              "japanese": "明日テストがあるので、勉強します。",
+              "reading": "あしたテストがあるので、べんきょうします。",
+              "english": "I will study because there is a test tomorrow."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_63",
+          "pattern": "たことがある",
+          "meaning": "Express that you have had the experience of doing something at least once.",
+          "explanation": "Attach たことがある to the た-form (past plain form) of a verb. It describes a life experience rather than a recent past action — 'have ever done'. The negative form is たことがない ('have never done'). It is one of the most common ways to talk about personal experiences in Japanese.",
+          "examples": [
+            {
+              "japanese": "日本に行ったことがあります。",
+              "reading": "にほんにいったことがあります。",
+              "english": "I have been to Japan before."
+            },
+            {
+              "japanese": "お寿司を食べたことがありますか？",
+              "reading": "おすしをたべたことがありますか？",
+              "english": "Have you ever eaten sushi?"
+            },
+            {
+              "japanese": "富士山を見たことがない。",
+              "reading": "ふじさんをみたことがない。",
+              "english": "I have never seen Mount Fuji."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_64",
+          "pattern": "てから",
+          "meaning": "Expresses that one action is completed before another action begins.",
+          "explanation": "てから attaches to the て-form of a verb and means 'after doing ~' or 'once ~ is done'. It emphasizes that the first action must be fully completed before the second one starts. It is used in both polite and casual speech and is common for describing routines or procedures.",
+          "examples": [
+            {
+              "japanese": "手を洗ってから、ごはんを食べます。",
+              "reading": "てをあらってから、ごはんをたべます。",
+              "english": "I wash my hands and then eat."
+            },
+            {
+              "japanese": "シャワーを浴びてから、寝ます。",
+              "reading": "シャワーをあびてから、ねます。",
+              "english": "I take a shower and then go to sleep."
+            },
+            {
+              "japanese": "宿題をしてから、テレビを見ます。",
+              "reading": "しゅくだいをしてから、テレビをみます。",
+              "english": "After doing my homework, I watch TV."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_65",
+          "pattern": "ないでください",
+          "meaning": "Politely ask someone not to do something.",
+          "explanation": "Attach ないでください to the negative stem of a verb (the ない-form minus ない). It is the standard polite way to make a negative request, equivalent to 'Please don't ~'. Use it in formal or semi-formal situations such as with teachers, strangers, or in written notices.",
+          "examples": [
+            {
+              "japanese": "ここで写真を撮らないでください。",
+              "reading": "ここでしゃしんをとらないでください。",
+              "english": "Please don't take photos here."
+            },
+            {
+              "japanese": "教室で食べないでください。",
+              "reading": "きょうしつでたべないでください。",
+              "english": "Please don't eat in the classroom."
+            },
+            {
+              "japanese": "大きい声で話さないでください。",
+              "reading": "おおきいこえではなさないでください。",
+              "english": "Please don't speak in a loud voice."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_66",
+          "pattern": "な",
+          "meaning": "Attached to the plain (dictionary) form of a verb to mean 'don't do' or 'do not do'.",
+          "explanation": "Adding な directly after a verb's plain form creates a strong, blunt prohibition. It is casual and often sounds harsh or commanding, so it is used mainly by people in authority, or in signs and warnings. It should not be confused with the な in な-adjectives.",
+          "examples": [
+            {
+              "japanese": "ここで走るな。",
+              "reading": "ここではしるな。",
+              "english": "Don't run here."
+            },
+            {
+              "japanese": "そんなことを言うな。",
+              "reading": "そんなことをいうな。",
+              "english": "Don't say such a thing."
+            },
+            {
+              "japanese": "心配するな。",
+              "reading": "しんぱいするな。",
+              "english": "Don't worry."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "genki_1_6_dialogue_0",
+          "type": "dialogue",
+          "title": "Dialogue genki_1_6",
+          "text": "N: ロバさの日\nA: Day in Robert's Life\nいちにち: In this lesson, we will\nAsk: for and give permission\nGive: reasons for doing/not doing something\nTalk: about rules and regulations\n会話: Di a\nI: In class.Ko6-01/02\n山下先生: ロバートさん、次のペーを読んでください。\nよ: ロバート:\n山下先生: ロートん、起きてください。クラスで寝てはいけませんよ。\nね: ロバート:\nせんせい: きょかしよ\nわす: 山下先生：\nやましせんせい: きよかしよ\n毛: まいにちつか\nAfter: class.\nきよう: たいへん\nか元: 5ソラ：\nほんとう: 7ソラ：\nきょう: いえかえ",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 155
+          }
+        },
+        {
+          "id": "genki_1_6_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_6",
+          "text": "Nouns: かんじ\n漢字: kanji; Chinese character\nきよかしよ: 教科書\n次: next\nmoney: にもつ\n荷物: baggage\nパソコン: personal computer\nshower: エアコン\nair: conditioner\nでんしゃ: train\nthis: week\nnext: week\nnext: year\nnight: な- adiective\n大変: tough (situation)\n号: U - verbs\nto: play; to spend time pleasantly\nto: hurry\n返す: *か元す\nto: return (a thing)\nto: turn off; to erase(~を)\nto: die\nto: sit down (seat 1二)\nto: stand up\nたばこをすう: たばこを吸う\nto: smoke\nto: use(~を)\nてつだう: 手伝う\nto: help(person/task )",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 157
+          }
+        },
+        {
+          "id": "genki_1_6_dialogue_2",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_6",
+          "text": "Culture: Notes\nにほん: きょういくせい\nMost: children in Japan attend kindergartens or nursery schools before entering elemen-\ntary: school. Compulsory education comprises six years of elementary school and three\nyears: of junior high school. Although not compulsory, over 95% of junior high students\ngo: on to high school for three years. About half of high school graduates attend a univer-\nsity: or junior college. Admission to high schools and universities is usually based on an\nentrance: exam.\n大学院: だいがくいん\n短期大学: (短大)\nGraduate: School\nたんきだいがく: たんだい\nAge: Junior College\n大学: だいがく\nUniversity: -18\nこうとうがっこう: こうこ3\nHigh: School\nちゅうがっこう: `ちゆうがく\nJunior: High School\n小学校: しょうがっこう\nElementary: School\n保育園: ほいくえ\nNursery: School\n幼稚園: ようちえん\nKindergarten: 義務教育Compulsory Education\nきむきよういく: The Japanese school year starts in April and ends in March, with a long vacation in sum-\nmer: and two shorter breaks in winter and spring.\nSchool: year begins\nSchool: year ends\nApril: May June July Aug. Sep. Oct.\nNov: Dec.\nJan: Feb.\nMar: 夏休み\n冬休み: 春休み\nなつやす: ふゆやす\nはるやす: Summer Vacation\nWinter: Vacation Spring Vacation",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_6_dialogue_3",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_6",
+          "text": "練習: P r a c t i c e\nれん: しゆう\nI: A. Change the following verbs into te-forms. ko6-09\nExample: おきるおきて\nB: Let's sing a te-form song! (Battle Hymn of the Republic)\nあうあってまつまってとるとって: よむよんであそぶあそんでしぬしんで\nかくかいてけすけしていそぐいそいで: みhな u-verb te-form\nうつるってむぶぬんでくいてぐいで: (repeat twice)\nA: Make polite requests. Ko6-11\nExample: 日本語を話してください。\ne: g. Please speak Japanese.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 165
+          }
+        },
+        {
+          "id": "genki_1_6_dialogue_4",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_6",
+          "text": "A: Look at the pictures below and combine the pictures using te-forms.  ko6-12\nExample: あさお\nの: (1)\nD: Library\nhomework: B. Change the following into te-forms and make complete the sentences.\nExample: 朝起きる\nかえ: てんしゃ\n次: 3.電車を降りる",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 167
+          }
+        },
+        {
+          "id": "genki_1_6_dialogue_5",
+          "type": "dialogue",
+          "title": "Dialogue genki_1_6",
+          "text": "C: Pair Work—Make questions using the following cues. When you answer, use ~て.\nExample: あしたの夜\nよる: A：あしたの夜、何をしますか。\nB: 図書館で勉強して、家に帰ります。\nとしょかん: べんきよう\nいえか: 1.今日の夜\nあさ: こんしゆう\nしうまつ: 3.きのうの朝\nあさ: せんしう\nIV: 写真を撮つてもいいですか\nA: Look at the pictures below, and ask if it is okay to do those things. Ko6-13\nExample: 写真を撮ってもいいですか。\noog: 888\nF: 1888\nALBUM: B. Pair Work—Play the roles of people in the pictures in A, and make dialogues.\nExample: A：写真を撮ってもいいですか。\nと: B:ええ、いいですよ。どうぞ。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 168
+          }
+        },
+        {
+          "id": "genki_1_6_dialogue_6",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_6",
+          "text": "C: Make short conversations in the following situations using ~てもlですか.\nV: 食べてはいけませんGrammar5\nた: A.You are the teacher of a rowdy class. Ban the following disruptive activities.  ko6-14\nExample: 食べてはいけません。\nた: (1)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_1_6_dialogue_7",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_6",
+          "text": "こんしのう: たいへん\nかね: 2.(name ofaplace)が好きです。\nす: らいねん\nにほんこ: べんきよう\nW: テレビを消しましょうか\nけ: A.Pair Work—Propose to do the following things, using ましょうか.\nExample: A：テレビを消しましようか。\nけ: B：すみません。お願いします。いいえ、大丈夫です。\nねが: だいじょうぶ",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 171
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2213",
+          "label": "practice",
+          "prompt": "Culture Notes",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2214",
+          "label": "practice",
+          "prompt": "日本の教育制度（1）Japan's Educational System(1)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2215",
+          "label": "practice",
+          "prompt": "Most children in Japan attend kindergartens or nursery schools before entering elemen-",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2216",
+          "label": "practice",
+          "prompt": "tary school. Compulsory education comprises six years of elementary school and three",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2217",
+          "label": "practice",
+          "prompt": "years of junior high school. Although not compulsory, over 95% of junior high students",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2218",
+          "label": "practice",
+          "prompt": "go on to high school for three years. About half of high school graduates attend a univer-",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2219",
+          "label": "practice",
+          "prompt": "sity or junior college. Admission to high schools and universities is usually based on an",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2220",
+          "label": "practice",
+          "prompt": "entrance exam.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2221",
+          "label": "practice",
+          "prompt": "Graduate School",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2222",
+          "label": "practice",
+          "prompt": "Junior College",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2223",
+          "label": "practice",
+          "prompt": "University",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2224",
+          "label": "practice",
+          "prompt": "High School",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2225",
+          "label": "practice",
+          "prompt": "Junior High School",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2226",
+          "label": "practice",
+          "prompt": "Elementary School",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2227",
+          "label": "practice",
+          "prompt": "Nursery School",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2228",
+          "label": "practice",
+          "prompt": "Kindergarten",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2229",
+          "label": "practice",
+          "prompt": "義務教育Compulsory Education",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2230",
+          "label": "practice",
+          "prompt": "The Japanese school year starts in April and ends in March, with a long vacation in sum-",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2231",
+          "label": "practice",
+          "prompt": "mer and two shorter breaks in winter and spring.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2232",
+          "label": "practice",
+          "prompt": "[Typical Japanese School Calendar (Elementary to High School)]",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2233",
+          "label": "practice",
+          "prompt": "School year begins",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2234",
+          "label": "practice",
+          "prompt": "School year ends",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2235",
+          "label": "practice",
+          "prompt": "April May June July Aug. Sep. Oct.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2236",
+          "label": "practice",
+          "prompt": "Summer Vacation",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_6_exercise_2237",
+          "label": "practice",
+          "prompt": "Winter Vacation Spring Vacation",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 163
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_exercise_2238",
+          "label": "practice",
+          "prompt": "[Sample timetable for a 4th year student studying at a public elementary schoo]",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 164
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_exercise_2239",
+          "label": "practice",
+          "prompt": "Morning Activities (Reading, Studying, etc.)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 164
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_exercise_2240",
+          "label": "practice",
+          "prompt": "Integrated",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 164
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_exercise_2241",
+          "label": "practice",
+          "prompt": "Mathematics",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 164
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_exercise_2242",
+          "label": "practice",
+          "prompt": "Arts/Crafts",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 164
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_exercise_2243",
+          "label": "practice",
+          "prompt": "9:40-10:25",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 164
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_exercise_2244",
+          "label": "practice",
+          "prompt": "Social Studies",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 164
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_exercise_2245",
+          "label": "practice",
+          "prompt": "Arts/Crafts",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 164
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_exercise_2246",
+          "label": "practice",
+          "prompt": "Mathematics",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 164
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_exercise_2247",
+          "label": "practice",
+          "prompt": "10:50-11:35",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 164
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_exercise_2248",
+          "label": "practice",
+          "prompt": "Mathematics",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 164
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_exercise_2249",
+          "label": "practice",
+          "prompt": "Mathematics",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 164
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_exercise_2250",
+          "label": "practice",
+          "prompt": "11:45-12:30Social Studies",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 164
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_exercise_2251",
+          "label": "practice",
+          "prompt": "Lunch, Lunch Break and Cleaning",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 164
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_6_exercise_2252",
+          "label": "practice",
+          "prompt": "Social Studies",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 164
+          }
+        }
+      ]
+    }
+  ]
+}

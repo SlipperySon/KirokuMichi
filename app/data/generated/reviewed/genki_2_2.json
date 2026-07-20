@@ -1,0 +1,1090 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "genki_2_textbook",
+  "title": "genki_2_textbook / genki_2_2",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "genki_2_2_draft",
+      "appLessonId": "genki_2_2",
+      "title": "genki 2 2",
+      "qualityTier": "draft",
+      "vocabulary": [
+        {
+          "id": "genki_2_textbook_genki_2_14_vocab_20",
+          "surface": "切る",
+          "reading": null,
+          "meaning": "to cut",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 289
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_vocab_21",
+          "surface": "英語",
+          "reading": null,
+          "meaning": "English language",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 289
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_vocab_22",
+          "surface": "店",
+          "reading": null,
+          "meaning": "shop",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 289
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_14_vocab_23",
+          "surface": "去年",
+          "reading": null,
+          "meaning": "last year",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 290
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_14_vocab_24",
+          "surface": "急ぐ",
+          "reading": null,
+          "meaning": "to hurry",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 290
+          }
+        },
+        {
+          "id": "genki_2_textbook_2_textbook_genki_2_14_vocab_25",
+          "surface": "乗る",
+          "reading": null,
+          "meaning": "to ride",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 290
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_vocab_68",
+          "surface": "おとうと弟",
+          "reading": null,
+          "meaning": "younger brother",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_vocab_69",
+          "surface": "おととい",
+          "reading": null,
+          "meaning": "day before yesterday",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_vocab_70",
+          "surface": "おべんとうお弁当",
+          "reading": null,
+          "meaning": "boxed lunch",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_2_vocab_72",
+          "surface": "交換する",
+          "reading": null,
+          "meaning": "to exchange",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 364
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "cefr_a2_105",
+          "pattern": "そう",
+          "meaning": "Expresses that something looks or seems a certain way based on direct observation.",
+          "explanation": "Attach そう to the stem of い-adjectives (drop い) or な-adjectives (drop な) to say something appears that way. For verbs, attach そう to the ます-stem to express that something looks like it is about to happen. This is a casual-to-neutral expression used when describing visual impressions.",
+          "examples": [
+            {
+              "japanese": "このケーキはおいしそうです。",
+              "reading": "このケーキはおいしそうです。",
+              "english": "This cake looks delicious."
+            },
+            {
+              "japanese": "彼は眠そうですね。",
+              "reading": "かれはねむそうですね。",
+              "english": "He looks sleepy, doesn't he."
+            },
+            {
+              "japanese": "雨が降りそうです。",
+              "reading": "あめがふりそうです。",
+              "english": "It looks like it's going to rain."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_106",
+          "pattern": "てすみません",
+          "meaning": "Apologize for doing something or causing an inconvenience.",
+          "explanation": "This expression combines a て-form verb with すみません to apologize for an action. Used when you want to express regret or apology for something you did or failed to do. Works in both casual and polite contexts, and is essential for politeness and acknowledgment of mistakes.",
+          "examples": [
+            {
+              "japanese": "昨日は来なくてすみません。",
+              "reading": "きのうはこなくてすみません。",
+              "english": "I'm sorry for not coming yesterday."
+            },
+            {
+              "japanese": "待たせてすみません。",
+              "reading": "またせてすみません。",
+              "english": "I'm sorry for making you wait."
+            },
+            {
+              "japanese": "何度も聞いてすみません。",
+              "reading": "なんどもきいてすみません。",
+              "english": "I'm sorry for asking so many times."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_107",
+          "pattern": "みたいに・みたいな",
+          "meaning": "Expresses similarity or resemblance in a casual way, meaning 'like', 'similar to', or 'resembling'.",
+          "explanation": "みたいに is used before verbs or adjectives to mean 'like (something)' in a way that modifies actions or states, while みたいな comes before nouns to modify them. Both attach directly to nouns or plain verb/adjective forms. This pattern is casual and very common in spoken Japanese; the more formal equivalent is ように・ような.",
+          "examples": [
+            {
+              "japanese": "彼は魚みたいに泳ぎます。",
+              "reading": "かれはさかなみたいにおよぎます。",
+              "english": "He swims like a fish."
+            },
+            {
+              "japanese": "先生みたいな人になりたいです。",
+              "reading": "せんせいみたいなひとになりたいです。",
+              "english": "I want to become someone like a teacher."
+            },
+            {
+              "japanese": "夢みたいな話ですね。",
+              "reading": "ゆめみたいなはなしですね。",
+              "english": "That's like a dream, isn't it."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/desire",
+            "title": "Desire",
+            "excerpt": "3.2. FURTHER INFLECTIONS 117\n3.2.6 Desire\nFirst person desirative: たい\nUnlike the previous constructions starting with the syllable z, this inflec-\ntion doesn't involve a classical helper verb, but a helper adjective, fz い\n(which has a kanji form, 度W, but this is not used in modern Japanese).\nThis also means that unlike the previous -f, -て, -fり and たら construc-\ntions, no contractions occur with 五i段 verbs, which makes forming the first\nperson desirative very easy. Since this is an adjective, rathe",
+            "examples": [
+              {
+                "japanese": "First person desirative: たい",
+                "english": "Unlike the previous constructions starting with the syllable z, this inflec-"
+              },
+              {
+                "japanese": "tion doesn't involve a classical helper verb, but a helper adjective, fz い"
+              },
+              {
+                "japanese": "(which has a kanji form, 度W, but this is not used in modern Japanese)."
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_108",
+          "pattern": "より",
+          "meaning": "Used to compare two things, meaning 'more than' or 'over.'",
+          "explanation": "より follows a noun to indicate the standard of comparison, equivalent to 'more than' in English. It is commonly paired with the adjective or adverb that describes the difference. より is used in both casual and polite contexts and is more formal-sounding than けど-style comparisons.",
+          "examples": [
+            {
+              "japanese": "東京は大阪より大きいです。",
+              "reading": "とうきょうはおおさかよりおおきいです。",
+              "english": "Tokyo is bigger than Osaka."
+            },
+            {
+              "japanese": "今日は昨日より寒いですね。",
+              "reading": "きょうはきのうよりさむいですね。",
+              "english": "It's colder today than yesterday, isn't it?"
+            },
+            {
+              "japanese": "電車はバスより速いです。",
+              "reading": "でんしゃはバスよりはやいです。",
+              "english": "The train is faster than the bus."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_109",
+          "pattern": "だけで",
+          "meaning": "Expresses that something is accomplished or felt by doing only one thing or using only one thing.",
+          "explanation": "だけで attaches to a noun or verb plain form to mean 'just by' or 'simply by doing.' It highlights that the single action or item is sufficient — often expressing surprise or emphasis. Used in both casual and polite speech; the sentence ending determines register.",
+          "examples": [
+            {
+              "japanese": "名前を聞くだけで、顔が赤くなります。",
+              "reading": "なまえをきくだけで、かおがあかくなります。",
+              "english": "Just by hearing his name, my face turns red."
+            },
+            {
+              "japanese": "この薬は一錠飲むだけで、頭痛が治りました。",
+              "reading": "このくすりはいちじょうのむだけで、ずつうがなおりました。",
+              "english": "Just by taking one tablet of this medicine, my headache went away."
+            },
+            {
+              "japanese": "笑うだけで気持ちが楽になります。",
+              "reading": "わらうだけできもちがらくになります。",
+              "english": "Just by smiling, you feel better."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_110",
+          "pattern": "ことができる",
+          "meaning": "Expresses the ability or possibility to do something.",
+          "explanation": "ことができる is used to say that someone has the ability, opportunity, or permission to do something. It follows the verb stem and can be used in all tenses. This is a fundamental pattern for expressing ability in Japanese.",
+          "examples": [
+            {
+              "japanese": "私は日本語を話すことができます。",
+              "reading": "わたしはにほんごをはなすことができます。",
+              "english": "I can speak Japanese."
+            },
+            {
+              "japanese": "彼は毎日、運動することができます。",
+              "reading": "かれはまいにち、うんどうすることができます。",
+              "english": "He can exercise every day."
+            },
+            {
+              "japanese": "ここから富士山が見ることができます。",
+              "reading": "ここからふじさんがみることができます。",
+              "english": "You can see Mt. Fuji from here."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_111",
+          "pattern": "さ",
+          "meaning": "Converts an adjective into a noun expressing a degree or quality.",
+          "explanation": "Replace the final い of an い-adjective, or drop な from a な-adjective, and add さ to form a noun meaning 'the degree/extent of that quality'. For example, 高い (tall) becomes 高さ (height/tallness). This is neutral in register and common in both speech and writing.",
+          "examples": [
+            {
+              "japanese": "この山の高さは富士山と同じくらいです。",
+              "reading": "このやまのたかさはふじさんとおなじくらいです。",
+              "english": "The height of this mountain is about the same as Mt. Fuji."
+            },
+            {
+              "japanese": "水の冷たさに驚きました。",
+              "reading": "みずのつめたさにおどろきました。",
+              "english": "I was surprised by the coldness of the water."
+            },
+            {
+              "japanese": "彼女の親切さはみんなに伝わりました。",
+              "reading": "かのじょのしんせつさはみんなにつたわりました。",
+              "english": "Her kindness was conveyed to everyone."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_112",
+          "pattern": "がる",
+          "meaning": "Expresses that a third person appears to feel, want, or desire something based on observable behavior.",
+          "explanation": "がる attaches to the stem of い-adjectives or certain feeling words (like 欲しい → 欲しがる, 怖い → 怖がる) to describe how a third person outwardly shows an emotion or desire. Because Japanese speakers cannot directly state another person's inner feelings, がる is used to describe what can be observed. It is neutral in register and common in both spoken and written Japanese.",
+          "examples": [
+            {
+              "japanese": "弟は新しいゲームを欲しがっています。",
+              "reading": "おとうとはあたらしいゲームをほしがっています。",
+              "english": "My younger brother seems to want a new game."
+            },
+            {
+              "japanese": "子どもたちは暗い部屋を怖がっていました。",
+              "reading": "こどもたちはくらいへやをこわがっていました。",
+              "english": "The children seemed scared of the dark room."
+            },
+            {
+              "japanese": "彼女はいつも新しい服を欲しがります。",
+              "reading": "かのじょはいつもあたらしいふくをほしがります。",
+              "english": "She always seems to want new clothes."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_113",
+          "pattern": "かもしれない",
+          "meaning": "Expresses uncertainty or possibility, meaning 'might', 'maybe', or 'perhaps'.",
+          "explanation": "かもしれない attaches to the plain form of verbs, adjectives, or nouns (noun/な-adjective + かもしれない, dropping だ) to indicate that something is possible but not certain. It is less confident than でしょう and more neutral than はずだ. The polite form is かもしれません, while かもしれない is casual.",
+          "examples": [
+            {
+              "japanese": "明日は雨が降るかもしれません。",
+              "reading": "あしたはあめがふるかもしれません。",
+              "english": "It might rain tomorrow."
+            },
+            {
+              "japanese": "彼女はもう家に帰ったかもしれない。",
+              "reading": "かのじょはもういえにかえったかもしれない。",
+              "english": "She might have already gone home."
+            },
+            {
+              "japanese": "このケーキは少し甘すぎるかもしれません。",
+              "reading": "このケーキはすこしあますぎるかもしれません。",
+              "english": "This cake might be a little too sweet."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_114",
+          "pattern": "てもらう",
+          "meaning": "You receive or request an action from someone else.",
+          "explanation": "This pattern expresses when you have someone do something for you or when you ask them for help. It's the counterpart to てくれる from the receiver's perspective. Used when emphasizing that you asked for or received the action.",
+          "examples": [
+            {
+              "japanese": "友達に手伝ってもらいました",
+              "reading": "ともだちに てつだってもらいました",
+              "english": "I had my friend help me"
+            },
+            {
+              "japanese": "先生に日本語を教えてもらいます",
+              "reading": "せんせいに にほんごを おしえてもらいます",
+              "english": "I have the teacher teach me Japanese"
+            },
+            {
+              "japanese": "兄に荷物を持ってもらった",
+              "reading": "あにに にもつを もってもらった",
+              "english": "I had my older brother carry the package"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_115",
+          "pattern": "はじめる",
+          "meaning": "Attached to a verb stem to express that an action has begun.",
+          "explanation": "はじめる (始める) is attached to the verb stem (masu-stem) of another verb to mean 'to start doing' something. It indicates the beginning of an ongoing action or process. It is used in both polite and casual speech and conjugates like a regular る-verb.",
+          "examples": [
+            {
+              "japanese": "雨が降り始めました。",
+              "reading": "あめがふりはじめました。",
+              "english": "It started to rain."
+            },
+            {
+              "japanese": "日本語を勉強し始めたのは去年です。",
+              "reading": "にほんごをべんきょうしはじめたのはきょねんです。",
+              "english": "It was last year that I started studying Japanese."
+            },
+            {
+              "japanese": "子どもたちは走り始めました。",
+              "reading": "こどもたちははしりはじめました。",
+              "english": "The children started running."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_116",
+          "pattern": "あとで",
+          "meaning": "Indicates that an action happens after another action or at a later time.",
+          "explanation": "あとで (後で) means 'after' or 'later' and follows a noun (with の) or the plain past form of a verb. It indicates that something will happen following another event or simply at some point in the future. It is used in both polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "授業のあとで、友達と話しました。",
+              "reading": "じゅぎょうのあとで、ともだちとはなしました。",
+              "english": "After class, I talked with my friend."
+            },
+            {
+              "japanese": "シャワーを浴びたあとで、寝ます。",
+              "reading": "シャワーをあびたあとで、ねます。",
+              "english": "After taking a shower, I go to sleep."
+            },
+            {
+              "japanese": "あとで電話してもいいですか。",
+              "reading": "あとででんわしてもいいですか。",
+              "english": "Is it okay if I call you later?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_117",
+          "pattern": "がする",
+          "meaning": "Describes a sensory impression such as a smell, sound, taste, or feeling that one perceives.",
+          "explanation": "がする is used with nouns referring to sensations — such as においがする (there's a smell), 音がする (there's a sound), or 気がする (I have a feeling) — to express that a sensation is being perceived. The subject is the sensation itself, not the person experiencing it. It is a very natural and common expression in everyday Japanese.",
+          "examples": [
+            {
+              "japanese": "台所からいいにおいがします。",
+              "reading": "だいどころからいいにおいがします。",
+              "english": "There's a nice smell coming from the kitchen."
+            },
+            {
+              "japanese": "外で大きな音がしました。",
+              "reading": "そとでおおきなおとがしました。",
+              "english": "There was a loud sound outside."
+            },
+            {
+              "japanese": "このスープは変な味がします。",
+              "reading": "このスープはへんなあじがします。",
+              "english": "This soup has a strange taste."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/doing_する",
+            "title": "Doing: する",
+            "excerpt": "84 CHAPTER 2. VERB GRAMMAR\n2.5.31 Doing: する\nWe've already seen す る as irregular verb, and it has been used in enough\nexample sentences to let it be no surprise that it means \"do'\". However,\nthis isn't the only meaning for this verb. When used in combination with\na direct object – as transitive verb – す る does mean \"do', but when used\nas intransitive verb, its meaning should be considered to be \"decide on'\nor \"choose'\". To show this difference in meaning between the transitive\nたどうし じどうし\n(strictly",
+            "examples": [
+              {
+                "japanese": "2.5.31 Doing: する"
+              },
+              {
+                "japanese": "We've already seen す る as irregular verb, and it has been used in enough",
+                "english": "example sentences to let it be no surprise that it means \"do'\". However,"
+              },
+              {
+                "japanese": "a direct object – as transitive verb – す る does mean \"do', but when used",
+                "english": "as intransitive verb, its meaning should be considered to be \"decide on'"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_118",
+          "pattern": "そうに・そうな",
+          "meaning": "Describes how something or someone appears or seems based on visual or sensory observation.",
+          "explanation": "そう attaches to the stem of い-adjectives (dropping い) or the stem of な-adjectives (dropping な) to indicate that something looks or seems a certain way. そうに is used before verbs to describe how an action is done, while そうな comes before nouns. It expresses the speaker's inference from what they can directly observe right now, rather than hearsay or reasoning.",
+          "examples": [
+            {
+              "japanese": "あの料理はおいしそうです。",
+              "reading": "あのりょうりはおいしそうです。",
+              "english": "That dish looks delicious."
+            },
+            {
+              "japanese": "彼女は悲しそうに部屋を出ました。",
+              "reading": "かのじょはかなしそうにへやをでました。",
+              "english": "She left the room looking sad."
+            },
+            {
+              "japanese": "この仕事は難しそうですね。",
+              "reading": "このしごとはむずかしそうですね。",
+              "english": "This work looks difficult, doesn't it."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_119",
+          "pattern": "Number + も",
+          "meaning": "Emphasizes a number or amount, often conveying surprise or highlighting significance.",
+          "explanation": "も after a number emphasizes or highlights the quantity, often implying 'as many as,' 'even,' or conveying surprise about the amount. It suggests that the amount is large or significant depending on context. Used in casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "ビールを三杯も飲みました。",
+              "reading": "びーるをさんばいものみました。",
+              "english": "I drank three beers (quite a lot)."
+            },
+            {
+              "japanese": "百ドルも払いました。",
+              "reading": "ひゃくどるもはらいました。",
+              "english": "I paid even 100 dollars."
+            },
+            {
+              "japanese": "五人も来ました。",
+              "reading": "ごにんもきました。",
+              "english": "As many as five people came."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_120",
+          "pattern": "かな",
+          "meaning": "Expresses mild wondering or self-directed questioning, meaning 'I wonder…'.",
+          "explanation": "かな is a sentence-final particle attached to a plain-form verb, adjective, or noun. It indicates the speaker is musing to themselves or posing a soft question. It is casual; women may also use かしら with the same meaning. Use かな when thinking aloud or gently wondering about something.",
+          "examples": [
+            {
+              "japanese": "もう電車が来たかな。",
+              "reading": "もうでんしゃがきたかな。",
+              "english": "I wonder if the train has come yet."
+            },
+            {
+              "japanese": "明日は晴れるかな。",
+              "reading": "あしたははれるかな。",
+              "english": "I wonder if it will be sunny tomorrow."
+            },
+            {
+              "japanese": "彼女はまだ怒っているかな。",
+              "reading": "かのじょはまだおこっているかな。",
+              "english": "I wonder if she is still angry."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_121",
+          "pattern": "Verb[よう]",
+          "meaning": "Expresses a suggestion or personal intention, meaning 'let's' or 'I'll/I shall'.",
+          "explanation": "The plain volitional form is made by changing the dictionary-form verb ending: る-verbs drop る and add よう; う-verbs change the final う-sound to the おう-sound (e.g., 書く→書こう). This form is casual and used with friends, family, or in internal speech. It corresponds to the polite ましょう.",
+          "examples": [
+            {
+              "japanese": "もう寝よう。",
+              "reading": "もうねよう。",
+              "english": "Let's go to sleep already."
+            },
+            {
+              "japanese": "明日の朝、早く起きよう。",
+              "reading": "あしたのあさ、はやくおきよう。",
+              "english": "I'll wake up early tomorrow morning."
+            },
+            {
+              "japanese": "公園でサッカーをしよう！",
+              "reading": "こうえんでサッカーをしよう！",
+              "english": "Let's play soccer at the park!"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "genki_2_2_dialogue_0",
+          "type": "dialogue",
+          "title": "Dialogue genki_2_14",
+          "text": "とううんつようかい: 会話·文法編\nConversation: and Grammar\nかいわ: ふんぽうへん\nアルバイト探し: Looking for a Part-time Job\nさが: Potential Verbs\nなら: 一週間に三回\nいっしゆうかん: さんかい\nCulture: Notes\nUseful: Expressions\nきんこう: 第14課\nたい: LESSON14\nNumber: +も/Number+Lか+Negative\nCulture: Notes\nにほん: ねんちうきとう\nUseful: Expressions",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 14
+          }
+        },
+        {
+          "id": "genki_2_2_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue genki_2_14",
+          "text": "S: 第14課\nIn: this lesson, we will.\nExpress: what we want\nGive: and receive presents\nTalk: about uncertain things\nTalk: about Valentine's Day and special days\nA: month before Valentine's Day.K14-01/02\nメアり: たけしくん、はい、これ。\nあ: 3メアリー：うん。\nあ: 。メりー：うん、小さいかもしれないから着てて。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 54
+          }
+        },
+        {
+          "id": "genki_2_2_dialogue_2",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_14",
+          "text": "NoUns: おくさん\n奥さん: (your/someone's) wife\nごしゅじん: ご主人\npartner: おじさん\nおばさん: aunt; middle-aged woman\nparents: おおやさん\n大家さん: landlord; landlady\nみなさん: 皆さん\nchocolate: みかん\nmandarin: orange\nshirt: ネクタイ\nnecktie: マフラー\nwinter: scarf\nring: えんぴつ\n鉛筆: pencil\nぬいぐるみ: stuffed animal (e.g., teddy bear)\ncomic: book\nけしょうひん: 化粧品\ncosmetics: ラジオ\nradio: おさら\nお皿: plate; dish\nおかえし: お返し\nreturn: (as a token of gratitude)\nりれきしよ: 履歷書\nクリスマス: Christmas\ngiving: day)\n欲しい: to want (thing )",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 56
+          }
+        },
+        {
+          "id": "genki_2_2_dialogue_3",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_14",
+          "text": "Uday: is an Indian.\nUday: may be an Indian.\nProfessor: Yamashita doesn't like dogs.\nProfessor: Yamashita may not like dogs.\nJapanese: has two verbs for giving: < れる and あlfる. The choice between the pair depends on\nthe: direction of the transaction. Imagine a set of concentric spheres of relative psychological dis-\ntoward: the center, the verb we use is < れ る. Otherwise, when a thing moves away from the cen-\nter: or when a thing stays away from the center, the transaction is described in terms of あlfる.\nSomebody: gives me.\nくれる: You give me.\nSomebody: gives you.\nあげる: <staying away>\nYou: Others\nSomebody: gives to somebody else.\nI: give to you.\nあげる: You give to others.\nI: give to others.\nWith: bothあlる and<れ, the giver is the subject of the sentence, and is accompanied by the\nparticle: or が. The recipient is accompanied by the particle l二.\nIf: a transaction takes place between others but you think you yourself have benefi ted because somebody very\nclose: to you received something,  れ る is also possible. In the example below, you identify yourself more\nclosely: with your family than with somebody you have never met. Hence < れ る.\nThe: President gave my little sister a letter.\nだいとうう: いもうと",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 60
+          }
+        },
+        {
+          "id": "genki_2_2_dialogue_4",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_14",
+          "text": "why: don't you...\nHow: about taking some medicine?\nWhy: don't you study harder?\nべんきよう: may sometimes have a disapproving tone, expressing criticism of the person for\nnot: having performed the action already. It is, therefore, safer to avoid using it unless you were\nasked: for advice.\nfriendto: come visit，you donot want to useどか,but shoulduseか.\nCompare: ×うちに来たらどですか。\nWhy: don't you come to my place?\nNumber: +も/Number +Lか+Negative\nがを: noun\nさんびき: There are three cats in our house.\nかさ: にほんか\nWe: bought two umbrellas.\nYou: can add も to the number word when you want to say \"as many as.\"\nMy: mother owns three, count them, three cats.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 62
+          }
+        },
+        {
+          "id": "genki_2_2_dialogue_5",
+          "type": "dialogue",
+          "title": "Dialogue genki_2_14",
+          "text": "がくせい: にじにん\nき: As many as twenty students showed up at the party yesterday.\n会: You can add L  to the number word, and turn the predicate into the negative when you want to\nsay: \"as few as\" or \"only.\"\nわたし: にほん\nほん: いっさつ\nも: I have only one Japanese book.\nThere: are only two computers in this company.\nas: many as\nas: few as\nExpression: Not\nThe: use of short forms in casual speechThe dialogues in this lesson contain\nmany: examples of short forms as they are used in casual spoken Japanese. Let's\nexamine: some of the lines from the Dialogue section.\nあ: types of questions hardly ever have the question particle  at the end. The\nrising: intonation alone marks them as questions.\nEnglish: \"wow!\" We saw this interjection of enthusiasm in Lesson 5. You say\ncounterpart: of hす. Female speakers have the choice between the gender-\nneutral: ん and the more feminine の in closing an explanation sentence.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 63
+          }
+        },
+        {
+          "id": "genki_2_2_dialogue_6",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_14",
+          "text": "Expression: Notes\nend: in の), which is the short form counterpart of the explanation modality ん\nです: As are questions ending in んですか,most の questions are fishing for\ndetailed: explanations as a response. They are gender-neutral.\nき: course would want to say~てください.\nmation: of admiration, frustration, or some such strong emotion. な is mostly\nused: when you are talking to yourself.\nにほんこ: せんせい\nきようかしよ: おなかがすいたなあ。\nひと: でるできるhas a number of different meanings depending on the context.\nI: am capable in Japanese.\nにほん: 彼はスーができません。\nHe: can't ski.\nかれ: テストであまりできませんでした。\nI: didn't do well on the exam.\nDinner: is ready.\nIs: your homework done yet?\nしゆくたい: appear/come into existence/be made\"\nA: new store has opened.\nI: have made many friends.\nとも: ~からです~からですmeans\"it's because...\"and answers a\"why\"question.\nThe: part that precedes から is in the short form.\nA: どうして日本語を勉強しているんですか。\nにほん: 心んきう\nWhy: are you studying Japanese?\nB: 日本のア二メが好きだからです。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 64
+          }
+        },
+        {
+          "id": "genki_2_2_dialogue_7",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_14",
+          "text": "C: Group Work—Discuss what you wanted when you were a child. Keep your conversation\ngoing: by listing more items, asking for more details, and so forth.\nExampleA: 子供の時、何がほしかったですか。\nこともときなに: B：まんががほしかったです。\nC: 私もです。どんなまんががほしかったですか。\nわたし: (Continue the conversation.)\nD: Pair Work—Ask your partner which of the two items in the list they want more of and\nwhy: Example\n車ノパソコン: くるま\nB: 車よりパソコンのほうがほしいです。\nくるま: A：どうしてですか。\nB: 車が運転できないからです。\nちい: いえおお\nとも: あたま\nとも: 4.猫/犬\nE: Class Activity—Ask four people when their birthdays are and what they want on their\n誕生日はいつですか: 何がほしいですか\nなまえ: たんじょうび",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 66
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_625",
+          "label": "practice",
+          "prompt": "The next day.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_626",
+          "label": "practice",
+          "prompt": "暖かそうなーターですね。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_627",
+          "label": "practice",
+          "prompt": "これ、メリ一がくれたんです。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_628",
+          "label": "practice",
+          "prompt": "よく似合っていますよ。ぼくも彼女がほしいなあ。口トさんは",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_629",
+          "label": "practice",
+          "prompt": "チョコレートを十個ももらったんですよ。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_630",
+          "label": "practice",
+          "prompt": "5たけし：へえ、すごいですね。ジョンさんは?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_631",
+          "label": "practice",
+          "prompt": "。ョン：ぼくは個しかもらえせんでした。大家さんから。さびしいなあ。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_632",
+          "label": "practice",
+          "prompt": "でも、ロートさんはホワイトデーが大変ですよ。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_633",
+          "label": "practice",
+          "prompt": "たけし：ええ、男の人は三月十四日にお返しをしなきやいけないんですよ。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_634",
+          "label": "practice",
+          "prompt": "おとこひとさんがつじよっか",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_635",
+          "label": "practice",
+          "prompt": "Mary: What do you think is good for a Valentine's present?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_636",
+          "label": "practice",
+          "prompt": "Yui: Well, Takeshi always wears the same sweater, so why don't you give him a sweater?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_637",
+          "label": "practice",
+          "prompt": "Mary: That might be a good idea.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_638",
+          "label": "practice",
+          "prompt": "Mary: Takeshi, this is for you.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_639",
+          "label": "practice",
+          "prompt": "Takeshi: For me? Thank you. May I open it?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_640",
+          "label": "practice",
+          "prompt": "Mary: Yes.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_641",
+          "label": "practice",
+          "prompt": "Takeshi: Wow, this is a nice sweater! I've wanted one like this. Did you knit it, Mary?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_642",
+          "label": "practice",
+          "prompt": "Mary: Yes. It may be small, so please try it on.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_643",
+          "label": "practice",
+          "prompt": "Takeshi: It fits perfectly. Thank you.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_644",
+          "label": "practice",
+          "prompt": "John: Your sweater looks warm.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_645",
+          "label": "practice",
+          "prompt": "Takeshi: Mary gave me this.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_646",
+          "label": "practice",
+          "prompt": "John: It looks good on you. I want a girlfriend, too. You know, Robert got as many as ten",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_647",
+          "label": "practice",
+          "prompt": "chocolates.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_648",
+          "label": "practice",
+          "prompt": "Takeshi: Hah, that's incredible. How about you, John?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_649",
+          "label": "practice",
+          "prompt": "John: I only got one. From my landlady. How sad.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_650",
+          "label": "practice",
+          "prompt": "Takeshi: But Robert will probably have a tough day on White Day.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_651",
+          "label": "practice",
+          "prompt": "John: White Day?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_652",
+          "label": "practice",
+          "prompt": "Takeshi: Yes, men have to return the favor on March 14.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 55
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_653",
+          "label": "practice",
+          "prompt": "ななさんは英語を習いたがっていす。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 59
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_654",
+          "label": "practice",
+          "prompt": "(I understand that) Nanami wants to study English.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 59
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_655",
+          "label": "practice",
+          "prompt": "カルロスさんは友だちをほしがっています。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 59
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_656",
+          "label": "practice",
+          "prompt": "(I understand that) Carlos wants a friend.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 59
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_657",
+          "label": "practice",
+          "prompt": "Because the core meaning of lL is\"desire to possess\" when you can use a verb+ tinstead",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 59
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_658",
+          "label": "practice",
+          "prompt": "of lL, you should use the verb. For example,",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 59
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_659",
+          "label": "practice",
+          "prompt": "(not昼ご飯がほしい)",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 59
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_660",
+          "label": "practice",
+          "prompt": "(not旅行がほしい)",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 59
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_661",
+          "label": "practice",
+          "prompt": "かもL れせん means that something is a\"possibility.\" You can use it when you think that",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 59
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_662",
+          "label": "practice",
+          "prompt": "something may be the case. When you say かも L れせん, you are less sure about the state of",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 59
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_663",
+          "label": "practice",
+          "prompt": "affairs than when you say でしよ.There are stylistic variants of かもLれせん:in casual",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 59
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_14_exercise_664",
+          "label": "practice",
+          "prompt": "speech,you sayかもしれなor justかも.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 59
+          }
+        }
+      ]
+    }
+  ]
+}

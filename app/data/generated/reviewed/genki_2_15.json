@@ -1,0 +1,1062 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "genki_2_textbook",
+  "title": "genki_2_textbook / genki_2_15",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "genki_2_15_draft",
+      "appLessonId": "genki_2_15",
+      "title": "genki 2 15",
+      "qualityTier": "draft",
+      "vocabulary": [
+        {
+          "id": "genki_2_textbook_genki_2_15_vocab_4",
+          "surface": "日本の宿",
+          "reading": null,
+          "meaning": "Japanese Accommodations",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 85
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_vocab_27",
+          "surface": "私が好きな所",
+          "reading": null,
+          "meaning": "My Favorite Place",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 294
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_vocab_28",
+          "surface": "注意する",
+          "reading": null,
+          "meaning": "to watch out",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 294
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_vocab_29",
+          "surface": "広場",
+          "reading": null,
+          "meaning": "square;open space",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 294
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "cefr_a2_122",
+          "pattern": "〜ようと思う・〜おうと思う",
+          "meaning": "Expresses a personal intention or plan to do something, meaning 'I think I will' or 'I'm planning to'.",
+          "explanation": "The volitional form of a verb (e.g., 食べよう, 行こう) combined with と思う expresses the speaker's intention or decision to do something. It conveys a softer, more deliberate feeling than just using the volitional form alone, suggesting the speaker has made or is making up their mind. The plain form と思う is casual; と思っています adds a nuance of ongoing intention.",
+          "examples": [
+            {
+              "japanese": "来年、日本に行こうと思っています。",
+              "reading": "らいねん、にほんにいこうとおもっています。",
+              "english": "I'm thinking of going to Japan next year."
+            },
+            {
+              "japanese": "今日から毎日運動しようと思います。",
+              "reading": "きょうからまいにちうんどうしようとおもいます。",
+              "english": "I think I'll exercise every day starting today."
+            },
+            {
+              "japanese": "この本を読もうと思っているけど、まだ読んでいません。",
+              "reading": "このほんをよもうとおもっているけど、まだよんでいません。",
+              "english": "I'm thinking of reading this book, but I haven't read it yet."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_123",
+          "pattern": "なら",
+          "meaning": "Expresses a conditional based on a stated or assumed situation, meaning 'if', 'if it's the case that', or 'as for'.",
+          "explanation": "なら follows a noun, verb plain form, or adjective to introduce a condition that the speaker has just heard or assumed to be true. It often responds to something the listener said, making it more context-sensitive than other conditionals like たら or ば. It is used in both casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "日本語を勉強するなら、毎日練習した方がいいです。",
+              "reading": "にほんごをべんきょうするなら、まいにちれんしゅうしたほうがいいです。",
+              "english": "If you're going to study Japanese, you should practice every day."
+            },
+            {
+              "japanese": "東京に行くなら、このレストランに行ってみてください。",
+              "reading": "とうきょうにいくなら、このレストランにいってみてください。",
+              "english": "If you're going to Tokyo, please try going to this restaurant."
+            },
+            {
+              "japanese": "暇なら、一緒に映画を見ませんか。",
+              "reading": "ひまなら、いっしょにえいがをみませんか。",
+              "english": "If you're free, would you like to watch a movie together?"
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/conditional_たら_なら",
+            "title": "Conditional: たら, なら",
+            "excerpt": "114 CHAPTER 3. MORE GRAMMAR\nform, which can pair up with any verb, fz り gets its inflection specifically\nfrom the verb する, meaning '\"to do\":\nきょう がっこう い じゆぎょう で はん た\n今日は学校に行ったり、 授業に出たり、ご飯を食べたりしました。\n\"Today (I) went to school, went to class and ate.\"\nThis sentence literally reads \"Today I did: going to school, going to\nclass, eating', and shows why this is only listing representative actions -\nthere is no way to distinguish which action occurred when, in relation to\nother actions; we're literally o",
+            "examples": [
+              {
+                "japanese": "form, which can pair up with any verb, fz り gets its inflection specifically"
+              },
+              {
+                "japanese": "from the verb する, meaning '\"to do\":"
+              },
+              {
+                "japanese": "きょう がっこう い じゆぎょう で はん た"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_124",
+          "pattern": "たがる",
+          "meaning": "Expresses that a third person appears to want to do something, based on observed behavior.",
+          "explanation": "たがる is formed by replacing the い of たい with がる (たい → たがる), and is used to describe a third person's desire to do an action as something the speaker observes or infers. Just as がる is used for adjective-based feelings, たがる handles verb-based desires for third-person subjects. It is neutral in register and used in everyday conversation.",
+          "examples": [
+            {
+              "japanese": "息子はいつも外で遊びたがります。",
+              "reading": "むすこはいつもそとであそびたがります。",
+              "english": "My son always wants to play outside."
+            },
+            {
+              "japanese": "友達は毎週カラオケに行きたがっています。",
+              "reading": "ともだちはまいしゅうカラオケにいきたがっています。",
+              "english": "My friend keeps wanting to go to karaoke every week."
+            },
+            {
+              "japanese": "彼はもっと早く帰りたがっていました。",
+              "reading": "かれはもっとはやくかえりたがっていました。",
+              "english": "He seemed to want to go home earlier."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_125",
+          "pattern": "ごろ",
+          "meaning": "Indicates an approximate point in time.",
+          "explanation": "ごろ follows a time expression to indicate an approximate time, meaning 'around' or 'about.' It is used for points in time (not durations), such as a time of day, month, or year. It is neutral in register and used in both polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "毎朝七時ごろ起きます。",
+              "reading": "まいあさしちじごろおきます。",
+              "english": "I wake up around seven every morning."
+            },
+            {
+              "japanese": "来年ごろ、日本に行くつもりです。",
+              "reading": "らいねんごろ、にほんにいくつもりです。",
+              "english": "I plan to go to Japan around next year."
+            },
+            {
+              "japanese": "子どものごろ、よく公園で遊びました。",
+              "reading": "こどものごろ、よくこうえんであそびました。",
+              "english": "When I was a child, I often played in the park."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_126",
+          "pattern": "おわる",
+          "meaning": "Attached to a verb stem to express that an action has been completed.",
+          "explanation": "おわる (終わる) is attached to the verb stem (masu-stem) of another verb to mean 'to finish doing' something. It marks the completion of an action. It is used in both polite and casual speech and conjugates like a regular う-verb.",
+          "examples": [
+            {
+              "japanese": "宿題を書き終わりました。",
+              "reading": "しゅくだいをかきおわりました。",
+              "english": "I finished writing my homework."
+            },
+            {
+              "japanese": "映画を見終わったら、電話してください。",
+              "reading": "えいがをみおわったら、でんわしてください。",
+              "english": "Please call me when you finish watching the movie."
+            },
+            {
+              "japanese": "ご飯を食べ終わって、コーヒーを飲みました。",
+              "reading": "ごはんをたべおわって、コーヒーをのみました。",
+              "english": "After finishing eating, I drank coffee."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_127",
+          "pattern": "がひつよう",
+          "meaning": "Expresses that something is necessary or needed.",
+          "explanation": "This expression uses が with 必要 (necessary) to indicate what is required or needed. The particle が marks the thing that is necessary. It is commonly used to state what is needed for a particular purpose or situation.",
+          "examples": [
+            {
+              "japanese": "パスポートが必要です。",
+              "reading": "ぱすぽーとがひつようです。",
+              "english": "A passport is necessary (I need a passport)."
+            },
+            {
+              "japanese": "この仕事には経験が必要です。",
+              "reading": "このしごとにはけいけんがひつようです。",
+              "english": "This job requires experience."
+            },
+            {
+              "japanese": "運転免許証があれば、車を運転できます。でも、保険証も必要です。",
+              "reading": "うんてんめんきょしょうがあれば、くるまをうんてんできます。でも、ほけんしょもひつようです。",
+              "english": "If you have a driver's license, you can drive a car. But you also need an insurance card."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_128",
+          "pattern": "てくる",
+          "meaning": "Attached to the て-form to express that an action or change has been progressing up to now, or that something comes toward the speaker.",
+          "explanation": "てくる (て＋くる) is the counterpart of ていく — it marks change or action that approaches the speaker in time or space. It can mean 'has been doing', 'has come to', or 'is starting to'. Also used literally when someone takes something and comes back. Used in casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "日本語がわかってきました。",
+              "reading": "にほんごがわかってきました。",
+              "english": "I've been coming to understand Japanese."
+            },
+            {
+              "japanese": "雨が降ってきました。",
+              "reading": "あめがふってきました。",
+              "english": "It has started to rain."
+            },
+            {
+              "japanese": "パンを買ってきてください。",
+              "reading": "パンをかってきてください。",
+              "english": "Please go buy some bread and come back."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/becoming_なる",
+            "title": "Becoming: なる",
+            "excerpt": "2.5. SPECIAL VERBS 81\nこそあど meaning\nこなた this person (I/me/you/him/he/her/she).\nそなた that person (him/he, her/she).\nあなた that person over there (you).\nどなた which person (who).\nSince this set is a tad classical, there are a few things to notice. First\nof all, そなた refers to a third person (he/she), while あなた refers to second\nperson (you). Also, while somewhat classical, this set is still used in formal\nsettings. However, because it is used exclusively in formal settings it is\nconsidered distal and very",
+            "examples": [
+              {
+                "japanese": "こそあど meaning"
+              },
+              {
+                "japanese": "こなた this person (I/me/you/him/he/her/she)."
+              },
+              {
+                "japanese": "そなた that person (him/he, her/she)."
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_129",
+          "pattern": "といい",
+          "meaning": "I hope, I wish, You should, It would be good",
+          "explanation": "Expressing a hope or wish that something will happen.",
+          "examples": [
+            {
+              "japanese": "早く雨が止むといいですね。",
+              "reading": "はやくあめがやむといいですね。",
+              "english": "I hope the rain stops soon."
+            },
+            {
+              "japanese": "明日、天気がいいといいなあ。",
+              "reading": "あした、てんきがいいといいなあ。",
+              "english": "I wish the weather is good tomorrow."
+            },
+            {
+              "japanese": "彼が来るといいのですが。",
+              "reading": "かれがくるといいのですが。",
+              "english": "I hope he comes."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_130",
+          "pattern": "のに",
+          "meaning": "Expresses contrast or disappointment, meaning 'even though' or 'despite the fact that.'",
+          "explanation": "のに connects two clauses where the result is unexpected or contrary to what the first clause suggests. It often carries a nuance of frustration or surprise. It follows the plain form of verbs and adjectives, and な-adjectives take なのに.",
+          "examples": [
+            {
+              "japanese": "毎日練習したのに、試合に負けました。",
+              "reading": "まいにちれんしゅうしたのに、しあいにまけました。",
+              "english": "Even though I practiced every day, I lost the match."
+            },
+            {
+              "japanese": "安いのに、とてもおいしいです。",
+              "reading": "やすいのに、とてもおいしいです。",
+              "english": "Even though it's cheap, it's very delicious."
+            },
+            {
+              "japanese": "地図があるのに、道に迷いました。",
+              "reading": "ちずがあるのに、みちにまよいました。",
+              "english": "Even though I had a map, I got lost."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_131",
+          "pattern": "とか～とか",
+          "meaning": "Lists two or more examples from a larger set, meaning 'things like… and…'.",
+          "explanation": "Place とか after each item in a list to indicate you are giving examples, not a complete list. It is roughly equivalent to 'things like A and B' in English. This pattern is casual and common in everyday conversation; avoid it in formal writing.",
+          "examples": [
+            {
+              "japanese": "週末は映画を見るとか買い物をするとかします。",
+              "reading": "しゅうまつはえいがをみるとかかいものをするとかします。",
+              "english": "On weekends I do things like watching movies and shopping."
+            },
+            {
+              "japanese": "果物はりんごとかバナナとかが好きです。",
+              "reading": "くだものはりんごとかバナナとかがすきです。",
+              "english": "I like fruits like apples and bananas."
+            },
+            {
+              "japanese": "日本語とか韓国語とかを勉強しています。",
+              "reading": "にほんごとかかんこくごとかをべんきょうしています。",
+              "english": "I am studying languages like Japanese and Korean."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_132",
+          "pattern": "れる・られる (Potential)",
+          "meaning": "A verb form expressing the ability or possibility to perform an action.",
+          "explanation": "The potential form (～られる/～れる) expresses ability or possibility. For Ichidan verbs, replace る with られる (見る → 見られる); for Godan verbs, change the final vowel to え and add る (飲む → 飲める). Use it to express 'can do,' 'be able to,' or 'is possible.' This is essential at A2 level for expressing capabilities.",
+          "examples": [
+            {
+              "japanese": "私は日本語が少し読めます。",
+              "reading": "わたし は にほんご が すこし よめます。",
+              "english": "I can read Japanese a little."
+            },
+            {
+              "japanese": "兄は車を運転できますが、私はまだできません。",
+              "reading": "あに は くるま を うんてん できます が、わたし は まだ できません。",
+              "english": "My older brother can drive a car, but I can't yet."
+            },
+            {
+              "japanese": "この問題は解くことができますか？",
+              "reading": "この もんだい は とく こと が できます か？",
+              "english": "Can you solve this problem?"
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/passive_れる_られる",
+            "title": "Passive: れる/られる",
+            "excerpt": "134 CHAPTER 3. MORE GRAMMAR\n3.2.11 Passive:れる/られる\nPassive constructions are, as their name implies, constructions which de-\nscribe actions in a passive voice. Unlike \"I eat dinner\" or \"The cat is play-\ning with the squeaky toy'\", which are in active voice, they refer to phrases\nlike \"Dinner was eaten by me'\" or \"The squeaky toy was played with by\nうけみ\nthe cat\". In Japanese, this passive voice, called 受身, is achieved through\nthe use of the two helper verbs れる (for 五段 verbs) and られる (for 一段\nverbs),",
+            "examples": [
+              {
+                "japanese": "3.2.11 Passive:れる/られる",
+                "english": "Passive constructions are, as their name implies, constructions which de-"
+              },
+              {
+                "japanese": "the cat\". In Japanese, this passive voice, called 受身, is achieved through"
+              },
+              {
+                "japanese": "the use of the two helper verbs れる (for 五段 verbs) and られる (for 一段"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_133",
+          "pattern": "ばあいは",
+          "meaning": "In the event of; in the case of; if the situation is",
+          "explanation": "ばあいは marks a conditional circumstance or situation. It appears after a noun or verbal phrase to indicate 'if this situation occurs' or 'if this condition applies.' It is more formal than simple conditionals and frequently used in rules, instructions, and formal explanations.",
+          "examples": [
+            {
+              "japanese": "問題が起きた場合は、先生に言ってください。",
+              "reading": "もんだいが おきた ばあいは、 せんせいに いってください。",
+              "english": "In the event that a problem occurs, please tell the teacher."
+            },
+            {
+              "japanese": "雨の場合は、運動会を延期します。",
+              "reading": "あめの ばあいは、 うんどうかいを えんきします。",
+              "english": "In the case of rain, the sports day will be postponed."
+            },
+            {
+              "japanese": "質問がある場合は、手を上げてください。",
+              "reading": "しつもんが ある ばあいは、 てを あげてください。",
+              "english": "If you have any questions, please raise your hand."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/conditional_たら_なら",
+            "title": "Conditional: たら, なら",
+            "excerpt": "114 CHAPTER 3. MORE GRAMMAR\nform, which can pair up with any verb, fz り gets its inflection specifically\nfrom the verb する, meaning '\"to do\":\nきょう がっこう い じゆぎょう で はん た\n今日は学校に行ったり、 授業に出たり、ご飯を食べたりしました。\n\"Today (I) went to school, went to class and ate.\"\nThis sentence literally reads \"Today I did: going to school, going to\nclass, eating', and shows why this is only listing representative actions -\nthere is no way to distinguish which action occurred when, in relation to\nother actions; we're literally o",
+            "examples": [
+              {
+                "japanese": "form, which can pair up with any verb, fz り gets its inflection specifically"
+              },
+              {
+                "japanese": "from the verb する, meaning '\"to do\":"
+              },
+              {
+                "japanese": "きょう がっこう い じゆぎょう で はん た"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_134",
+          "pattern": "ていただけませんか",
+          "meaning": "An extremely polite way to ask someone to do something for you.",
+          "explanation": "This pattern combines a verb's te-form with いただく (to receive the favor of) in the potential form, followed by the negative question ending. It is one of the most polite ways to make a request in Japanese and is frequently used in business and formal situations.",
+          "examples": [
+            {
+              "japanese": "待っていただけますか。",
+              "reading": "まっていただけますか。",
+              "english": "Would you wait for me?"
+            },
+            {
+              "japanese": "ちょっと助けていただけませんか。",
+              "reading": "ちょっとたすけていただけませんか。",
+              "english": "Could you help me for a moment?"
+            },
+            {
+              "japanese": "このメールを読んでいただけますか。",
+              "reading": "このめーるをよんでいただけますか。",
+              "english": "Could you read this email?"
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_135",
+          "pattern": "るところだ",
+          "meaning": "Expresses that an action is just about to happen or is on the verge of occurring.",
+          "explanation": "るところだ attaches to the dictionary (plain present) form of a verb to indicate that the action is just about to start. It describes the moment immediately before the action begins. In polite speech, です replaces だ at the end.",
+          "examples": [
+            {
+              "japanese": "今から出かけるところです。",
+              "reading": "いまからでかけるところです。",
+              "english": "I am just about to go out."
+            },
+            {
+              "japanese": "映画が始まるところです。",
+              "reading": "えいががはじまるところです。",
+              "english": "The movie is about to start."
+            },
+            {
+              "japanese": "ちょうど電話するところでした。",
+              "reading": "ちょうどでんわするところでした。",
+              "english": "I was just about to call you."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_136",
+          "pattern": "ていた",
+          "meaning": "The past progressive or habitual past form, expressing an action that was ongoing or repeatedly occurred in the past.",
+          "explanation": "ていた (ていました in polite form) is formed by combining the て-form of a verb with いた. It describes an action that was in progress at a past moment, or a habit or state that existed in the past. It is the past tense equivalent of ている.",
+          "examples": [
+            {
+              "japanese": "昨日の夜、テレビを見ていました。",
+              "reading": "きのうのよる、テレビをみていました。",
+              "english": "Last night, I was watching television."
+            },
+            {
+              "japanese": "子どものころ、毎日泳いでいました。",
+              "reading": "こどものころ、まいにちおよいでいました。",
+              "english": "When I was a child, I swam every day."
+            },
+            {
+              "japanese": "電話したとき、彼は寝ていた。",
+              "reading": "でんわしたとき、かれはねていた。",
+              "english": "When I called, he was sleeping."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_137",
+          "pattern": "ていく",
+          "meaning": "Attached to the て-form to express that an action or change proceeds forward, away from the current point in time or space.",
+          "explanation": "ていく (て＋いく) indicates movement or change that goes away from the speaker — physically (taking something and leaving) or temporally (a state that continues into the future). It can also mean 'to start doing' something progressively. Used in casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "これからもっと勉強していきます。",
+              "reading": "これからもっとべんきょうしていきます。",
+              "english": "I'm going to continue studying even more from now on."
+            },
+            {
+              "japanese": "彼は荷物を持っていきました。",
+              "reading": "かれはにもつをもっていきました。",
+              "english": "He took his luggage and left."
+            },
+            {
+              "japanese": "気温はどんどん上がっていくでしょう。",
+              "reading": "きおんはどんどんあがっていくでしょう。",
+              "english": "The temperature will probably keep rising."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_138",
+          "pattern": "ように・ような",
+          "meaning": "Indicates similarity or manner of action; ように shows how something is done, ような shows appearance or similarity.",
+          "explanation": "ように describes the way an action is performed (like X, in the manner of X). ような describes appearance or nature (looks like X, seems like X). Both are used to make comparisons. Common in casual and formal speech.",
+          "examples": [
+            {
+              "japanese": "先生のように日本語を話します。",
+              "reading": "せんせいのようにほんごをはなします。",
+              "english": "I speak Japanese like a teacher. / I speak Japanese in the manner of a teacher."
+            },
+            {
+              "japanese": "その子のような顔です。",
+              "reading": "そのこのようなかおです。",
+              "english": "It's a face like that child's. / It's a face similar to that child."
+            },
+            {
+              "japanese": "猫のように静かに歩きます。",
+              "reading": "ねこのようにしずかにあるきます。",
+              "english": "I walk quietly like a cat."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "genki_2_15_dialogue_0",
+          "type": "dialogue",
+          "title": "Dialogue genki_2_15",
+          "text": "ながのりょこう: In this lesson, we will.\nSuggest: doing something together\nDescribe: people or things in detail\nMake: preparations\nMake: plans for the trip with friends\n会話: Dialo\nBefore: the Vacation. K15-01/02\nメり一: たけしくん、今度の休み、予定ある?\nおも: いっしよ\nてんしゃ: じかん\nしら: 8メりー：ありがとう。じやあ、私、ゆいさんに電話しておく。\nわたし: てんわ\nAt: Nagano Station. K15-03/04\nたけし: 早く着いたから、ちよっと観光しない?\nはや: かんこう\nい: たけし：\nぜんこう: ゆうめい\nながの: そばを食べようよ。\nAt: the Travel Information Office.\nたけし: すみせん、善光寺に行くスはどれですか。\n案内所の人: 善光寺なら、十一番のバスですよ。\nぜんこう: じゆういちばん",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 78
+          }
+        },
+        {
+          "id": "genki_2_15_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_15",
+          "text": "たん: K15-08(E-J)\nNoUns: がいこくじん\n外国人: foreigner\nそば: soba; Japanese buckwheat noodles\n地図: map\n家具: furniture\nbattery: ジケット\njacket: ペット\npet: わりびきけん\n割引券: discount coupon\nインタ一ネト: internet(more colloquially,ネ卜)\nearthquake: ほけん\n保険: insurance\ntax: きようしつ\n教室: classroom\nbuilding: プール\nswimming: pool\nえいがかん: 映画館\nmovie: theater\nJapanese: inn\ngarden: ボランテイア\nvolunteer: かつどう\n活動: activity\nexperience: しゅうかん\n習慣: custom\nしめきり: 締め切り\ndeadline: よてい\n予定: schedule; plan\nそっぎようしき: 卒業式\ngraduation: ceremony\nけっこんしき: 結婚式\nwedding: U-verbs\nto: sell(~を)\nおろす: 下ろす\nto: withdraw (money)(~を)",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 80
+          }
+        },
+        {
+          "id": "genki_2_15_dialogue_2",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_15",
+          "text": "Volitional: Form\nThe: volitional form of a verb is a more casual equivalent of L. You can use it to suggest a\nplan: to a close friend, for example.\nA: あしたは授業がないから、今晩どこかに行こう。\nじゆぎよう: こんばん\nい: We won't have any classes tomorrow. Let's go somewhere this evening.\nB: いいね。そうしよう。\nSounds: good. Let's do so.\nYou: can make the volitional forms using the rules listed below:\nVolitional: form\n話す: 話そう\n待とう: 遊ぼう\nくる: → こよう\nする: しよう\nThink: of the u-verb conjugation in terms of a hiragana chart.\naff: rmative\npotential: volitional",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 82
+          }
+        },
+        {
+          "id": "genki_2_15_dialogue_3",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_15",
+          "text": "The: use of short forms in casual speechLet's examine some more examples\nof: short forms used in casual spoken Japanese in the Dialogue.\nよてい: よてい\nある: The particles は,が, andをare frequently dropped in casual speech.Note\nalso: that this sentence is a yes/no question, and the particle か is dropped. (The\nquestion: particle か is retained in special cases only, such as the pattern \"the\nvolitional: +か(Shall we...?)\")\nおも: vowel W of the helping verb る is dropped. Such contractions do occur in\nthe: long form( and ) speech patterns, too, but are more frequent in\ncasual: speech with short forms.\nample: of the vowel v in the helping verbいる dropping out.\nis: retained when followed by よ or ね.\nA: 今日、何曜日？\nきょう: なんようび\nB: 水曜日。水曜日だよ。\nすいうび: すいようび\ntrasting: two situations), but also to present the background to what you are\nabout: to say. In the Dialogue，一緒に行かない?alone would be too abrupt, and\nっし上: Takeshi would wonder what Mary is talking about. Mary could have used two\nseparate: sentences,asinゆいさんの長野のうちに行こうと思ってるんだ。\nsay: at the end of the fi rst sentence.\nShort: present+予You can add予定すto averb in the present tense\nよてい: よてい\nshort: form when you want to say that something is scheduled to take place.\nわたしこんど: しうまつかんこく\nてい: I am scheduled to go to Korea this coming weekend.\nあに: くがつ\nけっこん: よてい\nMy: big brother is scheduled to get married this September.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 86
+          }
+        },
+        {
+          "id": "genki_2_15_dialogue_4",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_15",
+          "text": "P: r a c t i c e\nれん: しゆう\nI: コーヒーを飲もうか\nの: A. Change the verbs into the volitional forms. K15-09\nExample: 行く→行う\nよ: 2.言\n小: 3.借りる\nはな: よやく\nB: Pair Work—Suggest your plans to your partner using informal speech. k15-10\nExample: A：カフェでコーヒーを飲もう(か)。\nの: B:うん、そうしよう。うーん、ちよっと……。\ndrink: coff ee at a cafe\nplay: soccer\nsee: a movie in town\ntake: pictures at school\nswim: in a pool\nbuy: hamburgers at",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "genki_2_15_dialogue_5",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_15",
+          "text": "運動しようと思っています: Grammar 2\nA: Describe what each person is planning to do. k15-12\nExample: ×I—(have various experiences in Japan)\nにほん: けいけん\nおも: 1.十才三\nやましせんせい: 3.カルロス\nかつどう: B. Ask three classmates what they are going to do this weekend and fill in the chart.\nExample: A：週末何をしようと思っていますか。\nB: ンプをしようと思っています。\nおも: A：いいですね。だれと行くんですか。\nB: んさんと行こうと思っています。\nどこで: だれと",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 90
+          }
+        },
+        {
+          "id": "genki_2_15_dialogue_6",
+          "type": "dialogue",
+          "title": "Dialogue genki_2_15",
+          "text": "C: Pair Work—Practice the following dialogue with your partner. Then substitute the boxed\npart: with the other occasions listed below and complete the rest of the underlined\nparts: accordingly.\nDialogue: Happy\n会: A:もうすぐ、\nBirthday: L15\nじういっさい: たんじょうび\nB: ええ、うちでーティ一をしよと思っています。\nおも: A：そうですか。それは、いいですね。\n冬休み: 夏休み\n試験: レポートの締め切り\nふゆやす: なつやす\nき: 卒業式\nお正月: 先生の結婚式\n日本語のクラスの発表: そつきようしき\nしょうがつ: せんせいっこんしき\nにほんこ: はっびょう\nお金を借りておきます: Grammar 3\nA: A famous psychic said that there will be a big earthquake next week. Say what the\npeople: below will do in advance.\nExample: ゆい（電池を買う)\nかね: 3.ロバート\nほんはい: 6.けん\nす: 7.たけし\n大: 8.私",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 91
+          }
+        },
+        {
+          "id": "genki_2_15_dialogue_7",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_15",
+          "text": "B: What do you need to do to prepare for the following situations? Make as many sentenc-\nes: as possible using ~おく.\nExample: 週末、旅行します。\nしうまつ: リこう\nよかん: よやく\nしら: ガイドブック(guidebook)を買っておきます。\n办: 1.来週ハワイに行きます。\nらいしのう: にほんご\nはっびょう: C. Pair Work—Talk with your partner about what you would need to do in preparation for\nthe: following events.\nExample: 土曜日にーティーをする\nどようび: →A：土日にパーィーをしようか。\nとようび: B:いいね。食べ物や飲み物を買っておかなきやいけないね。\nか: A：そうだね。それから、部屋を掃除しておいたほがいよ。\nB: じゃあ、私ぼくは部屋を掃除しておく。\nそう: A：じやあ、私ぼくは飲み物を買っておく。\nB: 楽しみだね。\nたの: A：うん。楽しみ。\nたの: 1.今度の休みに旅行する\nリょこう: 2.週末にキャンプをする\nしうまつ: 3.(your own)",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 92
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_843",
+          "label": "practice",
+          "prompt": "ありがとございます。この地図、もらってもいいですか。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_844",
+          "label": "practice",
+          "prompt": "案内所の人：ええ、どぞ。それから、これ、美術館の割引券ですが、よかった",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_845",
+          "label": "practice",
+          "prompt": "びじつかんわびきけん",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_846",
+          "label": "practice",
+          "prompt": "メり一：この美術館、あた行く予定なんです。どうもありがとございます。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_847",
+          "label": "practice",
+          "prompt": "案内所の人：気をつけて。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_848",
+          "label": "practice",
+          "prompt": "「白馬の森(Forest with aWhite Horse)」",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_849",
+          "label": "practice",
+          "prompt": "東山魁夷/1972年",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_850",
+          "label": "practice",
+          "prompt": "長野県信濃美術館東山魁夷館蔵",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_851",
+          "label": "practice",
+          "prompt": "Mary: Takeshi, do you have any plans for the holiday?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_852",
+          "label": "practice",
+          "prompt": "Takeshi: Not really. Why?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_853",
+          "label": "practice",
+          "prompt": "Mary: I am thinking of going to Yui's home in Nagano. Do you want to go?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_854",
+          "label": "practice",
+          "prompt": "Takeshi: Is it okay?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_855",
+          "label": "practice",
+          "prompt": "Mary: Yes, Yui told me to invite you.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_856",
+          "label": "practice",
+          "prompt": "Takeshi: Then, I will go. I will check the train schedule.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_857",
+          "label": "practice",
+          "prompt": "Mary: Thanks. I will call Yui.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_858",
+          "label": "practice",
+          "prompt": "Takeshi: Since we got here early, do you want to do a little sightseeing?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_859",
+          "label": "practice",
+          "prompt": "Mary: Yes. Where shall we go?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_860",
+          "label": "practice",
+          "prompt": "Takeshi: How about Zenkoji Temple? It's a famous temple.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_861",
+          "label": "practice",
+          "prompt": "Mary: Sounds good. What shall we eat for lunch?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_862",
+          "label": "practice",
+          "prompt": "Takeshi: Soba noodles in Nagano are delicious, so let's eat soba.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_863",
+          "label": "practice",
+          "prompt": "Takeshi: Excuse me, which bus goes to Zenkoji Temple?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_864",
+          "label": "practice",
+          "prompt": "Information agent: For Zenkoji, it's bus number 11.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_865",
+          "label": "practice",
+          "prompt": "Takeshi: Thank you very much. Can I have this map?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_866",
+          "label": "practice",
+          "prompt": "Information agent: Yes. And these are discount tickets for the art museum. Please take them, if",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_867",
+          "label": "practice",
+          "prompt": "Mary: We are planning to go to this museum tomorrow. Thank you very much.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_868",
+          "label": "practice",
+          "prompt": "Information agent: Have a safe trip.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_869",
+          "label": "practice",
+          "prompt": "これは去年の誕生日に彼女がくれた本です。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 85
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_870",
+          "label": "practice",
+          "prompt": "(cf.これは本です。)",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 85
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_871",
+          "label": "practice",
+          "prompt": "This is a book that my girlfriend gave me on my birthday last year.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 85
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_872",
+          "label": "practice",
+          "prompt": "父が村上春樹が書いた本をくれました。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 85
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_873",
+          "label": "practice",
+          "prompt": "(cf.父が本をくれました。)",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 85
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_874",
+          "label": "practice",
+          "prompt": "My father gave me a book that Haruki Murakami wrote.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 85
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_875",
+          "label": "practice",
+          "prompt": "私が一番感動した映画は「生きるです。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 85
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_876",
+          "label": "practice",
+          "prompt": "(cf.映画は「生きる」です。)",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 85
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_877",
+          "label": "practice",
+          "prompt": "The movie I was touched by the most is \"To Live,\"a 1952 film directed by Akira Kuosawa.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 85
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_878",
+          "label": "practice",
+          "prompt": "Culture Notes",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 85
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_879",
+          "label": "practice",
+          "prompt": "日本の宿 Japanese Accommodations",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 85
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_880",
+          "label": "practice",
+          "prompt": "There are different types of accommodations in Japan, such as ホテル (hotels), 旅館 (Japa-",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 85
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_881",
+          "label": "practice",
+          "prompt": "nese-style inns), and ゲストハウス (guest houses).",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 85
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_15_exercise_882",
+          "label": "practice",
+          "prompt": "ホテル in Japan offer Western-style facilities. There are also inexpensive hotels called \"ビジネ",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 85
+          }
+        }
+      ]
+    }
+  ]
+}

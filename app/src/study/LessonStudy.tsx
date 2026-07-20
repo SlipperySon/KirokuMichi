@@ -14,6 +14,7 @@ import {
   priorityFrontsFromLessonSignals,
 } from './lessonCardBridge'
 import { applyFirstSessionBudget, isFirstSessionCandidate } from './firstSessionBudget'
+import { clearLessonSkipState, markCardsDeferred, markSpeakPending } from './lessonSkipState'
 import {
   speakRequiredFragments,
   validateJapaneseProduction,
@@ -193,6 +194,9 @@ export function LessonStudy() {
       updatedAt: new Date().toISOString(),
     }
     saveLessonSession(snapshot)
+    if ((cardsCompleted || cardsDeferred) && !speakCompleted) {
+      markSpeakPending(state.lessonId)
+    }
   }, [
     hydrated,
     state,
@@ -299,6 +303,7 @@ export function LessonStudy() {
       if (queue.length === 0) {
         await commitDeferredLessonCards(service, userId, state.lessonId, state.vocab, state.grammar)
         setCardsDeferred(true)
+        markCardsDeferred(state.lessonId)
         toast.info('Cards queued on Today — continue to Speak.')
         const speakIdx = plan.findIndex(step => step.kind === 'speak')
         moveToStep(speakIdx >= 0 ? speakIdx : stepIndex + 1)
@@ -331,6 +336,7 @@ export function LessonStudy() {
     try {
       const count = await commitDeferredLessonCards(service, userId, state.lessonId, state.vocab, state.grammar)
       setCardsDeferred(true)
+      markCardsDeferred(state.lessonId)
       toast.success(count > 0 ? `${count} lesson cards queued on Today` : 'Lesson cards saved for Today')
       const speakIdx = plan.findIndex(step => step.kind === 'speak')
       moveToStep(speakIdx >= 0 ? speakIdx : stepIndex + 1)
@@ -357,6 +363,7 @@ export function LessonStudy() {
     }
     setSpeakError(null)
     markComplete(state.lessonId)
+    clearLessonSkipState(state.lessonId)
     try {
       await unlockScenariosForLesson(state.lessonId, userId, storage)
     } catch { /* ignore */ }

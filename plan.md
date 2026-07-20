@@ -1,10 +1,82 @@
 # KirokuMichi — Current State & Active Roadmap
 
-Last updated: 2026-07-18 AEST
+Last updated: 2026-07-20 AEST
 
 ---
 
-## Active Priority — Learning Environment Redesign
+## Active Priority — Extra Anki decks + skip/defer (Phase 8)
+
+**Goal:** Keep one FSRS engine; put user `.apkg` imports in an **Extra Anki decks** lane that does not
+starve the textbook path; treat skip as durable deferral (Today debt), never silent completion.
+
+**Status (2026-07-20):** Shipped core — Extra lane + Review subsection + skip/defer planner wiring + structural OCR audit.
+**Learner packs published for all current books** (`npm run textbook:learner:publish`):
+
+| Tier | Lessons | Source |
+|------|---------|--------|
+| **Gold** | `genki_1_1`, `quartet_1_1` | Corrections → reviewed pack (0 validate errors) + images |
+| **Gold** | `genki_1_2` | OCR vocab pages + curated grammar (`npm run textbook:learner:genki-gold-enrich`) → corrections + reviewed pack |
+| **Gold** | `quartet_1_2` | Bessatsu proof pages 294–297 (`npm run textbook:learner:quartet-gold-enrich`) |
+| **Gold** | `genki_2_1`/`genki_2_13` | OCR-enriched vocab (pages 32–33 + 53) + seed; grammar/dialogues from comprehensive |
+| **Gold** | `quartet_2_1`/`quartet_2_7` | Bessatsu proof pages 288–292 (138 vocab; was thin comprehensive synth) |
+| **Draft** | Remaining lesson-structure IDs across Genki I/II, Quartet I/II, Marugoto A1/A2/B1, Tobira | Quality-filtered comprehensive JSON (not OCR bulk dumps) |
+
+Served under `data/generated/reviewed/` + `index.json`. LessonPage prefers overlays via `reviewedPackService`.
+Human page-image corrections still only for Genki I / Quartet I L1; L2 + Genki II openers are OCR/seed gold.
+Phase 8 smoke: `src/study/phase8Smoke.test.ts`.
+
+**Related research canvas:**
+[`language-learning-research-alignment.canvas.tsx`](/Users/Skipp/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/language-learning-research-alignment.canvas.tsx)
+
+### Architecture (path vs Extra)
+
+| Lane | What | Today behavior |
+|------|------|----------------|
+| **Path** | Lesson-linked cards (`lesson_id`) + non-extra decks | Primary dues; blocks new lessons |
+| **Extra** | User `.apkg` under deck `lane = 'extra'` (unlinked) | Review → Extra subsection; optional “Include Extra in Today” |
+
+Same `reviewCard` / FSRS / ReviewSession for both. Textbook-matched imports may still set `lesson_id`
+(path dues) while living in an Extra-named deck folder.
+
+**Skip policy**
+
+| Skip | Response |
+|------|----------|
+| Mid-lesson leave | Resume rail via session snapshot |
+| Cards → “later” | `commitDeferredLessonCards` + `markCardsDeferred` → dues on Today |
+| Leave before Speak | `markSpeakPending` → Today “Finish speaking” |
+| Ignore path dues | Today stays on Review / Catch-up (≥80 dues) |
+| Ignore Extra dues | Extra backlog only; path continues |
+| Bury / Suspend | Anki semantics (today / until unsuspend) |
+
+**Today priority order**
+
+1. Recovery → 2. Path dues (or path+Extra if opted in) / Catch-up → 3. Finish Speak → 4. Cards deferred
+→ 5. Current lesson → 6. Path lesson → 7. Extra decks CTA → 8. Grammar / mistakes / free study
+
+**Key files:** `deckLane.ts`, `lessonSkipState.ts`, `studyPathPlanner.ts`, `ReviewHub.tsx` (`#extra-decks`),
+`ankiImport.ts` (`ensureExtraDeck`), `SRSService` lane filters.
+
+### OCR / textbook pack audit (structural — 2026-07-20)
+
+**Do not full-read OCR in chat** (~0.7M text tokens / ~45M full JSON). Structural inventory is enough for planning.
+
+| Layer | State |
+|-------|--------|
+| Source OCR (~3.5k pages, 15 books) | Largely complete under `app/tools/textbook-pack/out/` (gitignored) |
+| Canonical lesson packs + images + activities | **Not ready** — mostly bulk drafts; 2 shipped PNGs; gold L1 packs overwritten |
+| App `data/generated/textbooks/*-comprehensive.json` | Heuristic extracts; noisy exercise counts |
+| Chunked model | Already sketched in `textbook-pack/schema.ts` (`CanonicalTextbookPack` → lessons → blocks/exercises/assets) |
+
+**Ideal chunk shape (ship later):** Series → Lesson → StudyUnits (dialogue/reading/workbook) → ContentBlocks (+cropped images) → PracticeSet/Exercises (+answer keys). Unlock encrypts **reviewed** packs, not raw OCR.
+
+**Next content work (separate from Phase 8):** Genki I / Quartet I L3 gold via same enrich loop; human-spot-check L2/L7/L13 glosses in validation viewer; leave Marugoto/Tobira stubs until Genki/Quartet gold loop scales.
+
+Canvas: [`ocr-textbook-pack-audit.canvas.tsx`](/Users/Skipp/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/ocr-textbook-pack-audit.canvas.tsx)
+
+---
+
+## Prior Priority — Learning Environment Redesign
 
 **Goal:** Turn parallel study modes into one teachable loop so a learner always knows *what to do next* and each
 lesson closes with **evidence-based** retrieval + spaced review + production — not a dead-end summary.
@@ -28,7 +100,7 @@ If a UX shortcut conflicts with a principle (e.g. mark complete without retrieva
 **Anki clone = retrieval engine (not a side app):** The existing SRS stack (`SRSService`, `ReviewSession`,
 FSRS ratings, decks, suspend/bury, undo, leeches, Card Browser) is the **spaced-retrieval substrate** for
 Course and Today. Lessons encode and practice; the Anki clone schedules and retrieves. Learners should feel
-one study habit, not “textbook mode” vs “Anki mode.”
+one study habit, not “textbook mode” vs “Anki mode.” Extra Anki decks are an optional second lane on the same substrate.
 
 ---
 

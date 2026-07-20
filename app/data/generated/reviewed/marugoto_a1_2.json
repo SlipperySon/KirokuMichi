@@ -1,0 +1,638 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "marugoto_a1_textbook",
+  "title": "marugoto_a1_textbook / marugoto_a1_2",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "marugoto_a1_2_draft",
+      "appLessonId": "marugoto_a1_2",
+      "title": "marugoto a1 2",
+      "qualityTier": "draft",
+      "vocabulary": [
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_vocab_17",
+          "surface": "上野限",
+          "reading": null,
+          "meaning": "UENO STATION",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 87
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_vocab_20",
+          "surface": "広島",
+          "reading": null,
+          "meaning": "Hiroshima",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 102
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "cefr_a1_9",
+          "pattern": "でしょう",
+          "meaning": "Expresses probability ('probably') or seeks confirmation ('right?', 'isn't it?') depending on intonation.",
+          "explanation": "でしょう is the polite form of だろう and has two main uses: with falling intonation it expresses the speaker's conjecture or probability ('it's probably ~'); with rising intonation it seeks agreement or confirmation from the listener ('it's ~, right?'). It attaches to the plain form of verbs and adjectives, or directly to nouns and な-adjective stems. It is polite in register and common in both conversation and writing.",
+          "examples": [
+            {
+              "japanese": "明日は雨でしょう。",
+              "reading": "あしたはあめでしょう。",
+              "english": "It will probably rain tomorrow."
+            },
+            {
+              "japanese": "あの映画はおもしろいでしょう？",
+              "reading": "あのえいがはおもしろいでしょう？",
+              "english": "That movie is interesting, isn't it?"
+            },
+            {
+              "japanese": "田中さんはもう家に帰ったでしょう。",
+              "reading": "たなかさんはもうおうちにかえったでしょう。",
+              "english": "Mr. Tanaka has probably already gone home."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_10",
+          "pattern": "が",
+          "meaning": "Marks the grammatical subject of a sentence, especially for identification, existence, or ability.",
+          "explanation": "が marks the subject performing or experiencing the action. Unlike は, が highlights or identifies the subject — use it when answering 'who?' or 'what?', with existence verbs (あります/います), and with ability or desire expressions. It is neutral in register and used in both casual and polite sentences.",
+          "examples": [
+            {
+              "japanese": "猫が庭にいます。",
+              "reading": "ねこがにわにいます。",
+              "english": "There is a cat in the garden."
+            },
+            {
+              "japanese": "だれが先生ですか。",
+              "reading": "だれがせんせいですか。",
+              "english": "Who is the teacher?"
+            },
+            {
+              "japanese": "私は日本語が好きです。",
+              "reading": "わたしはにほんごがすきです。",
+              "english": "I like Japanese."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_11",
+          "pattern": "それ",
+          "meaning": "Means 'that' — refers to a thing close to the listener or just mentioned.",
+          "explanation": "それ points to something near the person you are speaking to, or to something that was just mentioned in the conversation. It is the middle distance in the ko-so-a-do series. In written or spoken dialogue it often refers back to a topic just raised by the other person.",
+          "examples": [
+            {
+              "japanese": "それは何ですか。",
+              "reading": "それはなんですか。",
+              "english": "What is that?"
+            },
+            {
+              "japanese": "それは面白いですね。",
+              "reading": "それはおもしろいですね。",
+              "english": "That is interesting, isn't it."
+            },
+            {
+              "japanese": "それを見せてください。",
+              "reading": "それをみせてください。",
+              "english": "Please show me that."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_12",
+          "pattern": "る-Verb (Dictionary)",
+          "meaning": "The plain/dictionary form of Ichidan verbs, which end in る and conjugate by replacing る with the appropriate suffix.",
+          "explanation": "る-Verbs (Ichidan verbs) always end in る in dictionary form, with the vowel before る being い or え (e.g. たべる, みる). To make them polite, drop る and add ます. They are the simpler of the two main verb groups because the stem never changes.",
+          "examples": [
+            {
+              "japanese": "私は毎朝ご飯を食べます。",
+              "reading": "わたしはまいあさごはんをたべます。",
+              "english": "I eat rice every morning."
+            },
+            {
+              "japanese": "映画を見ますか。",
+              "reading": "えいがをみますか。",
+              "english": "Do you watch movies?"
+            },
+            {
+              "japanese": "七時に起きます。",
+              "reading": "しちじにおきます。",
+              "english": "I wake up at seven o'clock."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_13",
+          "pattern": "がある",
+          "meaning": "Indicates that an inanimate object or thing exists or is located somewhere.",
+          "explanation": "がある is used to express the existence or presence of non-living things (objects, places, events, abstract things). The subject is marked with が, and a location is often given with に. It is neutral in register and used in both casual and polite contexts (ある / あります).",
+          "examples": [
+            {
+              "japanese": "テーブルの上に本があります。",
+              "reading": "テーブルのうえにほんがあります。",
+              "english": "There is a book on the table."
+            },
+            {
+              "japanese": "駅の近くにコンビニがある。",
+              "reading": "えきのちかくにコンビニがある。",
+              "english": "There is a convenience store near the station."
+            },
+            {
+              "japanese": "明日、授業がありますか。",
+              "reading": "あした、じゅぎょうがありますか。",
+              "english": "Is there class tomorrow?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_14",
+          "pattern": "ここ",
+          "meaning": "A place demonstrative pronoun meaning 'here' or 'this place', referring to a location close to the speaker.",
+          "explanation": "ここ refers to a place near the speaker, functioning like 'here' in English. It is the first in the ko-so-a-do demonstrative system for places: ここ (near speaker), そこ (near listener), あそこ (far from both). It can stand alone or be used with particles such as に, で, or は. Register is neutral and it is used in both polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "ここは図書館です。",
+              "reading": "ここはとしょかんです。",
+              "english": "This place is a library."
+            },
+            {
+              "japanese": "私のかばんはここにあります。",
+              "reading": "わたしのかばんはここにあります。",
+              "english": "My bag is here."
+            },
+            {
+              "japanese": "ここで待ってください。",
+              "reading": "ここでまってください。",
+              "english": "Please wait here."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_15",
+          "pattern": "と",
+          "meaning": "Connects two or more nouns to mean 'and', listing items together.",
+          "explanation": "The particle と is placed between nouns to join them exhaustively, meaning the list contains all the items mentioned. It works like 'and' in English when listing things: パンとミルク means 'bread and milk'. This form is neutral in register and used in both polite and casual speech. It only connects nouns, not verbs or clauses.",
+          "examples": [
+            {
+              "japanese": "テーブルの上にペンと本があります。",
+              "reading": "テーブルのうえにペンとほんがあります。",
+              "english": "There is a pen and a book on the table."
+            },
+            {
+              "japanese": "私はりんごとバナナが好きです。",
+              "reading": "わたしはりんごとバナナがすきです。",
+              "english": "I like apples and bananas."
+            },
+            {
+              "japanese": "母と父は日本人です。",
+              "reading": "ははとちちはにほんじんです。",
+              "english": "My mother and father are Japanese."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_16",
+          "pattern": "の",
+          "meaning": "Turns a verb or adjective phrase into a noun, meaning 'the act of ~' or 'the thing that ~'.",
+          "explanation": "The nominalizer の follows a plain-form verb or adjective phrase and converts it into a noun phrase. This allows verb phrases to function as subjects or objects in a sentence. It is commonly used after verbs of liking, disliking, good/bad at, and perception. It is natural in both casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "音楽を聴くのが好きです。",
+              "reading": "おんがくをきくのがすきです。",
+              "english": "I like listening to music."
+            },
+            {
+              "japanese": "日本語を話すのは難しいです。",
+              "reading": "にほんごをはなすのはむずかしいです。",
+              "english": "Speaking Japanese is difficult."
+            },
+            {
+              "japanese": "彼が来るのを待っています。",
+              "reading": "かれがくるのをまっています。",
+              "english": "I am waiting for him to come."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "marugoto_a1_2_dialogue_0",
+          "type": "dialogue",
+          "title": "Dialogue marugoto_a1_2",
+          "text": "Conversation: test\nThere: will be five questions. If you can answer three out of five, you will pass.\nすばらし: Excellent! You answered all the questions and were able to have a conversation.\nできました: Well done! You answered three or more questions and were able to have a conversation.\nもうすご: Getting there! You could not understand or answer the questions well.\nSpeak: in groups.\n华: テストのあいだに4にんぐらいの ちいさいグルプになつてつぎの(1)と(2)を\nWhile: waiting to take your test, make small groups of about four people, show (1) and (2) below and talk about\nthem: (1)にほんご・にほんぶんかのたいけんきろく\nRecords: of your experiences of Japanese language and culture\nThings: you wrote in lesson 2: name card, lesson 7: e-mail, and lesson 10: birthday card.\nShare: the things you talked about in groups with other",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 72
+          }
+        },
+        {
+          "id": "marugoto_a1_2_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue a1_textbook_marugoto_a1_2",
+          "text": "門: Are, nan desu ka\n华: こうやって\nkoo: yatte\nhashioki: shuriken\nmimikaki: ￥1,000",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 94
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_439",
+          "label": "practice",
+          "prompt": "dokusho hon",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 75
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_440",
+          "label": "practice",
+          "prompt": "kurashikku",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 75
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_441",
+          "label": "practice",
+          "prompt": "しゅみはなんですか。",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 75
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_442",
+          "label": "practice",
+          "prompt": "Shumi wa nan desu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 75
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_443",
+          "label": "practice",
+          "prompt": "Supootsu desu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 75
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_444",
+          "label": "practice",
+          "prompt": "Donna supootsu ga suki desu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 75
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_445",
+          "label": "practice",
+          "prompt": "kurashikku",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 75
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_446",
+          "label": "practice",
+          "prompt": "suki desu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 75
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_447",
+          "label": "practice",
+          "prompt": "Soo desu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 75
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_448",
+          "label": "practice",
+          "prompt": "(3)れいなさんにだれがいいですか。",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 75
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_449",
+          "label": "practice",
+          "prompt": "Watashi mo desu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 75
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_450",
+          "label": "practice",
+          "prompt": "Who is the best match for Reena-san?",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 75
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_451",
+          "label": "practice",
+          "prompt": "だい11かしみはなんですか",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_452",
+          "label": "practice",
+          "prompt": "(1)あなたはやすみのひになにをしますか。チエックしましょう。",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_453",
+          "label": "practice",
+          "prompt": "What do you do on your days off? Check your answer.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_454",
+          "label": "practice",
+          "prompt": "Supootsu o shimasu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_455",
+          "label": "practice",
+          "prompt": "Hon o yomimasu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_456",
+          "label": "practice",
+          "prompt": "Ongaku o kikimasu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_457",
+          "label": "practice",
+          "prompt": "Eega o mimasu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_458",
+          "label": "practice",
+          "prompt": "Gaikokugo o benkyoo-shimasu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_459",
+          "label": "practice",
+          "prompt": "６うちでゆっくりします。",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_460",
+          "label": "practice",
+          "prompt": "Uchi de yukkuri-shimasu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_461",
+          "label": "practice",
+          "prompt": "(2)ぺではなしましょう。",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_462",
+          "label": "practice",
+          "prompt": "Talk in pairs.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_463",
+          "label": "practice",
+          "prompt": "ふたりはおなじこたえが",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_464",
+          "label": "practice",
+          "prompt": "Did you both have the same answers?",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_465",
+          "label": "practice",
+          "prompt": "Suzuki-san, supootsu o shimasu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_466",
+          "label": "practice",
+          "prompt": "Hai, yoku shimasu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_467",
+          "label": "practice",
+          "prompt": "lie, amari shimasen.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_468",
+          "label": "practice",
+          "prompt": "そうですか。わたしもです。",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_469",
+          "label": "practice",
+          "prompt": "Soo desu ka. Watashi mo desu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_470",
+          "label": "practice",
+          "prompt": "そうですか。わたしはあまり",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_471",
+          "label": "practice",
+          "prompt": "Soo desu ka. Watashi wa amari shimasen/yoku shimasu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 77
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_472",
+          "label": "practice",
+          "prompt": "どこにかいてありますか。",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_473",
+          "label": "practice",
+          "prompt": "Where are the date, venue and price written?",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_474",
+          "label": "practice",
+          "prompt": "上映作品「あひしよくどう」「かいだん」ほか",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_475",
+          "label": "practice",
+          "prompt": "時：20××年6月19日（木）～25日（水）",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_476",
+          "label": "practice",
+          "prompt": "場：JF日本文化センター",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_477",
+          "label": "practice",
+          "prompt": "5月1日（火）～5日（土）",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_2_exercise_478",
+          "label": "practice",
+          "prompt": "20××年3月1日（金）～3日（日）",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 79
+          }
+        }
+      ]
+    }
+  ]
+}

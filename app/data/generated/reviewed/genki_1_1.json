@@ -1,0 +1,2864 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "genki_1",
+  "title": "Genki I: An Integrated Course in Elementary Japanese",
+  "edition": "3rd Edition",
+  "levelRange": "N5-N4",
+  "sources": [
+    {
+      "sourceId": "genki_1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "18f3c2050a9c9bcc17c11730a8860469da7e0d391117fe53a00c004a7cc9d63e",
+        "bytes": 142633221
+      }
+    },
+    {
+      "sourceId": "genki_1_workbook",
+      "role": "workbook",
+      "fingerprint": {
+        "sha256": "fbf7a11b409e4a2c41babd085fb4d85ee1a1b14e969f7595ced27e4e312a4731",
+        "bytes": 36145993
+      }
+    },
+    {
+      "sourceId": "genki_combined_answer_key",
+      "role": "answer_key",
+      "fingerprint": {
+        "sha256": "3280128e27b99d36aa7d85dac23a89a127095e5e2eb64ff8bdc78ca1efcaffa0",
+        "bytes": 45031203
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "genki_1_lesson_1",
+      "unitType": "lesson",
+      "lessonNumber": 1,
+      "title": "あたらしいともだち　New Friends",
+      "level": "N5-N4",
+      "pageRange": {
+        "start": 45,
+        "end": 64
+      },
+      "modes": [
+        "conversation_grammar",
+        "reading_writing",
+        "workbook"
+      ],
+      "vocabulary": [
+        {
+          "id": "genki_1_l1_vocab_1",
+          "surface": "だいがく",
+          "reading": "daigaku",
+          "meaning": "college; university",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              250,
+              335,
+              682,
+              364
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_2",
+          "surface": "こうこう",
+          "reading": "kookoo",
+          "meaning": "high school",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              269,
+              357,
+              644,
+              386
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_3",
+          "surface": "がくせい",
+          "reading": "gakusee",
+          "meaning": "student",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              252,
+              382,
+              618,
+              408
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_4",
+          "surface": "だいがくせい",
+          "reading": "daigakusee",
+          "meaning": "college student",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              269,
+              404,
+              664,
+              433
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_5",
+          "surface": "りゅうがくせい",
+          "reading": "ryuugakusee",
+          "meaning": "international student",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              251,
+              426,
+              701,
+              454
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_6",
+          "surface": "せんせい",
+          "reading": "sensee",
+          "meaning": "teacher; professor",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              266,
+              451,
+              702,
+              476
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image; corrected OCR cleanup issue."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_7",
+          "surface": "~ねんせい",
+          "reading": "...nensee",
+          "meaning": "... year student",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              252,
+              474,
+              669,
+              499
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_8",
+          "surface": "いちねんせい",
+          "reading": "ichinensee",
+          "meaning": "first-year student",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              281,
+              495,
+              677,
+              523
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_9",
+          "surface": "せんこう",
+          "reading": "senkoo",
+          "meaning": "major",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              251,
+              518,
+              609,
+              546
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_10",
+          "surface": "ともだち",
+          "reading": "tomodachi",
+          "meaning": "friend",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              270,
+              602,
+              610,
+              628
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_11",
+          "surface": "~さん",
+          "reading": "...san",
+          "meaning": "Mr./Ms. ...",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              267,
+              625,
+              638,
+              651
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image; corrected OCR cleanup issue."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_12",
+          "surface": "~じん",
+          "meaning": "... people",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              252,
+              648,
+              637,
+              676
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "reading": "...jin",
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image; corrected OCR cleanup issue."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_13",
+          "surface": "にほんじん",
+          "reading": "nihonjin",
+          "meaning": "Japanese people",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              284,
+              670,
+              670,
+              699
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_14",
+          "surface": "いま",
+          "reading": "ima",
+          "meaning": "now",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              266,
+              731,
+              598,
+              759
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_15",
+          "surface": "ごぜん",
+          "reading": "gozen",
+          "meaning": "A.M.",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              269,
+              754,
+              597,
+              782
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_16",
+          "surface": "~じ",
+          "reading": "...ji",
+          "meaning": "... o'clock",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              268,
+              801,
+              617,
+              827
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image; corrected OCR cleanup issue."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_17",
+          "surface": "いちじ",
+          "reading": "ichiji",
+          "meaning": "one o'clock",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              280,
+              820,
+              642,
+              851
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_18",
+          "surface": "はん",
+          "reading": "han",
+          "meaning": "half",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              268,
+              845,
+              598,
+              872
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_19",
+          "surface": "にじはん",
+          "reading": "niji han",
+          "meaning": "half past two",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              283,
+              868,
+              650,
+              895
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_20",
+          "surface": "にほん",
+          "reading": "Nihon",
+          "meaning": "Japan",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              252,
+              928,
+              608,
+              958
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_21",
+          "surface": "にほんご",
+          "reading": "nihongo",
+          "meaning": "Japanese language",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              282,
+              995,
+              683,
+              1025
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_22",
+          "surface": "~さい",
+          "reading": "...sai",
+          "meaning": "... years old",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              252,
+              1020,
+              649,
+              1050
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image; corrected OCR cleanup issue."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_23",
+          "surface": "でんわ",
+          "reading": "denwa",
+          "meaning": "telephone",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              269,
+              1043,
+              635,
+              1070
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_24",
+          "surface": "~ばん",
+          "reading": "...ban",
+          "meaning": "number ...",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              268,
+              1065,
+              644,
+              1094
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image; corrected OCR cleanup issue."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_25",
+          "surface": "ばんごう",
+          "reading": "bangoo",
+          "meaning": "number",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              289,
+              225,
+              872,
+              254
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_26",
+          "surface": "なまえ",
+          "reading": "namae",
+          "meaning": "name",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              289,
+              249,
+              627,
+              275
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_27",
+          "surface": "なん/なに",
+          "reading": "nan/nani",
+          "meaning": "what",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              273,
+              273,
+              624,
+              297
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_28",
+          "surface": "あのう",
+          "reading": "anoo",
+          "meaning": "um...",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              272,
+              334,
+              634,
+              356
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_29",
+          "surface": "はい",
+          "reading": "hai",
+          "meaning": "yes",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              289,
+              354,
+              615,
+              385
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_30",
+          "surface": "そうです",
+          "reading": "soo desu",
+          "meaning": "That's right.",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              289,
+              377,
+              665,
+              406
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_31",
+          "surface": "そうですか",
+          "reading": "soo desu ka",
+          "meaning": "I see.; Is that so?",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              272,
+              401,
+              690,
+              426
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_32",
+          "surface": "イギリス",
+          "reading": "Igirisu",
+          "meaning": "Britain",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              294,
+              551,
+              635,
+              585
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image; corrected OCR cleanup issue."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_33",
+          "surface": "オーストラリア",
+          "reading": "Oosutoraria",
+          "meaning": "Australia",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              292,
+              574,
+              647,
+              606
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image; corrected OCR cleanup issue."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_34",
+          "surface": "かんこく",
+          "reading": "Kankoku",
+          "meaning": "Korea",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              342,
+              597,
+              630,
+              622
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image; corrected OCR cleanup issue."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_35",
+          "surface": "カナダ",
+          "reading": "Kanada",
+          "meaning": "Canada",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              440,
+              621,
+              638,
+              643
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image; corrected OCR cleanup issue."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_36",
+          "surface": "ちゅうごく",
+          "reading": "Chuugoku",
+          "meaning": "China",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              439,
+              642,
+              631,
+              669
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image; corrected OCR cleanup issue."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_37",
+          "surface": "インド",
+          "reading": "Indo",
+          "meaning": "India",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              290,
+              664,
+              627,
+              693
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_38",
+          "surface": "エジプト",
+          "reading": "Ejiputo",
+          "meaning": "Egypt",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              290,
+              688,
+              630,
+              718
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_39",
+          "surface": "フィリピン",
+          "reading": "Firipin",
+          "meaning": "Philippines",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              289,
+              710,
+              663,
+              740
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_40",
+          "surface": "アジアけんきゅう",
+          "reading": "ajia kenkyuu",
+          "meaning": "Asian studies",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              286,
+              768,
+              673,
+              810
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_41",
+          "surface": "けいざい",
+          "reading": "keezai",
+          "meaning": "economics",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              286,
+              789,
+              657,
+              825
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_42",
+          "surface": "こうがく",
+          "reading": "koogaku",
+          "meaning": "engineering",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              291,
+              818,
+              667,
+              845
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_43",
+          "surface": "こくさいかんけい",
+          "reading": "kokusaikankee",
+          "meaning": "international relations",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              293,
+              843,
+              729,
+              864
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_44",
+          "surface": "コンピューター",
+          "reading": "konpyuutaa",
+          "meaning": "computer",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              439,
+              864,
+              652,
+              891
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_45",
+          "surface": "せいじ",
+          "reading": "seeji",
+          "meaning": "politics",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              439,
+              884,
+              640,
+              916
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image; corrected OCR cleanup issue."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_46",
+          "surface": "せいぶつがく",
+          "reading": "seebutsugaku",
+          "meaning": "biology",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              290,
+              908,
+              640,
+              938
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_47",
+          "surface": "ビジネス",
+          "reading": "bijinesu",
+          "meaning": "business",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              279,
+              923,
+              645,
+              990
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_48",
+          "surface": "ぶんがく",
+          "reading": "bungaku",
+          "meaning": "literature",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              438,
+              953,
+              649,
+              982
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_49",
+          "surface": "れきし",
+          "reading": "rekishi",
+          "meaning": "history",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              289,
+              977,
+              637,
+              1006
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_50",
+          "surface": "いしゃ",
+          "reading": "isha",
+          "meaning": "doctor",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              288,
+              1037,
+              635,
+              1064
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_51",
+          "surface": "かいしゃいん",
+          "reading": "kaishain",
+          "meaning": "office worker",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              290,
+              1061,
+              672,
+              1086
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_52",
+          "surface": "かんごし",
+          "reading": "kangoshi",
+          "meaning": "nurse",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 49,
+            "coordinates": [
+              267,
+              223,
+              606,
+              256
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_53",
+          "surface": "こうこうせい",
+          "reading": "kookoosee",
+          "meaning": "high school student",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 49,
+            "coordinates": [
+              267,
+              244,
+              695,
+              279
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_54",
+          "surface": "しゅふ",
+          "reading": "shufu",
+          "meaning": "housewife",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 49,
+            "coordinates": [
+              270,
+              268,
+              635,
+              299
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_55",
+          "surface": "だいがくいんせい",
+          "reading": "daigakuinsee",
+          "meaning": "graduate student",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 49,
+            "coordinates": [
+              269,
+              292,
+              678,
+              323
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_56",
+          "surface": "べんごし",
+          "reading": "bengoshi",
+          "meaning": "lawyer",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 49,
+            "coordinates": [
+              264,
+              311,
+              614,
+              348
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_57",
+          "surface": "おかあさん",
+          "reading": "okaasan",
+          "meaning": "mother",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 49,
+            "coordinates": [
+              269,
+              378,
+              619,
+              404
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_58",
+          "surface": "おとうさん",
+          "reading": "otoosan",
+          "meaning": "father",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 49,
+            "coordinates": [
+              268,
+              399,
+              611,
+              428
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_59",
+          "surface": "おねえさん",
+          "reading": "oneesan",
+          "meaning": "older sister",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 49,
+            "coordinates": [
+              269,
+              424,
+              640,
+              450
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_60",
+          "surface": "おにいさん",
+          "reading": "oniisan",
+          "meaning": "older brother",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 49,
+            "coordinates": [
+              268,
+              446,
+              655,
+              474
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_61",
+          "surface": "いもうと",
+          "reading": "imooto",
+          "meaning": "younger sister",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 49,
+            "coordinates": [
+              266,
+              466,
+              660,
+              499
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        },
+        {
+          "id": "genki_1_l1_vocab_62",
+          "surface": "おとうと",
+          "reading": "otooto",
+          "meaning": "younger brother",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 49,
+            "coordinates": [
+              269,
+              491,
+              673,
+              522
+            ]
+          },
+          "tags": [
+            "draft_table_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against page image."
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "genki_1_l1_grammar_1",
+          "pattern": "XはYです",
+          "meaning": "X is Y",
+          "examples": [
+            {
+              "japanese": "せんこうはにほんごです。",
+              "english": "My major is Japanese."
+            }
+          ],
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 50,
+            "coordinates": [
+              215,
+              291,
+              834,
+              771
+            ]
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against grammar page heading."
+          }
+        },
+        {
+          "id": "genki_1_l1_grammar_2",
+          "pattern": "Question Sentences: ～か",
+          "meaning": "Add か to make a question",
+          "examples": [
+            {
+              "japanese": "りゅうがくせいですか。",
+              "english": "Are you an international student?"
+            }
+          ],
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 51,
+            "coordinates": [
+              195,
+              443,
+              811,
+              1001
+            ]
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against grammar page heading."
+          }
+        },
+        {
+          "id": "genki_1_l1_grammar_3",
+          "pattern": "Noun1のNoun2",
+          "meaning": "Noun modification/possession with の",
+          "examples": [
+            {
+              "japanese": "たけしさんのでんわばんごう",
+              "english": "Takeshi's phone number"
+            }
+          ],
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 52,
+            "coordinates": [
+              215,
+              300,
+              834,
+              468
+            ]
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "Reviewed against grammar page heading."
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "genki_1_l1_content_overview",
+          "type": "instruction",
+          "mode": "conversation_grammar",
+          "title": "Lesson Overview",
+          "text": "New Friends introduces self-introductions and basic questions about names, school year, nationality, major, age, time, and phone numbers.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 45,
+            "coordinates": [
+              195,
+              171,
+              745,
+              394
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "genki_1_l1_content_dialogue_1",
+          "type": "dialogue",
+          "mode": "conversation_grammar",
+          "title": "Dialogue I: School Orientation",
+          "text": "Mary meets Takeshi at a school orientation. The exchange models greetings, stating a name, asking whether someone is an international student, nationality, and school year.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 45,
+            "coordinates": [
+              232,
+              509,
+              813,
+              559
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "genki_1_l1_content_dialogue_2",
+          "type": "dialogue",
+          "mode": "conversation_grammar",
+          "title": "Dialogue II: Self-Introduction",
+          "text": "Mary introduces herself to a group using name, school, year, major, age, and a closing greeting.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 46,
+            "coordinates": [
+              223,
+              173,
+              872,
+              260
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "genki_1_l1_content_vocab_core",
+          "type": "table",
+          "mode": "conversation_grammar",
+          "title": "Core Vocabulary",
+          "text": "Core Lesson 1 vocabulary covers school words, people, time, nationality, language, age, phone, and number expressions.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              437,
+              223,
+              570,
+              266
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "genki_1_l1_content_vocab_additional",
+          "type": "table",
+          "mode": "conversation_grammar",
+          "title": "Additional Vocabulary",
+          "text": "Additional vocabulary covers countries, majors, occupations, and family terms relevant to personal introductions.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 48,
+            "coordinates": [
+              392,
+              459,
+              804,
+              496
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "genki_1_l1_content_grammar_x_wa_y_desu",
+          "type": "grammar_note",
+          "mode": "conversation_grammar",
+          "title": "Grammar 1: X は Y です",
+          "text": "Explains using です to identify or describe someone or something, and using は to mark the topic when needed.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 50,
+            "coordinates": [
+              215,
+              291,
+              834,
+              771
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "genki_1_l1_content_grammar_questions",
+          "type": "grammar_note",
+          "mode": "conversation_grammar",
+          "title": "Grammar 2: Question Sentences",
+          "text": "Explains making yes/no questions with か and asking information questions with words such as なん, なんじ, なんさい, and なんねんせい.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 51,
+            "coordinates": [
+              195,
+              443,
+              811,
+              1001
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "genki_1_l1_content_grammar_no",
+          "type": "grammar_note",
+          "mode": "conversation_grammar",
+          "title": "Grammar 3: Noun1 の Noun2",
+          "text": "Explains using の to connect two nouns for possession, affiliation, or specification, with the second noun as the main idea.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 52,
+            "coordinates": [
+              215,
+              300,
+              834,
+              468
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "genki_1_l1_content_expression_notes",
+          "type": "grammar_note",
+          "mode": "conversation_grammar",
+          "title": "Expression Notes",
+          "text": "Expression notes cover あのう, そうですか, number pronunciation, 先生, さん, and ways to refer to the person you are talking to.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 53,
+            "coordinates": [
+              206,
+              230,
+              755,
+              1068
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "genki_1_l1_content_culture_names",
+          "type": "reading",
+          "mode": "conversation_grammar",
+          "title": "Culture Note: Japanese Names",
+          "text": "Culture note explaining Japanese name order, common naming patterns, and how names are often written in kanji.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 54,
+            "coordinates": [
+              242,
+              642,
+              829,
+              1083
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "genki_1_l1_content_practice_grammar_1",
+          "type": "activity",
+          "mode": "conversation_grammar",
+          "title": "Practice: X は Y です",
+          "text": "Practice describing people by nationality, year, school, major, age, and occupation using X は Y です.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 55,
+            "coordinates": [
+              195,
+              223,
+              595,
+              255
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "genki_1_l1_content_practice_grammar_2",
+          "type": "activity",
+          "mode": "conversation_grammar",
+          "title": "Practice: Questions",
+          "text": "Practice asking and answering questions about nationality, school year, age, and personal details.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 56,
+            "coordinates": [
+              219,
+              861,
+              663,
+              1065
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "genki_1_l1_content_practice_host_family",
+          "type": "activity",
+          "mode": "conversation_grammar",
+          "title": "Practice: Host Family Questions",
+          "text": "Practice answering questions about Mary's host family using family terms, occupations, and ages.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58,
+            "coordinates": [
+              217,
+              173,
+              889,
+              281
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "genki_1_l1_content_practice_no",
+          "type": "activity",
+          "mode": "conversation_grammar",
+          "title": "Practice: の Phrases",
+          "text": "Practice translating and describing noun phrases with の, including school, language, and relationship expressions.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59,
+            "coordinates": [
+              200,
+              174,
+              745,
+              450
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "genki_1_l1_content_telephone_numbers",
+          "type": "activity",
+          "mode": "conversation_grammar",
+          "title": "Practice: Telephone Numbers",
+          "text": "Pair and group work for asking, confirming, and recording telephone numbers.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 60,
+            "coordinates": [
+              220,
+              641,
+              678,
+              890
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "genki_1_l1_content_time",
+          "type": "activity",
+          "mode": "conversation_grammar",
+          "title": "Practice: Time",
+          "text": "Practice telling time and asking what time it is in different places.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 61,
+            "coordinates": [
+              202,
+              173,
+              814,
+              259
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "genki_1_l1_content_review_exercises",
+          "type": "activity",
+          "mode": "conversation_grammar",
+          "title": "Review Exercises",
+          "text": "Review activities combine questions about name, age, nationality, school, hometown, role play, and self-introduction.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 63,
+            "coordinates": [
+              198,
+              174,
+              791,
+              582
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "genki_1_l1_content_useful_expressions_time",
+          "type": "table",
+          "mode": "conversation_grammar",
+          "title": "Useful Expressions: Time",
+          "text": "Reference table for hours and minutes, including common time expressions used in Lesson 1.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 64,
+            "coordinates": [
+              250,
+              169,
+              876,
+              967
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "genki_1_l1_wb_ex_x_wa_y_profile",
+          "label": "Workbook Lesson 1 Grammar 1 I: Describe Takeshi",
+          "prompt": "Look at Takeshi's profile and describe him in Japanese using X は Y です.",
+          "targetGrammarIds": [
+            "genki_1_l1_grammar_1"
+          ],
+          "sourceRef": {
+            "sourceId": "genki_1_workbook",
+            "pageNumber": 20,
+            "coordinates": [
+              64,
+              141,
+              453,
+              163
+            ]
+          },
+          "answerKeyRef": {
+            "sourceId": "genki_combined_answer_key",
+            "pageNumber": 34,
+            "coordinates": [
+              55,
+              190,
+              695,
+              985
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "genki_combined_answer_key",
+              "pageNumber": 34,
+              "coordinates": [
+                55,
+                190,
+                695,
+                985
+              ]
+            }
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "exact",
+            "sourceText": "Page 34\nげんきIワークブック 解答\n会話・文法編 たしはにほんだいがくのがくせいです。3やま\nかいわ んぼうへん\nあいさつ p.13 けしさんはさくらだいがくのがくせいですか。\n1.おはよう。2.ありがとう。3.こんばんは。 はい、そうです。\n4.すません。5.いただきます。6.ごちそう\nさま(でした)。7.いってきます。8いってら たい か\nっしゃい。9.ただいま。10.おかえり（なさ I.1.ごごごじです。2.ごぜんくじです。3.ご\nい)。11.はじめまして。よろしくおねがいしま ごじにじはんです。4.ごぜんよじはんで\nす。12.さようなら。13.おやすみ(なさい)。 す。\n14.こんにちは。 Ⅱ.[解答例〕ぜろさんぜろ(の)さんごろくよん",
+            "notes": "Extracted from mapped answer-key region; suitable for exact or checklist grading after item parsing."
+          }
+        },
+        {
+          "id": "genki_1_l1_wb_ex_x_wa_y_translate",
+          "label": "Workbook Lesson 1 Grammar 1 II: Translate Sentences",
+          "prompt": "Translate sentences such as “Ms. Ogawa is Japanese,” “Mr. Takeda is a teacher,” and “I am an international student” using X は Y です.",
+          "targetGrammarIds": [
+            "genki_1_l1_grammar_1"
+          ],
+          "sourceRef": {
+            "sourceId": "genki_1_workbook",
+            "pageNumber": 20,
+            "coordinates": [
+              64,
+              357,
+              642,
+              378
+            ]
+          },
+          "answerKeyRef": {
+            "sourceId": "genki_combined_answer_key",
+            "pageNumber": 34,
+            "coordinates": [
+              55,
+              190,
+              695,
+              985
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "genki_combined_answer_key",
+              "pageNumber": 34,
+              "coordinates": [
+                55,
+                190,
+                695,
+                985
+              ]
+            }
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "sample",
+            "sourceText": "Page 34\nげんきIワークブック 解答\n会話・文法編 たしはにほんだいがくのがくせいです。3やま\nかいわ んぼうへん\nあいさつ p.13 けしさんはさくらだいがくのがくせいですか。\n1.おはよう。2.ありがとう。3.こんばんは。 はい、そうです。\n4.すません。5.いただきます。6.ごちそう\nさま(でした)。7.いってきます。8いってら たい か\nっしゃい。9.ただいま。10.おかえり（なさ I.1.ごごごじです。2.ごぜんくじです。3.ご\nい)。11.はじめまして。よろしくおねがいしま ごじにじはんです。4.ごぜんよじはんで\nす。12.さようなら。13.おやすみ(なさい)。 す。\n14.こんにちは。 Ⅱ.[解答例〕ぜろさんぜろ(の)さんごろくよん",
+            "notes": "Extracted from mapped answer-key region; answer key may contain examples or sample answers."
+          }
+        },
+        {
+          "id": "genki_1_l1_wb_ex_questions_complete_conversation",
+          "label": "Workbook Lesson 1 Grammar 2 I: Complete Conversations",
+          "prompt": "Use the textbook chart to complete question-and-answer exchanges about Mary, Professor Yamashita, Takeshi, and Robert.",
+          "targetGrammarIds": [
+            "genki_1_l1_grammar_2"
+          ],
+          "sourceRef": {
+            "sourceId": "genki_1_workbook",
+            "pageNumber": 21,
+            "coordinates": [
+              86,
+              142,
+              605,
+              162
+            ]
+          },
+          "answerKeyRef": {
+            "sourceId": "genki_combined_answer_key",
+            "pageNumber": 34,
+            "coordinates": [
+              55,
+              190,
+              695,
+              985
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "genki_combined_answer_key",
+              "pageNumber": 34,
+              "coordinates": [
+                55,
+                190,
+                695,
+                985
+              ]
+            }
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "sample",
+            "sourceText": "Page 34\nげんきIワークブック 解答\n会話・文法編 たしはにほんだいがくのがくせいです。3やま\nかいわ んぼうへん\nあいさつ p.13 けしさんはさくらだいがくのがくせいですか。\n1.おはよう。2.ありがとう。3.こんばんは。 はい、そうです。\n4.すません。5.いただきます。6.ごちそう\nさま(でした)。7.いってきます。8いってら たい か\nっしゃい。9.ただいま。10.おかえり（なさ I.1.ごごごじです。2.ごぜんくじです。3.ご\nい)。11.はじめまして。よろしくおねがいしま ごじにじはんです。4.ごぜんよじはんで\nす。12.さようなら。13.おやすみ(なさい)。 す。\n14.こんにちは。 Ⅱ.[解答例〕ぜろさんぜろ(の)さんごろくよん",
+            "notes": "Extracted from mapped answer-key region; answer key may contain examples or sample answers."
+          }
+        },
+        {
+          "id": "genki_1_l1_wb_ex_questions_ask_right_question",
+          "label": "Workbook Lesson 1 Grammar 2 II: Ask the Right Questions",
+          "prompt": "Write appropriate questions for answers such as よねんせいです and じゅうきゅうさいです.",
+          "targetGrammarIds": [
+            "genki_1_l1_grammar_2"
+          ],
+          "sourceRef": {
+            "sourceId": "genki_1_workbook",
+            "pageNumber": 21,
+            "coordinates": [
+              85,
+              581,
+              507,
+              607
+            ]
+          },
+          "answerKeyRef": {
+            "sourceId": "genki_combined_answer_key",
+            "pageNumber": 34,
+            "coordinates": [
+              55,
+              190,
+              695,
+              985
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "genki_combined_answer_key",
+              "pageNumber": 34,
+              "coordinates": [
+                55,
+                190,
+                695,
+                985
+              ]
+            }
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "sample",
+            "sourceText": "Page 34\nげんきIワークブック 解答\n会話・文法編 たしはにほんだいがくのがくせいです。3やま\nかいわ んぼうへん\nあいさつ p.13 けしさんはさくらだいがくのがくせいですか。\n1.おはよう。2.ありがとう。3.こんばんは。 はい、そうです。\n4.すません。5.いただきます。6.ごちそう\nさま(でした)。7.いってきます。8いってら たい か\nっしゃい。9.ただいま。10.おかえり（なさ I.1.ごごごじです。2.ごぜんくじです。3.ご\nい)。11.はじめまして。よろしくおねがいしま ごじにじはんです。4.ごぜんよじはんで\nす。12.さようなら。13.おやすみ(なさい)。 す。\n14.こんにちは。 Ⅱ.[解答例〕ぜろさんぜろ(の)さんごろくよん",
+            "notes": "Extracted from mapped answer-key region; answer key may contain examples or sample answers."
+          }
+        },
+        {
+          "id": "genki_1_l1_wb_ex_no_phrases",
+          "label": "Workbook Lesson 1 Grammar 3 I: A の B Phrases",
+          "prompt": "Translate noun phrases into Japanese using A の B, including Takeshi's telephone number, my friend, English-language teacher, Yui's major, and high school teacher.",
+          "targetGrammarIds": [
+            "genki_1_l1_grammar_3"
+          ],
+          "sourceRef": {
+            "sourceId": "genki_1_workbook",
+            "pageNumber": 22,
+            "coordinates": [
+              64,
+              142,
+              683,
+              162
+            ]
+          },
+          "answerKeyRef": {
+            "sourceId": "genki_combined_answer_key",
+            "pageNumber": 34,
+            "coordinates": [
+              55,
+              190,
+              695,
+              985
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "genki_combined_answer_key",
+              "pageNumber": 34,
+              "coordinates": [
+                55,
+                190,
+                695,
+                985
+              ]
+            }
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "sample",
+            "sourceText": "Page 34\nげんきIワークブック 解答\n会話・文法編 たしはにほんだいがくのがくせいです。3やま\nかいわ んぼうへん\nあいさつ p.13 けしさんはさくらだいがくのがくせいですか。\n1.おはよう。2.ありがとう。3.こんばんは。 はい、そうです。\n4.すません。5.いただきます。6.ごちそう\nさま(でした)。7.いってきます。8いってら たい か\nっしゃい。9.ただいま。10.おかえり（なさ I.1.ごごごじです。2.ごぜんくじです。3.ご\nい)。11.はじめまして。よろしくおねがいしま ごじにじはんです。4.ごぜんよじはんで\nす。12.さようなら。13.おやすみ(なさい)。 す。\n14.こんにちは。 Ⅱ.[解答例〕ぜろさんぜろ(の)さんごろくよん",
+            "notes": "Extracted from mapped answer-key region; answer key may contain examples or sample answers."
+          }
+        },
+        {
+          "id": "genki_1_l1_wb_ex_no_sentences",
+          "label": "Workbook Lesson 1 Grammar 3 II: Translate Sentences",
+          "prompt": "Translate sentences involving majors, school affiliation, Japanese-language teachers, and Sakura University using の where appropriate.",
+          "targetGrammarIds": [
+            "genki_1_l1_grammar_3"
+          ],
+          "sourceRef": {
+            "sourceId": "genki_1_workbook",
+            "pageNumber": 22,
+            "coordinates": [
+              64,
+              482,
+              414,
+              502
+            ]
+          },
+          "answerKeyRef": {
+            "sourceId": "genki_combined_answer_key",
+            "pageNumber": 34,
+            "coordinates": [
+              55,
+              190,
+              695,
+              985
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "genki_combined_answer_key",
+              "pageNumber": 34,
+              "coordinates": [
+                55,
+                190,
+                695,
+                985
+              ]
+            }
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "sample",
+            "sourceText": "Page 34\nげんきIワークブック 解答\n会話・文法編 たしはにほんだいがくのがくせいです。3やま\nかいわ んぼうへん\nあいさつ p.13 けしさんはさくらだいがくのがくせいですか。\n1.おはよう。2.ありがとう。3.こんばんは。 はい、そうです。\n4.すません。5.いただきます。6.ごちそう\nさま(でした)。7.いってきます。8いってら たい か\nっしゃい。9.ただいま。10.おかえり（なさ I.1.ごごごじです。2.ごぜんくじです。3.ご\nい)。11.はじめまして。よろしくおねがいしま ごじにじはんです。4.ごぜんよじはんで\nす。12.さようなら。13.おやすみ(なさい)。 す。\n14.こんにちは。 Ⅱ.[解答例〕ぜろさんぜろ(の)さんごろくよん",
+            "notes": "Extracted from mapped answer-key region; answer key may contain examples or sample answers."
+          }
+        },
+        {
+          "id": "genki_1_l1_wb_ex_time",
+          "label": "Workbook Lesson 1 Time I: Write the Time",
+          "prompt": "Look at the time prompts and answer いまなんじですか for four times.",
+          "sourceRef": {
+            "sourceId": "genki_1_workbook",
+            "pageNumber": 23,
+            "coordinates": [
+              85,
+              141,
+              514,
+              163
+            ]
+          },
+          "answerKeyRef": {
+            "sourceId": "genki_combined_answer_key",
+            "pageNumber": 34,
+            "coordinates": [
+              55,
+              190,
+              695,
+              985
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "genki_combined_answer_key",
+              "pageNumber": 34,
+              "coordinates": [
+                55,
+                190,
+                695,
+                985
+              ]
+            }
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "exact",
+            "sourceText": "Page 34\nげんきIワークブック 解答\n会話・文法編 たしはにほんだいがくのがくせいです。3やま\nかいわ んぼうへん\nあいさつ p.13 けしさんはさくらだいがくのがくせいですか。\n1.おはよう。2.ありがとう。3.こんばんは。 はい、そうです。\n4.すません。5.いただきます。6.ごちそう\nさま(でした)。7.いってきます。8いってら たい か\nっしゃい。9.ただいま。10.おかえり（なさ I.1.ごごごじです。2.ごぜんくじです。3.ご\nい)。11.はじめまして。よろしくおねがいしま ごじにじはんです。4.ごぜんよじはんで\nす。12.さようなら。13.おやすみ(なさい)。 す。\n14.こんにちは。 Ⅱ.[解答例〕ぜろさんぜろ(の)さんごろくよん",
+            "notes": "Extracted from mapped answer-key region; suitable for exact or checklist grading after item parsing."
+          }
+        },
+        {
+          "id": "genki_1_l1_wb_ex_telephone_numbers",
+          "label": "Workbook Lesson 1 Telephone Numbers II: Interview Three People",
+          "prompt": "Ask three people their phone numbers and write each number in Japanese and Arabic numerals.",
+          "sourceRef": {
+            "sourceId": "genki_1_workbook",
+            "pageNumber": 23,
+            "coordinates": [
+              84,
+              576,
+              704,
+              596
+            ]
+          },
+          "answerKeyRef": {
+            "sourceId": "genki_combined_answer_key",
+            "pageNumber": 34,
+            "coordinates": [
+              55,
+              190,
+              695,
+              985
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "genki_combined_answer_key",
+              "pageNumber": 34,
+              "coordinates": [
+                55,
+                190,
+                695,
+                985
+              ]
+            }
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "open_ended",
+            "sourceText": "Page 34\nげんきIワークブック 解答\n会話・文法編 たしはにほんだいがくのがくせいです。3やま\nかいわ んぼうへん\nあいさつ p.13 けしさんはさくらだいがくのがくせいですか。\n1.おはよう。2.ありがとう。3.こんばんは。 はい、そうです。\n4.すません。5.いただきます。6.ごちそう\nさま(でした)。7.いってきます。8いってら たい か\nっしゃい。9.ただいま。10.おかえり（なさ I.1.ごごごじです。2.ごぜんくじです。3.ご\nい)。11.はじめまして。よろしくおねがいしま ごじにじはんです。4.ごぜんよじはんで\nす。12.さようなら。13.おやすみ(なさい)。 す。\n14.こんにちは。 Ⅱ.[解答例〕ぜろさんぜろ(の)さんごろくよん",
+            "notes": "Open-ended exercise. Use answer-key text as guidance, not as the only acceptable response."
+          }
+        },
+        {
+          "id": "genki_1_l1_wb_ex_personal_questions",
+          "label": "Workbook Lesson 1 Questions: Answer in Japanese",
+          "prompt": "Answer personal questions in Japanese about name, occupation, school year, age, major, and telephone number.",
+          "sourceRef": {
+            "sourceId": "genki_1_workbook",
+            "pageNumber": 24,
+            "coordinates": [
+              64,
+              141,
+              387,
+              163
+            ]
+          },
+          "answerKeyRef": {
+            "sourceId": "genki_combined_answer_key",
+            "pageNumber": 34,
+            "coordinates": [
+              55,
+              190,
+              695,
+              985
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "genki_combined_answer_key",
+              "pageNumber": 34,
+              "coordinates": [
+                55,
+                190,
+                695,
+                985
+              ]
+            }
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "open_ended",
+            "sourceText": "Page 34\nげんきIワークブック 解答\n会話・文法編 たしはにほんだいがくのがくせいです。3やま\nかいわ んぼうへん\nあいさつ p.13 けしさんはさくらだいがくのがくせいですか。\n1.おはよう。2.ありがとう。3.こんばんは。 はい、そうです。\n4.すません。5.いただきます。6.ごちそう\nさま(でした)。7.いってきます。8いってら たい か\nっしゃい。9.ただいま。10.おかえり（なさ I.1.ごごごじです。2.ごぜんくじです。3.ご\nい)。11.はじめまして。よろしくおねがいしま ごじにじはんです。4.ごぜんよじはんで\nす。12.さようなら。13.おやすみ(なさい)。 す。\n14.こんにちは。 Ⅱ.[解答例〕ぜろさんぜろ(の)さんごろくよん",
+            "notes": "Open-ended exercise. Use answer-key text as guidance, not as the only acceptable response."
+          }
+        },
+        {
+          "id": "genki_1_l1_wb_ex_listening_a_picture_choice",
+          "label": "Workbook Lesson 1 Listening A: Picture Choice",
+          "prompt": "Listen to phrases and choose the correct picture.",
+          "imageFile": "tools/textbook-pack/out/reviewed-packs/genki_1_lesson_1/assets/workbook_listening_a_picture_choices.png",
+          "imageSourceRef": {
+            "sourceId": "genki_1_workbook",
+            "pageNumber": 25,
+            "coordinates": [
+              80,
+              180,
+              735,
+              940
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "genki_1_workbook",
+            "pageNumber": 25,
+            "coordinates": [
+              86,
+              137,
+              609,
+              167
+            ]
+          },
+          "answerKeyRef": {
+            "sourceId": "genki_combined_answer_key",
+            "pageNumber": 34,
+            "coordinates": [
+              55,
+              190,
+              695,
+              985
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "genki_combined_answer_key",
+              "pageNumber": 34,
+              "coordinates": [
+                55,
+                190,
+                695,
+                985
+              ]
+            }
+          ],
+          "listeningScriptRef": {
+            "sourceId": "genki_combined_answer_key",
+            "pageNumber": 65,
+            "coordinates": [
+              65,
+              95,
+              700,
+              985
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "exact",
+            "sourceText": "Page 34\nげんきIワークブック 解答\n会話・文法編 たしはにほんだいがくのがくせいです。3やま\nかいわ んぼうへん\nあいさつ p.13 けしさんはさくらだいがくのがくせいですか。\n1.おはよう。2.ありがとう。3.こんばんは。 はい、そうです。\n4.すません。5.いただきます。6.ごちそう\nさま(でした)。7.いってきます。8いってら たい か\nっしゃい。9.ただいま。10.おかえり（なさ I.1.ごごごじです。2.ごぜんくじです。3.ご\nい)。11.はじめまして。よろしくおねがいしま ごじにじはんです。4.ごぜんよじはんで\nす。12.さようなら。13.おやすみ(なさい)。 す。\n14.こんにちは。 Ⅱ.[解答例〕ぜろさんぜろ(の)さんごろくよん",
+            "notes": "Extracted from mapped answer-key region; suitable for exact or checklist grading after item parsing."
+          }
+        },
+        {
+          "id": "genki_1_l1_wb_ex_listening_b_city_times",
+          "label": "Workbook Lesson 1 Listening B: City Times",
+          "prompt": "Listen to airplane dialogues and write the times for Paris, Seoul, New York, London, Taipei, and Sydney.",
+          "sourceRef": {
+            "sourceId": "genki_1_workbook",
+            "pageNumber": 26,
+            "coordinates": [
+              64,
+              87,
+              683,
+              107
+            ]
+          },
+          "answerKeyRef": {
+            "sourceId": "genki_combined_answer_key",
+            "pageNumber": 34,
+            "coordinates": [
+              55,
+              190,
+              695,
+              985
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "genki_combined_answer_key",
+              "pageNumber": 34,
+              "coordinates": [
+                55,
+                190,
+                695,
+                985
+              ]
+            }
+          ],
+          "listeningScriptRef": {
+            "sourceId": "genki_combined_answer_key",
+            "pageNumber": 65,
+            "coordinates": [
+              65,
+              95,
+              700,
+              985
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "exact",
+            "sourceText": "Page 34\nげんきIワークブック 解答\n会話・文法編 たしはにほんだいがくのがくせいです。3やま\nかいわ んぼうへん\nあいさつ p.13 けしさんはさくらだいがくのがくせいですか。\n1.おはよう。2.ありがとう。3.こんばんは。 はい、そうです。\n4.すません。5.いただきます。6.ごちそう\nさま(でした)。7.いってきます。8いってら たい か\nっしゃい。9.ただいま。10.おかえり（なさ I.1.ごごごじです。2.ごぜんくじです。3.ご\nい)。11.はじめまして。よろしくおねがいしま ごじにじはんです。4.ごぜんよじはんで\nす。12.さようなら。13.おやすみ(なさい)。 す。\n14.こんにちは。 Ⅱ.[解答例〕ぜろさんぜろ(の)さんごろくよん",
+            "notes": "Extracted from mapped answer-key region; suitable for exact or checklist grading after item parsing."
+          }
+        },
+        {
+          "id": "genki_1_l1_wb_ex_listening_c_phone_numbers",
+          "label": "Workbook Lesson 1 Listening C: Phone Numbers",
+          "prompt": "Listen to dialogues with a telephone operator and find the telephone numbers for Kawasaki, Lee, Woods, and Kumar.",
+          "sourceRef": {
+            "sourceId": "genki_1_workbook",
+            "pageNumber": 26,
+            "coordinates": [
+              65,
+              436,
+              683,
+              456
+            ]
+          },
+          "answerKeyRef": {
+            "sourceId": "genki_combined_answer_key",
+            "pageNumber": 34,
+            "coordinates": [
+              55,
+              190,
+              695,
+              985
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "genki_combined_answer_key",
+              "pageNumber": 34,
+              "coordinates": [
+                55,
+                190,
+                695,
+                985
+              ]
+            }
+          ],
+          "listeningScriptRef": {
+            "sourceId": "genki_combined_answer_key",
+            "pageNumber": 65,
+            "coordinates": [
+              65,
+              95,
+              700,
+              985
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "exact",
+            "sourceText": "Page 34\nげんきIワークブック 解答\n会話・文法編 たしはにほんだいがくのがくせいです。3やま\nかいわ んぼうへん\nあいさつ p.13 けしさんはさくらだいがくのがくせいですか。\n1.おはよう。2.ありがとう。3.こんばんは。 はい、そうです。\n4.すません。5.いただきます。6.ごちそう\nさま(でした)。7.いってきます。8いってら たい か\nっしゃい。9.ただいま。10.おかえり（なさ I.1.ごごごじです。2.ごぜんくじです。3.ご\nい)。11.はじめまして。よろしくおねがいしま ごじにじはんです。4.ごぜんよじはんで\nす。12.さようなら。13.おやすみ(なさい)。 す。\n14.こんにちは。 Ⅱ.[解答例〕ぜろさんぜろ(の)さんごろくよん",
+            "notes": "Extracted from mapped answer-key region; suitable for exact or checklist grading after item parsing."
+          }
+        },
+        {
+          "id": "genki_1_l1_wb_ex_listening_d_true_false",
+          "label": "Workbook Lesson 1 Listening D: True/False",
+          "prompt": "Listen to Akira and Kate talking and mark each statement true or false.",
+          "sourceRef": {
+            "sourceId": "genki_1_workbook",
+            "pageNumber": 26,
+            "coordinates": [
+              64,
+              714,
+              682,
+              734
+            ]
+          },
+          "answerKeyRef": {
+            "sourceId": "genki_combined_answer_key",
+            "pageNumber": 34,
+            "coordinates": [
+              55,
+              190,
+              695,
+              985
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "genki_combined_answer_key",
+              "pageNumber": 34,
+              "coordinates": [
+                55,
+                190,
+                695,
+                985
+              ]
+            }
+          ],
+          "listeningScriptRef": {
+            "sourceId": "genki_combined_answer_key",
+            "pageNumber": 65,
+            "coordinates": [
+              65,
+              95,
+              700,
+              985
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:10:17.027Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "exact",
+            "sourceText": "Page 34\nげんきIワークブック 解答\n会話・文法編 たしはにほんだいがくのがくせいです。3やま\nかいわ んぼうへん\nあいさつ p.13 けしさんはさくらだいがくのがくせいですか。\n1.おはよう。2.ありがとう。3.こんばんは。 はい、そうです。\n4.すません。5.いただきます。6.ごちそう\nさま(でした)。7.いってきます。8いってら たい か\nっしゃい。9.ただいま。10.おかえり（なさ I.1.ごごごじです。2.ごぜんくじです。3.ご\nい)。11.はじめまして。よろしくおねがいしま ごじにじはんです。4.ごぜんよじはんで\nす。12.さようなら。13.おやすみ(なさい)。 す。\n14.こんにちは。 Ⅱ.[解答例〕ぜろさんぜろ(の)さんごろくよん",
+            "notes": "Extracted from mapped answer-key region; suitable for exact or checklist grading after item parsing."
+          }
+        }
+      ],
+      "appLessonId": "genki_1_1",
+      "qualityTier": "gold"
+    }
+  ]
+}

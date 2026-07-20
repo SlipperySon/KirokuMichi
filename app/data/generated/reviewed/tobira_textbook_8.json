@@ -1,0 +1,889 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "tobira_textbook",
+  "title": "tobira_textbook / tobira_textbook_8",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "tobira_textbook_8_draft",
+      "appLessonId": "tobira_textbook_8",
+      "title": "tobira textbook 8",
+      "qualityTier": "draft",
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "cefr_b2_524",
+          "pattern": "に決まっている",
+          "meaning": "Surely, bound to, certainly, be decided",
+          "explanation": "The particle に combined with 決まっている (is decided, is determined) expresses absolute certainty or inevitability. It suggests something is fixed, determined, or sure to be true based on logic or past experience. Used when the speaker has high confidence about a conclusion.",
+          "examples": [
+            {
+              "japanese": "そんなことは失敗に決まっている。",
+              "reading": "そんなことはしっぱいにきまっている。",
+              "english": "That is surely bound to fail."
+            },
+            {
+              "japanese": "彼が来ると言ったんなら、来るに決まっている。",
+              "reading": "かれがくるといったんなら、くるにきまっている。",
+              "english": "If he said he would come, he is sure to come."
+            },
+            {
+              "japanese": "あの先生の授業は難しいに決まっている。",
+              "reading": "あのせんせいのじゅぎょうはむずかしいにきまっている。",
+              "english": "That teacher's classes are surely difficult."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/continuative_て_form",
+            "title": "Continuative: て form",
+            "excerpt": "3.2. FURTHER INFLECTIONS 103\n3.2.2 Continuative: て form\nThe continuative in Japanese is also commonly refered to as the \"て form',\nbecause it relies on the 連用形 of classical helper verb for completion, つ,\nwhich is て. This inflection is used for at least three things in Japanese,\nof which verb chaining is probably the most frequently used. Aside from\nthis, it is also used to issue (implied) imperatives, and it can be used in\ncombination with several special verbs to create special constructions.\nba",
+            "examples": [
+              {
+                "japanese": "3.2.2 Continuative: て form"
+              },
+              {
+                "japanese": "The continuative in Japanese is also commonly refered to as the \"て form',"
+              },
+              {
+                "japanese": "because it relies on the 連用形 of classical helper verb for completion, つ,"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_525",
+          "pattern": "に越したことはない",
+          "meaning": "Expresses that something is the best or most desirable option, though not necessarily essential.",
+          "explanation": "に越したことはない follows a verb (plain form) or adjective and means 'there is nothing better than' or 'it would be ideal if.' It implies that the stated condition is preferable, but the speaker acknowledges it may not always be achievable. The tone is advisory and slightly formal, often used to give practical recommendations.",
+          "examples": [
+            {
+              "japanese": "健康のためには、毎日運動するに越したことはない。",
+              "reading": "けんこうのためには、まいにちうんどうするにこしたことはない。",
+              "english": "For your health, there is nothing better than exercising every day."
+            },
+            {
+              "japanese": "旅行の前に保険に入るに越したことはない。",
+              "reading": "りょこうのまえにほけんにはいるにこしたことはない。",
+              "english": "It would be best to get insurance before traveling."
+            },
+            {
+              "japanese": "早めに準備するに越したことはないが、間に合えば大丈夫だ。",
+              "reading": "はやめにじゅんびするにこしたことはないが、まにあえばだいじょうぶだ。",
+              "english": "It's ideal to prepare early, but as long as you make it in time, you'll be fine."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_526",
+          "pattern": "にせよ・にしろ",
+          "meaning": "Even if, Even though, No matter, Whether… or",
+          "explanation": "Grammar explanation for にせよ・にしろ",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_527",
+          "pattern": "に相違ない",
+          "meaning": "Expresses strong, confident conviction that something is certainly the case, with no room for doubt.",
+          "explanation": "に相違ない is a formal, written-register expression meaning 'there is no mistake that' or 'without a doubt.' It attaches to the plain form of verbs, adjectives, or nouns followed by に相違ない, and conveys the speaker's firm conclusion based on evidence or reasoning. It appears frequently in formal writing, legal or academic contexts, and formal speech.",
+          "examples": [
+            {
+              "japanese": "この手紙の筆跡は彼のものに相違ない。",
+              "reading": "このてがみのひっせきはかれのものにそういない。",
+              "english": "The handwriting in this letter is without a doubt his."
+            },
+            {
+              "japanese": "そのような結果が出た以上、実験は成功に相違ない。",
+              "reading": "そのようなけっかがでたいじょう、じっけんはせいこうにそういない。",
+              "english": "Given that such results appeared, the experiment is certainly a success."
+            },
+            {
+              "japanese": "あれほどの努力をしたのだから、合格に相違ない。",
+              "reading": "あれほどのどりょくをしたのだから、ごうかくにそういない。",
+              "english": "Having made that much effort, passing is without a doubt."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_528",
+          "pattern": "につき",
+          "meaning": "Formally indicates a reason for a situation, or specifies a rate or amount per unit.",
+          "explanation": "につき has two distinct uses: it can mean 'due to' or 'on account of' in formal notices and announcements (e.g. signs, official documents), and it can mean 'per' or 'each' when expressing rates or quantities. Both uses are formal and written in register. It is rarely heard in casual conversation.",
+          "examples": [
+            {
+              "japanese": "工事中につき、この道路は通行止めです。",
+              "reading": "こうじちゅうにつき、このどうろはつうこうどめです。",
+              "english": "This road is closed due to construction."
+            },
+            {
+              "japanese": "一人につき、入場チケットが一枚必要です。",
+              "reading": "ひとりにつき、にゅうじょうチケットがいちまいひつようです。",
+              "english": "One admission ticket is required per person."
+            },
+            {
+              "japanese": "本日は休業日につき、ご迷惑をおかけして申し訳ございません。",
+              "reading": "ほんじつはきゅうぎょうびにつき、ごめいわくをおかけしてもうしわけございません。",
+              "english": "We apologize for any inconvenience as today is a holiday."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_532",
+          "pattern": "お～願う",
+          "meaning": "A formal and polite way to ask someone to do something, structured as お + verb stem + 願う.",
+          "explanation": "This pattern combines the honorific prefix お with a verb stem and 願う (to humbly request) to form a deferential request. It is keigo and is appropriate in formal or professional situations, such as customer service, business correspondence, or addressing superiors. The speaker elevates the listener's action while lowering their own position.",
+          "examples": [
+            {
+              "japanese": "こちらの用紙にお名前をお書き願います。",
+              "reading": "こちらのようしにおなまえをおかきねがいます。",
+              "english": "Could you please write your name on this form?"
+            },
+            {
+              "japanese": "ご不明な点がございましたら、担当者にお問い合わせ願います。",
+              "reading": "ごふめいなてんがございましたら、たんとうしゃにおといあわせねがいます。",
+              "english": "If you have any questions, please contact the person in charge."
+            },
+            {
+              "japanese": "会議が始まりますので、席にお着き願えますか。",
+              "reading": "かいぎがはじまりますので、せきにおつきねがえますか。",
+              "english": "The meeting is about to begin, so could you please take your seat?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_533",
+          "pattern": "を込めて",
+          "meaning": "Full of, Filled with, With ～",
+          "explanation": "Grammar explanation for を込めて",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_534",
+          "pattern": "そうにない",
+          "meaning": "Expresses that based on current appearances or circumstances, something does not seem likely to happen.",
+          "explanation": "そうにない attaches to the masu-stem of a verb and expresses the speaker's judgment that an event shows no signs of occurring. It is the negative counterpart of そうだ (appearance-based), and implies the speaker is observing the present situation and inferring an unlikely outcome. It is used in casual and semi-formal speech and often appears with weather, physical states, or ongoing situations.",
+          "examples": [
+            {
+              "japanese": "この雨は夕方まで止みそうにない。",
+              "reading": "このあめはゆうがたまでやみそうにない。",
+              "english": "This rain doesn't look like it will stop by evening."
+            },
+            {
+              "japanese": "彼は疲れていて、もう一歩も歩けそうにない顔をしていた。",
+              "reading": "かれはつかれていて、もういっぽもあるけそうにないかおをしていた。",
+              "english": "He looked exhausted, as if he couldn't walk another step."
+            },
+            {
+              "japanese": "この問題は簡単に解決できそうにないな。",
+              "reading": "このもんだいはかんたんにかいけつできそうにないな。",
+              "english": "This problem doesn't seem like it'll be resolved easily."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_535",
+          "pattern": "た末・の末",
+          "meaning": "Expresses that after a long process or struggle, a conclusion or outcome was finally reached.",
+          "explanation": "た末 follows a verb in た-form, while の末 follows a noun, both conveying that the result came at the end of an extended effort, deliberation, or hardship. The nuance is one of culmination — often after difficulty or a long process. The outcome can be positive or negative. It is formal in tone and more common in written Japanese, formal speech, and narration.",
+          "examples": [
+            {
+              "japanese": "長い間悩んだ末、会社を辞める決断をした。",
+              "reading": "ながいあいだなやんだすえ、かいしゃをやめるけつだんをした。",
+              "english": "After agonizing over it for a long time, I made the decision to quit the company."
+            },
+            {
+              "japanese": "激しい交渉の末、両国はついに合意に達した。",
+              "reading": "はげしいこうしょうのすえ、りょうこくはついにごういにたっした。",
+              "english": "After intense negotiations, the two countries finally reached an agreement."
+            },
+            {
+              "japanese": "試行錯誤を繰り返した末に、最適な方法を見つけた。",
+              "reading": "しこうさくごをくりかえしたすえに、さいてきなほうほうをみつけた。",
+              "english": "After repeated trial and error, I finally found the optimal method."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_536",
+          "pattern": "という風に",
+          "meaning": "Describes the manner, method, or content of something, often used to cite an example, paraphrase instructions, or describe how something appears or is conveyed.",
+          "explanation": "という風に uses the kanji form of ふう and has a slightly more written or formal feel than ふうに alone. It is used to introduce a paraphrase, a quoted manner of doing something, or to list examples of how things are expressed or done. It is common in explanatory speech and writing.",
+          "examples": [
+            {
+              "japanese": "「もっと努力しなさい」という風に先生は毎回言う。",
+              "reading": "「もっとどりょくしなさい」というふうにせんせいはまいかいいう。",
+              "english": "The teacher always says things like, 'You need to try harder.'"
+            },
+            {
+              "japanese": "彼女は腕を組んで考えるという風にして、じっと黙っていた。",
+              "reading": "かのじょはうでをくんでかんがえるというふうにして、じっとだまっていた。",
+              "english": "She sat quietly with her arms folded as if deep in thought."
+            },
+            {
+              "japanese": "まずAをやって、次にBをやるという風に進めてください。",
+              "reading": "まずAをやって、つぎにBをやるというふうにすすめてください。",
+              "english": "Please proceed in such a way that you do A first, then B."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_537",
+          "pattern": "というわけではない",
+          "meaning": "It is not that, It doesn&#x27;t mean that, It is not always the case",
+          "explanation": "Grammar explanation for というわけではない",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_538",
+          "pattern": "にほかならない",
+          "meaning": "Asserts emphatically that something is nothing other than what is stated, with no other explanation possible.",
+          "explanation": "にほかならない attaches to nouns or plain-form clauses to make a strong, logical assertion that the only true explanation or identity is the one given — equivalent to 'it is none other than' or 'it is simply.' It carries a formal, assertive tone and is common in written arguments, essays, and analytical speech. The speaker presents the conclusion as the sole valid interpretation.",
+          "examples": [
+            {
+              "japanese": "彼が成功したのは、努力の結果にほかならない。",
+              "reading": "かれがせいこうしたのは、どりょくのけっかにほかならない。",
+              "english": "His success is nothing other than the result of hard work."
+            },
+            {
+              "japanese": "この問題が続いているのは、制度の欠陥にほかならない。",
+              "reading": "このもんだいがつづいているのは、せいどのけっかんにほかならない。",
+              "english": "The fact that this problem persists is simply a flaw in the system."
+            },
+            {
+              "japanese": "あなたのその言葉は、私への侮辱にほかならない。",
+              "reading": "あなたのそのことばは、わたしへのぶじょくにほかならない。",
+              "english": "Those words of yours are none other than an insult directed at me."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_539",
+          "pattern": "はたして",
+          "meaning": "Expresses genuine doubt about whether something is true or will happen, or confirms that something turned out exactly as expected.",
+          "explanation": "Used as a sentence adverb, はたして has two related uses: in questions or uncertain contexts it conveys 'I wonder if this is really the case', often implying skepticism; in statements describing outcomes it means 'sure enough' or 'just as expected'. It appears in both written and spoken Japanese and adds a reflective or dramatic tone to the sentence.",
+          "examples": [
+            {
+              "japanese": "はたして彼の計画は成功するだろうか。",
+              "reading": "はたしてかれのけいかくはせいこうするだろうか。",
+              "english": "I really wonder whether his plan will succeed."
+            },
+            {
+              "japanese": "心配していた通り、はたして試合は雨で中止になった。",
+              "reading": "しんぱいしていたとおり、はたしてしあいはあめでちゅうしになった。",
+              "english": "Just as I had worried, sure enough the match was cancelled due to rain."
+            },
+            {
+              "japanese": "そんな短期間で仕事を終わらせることが、はたして可能なのだろうか。",
+              "reading": "そんなたんきかんでしごとをおわらせることが、はたしてかのうなのだろうか。",
+              "english": "I genuinely wonder whether it is even possible to finish the work in such a short time."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_540",
+          "pattern": "甲斐がある",
+          "meaning": "Expresses that an effort or experience was worthwhile and yielded a meaningful result.",
+          "explanation": "甲斐がある follows a verb in its た-form or a noun to say that the effort put into something was rewarded or justified. The negative form 甲斐がない (or 甲斐もない) means 'not worth it' or 'futile'. It can also appear as 〜甲斐があった to reflect on a past effort that paid off. The expression is emotionally weighted and appears in both casual conversation and formal writing.",
+          "examples": [
+            {
+              "japanese": "毎日練習した甲斐があって、大会で優勝できた。",
+              "reading": "まいにちれんしゅうしたかいがあって、たいかいでゆうしょうできた。",
+              "english": "All the daily practice paid off, and I was able to win the tournament."
+            },
+            {
+              "japanese": "一生懸命教えた甲斐があり、学生たちは全員合格した。",
+              "reading": "いっしょうけんめいおしえたかいがあり、がくせいたちはぜんいんごうかくした。",
+              "english": "Teaching them so earnestly was worth it — all the students passed."
+            },
+            {
+              "japanese": "苦労して登った甲斐があった。山頂からの景色は最高だった。",
+              "reading": "くろうしてのぼったかいがあった。さんちょうからのけしきはさいこうだった。",
+              "english": "It was worth the struggle to climb up. The view from the summit was magnificent."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_541",
+          "pattern": "と考えられる",
+          "meaning": "Expresses that something is generally believed, logically concluded, or considered to be the case based on reasoning or evidence.",
+          "explanation": "This is the passive potential form of 考える, used to present a conclusion or assessment in an objective, distanced way. It is common in academic writing, news reports, and formal speech where the speaker wants to avoid stating something as their own personal claim. The register is neutral to formal.",
+          "examples": [
+            {
+              "japanese": "この遺跡は約千年前のものと考えられる。",
+              "reading": "このいせきはやくせんねんまえのものとかんがえられる。",
+              "english": "These ruins are considered to be approximately one thousand years old."
+            },
+            {
+              "japanese": "気温の上昇が生態系に影響を与えていると考えられる。",
+              "reading": "きおんのじょうしょうがせいたいけいにえいきょうをあたえていると考えられる。",
+              "english": "It is thought that rising temperatures are having an impact on ecosystems."
+            },
+            {
+              "japanese": "このプロジェクトの失敗は、計画段階での問題が原因と考えられる。",
+              "reading": "このぷろじぇくとのしっぱいは、けいかくだんかいでのもんだいがげんいんとかんがえられる。",
+              "english": "The failure of this project is considered to have been caused by problems in the planning stage."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/passive_れる_られる",
+            "title": "Passive: れる/られる",
+            "excerpt": "134 CHAPTER 3. MORE GRAMMAR\n3.2.11 Passive:れる/られる\nPassive constructions are, as their name implies, constructions which de-\nscribe actions in a passive voice. Unlike \"I eat dinner\" or \"The cat is play-\ning with the squeaky toy'\", which are in active voice, they refer to phrases\nlike \"Dinner was eaten by me'\" or \"The squeaky toy was played with by\nうけみ\nthe cat\". In Japanese, this passive voice, called 受身, is achieved through\nthe use of the two helper verbs れる (for 五段 verbs) and られる (for 一段\nverbs),",
+            "examples": [
+              {
+                "japanese": "3.2.11 Passive:れる/られる",
+                "english": "Passive constructions are, as their name implies, constructions which de-"
+              },
+              {
+                "japanese": "the cat\". In Japanese, this passive voice, called 受身, is achieved through"
+              },
+              {
+                "japanese": "the use of the two helper verbs れる (for 五段 verbs) and られる (for 一段"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "tobira_textbook_8_dialogue_0",
+          "type": "dialogue",
+          "title": "Dialogue tobira_textbook_8",
+          "text": "使い方: Pair Work: Students practice asking each other questions about the subject matter of the\nchapter: and discuss the chapter's content.\nRole: Play: Students perform a task in pairs related to the content of the chapter.\nOther: Activities: In the following chapters, other activities are also included:\nChapter: Activity\nPresentation: using a graph and/or a diagram\nIntroducing: a story\nPresentation: about a historical figure or event\nPresentation: on how to make or use something\nInterviewing: a Japanese person\nDiscussion: Chapter 15\nThe: numbering of grammar points\nThere: are three different types of numerals used to number grammar points; the meaning of\nGrammar: Notes\neach: is as follows:\nmust: memorize and learn to use readily.\nshould: try their best to learn to use.\nfor: understanding the chapter's reading or dialogue.\nAbbreviation: Meaning\nSentence: 学生が来る\nN: Noun\nNP: Noun phrase\nNoun: which forms a suru-verb by affixingする\nV: Verb\n話し食べ来: V-masu\nStem: of verb's masu form (=masu form minus masu)\nStem: of verb's nai form (=nai form minus nai)\nA: I-adjective\nStem: of i-adjective\nStem: of -adjective's nai form (=nai form minus na)\nANa: Stem of na-adjective\nANo: 普通；最高\nStem: of no-adjective\nふつう: さいこう\nAn: Non-conjugational adjective\nあらゆる: Adv\nAdverb: (including the adverbial forms of i/na-adjectives)\nしず: DemP\nDemonstrative: pronoun\nDemA: Demonstrative adjective\nConj: Conjunction\nPrt: Particle\nQW: Question word\nDa: だand its conjugations\nte: te-form\nしず: plain\nplain: form",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_8_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue textbook_tobira_textbook_8",
+          "text": "使い方: Type 3·{V/A}-plain\nh: • {ANa/N}{0/じやない\n学生学生じない学生だった学生じなかたでしよう: だったじゃなかった\nlearn: to read and to write) and R kanji (those that students should learn to read). Each\nKanji: Lists\nlist: includes new kanji vocabulary and the newly-introduced kanji for previously-learned\nvocabulary: • Around 35 kanji have been chosen for each chapter, drawing mainly on JLPT Level 2\ncharacters: (as of 2009) and based on their familiarity and frequency of use in everyday\nJapanese: life.1 Around 15 of these are marked RW and 20 are marked R. In all, this book\ncovers: 503 kanji.\nlevel: Japanese textbooks. A list of these kanji can be found on the Tobira website. (See 10.\nTobira: Site.)\nD: 徳弘康代(2008）『本語学習者のためのよく使う順漢字2100』三省堂\nTo: facilitate students' learning, furigana is not provided for previously-learned kanji. Furigana\nis: used as follows:\nFurigana: Kanji that are to be memorized\nkanji: with furigana, however, is provided at the bottom of each page)\nsections: furigana not provided\nKanji: that need not be memorized\nwords: with special readings, the furigana for words that appear more than once in the same\nline: are provided only the fi rst time.\nNumbers: · In horizontal writing, specific numbers(e.g: 18歳, 30人,50下) are written in Arabic\nWriting: numerals,while approximate numbers(e.g.:数十年，何百年)and numbers with native\nConventions: Japanese readings(e.g. 一つ,二人) are written in kanji numerals.\nWords: Words that are commonly written in both kanji and hiragana (e.g:できる/出来る、人ち/\nLPO: materials allow students to practice Japanese conversation on their own using Language\nPartner: Online software. They can be accessed through the Tobira website. (See 10. Tobira Site.)\nLPO: Materials\nSpecial: Features\nStudents: can:\npartners: that appear on their screen;",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 21
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_273",
+          "label": "practice",
+          "prompt": "Pair Work: Students practice asking each other questions about the subject matter of the",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_274",
+          "label": "practice",
+          "prompt": "chapter and discuss the chapter's content.",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_275",
+          "label": "practice",
+          "prompt": "Role Play: Students perform a task in pairs related to the content of the chapter.",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_276",
+          "label": "practice",
+          "prompt": "Other Activities: In the following chapters, other activities are also included:",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_277",
+          "label": "practice",
+          "prompt": "Presentation using a graph and/or a diagram",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_278",
+          "label": "practice",
+          "prompt": "Introducing a story",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_279",
+          "label": "practice",
+          "prompt": "Chapter 11",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_280",
+          "label": "practice",
+          "prompt": "Presentation about a historical figure or event",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_281",
+          "label": "practice",
+          "prompt": "Chapter 12",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_282",
+          "label": "practice",
+          "prompt": "Presentation on how to make or use something",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_283",
+          "label": "practice",
+          "prompt": "Chapter 13",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_284",
+          "label": "practice",
+          "prompt": "Interviewing a Japanese person",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_285",
+          "label": "practice",
+          "prompt": "Chapter 14",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_286",
+          "label": "practice",
+          "prompt": "Discussion",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_287",
+          "label": "practice",
+          "prompt": "Chapter 15",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_288",
+          "label": "practice",
+          "prompt": "Discussion",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_289",
+          "label": "practice",
+          "prompt": "The numbering of grammar points",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_290",
+          "label": "practice",
+          "prompt": "There are three different types of numerals used to number grammar points; the meaning of",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_291",
+          "label": "practice",
+          "prompt": "each is as follows:",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_292",
+          "label": "practice",
+          "prompt": "• A white number within a black circle (e.g. ) indicates a grammar point that students",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_293",
+          "label": "practice",
+          "prompt": "must memorize and learn to use readily.",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_294",
+          "label": "practice",
+          "prompt": "• A white number within a grey circle (e.g. ) indicates a grammar point that students",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_295",
+          "label": "practice",
+          "prompt": "should try their best to learn to use.",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_296",
+          "label": "practice",
+          "prompt": "• A black number within a white circle (e.g. ③) indicates a grammar point that is necessary",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_297",
+          "label": "practice",
+          "prompt": "for understanding the chapter's reading or dialogue.",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_298",
+          "label": "practice",
+          "prompt": "■Abbreviations used in the Grammar Notes",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_299",
+          "label": "practice",
+          "prompt": "Abbreviation",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_300",
+          "label": "practice",
+          "prompt": "Noun phrase",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_301",
+          "label": "practice",
+          "prompt": "Noun which forms a suru-verb by affixingする",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_302",
+          "label": "practice",
+          "prompt": "勉強；買い物；サイン",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_303",
+          "label": "practice",
+          "prompt": "Stem of verb's masu form (=masu form minus masu)",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_304",
+          "label": "practice",
+          "prompt": "Stem of verb's nai form (=nai form minus nai)",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_305",
+          "label": "practice",
+          "prompt": "Verb's volitional form",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_306",
+          "label": "practice",
+          "prompt": "話う;食べよ;来よう",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_307",
+          "label": "practice",
+          "prompt": "I-adjective",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_308",
+          "label": "practice",
+          "prompt": "Stem of i-adjective",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_309",
+          "label": "practice",
+          "prompt": "Stem of -adjective's nai form (=nai form minus na)",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_310",
+          "label": "practice",
+          "prompt": "Stem of na-adjective",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_311",
+          "label": "practice",
+          "prompt": "Stem of no-adjective",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_8_exercise_312",
+          "label": "practice",
+          "prompt": "Non-conjugational adjective",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 19
+          }
+        }
+      ]
+    }
+  ]
+}

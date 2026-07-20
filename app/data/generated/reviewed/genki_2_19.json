@@ -1,0 +1,1056 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "genki_2_textbook",
+  "title": "genki_2_textbook / genki_2_19",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "genki_2_19_draft",
+      "appLessonId": "genki_2_19",
+      "title": "genki 2 19",
+      "qualityTier": "draft",
+      "vocabulary": [
+        {
+          "id": "genki_2_textbook_genki_2_19_vocab_7",
+          "surface": "出迎元",
+          "reading": null,
+          "meaning": "Meeting the Boss",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 168
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_vocab_43",
+          "surface": "花火",
+          "reading": null,
+          "meaning": "fireworks",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 321
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_7_vocab_90",
+          "surface": "二十分",
+          "reading": null,
+          "meaning": "twenty minutes",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 370
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_7_vocab_91",
+          "surface": "なのか七日",
+          "reading": null,
+          "meaning": "the seventh day of a month",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 370
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_7_vocab_92",
+          "surface": "なんども何度も",
+          "reading": null,
+          "meaning": "many times",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 370
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "cefr_a2_190",
+          "pattern": "お～になる",
+          "meaning": "To express that someone (usually of higher status) does an action in a respectful way.",
+          "explanation": "This is an honorific pattern used to speak about others' actions with respect and politeness. The prefix お is added to a verb stem, and になる shows the action. Common in formal situations, when speaking about superiors, customers, or in business contexts.",
+          "examples": [
+            {
+              "japanese": "先生がお書きになります",
+              "reading": "せんせいがおかきになります",
+              "english": "The teacher writes"
+            },
+            {
+              "japanese": "田中さんがお読みになった本",
+              "reading": "たなかさんがおよみになったほん",
+              "english": "The book that Tanaka read"
+            },
+            {
+              "japanese": "社長がお決めになります",
+              "reading": "しゃちょうがおきめになります",
+              "english": "The president decides"
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/becoming_なる",
+            "title": "Becoming: なる",
+            "excerpt": "2.5. SPECIAL VERBS 81\nこそあど meaning\nこなた this person (I/me/you/him/he/her/she).\nそなた that person (him/he, her/she).\nあなた that person over there (you).\nどなた which person (who).\nSince this set is a tad classical, there are a few things to notice. First\nof all, そなた refers to a third person (he/she), while あなた refers to second\nperson (you). Also, while somewhat classical, this set is still used in formal\nsettings. However, because it is used exclusively in formal settings it is\nconsidered distal and very",
+            "examples": [
+              {
+                "japanese": "こそあど meaning"
+              },
+              {
+                "japanese": "こなた this person (I/me/you/him/he/her/she)."
+              },
+              {
+                "japanese": "そなた that person (him/he, her/she)."
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_191",
+          "pattern": "いらっしゃる",
+          "meaning": "The respectful form of いる (to be/exist), 来る (to come), and 行く (to go).",
+          "explanation": "This honorific verb replaces いる, 来る, or 行く when speaking about someone else's location, movement, or existence to show respect. It is one of the most important honorific verbs in Japanese and is conjugated with ~ます endings in formal speech.",
+          "examples": [
+            {
+              "japanese": "先生はオフィスにいらっしゃいます。",
+              "reading": "せんせいはおふぃすにいらっしゃいます。",
+              "english": "The teacher is in the office."
+            },
+            {
+              "japanese": "田中さんはもういらっしゃいましたか。",
+              "reading": "たなかさんはもういらっしゃいましたか。",
+              "english": "Has Mr. Tanaka already arrived?"
+            },
+            {
+              "japanese": "明日、校長先生がいらっしゃいます。",
+              "reading": "あした、こうちょうせんせいがいらっしゃいます。",
+              "english": "The principal will come tomorrow."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "conjugation_schemes/special_bases_for_いらっしゃる",
+            "title": "Special bases for いらっしゃる",
+            "excerpt": "326 CHAPTER 7. CONJUGATION SCHEMES\n7.1.9 Verbal adjectives\nbase how to form\nごかん\n語干 Remove the W from the dictionary form.\n未然形 語干+く\n連用形 語干+く\n連体形 語幹+い\n已然形 語幹+けれ\n(命令形 語幹+かれ)\nござ\n7.1.10 Special bases for 御座る\nbase form\n未然形 ござら\n連用形 ござい\n連体形 ござる\n已然形 ござれ\n命令形 ござい\n7.1.11 Special bases forいらっしゃる\nbase form\n未然形 いらっしゃら\n連用形 いらっしゃい\n連体形 いらっしゃる\n已然形 いらっしゃれ\n命令形いらっしゃい",
+            "examples": [
+              {
+                "japanese": "語干 Remove the W from the dictionary form."
+              },
+              {
+                "japanese": "未然形 語干+く"
+              },
+              {
+                "japanese": "連用形 語干+く"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_192",
+          "pattern": "いたす",
+          "meaning": "A humble auxiliary verb that expresses the speaker's actions modestly.",
+          "explanation": "いたす is a humble auxiliary verb that can follow a verb's te-form to express the speaker humbly performing an action. It softens the tone and shows respect, similar to する but more humble. Commonly used in business communication to show the speaker's modesty.",
+          "examples": [
+            {
+              "japanese": "明日、ご説明いたします。",
+              "reading": "あした、ごせつめいいたします。",
+              "english": "I will explain to you tomorrow."
+            },
+            {
+              "japanese": "私がいたします。",
+              "reading": "わたしがいたします。",
+              "english": "I will do it."
+            },
+            {
+              "japanese": "パンフレットをお送りいたしました。",
+              "reading": "ぱんふれっとをおおくりいたしました。",
+              "english": "We have sent you the brochure."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_193",
+          "pattern": "なさる",
+          "meaning": "A polite and respectful way to say 'do' when referring to someone else's actions.",
+          "explanation": "This is the honorific equivalent of する/します. It's used when discussing someone else's actions in a respectful manner, particularly towards superiors, customers, or in formal contexts. Very common in business Japanese and formal conversation.",
+          "examples": [
+            {
+              "japanese": "先生がご説明なさいました",
+              "reading": "せんせいがごせつめいなさいました",
+              "english": "The teacher explained"
+            },
+            {
+              "japanese": "お父さんが毎日運動なさっています",
+              "reading": "おとうさんがまいにちうんどうなさっています",
+              "english": "Your father exercises every day"
+            },
+            {
+              "japanese": "社長がそうおっしゃいました",
+              "reading": "しゃちょうがそうおっしゃいました",
+              "english": "The president said so"
+            }
+          ],
+          "maynardRef": {
+            "topicId": "conjugation_schemes/special_bases_for_なさる",
+            "title": "Special bases for なさる",
+            "excerpt": "7.2. CONJUGATION SCHEMES 327\n7.1.12 Special bases for おつしゃる\nbase form\n未然形 おっしゃら\n連用形 おっしゃい\n連体形 おっしゃる\n已然形 おっしゃれ\n命令形 おっしゃい\nくだ\n7.1.13 Special bases for 下さる\nbase form\n未然形 下さら\n連用形 下さい\n連体形 下さる\n已然形 下され\n命令形 下さい\n7.1.14 Special bases for なさる\nbase form\n未然形 なさら\n連用形 なさい\n連体形 なさる\n已然形 なされ\n命令形 なさい\n7.2 Conjugation schemes\nごだん\n7.2.1 Regular verbs: 五段 verbs\nContractions in the inflections are indicated with (c)",
+            "examples": [
+              {
+                "japanese": "7.1.12 Special bases for おつしゃる",
+                "english": "base form"
+              },
+              {
+                "japanese": "未然形 おっしゃら"
+              },
+              {
+                "japanese": "連用形 おっしゃい"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_194",
+          "pattern": "かしら",
+          "meaning": "Used to express uncertainty, wondering, or speculation in a casual way",
+          "explanation": "かしら is an informal, somewhat feminine-sounding expression of wondering or asking a question to oneself. It can follow nouns, adjectives, or sentence-final verb forms. It's less formal than ～でしょうか and is typically used among friends or when thinking aloud.",
+          "examples": [
+            {
+              "japanese": "彼は来るかしら。",
+              "reading": "かれはくるかしら。",
+              "english": "I wonder if he will come."
+            },
+            {
+              "japanese": "今何時かしら。",
+              "reading": "いまなんじかしら。",
+              "english": "I wonder what time it is."
+            },
+            {
+              "japanese": "あした、いい天気かしら。",
+              "reading": "あした、いいてんきかしら。",
+              "english": "I wonder if tomorrow will have nice weather."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_362",
+          "pattern": "どんどん",
+          "meaning": "An adverb describing something advancing, increasing, or progressing quickly and without stopping.",
+          "explanation": "どんどん expresses a rapid, continuous, often unstoppable progression — faster and more dynamic than だんだん. It frequently collocates with verbs of growth, increase, or forward movement. Neutral register, used in both casual and polite contexts.",
+          "examples": [
+            {
+              "japanese": "彼はどんどん上手くなっています。",
+              "reading": "かれはどんどんうまくなっています。",
+              "english": "He is getting better and better rapidly."
+            },
+            {
+              "japanese": "質問があればどんどん聞いてください。",
+              "reading": "しつもんがあればどんどんきいてください。",
+              "english": "If you have questions, please keep asking one after another."
+            },
+            {
+              "japanese": "物価がどんどん上がっています。",
+              "reading": "ぶっかがどんどんあがっています。",
+              "english": "Prices are rising more and more."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_363",
+          "pattern": "まず",
+          "meaning": "Used to indicate the first step or action in a sequence.",
+          "explanation": "まず introduces the first item in a list of steps or actions, similar to 'first of all' or 'to start with' in English. It is used in both polite and casual speech. It often appears in instructions, recipes, or explanations of a process.",
+          "examples": [
+            {
+              "japanese": "まず、手を洗ってください。",
+              "reading": "まず、てをあらってください。",
+              "english": "First, please wash your hands."
+            },
+            {
+              "japanese": "まず、名前を書きます。",
+              "reading": "まず、なまえをかきます。",
+              "english": "First, I write my name."
+            },
+            {
+              "japanese": "料理を作るとき、まず材料を用意します。",
+              "reading": "りょうりをつくるとき、まずざいりょうをようちします。",
+              "english": "When cooking, first I prepare the ingredients."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_364",
+          "pattern": "また",
+          "meaning": "Used to add information, indicate repetition, or introduce an additional point.",
+          "explanation": "また can mean 'again' (repeating an action), 'also' (adding another item), or 'moreover' (introducing a related point). It is a versatile conjunction/adverb used in both formal and casual contexts. The meaning is usually clear from context.",
+          "examples": [
+            {
+              "japanese": "また明日会いましょう。",
+              "reading": "またあしたあいましょう。",
+              "english": "Let's meet again tomorrow."
+            },
+            {
+              "japanese": "彼女は英語を話します。また、フランス語も話せます。",
+              "reading": "かのじょはえいごをはなします。また、フランスごもはなせます。",
+              "english": "She speaks English. She can also speak French."
+            },
+            {
+              "japanese": "この店は安いです。また、料理もおいしいです。",
+              "reading": "このみせはやすいです。また、りょうりもおいしいです。",
+              "english": "This restaurant is cheap. Moreover, the food is also delicious."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_365",
+          "pattern": "そういう",
+          "meaning": "Refers to a type or category of thing just mentioned, meaning 'that kind of' or 'like that'.",
+          "explanation": "そういう combines そう (like that) and いう (to say/call) to form a demonstrative modifier meaning 'that type of' or 'that sort of'. It points back to a topic already established in the conversation. It is casual to neutral in register.",
+          "examples": [
+            {
+              "japanese": "そういう考え方は好きじゃないです。",
+              "reading": "そういうかんがえかたはすきじゃないです。",
+              "english": "I don't like that kind of thinking."
+            },
+            {
+              "japanese": "そういう映画はあまり見ません。",
+              "reading": "そういうえいがはあまりみません。",
+              "english": "I don't watch that kind of movie very often."
+            },
+            {
+              "japanese": "そういう問題はむずかしいですね。",
+              "reading": "そういうもんだいはむずかしいですね。",
+              "english": "That kind of problem is difficult, isn't it."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_366",
+          "pattern": "～のだろうか",
+          "meaning": "To express curiosity, speculation, or wondering about something.",
+          "explanation": "This pattern is used when thinking out loud about something uncertain or when expressing doubt. It's more formal and contemplative than casual speech, often appearing in written Japanese or when a speaker is reflecting on a question.",
+          "examples": [
+            {
+              "japanese": "あの人は誰なのだろうか",
+              "reading": "あのひとはだれなのだろうか",
+              "english": "I wonder who that person is"
+            },
+            {
+              "japanese": "明日の天気はどうなるのだろうか",
+              "reading": "あしたのてんきはどうなるのだろうか",
+              "english": "I wonder what the weather will be like tomorrow"
+            },
+            {
+              "japanese": "なぜ彼女は来なかったのだろうか",
+              "reading": "なぜかのじょはこなかったのだろうか",
+              "english": "I wonder why she didn't come"
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_367",
+          "pattern": "ほとんど",
+          "meaning": "An adverb expressing 'almost all,' 'most,' or 'hardly any' with emphasis.",
+          "explanation": "ほとんど is an adverbial noun used to emphasize quantities or degrees. With positive statements it means 'almost all' or 'most,' while with negative statements it means 'hardly any.' Often used before の to modify nouns (ほとんどの～).",
+          "examples": [
+            {
+              "japanese": "ほとんどの人が来ました。",
+              "reading": "ほとんどのひとがきました。",
+              "english": "Most people came."
+            },
+            {
+              "japanese": "ケーキはほとんど食べました。",
+              "reading": "けーきはほとんどたべました。",
+              "english": "I ate almost all of the cake."
+            },
+            {
+              "japanese": "彼は日本語がほとんど分かりません。",
+              "reading": "かれはにほんごがほとんどわかりません。",
+              "english": "He hardly understands Japanese."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_368",
+          "pattern": "とうとう",
+          "meaning": "Expresses that something happened after a long wait or process.",
+          "explanation": "とうとう is an adverb meaning 'finally' or 'at last,' used when a result comes after a long time or effort. It can describe both positive outcomes (a goal reached) and negative ones (something bad finally happening). It is used in both casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "とうとう日本語の試験に合格しました。",
+              "reading": "とうとうにほんごのしけんにごうかくしました。",
+              "english": "I finally passed the Japanese language exam."
+            },
+            {
+              "japanese": "三時間待って、とうとうバスが来ました。",
+              "reading": "さんじかんまって、とうとうバスがきました。",
+              "english": "After waiting three hours, the bus finally came."
+            },
+            {
+              "japanese": "とうとう雨が降り始めました。",
+              "reading": "とうとうあめがふりはじめました。",
+              "english": "It finally started to rain."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_369",
+          "pattern": "そんな・こんな・あんな・どんな",
+          "meaning": "Demonstrative adjectives indicating 'such,' 'that kind of,' or 'what kind of.'",
+          "explanation": "These four demonstrative adjectives modify nouns to describe type or quality. こんな = this kind of (near), そんな = that kind of (medium distance), あんな = that kind of (far/general), どんな = what kind of (question). They're used informally in conversation.",
+          "examples": [
+            {
+              "japanese": "そんなことは知りません。",
+              "reading": "そんなことはしりません。",
+              "english": "I don't know about such a thing."
+            },
+            {
+              "japanese": "こんな天気では行けません。",
+              "reading": "こんなてんきではいけません。",
+              "english": "In this kind of weather, I can't go."
+            },
+            {
+              "japanese": "どんな本を読みますか？",
+              "reading": "どんなほんをよみますか？",
+              "english": "What kind of books do you read?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_370",
+          "pattern": "だが・ですが",
+          "meaning": "A conjunction meaning 'but' or 'however,' used to contrast two statements.",
+          "explanation": "だが is the plain/written form and ですが is the polite spoken form. Both connect two clauses where the second contrasts with or qualifies the first. ですが is common at the start of a sentence in polite conversation to soften a contrast or introduce a reservation.",
+          "examples": [
+            {
+              "japanese": "この映画は面白い。だが、少し長すぎる。",
+              "reading": "このえいがはおもしろい。だが、すこしながすぎる。",
+              "english": "This movie is interesting. However, it's a little too long."
+            },
+            {
+              "japanese": "値段は高いですが、品質はとてもいいです。",
+              "reading": "ねだんはたかいですが、ひんしつはとてもいいです。",
+              "english": "The price is high, but the quality is very good."
+            },
+            {
+              "japanese": "行きたいですが、時間がありません。",
+              "reading": "いきたいですが、じかんがありません。",
+              "english": "I want to go, but I don't have time."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_371",
+          "pattern": "てくれてありがとう",
+          "meaning": "To express gratitude for someone doing something for you.",
+          "explanation": "This pattern combines the te-form giving (てくれて) with appreciation to thank someone for a helpful action. It's a polite and sincere way to show gratitude in daily interactions, emails, and conversations with people you want to thank.",
+          "examples": [
+            {
+              "japanese": "手伝ってくれてありがとう",
+              "reading": "てつだってくれてありがとう",
+              "english": "Thank you for helping me"
+            },
+            {
+              "japanese": "誕生日をお祝いしてくれてありがとうございます",
+              "reading": "たんじょうびをおいわいしてくれてありがとうございます",
+              "english": "Thank you so much for celebrating my birthday"
+            },
+            {
+              "japanese": "昨日教えてくれてありがとうございました",
+              "reading": "きのうおしえてくれてありがとうございました",
+              "english": "Thank you for teaching me yesterday"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_372",
+          "pattern": "まで",
+          "meaning": "Expresses surprise or emphasis that something extends to an unexpected degree or includes an unexpected thing.",
+          "explanation": "When まで follows a noun or verb phrase with this meaning, it conveys 'even' or 'to the point of,' highlighting that something surprising or extreme is included. It differs from the directional まで ('until/up to') by its emphatic nuance. It works in both polite and casual registers.",
+          "examples": [
+            {
+              "japanese": "子どもまでそのことを知っています。",
+              "reading": "こどもまでそのことをしっています。",
+              "english": "Even children know about that."
+            },
+            {
+              "japanese": "彼は夜中まで働きました。",
+              "reading": "かれはよなかまではたらきました。",
+              "english": "He worked until the middle of the night."
+            },
+            {
+              "japanese": "泣くまで笑いました。",
+              "reading": "なくまでわらいました。",
+              "english": "I laughed to the point of crying."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_373",
+          "pattern": "のように・のような",
+          "meaning": "Expresses that something is like or resembles a specific noun, in a slightly more formal way than みたいに.",
+          "explanation": "のように follows a noun to describe how an action is done (modifying verbs or adjectives), while のような follows a noun to modify another noun. This pattern is more formal and versatile than みたいに・みたいな, and is used in both written and spoken Japanese. It is often used for vivid descriptions and comparisons.",
+          "examples": [
+            {
+              "japanese": "彼は風のように走りました。",
+              "reading": "かれはかぜのようにはしりました。",
+              "english": "He ran like the wind."
+            },
+            {
+              "japanese": "山のような宿題があります。",
+              "reading": "やまのようなしゅくだいがあります。",
+              "english": "I have a mountain of homework."
+            },
+            {
+              "japanese": "鳥のように空を飛びたいです。",
+              "reading": "とりのようにそらをとびたいです。",
+              "english": "I want to fly through the sky like a bird."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "genki_2_19_dialogue_0",
+          "type": "dialogue",
+          "title": "Dialogue genki_2_19",
+          "text": "出迎元: Meeting the Boss\nでむか: In this lesson, we will\nShow: our respect\nTalk: about things we are glad that we did\nExpress: gratitude\nTalk: politely with bosses\n会話: Dia—o\nTakeshi: came to the airport to pick up the department manager, who went to\nAmerica: on business.\nたけ: 部長、出張お疲れさまでした。\nちよう: きむら\nほんとう: いちじ\nおく: 4たけし：\nつか: 5部長：\nちよう: だいじょうぶ\nたけし: じあ、何か召し上がってから、お帰りになりますか。\n部長: うん。そうしようか。\nAt: a restaurant. K19-03/04\nなんめいさま: 2たけし\nふたり: 3店員：\n店: こちらへどぞ。決まりになりましたらお呼びください。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 168
+          }
+        },
+        {
+          "id": "genki_2_19_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_19",
+          "text": "たん: K19-08(E-J)\nNoUns: *おくさま\n奥様: (your/someone's) wife (polite)\nおこさん: お子さん\nちがくせい: 中学生\njunior: high school student\ndepartment: manager\nbusiness: trip\nhonorifi: c language\nこちら: this way (polite)\nどちら: where (polite)\nexpression: of gratitude\na: kind; a sort\nworry: まちがい\n間違い: mistake\npersonality: なまけもの\n怠け者: lazy person\nはずかしがりや: 恥ずかがり屋shy person\nなかがい: 仲がいい\nbe: on good/close terms; to get\nalong: well\ntiy: まじめ(な)\nいらっしゃる: honorific expression for<,\n召し上がる: honorifc expression for\nくださる: 下さる\nhonorific: expression forくれる\nなさる: honorific expression for する\nおやすみになる: お休みになる\nhonorific: expression forねる\nごらんになる: ご覧になる\nhonorific: expression forみる\nおっしゃる: honorific expression for\nhonorific: expression for~ている",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 170
+          }
+        },
+        {
+          "id": "genki_2_19_dialogue_2",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_19",
+          "text": "文法: Grammar\nぼう: Honorific Verbs\nWe: use special verbs to describe the actions of people whom you respect. These special verbs are\ncalled: honorific verbs, because they bestow honor on, or exalt, the person performing the activity.\nHonorific: verbs\nIrregular: conjugations\nいる: いらっしゃる\nべる: 召し上がる\nの: くれる\nくださる: くださいます\nする: なさる\nおっしやる: おっしゃいます\nAll: the honorific verbs listed above are u-verbs, but some of them have irregular conjugations. The\nWhen: we use an honorific verb instead of a normal verb, we will have sentences which mean that\nsomebody: graciously does something. Thus, we never use these verbs to describe our own actions.\ndirectly: 先生は今日学校にいらっしやいません。\ncf: 行きせん来せんいません\nせんせい: きょがっう\nThe: professor will (graciously) not go to/come to/be at the school.\nThis: replacement by the special verbるalso applies to compound verbs like持てくand連れ\nかいし: The president has brought her child to the office.\nThis: replacement applies to all compound verbs like 勉强する as well as the main verb する.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 172
+          }
+        },
+        {
+          "id": "genki_2_19_dialogue_3",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_19",
+          "text": "よ: Have you ever (graciously) read this magazine?\nPlease: (graciously) use it.\nGiving: Respectful Advice\nYou: may hear the form \"お + verb stem +<さ\" in public service announcements and in\nthe: speech of store attendants.\nPlease: take a ticket.\nと: 説明をお読みください。\nPlease: read the instruction.\nよ: Although such sentences end with< t, it is better to consider that they are (courteously\nbeing: encouraged to perform the actions for your own good. Thus if I want somebody to pass the\nsalt: for me it is wrong to say:\nPlease: take the salt (and pass it to me).\nYoushould: sayinstead：塩を取っていただけませんか。\nWith: most する compound verbs, for example, the prefix is used instead ofお. Note also the\nexamples: with special honorifi c verbs below.\nPlease: watch out.\nちうい: ちうい\nPlease: look.\nA: お召し上がりください。1\nPlease: help yourself.\n大: お休みください。\nPlease: have a good rest.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 174
+          }
+        },
+        {
+          "id": "genki_2_19_dialogue_4",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_19",
+          "text": "You: can say something is\"supposed to be the case,\" by adding lす to a sentence ending in\nthe: short form.\nきょうにちようび: ぎんこう\nし: Banks must be closed, because today is a Sunday.\nき: I believe that the paper is not due tomorrow.\nclusive: evidence. It is used when situations surrounding the case and/or our common sense point\nnaturally: to such a belief.  cannot be used in a situation in which you are\"supposed\"to\ndo: something because of duty, responsibility, or law.\nYou: can turn linto the past tense to describe something that was supposed to have been\nthe: case but actually turned out otherwise. The part that precedes lL t= is in the present\ntense: 先週電話をもらうはずでしたが、電話がありませんでした。\nせんしうてんわ: てんわ\nI: was supposed to receive a phone call last week, but I didn't.\nYou: can use lずですwith adjectives, nouns, and verbs.\nshort: form+はずです\nIt: is supposed to be the case...\n来るはずです: •-adjectives:\nおもしろいはずです: ·な-adjectives:\n元気なはずです: げんき\n日本人のはずです: にほんじん\nYou: see in this example that predicates in the negative can come before Iです.You may also hear another\ntype: ofnegative,ありandな, whichmeans that somethingis inconceivable.\nI: cannot imagine that he would tell a lie.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 176
+          }
+        },
+        {
+          "id": "genki_2_19_dialogue_5",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_19",
+          "text": "ra: c ti\nA: Change the following verbs into honorific expressions.\nExample: 行く→いらっしゃる\nい: 1.食べる\nみ: \\}$\nけっこん: (b)お~になる\n歌う: Example\nま: 4.聞<\nにあ: B. Describe what Professor Yamashita does in a day using honorific expressions.\nExample: 山下先生はコーヒ一を召し上がります。\nあ: e.g.\nCollege: (4)",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 178
+          }
+        },
+        {
+          "id": "genki_2_19_dialogue_6",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_19",
+          "text": "ま: Match the following expressions with the pictures. Put answers in the(\nNO: SMOKING\nCheese: TOUR\nC: a.お待ちください。\nま: b.ご覧ください。\nC: お入りください。\nん: お書きください。\nちうい: えんりよ\ne: お召し上がりください。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 180
+          }
+        },
+        {
+          "id": "genki_2_19_dialogue_7",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_19",
+          "text": "C: Tell the class who you want to express your gratitude to, and what you want to say to\nExample: 私はストフリーのお母さんにお礼が言いたいです。お母さんは\nかあ: 毎朝起こしてくれました。おかげで日本語の授業に遅刻しませんでし\nまいあさ: にほんこ\nじゆぎょう: ちこく\nIV: 日本に留学してよかったです\nにほん: りゆうがく\nA: Express that you are glad you did/didn't do the things below using ~てよか'っt.\nExample: 日本に留学する\nにほんりうがく: にほんりうがく\nひ: 2.日本語の勉強をやめない\nにほんこ: べんきよう\nL: 4.敬語を習う\nはい: 6.ボランティ活動に参加する\nかどさんか: B. Pair Work—Talk about the things you are glad you did/didn't do. Expand the conversa-\ntion: as in the example.\nExample: おととい\nA: おととい、秋葉原でゲ一ムを買いました。秋葉原に行って\nB: どしてですか。\nA: ほかの店より安いし、いろいろな種類のゲ一ムがあるし。\nしゆるい: B：それで、何を買ったんですか。\nきよねん: こともとき\nせんしう: だいがくはい",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 182
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2058",
+          "label": "practice",
+          "prompt": "In front of the department manager's house.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2059",
+          "label": "practice",
+          "prompt": "うちまで送ってくれてありがとう。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2060",
+          "label": "practice",
+          "prompt": "いい。今日はごちしてくださってありがとございました。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2061",
+          "label": "practice",
+          "prompt": "ゆっくり話ができてよかったよ。ちっとちに寄らない?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2062",
+          "label": "practice",
+          "prompt": "4たけし：いえ、も遅いし、奥様もお休になっていでしよから。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2063",
+          "label": "practice",
+          "prompt": "この時間ならまだ起きているはずだよ。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2064",
+          "label": "practice",
+          "prompt": "でも、今日は遠慮しておきます。奥様によろしくお伝えください。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2065",
+          "label": "practice",
+          "prompt": "Takeshi: Boss, welcome back. You must be tired after the business trip.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2066",
+          "label": "practice",
+          "prompt": "Department manager: Thank you for coming here to pick me up, Mr. Kimura. Originally, I was",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2067",
+          "label": "practice",
+          "prompt": "supposed to leave Seattle at one o'clock, but it ran late.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2068",
+          "label": "practice",
+          "prompt": "Takeshi: You must be tired then.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2069",
+          "label": "practice",
+          "prompt": "Department manager: No, I'm fi ne, but I'm a litle hungry.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2070",
+          "label": "practice",
+          "prompt": "Takeshi: Then would you like to eat something before going home?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2071",
+          "label": "practice",
+          "prompt": "Department manager: That sounds good to me.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2072",
+          "label": "practice",
+          "prompt": "Waitress: Welcome. How many?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2073",
+          "label": "practice",
+          "prompt": "Takeshi: Two.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2074",
+          "label": "practice",
+          "prompt": "Waitress: Just a moment, please.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2075",
+          "label": "practice",
+          "prompt": "Waitress: This way, please. When you decide, please call me.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2076",
+          "label": "practice",
+          "prompt": "Department manager: Thank you for giving me a ride home.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2077",
+          "label": "practice",
+          "prompt": "Takeshi: Not at all. Thank you very much for paying for the dinner.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2078",
+          "label": "practice",
+          "prompt": "Department manager: It was nice to have a good talk with you. Would you like to come inside?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2079",
+          "label": "practice",
+          "prompt": "Takeshi: That's okay. It's late, and your wife is probably sleeping.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2080",
+          "label": "practice",
+          "prompt": "Department manager: No, she must still be awake at this time.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2081",
+          "label": "practice",
+          "prompt": "Takeshi: But I'd rather not today. Please give her my regards.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 169
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2082",
+          "label": "practice",
+          "prompt": "Expression",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 177
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2083",
+          "label": "practice",
+          "prompt": "Honorific forms of nouns and adjectives Some nouns and adjectives are",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 177
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2084",
+          "label": "practice",
+          "prompt": "made into honorific forms by adding the prefi xes お or ご.お is usually used with",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 177
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2085",
+          "label": "practice",
+          "prompt": "words that originated in Japanese and with words borrowed from Chinese.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 177
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2086",
+          "label": "practice",
+          "prompt": "Some other words are replaced by special vocabulary items.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 177
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2087",
+          "label": "practice",
+          "prompt": "どですかいかがですか",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 177
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2088",
+          "label": "practice",
+          "prompt": "These words and expressions cannot be used when you refer to yourself, your",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 177
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2089",
+          "label": "practice",
+          "prompt": "family, or the group you belong to.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 177
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2090",
+          "label": "practice",
+          "prompt": "A：ご両親はお元気ですか。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 177
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2091",
+          "label": "practice",
+          "prompt": "How are your parents?",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 177
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2092",
+          "label": "practice",
+          "prompt": "B：はい。おかげさまで元気です。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 177
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2093",
+          "label": "practice",
+          "prompt": "Thanks to you, they are fine.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 177
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2094",
+          "label": "practice",
+          "prompt": "t5 in polite speechWe learned that the conditional ら is based on the past",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 177
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2095",
+          "label": "practice",
+          "prompt": "tense short forms. In honorific speech, tら also follows the long form.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 177
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2096",
+          "label": "practice",
+          "prompt": "お決まりになりましたらお呼びください。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 177
+          }
+        },
+        {
+          "id": "genki_2_textbook_genki_2_19_exercise_2097",
+          "label": "practice",
+          "prompt": "cf.決まったら呼んで",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 177
+          }
+        }
+      ]
+    }
+  ]
+}

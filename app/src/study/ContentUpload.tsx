@@ -632,14 +632,15 @@ export function ContentUpload() {
     try {
       const routing = getFileRouting()[file.name]
       const textbookKey = routing && routing !== 'custom' ? routing : detectTextbook(file.name).textbookKey
-      const links = getTextbookLinks()
+      // All user .apkg imports land under Extra Anki decks. Textbook unlock may
+      // still set lesson_id so matched cards count as path dues.
       const result = await importFromAnki(file, storage, userId, {
         textbookKey,
-        deckId: textbookKey ? links[textbookKey] : null,
         autoUnlock: true,
+        asExtraDeck: true,
       })
       const audioNote = result.audioExtracted > 0 ? `, ${result.audioExtracted} audio files` : ''
-      const summary = `Imported ${result.imported} cards, skipped ${result.skipped}${audioNote}`
+      const summary = `Imported ${result.imported} cards to Extra decks, skipped ${result.skipped}${audioNote}`
       setAnkiStatus(summary)
       toast.success(`📦 ${summary}`, 5000)
       if (result.errors.length > 0) {

@@ -29,6 +29,11 @@ interface Settings {
   lastFreezeUsedDate: string | null
   // Learning path
   includeTextbookLessons: boolean
+  /**
+   * When true, Extra Anki deck dues join Today's primary review after path dues
+   * are counted together. Default false — Extra stays under Review → Extra.
+   */
+  includeExtraInToday: boolean
 }
 
 interface DailyStats {
@@ -116,6 +121,7 @@ export const useAppStore = create<AppState>()(
         lastStreakAward: 0,
         lastFreezeUsedDate: null,
         includeTextbookLessons: true,
+        includeExtraInToday: false,
       },
       onboardingComplete: false,
       updateSettings: (patch) =>
@@ -148,6 +154,7 @@ export const useAppStore = create<AppState>()(
             apiKey: null,
             // Phase 4: textbook lessons on by default for first-run paths
             includeTextbookLessons: settings.includeTextbookLessons ?? true,
+            includeExtraInToday: settings.includeExtraInToday ?? false,
           },
         }
       },

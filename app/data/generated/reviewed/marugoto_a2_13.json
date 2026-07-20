@@ -1,0 +1,382 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "marugoto_a2_textbook",
+  "title": "marugoto_a2_textbook / marugoto_a2_13",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "marugoto_a2_13_draft",
+      "appLessonId": "marugoto_a2_13",
+      "title": "marugoto a2 13",
+      "qualityTier": "draft",
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "cefr_a2_375",
+          "pattern": "ぜんぜん",
+          "meaning": "Used with a negative verb to mean 'not at all' or 'completely not'.",
+          "explanation": "ぜんぜん is an adverb that intensifies negation; it must pair with a negative predicate (ない, ません, etc.) in standard usage. It emphasizes total absence or complete negation. It is casual to neutral and very common in everyday speech.",
+          "examples": [
+            {
+              "japanese": "その映画はぜんぜんおもしろくなかった。",
+              "reading": "そのえいがはぜんぜんおもしろくなかった。",
+              "english": "That movie was not interesting at all."
+            },
+            {
+              "japanese": "日本語がぜんぜんわかりません。",
+              "reading": "にほんごがぜんぜんわかりません。",
+              "english": "I don't understand Japanese at all."
+            },
+            {
+              "japanese": "昨日はぜんぜん眠れなかった。",
+              "reading": "きのうはぜんぜんねむれなかった。",
+              "english": "I couldn't sleep at all yesterday."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_376",
+          "pattern": "たとえば",
+          "meaning": "A conjunction used to introduce specific examples or illustrative cases.",
+          "explanation": "たとえば is a conjunction that introduces examples to support or clarify a previous statement. It can appear at the beginning of a sentence or clause. This is a neutral, commonly used expression appropriate for explaining ideas in conversation or writing at the A2 level.",
+          "examples": [
+            {
+              "japanese": "日本の食べ物は美味しいです。たとえば、寿司やラーメンは有名です。",
+              "reading": "にほん の たべもの は おいしい です。たとえば、すし や ラーメン は ゆうめい です。",
+              "english": "Japanese food is delicious. For example, sushi and ramen are famous."
+            },
+            {
+              "japanese": "いろいろなスポーツが楽しいです。たとえば、野球やテニスが好きです。",
+              "reading": "いろいろ な スポーツ が たのしい です。たとえば、やきゅう や テニス が すき です。",
+              "english": "Various sports are fun. For example, I like baseball and tennis."
+            },
+            {
+              "japanese": "現代の若い人はテクノロジーをよく使います。たとえば、スマートフォンやパソコンを毎日使っています。",
+              "reading": "げんだい の わかい ひと は テクノロジー を よく つかいます。たとえば、スマートフォン や パソコン を まいにち つかって います。",
+              "english": "Young people today use technology a lot. For example, they use smartphones and computers every day."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/conditional_たら_なら",
+            "title": "Conditional: たら, なら",
+            "excerpt": "114 CHAPTER 3. MORE GRAMMAR\nform, which can pair up with any verb, fz り gets its inflection specifically\nfrom the verb する, meaning '\"to do\":\nきょう がっこう い じゆぎょう で はん た\n今日は学校に行ったり、 授業に出たり、ご飯を食べたりしました。\n\"Today (I) went to school, went to class and ate.\"\nThis sentence literally reads \"Today I did: going to school, going to\nclass, eating', and shows why this is only listing representative actions -\nthere is no way to distinguish which action occurred when, in relation to\nother actions; we're literally o",
+            "examples": [
+              {
+                "japanese": "form, which can pair up with any verb, fz り gets its inflection specifically"
+              },
+              {
+                "japanese": "from the verb する, meaning '\"to do\":"
+              },
+              {
+                "japanese": "きょう がっこう い じゆぎょう で はん た"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_377",
+          "pattern": "もし",
+          "meaning": "Introduces a hypothetical condition or supposition.",
+          "explanation": "もし introduces conditional statements and often emphasizes the hypothetical nature of the situation. It typically pairs with conditions (like ～たら or ～ば) and is used when discussing 'what if' scenarios. Common in both formal and casual speech.",
+          "examples": [
+            {
+              "japanese": "もし時間があれば、映画を見ましょう。",
+              "reading": "もしじかんがあれば、えいがをみましょう。",
+              "english": "If we have time, let's watch a movie."
+            },
+            {
+              "japanese": "もし雨が降ったら、家にいます。",
+              "reading": "もしあめがふったら、いえにいます。",
+              "english": "If it rains, I'll stay home."
+            },
+            {
+              "japanese": "もし質問があれば、聞いてください。",
+              "reading": "もししつもんがあれば、きいてください。",
+              "english": "If you have any questions, please ask."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_378",
+          "pattern": "～ない～はない",
+          "meaning": "There is nothing/no one that does not; absolutely everyone/everything (without exception)",
+          "explanation": "This pattern uses double negatives to emphasize that something is universally true or happens without exception. It expresses absolute statements about what everyone does or what is always the case. Often used in emphatic or formal contexts.",
+          "examples": [
+            {
+              "japanese": "失敗しない人はいない。",
+              "reading": "しっぱいしない ひとは いない。",
+              "english": "There is no person who doesn't fail. (Everyone fails.)"
+            },
+            {
+              "japanese": "彼が遅刻しない日はない。",
+              "reading": "かれが ちこくしない ひは ない。",
+              "english": "There is no day he doesn't arrive late. (He always arrives late.)"
+            },
+            {
+              "japanese": "このニュースを知らない人はいない。",
+              "reading": "この ニュースを しらない ひとは いない。",
+              "english": "There is no one who doesn't know this news. (Everyone knows it.)"
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_379",
+          "pattern": "ように～てほしい",
+          "meaning": "Express wanting someone to do something in a particular way or become able to do something.",
+          "explanation": "This pattern combines ように (in a way, so that) with てほしい (want someone to do). It expresses desires about how someone should do something or what ability they should develop. Often used for requests about methods, habits, or goals. Polite and commonly used in instruction and encouragement.",
+          "examples": [
+            {
+              "japanese": "毎日勉強する習慣ができるようにしてほしいです。",
+              "reading": "まいにちべんきょうするしゅうかんができるようにしてほしいです。",
+              "english": "I want you to develop a habit of studying every day."
+            },
+            {
+              "japanese": "上手に日本語が話せるようにしてください。",
+              "reading": "じょうずにほんごがはなせるようにしてください。",
+              "english": "Please help me be able to speak Japanese well."
+            },
+            {
+              "japanese": "自分で決められるようにしてほしいです。",
+              "reading": "じぶんできめられるようにしてほしいです。",
+              "english": "I want you to be able to decide for yourself."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_380",
+          "pattern": "だけでなく",
+          "meaning": "Indicates that something is not limited to one thing but includes other things as well.",
+          "explanation": "だけでなく emphasizes that multiple things are true, not just one. Often paired with も to create the 'not only A but also B' construction. Formal but commonly used in both written and spoken Japanese.",
+          "examples": [
+            {
+              "japanese": "田中さんは英語だけでなく、中国語も話します。",
+              "reading": "たなかさんはえいごだけでなく、ちゅうごくごもはなします。",
+              "english": "Tanaka speaks not only English but also Chinese."
+            },
+            {
+              "japanese": "この店は食べ物だけでなく、服も売っています。",
+              "reading": "このみせはたべものだけでなく、ふくもうっています。",
+              "english": "This store sells not only food but also clothes."
+            },
+            {
+              "japanese": "彼は優しいだけでなく、とても頭が良いです。",
+              "reading": "かれはやさしいだけでなく、とてもあたまがよいです。",
+              "english": "He is not only kind but also very intelligent."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_381",
+          "pattern": "すこしも～ない",
+          "meaning": "Not even a little; not at all; not in the least",
+          "explanation": "すこしも (not even a little) combined with a negative form creates a strong emphatic denial. It emphasizes complete absence or negation of something, making the statement much stronger than a simple negative.",
+          "examples": [
+            {
+              "japanese": "私は英語が少しも話せない。",
+              "reading": "わたしは えいごが すこしも はなせない。",
+              "english": "I cannot speak English at all."
+            },
+            {
+              "japanese": "このケーキは少しも甘くない。",
+              "reading": "この ケーキは すこしも あまくない。",
+              "english": "This cake is not sweet at all."
+            },
+            {
+              "japanese": "その話は少しも面白くない。",
+              "reading": "その はなしは すこしも おもしろくない。",
+              "english": "That story is not interesting in the slightest."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_382",
+          "pattern": "以上 ①",
+          "meaning": "Indicates a minimum threshold where the amount is greater than or equal to a specified number.",
+          "explanation": "以上 (いじょう) is a comparison word used after numbers to mean 'more than' or 'or over,' inclusive of the number mentioned. It's commonly used with quantifiers and time periods to set a lower limit or minimum requirement.",
+          "examples": [
+            {
+              "japanese": "百人以上が参加しました。",
+              "reading": "ひゃくにんいじょうがさんかしました。",
+              "english": "Over 100 people participated."
+            },
+            {
+              "japanese": "十年以上日本に住んでいます。",
+              "reading": "じゅうねんいじょうにほんにすんでいます。",
+              "english": "I have been living in Japan for more than 10 years."
+            },
+            {
+              "japanese": "五万円以上の品物は買えません。",
+              "reading": "ごまんえんいじょうのしなものはかえません。",
+              "english": "I cannot buy items over 50,000 yen."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_383",
+          "pattern": "いか",
+          "meaning": "Indicates a maximum threshold where the amount is less than or equal to a specified number.",
+          "explanation": "以下 (いか) is a comparison word used after numbers to mean 'less than' or 'or under,' inclusive of the number mentioned. It's the opposite of 以上 and is commonly used in formal contexts and with specific limits or conditions.",
+          "examples": [
+            {
+              "japanese": "十人以下で会議をします。",
+              "reading": "じゅうにんいかでかいぎをします。",
+              "english": "We will have a meeting with ten people or fewer."
+            },
+            {
+              "japanese": "千円以下で買えますか？",
+              "reading": "せんえんいかでかえますか？",
+              "english": "Can you buy it for 1000 yen or less?"
+            },
+            {
+              "japanese": "三年以下の経験の人を探しています。",
+              "reading": "さんねんいかのけいけんのひとをさがしています。",
+              "english": "I'm looking for someone with three years or less of experience."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_384",
+          "pattern": "なるべく",
+          "meaning": "Means 'as much as possible' or 'wherever practicable,' expressing an effort to meet a standard.",
+          "explanation": "なるべく is an adverb placed before verbs or adjectives to express the idea of trying to do something as much as possible. It often softens a request or instruction. It is appropriate in both casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "なるべく早く来てください。",
+              "reading": "なるべくはやくきてください。",
+              "english": "Please come as early as possible."
+            },
+            {
+              "japanese": "なるべく野菜を食べるようにしています。",
+              "reading": "なるべくやさいをたべるようにしています。",
+              "english": "I try to eat vegetables as much as possible."
+            },
+            {
+              "japanese": "なるべく静かにしてください。",
+              "reading": "なるべくしずかにしてください。",
+              "english": "Please be as quiet as possible."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/becoming_なる",
+            "title": "Becoming: なる",
+            "excerpt": "2.5. SPECIAL VERBS 81\nこそあど meaning\nこなた this person (I/me/you/him/he/her/she).\nそなた that person (him/he, her/she).\nあなた that person over there (you).\nどなた which person (who).\nSince this set is a tad classical, there are a few things to notice. First\nof all, そなた refers to a third person (he/she), while あなた refers to second\nperson (you). Also, while somewhat classical, this set is still used in formal\nsettings. However, because it is used exclusively in formal settings it is\nconsidered distal and very",
+            "examples": [
+              {
+                "japanese": "こそあど meaning"
+              },
+              {
+                "japanese": "こなた this person (I/me/you/him/he/her/she)."
+              },
+              {
+                "japanese": "そなた that person (him/he, her/she)."
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "marugoto_a2_13_dialogue_0",
+          "type": "dialogue",
+          "title": "Dialogue marugoto_a2_13",
+          "text": "Conversation: test\nかいわテストでは: 勉強した\nことばを: できるだけたくさ\nListen: to the question from your teacher, and have a conversation.\nれい: Example\nしつもんがわからないとき: 「どんなコかつどうしていますか」\nIn: the conversation test, try\nto: use the Japanese you have\nlearned: as much as possible.\nYou: can ask the teacher to\nrepeat: the question if you don't\nRead: the card and have a conversation with your teacher.\nExample: 日本の友だちをはくぶつかんにつれてきました。てんじひんの\nYou: have taken a Japanese friend to a museum. Read the description\nof: an exhibit (in your language) and tellhim/her whatit says.\nもつとすごい: 2ついじうのんつづけてくさん話すことができます。\nYou: were able to immediately answer all questions about a familiar topic,\n告具: Magnificent!\nprovided: the other person spoke clearly.\nYou: were able to speak using two or more sentences in a row.\nごうかく: ほとんどこえることができます。\nYou: were able to answer most questions about a familiar topic, provided the\nWell: done!\nother: person spoke clearly.\nみかなことについてはきし話しかでとてもっくりしつもさら: もう すこし\nYou: were able to partially answer questions about a familiar topic, provided the\nGetting: there!\nother: person spoke clearly and slowly.\nSpeak: in groups.\nWhile: waiting to take your test, make small groups of about four people,\nshow: ① and ② below and talk about them.\nRecords: of your experiences of Japanese language and culture\nThings: you wrote in lesson 13: Visitor comment book.\nShare: the things you talked about in groups with other people.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 139
+          }
+        }
+      ],
+      "exercises": []
+    }
+  ]
+}

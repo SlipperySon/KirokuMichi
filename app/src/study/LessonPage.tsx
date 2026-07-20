@@ -11,6 +11,7 @@ import { useAppStore } from '../store'
 import { CEFR_BASE_TEXTBOOK, TEXTBOOK_LESSON_COUNTS, CEFR_SUPPLEMENTAL, type CEFRLevel } from '../content/cefrMapping'
 import { lessonStructureService, type LessonStructure } from '../content/lessonNormalization'
 import { curriculumService, type Exercise, type GrammarItem, type VocabItem } from '../content/curriculumService'
+import { getReviewedLessonOverlay } from '../content/reviewedPackService'
 import { createLessonMatcher, pageRangeFromPages } from '../content/lessonContentUtils'
 import { hasMaynardSupport } from '../content/maynardSupport'
 import { repairLessonCardLinks } from '../content/lessonUnlockService'
@@ -114,14 +115,18 @@ export function LessonPage() {
         // Match against all of them.
         const matchesLesson = createLessonMatcher(lessonId, lessonNum)
 
-        const vocab = curriculum.vocabulary.filter(v => matchesLesson(v.lesson))
-        const grammar = curriculum.grammar.filter(g => matchesLesson(g.lesson))
+        const heuristicVocab = curriculum.vocabulary.filter(v => matchesLesson(v.lesson))
+        const heuristicGrammar = curriculum.grammar.filter(g => matchesLesson(g.lesson))
         const exercises = curriculum.exercises.filter(e => matchesLesson(e.lesson))
         const assetSourceKeys = [baseTextbook, ...CEFR_SUPPLEMENTAL[cefrLevel]]
-        const [workbookPractice, textbookAssets] = await Promise.all([
+        const [workbookPractice, textbookAssets, reviewed] = await Promise.all([
           getWorkbookPracticeTasks({ cefr: cefrLevel, lessonId, lessonNum }),
           textbookAssetService.getAssetsForLessonSources(assetSourceKeys, lessonId),
+          getReviewedLessonOverlay(lessonId),
         ])
+        // Gold reviewed packs win over noisy comprehensive extracts.
+        const vocab = reviewed && reviewed.vocabulary.length > 0 ? reviewed.vocabulary : heuristicVocab
+        const grammar = reviewed && reviewed.grammar.length > 0 ? reviewed.grammar : heuristicGrammar
         const overview: ExtractedLessonOverview = {
           pageRange: pageRangeFromPages([
             ...vocab.map(item => item.page),

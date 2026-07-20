@@ -1,0 +1,759 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "tobira_textbook",
+  "title": "tobira_textbook / tobira_textbook_14",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "tobira_textbook_14_draft",
+      "appLessonId": "tobira_textbook_14",
+      "title": "tobira textbook 14",
+      "qualityTier": "draft",
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "cefr_b2_688",
+          "pattern": "恐れがある",
+          "meaning": "There is a risk or fear that, Be in danger of, Possibility of",
+          "explanation": "The noun 恐れ (fear, risk) combined with がある creates an expression indicating potential danger or negative outcome. It is more formal than simple possibility and is often used in news, reports, and formal speech. The pattern emphasizes concern about what might happen.",
+          "examples": [
+            {
+              "japanese": "この政策により物価が上がる恐れがある。",
+              "reading": "このせいさくによりぶっかがあがるおそれがある。",
+              "english": "There is a risk that prices will rise due to this policy."
+            },
+            {
+              "japanese": "プロジェクトが遅れる恐れがある。",
+              "reading": "ぷろじぇくとがおくれるおそれがある。",
+              "english": "There is a danger that the project will be delayed."
+            },
+            {
+              "japanese": "感染が広がる恐れがある。",
+              "reading": "かんせんがひろがるおそれがある。",
+              "english": "There is a risk that the infection will spread."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_689",
+          "pattern": "を契機に",
+          "meaning": "Indicates that an event served as the trigger or turning point for a subsequent change or action.",
+          "explanation": "を契機に (also を契機として) follows a noun and means 'using X as an opportunity' or 'triggered by X'. It emphasizes that a particular event became the catalyst for a meaningful change. It is formal and typically used in written Japanese or formal speech to describe turning points.",
+          "examples": [
+            {
+              "japanese": "その事故を契機に、会社は安全対策を見直した。",
+              "reading": "そのじこをけいきに、かいしゃはあんぜんたいさくをみなおした。",
+              "english": "The company reviewed its safety measures, triggered by that accident."
+            },
+            {
+              "japanese": "留学を契機に、将来のキャリアを真剣に考えるようになった。",
+              "reading": "りゅうがくをけいきに、しょうらいのキャリアをしんけんにかんがえるようになった。",
+              "english": "Studying abroad became the trigger for me to seriously think about my future career."
+            },
+            {
+              "japanese": "その出来事を契機として、二人の関係は大きく変わった。",
+              "reading": "そのできごとをけいきとして、ふたりのかんけいはおおきくかわった。",
+              "english": "That event became the turning point that significantly changed their relationship."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_690",
+          "pattern": "を巡って",
+          "meaning": "Indicates that a discussion, conflict, or action revolves around or is over a particular issue or topic.",
+          "explanation": "を巡って attaches to a noun and expresses that something — typically a debate, dispute, negotiation, or competition — is happening around or concerning that noun. It often carries a nuance of contention or multiple parties being involved. It is more formal than について and is frequently used in news, academic, and analytical writing.",
+          "examples": [
+            {
+              "japanese": "土地の所有権を巡って、隣人との間で争いが起きた。",
+              "reading": "とちのしょゆうけんをめぐって、りんじんとのあいだであらそいがおきた。",
+              "english": "A dispute arose between neighbors over land ownership."
+            },
+            {
+              "japanese": "新しい法案を巡って、国会で激しい議論が交わされた。",
+              "reading": "あたらしいほうあんをめぐって、こっかいではげしいぎろんがかわされた。",
+              "english": "Intense debate was exchanged in parliament over the new bill."
+            },
+            {
+              "japanese": "その事件を巡っては、いまだに様々な意見がある。",
+              "reading": "そのじけんをめぐっては、いまだにさまざまないけんがある。",
+              "english": "Regarding that incident, various opinions still exist to this day."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_691",
+          "pattern": "おまけに",
+          "meaning": "In addition, on top of that, what is more, to make matters worse",
+          "explanation": "An adverbial expression that adds information sequentially, often implying that an additional circumstance makes a situation worse or more complicated. It connects two related situations or facts and suggests cumulative or worsening effect. Used in both formal and casual speech.",
+          "examples": [
+            {
+              "japanese": "仕事は忙しいし、おまけに家事もある。",
+              "reading": "しごとはいそがしいし、おまけにかじもある。",
+              "english": "Work is busy, and on top of that, there is housework too."
+            },
+            {
+              "japanese": "雨が降っているし、おまけに風も強い。",
+              "reading": "あめがふっているし、おまけにかぜもつよい。",
+              "english": "It's raining, and to make matters worse, the wind is strong."
+            },
+            {
+              "japanese": "試験に失敗したし、おまけに誰にも相談できなかった。",
+              "reading": "しけんにしっぱいしたし、おまけにだれにもそうだんできなかった。",
+              "english": "I failed the exam, and to make matters worse, I couldn't consult with anyone."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_692",
+          "pattern": "に沿って",
+          "meaning": "Means either 'along (a physical path)' or 'in line with / in accordance with (a plan, rule, or intention)'.",
+          "explanation": "に沿って has two main uses: physically, it means moving or existing along something like a river or road; abstractly, it means acting in conformity with or following guidelines, policies, or expectations. Both uses share the core sense of staying close to or following something as a guide. It is neutral in register and used in both spoken and written Japanese. に沿った directly modifies nouns.",
+          "examples": [
+            {
+              "japanese": "川に沿って歩くと、きれいな景色が楽しめる。",
+              "reading": "かわにそってあるくと、きれいなけしきがたのしめる。",
+              "english": "If you walk along the river, you can enjoy beautiful scenery."
+            },
+            {
+              "japanese": "計画に沿って、プロジェクトを進めていきましょう。",
+              "reading": "けいかくにそって、プロジェクトをすすめていきましょう。",
+              "english": "Let's move the project forward in accordance with the plan."
+            },
+            {
+              "japanese": "会社の方針に沿った行動が、社員には求められる。",
+              "reading": "かいしゃのほうしんにそったこうどうが、しゃいんにはもとめられる。",
+              "english": "Employees are expected to act in line with company policy."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_693",
+          "pattern": "陸に～ない",
+          "meaning": "Not well or properly, Not much or enough, Barely, Hardly",
+          "explanation": "Grammar explanation for 陸に～ない",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_694",
+          "pattern": "幸い・幸いなことに",
+          "meaning": "Luckily, Fortunately",
+          "explanation": "Grammar explanation for 幸い・幸いなことに",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_695",
+          "pattern": "ていては",
+          "meaning": "Expresses that if a current action or state continues, a negative result will follow.",
+          "explanation": "Formed by attaching ては to the te-form of a verb (ていては) or to a noun/adjective with で. It sets up a conditional that strongly implies criticism or warning — the speaker judges the ongoing action as problematic. Commonly used in advice-giving contexts; the result clause is typically negative or unfavorable.",
+          "examples": [
+            {
+              "japanese": "毎晩ゲームばかりしていては、成績が上がるわけがない。",
+              "reading": "まいばんゲームばかりしていては、せいせきがあがるわけがない。",
+              "english": "If you keep playing games every night, there's no way your grades will improve."
+            },
+            {
+              "japanese": "そんなに無理をしていては、体を壊してしまうよ。",
+              "reading": "そんなにむりをしていては、からだをこわしてしまうよ。",
+              "english": "If you keep pushing yourself that hard, you'll end up ruining your health."
+            },
+            {
+              "japanese": "いつまでも迷っていては、チャンスを逃してしまう。",
+              "reading": "いつまでもまよっていては、チャンスをのがしてしまう。",
+              "english": "If you keep hesitating forever, you'll miss your chance."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_696",
+          "pattern": "僅かに",
+          "meaning": "Only, Slightly, A little, Barely, Merely",
+          "explanation": "Grammar explanation for 僅かに",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_697",
+          "pattern": "および",
+          "meaning": "And, As well as",
+          "explanation": "Grammar explanation for および",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_698",
+          "pattern": "たちまち",
+          "meaning": "Immediately, Quickly, Suddenly, In a moment or flash",
+          "explanation": "Grammar explanation for たちまち",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_708",
+          "pattern": "未だに",
+          "meaning": "Indicates that a state or situation continues to persist up to the present moment, often contrary to expectation.",
+          "explanation": "未だに is an adverb that emphasizes the persistence of a state into the present, frequently implying that the speaker finds this surprising, unfortunate, or frustrating. It is used with both affirmative and negative predicates: with negatives it means 'not yet even now,' and with affirmatives it means 'still, even now.' It is appropriate in both written and spoken registers.",
+          "examples": [
+            {
+              "japanese": "彼女は未だに連絡先を変えていない。",
+              "reading": "かのじょはいまだにれんらくさきをかえていない。",
+              "english": "She still hasn't changed her contact information even now."
+            },
+            {
+              "japanese": "あの事故のことは未だに忘れられない。",
+              "reading": "あのじこのことはいまだにわすれられない。",
+              "english": "Even now, I still can't forget that accident."
+            },
+            {
+              "japanese": "未だに原因が分かっていないのは問題だと思う。",
+              "reading": "いまだにげんいんがわかっていないのはもんだいだとおもう。",
+              "english": "I think it's a problem that the cause is still unknown even now."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_709",
+          "pattern": "何より",
+          "meaning": "Be glad, Be relieved, Most, Best, Above all else, More than anything",
+          "explanation": "Grammar explanation for 何より",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_710",
+          "pattern": "たった(の)",
+          "meaning": "Only, just, no more than a limited amount",
+          "explanation": "This adverb or prefix emphasizes the smallness or limitation of a quantity, time, or scope. It can stand alone as an adverb or be followed by の to modify a noun directly. Used to express surprise or emphasis that something is remarkably small, brief, or inadequate.",
+          "examples": [
+            {
+              "japanese": "たったの三人で始めた会社が今は大きくなった。",
+              "reading": "たったのさんにんではじめたかいしゃがいまはおおきくなった。",
+              "english": "The company that started with just three people has grown large."
+            },
+            {
+              "japanese": "たった一日で全部終わった。",
+              "reading": "たったいちにちですべておわった。",
+              "english": "Everything was completed in just one day."
+            },
+            {
+              "japanese": "たった五分の違いで全く結果が変わった。",
+              "reading": "たったごふんのちがいでまったくけっかがかわった。",
+              "english": "The outcome changed completely with just a five-minute difference."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_763",
+          "pattern": "一応 ②",
+          "meaning": "Indicates something meets a minimum standard or is provisionally acceptable, without implying full satisfaction.",
+          "explanation": "一応② signals that something is satisfactory for now or to a rough degree, but not necessarily complete or ideal — comparable to 'more or less,' 'for the time being,' or 'roughly' in English. It is common in casual speech and often carries a slightly understated or modest tone. Speakers use it to avoid overclaiming certainty or completeness.",
+          "examples": [
+            {
+              "japanese": "一応、計画はできているが、まだ細かい部分が残っている。",
+              "reading": "いちおう、けいかくはできているが、まだこまかいぶぶんがのこっている。",
+              "english": "The plan is more or less in place, but some fine details still remain."
+            },
+            {
+              "japanese": "一応、日本語は話せますが、まだ上手ではありません。",
+              "reading": "いちおう、にほんごははなせますが、まだじょうずではありません。",
+              "english": "I can speak Japanese more or less, but I'm not very good yet."
+            },
+            {
+              "japanese": "一応、問題は解決したと思いますが、様子を見ましょう。",
+              "reading": "いちおう、もんだいはかいけつしたとおもいますが、ようすをみましょう。",
+              "english": "I think the problem is more or less resolved, but let's keep an eye on things."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5649",
+          "label": "practice",
+          "prompt": "vNviolation (of a law, a rule, etc.)| (~に)違反する",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5650",
+          "label": "practice",
+          "prompt": "Nsnoreいびきをかく(Phr)to snore",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5651",
+          "label": "practice",
+          "prompt": "Adv  still; (not ~ ) yet",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5652",
+          "label": "practice",
+          "prompt": "Phr what is now called",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5653",
+          "label": "practice",
+          "prompt": "Advnow; nowadays",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5654",
+          "label": "practice",
+          "prompt": "VNmeaning|(~を)意味する",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5655",
+          "label": "practice",
+          "prompt": "Nimage; impression",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5656",
+          "label": "practice",
+          "prompt": "Nharassment(~に)いやがらせをする(Phr)",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5657",
+          "label": "practice",
+          "prompt": "VNrequest|(一に)依頼する to ask (a person to 一); make a request",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5658",
+          "label": "practice",
+          "prompt": "Adv a lot; (so) much; many things; al sorts of things |",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5659",
+          "label": "practice",
+          "prompt": "色々（な）(ANa）various",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5660",
+          "label": "practice",
+          "prompt": "ANa colloquial form of色々な",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5661",
+          "label": "practice",
+          "prompt": "Nrock |岩戸(N) rock door (to a cave)",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5662",
+          "label": "practice",
+          "prompt": "u-Vt to celebrate; congratulate",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5663",
+          "label": "practice",
+          "prompt": "Nimpression |印象に残る(Phr) to stand out in one's memory",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5664",
+          "label": "practice",
+          "prompt": "VNretirement (from office,etc.)|(～を/から)引退する",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5665",
+          "label": "practice",
+          "prompt": "NIndonesia",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5666",
+          "label": "practice",
+          "prompt": "ru-Vi to starve|飢え（N） hunger; starvation",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5667",
+          "label": "practice",
+          "prompt": "ru-Vtto plant",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5668",
+          "label": "practice",
+          "prompt": "u-Vi  to come to mind; foat",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5669",
+          "label": "practice",
+          "prompt": "ru-Vtto accept",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5670",
+          "label": "practice",
+          "prompt": "receptionist; reception desk",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5671",
+          "label": "practice",
+          "prompt": "u-Vtto move~",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5672",
+          "label": "practice",
+          "prompt": "u-Vito move",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5673",
+          "label": "practice",
+          "prompt": "u-Vto hit; strike",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5674",
+          "label": "practice",
+          "prompt": "depression",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5675",
+          "label": "practice",
+          "prompt": "N  change (of season, weather, etc.)",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5676",
+          "label": "practice",
+          "prompt": "thick white noodles",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5677",
+          "label": "practice",
+          "prompt": "u-Vi to nod",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5678",
+          "label": "practice",
+          "prompt": "delicious; tasty [mainly used by male]",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5679",
+          "label": "practice",
+          "prompt": "good; skillful; clever",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5680",
+          "label": "practice",
+          "prompt": "(~に)生まれ変わる",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5681",
+          "label": "practice",
+          "prompt": "u-Vi to appear in a different form; be reborn",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5682",
+          "label": "practice",
+          "prompt": "ru-Vi to be born; come into being",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5683",
+          "label": "practice",
+          "prompt": "u-Vt to produce; bear",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5684",
+          "label": "practice",
+          "prompt": "u-Vt to respect; honor",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_5685",
+          "label": "practice",
+          "prompt": "N fortune-telling|占う(u-Vt) to tell fortunes",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 386
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_6004",
+          "label": "practice",
+          "prompt": "NLower House; House of Representatives",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 399
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_6005",
+          "label": "practice",
+          "prompt": "VNattack|(~を)襲撃する",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 399
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_14_exercise_6006",
+          "label": "practice",
+          "prompt": "Nmaster's degree",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 399
+          }
+        }
+      ]
+    }
+  ]
+}

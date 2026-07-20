@@ -25,6 +25,7 @@ import { calculateWeeklyGoal } from './weeklyGoals'
 import { refreshStreakSnapshot } from './streakService'
 import { getStudyPathAction } from './studyPathPlanner'
 import { hasResumableLessonSession } from './lessonSessionPersistence'
+import { findSkipDebt } from './lessonSkipState'
 import { interleaveDueAndNew } from './reviewInterleave'
 import {
   countUserCardStates,
@@ -71,6 +72,7 @@ export function StudyDashboard() {
   const activeDeckId = useAppStore(s => s.activeDeckId)
 
   const [dueCount, setDueCount] = useState(0)
+  const [extraDueCount, setExtraDueCount] = useState(0)
   const [newCount, setNewCount] = useState(0)
   const [availableNewCount, setAvailableNewCount] = useState(0)
   const [grammarDueCount, setGrammarDueCount] = useState(0)
@@ -81,7 +83,7 @@ export function StudyDashboard() {
   const [loadError, setLoadError] = useState<string | null>(null)
   const [recoveryPayload, setRecoveryPayload] = useState<SessionRecoveryPayload | null>(null)
   const [previewCards, setPreviewCards] = useState<ReviewCard[]>([])
-  const [decks, setDecks] = useState<{ id: number; name: string; parentId: number | null; cardCount: number }[]>([])
+  const [decks, setDecks] = useState<{ id: number; name: string; parentId: number | null; lane?: string; cardCount: number }[]>([])
   const [emptyDeck, setEmptyDeck] = useState(false)
   const [importingStarter, setImportingStarter] = useState(false)
   const userId = activeUserId
@@ -107,9 +109,10 @@ export function StudyDashboard() {
       // Ensure Default deck exists
       await service.ensureDefaultDeck(uid)
 
-      const [due, newC, grammarDue, streak, mistakes, weeklyRows, preview, deckRows] = await Promise.all([
-        service.getDueCount(uid),
-        service.getNewCount(uid),
+      const [due, extraDue, newC, grammarDue, streak, mistakes, weeklyRows, preview, deckRows] = await Promise.all([
+        service.getDueCount(uid, 'path'),
+        service.getDueCount(uid, 'extra'),
+        service.getNewCount(uid, 'path'),
         service.getGrammarDueCount(uid),
         service.getStreakData(uid),
         service.getRecentMistakeCount(uid, 7),
@@ -124,10 +127,11 @@ export function StudyDashboard() {
            GROUP BY date(started_at)`,
           [uid]
         ),
-        service.getDueCards(uid, 3),
+        service.getDueCards(uid, 3, null, 'path'),
         service.getDecks(uid),
       ])
       setDueCount(due)
+      setExtraDueCount(extraDue)
       setNewCount(newC)
       setGrammarDueCount(grammarDue)
       setPreviewCards(preview)
@@ -227,12 +231,13 @@ export function StudyDashboard() {
     })
   }
 
-  async function startWordReview() {
+  async function startWordReview(lane: 'path' | 'all' = 'path') {
     if (!userId) return
     const limit = settings.dailyCardLimit
+    const dueLane = lane === 'all' ? 'all' : 'path'
     const [due, newCards] = await Promise.all([
-      service.getDueCards(userId, limit),
-      service.getNewCards(userId, Math.max(0, limit - (await service.getDueCount(userId)))),
+      service.getDueCards(userId, limit, activeDeckId, dueLane),
+      service.getNewCards(userId, Math.max(0, limit - (await service.getDueCount(userId, dueLane))), dueLane),
     ])
     const queue = interleaveDueAndNew(due, newCards, limit).filter(
       c => c.type === 'vocabulary' || c.type === 'kanji' || c.type === 'hiragana' || c.type === 'katakana'
@@ -285,18 +290,23 @@ export function StudyDashboard() {
     }
   }
 
+  const skipDebt = findSkipDebt(currentLesson, lessonsCompleted)
   const pathAction = getStudyPathAction({
     learningPath,
     currentLesson,
     lessonsCompleted,
     dueCount,
     availableNewCount,
+    extraDueCount,
+    includeExtraInToday: settings.includeExtraInToday,
     grammarDueCount,
     mistakeCount,
     reviewedToday: dailyStats.todayReviewed,
     dailyGoal: settings.dailyGoal,
     hasRecovery: Boolean(recoveryPayload),
     hasResumableLesson: Boolean(currentLesson && hasResumableLessonSession(currentLesson)),
+    cardsDeferredLessonId: skipDebt?.cardsDeferred ? skipDebt.lessonId : null,
+    speakPendingLessonId: skipDebt?.speakPending ? skipDebt.lessonId : null,
   })
 
   function runPathAction() {
@@ -304,8 +314,8 @@ export function StudyDashboard() {
       void resumeSession()
       return
     }
-    if (pathAction.kind === 'review') {
-      void startWordReview()
+    if (pathAction.kind === 'review' || pathAction.kind === 'catch-up' || pathAction.kind === 'cards-deferred') {
+      void startWordReview(pathAction.reviewLane ?? 'path')
       return
     }
     if (pathAction.route) {

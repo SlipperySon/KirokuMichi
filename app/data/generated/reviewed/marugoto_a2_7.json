@@ -1,0 +1,721 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "marugoto_a2_textbook",
+  "title": "marugoto_a2_textbook / marugoto_a2_7",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "marugoto_a2_7_draft",
+      "appLessonId": "marugoto_a2_7",
+      "title": "marugoto a2 7",
+      "qualityTier": "draft",
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "cefr_a2_148",
+          "pattern": "ながら",
+          "meaning": "Indicates that two actions happen simultaneously.",
+          "explanation": "ながら connects the て-form of a verb to show that two actions occur at the same time. The first action is the ongoing background action, while the second is the main action. Commonly used in both casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "音楽を聞きながら、勉強します。",
+              "reading": "おんがくをききながら、べんきょうします。",
+              "english": "I study while listening to music."
+            },
+            {
+              "japanese": "テレビを見ながら、晩ご飯を食べました。",
+              "reading": "てれびをみながら、ばんごはんをたべました。",
+              "english": "I ate dinner while watching TV."
+            },
+            {
+              "japanese": "友達と話しながら、歩きます。",
+              "reading": "ともだちとはなしながら、あるきます。",
+              "english": "I walk while talking with my friend."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_149",
+          "pattern": "ようだ",
+          "meaning": "Expresses an inference or conclusion drawn from observable evidence, meaning 'it seems that' or 'it appears that'.",
+          "explanation": "ようだ follows a plain-form verb, い-adjective, or noun+の and conveys that the speaker is drawing a reasoned conclusion from something they can see or hear. It sounds more objective and evidence-based than らしい. ようです is the polite form; ようだ is neutral to casual.",
+          "examples": [
+            {
+              "japanese": "電気が消えているから、誰もいないようだ。",
+              "reading": "でんきがきえているから、だれもいないようだ。",
+              "english": "The lights are off, so it seems like no one is there."
+            },
+            {
+              "japanese": "彼女は日本語が上手なようです。",
+              "reading": "かのじょはにほんごがじょうずなようです。",
+              "english": "She appears to be good at Japanese."
+            },
+            {
+              "japanese": "外は寒いようですね。",
+              "reading": "そとはさむいようですね。",
+              "english": "It seems cold outside, doesn't it."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_150",
+          "pattern": "ているところだ",
+          "meaning": "Indicates that an action is currently in progress at this very moment.",
+          "explanation": "ているところだ expresses that something is happening right now, in the middle of an action. It uses the continuous form (ている) + ところ + だ/です. Emphasizes immediacy and that the action is ongoing. Common in both casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "今、仕事をしているところです。",
+              "reading": "いま、しごとをしているところです。",
+              "english": "I'm working right now."
+            },
+            {
+              "japanese": "宿題をしているところだ。",
+              "reading": "しゅくだいをしているところだ。",
+              "english": "I'm doing homework right now."
+            },
+            {
+              "japanese": "友達と話しているところです。",
+              "reading": "ともだちとはなしているところです。",
+              "english": "I'm talking with my friend right now."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/continuative_て_form",
+            "title": "Continuative: て form",
+            "excerpt": "3.2. FURTHER INFLECTIONS 103\n3.2.2 Continuative: て form\nThe continuative in Japanese is also commonly refered to as the \"て form',\nbecause it relies on the 連用形 of classical helper verb for completion, つ,\nwhich is て. This inflection is used for at least three things in Japanese,\nof which verb chaining is probably the most frequently used. Aside from\nthis, it is also used to issue (implied) imperatives, and it can be used in\ncombination with several special verbs to create special constructions.\nba",
+            "examples": [
+              {
+                "japanese": "3.2.2 Continuative: て form"
+              },
+              {
+                "japanese": "The continuative in Japanese is also commonly refered to as the \"て form',"
+              },
+              {
+                "japanese": "because it relies on the 連用形 of classical helper verb for completion, つ,"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_151",
+          "pattern": "はずだ",
+          "meaning": "An expression indicating that something is expected, supposed, or logically should be the case.",
+          "explanation": "はずだ expresses an expectation or assumption based on logic or prior information. Use it with verb or adjective stems (dictionary form for verbs, い-adjective bases, noun+の). In polite speech, use はずです. It conveys 'should be,' 'is supposed to be,' or 'ought to be.' Common in conversation for expressing reasonable expectations at A2 level.",
+          "examples": [
+            {
+              "japanese": "田中さんは毎日9時に来るはずですが、今日は遅いですね。",
+              "reading": "たなか さん は まいにち くじ に くる はず です が、きょう は おそい です ね。",
+              "english": "Tanaka should come at 9 every day, but he's late today."
+            },
+            {
+              "japanese": "この映画は面白いはずです。友達が勧めてくれたから。",
+              "reading": "この えいが は おもしろい はず です。ともだち が すすめて くれた から。",
+              "english": "This movie is supposed to be interesting. My friend recommended it."
+            },
+            {
+              "japanese": "彼女は学校にいるはずなのに、連絡がありません。",
+              "reading": "かのじょ は がっこう に いる はず なのに、れんらく が ありません。",
+              "english": "She should be at school, but there's no contact from her."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_152",
+          "pattern": "と～と、どちらが",
+          "meaning": "Used to compare two things and ask which one is preferred or more suitable.",
+          "explanation": "This pattern compares two nouns or concepts and asks which is better, more important, or preferred. It uses the structure 'thing A と thing B と、どちらが adjective か?' and is commonly used in both casual and polite conversation. The answer typically picks one and explains why.",
+          "examples": [
+            {
+              "japanese": "りんごとみかんと、どちらが好きですか？",
+              "reading": "りんごとみかんと、どちらがすきですか？",
+              "english": "Between apples and tangerines, which one do you like?"
+            },
+            {
+              "japanese": "勉強することと遊ぶことと、どちらが大事ですか？",
+              "reading": "べんきょうすることとあそぶことと、どちらがだいじですか？",
+              "english": "Between studying and playing, which one is more important?"
+            },
+            {
+              "japanese": "日本語の授業と数学の授業と、どちらが難しいですか？",
+              "reading": "にほんごのじゅぎょうとすうがくのじゅぎょうと、どちらがむずかしいですか？",
+              "english": "Between Japanese class and math class, which one is more difficult?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_153",
+          "pattern": "Verb［せる・させる］",
+          "meaning": "To make/let/have someone do something; to cause someone to perform an action",
+          "explanation": "The causative form uses ～せる (for -ru verbs) or ～させる (for -u verbs) to show that someone causes, makes, or allows another person to do something. The person who performs the action is usually marked with に or を. It expresses causation, permission, or force.",
+          "examples": [
+            {
+              "japanese": "先生は学生に宿題をさせた。",
+              "reading": "せんせいは がくせいに しゅくだいを させた。",
+              "english": "The teacher made the students do homework."
+            },
+            {
+              "japanese": "母は子どもにご飯を食べさせた。",
+              "reading": "ははは こどもに ごはんを たべさせた。",
+              "english": "The mother had her child eat."
+            },
+            {
+              "japanese": "親が子どもに好きなことをさせる。",
+              "reading": "おやが こどもに すきなことを させる。",
+              "english": "Parents let their children do what they like."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/causative_せる_させる",
+            "title": "Causative: せる/させる",
+            "excerpt": "136 CHAPTER 3. MORE GRAMMAR\nsome action (taken by someone) has inconvenienced you, or someone else.\nLet us look at how this works:\nだれ おとうと じてんしゃ ぬす\n誰かが弟の自転車を盗みました。\nactive, \"Someone stole my (younger) brother's bicycle.\"\n誰かに弟の自転車が盗まれた。\npassive, \"My brother was bestolen of his bike by someone.'\nNow, \"bestolen'\" is not a grammatically correct English term, but it\ndoes illustrate the nature of the action. However, this form only applies to\nactions that were taken by someone, which inconvenienced you",
+            "examples": [
+              {
+                "japanese": "だれ おとうと じてんしゃ ぬす"
+              },
+              {
+                "japanese": "誰かが弟の自転車を盗みました。",
+                "english": "active, \"Someone stole my (younger) brother's bicycle.\""
+              },
+              {
+                "japanese": "誰かに弟の自転車が盗まれた。",
+                "english": "passive, \"My brother was bestolen of his bike by someone.'"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_154",
+          "pattern": "ば",
+          "meaning": "Expresses a conditional 'if… then' relationship, often for general truths or advice.",
+          "explanation": "The ば-conditional is formed by changing the final vowel of a verb or adjective to its え-sound and adding ば (e.g., 食べる→食べれば, 高い→高ければ). It is used for hypothetical conditions, general rules, and giving advice. It often implies that if the condition is met, the result naturally or logically follows.",
+          "examples": [
+            {
+              "japanese": "毎日練習すれば、上手になりますよ。",
+              "reading": "まいにちれんしゅうすれば、じょうずになりますよ。",
+              "english": "If you practice every day, you'll get better."
+            },
+            {
+              "japanese": "お金があれば、旅行したいです。",
+              "reading": "おかねがあれば、りょこうしたいです。",
+              "english": "If I had money, I would like to travel."
+            },
+            {
+              "japanese": "右に曲がれば、駅が見えます。",
+              "reading": "みぎにまがれば、えきがみえます。",
+              "english": "If you turn right, you'll see the station."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_155",
+          "pattern": "らしい ①",
+          "meaning": "Seems like, Apparently, I heard",
+          "explanation": "Indicating information from hearsay or inference.",
+          "examples": [
+            {
+              "japanese": "彼は出張で東京へ行ったらしい。",
+              "reading": "かれはしゅっちょうでとうきょうへいったらしい。",
+              "english": "It seems he went to Tokyo on business."
+            },
+            {
+              "japanese": "天気が悪くなるらしいですよ。",
+              "reading": "てんきがわるくなるらしいですよ。",
+              "english": "I heard the weather will get bad."
+            },
+            {
+              "japanese": "その映画は面白いらしい。",
+              "reading": "そのえいがはおもしろいらしい。",
+              "english": "Apparently that movie is interesting."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_156",
+          "pattern": "かどうか",
+          "meaning": "A conditional phrase expressing uncertainty about two possible outcomes, often used to indicate 'whether...or not.'",
+          "explanation": "かどうか is used after a verb or adjective (plain past or present form) to express uncertainty or to question whether something is true or false. It's often paired with verbs like 'know' (知る), 'unsure' (分からない), or 'check' (確認する). Use it to express doubts or inquiries in both casual and formal contexts appropriate for A2 learners.",
+          "examples": [
+            {
+              "japanese": "田中さんが明日来るかどうか、まだ分かりません。",
+              "reading": "たなか さん が あした くる か どうか、まだ わかりません。",
+              "english": "I don't know yet whether Tanaka will come tomorrow or not."
+            },
+            {
+              "japanese": "このカフェが良いかどうか、試してみましょう。",
+              "reading": "この カフェ が よい か どうか、ためして みましょう。",
+              "english": "Let's try this café and see if it's good or not."
+            },
+            {
+              "japanese": "先生に、試験が難しいかどうか聞いてみます。",
+              "reading": "せんせい に、しけん が むずかしい か どうか きいて みます。",
+              "english": "I'll ask the teacher whether the exam will be difficult or not."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_157",
+          "pattern": "ときいた",
+          "meaning": "I heard that",
+          "explanation": "Grammar explanation placeholder.",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "marugoto_a2_7_dialogue_0",
+          "type": "dialogue",
+          "title": "Dialogue marugoto_a2_7",
+          "text": "かいわテストでは: 勉強した\nConversation: test\nことばを: できるだけ たくさ\nListen: to the question from your teacher, and have a conversation.\nExample: はもういちど聞きましょう。\nIn: the conversation test, try\nto: use the Japanese you have\nDo: you think July is a good season to go?\"\nlearned: as much as possible.\nYou: can ask the teacher to\nrepeat: the question if you don't\nunderstand: Read the card and have a conversation with your teacher.\nれい: Example\nYou: have taken a Japanese friend to a restaurant that you recommend.\nDiscuss: with him/her what to order.\nもつとすい: 2ついようのんつづけてくさん話すことができます。\n告具: You were able to immediately answer all questions about a familiar topic.\nprovided: the other person spoke clearly.\nYou: were able to speak using two or more sentences in a row.\nみかなことにつてはきり話しかでしつもんさたら: ごうかく\nYou: were able to answer most questions about a familiar topic, provided the\nWell: done!\nother: person spoke clearly.\nもう: すこし\nYou: were able to partially answer questions about a familiar topic, provided the\nGetting: there!\nother: person spoke clearly and slowly.\nSpeak: in groups.\nWhile: waiting to take your test, make small groups of about four people,\nshow: ① and ② below and talk about them.\nRecords: of your experiences of Japanese language and culture\n日本まつりボランテアド: だい9か\nThings: you wrote in lesson 7: Japanese registration card, and lesson 9: New Year's greeting card.\nShare: the things you talked about in groups with other people.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_245",
+          "label": "practice",
+          "prompt": "かいわテストでは 勉強した",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_246",
+          "label": "practice",
+          "prompt": "Conversation test",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_247",
+          "label": "practice",
+          "prompt": "ことばを できるだけ たくさ",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_248",
+          "label": "practice",
+          "prompt": "先生のしつもん聞いて、かいわをしてください。",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_249",
+          "label": "practice",
+          "prompt": "Listen to the question from your teacher, and have a conversation.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_250",
+          "label": "practice",
+          "prompt": "しつもんがわからないとき",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_251",
+          "label": "practice",
+          "prompt": "はもういちど聞きましょう。",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_252",
+          "label": "practice",
+          "prompt": "「(あなの国のかんこうち）に行きいんですが、7月はどうですか。」",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_253",
+          "label": "practice",
+          "prompt": "In the conversation test, try",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_254",
+          "label": "practice",
+          "prompt": "\"I'm thinking of visiting xxx (a sightseeing spot in your country).",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_255",
+          "label": "practice",
+          "prompt": "to use the Japanese you have",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_256",
+          "label": "practice",
+          "prompt": "Do you think July is a good season to go?\"",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_257",
+          "label": "practice",
+          "prompt": "learned as much as possible.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_258",
+          "label": "practice",
+          "prompt": "「今年の休み(正月などとくべつな休み)はどうしてましたか。」",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_259",
+          "label": "practice",
+          "prompt": "You can ask the teacher to",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_260",
+          "label": "practice",
+          "prompt": "\"What did you do during (the New Year's holidays)?\"",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_261",
+          "label": "practice",
+          "prompt": "repeat the question if you don't",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_262",
+          "label": "practice",
+          "prompt": "ド読んで、先生とかいわしてください。",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_263",
+          "label": "practice",
+          "prompt": "understand.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_264",
+          "label": "practice",
+          "prompt": "Read the card and have a conversation with your teacher.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_265",
+          "label": "practice",
+          "prompt": "日本の友だちあなのおすすめのレストランにつれてきました。",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_266",
+          "label": "practice",
+          "prompt": "友だちとそうだんして料理をちうもんしてください。",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_267",
+          "label": "practice",
+          "prompt": "You have taken a Japanese friend to a restaurant that you recommend.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_268",
+          "label": "practice",
+          "prompt": "Discuss with him/her what to order.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_269",
+          "label": "practice",
+          "prompt": "《かいわストのひようか)Evaluating your performance",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_270",
+          "label": "practice",
+          "prompt": "みかなことについてはきりし話しかでしつもんさら、",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_271",
+          "label": "practice",
+          "prompt": "すにぜんこることができます。",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_272",
+          "label": "practice",
+          "prompt": "2ついようのんつづけてくさん話すことができます。",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_273",
+          "label": "practice",
+          "prompt": "You were able to immediately answer all questions about a familiar topic.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_274",
+          "label": "practice",
+          "prompt": "Magnificent!",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_275",
+          "label": "practice",
+          "prompt": "provided the other person spoke clearly.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_276",
+          "label": "practice",
+          "prompt": "You were able to speak using two or more sentences in a row.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_277",
+          "label": "practice",
+          "prompt": "みかなことにつてはきり話しかでしつもんさたら",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_278",
+          "label": "practice",
+          "prompt": "ほとんどこえることができます。",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_279",
+          "label": "practice",
+          "prompt": "You were able to answer most questions about a familiar topic, provided the",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_280",
+          "label": "practice",
+          "prompt": "Well done!",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_281",
+          "label": "practice",
+          "prompt": "other person spoke clearly.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_282",
+          "label": "practice",
+          "prompt": "みかなことについてはきりし話しかでとてもっくりしつもんさら、",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_283",
+          "label": "practice",
+          "prompt": "すこしこえることができます。",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_7_exercise_284",
+          "label": "practice",
+          "prompt": "You were able to partially answer questions about a familiar topic, provided the",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 88
+          }
+        }
+      ]
+    }
+  ]
+}

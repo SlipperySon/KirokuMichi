@@ -1,0 +1,717 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "marugoto_a2_textbook",
+  "title": "marugoto_a2_textbook / marugoto_a2_11",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "marugoto_a2_11_draft",
+      "appLessonId": "marugoto_a2_11",
+      "title": "marugoto a2 11",
+      "qualityTier": "draft",
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "cefr_a2_188",
+          "pattern": "でございます",
+          "meaning": "A very formal copula form equivalent to 'is' or 'are'.",
+          "explanation": "でございます is the formal copula used in place of です in very formal contexts such as formal introductions, official announcements, and ceremonies. It carries a tone of extra respect and formality compared to です.",
+          "examples": [
+            {
+              "japanese": "私は田中でございます。",
+              "reading": "わたしはたなかでございます。",
+              "english": "I am Tanaka (formal introduction)."
+            },
+            {
+              "japanese": "これは有名な建物でございます。",
+              "reading": "これはゆうめいなたてものでございます。",
+              "english": "This is a famous building."
+            },
+            {
+              "japanese": "本日の会議は午後2時でございます。",
+              "reading": "ほんじつのかいぎはごごにじでございます。",
+              "english": "Today's meeting is at 2 PM."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_189",
+          "pattern": "お～ください",
+          "meaning": "A respectful form for politely requesting someone to do something.",
+          "explanation": "Combining the honorific prefix お with a verb stem and ください creates a respectful, formal request. This pattern is commonly used in business, customer service, and formal settings where politeness and respect are emphasized.",
+          "examples": [
+            {
+              "japanese": "会議室にお座りください。",
+              "reading": "かいぎしつにおすわりください。",
+              "english": "Please sit in the conference room."
+            },
+            {
+              "japanese": "ちょっとお待ちください。",
+              "reading": "ちょっとおまちください。",
+              "english": "Please wait a moment."
+            },
+            {
+              "japanese": "このパンフレットをお読みください。",
+              "reading": "このぱんふれっとをおよみください。",
+              "english": "Please read this brochure."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/requesting_て_てください",
+            "title": "Requesting: て, てください",
+            "excerpt": "3.2. FURTHER INFLECTIONS 133\n3.2.10 Requesting:て,てください\nImperative request\nWe already saw that we can use the verb 連用形 + てく ださい to form a\nrequest,\nにはいくだ\nコーヒーを二杯下さい。\n\"Two coffee, please.\"\nBut we can also use the plain て form to form an informal request,\nor plea:\n待って。\n\"Wait (please)\"\nか\nこれを買って?\n\"Buy this (for me)?\"\nOf course, like all requests, they can be made to sound demanding,\nso intonation counts. If we say 待て instead of 待つて, cutting out the stop\nin the middle to sound curt, then rather than a ",
+            "examples": [
+              {
+                "japanese": "3.2.10 Requesting:て,てください",
+                "english": "Imperative request"
+              },
+              {
+                "japanese": "We already saw that we can use the verb 連用形 + てく ださい to form a",
+                "english": "request,"
+              },
+              {
+                "japanese": "にはいくだ"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_190",
+          "pattern": "お～になる",
+          "meaning": "To express that someone (usually of higher status) does an action in a respectful way.",
+          "explanation": "This is an honorific pattern used to speak about others' actions with respect and politeness. The prefix お is added to a verb stem, and になる shows the action. Common in formal situations, when speaking about superiors, customers, or in business contexts.",
+          "examples": [
+            {
+              "japanese": "先生がお書きになります",
+              "reading": "せんせいがおかきになります",
+              "english": "The teacher writes"
+            },
+            {
+              "japanese": "田中さんがお読みになった本",
+              "reading": "たなかさんがおよみになったほん",
+              "english": "The book that Tanaka read"
+            },
+            {
+              "japanese": "社長がお決めになります",
+              "reading": "しゃちょうがおきめになります",
+              "english": "The president decides"
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/becoming_なる",
+            "title": "Becoming: なる",
+            "excerpt": "2.5. SPECIAL VERBS 81\nこそあど meaning\nこなた this person (I/me/you/him/he/her/she).\nそなた that person (him/he, her/she).\nあなた that person over there (you).\nどなた which person (who).\nSince this set is a tad classical, there are a few things to notice. First\nof all, そなた refers to a third person (he/she), while あなた refers to second\nperson (you). Also, while somewhat classical, this set is still used in formal\nsettings. However, because it is used exclusively in formal settings it is\nconsidered distal and very",
+            "examples": [
+              {
+                "japanese": "こそあど meaning"
+              },
+              {
+                "japanese": "こなた this person (I/me/you/him/he/her/she)."
+              },
+              {
+                "japanese": "そなた that person (him/he, her/she)."
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_191",
+          "pattern": "いらっしゃる",
+          "meaning": "The respectful form of いる (to be/exist), 来る (to come), and 行く (to go).",
+          "explanation": "This honorific verb replaces いる, 来る, or 行く when speaking about someone else's location, movement, or existence to show respect. It is one of the most important honorific verbs in Japanese and is conjugated with ~ます endings in formal speech.",
+          "examples": [
+            {
+              "japanese": "先生はオフィスにいらっしゃいます。",
+              "reading": "せんせいはおふぃすにいらっしゃいます。",
+              "english": "The teacher is in the office."
+            },
+            {
+              "japanese": "田中さんはもういらっしゃいましたか。",
+              "reading": "たなかさんはもういらっしゃいましたか。",
+              "english": "Has Mr. Tanaka already arrived?"
+            },
+            {
+              "japanese": "明日、校長先生がいらっしゃいます。",
+              "reading": "あした、こうちょうせんせいがいらっしゃいます。",
+              "english": "The principal will come tomorrow."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "conjugation_schemes/special_bases_for_いらっしゃる",
+            "title": "Special bases for いらっしゃる",
+            "excerpt": "326 CHAPTER 7. CONJUGATION SCHEMES\n7.1.9 Verbal adjectives\nbase how to form\nごかん\n語干 Remove the W from the dictionary form.\n未然形 語干+く\n連用形 語干+く\n連体形 語幹+い\n已然形 語幹+けれ\n(命令形 語幹+かれ)\nござ\n7.1.10 Special bases for 御座る\nbase form\n未然形 ござら\n連用形 ござい\n連体形 ござる\n已然形 ござれ\n命令形 ござい\n7.1.11 Special bases forいらっしゃる\nbase form\n未然形 いらっしゃら\n連用形 いらっしゃい\n連体形 いらっしゃる\n已然形 いらっしゃれ\n命令形いらっしゃい",
+            "examples": [
+              {
+                "japanese": "語干 Remove the W from the dictionary form."
+              },
+              {
+                "japanese": "未然形 語干+く"
+              },
+              {
+                "japanese": "連用形 語干+く"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_192",
+          "pattern": "いたす",
+          "meaning": "A humble auxiliary verb that expresses the speaker's actions modestly.",
+          "explanation": "いたす is a humble auxiliary verb that can follow a verb's te-form to express the speaker humbly performing an action. It softens the tone and shows respect, similar to する but more humble. Commonly used in business communication to show the speaker's modesty.",
+          "examples": [
+            {
+              "japanese": "明日、ご説明いたします。",
+              "reading": "あした、ごせつめいいたします。",
+              "english": "I will explain to you tomorrow."
+            },
+            {
+              "japanese": "私がいたします。",
+              "reading": "わたしがいたします。",
+              "english": "I will do it."
+            },
+            {
+              "japanese": "パンフレットをお送りいたしました。",
+              "reading": "ぱんふれっとをおおくりいたしました。",
+              "english": "We have sent you the brochure."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_193",
+          "pattern": "なさる",
+          "meaning": "A polite and respectful way to say 'do' when referring to someone else's actions.",
+          "explanation": "This is the honorific equivalent of する/します. It's used when discussing someone else's actions in a respectful manner, particularly towards superiors, customers, or in formal contexts. Very common in business Japanese and formal conversation.",
+          "examples": [
+            {
+              "japanese": "先生がご説明なさいました",
+              "reading": "せんせいがごせつめいなさいました",
+              "english": "The teacher explained"
+            },
+            {
+              "japanese": "お父さんが毎日運動なさっています",
+              "reading": "おとうさんがまいにちうんどうなさっています",
+              "english": "Your father exercises every day"
+            },
+            {
+              "japanese": "社長がそうおっしゃいました",
+              "reading": "しゃちょうがそうおっしゃいました",
+              "english": "The president said so"
+            }
+          ],
+          "maynardRef": {
+            "topicId": "conjugation_schemes/special_bases_for_なさる",
+            "title": "Special bases for なさる",
+            "excerpt": "7.2. CONJUGATION SCHEMES 327\n7.1.12 Special bases for おつしゃる\nbase form\n未然形 おっしゃら\n連用形 おっしゃい\n連体形 おっしゃる\n已然形 おっしゃれ\n命令形 おっしゃい\nくだ\n7.1.13 Special bases for 下さる\nbase form\n未然形 下さら\n連用形 下さい\n連体形 下さる\n已然形 下され\n命令形 下さい\n7.1.14 Special bases for なさる\nbase form\n未然形 なさら\n連用形 なさい\n連体形 なさる\n已然形 なされ\n命令形 なさい\n7.2 Conjugation schemes\nごだん\n7.2.1 Regular verbs: 五段 verbs\nContractions in the inflections are indicated with (c)",
+            "examples": [
+              {
+                "japanese": "7.1.12 Special bases for おつしゃる",
+                "english": "base form"
+              },
+              {
+                "japanese": "未然形 おっしゃら"
+              },
+              {
+                "japanese": "連用形 おっしゃい"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_194",
+          "pattern": "かしら",
+          "meaning": "Used to express uncertainty, wondering, or speculation in a casual way",
+          "explanation": "かしら is an informal, somewhat feminine-sounding expression of wondering or asking a question to oneself. It can follow nouns, adjectives, or sentence-final verb forms. It's less formal than ～でしょうか and is typically used among friends or when thinking aloud.",
+          "examples": [
+            {
+              "japanese": "彼は来るかしら。",
+              "reading": "かれはくるかしら。",
+              "english": "I wonder if he will come."
+            },
+            {
+              "japanese": "今何時かしら。",
+              "reading": "いまなんじかしら。",
+              "english": "I wonder what time it is."
+            },
+            {
+              "japanese": "あした、いい天気かしら。",
+              "reading": "あした、いいてんきかしら。",
+              "english": "I wonder if tomorrow will have nice weather."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_362",
+          "pattern": "どんどん",
+          "meaning": "An adverb describing something advancing, increasing, or progressing quickly and without stopping.",
+          "explanation": "どんどん expresses a rapid, continuous, often unstoppable progression — faster and more dynamic than だんだん. It frequently collocates with verbs of growth, increase, or forward movement. Neutral register, used in both casual and polite contexts.",
+          "examples": [
+            {
+              "japanese": "彼はどんどん上手くなっています。",
+              "reading": "かれはどんどんうまくなっています。",
+              "english": "He is getting better and better rapidly."
+            },
+            {
+              "japanese": "質問があればどんどん聞いてください。",
+              "reading": "しつもんがあればどんどんきいてください。",
+              "english": "If you have questions, please keep asking one after another."
+            },
+            {
+              "japanese": "物価がどんどん上がっています。",
+              "reading": "ぶっかがどんどんあがっています。",
+              "english": "Prices are rising more and more."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_363",
+          "pattern": "まず",
+          "meaning": "Used to indicate the first step or action in a sequence.",
+          "explanation": "まず introduces the first item in a list of steps or actions, similar to 'first of all' or 'to start with' in English. It is used in both polite and casual speech. It often appears in instructions, recipes, or explanations of a process.",
+          "examples": [
+            {
+              "japanese": "まず、手を洗ってください。",
+              "reading": "まず、てをあらってください。",
+              "english": "First, please wash your hands."
+            },
+            {
+              "japanese": "まず、名前を書きます。",
+              "reading": "まず、なまえをかきます。",
+              "english": "First, I write my name."
+            },
+            {
+              "japanese": "料理を作るとき、まず材料を用意します。",
+              "reading": "りょうりをつくるとき、まずざいりょうをようちします。",
+              "english": "When cooking, first I prepare the ingredients."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_364",
+          "pattern": "また",
+          "meaning": "Used to add information, indicate repetition, or introduce an additional point.",
+          "explanation": "また can mean 'again' (repeating an action), 'also' (adding another item), or 'moreover' (introducing a related point). It is a versatile conjunction/adverb used in both formal and casual contexts. The meaning is usually clear from context.",
+          "examples": [
+            {
+              "japanese": "また明日会いましょう。",
+              "reading": "またあしたあいましょう。",
+              "english": "Let's meet again tomorrow."
+            },
+            {
+              "japanese": "彼女は英語を話します。また、フランス語も話せます。",
+              "reading": "かのじょはえいごをはなします。また、フランスごもはなせます。",
+              "english": "She speaks English. She can also speak French."
+            },
+            {
+              "japanese": "この店は安いです。また、料理もおいしいです。",
+              "reading": "このみせはやすいです。また、りょうりもおいしいです。",
+              "english": "This restaurant is cheap. Moreover, the food is also delicious."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_146",
+          "label": "practice",
+          "prompt": "speaking and interacting",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_147",
+          "label": "practice",
+          "prompt": "Main Expressions (Hakken)",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_148",
+          "label": "practice",
+          "prompt": "Lesson 11 My vacuum cleaner has broken Soojiki ga kowarete shimattan desu",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_149",
+          "label": "practice",
+          "prompt": "Ongaku-pureeyaa no oto ga denaku narimashita.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_150",
+          "label": "practice",
+          "prompt": "Talk about what you are going to buy and why",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_151",
+          "label": "practice",
+          "prompt": "Ongaku-pureeyaa o mizu no naka ni otoshite shimattan",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_152",
+          "label": "practice",
+          "prompt": ". Yoku netto-shoppingu o shimasu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_153",
+          "label": "practice",
+          "prompt": "Say what you think about online shopping",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_154",
+          "label": "practice",
+          "prompt": "Netto-shoppingu",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_155",
+          "label": "practice",
+          "prompt": "Mise ni ikanaide kaimono dekimasu kara.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_156",
+          "label": "practice",
+          "prompt": "Lesson 12 This one is cheaper Kocchino hoo ga yasui desu",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_157",
+          "label": "practice",
+          "prompt": "Kono soojiki wa ookisugiru to omoimasu.\"",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_158",
+          "label": "practice",
+          "prompt": "Talk with a friend about what you think of an electrical",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_159",
+          "label": "practice",
+          "prompt": "Kono sentakuki wa kinoo ga oosugite. tsukainikui to",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_160",
+          "label": "practice",
+          "prompt": "omoimasu.*",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_161",
+          "label": "practice",
+          "prompt": "Compare two products and say what you think about them",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_162",
+          "label": "practice",
+          "prompt": "Nedan wa (A-moderu yori) B-moderu no hoo ga yasui desu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_163",
+          "label": "practice",
+          "prompt": "Life and Culture",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_164",
+          "label": "practice",
+          "prompt": "Various shops",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_165",
+          "label": "practice",
+          "prompt": "Lesson 13 This temple was built in the 14th century Kono otera wa 14-seeki ni tateraremashita",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_166",
+          "label": "practice",
+          "prompt": "Ask/Tell someone in the same tour group if it is his or her/your",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_167",
+          "label": "practice",
+          "prompt": "Kyooto wa hajimete desu ka?/ 2-kaime desu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_168",
+          "label": "practice",
+          "prompt": "A Town Rich",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_169",
+          "label": "practice",
+          "prompt": "first time to visit a sightseeing spot",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_170",
+          "label": "practice",
+          "prompt": "Kyooto wa nani o mitemo tanoshii desu yo.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_171",
+          "label": "practice",
+          "prompt": "in History",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_172",
+          "label": "practice",
+          "prompt": "Kono otera wa 14-seeki no owari ni tateraremashita.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_173",
+          "label": "practice",
+          "prompt": "Talk briefly about a famous place",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_174",
+          "label": "practice",
+          "prompt": "Kyooto de wa Kyoo-kotoba ga hanasarete limasu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_175",
+          "label": "practice",
+          "prompt": "and Culture",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_176",
+          "label": "practice",
+          "prompt": "Read comments written in the visitor comment book at a",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_177",
+          "label": "practice",
+          "prompt": "Rekishi to",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_178",
+          "label": "practice",
+          "prompt": "sightseeing spot",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_179",
+          "label": "practice",
+          "prompt": "Write a comment in the visitor comment book at a sightseeing",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_180",
+          "label": "practice",
+          "prompt": "Lesson 14 I hear that this painting is very famous Kono e wa totemo yuumeeda soo desu",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_181",
+          "label": "practice",
+          "prompt": "Kono e wa 17-seekini kakareta soo desu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_182",
+          "label": "practice",
+          "prompt": "Tell a friend in simple terms what the description of an exhibit",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_183",
+          "label": "practice",
+          "prompt": "Kore wa Yooroppa ni yushutsu-suru tameni",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_184",
+          "label": "practice",
+          "prompt": "in a museum says",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_185",
+          "label": "practice",
+          "prompt": "tsukuraremashita.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 19
+          }
+        }
+      ]
+    }
+  ]
+}

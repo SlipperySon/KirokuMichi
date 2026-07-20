@@ -1,0 +1,685 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "marugoto_a2_textbook",
+  "title": "marugoto_a2_textbook / marugoto_a2_6",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "marugoto_a2_6_draft",
+      "appLessonId": "marugoto_a2_6",
+      "title": "marugoto a2 6",
+      "qualityTier": "draft",
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "cefr_a2_138",
+          "pattern": "ように・ような",
+          "meaning": "Indicates similarity or manner of action; ように shows how something is done, ような shows appearance or similarity.",
+          "explanation": "ように describes the way an action is performed (like X, in the manner of X). ような describes appearance or nature (looks like X, seems like X). Both are used to make comparisons. Common in casual and formal speech.",
+          "examples": [
+            {
+              "japanese": "先生のように日本語を話します。",
+              "reading": "せんせいのようにほんごをはなします。",
+              "english": "I speak Japanese like a teacher. / I speak Japanese in the manner of a teacher."
+            },
+            {
+              "japanese": "その子のような顔です。",
+              "reading": "そのこのようなかおです。",
+              "english": "It's a face like that child's. / It's a face similar to that child."
+            },
+            {
+              "japanese": "猫のように静かに歩きます。",
+              "reading": "ねこのようにしずかにあるきます。",
+              "english": "I walk quietly like a cat."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_139",
+          "pattern": "ひつようがある",
+          "meaning": "Expression indicating that something is necessary or required.",
+          "explanation": "ひつようがある is a noun phrase expressing necessity or requirement. For verbs, attach it as する必要がある (verb dictionary form + 必要がある). It can be negated as 必要がない. This is a formal, polite way to express obligation in both conversational and written Japanese, appropriate for A2 speakers.",
+          "examples": [
+            {
+              "japanese": "大学の試験に合格するために、毎日勉強する必要があります。",
+              "reading": "だいがく の しけん に ごうかく する ため に、まいにち べんきょう する ひつよう が あります。",
+              "english": "You need to study every day in order to pass the university exam."
+            },
+            {
+              "japanese": "新しい仕事を始める前に、書類を提出する必要があります。",
+              "reading": "あたらしい しごと を はじめる まえ に、しょるい を ていしゅつ する ひつよう が あります。",
+              "english": "Before starting a new job, you need to submit documents."
+            },
+            {
+              "japanese": "この問題を解くのに、電卓は必要ではありません。",
+              "reading": "この もんだい を とく の に、でんたく は ひつよう では ありません。",
+              "english": "You don't need a calculator to solve this problem."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_140",
+          "pattern": "てよかった",
+          "meaning": "I'm glad/relieved that (something happened); it's good that",
+          "explanation": "This pattern expresses relief, happiness, or gratitude about something that occurred or turned out well in the past. It conveys the feeling of 'I'm so glad that happened' or 'I'm relieved it worked out this way.' It often carries an undertone of 'thank goodness.'",
+          "examples": [
+            {
+              "japanese": "雨が止んでよかった。",
+              "reading": "あめが やんで よかった。",
+              "english": "I'm glad the rain stopped."
+            },
+            {
+              "japanese": "彼が来てくれてよかった。",
+              "reading": "かれが きて くれて よかった。",
+              "english": "I'm so glad he came."
+            },
+            {
+              "japanese": "テストが簡単でよかった。",
+              "reading": "テストが かんたんで よかった。",
+              "english": "I'm relieved the test was easy."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_141",
+          "pattern": "し～し",
+          "meaning": "Lists multiple reasons or parallel situations, all contributing to the same conclusion.",
+          "explanation": "し～し is used to list two or more reasons, actions, or conditions that together lead to a conclusion. It emphasizes that there are multiple contributing factors. Common in casual conversation and gives a feeling of 'and besides' or 'moreover.'",
+          "examples": [
+            {
+              "japanese": "疲れたし、お金もないし、家にいましょう。",
+              "reading": "つかれたし、おかねもないし、いえにいましょう。",
+              "english": "I'm tired, and I don't have money either, so let's stay home."
+            },
+            {
+              "japanese": "天気が悪いし、時間もないし、今日は出かけません。",
+              "reading": "てんきがわるいし、じかんもないし、きょうはでかけません。",
+              "english": "The weather is bad, and I don't have time either, so I won't go out today."
+            },
+            {
+              "japanese": "仕事が多いし、疲れているし、早く寝たいです。",
+              "reading": "しごとがおおいし、つかれているし、はやくねたいです。",
+              "english": "I have a lot of work, and I'm tired, so I want to go to bed early."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_142",
+          "pattern": "に (Frequency)",
+          "meaning": "Used with a time period and a number to express how often something occurs.",
+          "explanation": "In frequency expressions, に is placed between a time period and a count to mean 'per' or 'every,' as in 'three times a week.' The structure is typically [time period] に [number] [counter]. It is used in both polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "一週間に三回、ジムに行きます。",
+              "reading": "いっしゅうかんにさんかい、ジムにいきます。",
+              "english": "I go to the gym three times a week."
+            },
+            {
+              "japanese": "一日に二回、薬を飲んでください。",
+              "reading": "いちにちににかい、くすりをのんでください。",
+              "english": "Please take the medicine twice a day."
+            },
+            {
+              "japanese": "一ヶ月に一度、家族に電話します。",
+              "reading": "いっかげつにいちど、かぞくにでんわします。",
+              "english": "I call my family once a month."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_143",
+          "pattern": "と",
+          "meaning": "A conditional particle that indicates a natural consequence or sequential relationship between two events.",
+          "explanation": "と (when used as a conditional marker) follows the plain form of a verb or い-adjective and indicates an automatic or natural consequence (if X, then Y). Unlike たら, the result of a と-conditional is inevitable and automatic. It can also mark the subject of verbs like 'think,' 'say,' or 'hear.' Use it in both casual and polite contexts for A2 conversation.",
+          "examples": [
+            {
+              "japanese": "雨が降ると、野球の試合がなくなります。",
+              "reading": "あめ が ふる と、やきゅう の しあい が なくなります。",
+              "english": "If it rains, the baseball game will be cancelled."
+            },
+            {
+              "japanese": "学校に着くと、友達が待っていました。",
+              "reading": "がっこう に つく と、ともだち が まって いました。",
+              "english": "When I arrived at school, my friend was waiting."
+            },
+            {
+              "japanese": "兄は『勉強しなさい』と言いました。",
+              "reading": "あに は『べんきょう しなさい』と いいました。",
+              "english": "My older brother said, 'Study.'"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_144",
+          "pattern": "そんなに",
+          "meaning": "An adverb expressing a high degree or extent, often used in negative contexts or comparisons.",
+          "explanation": "そんなに is a degree adverb used to modify verbs or adjectives, typically appearing before the verb/adjective to indicate 'that much' or 'so much.' It's commonly paired with negatives (そんなに～ない) to soften statements. Use it for comparisons, emphatic expressions, or mild denials in both casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "日本語は難しくないですよ。そんなに心配する必要はありません。",
+              "reading": "にほんご は むずかしく ない です よ。そんなに しんぱい する ひつよう は ありません。",
+              "english": "Japanese isn't that hard. You don't need to worry that much."
+            },
+            {
+              "japanese": "この本は高いですが、そんなに高くはありませんよ。",
+              "reading": "この ほん は たかい です が、そんなに たかく は ありません よ。",
+              "english": "This book is expensive, but it's not that expensive."
+            },
+            {
+              "japanese": "仕事は忙しいですが、そんなに疲れていません。",
+              "reading": "しごと は いそがしい です が、そんなに つかれて いません。",
+              "english": "Work is busy, but I'm not that tired."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_145",
+          "pattern": "Verb［れる・られる］",
+          "meaning": "The passive form indicating something was done to the subject, often without consent or to their disadvantage.",
+          "explanation": "れる attaches to Group 1 verbs (godan) and られる to Group 2 verbs (ichidan) and irregular verbs. The passive expresses that the subject received an action from someone else, often with a nuance of inconvenience or suffering. The agent (doer) is marked by に. Very common in everyday speech.",
+          "examples": [
+            {
+              "japanese": "電車の中で足を踏まれました。",
+              "reading": "でんしゃのなかでをふまれました。",
+              "english": "My foot was stepped on in the train."
+            },
+            {
+              "japanese": "雨に降られて、服がぬれてしまいました。",
+              "reading": "あめにふられて、ふくがぬれてしまいました。",
+              "english": "It rained on me and my clothes got wet."
+            },
+            {
+              "japanese": "先生に名前を呼ばれて、緊張しました。",
+              "reading": "せんせいになまえをよばれて、きんちょうしました。",
+              "english": "My name was called by the teacher, and I got nervous."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/passive_れる_られる",
+            "title": "Passive: れる/られる",
+            "excerpt": "134 CHAPTER 3. MORE GRAMMAR\n3.2.11 Passive:れる/られる\nPassive constructions are, as their name implies, constructions which de-\nscribe actions in a passive voice. Unlike \"I eat dinner\" or \"The cat is play-\ning with the squeaky toy'\", which are in active voice, they refer to phrases\nlike \"Dinner was eaten by me'\" or \"The squeaky toy was played with by\nうけみ\nthe cat\". In Japanese, this passive voice, called 受身, is achieved through\nthe use of the two helper verbs れる (for 五段 verbs) and られる (for 一段\nverbs),",
+            "examples": [
+              {
+                "japanese": "3.2.11 Passive:れる/られる",
+                "english": "Passive constructions are, as their name implies, constructions which de-"
+              },
+              {
+                "japanese": "the cat\". In Japanese, this passive voice, called 受身, is achieved through"
+              },
+              {
+                "japanese": "the use of the two helper verbs れる (for 五段 verbs) and られる (for 一段"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_146",
+          "pattern": "たところだ",
+          "meaning": "Indicates that an action was just completed or was in progress very recently.",
+          "explanation": "たところだ expresses that something was just finished a moment ago. It uses the past tense (た form) + ところ + だ/です. Indicates recent completion, with emphasis on the immediacy. Common in both casual and polite contexts.",
+          "examples": [
+            {
+              "japanese": "ご飯を食べたところです。",
+              "reading": "ごはんをたべたところです。",
+              "english": "I just finished eating."
+            },
+            {
+              "japanese": "学校から帰ったところだ。",
+              "reading": "がっこうからかえったところだ。",
+              "english": "I just got back from school."
+            },
+            {
+              "japanese": "映画を見たところです。",
+              "reading": "えいがをみたところです。",
+              "english": "I just finished watching a movie."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a2_147",
+          "pattern": "といってもいい",
+          "meaning": "You could say; you might say; it's almost like saying",
+          "explanation": "This pattern softens a statement by presenting it as one possible interpretation or opinion rather than an absolute fact. It is used when offering an approximate description, making a cautious claim, or presenting an alternative viewpoint. It shows humility and openness to other interpretations.",
+          "examples": [
+            {
+              "japanese": "彼は天才といってもいいだろう。",
+              "reading": "かれは てんさい と いって も いい だろう。",
+              "english": "You could say he is a genius."
+            },
+            {
+              "japanese": "このプロジェクトは失敗といってもいい。",
+              "reading": "この プロジェクトは しっぱい と いって も いい。",
+              "english": "You might say this project was a failure."
+            },
+            {
+              "japanese": "日本の文化は独特といってもいい。",
+              "reading": "にほんの ぶんかは どくとく と いって も いい。",
+              "english": "You could say Japanese culture is unique."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a2",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_310",
+          "label": "practice",
+          "prompt": "★☆☆：しdid it，butcoulddoit better.★★☆：できdidit.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_311",
+          "label": "practice",
+          "prompt": "★★★よくできまIdiditwell.",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_312",
+          "label": "practice",
+          "prompt": "Can-do Check",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_313",
+          "label": "practice",
+          "prompt": "\"Marugoto :Japanese Language and Culture\" Elementary 2 A2",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_314",
+          "label": "practice",
+          "prompt": "<Coursebook for Communicative Language Activities>",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_315",
+          "label": "practice",
+          "prompt": "Give a self introduction, including some",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_316",
+          "label": "practice",
+          "prompt": "personal information such as the meaning of",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_317",
+          "label": "practice",
+          "prompt": "Talk about yourself, giving a few details such",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_318",
+          "label": "practice",
+          "prompt": "as your hobbies, past experiences and so on",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_319",
+          "label": "practice",
+          "prompt": "Give a description of someone's clothes and",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_320",
+          "label": "practice",
+          "prompt": "physical appearance",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_321",
+          "label": "practice",
+          "prompt": "Give your first impression of someone you do",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_322",
+          "label": "practice",
+          "prompt": "Say the number of people in your party and",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_323",
+          "label": "practice",
+          "prompt": "where you want to be seated in a restaurant",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_324",
+          "label": "practice",
+          "prompt": "Read a menu written vertically in Japanese",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_325",
+          "label": "practice",
+          "prompt": "Talk about your recommended dish at a",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_326",
+          "label": "practice",
+          "prompt": "restaurant you have taken someone to",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_327",
+          "label": "practice",
+          "prompt": "Say in simple terms what things you cannot",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_328",
+          "label": "practice",
+          "prompt": "eat or drink and why",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_329",
+          "label": "practice",
+          "prompt": "Order a meal, saying what dishes you want",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_330",
+          "label": "practice",
+          "prompt": "and how many of each",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_331",
+          "label": "practice",
+          "prompt": "Tell a friend the appropriate order to do",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_332",
+          "label": "practice",
+          "prompt": "things in when having a meal",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_333",
+          "label": "practice",
+          "prompt": "Say how to eat a particular dish",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_334",
+          "label": "practice",
+          "prompt": "Make a simple presentation about how to eat",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_335",
+          "label": "practice",
+          "prompt": "a particular dish from your country, using",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_336",
+          "label": "practice",
+          "prompt": "Ask/Tell a friend what a sightseeing spot is",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_337",
+          "label": "practice",
+          "prompt": "Give advice about a good season, etc. for a",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_338",
+          "label": "practice",
+          "prompt": "trip, based on personal experience",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_339",
+          "label": "practice",
+          "prompt": "Talk about the transportation you used",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_340",
+          "label": "practice",
+          "prompt": "during a trip",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_341",
+          "label": "practice",
+          "prompt": "Talk about which tour you are interested in",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_342",
+          "label": "practice",
+          "prompt": "going on at your hotel",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_343",
+          "label": "practice",
+          "prompt": "Comment on a tour you went on",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_344",
+          "label": "practice",
+          "prompt": "Read a questionnaire about a tour",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_345",
+          "label": "practice",
+          "prompt": "Ask your friend to help as a volunteer at an",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_346",
+          "label": "practice",
+          "prompt": "event/Respond to a request for help",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_347",
+          "label": "practice",
+          "prompt": "Ask a question related to instructions you",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_348",
+          "label": "practice",
+          "prompt": "heard at a staff meeting",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "marugoto_a2_textbook_a2_textbook_marugoto_a2_6_exercise_349",
+          "label": "practice",
+          "prompt": "Write down the information necessary to",
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 181
+          }
+        }
+      ]
+    }
+  ]
+}

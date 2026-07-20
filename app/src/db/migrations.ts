@@ -232,6 +232,9 @@ const MIGRATIONS: string[] = [
     UNIQUE(user_id, lesson_id, card_id)
   )`,
   `CREATE INDEX IF NOT EXISTS lesson_vocabulary_lesson_idx ON lesson_vocabulary(user_id, lesson_id)`,
+
+  // Extra Anki decks lane (path vs extra)
+  `ALTER TABLE decks ADD COLUMN lane TEXT NOT NULL DEFAULT 'path'`,
 ]
 
 export async function runMigrations(db: StorageProvider): Promise<void> {

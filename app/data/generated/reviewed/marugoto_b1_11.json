@@ -1,0 +1,893 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "marugoto_b1_textbook",
+  "title": "marugoto_b1_textbook / marugoto_b1_11",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "marugoto_b1_11_draft",
+      "appLessonId": "marugoto_b1_11",
+      "title": "marugoto b1 11",
+      "qualityTier": "draft",
+      "vocabulary": [
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_vocab_1",
+          "surface": "断定する",
+          "reading": null,
+          "meaning": "Drawing conclusions",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 165
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "cefr_b1_446",
+          "pattern": "からこそ",
+          "meaning": "Emphasizes that a particular cause or reason is the very reason — and no other — that the result occurred.",
+          "explanation": "からこそ combines the causal particle から with the emphatic particle こそ to stress that the stated reason is the definitive, irreplaceable cause. It conveys that without that specific reason, the result would not have occurred. It is used across both formal and casual registers and often appears when the speaker wants to justify or defend a position.",
+          "examples": [
+            {
+              "japanese": "あなたを信頼しているからこそ、本当のことを話しています。",
+              "reading": "あなたをしんらいしているからこそ、ほんとうのことをはなしています。",
+              "english": "It is precisely because I trust you that I am telling you the truth."
+            },
+            {
+              "japanese": "難しいからこそ、やりがいがあるんです。",
+              "reading": "むずかしいからこそ、やりがいがあるんです。",
+              "english": "It is precisely because it is difficult that it is rewarding."
+            },
+            {
+              "japanese": "失敗したからこそ、大切なことを学べました。",
+              "reading": "しっぱいしたからこそ、たいせつなことをまなべました。",
+              "english": "It was precisely because I failed that I was able to learn something important."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b1_447",
+          "pattern": "そのため(に)",
+          "meaning": "A conjunction meaning 'for that reason', 'because of that', or 'to that end', connecting a cause to its result or purpose.",
+          "explanation": "そのため(に) refers back to something previously stated and marks it as the reason or purpose for what follows. Without に it typically expresses a causal relationship ('because of that'); with に it can also indicate purpose ('in order to do that'). It is used in both formal writing and speech to structure logical flow.",
+          "examples": [
+            {
+              "japanese": "雨が降っていた。そのため、試合は中止になった。",
+              "reading": "あめがふっていた。そのため、しあいはちゅうしになった。",
+              "english": "It was raining. For that reason, the match was cancelled."
+            },
+            {
+              "japanese": "彼女は医者になりたい。そのために、毎日一生懸命勉強している。",
+              "reading": "かのじょはいしゃになりたい。そのために、まいにちいっしょうけんめいべんきょうしている。",
+              "english": "She wants to become a doctor. To that end, she studies hard every day."
+            },
+            {
+              "japanese": "道が混んでいた。そのため、会議に遅れてしまった。",
+              "reading": "みちがこんでいた。そのため、かいぎにおくれてしまった。",
+              "english": "The road was congested. Because of that, I ended up being late for the meeting."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b1_448",
+          "pattern": "ところだった ①",
+          "meaning": "Expresses that something almost happened but narrowly did not, often implying relief or alarm.",
+          "explanation": "ところだった follows the plain past or dictionary form of a verb to express a near-miss — the speaker came very close to doing or experiencing something that ultimately did not occur. It is commonly used to express relief ('I almost made a terrible mistake') and often appears with 危なく or もう少しで to reinforce the closeness of the event. It is casual to neutral in register.",
+          "examples": [
+            {
+              "japanese": "危なく電車に乗り遅れるところだった。",
+              "reading": "あぶなくでんしゃにのりおくれるところだった。",
+              "english": "I almost missed the train."
+            },
+            {
+              "japanese": "もう少しで大切な書類を捨てるところだった。",
+              "reading": "もうすこしでたいせつなしょるいをすてるところだった。",
+              "english": "I was on the verge of throwing away an important document."
+            },
+            {
+              "japanese": "注意していなかったら、財布を忘れるところだった。",
+              "reading": "ちゅういしていなかったら、さいふをわすれるところだった。",
+              "english": "If I hadn't been careful, I would have nearly forgotten my wallet."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b1_449",
+          "pattern": "それぞれ",
+          "meaning": "Indicates that each item or person in a group has its own distinct state, role, or action.",
+          "explanation": "それぞれ is an adverb or pronoun meaning 'each' or 'respectively', used to emphasize that multiple people or things are treated individually rather than collectively. It is neutral in register and works in both spoken and written contexts. It often appears before a verb or as the subject/object of a sentence to highlight individual differences or distributions.",
+          "examples": [
+            {
+              "japanese": "学生たちはそれぞれ違う意見を持っていた。",
+              "reading": "がくせいたちはそれぞれちがういけんをもっていた。",
+              "english": "Each of the students had a different opinion."
+            },
+            {
+              "japanese": "二人はそれぞれの夢に向かって努力している。",
+              "reading": "ふたりはそれぞれのゆめにむかってどりょくしている。",
+              "english": "The two of them are each working toward their own dreams."
+            },
+            {
+              "japanese": "料理をそれぞれのお皿に盛り付けてください。",
+              "reading": "りょうりをそれぞれのおさらにもりつけてください。",
+              "english": "Please plate the food onto each individual dish."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b1_450",
+          "pattern": "では・それでは・じゃあ",
+          "meaning": "Discourse markers used to draw a conclusion, move to the next action, or wrap up a conversation based on what has just been said.",
+          "explanation": "All three forms signal a transition or conclusion in response to the preceding context. では and それでは are more formal and appear in business, presentations, and polite conversation; じゃあ is the casual spoken equivalent. They can mean 'well then,' 'in that case,' or 'so' depending on context, and often introduce a next step, farewell, or decision.",
+          "examples": [
+            {
+              "japanese": "では、会議を始めましょう。",
+              "reading": "では、かいぎをはじめましょう。",
+              "english": "Well then, let's begin the meeting."
+            },
+            {
+              "japanese": "それでは、また来週お会いしましょう。",
+              "reading": "それでは、またらいしゅうおあいしましょう。",
+              "english": "Well then, let's meet again next week."
+            },
+            {
+              "japanese": "じゃあ、そこで三時に会おう。",
+              "reading": "じゃあ、そこでさんじにあおう。",
+              "english": "Alright then, let's meet there at three o'clock."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b1_451",
+          "pattern": "ないうちに",
+          "meaning": "Expresses doing something before an unwanted or significant change occurs.",
+          "explanation": "ないうちに attaches to the negative stem of a verb (ない-form minus ない) and indicates acting before a certain event happens or a condition arises. It often implies preventing a negative outcome or seizing an opportunity before a situation deteriorates. It is used in casual and polite registers alike.",
+          "examples": [
+            {
+              "japanese": "雨が降らないうちに、帰りましょう。",
+              "reading": "あめがふらないうちに、かえりましょう。",
+              "english": "Let's go home before it starts raining."
+            },
+            {
+              "japanese": "忘れないうちに、メモしておいた。",
+              "reading": "わすれないうちに、メモしておいた。",
+              "english": "I made a note before I forgot."
+            },
+            {
+              "japanese": "暗くならないうちに、テントを張ろう。",
+              "reading": "くらくならないうちに、テントをはろう。",
+              "english": "Let's set up the tent before it gets dark."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b1_452",
+          "pattern": "だって",
+          "meaning": "A versatile casual particle used to give a reason, express mild protest, or indicate inclusion ('even/also').",
+          "explanation": "だって is a casual spoken particle with several uses: it can mean 'because' or 'but' when the speaker is offering an excuse or justification (often at the start of a sentence), or it can mean 'even' or 'also' when attached to a noun to show that something is included or no exception. It also appears after nouns or sentences to report hearsay ('I heard that…'). It is informal and not suitable for formal writing.",
+          "examples": [
+            {
+              "japanese": "だって、誰も教えてくれなかったんだもん。",
+              "reading": "だって、だれもおしえてくれなかったんだもん。",
+              "english": "Because nobody told me!"
+            },
+            {
+              "japanese": "子どもだって、それくらいはわかるよ。",
+              "reading": "こどもだって、それくらいはわかるよ。",
+              "english": "Even a child would understand something like that."
+            },
+            {
+              "japanese": "彼女だって間違えることがある。",
+              "reading": "かのじょだってまちがえることがある。",
+              "english": "Even she makes mistakes sometimes."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b1_453",
+          "pattern": "と同時に",
+          "meaning": "Expresses that two things happen at exactly the same moment or that someone or something has two simultaneous qualities.",
+          "explanation": "と同時に connects two clauses or nouns to indicate that they occur simultaneously or that a person/thing is two things at once. It can follow a verb in plain form or a noun directly. It is used in both spoken and written Japanese and carries a slightly formal nuance, making it common in writing and presentations.",
+          "examples": [
+            {
+              "japanese": "ドアが開くと同時に、子どもたちが飛び出してきた。",
+              "reading": "ドアがあくとどうじに、こどもたちがとびだしてきた。",
+              "english": "The moment the door opened, the children came rushing out."
+            },
+            {
+              "japanese": "彼女は教師であると同時に、二人の子どもの母でもある。",
+              "reading": "かのじょはきょうしであるとどうじに、ふたりのこどものははでもある。",
+              "english": "She is a teacher and, at the same time, the mother of two children."
+            },
+            {
+              "japanese": "卒業式が終わると同時に、涙が出てきた。",
+              "reading": "そつぎょうしきがおわるとどうじに、なみだがでてきた。",
+              "english": "The instant the graduation ceremony ended, tears came to my eyes."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b1_454",
+          "pattern": "そこで",
+          "meaning": "A conjunction that introduces a natural next step or response taken in light of the preceding situation.",
+          "explanation": "そこで connects two clauses where the second is a deliberate action or decision taken as a result of the first situation. Unlike だから (which shows logical cause-and-effect), そこで implies a purposeful response to a circumstance — 'given that situation, we/I then did X'. It is common in both written and spoken Japanese at a neutral register and often appears in narrative or explanatory contexts.",
+          "examples": [
+            {
+              "japanese": "雨が降り始めた。そこで、試合は中止になった。",
+              "reading": "あめがふりはじめた。そこで、しあいはちゅうしになった。",
+              "english": "It started to rain. And so, the match was cancelled."
+            },
+            {
+              "japanese": "新しいパソコンが必要だった。そこで、ボーナスで買うことにした。",
+              "reading": "あたらしいパソコンがひつようだった。そこで、ボーナスでかうことにした。",
+              "english": "I needed a new computer. So I decided to buy one with my bonus."
+            },
+            {
+              "japanese": "道に迷ってしまった。そこで、地図アプリを開いた。",
+              "reading": "みちにまよってしまった。そこで、ちずアプリをひらいた。",
+              "english": "I got lost. So I opened a map app."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b1_455",
+          "pattern": "～というのは事実だ",
+          "meaning": "It is a fact that..., There is no doubt that...",
+          "explanation": "This pattern strongly asserts something as an indisputable fact. The phrase という marks the content being asserted, and 事実だ emphasizes that it's factual and undeniable. Used in formal contexts and debates to make emphatic claims.",
+          "examples": [
+            {
+              "japanese": "日本の経済が変わっているというのは事実だ。",
+              "reading": "にほんのけいざいがかわっているというのはじじつだ。",
+              "english": "It is a fact that Japan's economy is changing."
+            },
+            {
+              "japanese": "彼が優秀であるというのは事実だ。",
+              "reading": "かれがゆうしゅうであるというのはじじつだ。",
+              "english": "It is a fact that he is excellent."
+            },
+            {
+              "japanese": "地球が丸いというのは事実だ。",
+              "reading": "ちきゅうがまるいというのはじじつだ。",
+              "english": "It is a fact that the earth is round."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b1_456",
+          "pattern": "～ても～なくても",
+          "meaning": "Whether... or not; regardless of whether...",
+          "explanation": "This pattern presents two opposite conditions to show that the result is the same in either case. It emphasizes that the outcome is independent of the condition, used in formal and casual contexts to express that something happens or is true no matter what.",
+          "examples": [
+            {
+              "japanese": "雨が降ってもふらなくても、私は行く。",
+              "reading": "あめがふってもふらなくても、わたしはいく。",
+              "english": "Whether it rains or not, I'm going."
+            },
+            {
+              "japanese": "難しくても簡単でなくても、やらなくてはいけない。",
+              "reading": "むずかしくてもかんたんでなくても、やらなくてはいけない。",
+              "english": "Whether it's difficult or not, I have to do it."
+            },
+            {
+              "japanese": "彼が来ても来なくても、始める。",
+              "reading": "かれがきてもこなくても、はじめる。",
+              "english": "Whether he comes or not, we'll start."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b1_457",
+          "pattern": "に合わせて・に合った",
+          "meaning": "Expresses adjusting or matching something to fit a standard, situation, or need.",
+          "explanation": "に合わせて follows a noun to mean 'in accordance with' or 'adjusted to', describing an action tuned to a particular standard or condition. に合った is the attributive form, modifying a noun to mean 'suitable for' or 'matching'. Both are used in neutral to formal register in spoken and written Japanese.",
+          "examples": [
+            {
+              "japanese": "相手のペースに合わせて話すようにしている。",
+              "reading": "あいてのペースにあわせてはなすようにしている。",
+              "english": "I try to speak while adjusting to the other person's pace."
+            },
+            {
+              "japanese": "季節に合った服を選ぶことが大切です。",
+              "reading": "きせつにあったふくをえらぶことがたいせつです。",
+              "english": "It's important to choose clothes that are suitable for the season."
+            },
+            {
+              "japanese": "子供のレベルに合わせて説明してください。",
+              "reading": "こどものレベルにあわせてせつめいしてください。",
+              "english": "Please explain it in a way that matches the child's level."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b1_458",
+          "pattern": "さて",
+          "meaning": "A discourse marker that signals a transition to a new topic, phase, or line of thinking.",
+          "explanation": "This adverb marks shifts in conversation, often introducing a main topic, the next step, or a new direction. It can also express mild uncertainty or consideration. Common in both formal presentations and casual dialogue, especially in storytelling and structured discourse.",
+          "examples": [
+            {
+              "japanese": "さて、本題に入りましょう。",
+              "reading": "さて、ほんだいにはいりましょう。",
+              "english": "Well then, let's get to the main topic."
+            },
+            {
+              "japanese": "さて、どうしましょうか。",
+              "reading": "さて、どうしましょうか。",
+              "english": "Well, what should we do?"
+            },
+            {
+              "japanese": "さて、次は何をしますか。",
+              "reading": "さて、つぎはなにをしますか。",
+              "english": "Well then, what should we do next?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b1",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "marugoto_b1_11_dialogue_0",
+          "type": "dialogue",
+          "title": "Dialogue b1_textbook_marugoto_b1_11",
+          "text": "TOPIC: 最近どう？\nさいきん: 離れて住む友達や家族と、どうやってコミュニケーションしていますか。\nともだち: かぞく\nひさ: PART\n聞いてわかる: PART 2\n会話する: さいきん\nしごと: いそが\n長く話す: さいきん\n国: PART 4\nきんきょう: PART5",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 114
+          }
+        },
+        {
+          "id": "marugoto_b1_11_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue b1_textbook_marugoto_b1_11",
+          "text": "話の展開を予測する: Predicting how a conversation will develop\nてんかい: よそく\nいちど: こんどとちゆう\nうづ: おもだ\nほかに: こんど\n横田: ・夜もニヤーニヤーうるさい\n伊藤: よこた\nよる: いとう\nうつ: かくにん\nつづ: かくにん\nよそく: それにね…\nつづ: かくにん\nつづ: ただ…\nおな: けいけん\nさいきん: よこた\nともだち: モルモットが死んでさびしかったから、そのネコを飼うことに\nか: ちょうど\nいとう: せんじつ\nこうしん: やくしよ\nやくしよ: しょるい\nた: ないと言われた。(⑤\nしょるい: じんび\nなんかい: やくよかよ\nけっきよく: さいしよ\nたけうち: にちようぴしゃじょうあ\nお: 戻ってみたら、カメラもカーナビもなくなっていた。\nもど: そのとき\nあとで: この間\nあいだ: (4) (①\nなかがわ: むすめ\nけっこん: けっこんあいて\nなかがわ: しゆじん\nただ: この前\n今度: こんど",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 118
+          }
+        },
+        {
+          "id": "marugoto_b1_11_dialogue_2",
+          "type": "dialogue",
+          "title": "Dialogue b1_textbook_marugoto_b1_11",
+          "text": "最近: 仕事が忙しくて…\nPART: さいきん\nしごと: いそが\n会話する: Can-do 22\nさいきん: ようす\nきょうつうわだい: ができる。\nインドネシアのマナドに住んでいる: 会社員。日本語は日本語学校で勉強し\nかいしゃいん: べんきよう\nだれ: た。今もときどき仕事で日本語を使う。\nしこと: フランキーさんと、ツェツェグさんは、「日本語学習者訪日研修」で\nがくしうしゃほうにちけんしう: ツェツェグ(モンゴル)\nべんきよう: した。今は二人の子どもの母。\nてんちうい: ①フランキーさんは、最近どうして忙しいのですか。\nさいきん: いそが\n小: （1）二人は、普通体と丁寧体のどちらを使って話していますか。\nふたり: ふつうたい\nていねいたい: また、それはなぜですか。\na: フランキー\nツェツェグ: (2)(\nいみ: はたら\nツェツェグ: こんにちは、フランキーさん、久しぶり。\nひさ: フランキー：ほんと、久しぶりだね。最近、仕事が忙しくて、スカイプする時間がなかったから。そっちはどう？\nひさ: さいきんしごといが\nさむ: ツェツェグ：寒いよ。外はマイナス30度。インドネシアは寒くないの？\nいちねんじゅうなつ: きせつ\nふ: ツェツェグ：そういえばインドネシアで、大雨が降って、道が水でいっぱいになったんでしょう？だいじょうぶ？\nふ: フランキー：うん、ここはだいじょうぶ。だけど、ジャカルタは大変だった（①\nたいへん: 友達も、車が水に浸かっちゃつた（②\nともだち: ツェツェグ：そう。で、フランキーさんはどう？ 最近。\nさいきん: フランキー：すごく忙しい。来週、出張でシンガポールに行く（③\nいそが: しっちょう\nじゅんび: たいへん\nツェツェグ: １歳。でも二人目だから、問題なくやってるよ。この前、やっと歩けるようになったんだ。\nさい: ふたりめ",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 119
+          }
+        },
+        {
+          "id": "marugoto_b1_11_dialogue_3",
+          "type": "dialogue",
+          "title": "Dialogue b1_textbook_marugoto_b1_11",
+          "text": "ツェツェグ: うん、それで、来年4月から、また働く（⑤\nはたら: フランキー：そう。そういえば、タイのユパカーさんのところは、来年子どもが小学校入学\nにうがく: だ(⑥\nツェツェグ: へー。でも、時間が過ぎるのって早いね。また日本に行きたいな。\nともだち: しょうほう\nべんり: ツェツェグ：ほんとだね。あ、ごめん、子どもが起きちゃった。泣いてる。\nマナド: やくだふんほう\nふんけい: ほかの人から聞いたことなどから考えて言うSaying what one thinks about something one has heard from another person\nたいへん: ほかの人から聞いたことを伝えるTelling someone what one has heard from another person\nつた: 車が水に浸かっちゃったって。→②\nにうがく: 決まつたことを伝えるTelling someone what has been decided\nはたら: 思い出せないことを確かめるChecking something that one cannot remember\nたし: 赤ちゃんは何歳になるんだっけ?→\nらしい: らしい\nふつうたい: 二人で友達のことについて話しています。a-eからことばを選んで「～らしい」を使って言いましょう。\nあんどう: ぶちょう\nきょねんけっこん: 119",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 120
+          }
+        },
+        {
+          "id": "marugoto_b1_11_dialogue_4",
+          "type": "dialogue",
+          "title": "Dialogue b1_textbook_marugoto_b1_11",
+          "text": "しごと: ⑤ジョバニさん、大学を今年（\na: 行きます\nb: 幸せです\nc: なりました\nd: 卒業できませんでした\ne: 見つかりません\nしあわ: そつぎょう\nにゆうがく: *おもに、インフォーマルな話しことばで使う。Mainly used in informal spoken Japanese.\nホアン: みゆき\nかずえ: aE-\n周店: （2）絵を見ながら、（1）の話をほかの人に「~つて」を使つて教えましょう。\na: かずえさん、（夕イに引っ越すって）。\nひ: b.ホアさん、（\nc: みゆき、(\nd: 駅前のレストラン、（\ne: 明日、（\n十ことになる: じしょけい\nけい: V（辞書形）\n十ことにする: じしょけい\nいちど: ①（ことになる\n元: Cふん",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 121
+          }
+        },
+        {
+          "id": "marugoto_b1_11_dialogue_5",
+          "type": "dialogue",
+          "title": "Dialogue b1_textbook_marugoto_b1_11",
+          "text": "ていねいたい: Mainly used in informal spoken Japanese.Becomes\"~でLたっけ\"in polite style.\nともだち: ふたり\nぶふん: ともだち\nかくにん: CHECK!\nわたしたち: しけん\nしのと: しみず\nもすめ: ええと、ウラ…ウラン…?\nSaying: simple words and phrases one knows in place of words one does not\n知らないことばを知っている簡単なことばで言う: know\nか: ①今は雨期だから、雨がたくさん降るけどね。\nふ: こうずい\nしゆっちよう: ②日本の情報も入るし。\n発音: 拍とリズムMora and rhythm\nはく: （１）リズムに注意して聞きましょう。\nちうい: タンとタに注意して聞いてみましょう。\nちゆうい: けっこうふるけどね\nたいへんだったらしいよ: (タンタンタンタンタン タ)\nしょうがっこうにゅうがくだっ: (タン タン タンタン タン タン タ)\nあったん: でしょう?\nつ: かっちゃったって\nはく: （2）リズムに合わせて手をたたきながら、文を発音してみましよう。\nあ: ぶんはつおん",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 122
+          }
+        },
+        {
+          "id": "marugoto_b1_11_dialogue_6",
+          "type": "dialogue",
+          "title": "Dialogue b1_textbook_marugoto_b1_11",
+          "text": "れんしゅう: （1）ロールプレイのまえに、もうー度会話のスクリプトを見て考えましょう。会話の★の部分のうち、\nいちど: ぶぶん\n次の: A-はどこですか。印をつけましょう。\nつぎ: しるし\nあいて: しつもん\nじぶん: じふんかぞく\nきょうつう: わだい\nぶぶん: ひょうげん\nれんしう: 次の場面で、（例）の続きを考えましょう。そのとき、（1）で見た構成に気をつけて会話しましょう。また、\nこうせい: 友達同士の会話になるように、普通体で話してみましょう。\nともだちどうし: ふつうたい\nひさ: B：おお、久しぶり。どう?最近。忙しい?\nひさ: さいきんいそが\nしごとかぞくせいかつ: あいてしつもん\nしごと: じぶん\n共通の知り合いのことを話した: きょうつう\nむすめ: げんき\nかんたん: しょう。\nかいがい: ともだち\nひさ: わだい\n日本語: Can-do をチェックしましょう",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 123
+          }
+        },
+        {
+          "id": "marugoto_b1_11_dialogue_7",
+          "type": "dialogue",
+          "title": "Dialogue b1_textbook_marugoto_b1_11",
+          "text": "ヨガにはまってるんです: PART\nさいきん: 長く話す\nじふんさいきんようす: ていど\nさいきん: チェさんは、日本関係のイべント会場で、知り合いの山口さん\n嘉装: かんけい\nやまぐち: に久しぶりに会いました。\nひ: 二人の会話を聞きましょう。\nふたり: あ、山口さん、久しぶりですね。\nさいきん: おかげさまで。私、最近体の調子がすごくいいんですよ。\nさいきん: ちょうし\nチェ: 実は、\nやまち: そうですか。それは、よさそうですね。\nさいきんようす: 最近、何を始めましたか。\nいちど: てきとう\nどうにう: ・最近、ヨガを始めた（①\nじゅんばん: ・はじめは、うまくできなくて…\nつつ: 最近は、夜もぐっすり眠れる（④\nねむ: たいちょう\nいんよう: ・はじめはうまくできなくて、「痛い!」「できない!」(⑤\nいた: 話をまとめるSumming up what one has just talked about\nたいへん: 楽しかったです。\nたの: やってノ始めてよかったです。\nはじ: もう一度行きたいですねノやりたいですね。\nいちど: ほんとう",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 124
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2080",
+          "label": "practice",
+          "prompt": "ある人の SNS（Social Networking Service）のぺ—ジを見てみましょう。",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2081",
+          "label": "practice",
+          "prompt": "a-hから選びましょう。",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2082",
+          "label": "practice",
+          "prompt": "娘が３歳になりました。",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2083",
+          "label": "practice",
+          "prompt": "Angela Golk",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2084",
+          "label": "practice",
+          "prompt": "こちらでも桜が咲きました。",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2085",
+          "label": "practice",
+          "prompt": "いいね!28件コメント14件",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2086",
+          "label": "practice",
+          "prompt": "ボーナスがちょっと増えた!",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2087",
+          "label": "practice",
+          "prompt": "いいね!31件コメト8件",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2088",
+          "label": "practice",
+          "prompt": "いいね!6件コメ1件",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2089",
+          "label": "practice",
+          "prompt": "ガビーン、スマホ水没・・",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2090",
+          "label": "practice",
+          "prompt": "先週から、乗馬を始めました。思ったより",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2091",
+          "label": "practice",
+          "prompt": "むずかしいけど、いやされます！",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2092",
+          "label": "practice",
+          "prompt": "これから、中国語のテスト。",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2093",
+          "label": "practice",
+          "prompt": "ああ、全然自信ない・・",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2094",
+          "label": "practice",
+          "prompt": "Yuki Nakata",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2095",
+          "label": "practice",
+          "prompt": "いいね!14件コメント2件",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2096",
+          "label": "practice",
+          "prompt": "Steve Chang",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2097",
+          "label": "practice",
+          "prompt": "カレシのための今日のお弁当デス",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2098",
+          "label": "practice",
+          "prompt": "来週から東京出張です。会える人、いますか？",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2099",
+          "label": "practice",
+          "prompt": "いいね！19件コメト4件",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2100",
+          "label": "practice",
+          "prompt": "いいね!31件コト6件",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2101",
+          "label": "practice",
+          "prompt": "あなたの国では、SNSがよく使われていますか。どんなことをよく話題にしますか。",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 115
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2102",
+          "label": "practice",
+          "prompt": ")に入ることばをa-iから選びましょう。",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2103",
+          "label": "practice",
+          "prompt": "最近、何かいいことがありましたか?",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2104",
+          "label": "practice",
+          "prompt": "昨日は、私たちの10年目の（①e.結婚）記念日でした。はやいものです。",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2105",
+          "label": "practice",
+          "prompt": "もうすぐ娘が大学を（②",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2106",
+          "label": "practice",
+          "prompt": ")します。これで、私もほっとできます。",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2107",
+          "label": "practice",
+          "prompt": ")が決まりました。4月から社会人です。",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2108",
+          "label": "practice",
+          "prompt": "去年、30年勤めた会社を定年",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2109",
+          "label": "practice",
+          "prompt": ")したので、この前、妻と二人で北海道旅行に行って来ま",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2110",
+          "label": "practice",
+          "prompt": "ほっかいどうりょこう",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2111",
+          "label": "practice",
+          "prompt": "次回は、家族で行きたいですね。",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2112",
+          "label": "practice",
+          "prompt": "先月、娘が無事に女の子を（⑤",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2113",
+          "label": "practice",
+          "prompt": ")しました。私もおばあちゃんです。",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2114",
+          "label": "practice",
+          "prompt": "この間、しばらく病気で(⑥",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2115",
+          "label": "practice",
+          "prompt": ")していた祖父が（⑦",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2116",
+          "label": "practice",
+          "prompt": ")して、家に帰って来ました。",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2117",
+          "label": "practice",
+          "prompt": "ずっと長生きしてもらいたいです。",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2118",
+          "label": "practice",
+          "prompt": "ペアになることばをさがしましょう。",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        },
+        {
+          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2119",
+          "label": "practice",
+          "prompt": "( b − d ) (",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 116
+          }
+        }
+      ]
+    }
+  ]
+}

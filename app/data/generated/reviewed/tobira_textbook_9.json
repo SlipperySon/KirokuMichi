@@ -1,0 +1,807 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "tobira_textbook",
+  "title": "tobira_textbook / tobira_textbook_9",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "tobira_textbook_9_draft",
+      "appLessonId": "tobira_textbook_9",
+      "title": "tobira textbook 9",
+      "qualityTier": "draft",
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "cefr_b2_542",
+          "pattern": "かねる",
+          "meaning": "Expresses that the speaker is unable or unwilling to do something due to psychological difficulty, social constraint, or ethical hesitation.",
+          "explanation": "かねる attaches to the verb stem (ます-stem) to indicate that while the action may be physically possible, the speaker finds it difficult or inappropriate to carry out — often due to social, professional, or emotional reasons. It is frequently used in formal and business contexts as a polite way to decline or refuse. Its negative counterpart かねない means 'there is a risk that ~ may happen.'",
+          "examples": [
+            {
+              "japanese": "その件については、現時点ではお答えしかねます。",
+              "reading": "そのけんについては、げんじてんではおこたえしかねます。",
+              "english": "Regarding that matter, we are unable to provide an answer at this time."
+            },
+            {
+              "japanese": "あなたの意見には同意しかねる部分があります。",
+              "reading": "あなたのいけんにはどういしかねるぶぶんがあります。",
+              "english": "There are parts of your opinion that I find difficult to agree with."
+            },
+            {
+              "japanese": "このような条件では、ご依頼をお引き受けしかねます。",
+              "reading": "このようなじょうけんでは、ごいらいをおひきうけしかねます。",
+              "english": "Under these conditions, we are unable to accept your request."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_543",
+          "pattern": "に反して",
+          "meaning": "Indicates that a result or action is contrary to or in opposition to an expectation, rule, wish, or prediction.",
+          "explanation": "に反して attaches to a noun and expresses that what actually happened or is happening goes against the expectation or standard expressed by that noun. Common collocations include 予想に反して (contrary to expectations), 規則に反して (against the rules), and 意志に反して (against one's will). It is used in both written and spoken Japanese and has a moderately formal register.",
+          "examples": [
+            {
+              "japanese": "予想に反して、試験の結果はとても良かった。",
+              "reading": "よそうにはんして、しけんのけっかはとてもよかった。",
+              "english": "Contrary to expectations, the exam results were very good."
+            },
+            {
+              "japanese": "親の期待に反して、彼は医者にはならなかった。",
+              "reading": "おやのきたいにはんして、かれはいしゃにはならなかった。",
+              "english": "Contrary to his parents' expectations, he did not become a doctor."
+            },
+            {
+              "japanese": "規則に反して行動した社員は、厳しく注意された。",
+              "reading": "きそくにはんしてこうどうしたしゃいんは、きびしくちゅういされた。",
+              "english": "The employee who acted against the rules was sternly warned."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_544",
+          "pattern": "限り",
+          "meaning": "Means 'as long as' or 'to the extent that', stating a condition that must hold for the main clause to apply.",
+          "explanation": "限り follows plain-form verbs, adjectives, or nouns with の and sets a boundary condition: the main clause is true only within that scope. It is used in both conditional (〜する限り、〜だ) and limiting (〜の限りでは) senses. It is more formal than うちは and is common in writing and serious speech.",
+          "examples": [
+            {
+              "japanese": "健康である限り、働き続けるつもりだ。",
+              "reading": "けんこうであるかぎり、はたらきつづけるつもりだ。",
+              "english": "As long as I am healthy, I intend to keep working."
+            },
+            {
+              "japanese": "私が知る限り、彼はとても誠実な人です。",
+              "reading": "わたしがしるかぎり、かれはとてもせいじつなひとです。",
+              "english": "As far as I know, he is a very sincere person."
+            },
+            {
+              "japanese": "ルールを守る限り、誰でも参加できます。",
+              "reading": "ルールをまもるかぎり、だれでもさんかできます。",
+              "english": "Anyone can participate as long as they follow the rules."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_545",
+          "pattern": "にかかわらず",
+          "meaning": "Means 'regardless of' or 'whether or not', indicating something holds true no matter the condition.",
+          "explanation": "にかかわらず follows nouns, or paired antonyms (e.g. 晴れか雨か、男か女か), and states that the outcome is unaffected by the variable mentioned. It is formal and appears frequently in written Japanese, contracts, and official announcements. It emphasises that no variation in the listed factor changes the result.",
+          "examples": [
+            {
+              "japanese": "経験の有無にかかわらず、応募できます。",
+              "reading": "けいけんのうむにかかわらず、おうぼできます。",
+              "english": "You can apply regardless of whether or not you have experience."
+            },
+            {
+              "japanese": "天候にかかわらず、イベントは予定通り開催します。",
+              "reading": "てんこうにかかわらず、イベントはよていどおりかいさいします。",
+              "english": "The event will be held as planned regardless of the weather."
+            },
+            {
+              "japanese": "年齢や性別にかかわらず、誰でも参加できる大会です。",
+              "reading": "ねんれいやせいべつにかかわらず、だれでもさんかできるたいかいです。",
+              "english": "It is a tournament that anyone can enter regardless of age or gender."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_546",
+          "pattern": "ものの",
+          "meaning": "Acknowledges one fact while expressing that the expected or natural result did not follow, highlighting a gap between expectation and reality.",
+          "explanation": "ものの functions as a conjunction similar to けれども or が, but carries a stronger sense that the second clause is somehow contrary to or disappointing given the first. It is typically used in written or formal spoken Japanese. The first clause states something positive or factual, and the second clause presents a complication or limitation.",
+          "examples": [
+            {
+              "japanese": "試験に合格したものの、自信はまだ持てない。",
+              "reading": "しけんにごうかくしたものの、じしんはまだもてない。",
+              "english": "Although I passed the exam, I still don't feel confident."
+            },
+            {
+              "japanese": "新しいパソコンを買ったものの、使い方がよくわからない。",
+              "reading": "あたらしいぱそこんをかったものの、つかいかたがよくわからない。",
+              "english": "Even though I bought a new computer, I don't really know how to use it."
+            },
+            {
+              "japanese": "謝ったものの、彼女はまだ許してくれなかった。",
+              "reading": "あやまったものの、かのじょはまだゆるしてくれなかった。",
+              "english": "Although I apologized, she still hadn't forgiven me."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_548",
+          "pattern": "ねばならない",
+          "meaning": "Expresses a strong obligation or necessity to do something.",
+          "explanation": "ねばならない is a formal, literary equivalent of なければならない. It attaches to the negative stem of a verb (e.g. 行か→行かねば). It carries a serious, weighty tone and is common in formal writing, speeches, and news. Avoid in casual conversation.",
+          "examples": [
+            {
+              "japanese": "私たちは環境問題に真剣に取り組まねばならない。",
+              "reading": "わたしたちはかんきょうもんだいにしんけんにとりくまねばならない。",
+              "english": "We must seriously tackle environmental issues."
+            },
+            {
+              "japanese": "期限までにレポートを提出せねばならない。",
+              "reading": "きげんまでにレポートをていしゅつせねばならない。",
+              "english": "I must submit the report by the deadline."
+            },
+            {
+              "japanese": "リーダーとして、チームの責任を負わねばならない。",
+              "reading": "リーダーとして、チームのせきにんをおわねばならない。",
+              "english": "As a leader, I must bear responsibility for the team."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_549",
+          "pattern": "にしろ～にしろ",
+          "meaning": "Whether… or",
+          "explanation": "Grammar explanation for にしろ～にしろ",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_550",
+          "pattern": "をもとに",
+          "meaning": "Indicates that something is created, decided, or done using a particular piece of information, experience, or material as its foundation.",
+          "explanation": "をもとに attaches to a noun and expresses that the noun serves as the basis or source from which an action is carried out or a conclusion is drawn. It is commonly used when describing works adapted from real events, decisions grounded in data, or plans derived from prior experience. The pattern is neutral in register and frequently appears in both written and spoken Japanese.",
+          "examples": [
+            {
+              "japanese": "この小説は実際の事件をもとに書かれました。",
+              "reading": "このしょうせつはじっさいのじけんをもとにかかれました。",
+              "english": "This novel was written based on a real incident."
+            },
+            {
+              "japanese": "アンケートの結果をもとに、新しいサービスを開発する予定です。",
+              "reading": "アンケートのけっかをもとに、あたらしいサービスをかいはつするよていです。",
+              "english": "We plan to develop a new service based on the survey results."
+            },
+            {
+              "japanese": "自分の経験をもとに、学生たちにアドバイスした。",
+              "reading": "じぶんのけいけんをもとに、がくせいたちにアドバイスした。",
+              "english": "I gave advice to the students based on my own experience."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_551",
+          "pattern": "につけ",
+          "meaning": "Expresses that every time a certain situation or action occurs, a consistent emotional reaction or outcome follows.",
+          "explanation": "につけ attaches to verbs or adjectives to indicate that whenever a particular thing happens, the speaker reliably experiences a certain feeling or reaction. It often carries an emotional or reflective nuance and is commonly used with verbs like 見る, 聞く, 思い出す, and feelings like 懐かしい or 心配だ. It is literary in tone and more common in written or formal speech.",
+          "examples": [
+            {
+              "japanese": "この曲を聞くにつけ、学生時代のことを思い出す。",
+              "reading": "このきょくをきくにつけ、がくせいじだいのことをおもいだす。",
+              "english": "Whenever I hear this song, I'm reminded of my student days."
+            },
+            {
+              "japanese": "子どもの笑顔を見るにつけ、頑張ろうという気持ちになる。",
+              "reading": "こどものえがおをみるにつけ、がんばろうというきもちになる。",
+              "english": "Every time I see my child's smile, I feel motivated to keep going."
+            },
+            {
+              "japanese": "故郷の料理を食べるにつけ、家族のことが恋しくなる。",
+              "reading": "こきょうのりょうりをたべるにつけ、かぞくのことがこいしくなる。",
+              "english": "Whenever I eat food from my hometown, I miss my family."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_552",
+          "pattern": "を除いて",
+          "meaning": "Means 'except for' or 'with the exception of', excluding something from a general statement.",
+          "explanation": "を除いて follows a noun and carves out an exception from an otherwise broad claim. It is slightly more formal than 以外に and is common in written Japanese, announcements, and business contexts. The excluded item is the one case where the general rule does not apply.",
+          "examples": [
+            {
+              "japanese": "日曜日を除いて、毎日営業しています。",
+              "reading": "にちようびをのぞいて、まいにちえいぎょうしています。",
+              "english": "We are open every day except Sunday."
+            },
+            {
+              "japanese": "一部の地域を除いて、今日は晴れの見込みです。",
+              "reading": "いちぶのちいきをのぞいて、きょうははれのみこみです。",
+              "english": "It is expected to be sunny today, except in some areas."
+            },
+            {
+              "japanese": "彼女を除いて、全員が賛成した。",
+              "reading": "かのじょをのぞいて、ぜんいんがさんせいした。",
+              "english": "Everyone agreed except her."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_553",
+          "pattern": "にわたって",
+          "meaning": "Expresses that something extends across or throughout a range of time, distance, or scope.",
+          "explanation": "にわたって attaches to a noun expressing duration, distance, or range, and indicates that an action or state spans that entire extent. It emphasizes the breadth or length of the scope — e.g., 'over three years', 'across the entire country'. It is formal in register and common in written Japanese, news, and reports. The form にわたる can directly modify a following noun.",
+          "examples": [
+            {
+              "japanese": "この調査は五年にわたって行われた。",
+              "reading": "このちょうさはごねんにわたっておこなわれた。",
+              "english": "This survey was conducted over a period of five years."
+            },
+            {
+              "japanese": "地震の被害は広い範囲にわたっており、復旧に時間がかかる。",
+              "reading": "じしんのひがいはひろいはんいにわたっており、ふっきゅうにじかんがかかる。",
+              "english": "The earthquake damage extends over a wide area, and recovery will take time."
+            },
+            {
+              "japanese": "長年にわたる研究の末、ついに新薬が開発された。",
+              "reading": "ながねんにわたるけんきゅうのすえ、ついにしんやくがかいはつされた。",
+              "english": "After research spanning many years, a new drug was finally developed."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_554",
+          "pattern": "したがって",
+          "meaning": "A conjunction meaning 'therefore' or 'thus', used to introduce a conclusion or consequence that logically follows from what was just stated.",
+          "explanation": "したがって connects two clauses where the second is a logical result or conclusion drawn from the first. It is formal in register and is common in academic writing, business documents, and formal speeches, but uncommon in casual conversation. It is similar to だから but considerably more formal and is typically placed at the start of a sentence or after a comma.",
+          "examples": [
+            {
+              "japanese": "電車が遅れている。したがって、会議の開始を10分遅らせます。",
+              "reading": "でんしゃがおくれている。したがって、かいぎのかいしをじゅっぷんおくらせます。",
+              "english": "The train is delayed. Therefore, we will start the meeting ten minutes late."
+            },
+            {
+              "japanese": "予算が不足している。したがって、このプロジェクトは中断せざるを得ない。",
+              "reading": "よさんがふそくしている。したがって、このプロジェクトはちゅうだんせざるをえない。",
+              "english": "The budget is insufficient. Therefore, we have no choice but to suspend this project."
+            },
+            {
+              "japanese": "この地域は地震が多い。したがって、建物の耐震設計が義務付けられている。",
+              "reading": "このちいきはじしんがおおい。したがって、たてもののたいしんせっけいがぎむづけられている。",
+              "english": "This area experiences many earthquakes. Thus, earthquake-resistant design is required for buildings."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_555",
+          "pattern": "結果・の結果",
+          "meaning": "Indicates that something is the direct outcome or consequence of a prior action or process.",
+          "explanation": "Attach 結果 after a verb in plain past form or a noun followed by の to express that the following clause is the result of that action. It is neutral in register and appears in both formal writing and everyday speech. It emphasizes that the outcome arose necessarily from the preceding process, making it useful for explaining cause-and-effect chains.",
+          "examples": [
+            {
+              "japanese": "長年の研究の結果、ついに新薬が開発された。",
+              "reading": "ながねんのけんきゅうのけっか、ついにしんやくがかいはつされた。",
+              "english": "As a result of years of research, a new medicine was finally developed."
+            },
+            {
+              "japanese": "話し合った結果、プロジェクトを中止することに決まった。",
+              "reading": "はなしあったけっか、プロジェクトをちゅうしすることにきまった。",
+              "english": "As a result of our discussions, it was decided to cancel the project."
+            },
+            {
+              "japanese": "努力を重ねた結果、彼女は試験に合格した。",
+              "reading": "どりょくをかさねたけっか、かのじょはしけんにごうかくした。",
+              "english": "As a result of her continued efforts, she passed the exam."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_556",
+          "pattern": "以来",
+          "meaning": "Expresses that a situation or habit has continued from a past point in time up to the present, or designates a starting point going forward.",
+          "explanation": "Attach 以来 directly to a noun referring to a time or event, or to a verb in plain past form, to indicate that something has been the case ever since that moment. It implies an unbroken continuation from that point and often carries a sense of significance about the starting event. It is common in both written and spoken Japanese and leans slightly formal.",
+          "examples": [
+            {
+              "japanese": "大学を卒業して以来、ずっと同じ会社で働いている。",
+              "reading": "だいがくをそつぎょうしていらい、ずっとおなじかいしゃではたらいている。",
+              "english": "Ever since I graduated from university, I have been working at the same company."
+            },
+            {
+              "japanese": "あの事故以来、彼は車を運転しなくなった。",
+              "reading": "あのじこいらい、かれはくるまをうんてんしなくなった。",
+              "english": "Since that accident, he has stopped driving."
+            },
+            {
+              "japanese": "日本に来て以来、毎日日本語を勉強している。",
+              "reading": "にほんにきていらい、まいにちにほんごをべんきょうしている。",
+              "english": "Ever since I came to Japan, I have been studying Japanese every day."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_557",
+          "pattern": "か〜ないかのうちに",
+          "meaning": "Describes an action that occurs so rapidly after another that the first action is barely complete.",
+          "explanation": "The pattern sandwiches the same verb in its plain past form and plain negative form: 「Vたか V(stem)ないかのうちに」. It emphasizes extreme immediacy — the second event begins almost before the first finishes. Primarily written and formal in register, commonly found in literary or news contexts to highlight speed or abruptness.",
+          "examples": [
+            {
+              "japanese": "ベルが鳴ったか鳴らないかのうちに、生徒たちは教室を飛び出した。",
+              "reading": "ベルがなったかならないかのうちに、せいとたちはきょうしつをとびだした。",
+              "english": "The moment the bell rang — before it had even finished — the students rushed out of the classroom."
+            },
+            {
+              "japanese": "試合が終わったか終わらないかのうちに、サポーターたちがフィールドに入ってきた。",
+              "reading": "しあいがおわったかおわらないかのうちに、サポーターたちがフィールドにはいってきた。",
+              "english": "Barely had the match ended when the supporters rushed onto the field."
+            },
+            {
+              "japanese": "彼は席についたかつかないかのうちに、また立ち上がった。",
+              "reading": "かれはせきについたかつかないかのうちに、またたちあがった。",
+              "english": "He had barely sat down when he stood up again."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5884",
+          "label": "practice",
+          "prompt": "vNmodesty; humbleness |謙遜する to be modest; be humble",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5885",
+          "label": "practice",
+          "prompt": "the present day/age; today",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5886",
+          "label": "practice",
+          "prompt": "architecture",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5887",
+          "label": "practice",
+          "prompt": "giving official approval; inspecting|（一を)検定する",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5888",
+          "label": "practice",
+          "prompt": "atomic bomb",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5889",
+          "label": "practice",
+          "prompt": "Natomic bomb sickness",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5890",
+          "label": "practice",
+          "prompt": "N the Atomic Bomb Memorial Dome",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5891",
+          "label": "practice",
+          "prompt": "Nraw materials",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5892",
+          "label": "practice",
+          "prompt": "Suf(hours, days, years,etc.) later",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5893",
+          "label": "practice",
+          "prompt": "Ncarp-shaped streamer",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5894",
+          "label": "practice",
+          "prompt": "Nboyfriend/girlfriend",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5895",
+          "label": "practice",
+          "prompt": "DemP like this; this way",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5896",
+          "label": "practice",
+          "prompt": "Nact; conduct",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5897",
+          "label": "practice",
+          "prompt": "DemA of this kind; like this",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5898",
+          "label": "practice",
+          "prompt": "Neffectiveness, impact効果がる(Phr)to be effective",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5899",
+          "label": "practice",
+          "prompt": "ANa luxurious; gorgeous",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5900",
+          "label": "practice",
+          "prompt": "VNpassing(an exam)|（~に)合格する",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5901",
+          "label": "practice",
+          "prompt": "vNexchange|(~を/と)交換する",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5902",
+          "label": "practice",
+          "prompt": "Nthe latter period",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5903",
+          "label": "practice",
+          "prompt": "sight; scene",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5904",
+          "label": "practice",
+          "prompt": "contribution|（~に)貢献する",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5905",
+          "label": "practice",
+          "prompt": "the latter",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5906",
+          "label": "practice",
+          "prompt": "Nschool building",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5907",
+          "label": "practice",
+          "prompt": "vN improvement; betterment|（~が)向上する",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5908",
+          "label": "practice",
+          "prompt": "VNorganization; composition|（~を)構成する tomake up",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5909",
+          "label": "practice",
+          "prompt": "Ntraffic; transportation",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5910",
+          "label": "practice",
+          "prompt": "VNaction|行動する",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5911",
+          "label": "practice",
+          "prompt": "None's junior",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5912",
+          "label": "practice",
+          "prompt": "N the second half",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5913",
+          "label": "practice",
+          "prompt": "Nhappiness",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5914",
+          "label": "practice",
+          "prompt": "Ncandidate",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5915",
+          "label": "practice",
+          "prompt": "VNphysical torture|(~を)拷問する",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5916",
+          "label": "practice",
+          "prompt": "Npublic commitment/promise|政権公約（N)manifesto",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5917",
+          "label": "practice",
+          "prompt": "Npublic (institution)",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5918",
+          "label": "practice",
+          "prompt": "Neficiency|率よ<(Adv)eficiently",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5919",
+          "label": "practice",
+          "prompt": "having contact(with people);",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5920",
+          "label": "practice",
+          "prompt": "exchange(of culture, people, etc.)|(~と)交流す",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5921",
+          "label": "practice",
+          "prompt": "Nold person/people",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5922",
+          "label": "practice",
+          "prompt": "Nvoice|声を出す(Phr) toutter",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_9_exercise_5923",
+          "label": "practice",
+          "prompt": "ru-Vt ; to cross; pass",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 395
+          }
+        }
+      ]
+    }
+  ]
+}

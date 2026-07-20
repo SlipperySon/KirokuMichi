@@ -1,0 +1,614 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "marugoto_a1_textbook",
+  "title": "marugoto_a1_textbook / marugoto_a1_1",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "marugoto_a1_1_draft",
+      "appLessonId": "marugoto_a1_1",
+      "title": "marugoto a1 1",
+      "qualityTier": "draft",
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "cefr_a1_1",
+          "pattern": "だ",
+          "meaning": "The casual form of 'to be', used to state that something is something else.",
+          "explanation": "だ attaches to nouns and な-adjectives to assert identity or description in casual speech. It is the plain/informal equivalent of です and is used among friends, family, or people of equal or lower social standing. Avoid it in formal situations or when speaking to strangers.",
+          "examples": [
+            {
+              "japanese": "これは本だ。",
+              "reading": "これはほんだ。",
+              "english": "This is a book."
+            },
+            {
+              "japanese": "彼は学生だ。",
+              "reading": "かれはがくせいだ。",
+              "english": "He is a student."
+            },
+            {
+              "japanese": "今日は月曜日だ。",
+              "reading": "きょうはげつようびだ。",
+              "english": "Today is Monday."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_2",
+          "pattern": "です",
+          "meaning": "The polite form of 'to be', used to state that something is something else in formal or polite contexts.",
+          "explanation": "です attaches to nouns and な-adjectives to make polite statements about identity or description. It is the standard form used in most everyday conversation with people you don't know well, in classrooms, shops, and workplaces. As an A1 learner, です is the form you should default to.",
+          "examples": [
+            {
+              "japanese": "私は田中です。",
+              "reading": "わたしはたなかです。",
+              "english": "I am Tanaka."
+            },
+            {
+              "japanese": "これはペンです。",
+              "reading": "これはペンです。",
+              "english": "This is a pen."
+            },
+            {
+              "japanese": "今日はいい天気です。",
+              "reading": "きょうはいいてんきです。",
+              "english": "Today is nice weather."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_3",
+          "pattern": "は",
+          "meaning": "Marks the topic of the sentence — what the sentence is about.",
+          "explanation": "は (pronounced 'wa' in this grammatical role) tells the listener what the sentence is commenting on. It sets the topic at the front of the sentence and everything after describes or explains that topic. It can replace が or を in many sentences to shift emphasis from new information to known or contrasted information.",
+          "examples": [
+            {
+              "japanese": "猫は動物です。",
+              "reading": "ねこはどうぶつです。",
+              "english": "A cat is an animal."
+            },
+            {
+              "japanese": "私は日本語を勉強します。",
+              "reading": "わたしはにほんごをべんきょうします。",
+              "english": "I study Japanese."
+            },
+            {
+              "japanese": "東京は大きい都市です。",
+              "reading": "とうきょうはおおきいとしです。",
+              "english": "Tokyo is a big city."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_4",
+          "pattern": "も",
+          "meaning": "Means 'also', 'too', or 'as well', adding the marked item to a group or extending a statement.",
+          "explanation": "も replaces は, が, or を to signal that the same statement applies to this item in addition to another already mentioned. In negative sentences it means 'either' or 'neither'. It can also express surprise or emphasis when the quantity or fact is unexpected.",
+          "examples": [
+            {
+              "japanese": "私も学生です。",
+              "reading": "わたしもがくせいです。",
+              "english": "I am also a student."
+            },
+            {
+              "japanese": "犬も猫も好きです。",
+              "reading": "いぬもねこもすきです。",
+              "english": "I like both dogs and cats."
+            },
+            {
+              "japanese": "彼女も来ますか。",
+              "reading": "かのじょもきますか。",
+              "english": "Is she coming too?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_5",
+          "pattern": "これ",
+          "meaning": "Means 'this' — refers to a thing close to the speaker.",
+          "explanation": "これ is used to refer to an object physically near the speaker when you don't name the object directly. It is part of the ko-so-a-do series: これ (near speaker), それ (near listener), あれ (far from both). Use これ when pointing to or holding something.",
+          "examples": [
+            {
+              "japanese": "これは何ですか。",
+              "reading": "これはなんですか。",
+              "english": "What is this?"
+            },
+            {
+              "japanese": "これは私の鞄です。",
+              "reading": "これはわたしのかばんです。",
+              "english": "This is my bag."
+            },
+            {
+              "japanese": "これはおいしいです。",
+              "reading": "これはおいしいです。",
+              "english": "This is delicious."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_6",
+          "pattern": "の",
+          "meaning": "Links two nouns to show possession, belonging, or a descriptive relationship.",
+          "explanation": "の connects two nouns so that the first describes or owns the second, similar to English 'of' or the apostrophe-s ('s). The owner or category comes first, followed by の, then the thing owned or categorised. It can also nominalise verb phrases and adjective phrases to turn them into noun-like expressions.",
+          "examples": [
+            {
+              "japanese": "これは私の本です。",
+              "reading": "これはわたしのほんです。",
+              "english": "This is my book."
+            },
+            {
+              "japanese": "田中さんの車は赤いです。",
+              "reading": "たなかさんのくるまはあかいです。",
+              "english": "Tanaka-san's car is red."
+            },
+            {
+              "japanese": "日本語の授業は楽しいです。",
+              "reading": "にほんごのじゅぎょうはたのしいです。",
+              "english": "Japanese class is fun."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_7",
+          "pattern": "いい",
+          "meaning": "Means 'good', 'fine', or 'nice' and is one of the most common い-adjectives in Japanese.",
+          "explanation": "いい means 'good' and behaves like a regular い-adjective when modifying nouns directly, but its conjugated forms use よ (よくない, よかった, よくて) rather than い. This irregular conjugation is important to memorise early. In casual speech いい can also mean 'it's okay' or 'no need'.",
+          "examples": [
+            {
+              "japanese": "今日はいい天気ですね。",
+              "reading": "きょうはいいてんきですね。",
+              "english": "It's nice weather today, isn't it."
+            },
+            {
+              "japanese": "この映画はよかったです。",
+              "reading": "このえいがはよかったです。",
+              "english": "This movie was good."
+            },
+            {
+              "japanese": "あなたの日本語はいいですね。",
+              "reading": "あなたのにほんごはいいですね。",
+              "english": "Your Japanese is good, isn't it."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_8",
+          "pattern": "か",
+          "meaning": "A sentence-ending particle that turns a statement into a yes/no question.",
+          "explanation": "Adding か to the end of a sentence makes it a question. In polite speech (～ます/～です) the pitch rises slightly and no question mark is needed, though one is often written. In casual speech か can sound blunt; rising intonation alone is more natural among friends.",
+          "examples": [
+            {
+              "japanese": "これはあなたの本ですか。",
+              "reading": "これはあなたのほんですか。",
+              "english": "Is this your book?"
+            },
+            {
+              "japanese": "今日は学校に行きますか。",
+              "reading": "きょうはがっこうにいきますか。",
+              "english": "Are you going to school today?"
+            },
+            {
+              "japanese": "お名前は何ですか。",
+              "reading": "おなまえはなんですか。",
+              "english": "What is your name?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_1",
+          "label": "practice",
+          "prompt": "Table of Contents",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_2",
+          "label": "practice",
+          "prompt": "Marugoto:Japanese Language and Culture Starter A1",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_3",
+          "label": "practice",
+          "prompt": "(Coursebook for Communicative Language Activities)",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_4",
+          "label": "practice",
+          "prompt": "Main Expressions",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_5",
+          "label": "practice",
+          "prompt": "Lesson 1 Hello Konnichiwa",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_6",
+          "label": "practice",
+          "prompt": "Exchange greetings",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_7",
+          "label": "practice",
+          "prompt": "· Ohayoo gozaimasu/Konnichiwa/Konbanwa/Sayoonara",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_8",
+          "label": "practice",
+          "prompt": "Recognise Japanese characters",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_9",
+          "label": "practice",
+          "prompt": "Arigatoo gozaimasu/Sumimasen",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_10",
+          "label": "practice",
+          "prompt": "Lesson 2 Would you say that again? Moo ichido onegaishimasu",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_11",
+          "label": "practice",
+          "prompt": "Use basic classroom expressions",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_12",
+          "label": "practice",
+          "prompt": "• Shin-san, imasu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_13",
+          "label": "practice",
+          "prompt": "Write your name and country in Japanese",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_14",
+          "label": "practice",
+          "prompt": "Kiite kudasai./ltte kudasai/...",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_15",
+          "label": "practice",
+          "prompt": "tte doo yuu imi desu ka./...",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_16",
+          "label": "practice",
+          "prompt": "Life and Culture",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_17",
+          "label": "practice",
+          "prompt": "Lesson 3 Nice to meet you Doozo yoroshiku",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_18",
+          "label": "practice",
+          "prompt": "Give a simple self introduction",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_19",
+          "label": "practice",
+          "prompt": "·Hajimemashite, (Yamada) desu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_20",
+          "label": "practice",
+          "prompt": "Recognise the parts of a business card",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_21",
+          "label": "practice",
+          "prompt": "Doozo yoroshiku onegaishimasu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_22",
+          "label": "practice",
+          "prompt": "Onamae wa? /Dochira kara?/Oshigoto wa?",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_23",
+          "label": "practice",
+          "prompt": "Nihongo ga dekimasu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_24",
+          "label": "practice",
+          "prompt": "Lesson 4 There are three people in my family Kazoku wa san-nin desu",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_25",
+          "label": "practice",
+          "prompt": "Talk briefly about your family",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_26",
+          "label": "practice",
+          "prompt": "Kono hito wa dare desu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_27",
+          "label": "practice",
+          "prompt": "Tell someone about your family. using a family photo",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_28",
+          "label": "practice",
+          "prompt": "Oikutsu desu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_29",
+          "label": "practice",
+          "prompt": "Doko ni sunde imasu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_30",
+          "label": "practice",
+          "prompt": "Life and Culture",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_31",
+          "label": "practice",
+          "prompt": "Lesson 5 What kind of food do you like? Nani ga suki desu ka",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_32",
+          "label": "practice",
+          "prompt": "Talk about your favorite foods",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_33",
+          "label": "practice",
+          "prompt": "Nani ga suki desu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_34",
+          "label": "practice",
+          "prompt": "Offer someone a drink",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_35",
+          "label": "practice",
+          "prompt": "Koohi, nomimasu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_36",
+          "label": "practice",
+          "prompt": "Talk about your breakfast",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_37",
+          "label": "practice",
+          "prompt": "Asa-gohan o tabemasu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_38",
+          "label": "practice",
+          "prompt": "·Nani o tabemasu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_39",
+          "label": "practice",
+          "prompt": "Lesson 6 Where are you going to have lunch today? Doko de tabemasu ka",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_1_exercise_40",
+          "label": "practice",
+          "prompt": "Say what your favorite dish is",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 18
+          }
+        }
+      ]
+    }
+  ]
+}

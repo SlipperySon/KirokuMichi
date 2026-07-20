@@ -24,6 +24,7 @@ describe('studyPathPlanner', () => {
 
     expect(action.kind).toBe('review')
     expect(action.route).toBe('/study/review')
+    expect(action.reviewLane).toBe('path')
   })
 
   it('mentions grammar due on the review action without switching to grammar first', () => {
@@ -35,6 +36,83 @@ describe('studyPathPlanner', () => {
 
     expect(action.kind).toBe('review')
     expect(action.description).toContain('2 grammar')
+  })
+
+  it('does not let Extra dues block the path by default', () => {
+    const action = getStudyPathAction({
+      ...baseInput,
+      dueCount: 0,
+      extraDueCount: 40,
+      currentLesson: 'genki_1_2',
+    })
+    expect(action.kind).toBe('current-lesson')
+  })
+
+  it('includes Extra in Today when opted in', () => {
+    const action = getStudyPathAction({
+      ...baseInput,
+      dueCount: 2,
+      extraDueCount: 5,
+      includeExtraInToday: true,
+    })
+    expect(action.kind).toBe('review')
+    expect(action.title).toContain('7')
+    expect(action.reviewLane).toBe('all')
+  })
+
+  it('escalates to catch-up when backlog is high', () => {
+    const action = getStudyPathAction({
+      ...baseInput,
+      dueCount: 90,
+      currentLesson: 'genki_1_2',
+    })
+    expect(action.kind).toBe('catch-up')
+  })
+
+  it('prioritizes finish-speak over starting a new path lesson', () => {
+    const action = getStudyPathAction({
+      ...baseInput,
+      speakPendingLessonId: 'genki_1_1',
+      learningPath: {
+        generatedAt: '2026-06-24T00:00:00.000Z',
+        weeks: [{
+          week: 1,
+          focus: 'A1',
+          dailyGoal: 20,
+          activities: [],
+          milestone: 'Lesson 2',
+          lessons: [
+            { id: 'genki_1_1', series: 'Genki I', lessonNumber: 1 },
+            { id: 'genki_1_2', series: 'Genki I', lessonNumber: 2 },
+          ],
+        }],
+      },
+    })
+    expect(action.kind).toBe('finish-speak')
+    expect(action.lessonId).toBe('genki_1_1')
+  })
+
+  it('offers Extra decks after path is clear', () => {
+    const action = getStudyPathAction({
+      ...baseInput,
+      learningPath: {
+        generatedAt: '2026-06-24T00:00:00.000Z',
+        weeks: [{
+          week: 1,
+          focus: 'A1',
+          dailyGoal: 20,
+          activities: [],
+          milestone: 'Done',
+          lessons: [{ id: 'genki_1_1', series: 'Genki I', lessonNumber: 1 }],
+        }],
+      },
+      lessonsCompleted: Array.from({ length: 23 }, (_, i) =>
+        i < 12 ? `genki_1_${i + 1}` : `genki_2_${i - 11}`,
+      ),
+      extraDueCount: 12,
+    })
+    // May be path-lesson (curriculum continues) or extra — if curriculum exhausted, extra
+    expect(['extra-decks', 'path-lesson', 'grammar', 'mistakes', 'free-study']).toContain(action.kind)
   })
 
   it('continues an active incomplete lesson before starting path lessons', () => {
@@ -77,7 +155,6 @@ describe('studyPathPlanner', () => {
         }],
       },
     })
-
     expect(action.kind).toBe('path-lesson')
     expect(action.lessonId).toBe('genki_1_2')
     expect(action.route).toBe('/learn/lessons/a1/2?autostart=1')

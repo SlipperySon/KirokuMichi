@@ -1,0 +1,1778 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "quartet_2_textbook",
+  "title": "quartet_2_textbook / quartet_2_8",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "quartet_2_8_draft",
+      "appLessonId": "quartet_2_8",
+      "title": "quartet 2 8",
+      "qualityTier": "draft",
+      "vocabulary": [
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_1",
+          "surface": "読みのストラテ",
+          "reading": null,
+          "meaning": "This part presents reading strategies that not only are useful for",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_2_textbook_quartet_2_2_vocab_13",
+          "surface": "隠喩",
+          "reading": null,
+          "meaning": "Metaphor",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 197
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_20",
+          "surface": "ことわざ",
+          "reading": null,
+          "meaning": "Proverbs",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 232
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_25",
+          "surface": "音符",
+          "reading": null,
+          "meaning": "Phonetic indicators",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 254
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_34",
+          "surface": "きあつ気",
+          "reading": null,
+          "meaning": "atmospheric pressure",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 276
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_35",
+          "surface": "きゅん基準",
+          "reading": null,
+          "meaning": "standard",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 276
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_37",
+          "surface": "くるくる",
+          "reading": null,
+          "meaning": "round and round",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 276
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_38",
+          "surface": "きてき汽笛",
+          "reading": null,
+          "meaning": "steam whistle",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 276
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_39",
+          "surface": "けこ傾向",
+          "reading": null,
+          "meaning": "tendency",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 276
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_40",
+          "surface": "きよ給与",
+          "reading": null,
+          "meaning": "salary",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 276
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_41",
+          "surface": "きよく強弱",
+          "reading": null,
+          "meaning": "strength",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 276
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_42",
+          "surface": "いれつ時系列",
+          "reading": null,
+          "meaning": "chronological order",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 277
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_44",
+          "surface": "こねこ子猫",
+          "reading": null,
+          "meaning": "kitten",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 277
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_45",
+          "surface": "しっき漆器",
+          "reading": null,
+          "meaning": "lacquer ware",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 277
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_46",
+          "surface": "コンセプト",
+          "reading": null,
+          "meaning": "concept",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 277
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_48",
+          "surface": "さる探る",
+          "reading": null,
+          "meaning": "to investigate",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 277
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_88",
+          "surface": "熊度",
+          "reading": null,
+          "meaning": "attitude",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 325
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_89",
+          "surface": "基準",
+          "reading": null,
+          "meaning": "standard",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 325
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_91",
+          "surface": "詰める",
+          "reading": null,
+          "meaning": "to fill;to stuff",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 327
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_vocab_92",
+          "surface": "統計",
+          "reading": null,
+          "meaning": "statistics",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 329
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "cefr_b2_335",
+          "pattern": "だけあって",
+          "meaning": "Is only natural, …Being the case, Because, As might be expected",
+          "explanation": "Grammar explanation for だけあって",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_336",
+          "pattern": "〜得ない",
+          "meaning": "Expresses that something cannot happen or is impossible.",
+          "explanation": "Formed by attaching 得ない (えない/うない) to the masu-stem of a verb, this pattern states that something is impossible or inconceivable. It is the negative counterpart of 得る and similarly carries a formal, written register. It is often used to dismiss something as out of the question.",
+          "examples": [
+            {
+              "japanese": "彼がそんな嘘をつくとは考え得ない。",
+              "reading": "かれがそんなうそをつくとはかんがええない。",
+              "english": "I cannot imagine him telling such a lie."
+            },
+            {
+              "japanese": "この計画が失敗するとは、あり得ない話だ。",
+              "reading": "このけいかくがしっぱいするとは、ありえないはなしだ。",
+              "english": "The idea that this plan would fail is simply impossible."
+            },
+            {
+              "japanese": "科学的な根拠なしに、その結論は受け入れ得ない。",
+              "reading": "かがくてきなこんきょなしに、そのけつろんはうけいれえない。",
+              "english": "Without scientific basis, that conclusion cannot be accepted."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_337",
+          "pattern": "上に",
+          "meaning": "In addition to, on top of, or as well as — used to stack a second quality or fact onto the first, often intensifying the overall impression.",
+          "explanation": "Noun + である上に / い-adjective + 上に / な-adjective + な上に / verb (plain form) + 上に is used to add a cumulative point, where both elements typically share the same positive or negative direction. It is more formal than それに or しかも and is common in written Japanese and formal speech. The key nuance is accumulation: the second item amplifies or compounds the first.",
+          "examples": [
+            {
+              "japanese": "彼女は頭がいい上に、努力家でもある。",
+              "reading": "かのじょはあたまがいいうえに、どりょくかでもある。",
+              "english": "She is intelligent, and on top of that, she is also hardworking."
+            },
+            {
+              "japanese": "その店は値段が高い上に、サービスも悪いので人気がない。",
+              "reading": "そのみせはねだんがたかいうえに、サービスもわるいのでにんきがない。",
+              "english": "That restaurant is expensive, and on top of that, the service is poor, so it's not popular."
+            },
+            {
+              "japanese": "道に迷った上に、財布まで落としてしまった。",
+              "reading": "みちにまよったうえに、さいふまでおとしてしまった。",
+              "english": "I got lost, and to make matters worse, I even dropped my wallet."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_338",
+          "pattern": "以上に",
+          "meaning": "More than, no less than, or even more than — used to express that something exceeds a stated standard or expectation.",
+          "explanation": "Noun / verb phrase + 以上に indicates that the degree of something surpasses the named benchmark, often with a sense of surprise or emphasis. It commonly follows a word like 予想、思った、想像 to mean 'more than expected/imagined.' It is used in both spoken and written Japanese and is relatively neutral in register, though more common in formal contexts.",
+          "examples": [
+            {
+              "japanese": "試験は思った以上に難しくて、時間が足りなかった。",
+              "reading": "しけんはおもったいじょうにむずかしくて、じかんがたりなかった。",
+              "english": "The exam was more difficult than I expected, and I ran out of time."
+            },
+            {
+              "japanese": "その映画は想像以上に感動的で、思わず涙が出た。",
+              "reading": "そのえいがはそうぞういじょうにかんどうてきで、おもわずなみだがでた。",
+              "english": "The film was even more moving than I had imagined, and tears came unbidden."
+            },
+            {
+              "japanese": "この仕事は経験以上に、熱意が大切だと感じる。",
+              "reading": "このしごとはけいけんいじょうに、ねついがたいせつだとかんじる。",
+              "english": "In this job, I feel that passion matters even more than experience."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_339",
+          "pattern": "とか",
+          "meaning": "Used in casual speech to convey something heard secondhand or to soften a statement by making it sound approximate or non-committal.",
+          "explanation": "When とか appears at or near the end of a clause, it signals that the speaker is reporting something they heard but is distancing themselves from full certainty, similar to 'something like' or 'I hear that.' It is distinctly casual and often used in conversation among peers. Overuse can make speech sound evasive or uncommitted.",
+          "examples": [
+            {
+              "japanese": "彼、来月転勤になるとか言ってたよ。",
+              "reading": "かれ、らいげつてんきんになるとかいってたよ。",
+              "english": "I heard he said something about getting transferred next month."
+            },
+            {
+              "japanese": "あの店、閉まるとか聞いたけど本当？",
+              "reading": "あのみせ、しまるとかきいたけどほんとう？",
+              "english": "I heard something about that shop closing — is it true?"
+            },
+            {
+              "japanese": "今日、部長が早退するとか。",
+              "reading": "きょう、ぶちょうがそうたいするとか。",
+              "english": "Apparently the manager is leaving early today or something."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_340",
+          "pattern": "からすると・からすれば",
+          "meaning": "Indicates a standpoint or basis from which a judgment or inference is made.",
+          "explanation": "からすると and からすれば are largely interchangeable; both attach to a noun representing a viewpoint, standard, or piece of evidence and introduce a conclusion drawn from it. からすれば can carry a slightly stronger sense of the speaker adopting that perspective personally. Both are neutral in register and common in analytical speech and writing.",
+          "examples": [
+            {
+              "japanese": "専門家からすると、この計画にはまだ問題点が多い。",
+              "reading": "せんもんかからすると、このけいかくにはまだもんだいてんがおおい。",
+              "english": "From an expert's perspective, this plan still has many problems."
+            },
+            {
+              "japanese": "彼の態度からすれば、もう諦めているのかもしれない。",
+              "reading": "かれのたいどからすれば、もうあきらめているのかもしれない。",
+              "english": "Judging from his attitude, he may have already given up."
+            },
+            {
+              "japanese": "常識からすると、そんな行動は理解しにくい。",
+              "reading": "じょうしきからすると、そんなこうどうはりかいしにくい。",
+              "english": "Judging by common sense, that kind of behavior is hard to understand."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/doing_する",
+            "title": "Doing: する",
+            "excerpt": "84 CHAPTER 2. VERB GRAMMAR\n2.5.31 Doing: する\nWe've already seen す る as irregular verb, and it has been used in enough\nexample sentences to let it be no surprise that it means \"do'\". However,\nthis isn't the only meaning for this verb. When used in combination with\na direct object – as transitive verb – す る does mean \"do', but when used\nas intransitive verb, its meaning should be considered to be \"decide on'\nor \"choose'\". To show this difference in meaning between the transitive\nたどうし じどうし\n(strictly",
+            "examples": [
+              {
+                "japanese": "2.5.31 Doing: する"
+              },
+              {
+                "japanese": "We've already seen す る as irregular verb, and it has been used in enough",
+                "english": "example sentences to let it be no surprise that it means \"do'\". However,"
+              },
+              {
+                "japanese": "a direct object – as transitive verb – す る does mean \"do', but when used",
+                "english": "as intransitive verb, its meaning should be considered to be \"decide on'"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_341",
+          "pattern": "としても",
+          "meaning": "Grants a hypothetical or conceded premise and asserts that the outcome remains unaffected or is still valid.",
+          "explanation": "としても introduces a concession — even if we take a stated situation as true, the conclusion still holds. It differs from ても in that としても often involves a more deliberate or reasoned hypothesis rather than a simple condition. It is neutral in register and common in both spoken discussion and formal writing.",
+          "examples": [
+            {
+              "japanese": "それが事実だとしても、すぐに対応するのは難しい。",
+              "reading": "それがじじつだとしても、すぐにたいおうするのはむずかしい。",
+              "english": "Even if that is a fact, it would be difficult to respond immediately."
+            },
+            {
+              "japanese": "急いで出発したとしても、会議には間に合わないだろう。",
+              "reading": "いそいでしゅっぱつしたとしても、かいぎにはまにあわないだろう。",
+              "english": "Even if we left in a hurry, we probably wouldn't make it to the meeting in time."
+            },
+            {
+              "japanese": "彼が謝ったとしても、失った信頼はすぐには戻らない。",
+              "reading": "かれがあやまったとしても、うしなったしんらいはすぐにはもどらない。",
+              "english": "Even if he apologized, the trust that was lost won't come back right away."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_342",
+          "pattern": "ことだから",
+          "meaning": "It is exactly because",
+          "explanation": "Grammar explanation for ことだから",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_343",
+          "pattern": "まい",
+          "meaning": "Expresses the speaker's firm intention not to do something, or a conjecture that something probably will not happen.",
+          "explanation": "まい attaches directly to the dictionary form of most verbs (する → するまい / しまい, くる → くるまい / くまい) and functions as the negative counterpart of the volitional form. It carries two core uses: (1) strong personal resolve 'I will not…' and (2) negative conjecture 'probably won't…'. It is formal and literary in tone; it is rarely heard in casual conversation but appears in writing, formal speeches, and set expressions like 二度とするまい.",
+          "examples": [
+            {
+              "japanese": "あんな失敗は二度と繰り返すまいと心に誓った。",
+              "reading": "あんなしっぱいはにどとくりかえすまいとこころにちかった。",
+              "english": "I swore to myself that I would never repeat such a mistake again."
+            },
+            {
+              "japanese": "これほど難しい試験は、彼でも合格できるまい。",
+              "reading": "これほどむずかしいしけんは、かれでもごうかくできるまい。",
+              "english": "An exam this difficult — even he probably won't be able to pass it."
+            },
+            {
+              "japanese": "もう彼女には頼むまいと決めた。",
+              "reading": "もうかのじょにはたのむまいときめた。",
+              "english": "I decided I would not ask her for help anymore."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_344",
+          "pattern": "も構わず",
+          "meaning": "Expresses doing something without regard for or in spite of a concern, inconvenience, or social expectation.",
+          "explanation": "も構わず attaches to nouns or verb phrases to indicate that the subject proceeds with an action without minding or worrying about something that would normally be a consideration. It often implies boldness, carelessness, or urgency. It is neutral in register and used in both spoken and written Japanese, sometimes with a slightly critical nuance.",
+          "examples": [
+            {
+              "japanese": "彼は周りの目も構わず、大声で電話をしていた。",
+              "reading": "かれはまわりのめもかまわず、おおごえででんわをしていた。",
+              "english": "He was talking on the phone loudly, without any regard for the people around him."
+            },
+            {
+              "japanese": "雨も構わず、子どもたちは外で遊び続けた。",
+              "reading": "あめもかまわず、こどもたちはそとであそびつづけた。",
+              "english": "The children kept playing outside without caring about the rain."
+            },
+            {
+              "japanese": "時間も構わず、彼女は深夜に友人に電話をかけた。",
+              "reading": "じかんもかまわず、かのじょはしんやにゆうじんにでんわをかけた。",
+              "english": "Without worrying about the time, she called her friend in the middle of the night."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_345",
+          "pattern": "ということは",
+          "meaning": "Used to draw a logical conclusion or restate the implication of what was just said.",
+          "explanation": "This conjunction connects a statement to its natural consequence or rephrasing, signaling that the speaker is interpreting or clarifying the meaning of something. It can appear in both spoken and written Japanese and is neutral in register. It is often used in conversation to confirm understanding or make an inference explicit.",
+          "examples": [
+            {
+              "japanese": "電車が止まっているということは、また事故があったということだ。",
+              "reading": "でんしゃがとまっているということは、またじこがあったということだ。",
+              "english": "The fact that the train has stopped means there must have been another accident."
+            },
+            {
+              "japanese": "彼が来ないということは、会議は延期ということですか。",
+              "reading": "かれがこないということは、かいぎはえんきということですか。",
+              "english": "Does the fact that he isn't coming mean the meeting is postponed?"
+            },
+            {
+              "japanese": "合格したということは、これまでの努力が実を結んだということだ。",
+              "reading": "ごうかくしたということは、これまでのどりょくがみをむすんだということだ。",
+              "english": "Passing means that all the effort up to now has paid off."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_346",
+          "pattern": "ものだから",
+          "meaning": "Because, The reason is",
+          "explanation": "Grammar explanation for ものだから",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_347",
+          "pattern": "ないことには～ない",
+          "meaning": "Expresses that without doing something, a certain result is impossible — stronger than a simple conditional.",
+          "explanation": "ないことには～ない uses the negative plain form plus ことには to set an absolute condition: without the action in the first clause, the outcome in the second clause (also negative) cannot occur. It is more emphatic than なければ and strongly implies the first action is a non-negotiable prerequisite. The register is neutral to slightly formal, common in both speech and writing.",
+          "examples": [
+            {
+              "japanese": "実際に試してみないことには、うまくいくかどうか分からない。",
+              "reading": "じっさいにためしてみないことには、うまくいくかどうかわからない。",
+              "english": "Unless you actually try it, you won't know whether it will work or not."
+            },
+            {
+              "japanese": "現場を自分の目で見ないことには、正しい判断はできない。",
+              "reading": "げんばをじぶんのめでみないことには、ただしいはんだんはできない。",
+              "english": "Unless you see the site with your own eyes, you can't make the right judgment."
+            },
+            {
+              "japanese": "本人が話してくれないことには、何があったのか分からない。",
+              "reading": "ほんにんがはなしてくれないことには、なにがあったのかわからない。",
+              "english": "Unless the person themselves tells us, we won't know what happened."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_348",
+          "pattern": "には",
+          "meaning": "Marks a goal, purpose, or necessary condition — what is required or appropriate in order to achieve something.",
+          "explanation": "には follows a verb in dictionary form or a noun to indicate the purpose for which something is done or the condition under which something applies. When it follows a verb, it often means 'in order to do X' and is used to introduce what is necessary or expected. It can also mark a topic from a particular perspective ('for X, ...'). The register is neutral.",
+          "examples": [
+            {
+              "japanese": "健康を保つには、毎日適度な運動が必要だ。",
+              "reading": "けんこうをたもつには、まいにちてきどなうんどうがひつようだ。",
+              "english": "In order to stay healthy, moderate exercise every day is necessary."
+            },
+            {
+              "japanese": "このプロジェクトを成功させるには、チーム全員の協力が欠かせない。",
+              "reading": "このプロジェクトをせいこうさせるには、チームぜんいんのきょうりょくがかかせない。",
+              "english": "To make this project a success, the cooperation of the entire team is essential."
+            },
+            {
+              "japanese": "子どもには少し難しすぎる内容かもしれない。",
+              "reading": "こどもにはすこしむずかしすぎるないようかもしれない。",
+              "english": "This content might be a little too difficult for children."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_349",
+          "pattern": "次第だ・次第で",
+          "meaning": "Means 'it depends on X' or 'depending on X', expressing that an outcome is determined by a particular factor.",
+          "explanation": "次第だ follows a noun and explains that the result of a situation is entirely contingent on that factor. 次第で is used mid-sentence when the dependent clause follows. This pattern is common in both spoken and written Japanese and is more formal than によって in many contexts. It places clear responsibility on the stated variable.",
+          "examples": [
+            {
+              "japanese": "成功するかどうかは、あなたの努力次第だ。",
+              "reading": "せいこうするかどうかは、あなたのどりょくしだいだ。",
+              "english": "Whether you succeed or not depends entirely on your effort."
+            },
+            {
+              "japanese": "やり方次第で、結果は大きく変わる。",
+              "reading": "やりかたしだいで、けっかはおおきくかわる。",
+              "english": "Depending on how you do it, the results can change dramatically."
+            },
+            {
+              "japanese": "天気次第で、ピクニックに行くかどうか決めましょう。",
+              "reading": "てんきしだいで、ピクニックにいくかどうかきめましょう。",
+              "english": "Let's decide whether to go for a picnic depending on the weather."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_350",
+          "pattern": "それにしても",
+          "meaning": "Acknowledges a prior point but expresses surprise, dissatisfaction, or a further remark that goes beyond it.",
+          "explanation": "それにしても is a sentence-initial expression that accepts what was just said and then pivots to an additional comment — often one of mild surprise, criticism, or emphasis. It is conversational in tone and very common in spoken Japanese. It signals that the speaker finds the situation noteworthy despite already knowing the background.",
+          "examples": [
+            {
+              "japanese": "残業が多いのはわかるけど、それにしても毎日12時まで働くのは体に悪い。",
+              "reading": "ざんぎょうがおおいのはわかるけど、それにしてもまいにちじゅうにじまではたらくのはからだにわるい。",
+              "english": "I understand there's a lot of overtime, but even so, working until midnight every day is bad for your health."
+            },
+            {
+              "japanese": "彼女が忙しいのは知っているが、それにしても連絡が遅すぎる。",
+              "reading": "かのじょがいそがしいのはしっているが、それにしてもれんらくがおそすぎる。",
+              "english": "I know she's busy, but even so, her replies are way too slow."
+            },
+            {
+              "japanese": "試験が難しかったのはわかる。それにしても、全員が不合格とは驚いた。",
+              "reading": "しけんがむずかしかったのはわかる。それにしても、ぜんいんがふごうかくとはおどろいた。",
+              "english": "I understand the exam was hard. Even so, I was surprised that everyone failed."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_351",
+          "pattern": "確かに",
+          "meaning": "Used to acknowledge a point as true or valid, often before adding a contrasting opinion.",
+          "explanation": "確かに concedes that something is indeed the case, functioning like 'admittedly' or 'certainly' in English. It is neutral in register and works in both spoken and written Japanese. It frequently appears in debate, argument, or reasoning contexts, often followed by a contrasting clause with が or けど.",
+          "examples": [
+            {
+              "japanese": "確かに彼の言うことは正しいが、現実的ではない。",
+              "reading": "たしかにかれのいうことはただしいが、げんじつてきではない。",
+              "english": "Certainly, what he says is correct, but it's not realistic."
+            },
+            {
+              "japanese": "確かにその映画は面白かったけど、少し長すぎると思う。",
+              "reading": "たしかにそのえいがはおもしろかったけど、すこしながすぎるとおもう。",
+              "english": "Admittedly, that movie was interesting, but I think it was a bit too long."
+            },
+            {
+              "japanese": "確かに値段は高いが、品質を考えると妥当だろう。",
+              "reading": "たしかにねだんはたかいが、ひんしつをかんがえるとだとうだろう。",
+              "english": "Certainly the price is high, but considering the quality, it's probably fair."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_352",
+          "pattern": "～てこそ",
+          "meaning": "Expresses that a positive result or true value is only achieved through a specific action or condition.",
+          "explanation": "てこそ attaches to the て-form of a verb and emphasizes that the action is the essential condition for something meaningful to follow — similar to 'only by doing X can you truly Y.' It carries a slightly emphatic, often philosophical tone and is more common in written or formal speech. It often appears with words like 初めて (for the first time) or わかる (to understand).",
+          "examples": [
+            {
+              "japanese": "苦労してこそ、成功の喜びが分かるのだ。",
+              "reading": "くろうしてこそ、せいこうのよろこびがわかるのだ。",
+              "english": "Only by going through hardship can you truly understand the joy of success."
+            },
+            {
+              "japanese": "実際に現地に行ってこそ、その文化の深さが理解できる。",
+              "reading": "じっさいにげんちにいってこそ、そのぶんかのふかさがりかいできる。",
+              "english": "Only by actually going there can you understand the depth of that culture."
+            },
+            {
+              "japanese": "チームが協力してこそ、このプロジェクトは成功する。",
+              "reading": "チームがきょうりょくしてこそ、このプロジェクトはせいこうする。",
+              "english": "This project will only succeed if the team works together."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_353",
+          "pattern": "てならない",
+          "meaning": "Very, Extremely, Can&#x27;t help but do",
+          "explanation": "Grammar explanation for てならない",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_556",
+          "pattern": "以来",
+          "meaning": "Expresses that a situation or habit has continued from a past point in time up to the present, or designates a starting point going forward.",
+          "explanation": "Attach 以来 directly to a noun referring to a time or event, or to a verb in plain past form, to indicate that something has been the case ever since that moment. It implies an unbroken continuation from that point and often carries a sense of significance about the starting event. It is common in both written and spoken Japanese and leans slightly formal.",
+          "examples": [
+            {
+              "japanese": "大学を卒業して以来、ずっと同じ会社で働いている。",
+              "reading": "だいがくをそつぎょうしていらい、ずっとおなじかいしゃではたらいている。",
+              "english": "Ever since I graduated from university, I have been working at the same company."
+            },
+            {
+              "japanese": "あの事故以来、彼は車を運転しなくなった。",
+              "reading": "あのじこいらい、かれはくるまをうんてんしなくなった。",
+              "english": "Since that accident, he has stopped driving."
+            },
+            {
+              "japanese": "日本に来て以来、毎日日本語を勉強している。",
+              "reading": "にほんにきていらい、まいにちにほんごをべんきょうしている。",
+              "english": "Ever since I came to Japan, I have been studying Japanese every day."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_557",
+          "pattern": "か〜ないかのうちに",
+          "meaning": "Describes an action that occurs so rapidly after another that the first action is barely complete.",
+          "explanation": "The pattern sandwiches the same verb in its plain past form and plain negative form: 「Vたか V(stem)ないかのうちに」. It emphasizes extreme immediacy — the second event begins almost before the first finishes. Primarily written and formal in register, commonly found in literary or news contexts to highlight speed or abruptness.",
+          "examples": [
+            {
+              "japanese": "ベルが鳴ったか鳴らないかのうちに、生徒たちは教室を飛び出した。",
+              "reading": "ベルがなったかならないかのうちに、せいとたちはきょうしつをとびだした。",
+              "english": "The moment the bell rang — before it had even finished — the students rushed out of the classroom."
+            },
+            {
+              "japanese": "試合が終わったか終わらないかのうちに、サポーターたちがフィールドに入ってきた。",
+              "reading": "しあいがおわったかおわらないかのうちに、サポーターたちがフィールドにはいってきた。",
+              "english": "Barely had the match ended when the supporters rushed onto the field."
+            },
+            {
+              "japanese": "彼は席についたかつかないかのうちに、また立ち上がった。",
+              "reading": "かれはせきについたかつかないかのうちに、またたちあがった。",
+              "english": "He had barely sat down when he stood up again."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_558",
+          "pattern": "に加えて",
+          "meaning": "Not only...but also, In addition, Not to mention",
+          "explanation": "Grammar explanation for に加えて",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_559",
+          "pattern": "げ",
+          "meaning": "Seemingly, Giving appearance of, [Expresses emotions or feelings]",
+          "explanation": "Grammar explanation for げ",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_560",
+          "pattern": "つつ",
+          "meaning": "Expresses that two actions occur at the same time, with the same subject performing both.",
+          "explanation": "つつ attaches to the verb stem (連用形) and indicates simultaneous actions by the same person, similar to ながら but more formal and literary. It is common in written Japanese and formal speech. The two actions must be performed by the same subject.",
+          "examples": [
+            {
+              "japanese": "音楽を聴きつつ、論文を書いた。",
+              "reading": "おんがくをききつつ、ろんぶんをかいた。",
+              "english": "I wrote my thesis while listening to music."
+            },
+            {
+              "japanese": "彼は窓の外を眺めつつ、静かに考えていた。",
+              "reading": "かれはまどのそとをながめつつ、しずかにかんがえていた。",
+              "english": "He sat quietly thinking while gazing out the window."
+            },
+            {
+              "japanese": "コーヒーを飲みつつ、メールを確認する。",
+              "reading": "コーヒーをのみつつ、メールをかくにんする。",
+              "english": "I check my emails while drinking coffee."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_561",
+          "pattern": "反面",
+          "meaning": "Expresses that while something has one quality, it also has a contrasting quality.",
+          "explanation": "反面 connects two clauses that describe opposite or contradictory aspects of the same subject. It follows a plain-form verb or い-adjective, or a noun/な-adjective with である. Used in both written and spoken Japanese, though it leans slightly formal. It is especially useful when acknowledging trade-offs or nuanced situations.",
+          "examples": [
+            {
+              "japanese": "この仕事は給料が高い反面、残業が多い。",
+              "reading": "このしごとはきゅうりょうがたかいはんめん、ざんぎょうがおおい。",
+              "english": "This job pays well, but on the other hand, there is a lot of overtime."
+            },
+            {
+              "japanese": "彼は頭が良い反面、人付き合いが苦手だ。",
+              "reading": "かれはあたまがよいはんめん、ひとづきあいがにがてだ。",
+              "english": "He is very smart, but on the other hand, he struggles with socializing."
+            },
+            {
+              "japanese": "都市に住むことは便利である反面、自然から遠ざかる。",
+              "reading": "としにすむことはべんりであるはんめん、しぜんからとおざかる。",
+              "english": "Living in a city is convenient, but on the flip side, you become distant from nature."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_562",
+          "pattern": "ては",
+          "meaning": "Connects a condition or cause to a typically negative or problematic result, expressing 'if/since X, then (bad outcome)'.",
+          "explanation": "Formed by attaching は to the te-form of a verb or the conjunctive form of adjectives and nouns (では). It sets up a logical conditional where the first clause is seen as the reason or condition leading to an unfavorable second clause. The tone is often one of concern, criticism, or logical deduction. Distinct from ていては in that it describes a single action rather than an ongoing one.",
+          "examples": [
+            {
+              "japanese": "こんな大雨では、試合を続けるのは無理だろう。",
+              "reading": "こんなおおあめでは、しあいをつづけるのはむりだろう。",
+              "english": "With rain this heavy, it would be impossible to continue the match."
+            },
+            {
+              "japanese": "そんな言い方をしては、相手を傷つけてしまうよ。",
+              "reading": "そんないいかたをしては、あいてをきずつけてしまうよ。",
+              "english": "If you say it like that, you'll end up hurting the other person."
+            },
+            {
+              "japanese": "予算がこれだけでは、新しい機材を買うことができない。",
+              "reading": "よさんがこれだけでは、あたらしいきざいをかうことができない。",
+              "english": "With only this much budget, we can't buy new equipment."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_563",
+          "pattern": "ては〜ては",
+          "meaning": "Describes two actions or states that alternate or repeat in a cyclical pattern.",
+          "explanation": "Formed by using the ては construction twice in sequence with different (often contrasting) verbs, such as 食べては食べては or 泣いては笑って. It paints a picture of repeated or oscillating behavior. The pattern is natural in both spoken and written Japanese and often conveys weariness, persistence, or a habitual cycle.",
+          "examples": [
+            {
+              "japanese": "彼女は泣いては笑い、笑っては泣くを繰り返していた。",
+              "reading": "かのじょはないてはわらい、わらってはなくをくりかえしていた。",
+              "english": "She kept going back and forth between crying and laughing."
+            },
+            {
+              "japanese": "原稿を書いては消し、書いては消しを繰り返して、なかなか完成しなかった。",
+              "reading": "げんこうをかいてはけし、かいてはけしをくりかえして、なかなかかんせいしなかった。",
+              "english": "I kept writing and deleting, writing and deleting, and it just wouldn't come together."
+            },
+            {
+              "japanese": "子供は転んでは起き上がり、何度も挑戦し続けた。",
+              "reading": "こどもはころんではおきあがり、なんどもちょうせんしつづけた。",
+              "english": "The child fell down and got back up repeatedly, continuing to try again and again."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_564",
+          "pattern": "いわゆる",
+          "meaning": "What is called, So-called, Generally known",
+          "explanation": "Grammar explanation for いわゆる",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_565",
+          "pattern": "かねない",
+          "meaning": "Expresses that something undesirable might happen or is quite possible.",
+          "explanation": "かねない attaches to the ます-stem of a verb and warns that a negative outcome is a real possibility. It is the opposite of かねる (cannot bring oneself to do) — かねない means the action could well occur, often against one's wishes. Used in both spoken and written Japanese, it carries a cautionary tone.",
+          "examples": [
+            {
+              "japanese": "このまま放置すれば、大きな問題になりかねない。",
+              "reading": "このままほうちすれば、おおきなもんだいになりかねない。",
+              "english": "If we leave this as it is, it could well turn into a serious problem."
+            },
+            {
+              "japanese": "そんな運転をしていたら、事故を起こしかねないよ。",
+              "reading": "そんなうんてんをしていたら、じこをおこしかねないよ。",
+              "english": "If you keep driving like that, you could easily cause an accident."
+            },
+            {
+              "japanese": "彼の発言は誤解を招きかねないので、注意が必要だ。",
+              "reading": "かれのはつげんはごかいをまねきかねないので、ちゅういがひつようだ。",
+              "english": "His remarks could easily be misunderstood, so care is needed."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_566",
+          "pattern": "なお①",
+          "meaning": "Means 'still' or 'even now', indicating that a state continues despite time passing or circumstances changing.",
+          "explanation": "This use of なお is an adverb meaning that something persists unchanged, often used with verbs like 続ける or ている forms. It is more literary or formal than まだ, and frequently appears in written Japanese, news articles, and formal speech. It often carries a nuance of 'even so' or 'to this day'.",
+          "examples": [
+            {
+              "japanese": "彼は70歳になった今もなお、毎朝走り続けている。",
+              "reading": "かれは70さいになったいまもなお、まいあさはしりつづけている。",
+              "english": "Even now at 70 years old, he continues to run every morning."
+            },
+            {
+              "japanese": "その問題はなお解決されていない。",
+              "reading": "そのもんだいはなおかいけつされていない。",
+              "english": "That problem still has not been resolved."
+            },
+            {
+              "japanese": "戦争が終わって数十年が経つが、傷跡はなお残っている。",
+              "reading": "せんそうがおわってすうじゅうねんがたつが、きずあとはなおのこっている。",
+              "english": "Decades have passed since the war ended, but the scars still remain."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_567",
+          "pattern": "なお②",
+          "meaning": "Means 'furthermore' or 'please note that', used to add supplementary information.",
+          "explanation": "This use of なお is a discourse connector that introduces additional or supplementary information, similar to 'furthermore' or 'please note'. It is formal and predominantly written, common in official notices, instructions, academic writing, and business documents. It signals that what follows is an important addendum to what has just been stated.",
+          "examples": [
+            {
+              "japanese": "申し込みは3月末までです。なお、定員になり次第締め切ります。",
+              "reading": "もうしこみは3がつまつまでです。なお、ていいんになりしだいしめきります。",
+              "english": "Applications are accepted until the end of March. Please note that we will close applications once capacity is reached."
+            },
+            {
+              "japanese": "会議は午後3時から始まります。なお、資料は事前に配布します。",
+              "reading": "かいぎはごご3じからはじまります。なお、しりょうはじぜんにはいふします。",
+              "english": "The meeting will begin at 3 PM. In addition, materials will be distributed in advance."
+            },
+            {
+              "japanese": "本日は休業いたします。なお、明日は通常通り営業いたします。",
+              "reading": "ほんじつはきゅうぎょういたします。なお、あしたはつうじょうどおりえいぎょういたします。",
+              "english": "We will be closed today. Furthermore, we will be open as usual tomorrow."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_568",
+          "pattern": "に応えて",
+          "meaning": "Expresses acting in response to someone's wishes, expectations, requests, or needs.",
+          "explanation": "に応えて follows a noun referring to a request, expectation, support, or hope, and indicates that an action is taken to meet or honor it. Unlike に応じて (which implies proportional adaptation), に応えて implies actively meeting or fulfilling something directed at you. It is neutral in register and appears in both spoken and written Japanese, often in contexts of reciprocating trust or fulfilling responsibility.",
+          "examples": [
+            {
+              "japanese": "ファンの期待に応えて、歌手はアンコールを歌った。",
+              "reading": "ファンのきたいにこたえて、かしゅはアンコールをうたった。",
+              "english": "In response to the fans' expectations, the singer performed an encore."
+            },
+            {
+              "japanese": "皆さんの要望に応えて、新しい機能を追加しました。",
+              "reading": "みなさんのようぼうにこたえて、あたらしいきのうをついかしました。",
+              "english": "In response to everyone's requests, we have added a new feature."
+            },
+            {
+              "japanese": "親の期待に応えるために、一生懸命勉強した。",
+              "reading": "おやのきたいにこたえるために、いっしょうけんめいべんきょうした。",
+              "english": "I studied as hard as I could in order to meet my parents' expectations."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_569",
+          "pattern": "つつ(も)",
+          "meaning": "Expresses a contradiction or tension between two simultaneous states — doing something despite knowing or feeling otherwise.",
+          "explanation": "つつ(も) adds the concessive nuance of 'even though' or 'despite' to the simultaneous つつ. It highlights an internal conflict or contradiction, such as doing something while aware it is wrong or undesirable. It is formal and mainly used in written Japanese.",
+          "examples": [
+            {
+              "japanese": "悪いと知りつつも、彼は嘘をついた。",
+              "reading": "わるいとしりつつも、かれはうそをついた。",
+              "english": "Even though he knew it was wrong, he lied."
+            },
+            {
+              "japanese": "忙しいと言いつつも、彼女は毎週ボランティアに参加している。",
+              "reading": "いそがしいといいつつも、かのじょはまいしゅうボランティアにさんかしている。",
+              "english": "Despite saying she's busy, she participates in volunteer activities every week."
+            },
+            {
+              "japanese": "後悔しつつも、その決断を変えることはできなかった。",
+              "reading": "こうかいしつつも、そのけつだんをかえることはできなかった。",
+              "english": "Even while regretting it, I couldn't change that decision."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_570",
+          "pattern": "にもかかわらず",
+          "meaning": "Means 'despite' or 'in spite of', highlighting a result that is contrary to expectations.",
+          "explanation": "にもかかわらず follows nouns or plain-form verbs and signals that the outcome is surprising or contrary to what the preceding condition would normally lead to. It is more emphatic than のに and is predominantly used in formal or written registers. The も intensifies the sense of contrast.",
+          "examples": [
+            {
+              "japanese": "雨にもかかわらず、大勢の人が集まった。",
+              "reading": "あめにもかかわらず、おおぜいのひとがあつまった。",
+              "english": "Despite the rain, a large crowd gathered."
+            },
+            {
+              "japanese": "何度も警告したにもかかわらず、彼は同じミスを繰り返した。",
+              "reading": "なんどもけいこくしたにもかかわらず、かれはおなじミスをくりかえした。",
+              "english": "Despite being warned many times, he kept making the same mistake."
+            },
+            {
+              "japanese": "体調が悪いにもかかわらず、彼女は仕事を続けた。",
+              "reading": "たいちょうがわるいにもかかわらず、かのじょはしごとをつづけた。",
+              "english": "Despite feeling unwell, she continued working."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_571",
+          "pattern": "抜く",
+          "meaning": "Attached to a verb stem, indicates doing something completely, enduring to the very end, or seeing something through despite difficulty.",
+          "explanation": "抜く attaches to the ます-stem of a verb and adds the nuance of pushing through to completion, often against hardship. Common collocations include 走り抜く (run all the way through), 生き抜く (survive through hardship), and 考え抜く (think something through thoroughly). It is used in both spoken and written Japanese and carries a sense of determination or thoroughness.",
+          "examples": [
+            {
+              "japanese": "彼女はどんなに辛くても、最後まで走り抜いた。",
+              "reading": "かのじょはどんなにつらくても、さいごまではしりぬいた。",
+              "english": "No matter how painful it was, she ran all the way to the end."
+            },
+            {
+              "japanese": "その問題について一晩中考え抜いた。",
+              "reading": "そのもんだいについていちばんじゅうかんがえぬいた。",
+              "english": "I thought through that problem all night long."
+            },
+            {
+              "japanese": "困難な状況でも、彼は生き抜く力を持っている。",
+              "reading": "こんなんなじょうきょうでも、かれはいきぬくちからをもっている。",
+              "english": "Even in difficult circumstances, he has the strength to survive."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_572",
+          "pattern": "際に",
+          "meaning": "Indicates that something occurs or should be done at a particular moment or in a specific situation.",
+          "explanation": "際に follows a noun (with の) or verb dictionary/た-form to mean 'when', 'at the time of', or 'in the event of'. It is more versatile and slightly less formal than に際して, used in both practical instructions and formal contexts. It often appears in manuals, notices, and polite requests.",
+          "examples": [
+            {
+              "japanese": "ご利用の際に、IDカードをご提示ください。",
+              "reading": "ごりようのさいに、IDカードをごていじください。",
+              "english": "Please present your ID card when using the service."
+            },
+            {
+              "japanese": "緊急の際には、このボタンを押してください。",
+              "reading": "きんきゅうのさいには、このボタンをおしてください。",
+              "english": "In case of an emergency, please press this button."
+            },
+            {
+              "japanese": "日本に来た際に、ぜひ連絡してください。",
+              "reading": "にほんにきたさいに、ぜひれんらくしてください。",
+              "english": "Please do get in touch when you come to Japan."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_573",
+          "pattern": "せめて",
+          "meaning": "Expresses a minimum wish or concession when full satisfaction is impossible.",
+          "explanation": "せめて is an adverb used when the speaker accepts they cannot have everything they want and settles for a minimum condition. It often carries a tone of pleading, consolation, or mild frustration. It appears in both spoken and written Japanese across a range of registers and commonly pairs with だけでも, くらいは, or similar expressions of minimum expectation.",
+          "examples": [
+            {
+              "japanese": "せめて一言、連絡してくれればよかったのに。",
+              "reading": "せめてひとこと、れんらくしてくれればよかったのに。",
+              "english": "If only you had at least sent a quick message."
+            },
+            {
+              "japanese": "忙しくても、せめて週に一度は家族と食事をしたい。",
+              "reading": "いそがしくても、せめてしゅうにいちどはかぞくとしょくじをしたい。",
+              "english": "Even when busy, I want to eat with my family at least once a week."
+            },
+            {
+              "japanese": "全部は無理でも、せめて半分だけでも終わらせよう。",
+              "reading": "ぜんぶはむりでも、せめてはんぶんだけでもおわらせよう。",
+              "english": "Even if we can't do it all, let's at least finish half of it."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_574",
+          "pattern": "何しろ",
+          "meaning": "No wonder, After all, In fact, Because, At any rate",
+          "explanation": "Grammar explanation for 何しろ",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "quartet_2_8_dialogue_0",
+          "type": "dialogue",
+          "title": "Dialogue quartet_2_8",
+          "text": "も: はじめに\nContents: 本書について\nAbout: This Book\n読む: 異文化での気づき\nしようりやく: 文型・表現ノート\n書く: 経験からの学び\nモデル作文文化の壁を越えて: 017\n国際交流: 020\n聞く: 異文化ニーョン\nちょうかい: 聴解2多化共生社会\n読む: インタビューに見るプロ意識\nかがや: おかみ\n書く: インタビー記事",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 10
+          }
+        },
+        {
+          "id": "quartet_2_8_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_quartet_2_8",
+          "text": "話す: 大切な物\n聞く: 温泉事情\nおんせん: 聴解1温泉旅行\nおんせん: 聴解2温泉の「タトウ禁」問題\nきんし: 第9课\n読む: 小説・エッセイを通じて考える愛\nきてき: 読み物2愛と恐怖\nきようふ: 読みのストラテジー\n書く: 小説や映画のレビ\nある日のできごと: 084\n聞く: ペットに関する社会事情\nさつしよぶん: 聴解2ペットビネス\n読む: 098\nえが: 読み物2日本人が政府に期待するもの\nせいふ: 読みのストラテジー\n書く: データ分析\nふんせき: モデル作文結婚相手に求める年収の男女比較",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 11
+          }
+        },
+        {
+          "id": "quartet_2_8_dialogue_2",
+          "type": "dialogue",
+          "title": "Dialogue quartet_2_8",
+          "text": "followed: by a section entitled プ, which offers activities for expanding your range\nof: expression and a section on kanji.\nThe: structure and content of Volume II are as follows.\n読む: Study grammatical patterns expressions and reading strategies through\ntwo: readings\nform: of questions on the reading's topic.読h后 involves tasks such as summarizing\nthe: reading in your own words, comparing the content with the situation in your\n読み物: Each lesson has two readings（読み物1/読み物2).Thereadings gradually become\nmore: challenging with each new lesson, and generally focus on topics concerning Japanese\nculture: and society that are of interest to many students. All the readings in Volume II\nother: than the first one in Lesson 8 are real-world passages that haven't been watered\ndown: for learners. This is intended to give learners a greater sense of accomplishment\nafter: they complete each passage, and thus be more strongly motivated to advance their\nreading: skills.\n読みのストラテ: This part presents reading strategies that not only are useful for\ndeveloping: a better understanding of the readings, but can also be effectively applied to\nreading: comprehension in general. As with Volume I, the strategies covered in Volume II\noffer: tips on how to parse sentences and follow the structure of compositions.\nふんけい: used in the readings. Volume II covers mainly intermediate patterns and expressions,\ncentering: on JLPT N2 and N1 grammar. This section is designed to foster your ability to\nunderstand: difficult words and sentences from context, offering explanations in English\nand: numerous example sentences to assist you. Items marked with  are ones that you\nshould: strive to master for spoken/written communication, while those not so marked are\nones: that you just need to understand the meaning.\n書く: Write compositions based on the model text\nThis: section challenges you to use what you learned in む to write short compositions\non: subjects related to the readings. Before that, you go over デ作文 and 書<ポイト to\nacquire: a better understanding of text structure and writing pointers, and you respond to the\nquestions: in 書いてみよう to brainstorm for your composition.\n話す: Practice conversation patterns using a model dialogue\nThis: section is divided into two parts,会話1 and会話2. Each part offers conversation practice\nthat: is based on a model dialogue and progresses from input to output.会話 1 presents task-\nbased: dialogues, such as inquiring about a lost article or making a suggestion.会話2 focuses\non: monologues such as speeches or presentations and discussions.",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_8_dialogue_3",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_quartet_2_8",
+          "text": "Fashion: trends change with the times.\nインタビュに見るプロ意識: ④春になり暖かくなるとともに、桜の花が咲き始める。\nうか: 回彼の第一印象はよくなかった。しかし、時間が経つとともに仲良くなり、今では一番の\nなかよ: 親友だ。\nとともに: The type of change expressed in this structure is usually a gradual one\nthat: occurs over time.\nた: •Ytakes verbs that express change (e.g., なる，増える，減る，進む，~始める).\n話す: • When verbs or nouns that express actions are used in place of X and Y, this structure means the\ntwo: actions occur at the same time.\nWhile: conducting a questionnaire survey of students, we also collected opinions from teachers.\nA: 6.~たものだ\nがえ: I used to go to karaoke on the way home from school.\nとうきょう: 同弟が小さかった時は、よく宿題を手伝ってあたものだ。\nそほ: ·Vたものだ is an expression for stating something that the speaker used to\ndo: but no longer does now; it implies that the speaker feels nostalgic\nabout: the memory.",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 71
+          }
+        },
+        {
+          "id": "quartet_2_8_dialogue_4",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_quartet_2_2",
+          "text": "話す: 大切な物\n忘れ物: やってみよう\nA: あなた\n旅館のスタッフ: 泊まつた旅館に財布を\nさいふ: 忘れたことに気がつきました。",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 78
+          }
+        },
+        {
+          "id": "quartet_2_8_dialogue_5",
+          "type": "dialogue",
+          "title": "Dialogue quartet_2_8",
+          "text": "聞いてみよう: 3.Kaiwa_L8-1\nさいふ: ②財布にはどんな特徴がありますか。色や大きさを答えなさい。\n話す: 2)ョージは何と言っていましたか。\n壳店で: 時にはあったので、\nばいてん: たら、売店か廊下の\nろうか: かもしれません……",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 79
+          }
+        },
+        {
+          "id": "quartet_2_8_dialogue_6",
+          "type": "dialogue",
+          "title": "Dialogue quartet_2_8",
+          "text": "モデル会話: 3.Kaiwa_L8-1\n旅館での忘れ物: ジョージ・テイラー（ジ:)が、宿泊した旅館に電話をかける。（旅館のスタッフ：ス)\nジ: ：もしもし、０すみません、３時間ほど前にチェックアウトしたテイラーと申し\nジ: ジョージ・テイラーと申します。\nス: ジョージ・テイラー様ですね。確認いたしますので、少々お待ちください。\nかくにん: ……お待たせいたしました。清掃時には見当たらなかったようですが。\nジ: そうですか。●売店でお土産を買った時にはあったので、部屋になかったら、\nスやげ: 売店か廊下の自動販売機のところかもしれません……。\nろうか: もし見つかったら、この番号に連絡をいただけませんか。\nス: 承知いたしました。お財布の中に何か身分証が入っていますか。\nうち: みぶんしとう\nジ: いや……。でも、もしかしたら図書館の利用証が入っているかもしれません。\nジ: えっと、\nジ: よろしくお願いします。\nジ: はい。\nス: 花屋旅館の鈴木と申します。お財布が見つかりましたのでご連絡いたしました。\nジ: そうですか！申し訳ありませんが、予約した時の住所に着払いで送っていた\nちゃくばら: だけませんか。\nス: かしこまりました。\nジ: お手数をおかけしてすみません。よろしくお願いします。\nばいてん: ろうか\nとうはんばいき: みんしう\nかわ: 二つ折bi-fold\nふたおり: Cゅうしょ\nちくばら: 054",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 80
+          }
+        },
+        {
+          "id": "quartet_2_8_dialogue_7",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_quartet_2_8",
+          "text": "読む: フローチャート\nあなた: 電話で忘れ物について聞く\n旅館のスタッフ: こたえる\n話す: さいふ\n大切な物: ② 別の心当たりがある場所 (haveaplacein mind) を伝える\nこころあ: 売店でお土産を買った時にはあったので、部屋になかったら、\nみやげ: 売店か自動販売機のところかもしれません……。\nE: 3 見つかった時、連絡してほしいとお願いする\nりようしう: 入っているかもしれません。\nがらそさい: はい。無地の黒い革の財布です。あと二つ折で、\nふたおり: ポケットに入る大きさです。\nちくばら: 送っていただけませんか。\nてすう: 055",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 81
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "quartet_2_textbook_2_textbook_quartet_2_8_exercise_36",
+          "label": "practice",
+          "prompt": "聴解2温泉の「タトウ禁」問題",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 11
+          }
+        },
+        {
+          "id": "quartet_2_textbook_2_textbook_quartet_2_8_exercise_37",
+          "label": "practice",
+          "prompt": "小説・エッセイを通じて考える愛",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 11
+          }
+        },
+        {
+          "id": "quartet_2_textbook_2_textbook_quartet_2_8_exercise_38",
+          "label": "practice",
+          "prompt": "読み物1夜中の汽笛について、あるいは物語の効用について",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 11
+          }
+        },
+        {
+          "id": "quartet_2_textbook_2_textbook_quartet_2_8_exercise_39",
+          "label": "practice",
+          "prompt": "「たとえ」を使つた表現(Expressions usedin analogies)",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 11
+          }
+        },
+        {
+          "id": "quartet_2_textbook_2_textbook_quartet_2_8_exercise_40",
+          "label": "practice",
+          "prompt": "タイトルから読み取るメッセージ",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 11
+          }
+        },
+        {
+          "id": "quartet_2_textbook_2_textbook_quartet_2_8_exercise_41",
+          "label": "practice",
+          "prompt": "(Interpreting the writer's message from the title)",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 11
+          }
+        },
+        {
+          "id": "quartet_2_textbook_2_textbook_quartet_2_8_exercise_42",
+          "label": "practice",
+          "prompt": "モデル作文『夜中の汽笛について、あるいは物語の効用についてを読んで",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 11
+          }
+        },
+        {
+          "id": "quartet_2_textbook_2_textbook_quartet_2_8_exercise_43",
+          "label": "practice",
+          "prompt": "会話2最悪なできごと",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 11
+          }
+        },
+        {
+          "id": "quartet_2_textbook_2_textbook_quartet_2_8_exercise_44",
+          "label": "practice",
+          "prompt": "ペットに関する社会事情",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 11
+          }
+        },
+        {
+          "id": "quartet_2_textbook_2_textbook_quartet_2_8_exercise_45",
+          "label": "practice",
+          "prompt": "聴解1ペットの殺処分",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 11
+          }
+        },
+        {
+          "id": "quartet_2_textbook_2_textbook_quartet_2_8_exercise_46",
+          "label": "practice",
+          "prompt": "データから考える社会",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 11
+          }
+        },
+        {
+          "id": "quartet_2_textbook_2_textbook_quartet_2_8_exercise_47",
+          "label": "practice",
+          "prompt": "読み物1結婚・子育て、夢描きにくく",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 11
+          }
+        },
+        {
+          "id": "quartet_2_textbook_2_textbook_quartet_2_8_exercise_48",
+          "label": "practice",
+          "prompt": "読み物2日本人が政府に期待するもの",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 11
+          }
+        },
+        {
+          "id": "quartet_2_textbook_2_textbook_quartet_2_8_exercise_49",
+          "label": "practice",
+          "prompt": "デタの説明(Explanations of data)",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 11
+          }
+        },
+        {
+          "id": "quartet_2_textbook_2_textbook_quartet_2_8_exercise_50",
+          "label": "practice",
+          "prompt": "調査結果のグラフ(Graphsof surveyresults)",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 11
+          }
+        },
+        {
+          "id": "quartet_2_textbook_2_textbook_quartet_2_8_exercise_51",
+          "label": "practice",
+          "prompt": "モデル作文結婚相手に求める年収の男女比較",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 11
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_99",
+          "label": "practice",
+          "prompt": "followed by a section entitled プ, which offers activities for expanding your range",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_100",
+          "label": "practice",
+          "prompt": "of expression and a section on kanji.",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_101",
+          "label": "practice",
+          "prompt": "The structure and content of Volume II are as follows.",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_102",
+          "label": "practice",
+          "prompt": "(1)Lessons 7-12",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_103",
+          "label": "practice",
+          "prompt": "Study grammatical patterns expressions and reading strategies through",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_104",
+          "label": "practice",
+          "prompt": "two readings",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_105",
+          "label": "practice",
+          "prompt": "■読む前に·読ん後で 読む前に prepares you for each reading with schema activation in the",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_106",
+          "label": "practice",
+          "prompt": "form of questions on the reading's topic.読h后 involves tasks such as summarizing",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_107",
+          "label": "practice",
+          "prompt": "the reading in your own words, comparing the content with the situation in your",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_108",
+          "label": "practice",
+          "prompt": "homeland, and discussing your experiences and opinions in relation to the reading.",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_109",
+          "label": "practice",
+          "prompt": "読み物 Each lesson has two readings（読み物1/読み物2).Thereadings gradually become",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_110",
+          "label": "practice",
+          "prompt": "more challenging with each new lesson, and generally focus on topics concerning Japanese",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_111",
+          "label": "practice",
+          "prompt": "culture and society that are of interest to many students. All the readings in Volume II",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_112",
+          "label": "practice",
+          "prompt": "other than the first one in Lesson 8 are real-world passages that haven't been watered",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_113",
+          "label": "practice",
+          "prompt": "down for learners. This is intended to give learners a greater sense of accomplishment",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_114",
+          "label": "practice",
+          "prompt": "after they complete each passage, and thus be more strongly motivated to advance their",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_115",
+          "label": "practice",
+          "prompt": "reading skills.",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_116",
+          "label": "practice",
+          "prompt": "読みのストラテ This part presents reading strategies that not only are useful for",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_117",
+          "label": "practice",
+          "prompt": "developing a better understanding of the readings, but can also be effectively applied to",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_118",
+          "label": "practice",
+          "prompt": "reading comprehension in general. As with Volume I, the strategies covered in Volume II",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_119",
+          "label": "practice",
+          "prompt": "offer tips on how to parse sentences and follow the structure of compositions.",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_120",
+          "label": "practice",
+          "prompt": "文型·表現ノ—卜 Commentary is provided on the grammatical patterns and expressions",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_121",
+          "label": "practice",
+          "prompt": "used in the readings. Volume II covers mainly intermediate patterns and expressions,",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        },
+        {
+          "id": "quartet_2_textbook_quartet_2_8_exercise_122",
+          "label": "practice",
+          "prompt": "centering on JLPT N2 and N1 grammar. This section is designed to foster your ability to",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 20
+          }
+        }
+      ]
+    }
+  ]
+}

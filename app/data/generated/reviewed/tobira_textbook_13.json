@@ -1,0 +1,840 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "tobira_textbook",
+  "title": "tobira_textbook / tobira_textbook_13",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "tobira_textbook_13_draft",
+      "appLessonId": "tobira_textbook_13",
+      "title": "tobira textbook 13",
+      "qualityTier": "draft",
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "cefr_b2_657",
+          "pattern": "ぬ",
+          "meaning": "A classical Japanese negative auxiliary equivalent to modern ない, attached to verb stems to express negation.",
+          "explanation": "ぬ is the classical (文語) form of the negative auxiliary ない, and it attaches to the same verb stem as ない (the negative base). It is encountered in set expressions, proverbs, formal writing, and literary Japanese. In contemporary usage it often lends a literary, archaic, or formal tone. Common fixed expressions include 知らぬ (not knowing), 見ぬ (not seeing), and できぬ (cannot do).",
+          "examples": [
+            {
+              "japanese": "知らぬが仏とよく言われるが、知らないままでいるのも問題だ。",
+              "reading": "しらぬがほとけとよくいわれるが、しらないままでいるのももんだいだ。",
+              "english": "They often say ignorance is bliss, but remaining unaware can also be a problem."
+            },
+            {
+              "japanese": "彼は誰にも言わぬと約束したが、すぐに話してしまった。",
+              "reading": "かれはだれにもいわぬとやくそくしたが、すぐにはなしてしまった。",
+              "english": "He promised not to tell anyone, but he ended up talking right away."
+            },
+            {
+              "japanese": "油断せぬよう、最後まで気を引き締めて取り組んでください。",
+              "reading": "ゆだんせぬよう、さいごまできをひきしめてとりくんでください。",
+              "english": "Please stay focused until the end and be careful not to let your guard down."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_662",
+          "pattern": "活かす",
+          "meaning": "To make effective use of something — such as skills, experience, or qualities — so that its value is fully realized.",
+          "explanation": "活かす (sometimes written 生かす) implies not just using something but drawing out its full potential, often in a purposeful or strategic way. It is common in both professional contexts (経験を活かす) and everyday speech. The nuance differs from 使う in that 活かす suggests the thing being used is put to its best, most meaningful purpose.",
+          "examples": [
+            {
+              "japanese": "大学で学んだ知識を仕事に活かしたいと思っている。",
+              "reading": "だいがくでまなんだちしきをしごとにいかしたいとおもっている。",
+              "english": "I want to put the knowledge I gained at university to use in my work."
+            },
+            {
+              "japanese": "彼女は留学の経験を活かして、通訳の仕事を始めた。",
+              "reading": "かのじょはりゅうがくのけいけんをいかして、つうやくのしごとをはじめた。",
+              "english": "She leveraged her study-abroad experience and started working as an interpreter."
+            },
+            {
+              "japanese": "素材の味を活かすために、シンプルな調理法を選んだ。",
+              "reading": "そざいのあじをいかすために、シンプルなちょうりほうをえらんだ。",
+              "english": "To bring out the natural flavor of the ingredients, I chose a simple cooking method."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_670",
+          "pattern": "がけに",
+          "meaning": "Indicates doing something incidentally or in passing while on the way somewhere or in the midst of going.",
+          "explanation": "Attaches to the stem of motion verbs like 行く, 帰る, 出かける to mean 'on the way' or 'as you go'. It implies that the action is done without stopping or making a special trip — it happens naturally as part of the journey. This is a relatively casual expression used in everyday speech.",
+          "examples": [
+            {
+              "japanese": "帰りがけに、スーパーで牛乳を買ってきた。",
+              "reading": "かえりがけに、スーパーでぎゅうにゅうをかってきた。",
+              "english": "On my way home, I stopped by the supermarket and picked up some milk."
+            },
+            {
+              "japanese": "出かけがけに財布を忘れたことに気づいた。",
+              "reading": "でかけがけにさいふをわすれたことにきづいた。",
+              "english": "As I was heading out, I realized I had forgotten my wallet."
+            },
+            {
+              "japanese": "行きがけに友人の家に寄って、本を返した。",
+              "reading": "いきがけにゆうじんのいえによって、ほんをかえした。",
+              "english": "On my way there, I stopped by my friend's place to return a book."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_671",
+          "pattern": "も又",
+          "meaning": "Adds emphasis to the idea of 'also' or 'too', highlighting that something likewise applies or that the same thing happens again.",
+          "explanation": "も又 (もまた) is a more emphatic and literary variant of も alone. It often appears in written Japanese, formal speech, or reflective contexts to draw a meaningful parallel or reinforce a point. It can mean 'likewise', 'in the same way', or 'again', and carries a slightly elevated, thoughtful register.",
+          "examples": [
+            {
+              "japanese": "彼女もまた、同じ苦しみを経験したことがある。",
+              "reading": "かのじょもまた、おなじくるしみをけいけんしたことがある。",
+              "english": "She, too, has experienced the same kind of suffering."
+            },
+            {
+              "japanese": "その問題は私たちもまた真剣に考えなければならない。",
+              "reading": "そのもんだいはわたしたちもまたしんけんにかんがえなければならない。",
+              "english": "That issue is one we, too, must think about seriously."
+            },
+            {
+              "japanese": "失敗もまた、大切な学びの機会である。",
+              "reading": "しっぱいもまた、たいせつなまなびのきかいである。",
+              "english": "Failure, too, is an important opportunity for learning."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_674",
+          "pattern": "しかしながら",
+          "meaning": "However, Nevertheless, But",
+          "explanation": "Grammar explanation for しかしながら",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_676",
+          "pattern": "一応 ①",
+          "meaning": "Expresses doing something as a precaution or to cover one's bases, even if it may not be strictly necessary.",
+          "explanation": "一応① indicates that an action is taken as a safety measure or out of caution, equivalent to 'just in case' or 'to be safe' in English. It is used in casual to neutral speech and implies the speaker is not fully certain something is needed but does it anyway. It often appears with verbs like 確認する, 連絡する, or 持っていく.",
+          "examples": [
+            {
+              "japanese": "一応、傘を持っていったほうがいいよ。雨が降るかもしれないから。",
+              "reading": "いちおう、かさをもっていったほうがいいよ。あめがふるかもしれないから。",
+              "english": "You should take an umbrella just in case — it might rain."
+            },
+            {
+              "japanese": "一応、先生に確認してから提出します。",
+              "reading": "いちおう、せんせいにかくにんしてからていしゅつします。",
+              "english": "I'll submit it after checking with the teacher first, just to be sure."
+            },
+            {
+              "japanese": "一応、予約を入れておきましょう。混んでいるかもしれないので。",
+              "reading": "いちおう、よやくをいれておきましょう。こんでいるかもしれないので。",
+              "english": "Let's make a reservation just in case — it might be crowded."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_679",
+          "pattern": "後(の) Noun",
+          "meaning": "When 後 modifies a noun or quantity, it expresses what remains, is left over, or is still to come.",
+          "explanation": "In this pattern, 後 (あと) precedes a number or noun to indicate what is remaining — for example, how much time is left, how many items remain, or what else needs doing. It is distinct from the temporal 'after' use of 後 (ご/のち) and focuses on remainder or proximity. It is common in everyday spoken and written Japanese at all registers.",
+          "examples": [
+            {
+              "japanese": "試験まで後三日しかない。しっかり準備しよう。",
+              "reading": "しけんまであとみっかしかない。しっかりじゅんびしよう。",
+              "english": "There are only three days left until the exam. Let's prepare properly."
+            },
+            {
+              "japanese": "後一問だけ答えれば、アンケートは終わります。",
+              "reading": "あといちもんだけこたえれば、アンケートはおわります。",
+              "english": "If you answer just one more question, the survey will be complete."
+            },
+            {
+              "japanese": "後何が必要か、リストにまとめておいてください。",
+              "reading": "あとなにがひつようか、リストにまとめておいてください。",
+              "english": "Please make a list of what else is needed."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_680",
+          "pattern": "何から何まで",
+          "meaning": "Everything and anything, From A to Z, From head to toe, Everything",
+          "explanation": "Grammar explanation for 何から何まで",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_681",
+          "pattern": "～のうち(で)",
+          "meaning": "Indicates that something is selected from or applies within a larger group or range.",
+          "explanation": "のうち(で) follows a noun or noun phrase and means 'among', 'of', or 'within'. It is used to narrow focus to one or more members of a defined set. It is neutral in register and works in both written and spoken Japanese.",
+          "examples": [
+            {
+              "japanese": "この三つの提案のうちで、どれが一番現実的ですか。",
+              "reading": "このみっつのていあんのうちで、どれがいちばんげんじつてきですか。",
+              "english": "Among these three proposals, which is the most realistic?"
+            },
+            {
+              "japanese": "クラスの学生のうち、半分が海外に住んだことがある。",
+              "reading": "クラスのがくせいのうち、はんぶんがかいがいにすんだことがある。",
+              "english": "Half of the students in the class have lived abroad."
+            },
+            {
+              "japanese": "応募者のうちから五名が選ばれた。",
+              "reading": "おうぼしゃのうちからごめいがえらばれた。",
+              "english": "Five people were chosen from among the applicants."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_682",
+          "pattern": "かのようだ",
+          "meaning": "Describes something as appearing to be the case in a manner that resembles a hypothetical or unreal situation.",
+          "explanation": "かのようだ combines the particle か (suggesting uncertainty or unreality) with ようだ (resemblance) to create a literary comparison meaning 'as if' or 'as though.' It is often used to describe vivid impressions, dreams, or dramatic scenes and carries a slightly literary or poetic register. The pattern attaches to a plain-form verb or noun + の.",
+          "examples": [
+            {
+              "japanese": "彼女はまるで映画の主人公であるかのように振る舞っていた。",
+              "reading": "かのじょはまるでえいがのしゅじんこうであるかのようにふるまっていた。",
+              "english": "She behaved just as if she were the protagonist of a movie."
+            },
+            {
+              "japanese": "雪が静かに降り積もり、世界が止まったかのようだった。",
+              "reading": "ゆきがしずかにふりつもり、せかいがとまったかのようだった。",
+              "english": "Snow quietly piled up, and it was as if the world had stopped."
+            },
+            {
+              "japanese": "彼は何も知らないかのように平然としていた。",
+              "reading": "かれはなにもしらないかのようにへいぜんとしていた。",
+              "english": "He remained calm, as if he knew nothing at all."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_683",
+          "pattern": "に際して",
+          "meaning": "Marks a specific important moment or event as the context for an action or statement.",
+          "explanation": "に際して follows a noun or verb dictionary form and means 'on the occasion of' or 'at the time of'. It is formal and typically used for significant events such as ceremonies, departures, launches, or formal decisions. It is more formal than 際に and appears frequently in written and ceremonial speech.",
+          "examples": [
+            {
+              "japanese": "卒業に際して、先生から貴重なアドバイスをいただいた。",
+              "reading": "そつぎょうにさいして、せんせいからきちょうなアドバイスをいただいた。",
+              "english": "On the occasion of my graduation, I received valuable advice from my teacher."
+            },
+            {
+              "japanese": "新しいプロジェクトを開始するに際して、全員でリスクを確認した。",
+              "reading": "あたらしいプロジェクトをかいしするにさいして、ぜんいんでリスクをかくにんした。",
+              "english": "Before starting the new project, everyone reviewed the risks."
+            },
+            {
+              "japanese": "海外赴任に際して、語学研修を受けることが求められた。",
+              "reading": "かいがいふにんにさいして、ごがくけんしゅうをうけることがもとめられた。",
+              "english": "Upon my overseas assignment, I was required to undergo language training."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_684",
+          "pattern": "のももっともだ",
+          "meaning": "May well, Have or has good reason for, No wonder, … Is only natural",
+          "explanation": "Grammar explanation for のももっともだ",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_685",
+          "pattern": "のも当然だ",
+          "meaning": "It is only natural that, It is no wonder that",
+          "explanation": "The nominalizer の combined with も (also/even) and 当然だ expresses that something is inevitable or unsurprising given the circumstances. It emphasizes that the consequence logically follows from what precedes. This pattern is more formal than simple 当然だ and is common in explanatory contexts.",
+          "examples": [
+            {
+              "japanese": "失敗するのも当然だ。",
+              "reading": "しっぱいするのもとうぜんだ。",
+              "english": "It's only natural that it failed."
+            },
+            {
+              "japanese": "値段が高いのも当然だ。",
+              "reading": "ねだんがたかいのもとうぜんだ。",
+              "english": "It's no wonder that the price is high."
+            },
+            {
+              "japanese": "人気があるのも当然だ。",
+              "reading": "にんきがあるのもとうぜんだ。",
+              "english": "It's no wonder that it's popular."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_686",
+          "pattern": "の下で",
+          "meaning": "Indicates that something takes place under a certain condition, rule, authority, or supervision.",
+          "explanation": "の下で attaches to a noun and expresses that an action occurs within the framework of, or under the control or guidance of, that noun. It can refer to a person's supervision ('under the professor'), an institutional condition ('under the law'), or an environmental situation ('under harsh conditions'). It is neutral to formal in register.",
+          "examples": [
+            {
+              "japanese": "田中教授の下で、三年間研究を続けた。",
+              "reading": "たなかきょうじゅのもとで、さんねんかんけんきゅうをつづけた。",
+              "english": "I continued my research for three years under Professor Tanaka."
+            },
+            {
+              "japanese": "厳しい条件の下で、選手たちは訓練を積んだ。",
+              "reading": "きびしいじょうけんのもとで、せんしゅたちはくんれんをつんだ。",
+              "english": "The athletes trained under harsh conditions."
+            },
+            {
+              "japanese": "この契約は日本の法律の下で締結されたものです。",
+              "reading": "このけいやくはにほんのほうりつのもとでていけつされたものです。",
+              "english": "This contract was concluded under Japanese law."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_687",
+          "pattern": "を中心に",
+          "meaning": "Indicates that something revolves around, is focused on, or is centered on a particular person, place, or thing.",
+          "explanation": "を中心に attaches to a noun and expresses that the noun is the core or focal point of an activity, group, or area. It can describe physical location ('centered around Tokyo') or abstract focus ('centered on the manager'). It is neutral in register and appears in both written and spoken Japanese.",
+          "examples": [
+            {
+              "japanese": "この研究は環境問題を中心に進められている。",
+              "reading": "このけんきゅうはかんきょうもんだいをちゅうしんにすすめられている。",
+              "english": "This research is being conducted with a focus on environmental issues."
+            },
+            {
+              "japanese": "若者を中心に、スマートフォンの使用時間が増えている。",
+              "reading": "わかものをちゅうしんに、スマートフォンのしようじかんがふえている。",
+              "english": "Smartphone usage time is increasing, mainly among young people."
+            },
+            {
+              "japanese": "東京を中心に、関東地方全体で雨が降るでしょう。",
+              "reading": "とうきょうをちゅうしんに、かんとうちほうぜんたいでアメがふるでしょう。",
+              "english": "Rain is expected throughout the Kanto region, centered on Tokyo."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "tobira_textbook_13_dialogue_0",
+          "type": "dialogue",
+          "title": "Dialogue textbook_tobira_textbook_13",
+          "text": "日本人と自然: 会話文\nついか: 会話文\nかとう: マイク：今、学校で俳句について勉強したんですど、俳句ってとても面白いですね。お父\n加藤: 俳句かあ。実は、僕は俳句より、川柳の方が好きなんだけど…。\nせんりゅう: マイク：えっ、川柳って?\nせんりゅう: 加藤：ユモア俳句と言ったらいかなあ。社会風刺とか、自分の身近に起きたことを17音\nマイク: へえ、俳句と同じような規則があるんですか。\n加藤: うん、俳句と同じ五七五なんだけど、でも、俳句のように規則はあまり気にしなくて\nおん: くっても、少なくってもOK。そのことを「字余り」とか「字足らず」とか言うんだ\nしあま: Lf=\nマイク: へえ、じや、川柳のほが作りやすいですね。\n加藤: うん、そうだね。川柳も俳句と同じくらい歴史があって、昔から庶民に親しまれてき\nせんりゅう: Lよみh\nせんりゅう: L上Ah\nマイク: ん、そうなんですか。お父さん、何か面白い句を知っていますか。\n加藤: う～ん、覚えてないなあ。あれっ、俳句は色々と覚えているのに、変だねえ。\nマイク: 不思議ですね。川柳のほうが簡単そうなのに。\nせんりう: 加藤：たん、その時々の社会的な出来事や個人的な気持ちについて詠むことが多いから、\nせんりゅう: か調べてみようか。\nかんそう: けいしき\nしゅだん: きおく",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 321
+          }
+        },
+        {
+          "id": "tobira_textbook_13_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue textbook_tobira_textbook_13",
+          "text": "第: 日本人と自然\n課: 単語表\n会話文: 1追加\nついか: addition」(～に~を)追加する\nかんそう: impressions; thoughts\nN: comic haiku\nN: humor\nsatire: on society\n面白おかしい: おもしろおかしい\nA: 7形式\nけいしき: form; formality|形式通り（Phr）according to(haiku)form\nN: 8庶民\nN: common people\nANo: only; sole\nN: means;way;measure\nそのときどきの: Phrat different times\nN: short forタカラ(digital camera)\nN: food (for animals); bait\nまご: Ngrandchild\nSufto: resemble (someone)\nなきだす: u-Vito burst into tears; burst out crying\nbeautiful: person; a beauty [used only for women]\nつま: wife [humble form]\nhusband: [humble form]\nsneeze: 25会議室\nかいぎしつ: conference room\nN: 26花粉症\npollen: allergy\nばかゃろう: Nidiot",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 323
+          }
+        },
+        {
+          "id": "tobira_textbook_13_dialogue_2",
+          "type": "dialogue",
+          "title": "Dialogue textbook_tobira_textbook_13",
+          "text": "内容質問: 読み物を読んだ後で、考えてみよう。\nいのもりしょうたろう: いのもり\nいしのもり: いしのもり\na: 英語 →(\nb: 東京→(\nC: 三輪車→(\nd: 一生懸命→(\nさんりんしや: いつしようけんめい\nめ: a.明日やろうそう考える力野郎\nb: 飛び出すな車は急に止まれない\nき: ころに気をつけてください。\n菜の花や: やせ蛙\nわれと来て: 閑けさ\n負けるな一茶: 月は東に\n岩にしみ入る: 遊べや親の\n小ん林茶: う無材\n小林一茶: こはし\n松尾芭蕉: まおばし\nx: 菜の花：rape blossom\nこれにあり: ここにいます\n枯れ野: desolatefield\nしみ入る: topenetrate\nすずめ: sparrow\nかけめぐる: torunaround",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 324
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4425",
+          "label": "practice",
+          "prompt": "あなたが子供だった時のことを思い出して、次の表を完成しなさい。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4426",
+          "label": "practice",
+          "prompt": "よくほめてくれたのは、どんな人達ですか。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4427",
+          "label": "practice",
+          "prompt": "どんな夢を持っていましたか。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4428",
+          "label": "practice",
+          "prompt": "ほめられて一番嬉しかったのはどんな時ですか。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4429",
+          "label": "practice",
+          "prompt": "まだその夢を持ち続けていますか。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4430",
+          "label": "practice",
+          "prompt": "番よく覚えている先生は?",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4431",
+          "label": "practice",
+          "prompt": "叱られて(tobescolded)一番悲しかったのは",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4432",
+          "label": "practice",
+          "prompt": "どうしてその先生のことよく覚えていますか。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4433",
+          "label": "practice",
+          "prompt": "松尾芭と小林茶という人についてインタットや本で調て、下の表を完成しなさい。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4434",
+          "label": "practice",
+          "prompt": "参考(reference)iできるイト",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4435",
+          "label": "practice",
+          "prompt": "①リンク集]をクリック",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4436",
+          "label": "practice",
+          "prompt": "[本文を読む前に2]",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4437",
+          "label": "practice",
+          "prompt": "http://tobira.9640.jp/tobiralogin",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4438",
+          "label": "practice",
+          "prompt": "②[教科書に出てくるイトをクリック",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4439",
+          "label": "practice",
+          "prompt": "③[第13課]をクリック",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4440",
+          "label": "practice",
+          "prompt": "この二人は、何をした人達ですか。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4441",
+          "label": "practice",
+          "prompt": "次の文はどちらの人物についての文ですか。〇をしなさい。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4442",
+          "label": "practice",
+          "prompt": "日本中を旅行して、「奥の細道」という俳句を含んだ日記を書いた。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4443",
+          "label": "practice",
+          "prompt": "子供や動物などが好きで、それらについてたくさん俳句を作った。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4444",
+          "label": "practice",
+          "prompt": "「わび」さび」の気持ちを句に入れて、俳句を芸術にまで高めた(to raise)。()",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4445",
+          "label": "practice",
+          "prompt": "人間の素直な(honest)気持ちを表した分かりやすい俳句を作つた。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4446",
+          "label": "practice",
+          "prompt": "３歳の時に母親が亡くなり、しい子供時代を過ごした(tospend)。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4447",
+          "label": "practice",
+          "prompt": "1763年に生まれて、1827年に亡くなった。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_13_exercise_4448",
+          "label": "practice",
+          "prompt": "1644年に生まれて、1694年に亡くなった。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 312
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_13_exercise_4449",
+          "label": "practice",
+          "prompt": "Nend of a war",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 315
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_13_exercise_4450",
+          "label": "practice",
+          "prompt": "school building",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 315
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_13_exercise_4451",
+          "label": "practice",
+          "prompt": "ru-Vi  to be sufficient/enough",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 315
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_13_exercise_4452",
+          "label": "practice",
+          "prompt": "open-air classes",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 315
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_13_exercise_4453",
+          "label": "practice",
+          "prompt": "Nimpression|印象に残る（Phr) to stand out in one's memory",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 315
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_13_exercise_4454",
+          "label": "practice",
+          "prompt": "homeroom teacher; person in charge",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 315
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_13_exercise_4455",
+          "label": "practice",
+          "prompt": ": women's (traditional) work pants",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 315
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_13_exercise_4456",
+          "label": "practice",
+          "prompt": "appearance; figure",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 315
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_13_exercise_4457",
+          "label": "practice",
+          "prompt": "colloquial form of僕の家",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 315
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_13_exercise_4458",
+          "label": "practice",
+          "prompt": "10(~)通りかかる",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 315
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_13_exercise_4459",
+          "label": "practice",
+          "prompt": "u-Vito happen to pass by",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 315
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_13_exercise_4460",
+          "label": "practice",
+          "prompt": "u-Vt  to peep / look in",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 315
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_13_exercise_4461",
+          "label": "practice",
+          "prompt": "12(~に)声をかける",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 315
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_13_exercise_4462",
+          "label": "practice",
+          "prompt": "Phr  to talk to",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 315
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_13_exercise_4463",
+          "label": "practice",
+          "prompt": "Phr  lingering evening glow (after a sunset)",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 315
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_13_exercise_4464",
+          "label": "practice",
+          "prompt": "Phr the sun sets/ goes down",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 315
+          }
+        }
+      ]
+    }
+  ]
+}

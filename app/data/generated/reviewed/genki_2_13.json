@@ -1,0 +1,2387 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "genki_2",
+  "title": "Genki II Lesson 13",
+  "edition": "learner-gold",
+  "levelRange": "N4",
+  "sources": [
+    {
+      "sourceId": "genki_2_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "637a2045c68d82ea3140cdaadb43b53dbe9bb211ccd2637b746272e22f84bf3f",
+        "bytes": 154214052
+      }
+    },
+    {
+      "sourceId": "genki_2_workbook",
+      "role": "workbook",
+      "fingerprint": {
+        "sha256": "35847dc441c4f18553e8a7e8b9f2f1db7b10b384dfe38b314bea6e2d3a6e5469",
+        "bytes": 33912205
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "genki_2_lesson_13",
+      "unitType": "lesson",
+      "lessonNumber": 13,
+      "title": "Genki II Lesson 13",
+      "level": "N4",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [
+        {
+          "id": "genki_2_l13_vocab_1",
+          "surface": "大人",
+          "reading": "おとな",
+          "meaning": "adult",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_2",
+          "surface": "弁護士",
+          "reading": "べんごし",
+          "meaning": "lawyer",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_3",
+          "surface": "私",
+          "reading": "わたくし",
+          "meaning": "I (formal)",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_4",
+          "surface": "カレー",
+          "reading": "カレー",
+          "meaning": "curry",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_5",
+          "surface": "紅茶",
+          "reading": "こうちゃ",
+          "meaning": "black tea",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_6",
+          "surface": "着物",
+          "reading": "きもの",
+          "meaning": "kimono; Japanese traditional dress",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_7",
+          "surface": "セーター",
+          "reading": "セーター",
+          "meaning": "sweater",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_8",
+          "surface": "楽器",
+          "reading": "がっき",
+          "meaning": "musical instrument",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_9",
+          "surface": "空手",
+          "reading": "からて",
+          "meaning": "karate",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_10",
+          "surface": "ゴルフ",
+          "reading": "ゴルフ",
+          "meaning": "golf",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_11",
+          "surface": "バイク",
+          "reading": "バイク",
+          "meaning": "motorcycle",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_12",
+          "surface": "象",
+          "reading": "ぞう",
+          "meaning": "elephant",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_13",
+          "surface": "体",
+          "reading": "からだ",
+          "meaning": "body",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_14",
+          "surface": "外国語",
+          "reading": "がいこくご",
+          "meaning": "foreign language",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_15",
+          "surface": "言葉",
+          "reading": "ことば",
+          "meaning": "language; word",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_16",
+          "surface": "文法",
+          "reading": "ぶんぽう",
+          "meaning": "grammar",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_17",
+          "surface": "アプリ",
+          "reading": "アプリ",
+          "meaning": "application (app)",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_18",
+          "surface": "アパート",
+          "reading": "アパート",
+          "meaning": "apartment; smaller apartment building",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_19",
+          "surface": "マンション",
+          "reading": "マンション",
+          "meaning": "larger apartment building; condominium",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_20",
+          "surface": "空港",
+          "reading": "くうこう",
+          "meaning": "airport",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_21",
+          "surface": "店",
+          "reading": "みせ",
+          "meaning": "shop; store",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_22",
+          "surface": "物価",
+          "reading": "ぶっか",
+          "meaning": "consumer prices",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_23",
+          "surface": "広告",
+          "reading": "こうこく",
+          "meaning": "advertisement",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_24",
+          "surface": "募集",
+          "reading": "ぼしゅう",
+          "meaning": "recruitment",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_25",
+          "surface": "約束",
+          "reading": "やくそく",
+          "meaning": "promise; appointment",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_26",
+          "surface": "うれしい",
+          "reading": "うれしい",
+          "meaning": "glad; happy",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_27",
+          "surface": "悲しい",
+          "reading": "かなしい",
+          "meaning": "sad",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_28",
+          "surface": "厳しい",
+          "reading": "きびしい",
+          "meaning": "strict",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_29",
+          "surface": "気分が悪い",
+          "reading": "きぶんがわるい",
+          "meaning": "to feel sick",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 24
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_30",
+          "surface": "辛い",
+          "reading": "からい",
+          "meaning": "hot and spicy; salty",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_31",
+          "surface": "すごい",
+          "reading": "すごい",
+          "meaning": "incredible; awesome",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_32",
+          "surface": "近い",
+          "reading": "ちかい",
+          "meaning": "close; near",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_33",
+          "surface": "いろいろ(な)",
+          "reading": "いろいろ(な)",
+          "meaning": "various; different kinds of",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_34",
+          "surface": "幸せ(な)",
+          "reading": "しあわせ(な)",
+          "meaning": "happy (lasting happiness)",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_35",
+          "surface": "だめ(な)",
+          "reading": "だめ(な)",
+          "meaning": "no good",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_36",
+          "surface": "編む",
+          "reading": "あむ",
+          "meaning": "to knit",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_37",
+          "surface": "頑張る",
+          "reading": "がんばる",
+          "meaning": "to do one's best; to try hard",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_38",
+          "surface": "泣く",
+          "reading": "なく",
+          "meaning": "to cry",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_39",
+          "surface": "磨く",
+          "reading": "みがく",
+          "meaning": "to brush (teeth); to polish",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_40",
+          "surface": "約束を守る",
+          "reading": "やくそくをまもる",
+          "meaning": "to keep a promise",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_41",
+          "surface": "感動する",
+          "reading": "かんどうする",
+          "meaning": "to be moved/touched (by ...)",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_42",
+          "surface": "~回",
+          "reading": "~かい",
+          "meaning": "... times",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_43",
+          "surface": "全部",
+          "reading": "ぜんぶ",
+          "meaning": "all",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_44",
+          "surface": "~と申します",
+          "reading": "~ともうします",
+          "meaning": "my name is ...",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_45",
+          "surface": "特に",
+          "reading": "とくに",
+          "meaning": "especially",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_46",
+          "surface": "口座",
+          "reading": "こうざ",
+          "meaning": "account",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 45
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_47",
+          "surface": "手数料",
+          "reading": "てすうりょう",
+          "meaning": "commission",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 45
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_48",
+          "surface": "通帳",
+          "reading": "つうちょう",
+          "meaning": "passbook",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 45
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_49",
+          "surface": "預金",
+          "reading": "よきん",
+          "meaning": "savings",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 45
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_50",
+          "surface": "金額",
+          "reading": "きんがく",
+          "meaning": "amount",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 45
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_51",
+          "surface": "暗証番号",
+          "reading": "あんしょうばんごう",
+          "meaning": "personal identification number",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 45
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_52",
+          "surface": "現金",
+          "reading": "げんきん",
+          "meaning": "cash",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 45
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_53",
+          "surface": "両替",
+          "reading": "りょうがえ",
+          "meaning": "money exchange",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 45
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_54",
+          "surface": "しあわせ(な)",
+          "reading": null,
+          "meaning": "happiness)",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_55",
+          "surface": "~キ口",
+          "reading": null,
+          "meaning": "kilometers; ...kilograms",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_56",
+          "surface": "第13課≤45",
+          "reading": null,
+          "meaning": "Useful Expressions",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 45
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_57",
+          "surface": "ぎんこう",
+          "reading": null,
+          "meaning": "At the Ba n k",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 45
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_58",
+          "surface": "キッカード",
+          "reading": null,
+          "meaning": "bank card",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 45
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_59",
+          "surface": "金额",
+          "reading": "きんがく",
+          "meaning": "amount",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 45
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_60",
+          "surface": "暗证番号",
+          "reading": "あんしょうんごう",
+          "meaning": "personal identifi cation number",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 45
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_61",
+          "surface": "げんきんようがえ",
+          "reading": null,
+          "meaning": "Useful Expressions",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 45
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_62",
+          "surface": "かね",
+          "reading": "いらっしゃいませ",
+          "meaning": "ATM",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 45
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_63",
+          "surface": "あ少C",
+          "reading": null,
+          "meaning": "passbook update",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 45
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        },
+        {
+          "id": "genki_2_l13_vocab_64",
+          "surface": "つちきにふ二み",
+          "reading": null,
+          "meaning": "credit card",
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 45
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.394Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "OCR pages 32–33 + 53 + seed"
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "genki_2_l13_grammar_1",
+          "pattern": "でも",
+          "meaning": "Used with question words to mean 'any~' or 'whatever~', and alone to mean 'or something' as a softener.",
+          "explanation": "Attach でも to question words (誰、何、どこ、いつ、どれ) to express 'anyone', 'anything', 'anywhere', etc., implying no restriction. Used alone after a noun it means 'or something like that', softening a suggestion. Works in both casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "何でも食べます。",
+              "reading": "なんでもたべます。",
+              "english": "I'll eat anything."
+            },
+            {
+              "japanese": "疲れたら、お茶でも飲みませんか。",
+              "reading": "つかれたら、おちゃでものみませんか。",
+              "english": "If you're tired, how about some tea or something?"
+            },
+            {
+              "japanese": "誰でもここに入れます。",
+              "reading": "だれでもここにはいれます。",
+              "english": "Anyone can enter here."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 26
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "from comprehensive; source remapped"
+          }
+        },
+        {
+          "id": "genki_2_l13_grammar_2",
+          "pattern": "など",
+          "meaning": "Lists examples without being exhaustive, equivalent to 'such as,' 'things like,' or 'etc.'",
+          "explanation": "など follows a noun or list of nouns to indicate that what is mentioned is just a sample from a larger group. It implies there are other similar items not listed. It is used in both casual and polite speech and often appears after one or more example items.",
+          "examples": [
+            {
+              "japanese": "週末は映画や買い物などをします。",
+              "reading": "しゅうまつはえいがやかいものなどをします。",
+              "english": "On weekends I do things like watching movies and shopping."
+            },
+            {
+              "japanese": "果物などはスーパーで買えます。",
+              "reading": "くだものなどはスーパーでかえます。",
+              "english": "You can buy things like fruit at the supermarket."
+            },
+            {
+              "japanese": "日本語や英語などが話せます。",
+              "reading": "にほんごやえいごなどがはなせます。",
+              "english": "I can speak languages such as Japanese and English."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 26
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "from comprehensive; source remapped"
+          }
+        },
+        {
+          "id": "genki_2_l13_grammar_3",
+          "pattern": "やすい",
+          "meaning": "Attached to a verb stem to mean the action is easy to do or tends to happen naturally.",
+          "explanation": "Drop the ます from a verb and add やすい to express that something is easy to do or prone to happening. It functions as an い-adjective and can be conjugated (やすかった、やすくない). Used in both casual and polite contexts.",
+          "examples": [
+            {
+              "japanese": "この本は読みやすいです。",
+              "reading": "このほんはよみやすいです。",
+              "english": "This book is easy to read."
+            },
+            {
+              "japanese": "春は風邪をひきやすいです。",
+              "reading": "はるはかぜをひきやすいです。",
+              "english": "It's easy to catch a cold in spring."
+            },
+            {
+              "japanese": "彼の字は読みやすいですね。",
+              "reading": "かれのじはよみやすいですね。",
+              "english": "His handwriting is easy to read, isn't it."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 26
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "from comprehensive; source remapped"
+          }
+        },
+        {
+          "id": "genki_2_l13_grammar_4",
+          "pattern": "がほしい",
+          "meaning": "To want something, To be in need of",
+          "explanation": "Expressing desire or wanting to possess something.",
+          "examples": [
+            {
+              "japanese": "新しい車が欲しい。",
+              "reading": "あたらしいくるまがほしい。",
+              "english": "I want a new car."
+            },
+            {
+              "japanese": "彼は新しいコンピューターが欲しいと言っています。",
+              "reading": "かれはあたらしいコンピューターがほしいといっています。",
+              "english": "He says he wants a new computer."
+            },
+            {
+              "japanese": "何か飲み物が欲しいですか？",
+              "reading": "なにかのみものがほしいですか？",
+              "english": "Would you like something to drink?"
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 26
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "from comprehensive; source remapped"
+          }
+        },
+        {
+          "id": "genki_2_l13_grammar_5",
+          "pattern": "てあげる",
+          "meaning": "Do something for someone as a favor or act of kindness.",
+          "explanation": "Adding てあげる expresses doing something for someone's benefit or as a favor. The あげる implies giving the benefit of your action to someone. Used when you want to emphasize the helpful nature of your action. Works naturally in casual and polite contexts with people of equal or lower status.",
+          "examples": [
+            {
+              "japanese": "友達に宿題を手伝ってあげました。",
+              "reading": "ともだちにしゅくだいをてつだってあげました。",
+              "english": "I helped my friend with homework."
+            },
+            {
+              "japanese": "妹に新しい靴を買ってあげました。",
+              "reading": "いもうとにあたらしいくつをかってあげました。",
+              "english": "I bought new shoes for my younger sister."
+            },
+            {
+              "japanese": "母に荷物を運んであげます。",
+              "reading": "ははににもつをはこんであげます。",
+              "english": "I will carry the luggage for my mother."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 26
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "from comprehensive; source remapped"
+          }
+        },
+        {
+          "id": "genki_2_l13_grammar_6",
+          "pattern": "とき",
+          "meaning": "Expresses the time when something happens or happened, meaning 'when' or 'at the time of.'",
+          "explanation": "とき (時) follows a verb or adjective in plain form, or a noun with の, to describe the time of an action or state. The tense of the verb before とき matters: plain present form implies the action is simultaneous with the main clause; past form implies it was already completed when the main action occurred. Used in both casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "子どものとき、毎日外で遊びました。",
+              "reading": "こどものとき、まいにちそとであそびました。",
+              "english": "When I was a child, I played outside every day."
+            },
+            {
+              "japanese": "困ったとき、友達に電話してください。",
+              "reading": "こまったとき、ともだちにでんわしてください。",
+              "english": "When you're in trouble, please call a friend."
+            },
+            {
+              "japanese": "日本に来るとき、お土産を持ってきてね。",
+              "reading": "にほんにくるとき、おみやげをもってきてね。",
+              "english": "When you come to Japan, bring a souvenir."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 26
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "from comprehensive; source remapped"
+          }
+        },
+        {
+          "id": "genki_2_l13_grammar_7",
+          "pattern": "とおもう",
+          "meaning": "Used to express the speaker's opinion, belief, or expectation.",
+          "explanation": "と思う follows the plain form of a verb, adjective, or noun sentence to express what the speaker thinks or believes. It softens statements and is very commonly used in everyday conversation. In polite speech, と思います is used.",
+          "examples": [
+            {
+              "japanese": "明日は雨が降ると思います。",
+              "reading": "あしたはあめがふるとおもいます。",
+              "english": "I think it will rain tomorrow."
+            },
+            {
+              "japanese": "この映画はおもしろいと思います。",
+              "reading": "このえいがはおもしろいとおもいます。",
+              "english": "I think this movie is interesting."
+            },
+            {
+              "japanese": "彼女はもう家にいると思う。",
+              "reading": "かのじょはもういえにいるとおもう。",
+              "english": "I think she is already home."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 26
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "from comprehensive; source remapped"
+          }
+        },
+        {
+          "id": "genki_2_l13_grammar_8",
+          "pattern": "なさい",
+          "meaning": "To command or order someone to do something.",
+          "explanation": "This is a direct command form used in formal or authoritative contexts, like instructions from teachers or parents. It's more polite than the plain imperative but still direct and commanding. Common in educational settings and when adults give instructions to children.",
+          "examples": [
+            {
+              "japanese": "よく聞きなさい",
+              "reading": "よくききなさい",
+              "english": "Listen carefully!"
+            },
+            {
+              "japanese": "宿題をしなさい",
+              "reading": "しゅくだいをしなさい",
+              "english": "Do your homework!"
+            },
+            {
+              "japanese": "もっと勉強しなさい",
+              "reading": "もっとべんきょうしなさい",
+              "english": "Study more!"
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 26
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "from comprehensive; source remapped"
+          }
+        },
+        {
+          "id": "genki_2_l13_grammar_9",
+          "pattern": "ないで",
+          "meaning": "Means 'without doing ~' or connects two actions where the first is omitted.",
+          "explanation": "ないで is the negative て-form used when the subject deliberately skips an action while doing something else: 'do B without doing A.' Unlike なくて, ないで does not imply a reason — it describes the manner or circumstance. It is used in both casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "朝ごはんを食べないで、学校に行きました。",
+              "reading": "あさごはんをたべないで、がっこうにいきました。",
+              "english": "I went to school without eating breakfast."
+            },
+            {
+              "japanese": "傘を持たないで出かけたら、雨が降りました。",
+              "reading": "かさをもたないででかけたら、あめがふりました。",
+              "english": "I went out without taking an umbrella, and it rained."
+            },
+            {
+              "japanese": "何も言わないで、部屋を出て行きました。",
+              "reading": "なにもいわないで、へやをでていきました。",
+              "english": "He left the room without saying anything."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 26
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "from comprehensive; source remapped"
+          }
+        },
+        {
+          "id": "genki_2_l13_grammar_10",
+          "pattern": "みたい",
+          "meaning": "Expresses resemblance or an impression, meaning 'like,' 'similar to,' or 'it seems.'",
+          "explanation": "みたい attaches directly to nouns, plain-form verbs, and adjectives to express that something resembles something else or that the speaker has an impression based on observation. It is more casual than ようだ. As a な-adjective-like word, it conjugates with だ or に.",
+          "examples": [
+            {
+              "japanese": "彼女は先生みたいですね。",
+              "reading": "かのじょはせんせいみたいですね。",
+              "english": "She seems like a teacher, doesn't she?"
+            },
+            {
+              "japanese": "外は雪が降っているみたいです。",
+              "reading": "そとはゆきがふっているみたいです。",
+              "english": "It looks like it's snowing outside."
+            },
+            {
+              "japanese": "この料理は本物みたいに見えます。",
+              "reading": "このりょうりはほんものみたいにみえます。",
+              "english": "This dish looks like the real thing."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 26
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "from comprehensive; source remapped"
+          }
+        },
+        {
+          "id": "genki_2_l13_grammar_11",
+          "pattern": "こと",
+          "meaning": "Turns a verb or verb phrase into a noun, allowing it to function as the subject or object of a sentence.",
+          "explanation": "こと follows the plain form of a verb to nominalize the action, turning it into a concept or abstract thing. This lets verb phrases act as subjects (〜ことは) or objects (〜ことが好き). It is used in both casual and polite speech and is essential for expressing likes, abilities, and habits.",
+          "examples": [
+            {
+              "japanese": "日本語を話すことが好きです。",
+              "reading": "にほんごをはなすことがすきです。",
+              "english": "I like speaking Japanese."
+            },
+            {
+              "japanese": "毎朝走ることは健康にいいです。",
+              "reading": "まいあさはしることはけんこうにいいです。",
+              "english": "Running every morning is good for your health."
+            },
+            {
+              "japanese": "漢字を書くことは難しいです。",
+              "reading": "かんじをかくことはむずかしいです。",
+              "english": "Writing kanji is difficult."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 26
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "from comprehensive; source remapped"
+          }
+        },
+        {
+          "id": "genki_2_l13_grammar_12",
+          "pattern": "てみる",
+          "meaning": "Express trying to do something or experiencing an action for the first time.",
+          "explanation": "Adding てみる to a verb means to try, test, or attempt that action. It can mean trying something new or giving something a try. Common in both speaking and writing, it works with any verb. Often expresses willingness to experiment or see what happens.",
+          "examples": [
+            {
+              "japanese": "新しいスポーツをしてみたいです。",
+              "reading": "あたらしいすぽーつをしてみたいです。",
+              "english": "I want to try a new sport."
+            },
+            {
+              "japanese": "その映画を見てみてください。",
+              "reading": "そのえいがをみてみてください。",
+              "english": "Please try watching that movie."
+            },
+            {
+              "japanese": "和食を作ってみました。",
+              "reading": "わしょくをつくってみました。",
+              "english": "I tried making Japanese food."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 26
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "from comprehensive; source remapped"
+          }
+        },
+        {
+          "id": "genki_2_l13_grammar_13",
+          "pattern": "にくい",
+          "meaning": "Attached to a verb stem to express that an action is inherently difficult or hard to do.",
+          "explanation": "Add にくい to the verb stem (ます-form minus ます) to indicate something is objectively hard to do due to the nature of the action or object. Like やすい, it conjugates as an い-adjective. Used in neutral or polite speech.",
+          "examples": [
+            {
+              "japanese": "この字は書きにくいです。",
+              "reading": "このじはかきにくいです。",
+              "english": "This character is difficult to write."
+            },
+            {
+              "japanese": "そのドアは開けにくいです。",
+              "reading": "そのドアはあけにくいです。",
+              "english": "That door is hard to open."
+            },
+            {
+              "japanese": "暗いところでは読みにくいです。",
+              "reading": "くらいところではよみにくいです。",
+              "english": "It's hard to read in dark places."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 26
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "from comprehensive; source remapped"
+          }
+        },
+        {
+          "id": "genki_2_l13_grammar_14",
+          "pattern": "てほしい",
+          "meaning": "I want you to",
+          "explanation": "Grammar explanation placeholder.",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 26
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "from comprehensive; source remapped"
+          }
+        },
+        {
+          "id": "genki_2_l13_grammar_15",
+          "pattern": "たら",
+          "meaning": "Expresses a condition or timing: 'if' or 'when' something happens.",
+          "explanation": "The たら conditional is formed by taking the past tense of a verb or adjective and adding ら. It expresses conditions ('if') or timing ('when'). It is one of the most common conditional forms in Japanese and is used in both casual and formal speech at all language levels.",
+          "examples": [
+            {
+              "japanese": "雨が降ったら、家にいます。",
+              "reading": "あめがふったら、いえにいます。",
+              "english": "If it rains, I'll stay at home."
+            },
+            {
+              "japanese": "10時になったら、出かけましょう。",
+              "reading": "じゅうじになったら、でかけましょう。",
+              "english": "Let's go out when it's 10 o'clock."
+            },
+            {
+              "japanese": "宿題が終わったら、友達と遊びます。",
+              "reading": "しゅくだいがおわったら、ともだちとあそびます。",
+              "english": "When homework is finished, I'll play with my friends."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 26
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "from comprehensive; source remapped"
+          }
+        },
+        {
+          "id": "genki_2_l13_grammar_16",
+          "pattern": "てくれる",
+          "meaning": "Someone does something for you or benefits you.",
+          "explanation": "This pattern expresses gratitude or describes when someone does a beneficial action for you. It emphasizes the favor or kindness of the action. Used in casual and polite contexts to show appreciation or describe helpful situations.",
+          "examples": [
+            {
+              "japanese": "友達が手伝ってくれました",
+              "reading": "ともだちが てつだってくれました",
+              "english": "My friend helped me"
+            },
+            {
+              "japanese": "先生が日本語を教えてくれます",
+              "reading": "せんせいが にほんごを おしえてくれます",
+              "english": "The teacher teaches Japanese for us"
+            },
+            {
+              "japanese": "母が夜ご飯を作ってくれた",
+              "reading": "ははが よるごはんを つくってくれた",
+              "english": "Mom made dinner for me"
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 26
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "from comprehensive; source remapped"
+          }
+        },
+        {
+          "id": "genki_2_l13_grammar_17",
+          "pattern": "までに",
+          "meaning": "Indicates a deadline by which an action must be completed.",
+          "explanation": "までに attaches to a time expression or clause to mean 'by' a certain point in time. Unlike まで (which means 'until' a continuing state), までに marks the latest point by which a one-time action should occur. It is used in both polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "五時までに家に帰ります。",
+              "reading": "ごじまでにいえにかえります。",
+              "english": "I will go home by five o'clock."
+            },
+            {
+              "japanese": "明日までにレポートを出してください。",
+              "reading": "あしたまでにレポートをだしてください。",
+              "english": "Please submit the report by tomorrow."
+            },
+            {
+              "japanese": "会議が始まるまでに準備を終わらせます。",
+              "reading": "かいぎがはじまるまでにじゅんびをおわらせます。",
+              "english": "I will finish the preparations before the meeting starts."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 26
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "from comprehensive; source remapped"
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "genki_2_l13_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue genki_2_13",
+          "text": "How: to Use GENKI\nAs: noted earlier, this textbook is divided into two main sections: Conversation and Grammar, and\nReading: and Writing. For each lesson, first go through the lesson in the Conversation and Gram-\nmar: section, and then proceed to the corresponding lesson in the Reading and Writing section.\nGrammar: section on a stand-alone basis.\nThe: Conversation and Grammar section is written in a natural mix of hiragana, katakana and\nkanji: in a way normally seen in the newspapers and books. The readings of all kanji are given in\nhiragana: so that this section can be studied by those who do not need to learn kanji. The Reading\nand: Writing section does not provide readings in hiragana for kanji already studied.\nDialogue: The dialogues contain the lesson's new learning targets. Learn them after studying the vocabulary\nand: grammar items presented in the lesson.\nEvery: lesson begins with a preview of the skills it\nwill: teach.\nIn: this lesson, wo will.\nSay: what we can or cannot do\nExpress: first impressions\nGive: several reasons\nTalk: about part-lime job experience\nfirst: is recorded as a normal conversation, and\n会: 话Dialogue\nthe: second adds a pause after each sentence for\npractice: John calstherestaurant LitleAsi.3-1/1",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue"
+          }
+        },
+        {
+          "id": "genki_2_l13_dialogue_2",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_13",
+          "text": "Vocabulary: This is a list of the words and expressions that appear in the dialogues and practices. A good way\nto: learn them is to repeatedly go over a handful at a time.\nThere: are two audio recordings of the vocabulary\nand: English translations. The first presents each\nJapanese: entry followed by its English equivalent,\nNouns: おくさま\n奥様: (your/someone's)wife(polite)\nand: the second is in the opposite order. Use the\nお子さん: (your/someone's)child(polite)\nらがく: 中学生\njunior: high school student\nrecordings: to help you learn the words with your\ndepartment: manager\n出張: business trip\n敬語: honorific language\nにちら: this way (polite)\nwhere: (polite)\nおれい: expression of gratitude\nWords: that appear in the dialogues are marked\na: kind; a sort\nwith: an asterisk.\nworry: まちが\n間違: mistake\nnalt: There is no need to memorize the kanji listed.\nThe: Grammar section explains the grammar items presented in the lesson. The Expression Notes\nat: the end provide commentary on expressions and words not included among the grammar\npoints: 法Gra m mar\nVolitional: Form\nThe: volitional form of a verb is a more casual cquivalent of主Lう.You can use it to suggest a\nThe: use of short forms in casual speechLet's examine some more examples\nplan: to a close friend, for example.\nofshort: formsused in casual spokenJapanese in the Dialogue.\nA: あしたは授業がないから、今晚とこかに行こう。\n人注: .The particles ia,,and are frequently dropped in casual speech. Note\nWe: won't have any classes tomorrow. Let's go somewhere this evening.\nalso: that thissentence is a yes/no question,and the particleisdropped.(The\nB: いいね。そうしよう。\nquestion: particle zisretained in special cases only, such as the pattern\"the\nSounds: good. let'sdo so.\nvolitional: +か(Shallwe...?)”)\nYou: can make the volitional formsusing the rules listed below:\nvowel: of the helpingverbv is dropped. Such contractions do occur in\nVolitional: Form\nthe: long form（でand)speech patterns, too,but are more frequent in\ncasual: specch with short forms.\nPractice: The Practice section contains exercises dealing with the points covered in the Grammar section.\nThe: workbook also provides practices for the grammar points covered in the lesson. First do the\npractices: in the textbook, and then check your mastery by doing the ones in the workbook.\nThe: serial number of the corresponding grammar\n練翼: Pr a c ti c e\nitem: is listed next to each practice's heading.\nBe: sure to read the grammar explanation before\nA: Change the verbsinto the potentialform.x130\ndoing: the practice.\nEarmele: 食べる食べられる\nFh: Exercises marked with a speaker icon\nhave: 2.する\n上: audio recordings ofthe cues and responses.\nB: Describe the things that Mary can do. Ki3.10\nListen: to the recording as you practice.\nExarrgie: メリ一んはーキ泳ます。\n上: (1)\nC: (3)",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 23
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue"
+          }
+        },
+        {
+          "id": "genki_2_l13_dialogue_3",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_13",
+          "text": "かん: れんlう\nKanji: Practice A presents new kanji compounds. New readings of kanji that have been previously\nintroduced: are shown in bold face. Kanji Practice B lists kanji words that are to be reviewed, which\nwill: appear in the main text of that lesson.\n漢字の練習: かhC\nんし: A.次の漢字の読み方(reading)を覚えましょう。太字(boldtype)は新しい読み方です。\n加ん: 1.国(<に)\nB: 次の漢字を読みましょう。（答(answer)は下にます。)\nReading: Practice\nThe: reading practices assume that you have learned the grammar points and vocabulary presented\nin: the corresponding lesson in the Conversation and Grammar section.\nEnglish: translations are provided\n橋本くんの大学生活: for words not yet covered.\nAn: audio recording is available for\nstudio: apartment\neach: reading.\nA: ある新聞が大学生の橋本くんの生活を紹介しています。\nりしてしまう: 遅刻し授\nら勉強するのは: もするアルバ\n週間: リして\n学の食堂でアル: くれる\n每月雨親: 生活費は十万\n気代などを入れ: 一か月五万円\nシンに住んで: 大学の近くのワ\n橋本くんは空: 今家庭教師",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue"
+          }
+        },
+        {
+          "id": "genki_2_l13_dialogue_4",
+          "type": "dialogue",
+          "title": "Dialogue genki_2_13",
+          "text": "アルバイト探し: Looking for a Part-time Job\nさが: In this lesson, we will.\nSay: what we can or cannot do\nExpress: first impressions\nGive: several reasons\nTalk: about part-time job experience\n会話: Dialo\nJohn: calls the restaurant Little Asia.k13-01/02\nてん: ちよう\nぼしう: こうく\nみ: 店長：\nてん: ちよう\nジョン: 今日はちよっと行けないんですが、あしたなら行けると思います。\nてん: ちょう\nきよう: いちじ\nAt: the restaurant.K13-03/04\nてん: ちよう\nきとうみ: 2ジョン：\nちよう: にほん\nはたら: 4ジョン：\nてん: ちょう\nはじ: ジョン：\nねが: 7店長：",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 30
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue"
+          }
+        },
+        {
+          "id": "genki_2_l13_dialogue_5",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_13",
+          "text": "Uns: おとな\n大人: adult\nべんごし: 弁護士\nlawyer: わたくし\n私: I (formal)\ncurry: こうちや\n紅茶: black tea\nsweater: がっき\n楽器: musical instrument\nkarate: ゴルフ\ngolf: バイク\n象: elephant\nbody: がいこくご\n外国語: foreign language\nlanguage: ぶんぼう\n文法: grammar\nアプリ: application\nbuilding: マンション\nlarger: apartment building;\ncondominium: くうこう\n空港: airport\nconsumer: prices\nadvertisement: ぼしう\n募集: recruitment\nうれしい: glad\nかなしい: 悲しい\nsad: きびしい\n厳しい: strict\nきぶんがわるい: 気分が悪い\nto: feel sick",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 32
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue"
+          }
+        },
+        {
+          "id": "genki_2_l13_dialogue_6",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_13",
+          "text": "Potential: Verbs\nWe: use the potential verb to say that someone\"can\" or \"has the ability to\" do something, or that\nsomething: is \"possible.\"\nわたし: にほんこ\nはな: I can speak Japanese.\nWe: could not go to the beach, because it rained.\nWe: make potential verbs using the rules listed below:\nPotential: verbs\n作泳遊が買か: るぶう\n待てる: 遊べる\n読む: 読める\nくる: こられる\nYou: can think of the u-verb conjugation in terms of a hiragana table:\nおよ: negative\nわ: ~ない\naff: rmative\nform: potential",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 34
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue"
+          }
+        },
+        {
+          "id": "genki_2_l13_dialogue_7",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_13",
+          "text": "You: can usewith negative adjectives, too. The negative endingなis changed toな\nbefore: そう.5\nほん: むずか\nThis: book does not look difficult.\nIt: does not look like Sora is good at tennis.\nYou: can use the adjective +そ combination to qualify a noun. そ is a な-adjective, thus we\nShe: is wearing a warm-looking sweater.\nIn: many そす sentences, the guesswork is done on the basis of visual impressions. It is wrong,\nwe: lack conclusive evidence. (For example, we say an apple is おLそ before we have had the\nchance: to taste it. Once we have tasted it, we can conclude whether it really is L.) With an\nadjective: for whichvisual evidence is crucial， suchasな,wedonot useそand say\nれそす: for something looking pretty; if we can see it, we already have enough evidence to\nconclude: that it is pretty.\nYou: can use the te-form of a verb plus the helping verb  る to express the idea of \"doing some-\nthing: tentatively,\" or \"trying something.\" You are not sure what the outcome of your action will be,\nbut: you dare to do it and see what effect it might have.\nかん: にほんじんとも\nき: I did not know the kanji, so I tried asking a Japanese friend of mine.\nA: この本、おもしろかったですよ。\nThis: book was interesting.\nほん: B：じやあ、読んでみます。\nよ: みるcomes from the verb見る,and conjugates as a regular ru-verb. Unlike the main verb見る,\nAnother: option is to use the negative ofす instead of negating the adjective, as in:\nほ人: むすか",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 38
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue"
+          }
+        },
+        {
+          "id": "genki_2_l13_dialogue_8",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_13",
+          "text": "いちにち: さんじかん\nIplay: games for about three hours a day.\nみっか: よっか\nI: work part-time three or four days a month.\nExpression: Notes\nひ: cal instruments.\nFor: stringed and keyboard instruments:\nto: play the guitar\nひ: ピアノを弾く\nto: play the piano\nひ: For wind instruments:\nサックスを吹く: to play the saxophone\nふ: For percussion instruments:\nドラムをたたく: to play the drum\nWhen: referring to musical instruments in general,やる and できる(for poten-\nCan: you play any instruments?\nなにがき: 何か楽器をやりますか。\nDo: you play any instruments?\nなにがっき: し</上手Both い-adjectives and な-adjectives can modifyverbs as ad-\nたの: じょうす\nverbs: With-adjectives, the final is dropped and<is added. With な-adjec-\nThe: Japanese class is fun.\nI: enjoy studying Japanese\nべんきょう: every day.\nRobert: is good at cooking.\nう: Cょうす\nRobert: cooks well.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 40
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue"
+          }
+        },
+        {
+          "id": "genki_2_l13_dialogue_9",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_13",
+          "text": "C: Pair Work—Ask if your partner can do the above.\nExample: A：一キ口泳げますか。\nB: はい、泳げます。いいえ、泳げません。\nD: Pair Work—You meet a person on a blind date.To get to know them, ask if they can\ndo: the following things and take notes. Add your own questions. After asking the\nQuestions: Your partner's information\nspeak: foreign languages?\nYes: / No\ndrive: a car?\nYes: / No\nYes: / No\nplay: tennis?\nYes: / No\nE: Pair Work—Ask if your partner could do the following things as a child.Expand your\nA: 子供の時、泳げましたか。\nこともときおよ: B：はい、泳げました。\nおよ: A:どのぐらい泳げましたか。\nおよ: B：100メートルぐらいです。\nA: すごいですね。今も100メート泳げますか。\nB: たぶん泳げると思います。\nひ: 2.辛い料理を食べる\nからょうりた: がいこくとて\nはな: 3.サッカーをする",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 42
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue"
+          }
+        },
+        {
+          "id": "genki_2_l13_dialogue_10",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_13",
+          "text": "C: Pair Work—Talk about the picture taken at a party using ~そう.\nExample: A：おいしそうな料理ですね。\nりようり: B：そうですね。\nA: この人はうれしそうですね。\nひと: B：そうですね。\nD: Pair Work—Comment on your partner's belongings using ~そうな.\nExample: A：おいしそうなお弁当ですね。\nべんとう: B：ええ、このお弁当、おいしいですよ。コンビ二で買ったんです。\nA: そうですか。どこのコンビ二ですか。\nB: 大学の前のコンビ二です。安くておいしいですよ。\nだいがくまえ: E. Pair Work—B acts out the following situations and A makes a guess. Continue the\nconversation: like the example below.\nExample: おなかが痛い\nいた: A：おなかが痛そですね。どしたんですか。\nいた: B:食べすたんです。\n大: A：そうですか。薬を飲んだほうがいですよ。\nの: 1.うれしい\nいそが: きふんわる",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 46
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue"
+          }
+        },
+        {
+          "id": "genki_2_l13_dialogue_11",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_13",
+          "text": "V: 紅茶なら飲みました\nA: Answer the questions as in the example. K13-16\nExample: Q：ロバートさんは今朝、コーヒーを飲みましたか。\nA: (tea × coffe)\nの: 1.ロバートさんはイクに乗れすか。\nの: 2.ロートんはニーーラドに行ったことがありますか。\nにほんけいさいきようみ: (history\nかのじよ: 6.カロスさんは土曜日に出かけられますか。(Sunday\nどようび: B. Answer the following questions, and continue the conversation. Use ~tな 5 whenever\npossible: Example\nA: スポーツをよく見ますか。\n从: B：ええ、野球なら見ます。\nB: いいえ、見ません。でも、\n反: A:そうですか。\nがいこくこ: 2.アルイトをしたことがありますか。\nゆうめいじんあ: 5.楽器ができますか。\nがっき: 6.外国に行ったことがありすか。",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 48
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue"
+          }
+        },
+        {
+          "id": "genki_2_l13_dialogue_12",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_genki_2_13",
+          "text": "C: Class Activity—Ask two people how often they do the following things. Add your own\nquestions: Example\n美容院に行く: びよういん\nい: →A：Bさんはよく美容院に行きますか。\nB: 一か月に一回ぐらい行きます。\nいっ: げっいっかい\nQuestions: )さん\n料理する: ょう1\n運動する: うんどう\nれんしゆう: A. Answer the following questions.\nなに: 2.百円で何が買えますか。\nひやくえんなにか: 3.どこに行ってみたいですか。どうしてですか。\nい: 4.子供の時、何がしてみたかったですか。\nいまなに: 6.一日に何時間ぐらい勉強しますか。\nいちにちなんじかん: べんきよう\nつか: B. Pair Work—Talk about part-time jobs.\nいちじかん: 2.いつしましたか。\nいっしうかん: なんにちはたら",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 50
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.392Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue"
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "genki_2_l13_ex_1",
+          "label": "practice",
+          "prompt": "How to Use GENKI",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_2",
+          "label": "practice",
+          "prompt": "1.Conversation and Grammar / Reading and Writing",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_3",
+          "label": "practice",
+          "prompt": "As noted earlier, this textbook is divided into two main sections: Conversation and Grammar, and",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_4",
+          "label": "practice",
+          "prompt": "Reading and Writing. For each lesson, first go through the lesson in the Conversation and Gram-",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_5",
+          "label": "practice",
+          "prompt": "mar section, and then proceed to the corresponding lesson in the Reading and Writing section.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_6",
+          "label": "practice",
+          "prompt": "However, if you do not need to work on reading and writing, you can study the Conversation and",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_7",
+          "label": "practice",
+          "prompt": "Grammar section on a stand-alone basis.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_8",
+          "label": "practice",
+          "prompt": "2.Orthography",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_9",
+          "label": "practice",
+          "prompt": "The Conversation and Grammar section is written in a natural mix of hiragana, katakana and",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_10",
+          "label": "practice",
+          "prompt": "kanji in a way normally seen in the newspapers and books. The readings of all kanji are given in",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_11",
+          "label": "practice",
+          "prompt": "hiragana so that this section can be studied by those who do not need to learn kanji. The Reading",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_12",
+          "label": "practice",
+          "prompt": "and Writing section does not provide readings in hiragana for kanji already studied.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_13",
+          "label": "practice",
+          "prompt": "3. Using the Conversation and Grammar section",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_14",
+          "label": "practice",
+          "prompt": "The dialogues contain the lesson's new learning targets. Learn them after studying the vocabulary",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_15",
+          "label": "practice",
+          "prompt": "and grammar items presented in the lesson.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_16",
+          "label": "practice",
+          "prompt": "Every lesson begins with a preview of the skills it",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_17",
+          "label": "practice",
+          "prompt": "will teach.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_18",
+          "label": "practice",
+          "prompt": "アバイト探しLooking foraPart-time Job",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_19",
+          "label": "practice",
+          "prompt": "In this lesson, wo will.",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        },
+        {
+          "id": "genki_2_l13_ex_20",
+          "label": "practice",
+          "prompt": "②Each dialogue has two audio recordings. The",
+          "sourceRef": {
+            "sourceId": "genki_2_textbook",
+            "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.393Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise"
+          }
+        }
+      ],
+      "qualityTier": "gold",
+      "appLessonId": "genki_2_13"
+    }
+  ]
+}

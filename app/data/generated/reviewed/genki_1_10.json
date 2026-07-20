@@ -1,0 +1,858 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "genki_1_textbook",
+  "title": "genki_1_textbook / genki_1_10",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "genki_1_10_draft",
+      "appLessonId": "genki_1_10",
+      "title": "genki 1 10",
+      "qualityTier": "draft",
+      "vocabulary": [
+        {
+          "id": "genki_1_textbook_genki_1_10_vocab_18",
+          "surface": "日本の交通機関",
+          "reading": null,
+          "meaning": "Public Transportation in Japan",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 260
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_vocab_50",
+          "surface": "売る",
+          "reading": null,
+          "meaning": "to sell",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 349
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_vocab_51",
+          "surface": "買物",
+          "reading": null,
+          "meaning": "shopping",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 349
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_vocab_52",
+          "surface": "自動車",
+          "reading": null,
+          "meaning": "automobile; car",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 350
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_vocab_53",
+          "surface": "持つ",
+          "reading": null,
+          "meaning": "to carry; to hold",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 350
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "cefr_a1_716",
+          "pattern": "好き",
+          "meaning": "Express that you like something using 好き as a な-adjective with the subject marked by が.",
+          "explanation": "好き (すき) is a な-adjective meaning 'liked' or 'fond of.' The thing you like is marked by が, not を. The sentence structure is [person] は [thing] が 好きです. It is used in everyday polite and casual conversation to talk about preferences.",
+          "examples": [
+            {
+              "japanese": "私はねこが好きです。",
+              "reading": "わたしはねこがすきです。",
+              "english": "I like cats."
+            },
+            {
+              "japanese": "あなたはどんな音楽が好きですか。",
+              "reading": "あなたはどんなおんがくがすきですか。",
+              "english": "What kind of music do you like?"
+            },
+            {
+              "japanese": "彼はサッカーがとても好きです。",
+              "reading": "かれはサッカーがとてもすきです。",
+              "english": "He likes soccer very much."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_717",
+          "pattern": "きらい",
+          "meaning": "Express that you dislike something using きらい as a な-adjective with the subject marked by が.",
+          "explanation": "きらい (嫌い) is a な-adjective meaning 'disliked' or 'not fond of,' and it works as the direct opposite of 好き. The thing you dislike is marked by が. Note that きらい is fairly direct; Japanese speakers often soften dislike with あまり好きじゃない (don't really like) in conversation.",
+          "examples": [
+            {
+              "japanese": "私はにんじんが嫌いです。",
+              "reading": "わたしはにんじんがきらいです。",
+              "english": "I dislike carrots."
+            },
+            {
+              "japanese": "弟は虫が嫌いです。",
+              "reading": "おとうとはむしがきらいです。",
+              "english": "My younger brother dislikes insects."
+            },
+            {
+              "japanese": "あなたは何が嫌いですか。",
+              "reading": "あなたはなにがきらいですか。",
+              "english": "What do you dislike?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_718",
+          "pattern": "なにか・なにも",
+          "meaning": "なにか means 'something' or 'anything'; なにも (with a negative verb) means 'nothing' or 'not anything'.",
+          "explanation": "なにか is used in affirmative sentences and questions to mean 'something' or 'anything'. なにも requires a negative verb form and means 'nothing at all'. Both are common in everyday polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "何か食べますか？",
+              "reading": "なにかたべますか？",
+              "english": "Are you going to eat something?"
+            },
+            {
+              "japanese": "冷蔵庫に何かありますか？",
+              "reading": "れいぞうこになにかありますか？",
+              "english": "Is there anything in the fridge?"
+            },
+            {
+              "japanese": "今日は何も食べませんでした。",
+              "reading": "きょうはなにもたべませんでした。",
+              "english": "I didn't eat anything today."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_719",
+          "pattern": "Adjective + の(は)",
+          "meaning": "Turns an adjective phrase into a noun-like 'one' or 'thing', used to refer back to something already understood from context.",
+          "explanation": "Adding の after an adjective nominalizes the phrase, functioning like 'the one that is...' in English. It replaces a noun that is already clear from context. This is common in both casual and polite speech and helps avoid repetition.",
+          "examples": [
+            {
+              "japanese": "赤いのはどれですか。",
+              "reading": "あかいのはどれですか。",
+              "english": "Which one is the red one?"
+            },
+            {
+              "japanese": "大きいのをください。",
+              "reading": "おおきいのをください。",
+              "english": "Please give me the big one."
+            },
+            {
+              "japanese": "安いのはありますか。",
+              "reading": "やすいのはありますか。",
+              "english": "Do you have a cheaper one?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_720",
+          "pattern": "の",
+          "meaning": "Connects two nouns to show possession or belonging, and can replace a previously mentioned noun to avoid repetition.",
+          "explanation": "の links a possessor to the thing possessed (like 's in English). It can also replace a noun when the referent is clear from context — for example, 私のカバンは青いです。あなたのは？ ('Mine is blue. What about yours?'). This makes speech more natural and avoids awkward repetition.",
+          "examples": [
+            {
+              "japanese": "これは私のかばんです。",
+              "reading": "これはわたしのかばんです。",
+              "english": "This is my bag."
+            },
+            {
+              "japanese": "私のは赤いけど、あなたのは青い。",
+              "reading": "わたしのはあかいけど、あなたのはあおい。",
+              "english": "Mine is red, but yours is blue."
+            },
+            {
+              "japanese": "あの白いのをください。",
+              "reading": "あのしろいのをください。",
+              "english": "Please give me that white one."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_721",
+          "pattern": "誰か・どこか・誰も・どこも",
+          "meaning": "誰か means 'someone'; どこか means 'somewhere'; 誰も and どこも (with negatives) mean 'no one' and 'nowhere'.",
+          "explanation": "誰か and どこか are used in affirmative sentences and questions. 誰も and どこも require negative verb forms to express 'not anyone' and 'not anywhere'. These are high-frequency words used naturally in both polite and casual registers.",
+          "examples": [
+            {
+              "japanese": "誰か部屋にいますか？",
+              "reading": "だれかへやにいますか？",
+              "english": "Is someone in the room?"
+            },
+            {
+              "japanese": "週末はどこかに行きましたか？",
+              "reading": "しゅうまつはどこかにいきましたか？",
+              "english": "Did you go somewhere on the weekend?"
+            },
+            {
+              "japanese": "昨日は誰にも会いませんでした。",
+              "reading": "きのうはだれにもあいませんでした。",
+              "english": "I didn't meet anyone yesterday."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_722",
+          "pattern": "あげる",
+          "meaning": "Expresses giving something to someone else, where the giver is the speaker or someone in the speaker's group.",
+          "explanation": "あげる is used when the speaker (or someone close to the speaker) gives something to another person. The recipient is marked with に. It implies the giver is doing a favor or presenting something outward. Do not use あげる when describing receiving something yourself — use もらう in that case.",
+          "examples": [
+            {
+              "japanese": "友達にプレゼントをあげました。",
+              "reading": "ともだちにプレゼントをあげました。",
+              "english": "I gave a present to my friend."
+            },
+            {
+              "japanese": "母に花をあげます。",
+              "reading": "ははにはなをあげます。",
+              "english": "I will give flowers to my mother."
+            },
+            {
+              "japanese": "田中さんは山田さんに本をあげました。",
+              "reading": "たなかさんはやまださんにほんをあげました。",
+              "english": "Tanaka-san gave a book to Yamada-san."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_723",
+          "pattern": "くれる",
+          "meaning": "Expresses someone giving something to the speaker or someone close to the speaker.",
+          "explanation": "くれる is used when the giver is someone else and the recipient is the speaker or someone in the speaker's in-group. It highlights the benefit received by the speaker. The giver is the subject and the thing given is the object marked with を.",
+          "examples": [
+            {
+              "japanese": "友達が本をくれました。",
+              "reading": "ともだちがほんをくれました。",
+              "english": "My friend gave me a book."
+            },
+            {
+              "japanese": "先生がアドバイスをくれました。",
+              "reading": "せんせいがアドバイスをくれました。",
+              "english": "My teacher gave me some advice."
+            },
+            {
+              "japanese": "母がケーキをくれました。",
+              "reading": "ははがケーキをくれました。",
+              "english": "My mother gave me a cake."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/passive_れる_られる",
+            "title": "Passive: れる/られる",
+            "excerpt": "134 CHAPTER 3. MORE GRAMMAR\n3.2.11 Passive:れる/られる\nPassive constructions are, as their name implies, constructions which de-\nscribe actions in a passive voice. Unlike \"I eat dinner\" or \"The cat is play-\ning with the squeaky toy'\", which are in active voice, they refer to phrases\nlike \"Dinner was eaten by me'\" or \"The squeaky toy was played with by\nうけみ\nthe cat\". In Japanese, this passive voice, called 受身, is achieved through\nthe use of the two helper verbs れる (for 五段 verbs) and られる (for 一段\nverbs),",
+            "examples": [
+              {
+                "japanese": "3.2.11 Passive:れる/られる",
+                "english": "Passive constructions are, as their name implies, constructions which de-"
+              },
+              {
+                "japanese": "the cat\". In Japanese, this passive voice, called 受身, is achieved through"
+              },
+              {
+                "japanese": "the use of the two helper verbs れる (for 五段 verbs) and られる (for 一段"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_724",
+          "pattern": "もらう",
+          "meaning": "Expresses the speaker receiving something from someone else.",
+          "explanation": "もらう focuses on the act of receiving from the perspective of the recipient. The giver is marked with に or から, and the thing received is marked with を. It is the counterpart to くれる and is used in both polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "友達にプレゼントをもらいました。",
+              "reading": "ともだちにプレゼントをもらいました。",
+              "english": "I received a present from my friend."
+            },
+            {
+              "japanese": "先生から本をもらいました。",
+              "reading": "せんせいからほんをもらいました。",
+              "english": "I received a book from my teacher."
+            },
+            {
+              "japanese": "誕生日にケーキをもらいました。",
+              "reading": "たんじょうびにケーキをもらいました。",
+              "english": "I received a cake on my birthday."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_764",
+          "pattern": "ている②",
+          "meaning": "Expresses a state that exists as the result of a completed action.",
+          "explanation": "This use of ている describes a current state that came about because an action happened — the action is done, but its result persists. For example, 結婚している means 'is married' (not 'is getting married'). It contrasts with ている① (ongoing action). Used in both polite (ています) and casual (てる) speech.",
+          "examples": [
+            {
+              "japanese": "姉は結婚しています。",
+              "reading": "あねはけっこんしています。",
+              "english": "My older sister is married."
+            },
+            {
+              "japanese": "電気がついています。",
+              "reading": "でんきがついています。",
+              "english": "The light is on."
+            },
+            {
+              "japanese": "窓が開いています。",
+              "reading": "まどがあいています。",
+              "english": "The window is open."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/continuative_て_form",
+            "title": "Continuative: て form",
+            "excerpt": "3.2. FURTHER INFLECTIONS 103\n3.2.2 Continuative: て form\nThe continuative in Japanese is also commonly refered to as the \"て form',\nbecause it relies on the 連用形 of classical helper verb for completion, つ,\nwhich is て. This inflection is used for at least three things in Japanese,\nof which verb chaining is probably the most frequently used. Aside from\nthis, it is also used to issue (implied) imperatives, and it can be used in\ncombination with several special verbs to create special constructions.\nba",
+            "examples": [
+              {
+                "japanese": "3.2.2 Continuative: て form"
+              },
+              {
+                "japanese": "The continuative in Japanese is also commonly refered to as the \"て form',"
+              },
+              {
+                "japanese": "because it relies on the 連用形 of classical helper verb for completion, つ,"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_765",
+          "pattern": "ている③",
+          "meaning": "Describe an action that someone does habitually or repeatedly as a regular pattern.",
+          "explanation": "In its third use, ている expresses a habitual or regularly repeated action, similar to 'I do X (regularly)' in English. Unlike ている① (ongoing action) or ている② (resultant state), this use focuses on routine or repeated behaviour. Context and frequency adverbs like 毎日 or よく help distinguish this meaning.",
+          "examples": [
+            {
+              "japanese": "毎朝、コーヒーを飲んでいます。",
+              "reading": "まいあさ、こーひーをのんでいます。",
+              "english": "I drink coffee every morning."
+            },
+            {
+              "japanese": "彼女は毎日日本語を勉強しています。",
+              "reading": "かのじょはまいにちにほんごをべんきょうしています。",
+              "english": "She studies Japanese every day."
+            },
+            {
+              "japanese": "週末によく映画を見ています。",
+              "reading": "しゅうまつによくえいがをみています。",
+              "english": "I often watch movies on weekends."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/continuative_て_form",
+            "title": "Continuative: て form",
+            "excerpt": "3.2. FURTHER INFLECTIONS 103\n3.2.2 Continuative: て form\nThe continuative in Japanese is also commonly refered to as the \"て form',\nbecause it relies on the 連用形 of classical helper verb for completion, つ,\nwhich is て. This inflection is used for at least three things in Japanese,\nof which verb chaining is probably the most frequently used. Aside from\nthis, it is also used to issue (implied) imperatives, and it can be used in\ncombination with several special verbs to create special constructions.\nba",
+            "examples": [
+              {
+                "japanese": "3.2.2 Continuative: て form"
+              },
+              {
+                "japanese": "The continuative in Japanese is also commonly refered to as the \"て form',"
+              },
+              {
+                "japanese": "because it relies on the 連用形 of classical helper verb for completion, つ,"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "genki_1_10_dialogue_0",
+          "type": "dialogue",
+          "title": "Dialogue genki_1_10",
+          "text": "A: （このクラスで)だれがめがねをかけていますか。\nWho: wears glasses (in this class)?\nB: 山下先生がめがねをかけています。\nやましせんせい: Professor Yamashita does.\nThe: word for\"something\" is何, and the word for\"anything\" in negative sentences is何も.\n何か: something\nなに: •questions:\n何か: anything?\nなに: • negative statements:\nnot: ..anything\nなに: When何and何も are used in places where the particles l,, andをare expected, they are\noften: used on their own, without the help of particles. We will learn in Lesson 10 what to do in\ncases: where particles other than these are expected.\nも: The cat has brought something.\nた: Did the cat eat anything?\nた: No, the cat did not eat anything.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 205
+          }
+        },
+        {
+          "id": "genki_1_10_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue genki_1_10",
+          "text": "冬休みの予定: Winter Vacation Plans\nふゆやす: よてい\nIn: this lesson, we will\nTalk: about means of transportation and\nTalk: about future plans\nthe: time required\nDescribe: changes in states\nAsk: about tours and make reservations\n会話: Di a\nI: Winter vacation is approaching.\nさむ: 2たけし：\nふゆやす: 3メアリー:\nき: 4たけし：\nほっかいどう: きうしう\nおも: 。たけし：\nふゆ: ほっかいどう\nもの: 8メアリー：\nい: たけし：\nかね: 10メアリー：\nか: ı1たけし：\nAt: the hotel front desk.K10-03/04\nメり: すみません。ここから旭山動物園までどのぐらいかかりますか。\nあさひやまどうつえん: 2ホテルの人：そですね。電車とバスで二時間半ぐらいです。\nひと: てんしゃ\nにかんはん: 3メアリー：\nかん: ホテルの人：土曜日と日曜日はスツアーがありますが……。\nひと: どよびにちようび",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 239
+          }
+        },
+        {
+          "id": "genki_1_10_dialogue_2",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_10",
+          "text": "Nouns: きせつ\nfall: ぎうにう\n牛乳: milk\nsushi: てんぷら\n天ぷら: tempura\nりんご: apple\ncuisine: サッカー\nsoccer: やきゅう\n野球: baseball\ndoctor: おかねもち\nお金持ち: rich person\nゆうめいじん: 有名人\n顔: face\n年上: としうえ\nsomeone: older\nstation: しんかんせん\n新幹線: Shinkansen;\"BulletTrain\"\nちかてつ: 地下鉄\n船: ship; boat\nひこうき: 飛行機\nairplane: よやく\nreservation: ツアー\nどうぶつえん: 動物園\n业: じかん\n時間: time\nworld: びよういん\n美容院: beauty parlor\ngloves: せいかつ\n生活: life; living\nthis: year",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 241
+          }
+        },
+        {
+          "id": "genki_1_10_dialogue_3",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_10",
+          "text": "文法: Grammar\nぽう: Comparison between Two Items\nIn: Japanese, adjectives do not change form in comparative sentences; there is no alteration as in\nA: is more(property) than B.\nちゆうこく: にほん\nおお: China is larger than Japan.\nIf: you want to ask a question comparing two items, you can say:\nSo: a typical exchange looks like this:\nA: 日本と力ナダとどちらのほうが寒いですか。\nWhich: is colder, Japan or Canada?\nB: カナダのほうが寒いです。\nさむ: Canada is colder.\nComparison: among Three or More Items\nIn: comparison among three or more items, the degree qualifierちIん is used.\nIn: real life, the phrases Aのlうand B often appear in the reverse order, making it very easy to be mis-\nled: into believing the opposite of what is actually said. Don't rely on the word order, therefore, to decide which\nitem: is claimed to be superior. Listen carefully for the words の(andよ.\nIn: place ofどちらのandどっちのほ，you can also useどちらandどっち.Anyone of these can be\nused: in question sentences seeking comparisons between two items.どちandどち are slightly\nmore: colloquial thanどちらandどちらのほう.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        },
+        {
+          "id": "genki_1_10_dialogue_4",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_10",
+          "text": "You: can also use の in the sense of\"mine,\"\"yours,\" and so forth, referring to things owned by a\nA: これはソラさんのかばんですか。\nIs: this Sora's bag?\nB: いいえ、それはメりーさんのかばんです。\nくるま: にほん\nAmerican: cars are larger than Japanese ones.\nin: the future. You can also use a verb in the negative plus  も I) to describe what you are plan-\nning: not to do, or what you do not intend to do.\nわたし: しうまつ\nI: intend to play tennis with Takeshi this weekend.\nやましせんせい: だいがく\nProfessor: Yamashita does not intend to come to school tomorrow.\nYou: can also use the past tense to talk about your original intention, which did not materialize.\nい: てんき\nい: We were planning to visit a temple, but we didn't, because the weather was not good.\nAdjective: + なる\nThe: verb なる means\"to become,\" indicating a change. なる follows nouns and both types of\nadjectives: W-adjectives:\n暖かい: 暖かくなる\nto: become warm/warmer\nあたた: あたた\n静かになる: to become quiet/quieter\nnouns: 会社員\n会社員になる: to become a company employee\nかいしゃいん: かいゃいん",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 245
+          }
+        },
+        {
+          "id": "genki_1_10_dialogue_5",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_10",
+          "text": "You: can use the particle T with nouns that describe the means of transportation and the instru-\nments: you use.\nWe: eat our meals with chopsticks.\nI: went to the station by bus.\nI: saw a movie on TV.\nExpression: Notes\nか: for him during her trip to Hokkaido. You can use a verb te-form (買 in this\nmovement: to your current location.\nof: a sentence when we want our partners to treat what we have just said as a\nintention: to give her partner a chance to react and speak up. By relegating the\nright: to speak to one's partner, they also contribute to the politeness of one's\nutterance: In the dialogue, the hotel employee lays out the relevant information on the table;\nthere: are two tours, one on Saturday and another on Sunday. が attached to her\nsentence: indicates that she wants to build upon, and move forward with, these\npieces: of information. Instead of asking the obvious question, namely,ちら\ncustomer: come forward with an answer immediately.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 247
+          }
+        },
+        {
+          "id": "genki_1_10_dialogue_6",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_10",
+          "text": "B: Pair Work—Make questions using the following cues and ask your partner. When you\nanswer: the questions, add reasons for your answers if possible.\nExample: 夏/冬(好き）\nなうふゆ: →A：夏と冬とどちら(のほう)が好きですか。\nす: B:夏のほが(冬より)好きです。夏も冬も好きです。\nす: 夏も冬もきらいです。\nなふゆ: A:どうしてですか。\nB: 泳ぐのが好きですから。\nてん: 2.頭がいい人かっこいい人（好き）\nやきう: にんき\nちうこくりようり: にほんりょうリ\nす: 5.船/飛行機（好き）\nふね: ひこうき\nにほんくるま: <るま\nかん: 8.春/秋(好き）\nす: 9.冷たいお茶熱いお茶(好き)\nあたた: 11.日本の生活あなたの国の生活（大変or楽しい)\nせいかつ: たいへん\n新幹線がいちばん速いです: Grammar 2\nUh: かん せh\nはや: A. Look at the pictures on the previous page and answer the questions below. k10-08\nExample: Q：新幹線とスと電車の中で、どれがいちばん速いですか。\nしんかんせん: てんしゃなか\nはや: A：新干線がいちばん速いです。\nPicture: (a)\nしんかんせん: てんしゃ\nしんかんせん: てんしゃ\nしんかんせん: てんしゃ",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 249
+          }
+        },
+        {
+          "id": "genki_1_10_dialogue_7",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_10",
+          "text": "これは私のです: Grammar 3\nわたし: A. This is a refrigerator in a dormitory.Tell whose each thing is, using の.  K1o-09\nExample: このりんごはりさんのです。\nPIZZA: Ice\nみさき: Cheam\nTom: e.g.\nChris: (5)\n三: Ken\nwater: Milk\nが: COFFEE\nりん: (6)\nB: Mary and Yui did the following things before and during their trip. Describe what Yui\nExample: メアリーさんは英語のガイドブック(guidebook)を持っていきました。\nGuide: Book\nJapan: uno00\nEnglish: early\nhot: cheap\nred: ガイドブック\n日本: uooon\nゆ: late\nJapanese: cold\nbeautiful: black\nはや: てんしや\nの: 2.メアリーさんはカフェで熱いコーヒーを飲みました。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 251
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3202",
+          "label": "practice",
+          "prompt": "W- adiectives",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3203",
+          "label": "practice",
+          "prompt": "cool (weather—not used for things)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3204",
+          "label": "practice",
+          "prompt": "cold (things/people)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3205",
+          "label": "practice",
+          "prompt": "slow; late",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3206",
+          "label": "practice",
+          "prompt": "な - adiective",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3207",
+          "label": "practice",
+          "prompt": "easy; simple",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3208",
+          "label": "practice",
+          "prompt": "to take (amount of time/money)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3209",
+          "label": "practice",
+          "prompt": "(no particle)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3210",
+          "label": "practice",
+          "prompt": "to stay(at a hotel, etc.) (~1二)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3211",
+          "label": "practice",
+          "prompt": "to decide(~を)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3212",
+          "label": "practice",
+          "prompt": "to chill out at home; to stay home",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3213",
+          "label": "practice",
+          "prompt": "and do nothing",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3214",
+          "label": "practice",
+          "prompt": "to practice(～)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3215",
+          "label": "practice",
+          "prompt": "Adverb s and Other Expres sion s",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3216",
+          "label": "practice",
+          "prompt": "(do something)early; fast",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3217",
+          "label": "practice",
+          "prompt": "by (means of transportation);",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3218",
+          "label": "practice",
+          "prompt": "with (a tool)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3219",
+          "label": "practice",
+          "prompt": "how; by what means",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3220",
+          "label": "practice",
+          "prompt": "how much; how long",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3221",
+          "label": "practice",
+          "prompt": "for...weeks",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3222",
+          "label": "practice",
+          "prompt": "for...months",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3223",
+          "label": "practice",
+          "prompt": "these days",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_10_exercise_3224",
+          "label": "practice",
+          "prompt": "in...time; after ...",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 242
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_10_exercise_3225",
+          "label": "practice",
+          "prompt": "Comparison between Two Items",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_10_exercise_3226",
+          "label": "practice",
+          "prompt": "In Japanese, adjectives do not change form in comparative sentences; there is no alteration as in",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_10_exercise_3227",
+          "label": "practice",
+          "prompt": "\"great/greater.\" You can express the idea of comparison by framing a sentence like:",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_10_exercise_3228",
+          "label": "practice",
+          "prompt": "AのほうがBより'(property)。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_10_exercise_3229",
+          "label": "practice",
+          "prompt": "A is more(property) than B.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_10_exercise_3230",
+          "label": "practice",
+          "prompt": "中国のほうが日本より大きいです。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_10_exercise_3231",
+          "label": "practice",
+          "prompt": "China is larger than Japan.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_10_exercise_3232",
+          "label": "practice",
+          "prompt": "If you want to ask a question comparing two items, you can say:",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_10_exercise_3233",
+          "label": "practice",
+          "prompt": "AとBとどちらのほう/どっちのほうが(property)。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_10_exercise_3234",
+          "label": "practice",
+          "prompt": "= Between A and B, which is more (property)?",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_10_exercise_3235",
+          "label": "practice",
+          "prompt": "So a typical exchange looks like this:",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_10_exercise_3236",
+          "label": "practice",
+          "prompt": "A：日本と力ナダとどちらのほうが寒いですか。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_10_exercise_3237",
+          "label": "practice",
+          "prompt": "Which is colder, Japan or Canada?",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_10_exercise_3238",
+          "label": "practice",
+          "prompt": "B：カナダのほうが寒いです。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_10_exercise_3239",
+          "label": "practice",
+          "prompt": "Canada is colder.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_10_exercise_3240",
+          "label": "practice",
+          "prompt": "Comparison among Three or More Items",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_10_exercise_3241",
+          "label": "practice",
+          "prompt": "In comparison among three or more items, the degree qualifierちIん is used.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 243
+          }
+        }
+      ]
+    }
+  ]
+}

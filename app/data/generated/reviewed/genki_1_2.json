@@ -1,0 +1,1805 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "genki_1",
+  "title": "Genki I: An Integrated Course in Elementary Japanese",
+  "edition": "3rd Edition",
+  "levelRange": "N5-N4",
+  "sources": [
+    {
+      "sourceId": "genki_1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "18f3c2050a9c9bcc17c11730a8860469da7e0d391117fe53a00c004a7cc9d63e",
+        "bytes": 142633221
+      }
+    },
+    {
+      "sourceId": "genki_1_workbook",
+      "role": "workbook",
+      "fingerprint": {
+        "sha256": "fbf7a11b409e4a2c41babd085fb4d85ee1a1b14e969f7595ced27e4e312a4731",
+        "bytes": 36145993
+      }
+    },
+    {
+      "sourceId": "genki_combined_answer_key",
+      "role": "answer_key",
+      "fingerprint": {
+        "sha256": "3280128e27b99d36aa7d85dac23a89a127095e5e2eb64ff8bdc78ca1efcaffa0",
+        "bytes": 45031203
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "genki_1_lesson_2",
+      "unitType": "lesson",
+      "lessonNumber": 2,
+      "title": "かいもの　Shopping",
+      "level": "N5-N4",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [
+        {
+          "id": "genki_1_l2_vocab_1",
+          "surface": "これ",
+          "reading": "kore",
+          "meaning": "this one",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_2",
+          "surface": "それ",
+          "reading": "sore",
+          "meaning": "that one",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_3",
+          "surface": "あれ",
+          "reading": "are",
+          "meaning": "that one (over there)",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_4",
+          "surface": "どれ",
+          "reading": "dore",
+          "meaning": "which one",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_5",
+          "surface": "この",
+          "reading": "kono",
+          "meaning": "this ...",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_6",
+          "surface": "その",
+          "reading": "sono",
+          "meaning": "that ...",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_7",
+          "surface": "あの",
+          "reading": "ano",
+          "meaning": "that ... (over there)",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_8",
+          "surface": "どの",
+          "reading": "dono",
+          "meaning": "which ...",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_9",
+          "surface": "ここ",
+          "reading": "koko",
+          "meaning": "here",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_10",
+          "surface": "そこ",
+          "reading": "soko",
+          "meaning": "there",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_11",
+          "surface": "あそこ",
+          "reading": "asoko",
+          "meaning": "over there",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_12",
+          "surface": "どこ",
+          "reading": "doko",
+          "meaning": "where",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_13",
+          "surface": "だれ",
+          "reading": "dare",
+          "meaning": "who",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_14",
+          "surface": "おいしい",
+          "reading": "oishii",
+          "meaning": "delicious",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_15",
+          "surface": "さかな",
+          "reading": "sakana",
+          "meaning": "fish",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_16",
+          "surface": "とんかつ",
+          "reading": "tonkatsu",
+          "meaning": "pork cutlet",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_17",
+          "surface": "にく",
+          "reading": "niku",
+          "meaning": "meat",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_18",
+          "surface": "メニュー",
+          "reading": "menyuu",
+          "meaning": "menu",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_19",
+          "surface": "やさい",
+          "reading": "yasai",
+          "meaning": "vegetable",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_20",
+          "surface": "かさ",
+          "reading": "kasa",
+          "meaning": "umbrella",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_21",
+          "surface": "かばん",
+          "reading": "kaban",
+          "meaning": "bag",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_22",
+          "surface": "くつ",
+          "reading": "kutsu",
+          "meaning": "shoes",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_23",
+          "surface": "さいふ",
+          "reading": "saifu",
+          "meaning": "wallet",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_24",
+          "surface": "ジーンズ",
+          "reading": "jiinzu",
+          "meaning": "jeans",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_25",
+          "surface": "じてんしゃ",
+          "reading": "jitensha",
+          "meaning": "bicycle",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_26",
+          "surface": "しんぶん",
+          "reading": "shinbun",
+          "meaning": "newspaper",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_27",
+          "surface": "スマホ",
+          "reading": "sumaho",
+          "meaning": "smartphone; mobile phone",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_28",
+          "surface": "Tシャツ",
+          "reading": "tiishatsu",
+          "meaning": "T-shirt",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_29",
+          "surface": "とけい",
+          "reading": "tokee",
+          "meaning": "watch; clock",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_30",
+          "surface": "ノート",
+          "reading": "nooto",
+          "meaning": "notebook",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_31",
+          "surface": "ペン",
+          "reading": "pen",
+          "meaning": "pen hat; cap booshi 会 ほん hon book $L2r$",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_32",
+          "surface": "ぼうし",
+          "reading": "booshi",
+          "meaning": "hat; cap",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_33",
+          "surface": "ほん",
+          "reading": "hon",
+          "meaning": "book $L2r$ Pｌaces",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_34",
+          "surface": "ぎんこう",
+          "reading": "ginkoo",
+          "meaning": "bank イ konbini",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_35",
+          "surface": "コンビニ",
+          "reading": "konbini",
+          "meaning": "convenience store",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_36",
+          "surface": "トイレ",
+          "reading": "toire",
+          "meaning": "toilet; restroom",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_37",
+          "surface": "としょかん",
+          "reading": "toshokan",
+          "meaning": "library",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_38",
+          "surface": "ゆうびんきょく",
+          "reading": "yuubinkyoku",
+          "meaning": "ofice Countrie s Igirisu 1 Britain かんこ Kankoku Korea Chuugoku ちゅうごく China Maiors えいご English (language) eego",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_39",
+          "surface": "いくら",
+          "reading": "ikura",
+          "meaning": "much *~元ん ...en ...yen takai たかい expensive; high Expressions irasshaimase Welcome (to our store)",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_40",
+          "surface": "~えん",
+          "reading": "...en",
+          "meaning": "... yen",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_41",
+          "surface": "たかい",
+          "reading": "takai",
+          "meaning": "expensive; high",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_42",
+          "surface": "いらっしゃいませ",
+          "reading": "irasshaimase",
+          "meaning": "Welcome (to our store)",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_43",
+          "surface": "(~を)おねがいします",
+          "reading": "(...o) onegaishimasu",
+          "meaning": "..., please",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_44",
+          "surface": "(~を)ください",
+          "reading": "(...o) kudasai",
+          "meaning": "Please give me ...",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_45",
+          "surface": "じゃあ",
+          "reading": "jaa",
+          "meaning": "then ...; if that is the case",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_46",
+          "surface": "どうぞ",
+          "reading": "doozo",
+          "meaning": "Please.; Here it is.",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_47",
+          "surface": "どうも",
+          "reading": "doomo",
+          "meaning": "Thank you.",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_48",
+          "surface": "Tシツ",
+          "reading": "tiishatsu",
+          "meaning": "T-shirt",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 58
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_49",
+          "surface": "コ",
+          "reading": "convenience",
+          "meaning": "store 心 に",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_50",
+          "surface": "トと",
+          "reading": "toire",
+          "meaning": "toilet; restroom",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_51",
+          "surface": "どかん",
+          "reading": "library",
+          "meaning": "toshokan yuubinkyoku",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_52",
+          "surface": "けいざい",
+          "reading": "keezai",
+          "meaning": "economics 2 konpyuutaa ーター computer びね ス",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_53",
+          "surface": "うあ",
+          "reading": "bijinesu",
+          "meaning": "business rekishi history Family okaasan",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_54",
+          "surface": "おかあさん",
+          "reading": "mother",
+          "meaning": "father",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_55",
+          "surface": "おとうさん",
+          "reading": "otoosan",
+          "meaning": "Money Matters ikura",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        },
+        {
+          "id": "genki_1_l2_vocab_56",
+          "surface": "じあ",
+          "reading": "jaa",
+          "meaning": "then ...; if that is the case, ... * doozo どうぞ Please.; Here it is",
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 59
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.371Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 OCR + seed"
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "genki_1_l2_grammar_1",
+          "pattern": "これ／それ／あれ／どれ",
+          "meaning": "this / that (near you) / that (over there) / which (as pronouns)",
+          "explanation": "Standalone demonstratives for things. Followed by は／が／を, not by a noun.",
+          "examples": [
+            {
+              "japanese": "これはいくらですか。",
+              "english": "How much is this?"
+            }
+          ],
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 60
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.350Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 grammar"
+          }
+        },
+        {
+          "id": "genki_1_l2_grammar_2",
+          "pattern": "この／その／あの／どの + Noun",
+          "meaning": "this/that/which + noun",
+          "explanation": "Demonstrative adjectives; must be followed by a noun (people or things).",
+          "examples": [
+            {
+              "japanese": "このとけいはいくらですか。",
+              "english": "How much is this watch?"
+            }
+          ],
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 61
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.351Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 grammar"
+          }
+        },
+        {
+          "id": "genki_1_l2_grammar_3",
+          "pattern": "ここ／そこ／あそこ／どこ",
+          "meaning": "here / there / over there / where",
+          "explanation": "Place demonstratives.",
+          "examples": [
+            {
+              "japanese": "ゆうびんきょくはどこですか。",
+              "english": "Where is the post office?"
+            }
+          ],
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 62
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.351Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 grammar"
+          }
+        },
+        {
+          "id": "genki_1_l2_grammar_4",
+          "pattern": "だれの Noun",
+          "meaning": "whose + noun",
+          "explanation": "Ask about possession with だれの.",
+          "examples": [
+            {
+              "japanese": "これはだれのかばんですか。",
+              "english": "Whose bag is this?"
+            }
+          ],
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 62
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.351Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 grammar"
+          }
+        },
+        {
+          "id": "genki_1_l2_grammar_5",
+          "pattern": "Noun も",
+          "meaning": "Noun too / also",
+          "explanation": "も replaces は／が／を on the item that is likewise true.",
+          "examples": [
+            {
+              "japanese": "ゆいさんもにほんじんです。",
+              "english": "Yui is Japanese too."
+            }
+          ],
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 63
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.351Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 grammar"
+          }
+        },
+        {
+          "id": "genki_1_l2_grammar_6",
+          "pattern": "Noun じゃないです",
+          "meaning": "is not Noun",
+          "explanation": "Colloquial negation of XはYです. Formal variant: じゃありません.",
+          "examples": [
+            {
+              "japanese": "やまださんはがくせいじゃないです。",
+              "english": "Mr. Yamada is not a student."
+            }
+          ],
+          "lessonNumber": 2,
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 63
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.351Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "Genki I L2 grammar"
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "genki_1_l2_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue genki_1_2",
+          "text": "だいにか: かいもの Shopping\nIn: this lesson, we will.\nAsk: and answer how much things cost\nDo: shopping\nかいわ: Di a\nI: Mary goes to a flea market.ko2-01/02\nありい: メアリー:\nMeari: Sumimasen.\nKore: wa ikura desu ka.\nMise: no hito\nSore: wa sanzen en desu.\nめありい: メアリー:\nMearii: Takai desu ne.\nano: tokee wa\nikura: desu ka.\nみせのひと: あれはさんぜんごひゃくえんです。\nMise: no hito\nArewa: sanzengohyaku en desu.\nめありい: メアリー:\nMearii: Soo desu ka.\nAre: mo takai desu ne.\nみせのひと: これはせんはっぴゃくえんですよ。\nMise: no hito\nKore: wa senhappyaku en desu yo.\nめありい: メアリー:\nMearii: Jaa,\nsono: tokee o\nA: man fi nds a wallet on the ground.\nしらないひと: これはだれのさいですか。\nShiranai: hito\nKore: wa dare no saifu desu ka.\nめありい: メアリー:\nMearii: Watashi no saifu desu.\nArigatoo: gozaimasu.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 65
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.368Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_l2_dialogue_2",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_2",
+          "text": "たんご: KO2-05 (J-E)\nY: Word s That Point\nこれ: kore\nthis: one\nそれ: sore\nthat: one\nあれ: are\nthat: one (over there)\nどれ: dore\nwhich: one\nこの: kono\nその: sono\nano: that...(over there)\nどの: dono\nここ: koko\nsoko: there\nあそこ: asoko\nover: there\nどこ: doko\nだれ: dare\nおいしい: oishii\nさかな: sakana\nとんかつ: tonkatsu\npork: cutlet\nにく: niku\nmeat: $x=z=$\nmenu: やさい\nyasai: vegetable\nkasa: umbrella\nかばん: kaban\nkutsu: shoes\nさいふ: saifu\njlinzu: jeans\nず: じてんしや\njitensha: bicycle\nしんぶん: shinbun\nnewspaper: スマホ\nsumaho: smartphone; mobile\nまほ: Tシツ\ntiishatsu: T-shirt\nていいしゃう: とけい\ntokee: watch; clock\nnooto: notebook",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 67
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.368Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_l2_dialogue_3",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_2",
+          "text": "ぶんぽう: Grammar\nWhen: you want to talk about \"this thing\" \"that one,\" and so forth, you can use kore, sore, and are.\nHow: much is this?\nKore: wa ikura desu ka.\nThat: is 3,000 yen.\nSore: wa sanzen en desu.\nWe: have one word for\"this\"and two words for\"that.\" Kore refers to a thing that is close to you, the\nspeaker: (\"this thing here\"). Sore is something that is close to the person you are talking to (\"that\nthing: in front of you\"), and are refers to a thing that is neither close to the speaker nor the listener\nAre: wa watashi no pen desu.\nKore: wa watashi no pen desu.\nSore: wa watashi no pen desu.\nThere: is also an expression dore for \"which.\"\nWhich: one is it (that you are talking about)?\nDore: desu ka.\nAvoid: using these re series words in reference to people in their earshot as in introducing people:\nめありい: ×これはともだちのメりーさんです。\nThis: is my friend Mary.\nKore: wa tomodachi no Mearii san desu.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 69
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.368Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_l2_dialogue_4",
+          "type": "dialogue",
+          "title": "Dialogue genki_1_2",
+          "text": "Pay: attention to where the particle is placed. In English, the word \"too\" can be placed after the sen-\ntence: as a whole, as in the translation above. In Japanese you can only put mo directly after the\nitem: that is just like another that has been introduced earlier. In the example above Yui san gets\n会: mo, because it is the \"likewise\" item which shares the property of being a Japanese person with\nTakeshi: san.\nA: isX.\nB: too is X.\nNoun: じゃないです\nTo: negate a statement of the form X wa Y desu, where Y is a noun, you replace desu with ja nai\nMr: Yamada is not a student.\nYamada: san wa gakusee ja nai desu.\nYou: find several stylistic variants in negative sentences. Ja nai desu is very colloquial. The more\nformal: replacement for nai desu is arimasen. Ja is a contraction of de wa, which is more formal\nand: more appropriate in the written language. Thus in addition to the above sentence, you also\nfind: やまださんはがくせいじありません。\nYamada: san wa gakusee ja arimasen.\nYamada: san wa\ngakusee: de wa arimasen.\nWe: cannot use mo to describe a situation like the following: Our friend, Pat, has dual citizenship; Pat is a Japa-\nPatto: mo amerikajin desu, because the sentence would mean that Pat, in addition to somebody that has been\nPatto: wa amerikajin demo arimasu.)\nIn: the dialogues, there are two sentences ending with desu that call for special attention: Are mo takai desu ne\ndesu: with ja nai desu, because takai and oishi are not nouns. Are mo takai ja nai desu and oishi ja nai desu are\ntherefore: not grammatical. Instead, one would have to say takaku nai desu and oishiku nai desu. We will learn\nabout: the conjugation pattern of adjectives in Lesson 5.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 72
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.368Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_l2_dialogue_5",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_2",
+          "text": "Desu: and ja nai must always be accompanied by a noun. In answer to a question, therefore, desu\nand: ja nai do not stand alone.\nA: にほんじんですか。\nAre: you Japanese?\nNihonjin: desu ka.\nB: いいえ、にほんじんじやないです。\nnihonjin: ja nai desu.\nja: nai desu.\naff: rmative:(Xは)Yです。\nnegative: (Xは)Y\nX: is not Y.\nStatements: often end with the tags ne or yo, depending on the way the speaker views the interac-\ntion: with the listener. If you are seeking the listener's confirmation or agreement to what you are\nりい: さんのせんこうはんがくですね。\nMs: Lee, your major is literature, right?\nRii: san no\nbungaku: desu ne.\nThis: is not meat, is it?\nKore: wa niku ja nai desu ne.\nIf: you want to tell the listener that you are fully confi dent of what you are saying and the listener\nhad: better believe it, use yo(\"I tell you\") at the end of your sentence.\nLet: me assure you.\"Tonkatsu\" is not fish.\nTonkatsu: wa sakana ja nai desu yo.\nす及す: いぎりす\nSumisu: san wa\nigirisujin: desu yo.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 73
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.368Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_l2_dialogue_6",
+          "type": "dialogue",
+          "title": "Dialogue genki_1_2",
+          "text": "Expression: Notes\n会: ひょう\nWhen: used to ask for a concrete object,(... o) onegaishimasu sounds slightly\nmore: upscale than (... o) kudasai. It is heard often when ordering food at a\nrestaurant: (\"I will have ...\"). (... o) onegaishimasu can also be used to ask for\nX: In the dialogue, the restaurant attendant uses it when he is about to hand the\nmenu: to the customer.\nOn: the pronunciation of number wordsNote that the words for 300, 600,\nlike: hyaku (hundred), generally change in sound after 3, 6, and 8. Some counters\nthat: begin with s, like sen (thousand), change in sound after 3 and 8. Refer to the\ntable: on pages 380-381.\nBig: numbers In addition to the digit markers for tens (juu), hundreds (hyaku),\nand: thousands (sen), which are found in Western languages as well, Japanese\nuses: the marker for tens of thousands (man). Thus 20,000, for example, is niman\nin: Western languages is one million, Japanese describes that number as 100 ×\nMore: complicated numbers can be considered the sums of smaller numbers, as\nin: the following examples.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 74
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.368Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_l2_dialogue_7",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_2",
+          "text": "Culture: Notes\nにほんのおかね: Japanese Currency\nNihon: no okane\ncoins: currently in circulation are the following:\n白本熊行券: 日本银行券\n春万円: 玉千円\n庆: 日本级许\n日米级汗: 801030789\nA: portrait of Yukichi Fukuzawa (1835-\nA: portrait of Ichiyoo Higuchi (1872-\nof: Keio University.\n日本祝行券: 日本银行券\n日本致开: 日本筑外\nShurei: Gate, the second gate of Shuri\nA: portrait of Hideyo Noguchi (1876-\nCastle: in Okinawa.\nhimself: to yellow fever research.\n国话: All bills and coins are different sizes. For example, the bills slightly descend in length from",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 75
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.368Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_l2_dialogue_8",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_2",
+          "text": "のおと: (1)/-\nげんき: Notebook\nM: ￥450\nすまほ: (10)じてんしや\nC: Pair Work—One of you looks at picture A (p. 69) and the other looks at picture B\nのおと: Example\nA: はいくらですか。\nNooto: wa ikura desu ka.\nNotebook: B：ひゃくえんです。\nHyaku: en desu.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 77
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.368Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_l2_dialogue_9",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_2",
+          "text": "B: Look at the picture and tell what each building is. Ko2-11\nExampleQ: あれはなんですか。\nnan: desu ka.\nA: あれはとしよかんです。\nAre: wa toshokan desu.\nLibrary: Sakura\nPostoffice: Store\nUniversity: □□□□□□\n可可: (1)\nC: Pair Work—Point out five things in the classroom and ask your partner what they\nare: using これ (kore), それ (sore), or あれ (are). Refer to the picture on p. 81 for the\nvocabulary: Example 1\nA: あれはなんですか。\nA: それはなんですか。\nnan: desu ka.\nnan: desu ka.\nB: あれはとけいです。\nB: これは\nAre: wat\ntokee: desu.\nKore: wa pen desu.\nA: Look at the pictures and make sentences using この (kono), その (sono), or あの (ano).\nExample: このとけいはごせんえんです。\nKono: tokee wa\ngosen: en desu.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 79
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.368Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_l2_dialogue_10",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_2",
+          "text": "C: Pair Work—Point out items your partner has and ask him/her as to how much they cost.\nExample: Pointing to your partner's T-shirt.\nていいしゃ: A：それはそのTシツはいくらですか。\nSore: wa Sono tishatsu wa\nikura: desu ka.\nB: ごひゃくえんです。\nGohyaku: en desu.\nIV: ぎんこうはあそこです\nLook: at the pictures and answer where the following are. ko2-13\nExample: BANK\nB: すみません。んこはどこですか。\nSumimasen: Ginkoo wa\ndoko: desu ka.\nA: あそこです。\nAsoko: desu.\nB: ありがとうございます。\nArigatoo: gozaimasu.\nとれ: (1)\ntoire: toshokan\nkutsu: Library\nn: TOILET\nV: めにう\nyasai: menyuu\nhon: VEGETABLES",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 81
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.368Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_l2_dialogue_11",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_2",
+          "text": "Seoul: Tokyo\nRobert: Naomi\nA: Look at the chart below and answer the questions.\nきむらたけし: やましたせんせい\nKimura: Takeshi\nYamashita: sensee\nNationality: American\nJapanese: Korean\nBritish: Japanese\nSchool: U.of Arizona\nSakura: Univ.\nSeoul: Univ.\nU: of London\nSakura: Univ.\nMajor: Japanese\nhistory: computer\nbusiness: teacher)\nYear: 2nd year\nめありい: Example\nQ: メさんはにほんじんですか。\nMearii: san wa\nnihonjin: desu ka.\nあめりか: A：いいえ、にほんじんじゃないです。メ力じんです。\nnihonjin: ja nai desu.\nAmerikajin: desu.\nTakeshi: san wa chuugokujin desu ka.\nろばあと: あめりか\nRobaato: san wa\namerikajin: desu ka.\nYamashita: sensee wa\nkankokujin: desu ka.\nTakeshi: san no\nnihongo: desu ka.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 83
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.368Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_l2_dialogue_12",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_2",
+          "text": "調べてみよう: out\nCompare: the Prices\nThere: are many franchised fast food restaurants/cafes around the world such as\nand: in your country, and compare the prices of similar items. You can visit the place\nThe: name of the restaurant/cafe\nItems: Price in Japan\nPrice: in your country\nM: McDonald's\n写真提供: 日本マクナ（株）",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 87
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.368Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "dialogue from comprehensive"
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_184",
+          "label": "practice",
+          "prompt": "The Practice section contains exercises dealing with the points covered in the Grammar section.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_185",
+          "label": "practice",
+          "prompt": "The workbook also provides practices for the grammar points covered in the lesson. First do the",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_186",
+          "label": "practice",
+          "prompt": "practices in the textbook, and then check your mastery by doing the ones in the workbook.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_187",
+          "label": "practice",
+          "prompt": "The serial number of the corresponding grammar",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_188",
+          "label": "practice",
+          "prompt": "練翼 Pr a c ti c e",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_189",
+          "label": "practice",
+          "prompt": "item is listed next to each practice's heading.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_190",
+          "label": "practice",
+          "prompt": "Be sure to read the grammar explanation before",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_191",
+          "label": "practice",
+          "prompt": "Change the follpwiag verbs into~すand~. Ignore the word in English for this",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_192",
+          "label": "practice",
+          "prompt": "doing the practice.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_193",
+          "label": "practice",
+          "prompt": "exercise.xo307/08",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_194",
+          "label": "practice",
+          "prompt": "②Exercises marked with a speaker icon",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_195",
+          "label": "practice",
+          "prompt": "audio recordings of the cues and responses.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_196",
+          "label": "practice",
+          "prompt": "Listen to the recording as you practice.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_197",
+          "label": "practice",
+          "prompt": "Additional Information",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_198",
+          "label": "practice",
+          "prompt": "Some lessons include the following extra content.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_199",
+          "label": "practice",
+          "prompt": "Useful Expressions: Lists of words and expressions associated with a particular topic.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_200",
+          "label": "practice",
+          "prompt": "Culture Notes: Commentary on Japanese culture, lifestyles, etc.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_201",
+          "label": "practice",
+          "prompt": "Let's Find Out: Tasks that require you look up certain information on Japan.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_202",
+          "label": "practice",
+          "prompt": "Useful Expressions",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_2_exercise_203",
+          "label": "practice",
+          "prompt": "Culture Notes",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 25
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:53:25.369Z",
+            "reviewer": "ocr_vocab_enrich",
+            "notes": "exercise from comprehensive"
+          }
+        }
+      ],
+      "qualityTier": "gold",
+      "appLessonId": "genki_1_2"
+    }
+  ]
+}

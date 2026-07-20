@@ -1,0 +1,4750 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "quartet_1",
+  "title": "Quartet: Intermediate Japanese Across the Four Language Skills I",
+  "levelRange": "N3",
+  "sources": [
+    {
+      "sourceId": "quartet_1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "ff01e1f788cdff1f7dbc8a636914ae49c5ec9e40e8a6e5eed996a4372eb4a40a",
+        "bytes": 141218401
+      }
+    },
+    {
+      "sourceId": "quartet_1_workbook",
+      "role": "workbook",
+      "fingerprint": {
+        "sha256": "08164771dd2a92442bed151e36a8cfc937c56ac95a8c1462c0f0d9c7b8295f7f",
+        "bytes": 29710129
+      }
+    },
+    {
+      "sourceId": "quartet_1_workbook_answer_key",
+      "role": "answer_key",
+      "fingerprint": {
+        "sha256": "8e892371d006f6095f638c38e995a1d050d3357c6ab5cebaff20a8d79c87616e",
+        "bytes": 8842547
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "quartet_1_lesson_1",
+      "unitType": "lesson",
+      "lessonNumber": 1,
+      "title": "第1課",
+      "level": "N3",
+      "pageRange": {
+        "start": 27,
+        "end": 56
+      },
+      "modes": [
+        "reading",
+        "writing",
+        "speaking",
+        "listening",
+        "workbook"
+      ],
+      "vocabulary": [
+        {
+          "id": "quartet_1_l1_vocab_1",
+          "surface": "監督",
+          "reading": "かんとく",
+          "meaning": "director",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              288,
+              289,
+              1323,
+              342
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_2",
+          "surface": "宮崎駿",
+          "reading": "みやざきはやお",
+          "meaning": "Hayao Miyazaki",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              338,
+              339,
+              1429,
+              395
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_3",
+          "surface": "やはり",
+          "reading": "やはり",
+          "meaning": "undoubtedly; after all",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              145,
+              387,
+              1496,
+              446
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_4",
+          "surface": "千と千尋の神隠し",
+          "reading": "せんとちひろのかみかくし",
+          "meaning": "Spirited Away [movie title]",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              340,
+              446,
+              1558,
+              495
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_5",
+          "surface": "作品",
+          "reading": "さくひん",
+          "meaning": "a work",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              277,
+              491,
+              1309,
+              552
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_6",
+          "surface": "特に",
+          "reading": "とくに",
+          "meaning": "especially",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              138,
+              545,
+              1346,
+              604
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_7",
+          "surface": "アカデミー賞",
+          "reading": "あかでみーしょう",
+          "meaning": "Academy Award",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              208,
+              600,
+              1430,
+              651
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_8",
+          "surface": "取る",
+          "reading": "とる",
+          "meaning": "to win (a prize); to take",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              143,
+              651,
+              1514,
+              705
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_9",
+          "surface": "興味",
+          "reading": "きょうみ",
+          "meaning": "interest",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              143,
+              697,
+              1316,
+              759
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_10",
+          "surface": "もののけ姫",
+          "reading": "もののけひめ",
+          "meaning": "Princess Mononoke [movie title]",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              343,
+              753,
+              1629,
+              805
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_11",
+          "surface": "となりのトトロ",
+          "reading": "となりのととろ",
+          "meaning": "My Neighbor Totoro [movie title]",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              347,
+              807,
+              1634,
+              855
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_12",
+          "surface": "ストーリー",
+          "reading": "すとーりー",
+          "meaning": "story",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              282,
+              855,
+              1289,
+              914
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_13",
+          "surface": "環境",
+          "reading": "かんきょう",
+          "meaning": "environment",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              141,
+              906,
+              1386,
+              965
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_14",
+          "surface": "大人",
+          "reading": "おとな",
+          "meaning": "adult",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              283,
+              958,
+              1291,
+              1014
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_15",
+          "surface": "髪",
+          "reading": "かみ",
+          "meaning": "hair",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              279,
+              1008,
+              1281,
+              1066
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_16",
+          "surface": "ふち",
+          "reading": "ふち",
+          "meaning": "frame (of glasses)",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              338,
+              1060,
+              1294,
+              1119
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_17",
+          "surface": "笑顔",
+          "reading": "ふち",
+          "meaning": "frame (of glasses)",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              335,
+              1108,
+              1439,
+              1172
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_18",
+          "surface": "優しい",
+          "reading": "えがお",
+          "meaning": "smile",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              336,
+              1160,
+              1292,
+              1223
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_19",
+          "surface": "優しい",
+          "reading": "やさしい",
+          "meaning": "gentle; kind",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              145,
+              1215,
+              1373,
+              1273
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_20",
+          "surface": "厳しい",
+          "reading": "きびしい",
+          "meaning": "strict",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              142,
+              1267,
+              1293,
+              1324
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_21",
+          "surface": "例えば",
+          "reading": "たとえば",
+          "meaning": "for example",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              139,
+              1319,
+              1369,
+              1373
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_22",
+          "surface": "直す",
+          "reading": "かく",
+          "meaning": "to draw",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              278,
+              1365,
+              1321,
+              1428
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_23",
+          "surface": "絵",
+          "reading": "え",
+          "meaning": "picture; drawing; painting",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              139,
+              1424,
+              1557,
+              1479
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_24",
+          "surface": "直す",
+          "reading": "なおす",
+          "meaning": "to fix [vt.]",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              122,
+              1467,
+              1347,
+              1531
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_25",
+          "surface": "ゴム",
+          "reading": "ごむ",
+          "meaning": "rubber",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              288,
+              1523,
+              1313,
+              1580
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_26",
+          "surface": "かたい",
+          "reading": "かたい",
+          "meaning": "hard; firm",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              340,
+              1577,
+              1352,
+              1632
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_27",
+          "surface": "やわらかい",
+          "reading": "やわらかい",
+          "meaning": "soft",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              341,
+              1626,
+              1276,
+              1682
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_28",
+          "surface": "[時間を]かける",
+          "reading": "また",
+          "meaning": "also; in addition",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              117,
+              1678,
+              1427,
+              1738
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: corrected surface formatting."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_29",
+          "surface": "はずかしい",
+          "reading": "はずかしい",
+          "meaning": "only; merely",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              340,
+              1729,
+              1381,
+              1788
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_30",
+          "surface": "晩",
+          "reading": "びょう",
+          "meaning": "second",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              202,
+              1780,
+              1312,
+              1842
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_31",
+          "surface": "ほとんど~ない",
+          "reading": "L-ん",
+          "meaning": "scene",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              336,
+              1832,
+              1290,
+              1890
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_32",
+          "surface": "晩ご飯",
+          "reading": "かける",
+          "meaning": "to spend (time) [vt.]",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              272,
+              1885,
+              1471,
+              1941
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_33",
+          "surface": "はずかしい",
+          "reading": "はずかしい",
+          "meaning": "embarrassing; embarrassed",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              121,
+              1936,
+              1571,
+              1997
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_34",
+          "surface": "美しい",
+          "reading": "うつくしい",
+          "meaning": "evening; night",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              220,
+              1988,
+              1403,
+              2046
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_35",
+          "surface": "ほとんど〜ない",
+          "reading": "げいじゅつてきな",
+          "meaning": "rarely; hardly",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              344,
+              2044,
+              1394,
+              2093
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_36",
+          "surface": "晚飯",
+          "reading": "すばらしい",
+          "meaning": "dinner",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              212,
+              2091,
+              1308,
+              2147
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_37",
+          "surface": "趣味",
+          "reading": "しゆみ",
+          "meaning": "hobby",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              272,
+              2137,
+              1305,
+              2202
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_38",
+          "surface": "若",
+          "reading": "わかい",
+          "meaning": "young",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              336,
+              2192,
+              1310,
+              2253
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_39",
+          "surface": "美いい",
+          "reading": "うつくしい",
+          "meaning": "beautiful",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              125,
+              2245,
+              1334,
+              2304
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_40",
+          "surface": "芸術的な",
+          "reading": "げいじつてきな",
+          "meaning": "artistic",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              124,
+              2298,
+              1316,
+              2355
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_41",
+          "surface": "すばらしい",
+          "reading": "すばらしい",
+          "meaning": "great; wonderful",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              271,
+              2349,
+              1432,
+              2405
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_42",
+          "surface": "[~が]得意な",
+          "reading": "いつまでも",
+          "meaning": "forever",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              339,
+              2402,
+              1314,
+              2454
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: corrected surface formatting."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_43",
+          "surface": "世界中で",
+          "reading": "せかいじゅうで",
+          "meaning": "around the world",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              339,
+              2454,
+              1439,
+              2507
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_44",
+          "surface": "愛する",
+          "reading": "あいする",
+          "meaning": "to love",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              120,
+              2503,
+              1307,
+              2563
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_45",
+          "surface": "紹介(する)",
+          "reading": "しゅうしょく(する)",
+          "meaning": "to introduce",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 291,
+            "coordinates": [
+              198,
+              185,
+              1449,
+              236
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_46",
+          "surface": "~生まれ",
+          "reading": "はっぴょう(する)",
+          "meaning": "born in~",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 291,
+            "coordinates": [
+              344,
+              234,
+              1412,
+              289
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_47",
+          "surface": "[~が]得意な",
+          "reading": "とくいな",
+          "meaning": "good at",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 291,
+            "coordinates": [
+              195,
+              285,
+              1390,
+              342
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_48",
+          "surface": "きっかけ",
+          "reading": "きっかけ",
+          "meaning": "start; impetus",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 291,
+            "coordinates": [
+              346,
+              340,
+              1471,
+              392
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_49",
+          "surface": "作家",
+          "reading": "さっか",
+          "meaning": "writer",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 291,
+            "coordinates": [
+              347,
+              392,
+              1371,
+              441
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_50",
+          "surface": "[~1に]就職(する)",
+          "reading": "しゅうしよく(する)",
+          "meaning": "to get employed",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 291,
+            "coordinates": [
+              200,
+              444,
+              1494,
+              495
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_51",
+          "surface": "発表(する)",
+          "reading": "はっぴょう(する)",
+          "meaning": "to release",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 291,
+            "coordinates": [
+              418,
+              494,
+              1411,
+              545
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_52",
+          "surface": "ベルリン",
+          "reading": "べるりん",
+          "meaning": "Berlin",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 291,
+            "coordinates": [
+              414,
+              541,
+              1375,
+              597
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_53",
+          "surface": "ノーベル賞",
+          "reading": "ノーベルしょう",
+          "meaning": "international",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 291,
+            "coordinates": [
+              197,
+              594,
+              1457,
+              651
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_54",
+          "surface": "映画祭",
+          "reading": "けんきゅうしゃ",
+          "meaning": "film festival",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 291,
+            "coordinates": [
+              196,
+              648,
+              1444,
+              701
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_55",
+          "surface": "[~に]出品(する)",
+          "reading": "しゅっぴん(する)",
+          "meaning": "to submit (one's work to ~)",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 291,
+            "coordinates": [
+              419,
+              702,
+              1629,
+              747
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_56",
+          "surface": "アカデー名誉賞",
+          "reading": "あかでみめいよしょう",
+          "meaning": "Academy Honorary Award",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 291,
+            "coordinates": [
+              420,
+              752,
+              1636,
+              801
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_57",
+          "surface": "受賞(する)",
+          "reading": "じゅしょう(する)",
+          "meaning": "iPS cells",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 291,
+            "coordinates": [
+              280,
+              803,
+              1535,
+              856
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_58",
+          "surface": "言葉",
+          "reading": "の一べるしょう",
+          "meaning": "Nobel Prize",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              204,
+              287,
+              1369,
+              343
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_59",
+          "surface": "研究者",
+          "reading": "ぶぶん",
+          "meaning": "researcher",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              337,
+              340,
+              1353,
+              395
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_60",
+          "surface": "山中伸弥",
+          "reading": "やまなかしんや",
+          "meaning": "Shinya Yamanaka",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              339,
+              392,
+              1448,
+              445
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_61",
+          "surface": "教授",
+          "reading": "きようじ",
+          "meaning": "professor",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              335,
+              437,
+              1340,
+              501
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_62",
+          "surface": "iPS細胞",
+          "reading": "あいぴーえすさいぼう",
+          "meaning": "iPS cells",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              284,
+              495,
+              1328,
+              547
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_63",
+          "surface": "言葉",
+          "reading": "ことば",
+          "meaning": "word; language",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              118,
+              545,
+              1414,
+              605
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_64",
+          "surface": "部分",
+          "reading": "ぶぶん",
+          "meaning": "part",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              283,
+              591,
+              1287,
+              656
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_65",
+          "surface": "将来",
+          "reading": "しょうらい",
+          "meaning": "future",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              126,
+              645,
+              1304,
+              707
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_66",
+          "surface": "難しい",
+          "reading": "むずかしい",
+          "meaning": "difficult",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              123,
+              699,
+              1325,
+              758
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_67",
+          "surface": "助ける",
+          "reading": "ラグビー",
+          "meaning": "to save; to help [vt.]",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              123,
+              750,
+              1465,
+              808
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_68",
+          "surface": "夢",
+          "reading": "ゆめ",
+          "meaning": "dream",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              338,
+              803,
+              1304,
+              863
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_69",
+          "surface": "出身",
+          "reading": "Lゅっしん",
+          "meaning": "one's hometown",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              118,
+              847,
+              1426,
+              914
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_70",
+          "surface": "大阪",
+          "reading": "おおさか",
+          "meaning": "Osaka",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              337,
+              907,
+              1302,
+              962
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_71",
+          "surface": "学生時代",
+          "reading": "がくせいじだい",
+          "meaning": "to cure; to heal [vt.]",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              288,
+              960,
+              1369,
+              1013
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_72",
+          "surface": "柔道",
+          "reading": "じゅうどう",
+          "meaning": "judo",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              337,
+              1005,
+              1286,
+              1069
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_73",
+          "surface": "苦しむ",
+          "reading": "くるしむ",
+          "meaning": "rugby",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              339,
+              1061,
+              1298,
+              1119
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_74",
+          "surface": "けが",
+          "reading": "けが",
+          "meaning": "injury",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              122,
+              1113,
+              1300,
+              1169
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_75",
+          "surface": "决心(する)",
+          "reading": "りゆう",
+          "meaning": "to make up one's mind; to determine",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              220,
+              1164,
+              1683,
+              1220
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_76",
+          "surface": "働き始める",
+          "reading": "はたらきはじめる",
+          "meaning": "to start working",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              342,
+              1220,
+              1427,
+              1268
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_77",
+          "surface": "[病気を]なおす",
+          "reading": "こうえん",
+          "meaning": "to cure; to heal [vt.]",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              272,
+              1270,
+              1466,
+              1322
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_78",
+          "surface": "方法",
+          "reading": "ほうほう",
+          "meaning": "method; means; way",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              126,
+              1321,
+              1479,
+              1376
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_79",
+          "surface": "苦しむ",
+          "reading": "くるしむ",
+          "meaning": "to suffer",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              123,
+              1368,
+              1330,
+              1428
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_80",
+          "surface": "ショック",
+          "reading": "しょっく",
+          "meaning": "shock",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              271,
+              1422,
+              1298,
+              1478
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_81",
+          "surface": "~ほど",
+          "reading": "~ほど",
+          "meaning": "to get; to receive",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              121,
+              1472,
+              1427,
+              1531
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_82",
+          "surface": "理由",
+          "reading": "りゆう",
+          "meaning": "reason",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              123,
+              1522,
+              1303,
+              1584
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_83",
+          "surface": "[~が]苦手な",
+          "reading": "せいかく",
+          "meaning": "personality; character",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              126,
+              1571,
+              1500,
+              1640
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_84",
+          "surface": "講演",
+          "reading": "こうえん",
+          "meaning": "sorry (=すみません)",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              123,
+              1624,
+              1408,
+              1684
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_85",
+          "surface": "必ず",
+          "reading": "かならず",
+          "meaning": "certainly; always",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              121,
+              1674,
+              1436,
+              1742
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_86",
+          "surface": "手術",
+          "reading": "しゅじゅつ",
+          "meaning": "surgery",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              210,
+              1728,
+              1317,
+              1790
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_87",
+          "surface": "友人",
+          "reading": "ゆうじん",
+          "meaning": "friend",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              267,
+              1779,
+              1304,
+              1840
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_88",
+          "surface": "~ほど",
+          "reading": "~ほど",
+          "meaning": "about~",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              338,
+              1834,
+              1320,
+              1890
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_89",
+          "surface": "簡単な",
+          "reading": "かんたんな",
+          "meaning": "easy; simple",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              123,
+              1887,
+              1373,
+              1942
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_90",
+          "surface": "[~が苦手な",
+          "reading": "ベッドサイド",
+          "meaning": "poor at",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              122,
+              1940,
+              1316,
+              1995
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_91",
+          "surface": "[~に]届ける",
+          "reading": "とどける",
+          "meaning": "sorry(=すみん)",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              265,
+              1986,
+              1454,
+              2046
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_92",
+          "surface": "[人に]あやまる",
+          "reading": "あやまる",
+          "meaning": "to apologize",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              343,
+              2044,
+              1378,
+              2097
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_93",
+          "surface": "救う",
+          "reading": "すくう",
+          "meaning": "nervous; anxious",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              271,
+              2093,
+              1437,
+              2148
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_94",
+          "surface": "人生",
+          "reading": "じんせい",
+          "meaning": "life",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              271,
+              2143,
+              1262,
+              2200
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_95",
+          "surface": "目標",
+          "reading": "もくひよう",
+          "meaning": "goal; objective",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              122,
+              2194,
+              1405,
+              2254
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_96",
+          "surface": "技術",
+          "reading": "ぎじゅつ",
+          "meaning": "technology",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              123,
+              2244,
+              1363,
+              2304
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Second Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_97",
+          "surface": "[~が]必要な",
+          "reading": "べっどさいど",
+          "meaning": "bedside",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              340,
+              2299,
+              1321,
+              2350
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_98",
+          "surface": "[~に]届ける",
+          "reading": "とどける",
+          "meaning": "to deliver (something) to [vt.]",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              272,
+              2350,
+              1590,
+              2403
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_99",
+          "surface": "決して~ない",
+          "reading": "かんじや",
+          "meaning": "patient",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              337,
+              2398,
+              1313,
+              2459
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: corrected obvious OCR scar."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_100",
+          "surface": "救う",
+          "reading": "すくう",
+          "meaning": "to save; to cure",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              337,
+              2448,
+              1409,
+              2510
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "First Bessatsu vocab review pass: clean row."
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_101",
+          "surface": "結果を出す",
+          "reading": "けっかをだす",
+          "meaning": "to achieve results",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 292,
+            "coordinates": [
+              121,
+              2504,
+              1439,
+              2564
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:16:41.402059+00:00",
+            "reviewer": "auto_promote_quality",
+            "notes": "Promoted pending vocab with JP surface + EN meaning"
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_102",
+          "surface": "つまり",
+          "reading": "つまり",
+          "meaning": "in other words",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 293,
+            "coordinates": [
+              198,
+              182,
+              1476,
+              236
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:16:41.402059+00:00",
+            "reviewer": "auto_promote_quality",
+            "notes": "Promoted pending vocab with JP surface + EN meaning"
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_103",
+          "surface": "決める",
+          "reading": "きめる",
+          "meaning": "to set; to decide [vt.]",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 293,
+            "coordinates": [
+              198,
+              236,
+              1549,
+              290
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:16:41.402059+00:00",
+            "reviewer": "auto_promote_quality",
+            "notes": "Promoted pending vocab with JP surface + EN meaning"
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_104",
+          "surface": "[~が必要な",
+          "reading": "ひつような",
+          "meaning": "necessary",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 293,
+            "coordinates": [
+              199,
+              289,
+              1415,
+              338
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:16:41.402059+00:00",
+            "reviewer": "auto_promote_quality",
+            "notes": "Promoted pending vocab with JP surface + EN meaning"
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_105",
+          "surface": "成功(する)",
+          "reading": "せいこう(する)",
+          "meaning": "to succeed",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 293,
+            "coordinates": [
+              350,
+              340,
+              1423,
+              387
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:16:41.402059+00:00",
+            "reviewer": "auto_promote_quality",
+            "notes": "Promoted pending vocab with JP surface + EN meaning"
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_106",
+          "surface": "決して～ない",
+          "reading": "けっして〜ない",
+          "meaning": "never; definitely not",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 293,
+            "coordinates": [
+              351,
+              395,
+              1547,
+              438
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:16:41.402059+00:00",
+            "reviewer": "auto_promote_quality",
+            "notes": "Promoted pending vocab with JP surface + EN meaning"
+          }
+        },
+        {
+          "id": "quartet_1_l1_vocab_107",
+          "surface": "尊敬(する)",
+          "reading": "そんけい(する)",
+          "meaning": "to respect",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 293,
+            "coordinates": [
+              198,
+              440,
+              1416,
+              493
+            ]
+          },
+          "tags": [
+            "draft_bessatsu_parse"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-20T04:16:41.402059+00:00",
+            "reviewer": "auto_promote_quality",
+            "notes": "Promoted pending vocab with JP surface + EN meaning"
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "quartet_1_l1_grammar_1",
+          "pattern": "~なら",
+          "meaning": "If that is the case; as for; when responding to a stated condition or topic.",
+          "examples": [
+            {
+              "japanese": "図書館に行くなら、この本を返してきてください。",
+              "reading": "としょかんに いくなら、この ほんを かえしてきてください。",
+              "english": "If you are going to the library, please return this book."
+            },
+            {
+              "japanese": "午後なら大丈夫です。",
+              "reading": "ごごなら だいじょうぶです。",
+              "english": "The afternoon works for me."
+            }
+          ],
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 34,
+            "coordinates": [
+              102,
+              1469,
+              1703,
+              1664
+            ]
+          },
+          "explanation": "Use なら to take up something the listener just said, or a known topic/condition, and then give advice, a request, contrast, or relevant information.",
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Grammar review pass: added curated explanation and examples."
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_2",
+          "pattern": "~とおり(に) / Nどおり(に)",
+          "meaning": "As; just as; exactly according to.",
+          "examples": [
+            {
+              "japanese": "先生が言ったとおりに書いてください。",
+              "reading": "せんせいが いったとおりに かいてください。",
+              "english": "Please write it just as the teacher said."
+            },
+            {
+              "japanese": "計画どおりに進みました。",
+              "reading": "けいかくどおりに すすみました。",
+              "english": "It proceeded according to plan."
+            }
+          ],
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 36,
+            "coordinates": [
+              102,
+              149,
+              1686,
+              255
+            ]
+          },
+          "explanation": "Use とおり with verbs and どおり with nouns to say that an action or result matches an instruction, plan, statement, or expectation.",
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Grammar review pass: added curated explanation and examples."
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_3",
+          "pattern": "~らしい",
+          "meaning": "It seems; apparently; typical of.",
+          "examples": [
+            {
+              "japanese": "友達によると、その映画はとてもおもしろいらしいです。",
+              "reading": "ともだちに よると、その えいがは とても おもしろいらしいです。",
+              "english": "According to my friend, that movie is apparently very interesting."
+            },
+            {
+              "japanese": "今日は春らしい暖かい日です。",
+              "reading": "きょうは はるらしい あたたかい ひです。",
+              "english": "Today is a warm day that feels like spring."
+            }
+          ],
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 36,
+            "coordinates": [
+              102,
+              1610,
+              1699,
+              1710
+            ]
+          },
+          "explanation": "Use らしい either for hearsay/inference based on information, or after a noun to describe something as having the qualities typical of that noun.",
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Grammar review pass: added curated explanation and examples."
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_4",
+          "pattern": "~ために",
+          "meaning": "In order to; for the purpose of.",
+          "examples": [
+            {
+              "japanese": "日本で働くために、敬語を勉強しています。",
+              "reading": "にほんで はたらくために、けいごを べんきょうしています。",
+              "english": "I am studying honorific language in order to work in Japan."
+            },
+            {
+              "japanese": "病気を治すために研究を続けます。",
+              "reading": "びょうきを なおすために けんきゅうを つづけます。",
+              "english": "I will continue research in order to cure illnesses."
+            }
+          ],
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 38,
+            "coordinates": [
+              100,
+              146,
+              1692,
+              326
+            ]
+          },
+          "explanation": "Use ために after a verb or noun phrase to state the purpose of an intentional action.",
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Grammar review pass: added curated explanation and examples."
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_5",
+          "pattern": "~ためのN",
+          "meaning": "N for; N intended for the purpose of.",
+          "examples": [
+            {
+              "japanese": "これは発表のための資料です。",
+              "reading": "これは はっぴょうのための しりょうです。",
+              "english": "These are materials for the presentation."
+            },
+            {
+              "japanese": "日本語を学ぶための本を探しています。",
+              "reading": "にほんごを まなぶための ほんを さがしています。",
+              "english": "I am looking for a book for learning Japanese."
+            }
+          ],
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 38,
+            "coordinates": [
+              100,
+              146,
+              1692,
+              326
+            ]
+          },
+          "explanation": "Use ための before a noun to modify it with its purpose or intended use.",
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Grammar review pass: added curated explanation and examples."
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_6",
+          "pattern": "~ようになる",
+          "meaning": "Come to; become able to; reach a new state or habit.",
+          "examples": [
+            {
+              "japanese": "毎日日本語のニュースを読むようになりました。",
+              "reading": "まいにち にほんごの ニュースを よむように なりました。",
+              "english": "I have come to read Japanese news every day."
+            },
+            {
+              "japanese": "難しい文章も少し読めるようになりました。",
+              "reading": "むずかしい ぶんしょうも すこし よめるように なりました。",
+              "english": "I have become able to read somewhat difficult passages."
+            }
+          ],
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 39,
+            "coordinates": [
+              145,
+              1242,
+              1861,
+              1346
+            ]
+          },
+          "explanation": "Use ようになる to describe a change where something starts happening, becomes possible, or becomes habitual.",
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Grammar review pass: added curated explanation and examples."
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_7",
+          "pattern": "~ようにする",
+          "meaning": "Make an effort to; make sure to.",
+          "examples": [
+            {
+              "japanese": "新しい単語を毎日復習するようにしています。",
+              "reading": "あたらしい たんごを まいにち ふくしゅうするように しています。",
+              "english": "I make a point of reviewing new vocabulary every day."
+            },
+            {
+              "japanese": "発表ではゆっくり話すようにしてください。",
+              "reading": "はっぴょうでは ゆっくり はなすように してください。",
+              "english": "Please make sure to speak slowly in the presentation."
+            }
+          ],
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 40,
+            "coordinates": [
+              104,
+              1084,
+              1699,
+              1183
+            ]
+          },
+          "explanation": "Use ようにする to describe intentionally trying to make an action a habit or ensure that it happens.",
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Grammar review pass: added curated explanation and examples."
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_8",
+          "pattern": "~によると",
+          "meaning": "According to; based on a source of information.",
+          "examples": [
+            {
+              "japanese": "ニュースによると、明日は雨が降るそうです。",
+              "reading": "ニュースに よると、あしたは あめが ふるそうです。",
+              "english": "According to the news, it will rain tomorrow."
+            },
+            {
+              "japanese": "友達の話によると、その作家は有名らしいです。",
+              "reading": "ともだちの はなしに よると、その さっかは ゆうめいらしいです。",
+              "english": "According to my friend, that writer is apparently famous."
+            }
+          ],
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 43,
+            "coordinates": [
+              195,
+              466,
+              1850,
+              870
+            ]
+          },
+          "explanation": "Use によると to identify the source of reported information. It often appears with そうだ or らしい.",
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Grammar review pass: added curated explanation and examples."
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_9",
+          "pattern": "Nといえば",
+          "meaning": "Speaking of N; when it comes to N.",
+          "examples": [
+            {
+              "japanese": "日本のアニメ映画といえば、宮崎駿監督の作品を思い出します。",
+              "reading": "にほんの アニメえいがといえば、みやざき はやお かんとくの さくひんを おもいだします。",
+              "english": "Speaking of Japanese animated films, I think of Hayao Miyazaki’s works."
+            },
+            {
+              "japanese": "冬といえば、温泉に行きたくなります。",
+              "reading": "ふゆといえば、おんせんに いきたく なります。",
+              "english": "Speaking of winter, I start wanting to go to hot springs."
+            }
+          ],
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_workbook",
+            "pageNumber": 19,
+            "coordinates": [
+              554,
+              1127,
+              1585,
+              1181
+            ]
+          },
+          "explanation": "Use といえば to introduce the first association that comes to mind, or to pick up part of what someone said and shift to a related topic.",
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Grammar review pass: added curated explanation and examples."
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_10",
+          "pattern": "~がきっかけで",
+          "meaning": "Triggered by; prompted by; because of an event that became the starting point.",
+          "examples": [
+            {
+              "japanese": "けががきっかけで、医者になりたいと思いました。",
+              "reading": "けがが きっかけで、いしゃに なりたいと おもいました。",
+              "english": "An injury prompted me to want to become a doctor."
+            },
+            {
+              "japanese": "留学がきっかけで、日本文化に興味を持ちました。",
+              "reading": "りゅうがくが きっかけで、にほんぶんかに きょうみを もちました。",
+              "english": "Studying abroad sparked my interest in Japanese culture."
+            }
+          ],
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 39,
+            "coordinates": [
+              199,
+              165,
+              1862,
+              258
+            ]
+          },
+          "explanation": "Use がきっかけで to mark the event or experience that led to a later change, decision, or action.",
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Grammar review pass: added curated explanation and examples."
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_11",
+          "pattern": "~のような / ~のように",
+          "meaning": "Like; such as; in the manner of.",
+          "examples": [
+            {
+              "japanese": "彼のような研究者を尊敬しています。",
+              "reading": "かれのような けんきゅうしゃを そんけいしています。",
+              "english": "I respect researchers like him."
+            },
+            {
+              "japanese": "先生のように分かりやすく説明したいです。",
+              "reading": "せんせいのように わかりやすく せつめいしたいです。",
+              "english": "I want to explain clearly like my teacher."
+            }
+          ],
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "quartet_1_workbook",
+            "pageNumber": 19,
+            "coordinates": [
+              554,
+              1127,
+              1585,
+              1181
+            ]
+          },
+          "explanation": "Use のような before a noun and のように before a verb/adjective to compare something to another thing or describe resemblance.",
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "Grammar review pass: added curated explanation and examples."
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "quartet_1_l1_overview",
+          "type": "instruction",
+          "mode": "reading",
+          "title": "Lesson 1 Overview: Famous People and New Encounters",
+          "text": "Lesson 1 is organized around reading and writing about famous or respected people, then practicing introductions, small talk, and listening about international students in Japan.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 27,
+            "coordinates": [
+              160,
+              200,
+              625,
+              700
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_bessatsu_vocab_ref",
+          "type": "table",
+          "mode": "reading",
+          "title": "Bessatsu Vocabulary Reference",
+          "text": "Primary vocabulary source for Quartet I Lesson 1, used as the unlock source for lesson cards.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 290,
+            "coordinates": [
+              45,
+              85,
+              720,
+              1035
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_bessatsu_kanji_ref",
+          "type": "table",
+          "mode": "reading",
+          "title": "Bessatsu Kanji Reference",
+          "text": "Primary kanji reference pages for Quartet I Lesson 1 vocabulary and furigana validation.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 316,
+            "coordinates": [
+              45,
+              85,
+              720,
+              1035
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_reading_1_pre_post",
+          "type": "activity",
+          "mode": "reading",
+          "title": "Reading 1 Prep and Follow-up: Hayao Miyazaki",
+          "text": "Pre-reading and post-reading prompts for discussing Japanese animation, Hayao Miyazaki, and what students learned from the reading.",
+          "imageFile": "tools/textbook-pack/out/reviewed-packs/quartet_1_lesson_1/assets/textbook_reading_1_miyazaki_photo.png",
+          "imageSourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 28,
+            "coordinates": [
+              535,
+              805,
+              680,
+              970
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 28,
+            "coordinates": [
+              65,
+              120,
+              710,
+              1020
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_reading_1_main",
+          "type": "reading",
+          "mode": "reading",
+          "title": "Reading 1: Hayao Miyazaki",
+          "text": "Main reading about Hayao Miyazaki as a representative Japanese animated-film director, including his works, work style, and artistic standards.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 30,
+            "coordinates": [
+              45,
+              70,
+              720,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_reading_2_pre_post",
+          "type": "activity",
+          "mode": "reading",
+          "title": "Reading 2 Prep and Follow-up: Shinya Yamanaka",
+          "text": "Pre-reading and post-reading prompts for discussing Nobel Prize winners, respected people, iPS cells, and research goals.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 29,
+            "coordinates": [
+              70,
+              190,
+              710,
+              1000
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_reading_2_main",
+          "type": "reading",
+          "mode": "reading",
+          "title": "Reading 2: Shinya Yamanaka",
+          "text": "Main reading about researcher Shinya Yamanaka, iPS cells, his background, and the motivation behind his research.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 31,
+            "coordinates": [
+              45,
+              70,
+              720,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_reading_strategy_noun_modification",
+          "type": "instruction",
+          "mode": "reading",
+          "title": "Reading Strategy: Noun Modification",
+          "text": "Reading strategy practice for identifying noun-modifying clauses and their subjects in longer reading passages.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 32,
+            "coordinates": [
+              45,
+              70,
+              715,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_reading_strategy_demonstratives",
+          "type": "instruction",
+          "mode": "reading",
+          "title": "Reading Strategy: Demonstrative References",
+          "text": "Reading strategy practice for identifying what demonstratives such as これ, それ, and あれ refer to in context.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 33,
+            "coordinates": [
+              45,
+              70,
+              715,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_toieba",
+          "type": "grammar_note",
+          "mode": "reading",
+          "title": "Grammar Note: Nといえば",
+          "text": "Introduces Nといえば for bringing up the association that comes to mind or shifting to a related topic.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 34,
+            "coordinates": [
+              55,
+              70,
+              690,
+              555
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_nara",
+          "type": "grammar_note",
+          "mode": "reading",
+          "title": "Grammar Note: ~なら",
+          "text": "Explains conditional/topic uses of なら for advice, requests, topic pickup, and contrast.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 34,
+            "coordinates": [
+              55,
+              535,
+              690,
+              1010
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_nara_continued",
+          "type": "grammar_note",
+          "mode": "reading",
+          "title": "Grammar Note: Nなら Uses",
+          "text": "Continues Nなら examples for quoted topics and contrastive statements.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 35,
+            "coordinates": [
+              55,
+              70,
+              700,
+              1000
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_toori",
+          "type": "grammar_note",
+          "mode": "reading",
+          "title": "Grammar Note: ~とおり(に) / Nどおり(に)",
+          "text": "Explains using とおり and どおり to describe actions or results that follow instructions, plans, statements, or expectations.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 36,
+            "coordinates": [
+              45,
+              60,
+              700,
+              560
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_rashii_hearsay",
+          "type": "grammar_note",
+          "mode": "reading",
+          "title": "Grammar Note: ~らしい Hearsay",
+          "text": "Introduces らしい for reporting information learned indirectly or inferred from another source.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 36,
+            "coordinates": [
+              45,
+              520,
+              700,
+              1060
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_rashii_typicality",
+          "type": "grammar_note",
+          "mode": "reading",
+          "title": "Grammar Note: Nらしい Typicality",
+          "text": "Explains Nらしい for describing characteristics that are typical of a person, season, group, or category.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 37,
+            "coordinates": [
+              45,
+              70,
+              700,
+              1000
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_tameni",
+          "type": "grammar_note",
+          "mode": "reading",
+          "title": "Grammar Note: ~ために",
+          "text": "Explains ために for purpose clauses and intentional actions done in order to achieve something.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 38,
+            "coordinates": [
+              55,
+              70,
+              700,
+              650
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_tameno",
+          "type": "grammar_note",
+          "mode": "reading",
+          "title": "Grammar Note: ~ためのN",
+          "text": "Explains ための before nouns to describe intended purpose or use.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 38,
+            "coordinates": [
+              55,
+              620,
+              700,
+              1000
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_kikkake",
+          "type": "grammar_note",
+          "mode": "reading",
+          "title": "Grammar Note: ~がきっかけで",
+          "text": "Explains how to mark an event or experience as the trigger that led to a later action or change.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 39,
+            "coordinates": [
+              60,
+              70,
+              715,
+              485
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_youninaru",
+          "type": "grammar_note",
+          "mode": "reading",
+          "title": "Grammar Note: ~ようになる",
+          "text": "Explains changes in ability, habit, or state with ようになる.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 39,
+            "coordinates": [
+              60,
+              480,
+              715,
+              1000
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_younisuru",
+          "type": "grammar_note",
+          "mode": "reading",
+          "title": "Grammar Note: ~ようにする",
+          "text": "Explains making an effort or habit to do something with ようにする.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 40,
+            "coordinates": [
+              60,
+              70,
+              715,
+              1000
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_grammar_niyoruto",
+          "type": "grammar_note",
+          "mode": "reading",
+          "title": "Grammar Note: Nによると",
+          "text": "Explains によると for identifying the source of reported information, often with そうだ or らしい.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 41,
+            "coordinates": [
+              70,
+              70,
+              745,
+              360
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_writing_model",
+          "type": "instruction",
+          "mode": "writing",
+          "title": "Writing: Model Profile of a Respected Famous Person",
+          "text": "Model composition and structure for introducing a respected famous person, including background, achievements, and reasons for respect.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 42,
+            "coordinates": [
+              45,
+              70,
+              715,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_writing_task",
+          "type": "activity",
+          "mode": "writing",
+          "title": "Writing Task: A Famous Person I Respect",
+          "text": "Planning prompts, writing points, and final composition task for writing 300-400 characters about a famous person the learner respects.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 43,
+            "coordinates": [
+              45,
+              70,
+              715,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_speaking_conversation_1_setup",
+          "type": "activity",
+          "mode": "speaking",
+          "title": "Speaking Conversation 1: First Meeting",
+          "text": "Preparation, listening check, and setup for introducing yourself to a new roommate or teacher and giving a small present.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 44,
+            "coordinates": [
+              45,
+              70,
+              715,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_speaking_conversation_1_model",
+          "type": "dialogue",
+          "mode": "speaking",
+          "title": "Model Dialogue: New Roommate",
+          "text": "Model casual conversation for meeting a new roommate, giving a self-introduction, asking what to call someone, and continuing the exchange.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 46,
+            "coordinates": [
+              45,
+              70,
+              715,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_speaking_conversation_1_practice",
+          "type": "activity",
+          "mode": "speaking",
+          "title": "Speaking Practice: Self-Introduction Flow",
+          "text": "Flowchart and role-play practice for greeting, self-introduction, questions, small presents, and formal conversation challenge.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 47,
+            "coordinates": [
+              45,
+              70,
+              715,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_speaking_conversation_2_setup",
+          "type": "activity",
+          "mode": "speaking",
+          "title": "Speaking Conversation 2: Small Talk with Friends",
+          "text": "Preparation and listening check for starting casual conversation before class and changing topics naturally.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 50,
+            "coordinates": [
+              45,
+              70,
+              715,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_speaking_conversation_2_model",
+          "type": "dialogue",
+          "mode": "speaking",
+          "title": "Model Dialogue: Before Class",
+          "text": "Model casual conversation for greeting a friend, talking about weather, asking about the weekend, and asking follow-up questions.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 52,
+            "coordinates": [
+              45,
+              70,
+              715,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_speaking_conversation_2_practice",
+          "type": "activity",
+          "mode": "speaking",
+          "title": "Speaking Practice: Keeping Conversation Going",
+          "text": "Flowchart and practice patterns for beginning with weather, changing topics, commenting, and asking for details.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 53,
+            "coordinates": [
+              45,
+              70,
+              715,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_listening_ghibli_museum",
+          "type": "activity",
+          "mode": "listening",
+          "title": "Listening 1: Ghibli Museum",
+          "text": "Listening task about international students discussing the Ghibli Museum, including content-check questions and detail prompts.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 55,
+            "coordinates": [
+              45,
+              70,
+              715,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        },
+        {
+          "id": "quartet_1_l1_listening_store_greetings",
+          "type": "activity",
+          "mode": "listening",
+          "title": "Listening 2: Store Greetings",
+          "text": "Listening task about an American exchange student discussing greetings from store clerks in Japan.",
+          "sourceRef": {
+            "sourceId": "quartet_1_textbook",
+            "pageNumber": 56,
+            "coordinates": [
+              45,
+              70,
+              715,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "quartet_1_l1_wb_reading_1_true_false",
+          "label": "Workbook Reading 1 A: True/False Check",
+          "prompt": "Check whether each statement matches Reading 1 about Hayao Miyazaki.",
+          "sourceRef": {
+            "sourceId": "quartet_1_workbook",
+            "pageNumber": 11,
+            "coordinates": [
+              55,
+              95,
+              720,
+              410
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "quartet_1_workbook_answer_key",
+              "pageNumber": 3,
+              "coordinates": [
+                45,
+                70,
+                720,
+                430
+              ]
+            }
+          ],
+          "answerKeyRef": {
+            "sourceId": "quartet_1_workbook_answer_key",
+            "pageNumber": 3,
+            "coordinates": [
+              45,
+              70,
+              720,
+              430
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "exact",
+            "sourceText": "Page 3\n名前 読み物ワク 第1課\n読み物1 ア二メ映画监督宮崎駿 [p.4]\n人 みさはや\nA 読み物1〇×チェック\n本文の内容と合うものに、合わないものに×をつけなさい。 ないよう\n①(×)となりのトトロ」という映画は、2003年にアカデ一賞を取った。\n②(×)大人が宮崎監督のア二メを見たら、つまらないと思うだろう。\n③(〇)スタッフは何回も絵を描き直さなければいけないことがある。\n④(×)宮崎監督は今も朝9時から次の日の朝5時まで仕事をしている。",
+            "notes": "Extracted from mapped answer-key region; suitable for exact or checklist grading after item parsing."
+          }
+        },
+        {
+          "id": "quartet_1_l1_wb_reading_1_strategy_practice",
+          "label": "Workbook Reading 1 B: Reading Strategy Practice",
+          "prompt": "Practice noun modification and demonstrative reference using sentences from Reading 1.",
+          "sourceRef": {
+            "sourceId": "quartet_1_workbook",
+            "pageNumber": 11,
+            "coordinates": [
+              55,
+              400,
+              720,
+              1015
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "quartet_1_workbook_answer_key",
+              "pageNumber": 3,
+              "coordinates": [
+                45,
+                410,
+                720,
+                1015
+              ]
+            }
+          ],
+          "answerKeyRef": {
+            "sourceId": "quartet_1_workbook_answer_key",
+            "pageNumber": 3,
+            "coordinates": [
+              45,
+              410,
+              720,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "sample",
+            "sourceText": "Page 3\n④(×)宮崎監督は今も朝9時から次の日の朝5時まで仕事をしている。\n⑤(〇)宮崎監督は高校の時にア二に興味を持つようになった。\nB 読みのストラテジー練習 九ん0\n読みのストラテジー(pp.6–7) を使って答えなさい。\n0名詞修飾(Noun modification)\nL)L<\nの名詞を修飾する部分はどこからどこまでですか。下線(underline)を引きなさい。 めしうょ< かせん 0\n(1)これは2003年にアカデミ一賞を取った映画だ。(行2-3)\n(2）絵もストーリーもすばらしい彼の作品は、いつまでも世界中で愛され続けるだろう。\n②指示詞(Demonstrative words)\nこれ」(行2)は何を指しますか。\n「と尋神隠し」 小办\nを指します。",
+            "notes": "Extracted from mapped answer-key region; answer key may contain examples or sample answers."
+          }
+        },
+        {
+          "id": "quartet_1_l1_wb_reading_1_content_questions",
+          "label": "Workbook Reading 1 C: Content Questions",
+          "prompt": "Answer comprehension questions about Reading 1, including subjects, reasons, and profile details.",
+          "sourceRef": {
+            "sourceId": "quartet_1_workbook",
+            "pageNumber": 12,
+            "coordinates": [
+              55,
+              70,
+              720,
+              1015
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "quartet_1_workbook_answer_key",
+              "pageNumber": 4,
+              "coordinates": [
+                45,
+                70,
+                720,
+                1015
+              ]
+            }
+          ],
+          "answerKeyRef": {
+            "sourceId": "quartet_1_workbook_answer_key",
+            "pageNumber": 4,
+            "coordinates": [
+              45,
+              70,
+              720,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "sample",
+            "sourceText": "Page 4\n第1課読み物ワク 名前\nC 読み物1内容質問 公L上\n1.「見たことがあるかもしれない」(行3-4)とありますが、「見る」の主語(subject)はだれですか。\n【a.宮崎監督 みかんとく 6 二メに興味があ人C.「となりの口」を見た人】\n2.「大人も考えさせられる」(行5)とありますが、どうして考えさせられるのですか。\n宮崎監督のアニメのストーリーには環境問題のメッセージがあるからです。\n3.「自分が言うとおりに描けるまで」(行7-8)とありますが、①だれがだれに「言う」のですか。\n②だれが「描く」のですか。\n宮崎監督 みやかんと スタッフ\n① が に言います。\n② スタッフ が描きます。\n4.「怒ったこともあるらしい(行10)とありますが、①だれが、②どうして、「怒ったのですか。\n宮崎監督 中气办ん\n① が怒りました。\n②スタッフが描いた肉の絵がゴムのようだった からです。\n5、宮崎監督はどうして美しくて芸術的なア二メが作れるのですか。\nスタッフにも自分にも厳しい U\n6.「愛され続ける」(行17)とありますが、①何が愛され続けるのですか。②どうしてですか。\n① 宮崎監督の作品 が愛され続けます。\n② 絵もストーリーもすばらしい からです。\n7.「プロフィール紹介」(行20–24)を読んで、①~⑤の文を完成(to complete)させなさい。 かんせい\n①宮崎駿は1941年に 東京 で生まれた。",
+            "notes": "Extracted from mapped answer-key region; answer key may contain examples or sample answers."
+          }
+        },
+        {
+          "id": "quartet_1_l1_wb_reading_2_true_false",
+          "label": "Workbook Reading 2 A: True/False Check",
+          "prompt": "Check whether each statement matches Reading 2 about Shinya Yamanaka.",
+          "sourceRef": {
+            "sourceId": "quartet_1_workbook",
+            "pageNumber": 13,
+            "coordinates": [
+              55,
+              95,
+              720,
+              420
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "quartet_1_workbook_answer_key",
+              "pageNumber": 5,
+              "coordinates": [
+                45,
+                70,
+                720,
+                430
+              ]
+            }
+          ],
+          "answerKeyRef": {
+            "sourceId": "quartet_1_workbook_answer_key",
+            "pageNumber": 5,
+            "coordinates": [
+              45,
+              70,
+              720,
+              430
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "exact",
+            "sourceText": "Page 5\n名前 読み物ワ—ク 第1課\nD 読み物2 ノ一赏を取っ研究者山中伸弥教授 [p.5]\nA 読み物2〇×チェック\n本文の内容と合うものに、合わないものに×をつけなさい。 ないよう\n①()山中教授はiPS細胞を作ったので、ノーべル賞をもらった。 やまなか さいう\n②(×)山中教授がiPS細胞を作った後、難しい病気の人を助けられるよになった。\n③（)山中教授は研究者になる前、病院の医者だった。\n④(×)山中教授は講演の時によく「すまん」と言ってあやまる。",
+            "notes": "Extracted from mapped answer-key region; suitable for exact or checklist grading after item parsing."
+          }
+        },
+        {
+          "id": "quartet_1_l1_wb_reading_2_strategy_practice",
+          "label": "Workbook Reading 2 B: Reading Strategy Practice",
+          "prompt": "Practice noun modification and demonstrative reference using sentences from Reading 2.",
+          "sourceRef": {
+            "sourceId": "quartet_1_workbook",
+            "pageNumber": 13,
+            "coordinates": [
+              55,
+              410,
+              720,
+              1015
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "quartet_1_workbook_answer_key",
+              "pageNumber": 5,
+              "coordinates": [
+                45,
+                410,
+                720,
+                1015
+              ]
+            }
+          ],
+          "answerKeyRef": {
+            "sourceId": "quartet_1_workbook_answer_key",
+            "pageNumber": 5,
+            "coordinates": [
+              45,
+              410,
+              720,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "sample",
+            "sourceText": "Page 5\n④(×)山中教授は講演の時によく「すまん」と言ってあやまる。\n⑤(〇)山中教授は、成功するためには多くの失敗が必要だと考えている。 せいこ3 Lodv\nB 読みのストラテジー 練習\nれんLo)\n読みのストラテジー(pp.6–7) を使って答えなさい。\n①名詞修飾(Noun modification) L)<\nの名詞を修飾する部分はどこからどこまでですか。下線(underline)を引きなさい。 めうよ< かせん\n(1)iPS細胞というのは、体のいろいろな部分になることができる細胞です。(行2-3) さい[3\n(2)それが、医者をやめて研究をしようと思った理由の一つだったそうです。(行14-15)\n(3)例えぱ、医者だった時にた手術の話があります。(行17-18)\n(4)これが、彼が多くの人に尊敬されている理由なのかもしれません。(行32-33)\n②： 指示詞(Demonstrative words)\n(1)~(3)の指示詞はそれぞれ何を指しますか。\n(1)「そのこと」(行10)\n学生時代に柔道やラグビ一をしていて、何回もけがをしたことを指します。",
+            "notes": "Extracted from mapped answer-key region; answer key may contain examples or sample answers."
+          }
+        },
+        {
+          "id": "quartet_1_l1_wb_reading_2_content_questions",
+          "label": "Workbook Reading 2 C: Content Questions",
+          "prompt": "Answer comprehension questions about Reading 2, including reasons, habits, goals, and research motivations.",
+          "sourceRef": {
+            "sourceId": "quartet_1_workbook",
+            "pageNumber": 14,
+            "coordinates": [
+              55,
+              70,
+              720,
+              1015
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "quartet_1_workbook_answer_key",
+              "pageNumber": 6,
+              "coordinates": [
+                45,
+                70,
+                720,
+                1015
+              ]
+            }
+          ],
+          "answerKeyRef": {
+            "sourceId": "quartet_1_workbook_answer_key",
+            "pageNumber": 6,
+            "coordinates": [
+              45,
+              70,
+              720,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "sample",
+            "sourceText": "Page 6\n第1課| 読み物ワ-ク 名前\nC 読み物2内容質問 ないよう\n1.「ショックを受けました」(行13-14)の主語はだれですか。 L\n【a.病気の人 b. 山中教授 やまなか C.多くの人】\n2、山中教授はどうしてショックを受けました」(行13–14)か。\n病気をなおすための方法がなくて苦しんでいる人がたくさんいるのを知ったからです。\n3、山中教授は講演の時に何をするようにしていますか。\n必ず1回は笑わせる ようにしています。\n4.「不安になった」(行22-23)の主語はだれですか。\na.友人 b.山中教授 C.講演を聞いている人】\n5.山中教授が言っている「人生の目標」とは何ですか。\niPSの技術をべッドサイドに届けて多くの患者を救うこと です。\n6.「V(Vision)とW(Work hard)」(行28)は、それぞれどういう意味ですか。\n・ V (Vision) 「目標を決める」という意味です。\n・ W (Work hard) 「がんばる」という意味です。",
+            "notes": "Extracted from mapped answer-key region; answer key may contain examples or sample answers."
+          }
+        },
+        {
+          "id": "quartet_1_l1_wb_grammar_nara",
+          "label": "Workbook Grammar A: ~なら",
+          "prompt": "Complete conversations using ~なら.",
+          "targetGrammarIds": [
+            "quartet_1_l1_grammar_1"
+          ],
+          "sourceRef": {
+            "sourceId": "quartet_1_workbook",
+            "pageNumber": 15,
+            "coordinates": [
+              55,
+              135,
+              720,
+              650
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "quartet_1_workbook_answer_key",
+              "pageNumber": 7,
+              "coordinates": [
+                45,
+                70,
+                720,
+                520
+              ]
+            }
+          ],
+          "answerKeyRef": {
+            "sourceId": "quartet_1_workbook_answer_key",
+            "pageNumber": 7,
+            "coordinates": [
+              45,
+              70,
+              720,
+              520
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "sample",
+            "sourceText": "Page 7\n名前 文型・表現ワ—ク，A第1課\n文型・表現ワ一\nA 基本練習\n★ きほんれんLう\n2.~なら [p.8]\n「~なら」を使って、会話を完成させなさい。 かんせ\n(1）留学生 ：ちょっと郵便局に行ってきます。 Fん上\nホストマザー： 郵便局に行く なら、切手を買ってきて。\n(2)A：ああ、頭が痛……。 3tt\nB： 頭が痛いなら 薬を飲んだ ほうがいですよ。",
+            "notes": "Extracted from mapped answer-key region; answer key may contain examples or sample answers."
+          }
+        },
+        {
+          "id": "quartet_1_l1_wb_grammar_toori_rashii",
+          "label": "Workbook Grammar A: ~とおり(に) and ~らしい",
+          "prompt": "Complete sentences and conversations using ~とおり(に), Nどおり(に), and ~らしい.",
+          "targetGrammarIds": [
+            "quartet_1_l1_grammar_2",
+            "quartet_1_l1_grammar_3"
+          ],
+          "sourceRef": {
+            "sourceId": "quartet_1_workbook",
+            "pageNumber": 15,
+            "coordinates": [
+              55,
+              640,
+              720,
+              1015
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "quartet_1_workbook_answer_key",
+              "pageNumber": 7,
+              "coordinates": [
+                45,
+                500,
+                720,
+                1015
+              ]
+            }
+          ],
+          "answerKeyRef": {
+            "sourceId": "quartet_1_workbook_answer_key",
+            "pageNumber": 7,
+            "coordinates": [
+              45,
+              500,
+              720,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "sample",
+            "sourceText": "Page 7\nB： 頭が痛いなら 薬を飲んだ ほうがいですよ。\n(3)A：あれ?私のめがねがない!\nB： めがね なら、テレビの上にあったよ。\n(4)A：だれを探してるの? *\nB：グエンさん。一緒にお昼ご飯を食べようって言ってたんだけど。\nWo L 2\nA： グエンさんなら 食堂に行った よ。\n(5)A：この近くに、スーパーはありませんか?\nB：スーパーはないですねえ。でも、 コンビニ なら、 ありますよ\n(6)A：土曜日に映画見に行かな?\nB：土曜日はイトなんだ。 日曜日なら 暇な んだけど…。\n(7)A：おいしいケーキが食べたいなあ。\nB：おいしいケーキが食べたいなら ブランという店のケーキがおすすめだよ",
+            "notes": "Extracted from mapped answer-key region; answer key may contain examples or sample answers."
+          }
+        },
+        {
+          "id": "quartet_1_l1_wb_grammar_toori_rashii_continued",
+          "label": "Workbook Grammar A Continued: ~とおり(に) and ~らしい",
+          "prompt": "Continue completing practice items for ~とおり(に), Nどおり(に), and ~らしい.",
+          "targetGrammarIds": [
+            "quartet_1_l1_grammar_2",
+            "quartet_1_l1_grammar_3"
+          ],
+          "sourceRef": {
+            "sourceId": "quartet_1_workbook",
+            "pageNumber": 16,
+            "coordinates": [
+              55,
+              70,
+              720,
+              1015
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "quartet_1_workbook_answer_key",
+              "pageNumber": 8,
+              "coordinates": [
+                45,
+                70,
+                720,
+                1015
+              ]
+            }
+          ],
+          "answerKeyRef": {
+            "sourceId": "quartet_1_workbook_answer_key",
+            "pageNumber": 8,
+            "coordinates": [
+              45,
+              70,
+              720,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "exact",
+            "sourceText": "Page 8\n第1課文型・表現ワ-クA 名前\n(3）先生がおっしゃったとおり、町の図書館には日本の昔話の本がたくさんあった。\n(4)A：昨日のパーティー、どうだった?\nきのう\nB:思ったとおり、 人がたくさんいて楽しかった よ。\n(5)A：日本料理、作ってみたんだって?どうだった?\nB：うーん、レシピどおり（に) 作ったんだけど、\nあまりおいしくなかったんだ。\n(6)A：今日のテスト、難しかった?\n★\n4.~らしい [p.10]\n「~らしい」を使って、文や会話を完成させなさい。 かんせい\n0 ~らしい\n(1)うわさでは、 来年、キャンパスに新しい食堂ができる らいい。\n(2)A：ジョー、今日学校に来てなかったね。どうしたのかな……。\nB： 風邪をひいた らいいよ。\nメイリンがそう言ってた。\n(3)A：森田さん、最近とてもうれしそうだけど、何かあったのかな。\nB： 新しい彼女ができたらしい よ。\n2 (~は)Nらしい\n(1）昔は「力が強く、人に弱ところを見せない人が 男 らしい人だ」と考え",
+            "notes": "Extracted from mapped answer-key region; suitable for exact or checklist grading after item parsing."
+          }
+        },
+        {
+          "id": "quartet_1_l1_wb_grammar_tameni_tameno_youninaru",
+          "label": "Workbook Grammar A: ~ために, ~ためのN, and ~ようになる",
+          "prompt": "Complete sentences and conversations using purpose expressions and change-of-state expressions.",
+          "targetGrammarIds": [
+            "quartet_1_l1_grammar_4",
+            "quartet_1_l1_grammar_5",
+            "quartet_1_l1_grammar_6"
+          ],
+          "sourceRef": {
+            "sourceId": "quartet_1_workbook",
+            "pageNumber": 17,
+            "coordinates": [
+              55,
+              70,
+              720,
+              1015
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "quartet_1_workbook_answer_key",
+              "pageNumber": 9,
+              "coordinates": [
+                45,
+                70,
+                720,
+                1015
+              ]
+            }
+          ],
+          "answerKeyRef": {
+            "sourceId": "quartet_1_workbook_answer_key",
+            "pageNumber": 9,
+            "coordinates": [
+              45,
+              70,
+              720,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "sample",
+            "sourceText": "Page 9\n名前 文型・表现ワ-ク，A第1课\n★\n5.~ために~ためのN [p. 12]\n~ために」か「~ためのN」を使って、文や会話を完成させなさい。 かんせい\n0 ~ために\n(1) 父にプレゼントする ために車を買いたい。\n(2)A：何のために日本語を勉強しているんですか。\nB： 日本の小説を読むために勉強 しています。\n(3)A：何をしに東京に行くの? 上\nB： インターンシップの面接を受けるために行く んだ。\n2 ~ためのN\n(1)キッチンは 料理する ためのところだ。\n(2)A：どうしてそんなにたくさんアルイトをしてるの?\nB： 留学するための お金が必要なんだ。\n(3)子：お母さん、これ何?\n母：これは缶切り(canopener)って言うんだよ。 如ん\n子：えっ、缶切り?\n母：そう。 缶づめを開けるための 道具(tool)だよ。\ny<\n+\n7.~ようになる [p. 13]\n「~ようになる」を使って、文や会話を完成させなさい。 かんせい\n(1)1年日本にいるが、最近やっと日本人の会話が少し わかる ようになった。\n(2)前はなっとうが食べられなかったが、今は食べられるようになった 。",
+            "notes": "Extracted from mapped answer-key region; answer key may contain examples or sample answers."
+          }
+        },
+        {
+          "id": "quartet_1_l1_wb_grammar_younisuru",
+          "label": "Workbook Grammar A: ~ようにする",
+          "prompt": "Complete sentences and conversations using ~ようにする.",
+          "targetGrammarIds": [
+            "quartet_1_l1_grammar_7"
+          ],
+          "sourceRef": {
+            "sourceId": "quartet_1_workbook",
+            "pageNumber": 18,
+            "coordinates": [
+              55,
+              140,
+              720,
+              1015
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "quartet_1_workbook_answer_key",
+              "pageNumber": 10,
+              "coordinates": [
+                45,
+                70,
+                720,
+                1015
+              ]
+            }
+          ],
+          "answerKeyRef": {
+            "sourceId": "quartet_1_workbook_answer_key",
+            "pageNumber": 10,
+            "coordinates": [
+              45,
+              70,
+              720,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "sample",
+            "sourceText": "Page 10\n第1课文型・表現ワ-クA 名前\n(6)A：どんなことができるようになりたいですか。\nB： バイオリンが弾けるようになリたいです\n★\n8.~ようにする [p.14]\n「~ようにする」を使って、文や会話を完成させなさい。 かんせい\n(1)漢字の読み方がわからない時は、、すぐ辞書で調べる ようにしている。\n(2)発表する時は、 できるだけアイコンタクトをするようにし たほうがい。\n(3) 風邪をひきたくないので、家に帰ったら手を洗うようにしている\n(4)ホストマザー：遅かったね。電話もないから、心配したんだよ。\n学生 ：すみません。図書館で勉強していたんです。\nホストマザー：帰るのが遅くなる時は、 連絡する ようにしてね。\n(5)先生：作文の宿題は きれいな字で書く ようにしてください。\n学生：すみません。これから気をつけます。\n(6)A：日本人の友達がほしいんですが、なかなかできないんです。 ともだち\nB：そうですか。じゃあ、 日本人が来るイべントに行くようにしたら どうですか。\n★\n9.Nによると [p. 15]\nNによると」を使って、文や会話を完成させなさい。 加んせ\n(1)先生によると、来週 漢字の試験がある そうだ。\n北海道で大雨が降った ほっかいとう おおあ\n(2)ニュースによると、 そうだ。\nジョージによると 研はトマトが食べられない けん\n(3) 、 らいい。",
+            "notes": "Extracted from mapped answer-key region; answer key may contain examples or sample answers."
+          }
+        },
+        {
+          "id": "quartet_1_l1_wb_grammar_summary_gap_fill",
+          "label": "Workbook Grammar B: Summary Gap Fill",
+          "prompt": "Use the lesson grammar expressions to complete sentences and conversations; each expression is used once.",
+          "targetGrammarIds": [
+            "quartet_1_l1_grammar_1",
+            "quartet_1_l1_grammar_2",
+            "quartet_1_l1_grammar_3",
+            "quartet_1_l1_grammar_4",
+            "quartet_1_l1_grammar_5",
+            "quartet_1_l1_grammar_6",
+            "quartet_1_l1_grammar_7",
+            "quartet_1_l1_grammar_8",
+            "quartet_1_l1_grammar_9",
+            "quartet_1_l1_grammar_10",
+            "quartet_1_l1_grammar_11"
+          ],
+          "sourceRef": {
+            "sourceId": "quartet_1_workbook",
+            "pageNumber": 19,
+            "coordinates": [
+              55,
+              95,
+              720,
+              1015
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "quartet_1_workbook_answer_key",
+              "pageNumber": 11,
+              "coordinates": [
+                45,
+                70,
+                720,
+                1015
+              ]
+            }
+          ],
+          "answerKeyRef": {
+            "sourceId": "quartet_1_workbook_answer_key",
+            "pageNumber": 11,
+            "coordinates": [
+              45,
+              70,
+              720,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "sample",
+            "sourceText": "Page 11\n名前 文型・表現ワ—ク，B第1課\nB まとめの練習\n1. の言葉を使って、文や会話を完成させなさい。同じ言葉は一度しか使えません。 かんせい\n（1）新聞 によると 、日本の経済はよくなっているそうだ。\nけいい\n(2)部長に言われた とおりに したのに、文句を言われてしまった。\n人<\n(3)世界で有名な日本の映画 といえば 、宮崎監督の映画だろう。\nみかんとく\n(4)高校の時、日本人留学生が私の学校に来たこと がきっかけで\n日本語を勉強したいと思うようになりました。\n(5)留学生A：日本らしい おみやげが買いたいんだけど、何がいと思う?\n留学生B：着物はとう?\n~といえば ~がきっかけで ~のような ~によると\n~らいい ~ようになる ~とおりに\n2、文や会話を完成させなさい。 かんせい\n(1) 日本のことをもっと知る ためにホストフリーと每晩話します。\n(2) 電子レンジ(microwave)は 食べ物を温める ためのものだ。\n(3)私は 政治を勉強する ために大学に入りました。\n(4)日本人と話す時は、 日本語だけで話す ようにしています。\n(5)A：敬語がなかなか覚えられないんだけど、どうしたらいいかなあ。",
+            "notes": "Extracted from mapped answer-key region; answer key may contain examples or sample answers."
+          }
+        },
+        {
+          "id": "quartet_1_l1_wb_grammar_summary_gap_fill_continued",
+          "label": "Workbook Grammar B Continued: Summary Gap Fill",
+          "prompt": "Continue the summary practice using the lesson grammar expressions.",
+          "targetGrammarIds": [
+            "quartet_1_l1_grammar_1",
+            "quartet_1_l1_grammar_2",
+            "quartet_1_l1_grammar_3",
+            "quartet_1_l1_grammar_4",
+            "quartet_1_l1_grammar_5",
+            "quartet_1_l1_grammar_6",
+            "quartet_1_l1_grammar_7",
+            "quartet_1_l1_grammar_8",
+            "quartet_1_l1_grammar_9",
+            "quartet_1_l1_grammar_10",
+            "quartet_1_l1_grammar_11"
+          ],
+          "sourceRef": {
+            "sourceId": "quartet_1_workbook",
+            "pageNumber": 20,
+            "coordinates": [
+              55,
+              70,
+              720,
+              610
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "quartet_1_workbook_answer_key",
+              "pageNumber": 12,
+              "coordinates": [
+                45,
+                70,
+                720,
+                1015
+              ]
+            },
+            {
+              "sourceId": "quartet_1_workbook_answer_key",
+              "pageNumber": 13,
+              "coordinates": [
+                45,
+                70,
+                720,
+                520
+              ]
+            }
+          ],
+          "answerKeyRef": {
+            "sourceId": "quartet_1_workbook_answer_key",
+            "pageNumber": 12,
+            "coordinates": [
+              45,
+              70,
+              720,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "sample",
+            "sourceText": "Page 12\n第1课文型・表現ワクB 名前\n(8) 健康のために、 甘い物食べす ないようにしたほがい。\nけんこう\n(9)A：先生 によると、 来週の試験はなくなる らいいよ。\nB：えっ、本当？\n(10)A：来年日本に留学するんです。\nB：日本に留学するなら、リスニングの練習をしておいたほうがいいですよ。\n(11)A：あ一あ、3日も休みがあるのに、何も予定がなくて……。\nB： 予定がない なら、一緒に旅行しない ?\nwo L Ω\n(12)予定どおりに 空港に着いた o\n（13）日本に来て、日本は 聞いていた とおり、 道がきれいな 国だ\nと思った。\n3、あなたの国では大学生は何のためにアルバイトをしていますか。「~ために」を使って2つ書きなさい。\n授業料を払うためにアルバイトをしています。\n好きな物を買うためにアルバイトをしています。\n\nPage 13\n名前 文型・表現ワ-ク・B第1课\n4. の言葉を3つ以上使って、自己紹介を書きなさい。使った言葉に下線を引きなさい。 かせん\n~なら ~とおり(に) ~らいい ~ために\n~ようになる ~ようにする ~によると\n例 はじめまして、ジョージ・テイラーです。日本語を勉強するために日本に来ま\nした。趣味はマンガを読むことです。マンガでなら、楽しく日本語が勉強できるの\nで、難しくても每日読むようにしています。そして、将来は自分でマンガが描ける\nようになリたいです。ルームメートによると、日本にはマンガの描き方が習える学\n校があるらしいので、一度行ってみたいです。よろしくお願いします。 扫水",
+            "notes": "Extracted from mapped answer-key region; answer key may contain examples or sample answers."
+          }
+        },
+        {
+          "id": "quartet_1_l1_wb_self_introduction_writing",
+          "label": "Workbook Grammar B: Self-Introduction Writing",
+          "prompt": "Write a self-introduction using at least three Lesson 1 grammar expressions and underline the expressions used.",
+          "targetGrammarIds": [
+            "quartet_1_l1_grammar_1",
+            "quartet_1_l1_grammar_2",
+            "quartet_1_l1_grammar_3",
+            "quartet_1_l1_grammar_4",
+            "quartet_1_l1_grammar_6",
+            "quartet_1_l1_grammar_7",
+            "quartet_1_l1_grammar_8"
+          ],
+          "sourceRef": {
+            "sourceId": "quartet_1_workbook",
+            "pageNumber": 21,
+            "coordinates": [
+              55,
+              70,
+              720,
+              1015
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "quartet_1_workbook_answer_key",
+              "pageNumber": 13,
+              "coordinates": [
+                45,
+                500,
+                720,
+                1015
+              ]
+            }
+          ],
+          "answerKeyRef": {
+            "sourceId": "quartet_1_workbook_answer_key",
+            "pageNumber": 13,
+            "coordinates": [
+              45,
+              500,
+              720,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "open_ended",
+            "sourceText": "Page 13\n名前 文型・表現ワ-ク・B第1课\n4. の言葉を3つ以上使って、自己紹介を書きなさい。使った言葉に下線を引きなさい。 かせん\n~なら ~とおり(に) ~らいい ~ために\n~ようになる ~ようにする ~によると\n例 はじめまして、ジョージ・テイラーです。日本語を勉強するために日本に来ま\nした。趣味はマンガを読むことです。マンガでなら、楽しく日本語が勉強できるの\nで、難しくても每日読むようにしています。そして、将来は自分でマンガが描ける\nようになリたいです。ルームメートによると、日本にはマンガの描き方が習える学\n校があるらしいので、一度行ってみたいです。よろしくお願いします。 扫水\n013",
+            "notes": "Open-ended exercise. Use answer-key text as guidance, not as the only acceptable response."
+          }
+        },
+        {
+          "id": "quartet_1_l1_wb_oral_practice",
+          "label": "Workbook Grammar C: Oral Practice",
+          "prompt": "Answer oral prompts using the specified Lesson 1 grammar expressions.",
+          "targetGrammarIds": [
+            "quartet_1_l1_grammar_1",
+            "quartet_1_l1_grammar_2",
+            "quartet_1_l1_grammar_3",
+            "quartet_1_l1_grammar_4",
+            "quartet_1_l1_grammar_5",
+            "quartet_1_l1_grammar_6",
+            "quartet_1_l1_grammar_7",
+            "quartet_1_l1_grammar_8",
+            "quartet_1_l1_grammar_9",
+            "quartet_1_l1_grammar_10",
+            "quartet_1_l1_grammar_11"
+          ],
+          "sourceRef": {
+            "sourceId": "quartet_1_workbook",
+            "pageNumber": 22,
+            "coordinates": [
+              55,
+              70,
+              720,
+              1015
+            ]
+          },
+          "answerKeyRefs": [
+            {
+              "sourceId": "quartet_1_workbook_answer_key",
+              "pageNumber": 14,
+              "coordinates": [
+                45,
+                70,
+                720,
+                1015
+              ]
+            }
+          ],
+          "answerKeyRef": {
+            "sourceId": "quartet_1_workbook_answer_key",
+            "pageNumber": 14,
+            "coordinates": [
+              45,
+              70,
+              720,
+              1015
+            ]
+          },
+          "review": {
+            "action": "fixed",
+            "reviewedAt": "2026-07-20T04:15:47.597Z",
+            "reviewer": "manual_review",
+            "notes": "manual_addition"
+          },
+          "answerKey": {
+            "gradingMode": "open_ended",
+            "sourceText": "Page 14\n第1课文型・表現ワ-ク 名前\nC □頭練習 こうとうれん。う\n( )の表現を使って話しましょう。 0±うVん\n(1)あなたの国らしいものといえば、何だと思いますか。(~といえば)\n(2) (例おいい料理が食べたいコヒーが飲たい) んですが、\nこの近くにどこかおすすめ(recommendation)はありませんか。(~なら)\n(3) （例日本语） の授業はどうですか。(思ったとおり)\n(4)「日本人らしい」とはどんな人だと思いますか。(~らしい)\n(5)あなたの国をよくするためには、どんなことをしたらいと思いますか。(~ために)\n(6)何がきっかけで、日本語を勉強し始めたんですか。(~(の)がきっかけで)\n(7)最近何をするようになりましたか。(~ようになりました)\n(8)卒業するまでに何ができるようになりたいですか。(~ようになりたいです)\n(9)大学生活を楽しむために、何かするようにしていますか。(~ようにしています)\n(10) 友達や先生などから、(例北海道) ともだち につて何か聞たことが",
+            "notes": "Open-ended exercise. Use answer-key text as guidance, not as the only acceptable response."
+          }
+        }
+      ],
+      "appLessonId": "quartet_1_1",
+      "qualityTier": "gold"
+    }
+  ]
+}

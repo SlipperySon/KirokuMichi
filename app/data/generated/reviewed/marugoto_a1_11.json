@@ -1,0 +1,675 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "marugoto_a1_textbook",
+  "title": "marugoto_a1_textbook / marugoto_a1_11",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "marugoto_a1_11_draft",
+      "appLessonId": "marugoto_a1_11",
+      "title": "marugoto a1 11",
+      "qualityTier": "draft",
+      "vocabulary": [
+        {
+          "id": "marugoto_a1_textbook_a1_textbook_marugoto_a1_11_vocab_10",
+          "surface": "どこでたべますか",
+          "reading": null,
+          "meaning": "Doko de tabemasu ka",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 41
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "cefr_a1_81",
+          "pattern": "や",
+          "meaning": "Connect two or more nouns to give a non-exhaustive list of examples.",
+          "explanation": "The particle や links nouns similarly to と, but implies 'and things like' — the list is not complete. It suggests there are other items beyond what is mentioned. Use it when giving examples rather than listing everything. It is equivalent to 'such as' or 'and so on' in English.",
+          "examples": [
+            {
+              "japanese": "机の上に本やノートがあります。",
+              "reading": "つくえのうえにほんやのーとがあります。",
+              "english": "There are books, notebooks, and things like that on the desk."
+            },
+            {
+              "japanese": "スーパーでりんごやバナナを買いました。",
+              "reading": "すーぱーでりんごやばなながかいました。",
+              "english": "I bought apples, bananas, and such at the supermarket."
+            },
+            {
+              "japanese": "休みの日は映画や音楽を楽しみます。",
+              "reading": "やすみのひはえいがやおんがくをたのしみます。",
+              "english": "On my days off I enjoy things like movies and music."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_82",
+          "pattern": "ませんか",
+          "meaning": "A polite, soft invitation to do something together — 'Why don't we ~?' or 'Would you like to ~?'.",
+          "explanation": "ませんか is formed by adding か to the negative ません form of a verb. It is more tentative and gentle than ましょうか, leaving more room for the listener to decline. It is commonly used to invite someone to do something or suggest an activity politely.",
+          "examples": [
+            {
+              "japanese": "今夜、映画を見ませんか？",
+              "reading": "こんや、えいがをみませんか？",
+              "english": "Would you like to watch a movie tonight?"
+            },
+            {
+              "japanese": "一緒にコーヒーを飲みませんか？",
+              "reading": "いっしょにこーひーをのみませんか？",
+              "english": "Why don't we have a coffee together?"
+            },
+            {
+              "japanese": "明日、公園を散歩しませんか？",
+              "reading": "あした、こうえんをさんぽしませんか？",
+              "english": "Would you like to take a walk in the park tomorrow?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_83",
+          "pattern": "まだ～ていません",
+          "meaning": "Expresses that an expected or anticipated action has not happened yet.",
+          "explanation": "まだ～ていません combines まだ ('still/not yet') with the negative て-form construction to say that something has not been done yet. It implies the action is expected or intended. The casual form is まだ～ていない. This pattern is very common when giving updates or status reports.",
+          "examples": [
+            {
+              "japanese": "まだ昼ごはんを食べていません。",
+              "reading": "まだひるごはんをたべていません。",
+              "english": "I still haven't eaten lunch."
+            },
+            {
+              "japanese": "宿題はまだしていません。",
+              "reading": "しゅくだいはまだしていません。",
+              "english": "I haven't done my homework yet."
+            },
+            {
+              "japanese": "その映画はまだ見ていません。",
+              "reading": "そのえいがはまだみていません。",
+              "english": "I still haven't seen that movie."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_84",
+          "pattern": "にする",
+          "meaning": "Expresses a decision or choice, or that something is made into / treated as something else.",
+          "explanation": "にする follows a noun to mean 'to decide on' or 'to go with' (a choice), most commonly when ordering food or selecting an option. It can also mean 'to make something into' a certain state when used with a result noun. The pattern is neutral in register and widely used in everyday conversation.",
+          "examples": [
+            {
+              "japanese": "私はラーメンにします。",
+              "reading": "わたしはラーメンにします。",
+              "english": "I'll go with ramen. / I'll have the ramen."
+            },
+            {
+              "japanese": "部屋をきれいにしました。",
+              "reading": "へやをきれいにしました。",
+              "english": "I made the room clean / tidied up the room."
+            },
+            {
+              "japanese": "どれにしますか。",
+              "reading": "どれにしますか。",
+              "english": "Which one will you go with?"
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/doing_する",
+            "title": "Doing: する",
+            "excerpt": "84 CHAPTER 2. VERB GRAMMAR\n2.5.31 Doing: する\nWe've already seen す る as irregular verb, and it has been used in enough\nexample sentences to let it be no surprise that it means \"do'\". However,\nthis isn't the only meaning for this verb. When used in combination with\na direct object – as transitive verb – す る does mean \"do', but when used\nas intransitive verb, its meaning should be considered to be \"decide on'\nor \"choose'\". To show this difference in meaning between the transitive\nたどうし じどうし\n(strictly",
+            "examples": [
+              {
+                "japanese": "2.5.31 Doing: する"
+              },
+              {
+                "japanese": "We've already seen す る as irregular verb, and it has been used in enough",
+                "english": "example sentences to let it be no surprise that it means \"do'\". However,"
+              },
+              {
+                "japanese": "a direct object – as transitive verb – す る does mean \"do', but when used",
+                "english": "as intransitive verb, its meaning should be considered to be \"decide on'"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_85",
+          "pattern": "のがへた",
+          "meaning": "Expresses that someone is bad at or unskillful at doing something.",
+          "explanation": "This pattern nominalizes a verb using の and pairs it with 下手 (へた) to say someone lacks skill in an activity. The verb before の is in plain (dictionary) form. It is used in both polite and casual contexts and is a common way to talk about abilities.",
+          "examples": [
+            {
+              "japanese": "私は歌うのが下手です。",
+              "reading": "わたしはうたうのがへたです。",
+              "english": "I am bad at singing."
+            },
+            {
+              "japanese": "弟は泳ぐのが下手です。",
+              "reading": "おとうとはおよぐのがへたです。",
+              "english": "My younger brother is bad at swimming."
+            },
+            {
+              "japanese": "私は料理するのが下手です。",
+              "reading": "わたしはりょうりするのがへたです。",
+              "english": "I am bad at cooking."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_86",
+          "pattern": "なくてはいけない",
+          "meaning": "Express that something must be done or is obligatory.",
+          "explanation": "Formed by replacing ない with なくて and adding はいけない. It means the speaker is obliged to do something — 'have to' or 'must'. This form is common in everyday spoken and written Japanese. The contracted form なくちゃいけない is very frequent in casual speech.",
+          "examples": [
+            {
+              "japanese": "明日、早く起きなくてはいけません。",
+              "reading": "あした、はやくおきなくてはいけません。",
+              "english": "I have to wake up early tomorrow."
+            },
+            {
+              "japanese": "宿題をしなくてはいけない。",
+              "reading": "しゅくだいをしなくてはいけない。",
+              "english": "I have to do my homework."
+            },
+            {
+              "japanese": "薬を飲まなくてはいけません。",
+              "reading": "くすりをのまなくてはいけません。",
+              "english": "I have to take my medicine."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_87",
+          "pattern": "なくてはならない",
+          "meaning": "Express a strong obligation or necessity to do something.",
+          "explanation": "This pattern has the same meaning as なくてはいけない but sounds more formal and objective, often seen in writing, rules, or serious situations. Replace ならない with いけない for a slightly softer nuance. Both attach to the なくて form of a verb.",
+          "examples": [
+            {
+              "japanese": "パスポートを持っていかなくてはなりません。",
+              "reading": "ぱすぽーとをもっていかなくてはなりません。",
+              "english": "You must bring your passport."
+            },
+            {
+              "japanese": "この書類にサインしなくてはならない。",
+              "reading": "このしょるいにさいんしなくてはならない。",
+              "english": "I must sign this document."
+            },
+            {
+              "japanese": "毎日練習しなくてはなりません。",
+              "reading": "まいにちれんしゅうしなくてはなりません。",
+              "english": "You must practise every day."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_355",
+          "pattern": "がある + Noun",
+          "meaning": "Describe a noun by modifying it with a relative clause ending in がある, meaning 'that has' or 'with.'",
+          "explanation": "In Japanese, relative clauses come before the noun they modify. A clause ending in がある placed before a noun means 'a [noun] that has [something].' This pattern lets you add descriptive detail to nouns using the existence verb ある. It is natural in both spoken and written Japanese.",
+          "examples": [
+            {
+              "japanese": "庭がある家に住みたいです。",
+              "reading": "にわがあるいえにすみたいです。",
+              "english": "I want to live in a house with a garden."
+            },
+            {
+              "japanese": "Wi-Fiがあるカフェを探しています。",
+              "reading": "Wi-Fiがあるカフェをさがしています。",
+              "english": "I am looking for a café that has Wi-Fi."
+            },
+            {
+              "japanese": "プールがあるホテルに泊まりました。",
+              "reading": "プールがあるホテルにとまりました。",
+              "english": "I stayed at a hotel that has a pool."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_81",
+          "label": "practice",
+          "prompt": "speaking and interacting",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_82",
+          "label": "practice",
+          "prompt": "Main Expressions",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_83",
+          "label": "practice",
+          "prompt": "Lesson 11 What's your hobby? Shumi wa nan desu ka",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_84",
+          "label": "practice",
+          "prompt": "Talk about your hobbies",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_85",
+          "label": "practice",
+          "prompt": "Shumi wa nan desu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_86",
+          "label": "practice",
+          "prompt": "Holidays and",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_87",
+          "label": "practice",
+          "prompt": "Talk about what you do on your days off",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_88",
+          "label": "practice",
+          "prompt": "· Donna eega ga suki desu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_89",
+          "label": "practice",
+          "prompt": "Yasumi no hi 1",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_90",
+          "label": "practice",
+          "prompt": "Yasumi no hi ni nani o shimasu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_91",
+          "label": "practice",
+          "prompt": "Yasumi no hi ni supootsu o shimasu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_92",
+          "label": "practice",
+          "prompt": "Lesson 12 Shall we go together? Issho ni ikimasen ka",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_93",
+          "label": "practice",
+          "prompt": "Recognise information on posters and calendars for",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_94",
+          "label": "practice",
+          "prompt": "· Sumoo, mi ni ikimasu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_95",
+          "label": "practice",
+          "prompt": "Say whether or not you will attend an event",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_96",
+          "label": "practice",
+          "prompt": "(Matsuri wa) itsu desu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_97",
+          "label": "practice",
+          "prompt": "Talk about whether or not you can go out with your",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_98",
+          "label": "practice",
+          "prompt": "· lssho ni mi ni ikimasen ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_99",
+          "label": "practice",
+          "prompt": "Life and Culture",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_100",
+          "label": "practice",
+          "prompt": "Japanese seasonal events and national holidays",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_101",
+          "label": "practice",
+          "prompt": "Lesson 13 How are you going to get there? Doo yatte ikimasu ka",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_102",
+          "label": "practice",
+          "prompt": "Recognise station and taxi signs",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_103",
+          "label": "practice",
+          "prompt": "Fuji-Hoteru made onegaishimasu.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_104",
+          "label": "practice",
+          "prompt": "Show a taxi driver a note and say your destination",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_105",
+          "label": "practice",
+          "prompt": "Ikura desu ka./Kaado de ii desu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_106",
+          "label": "practice",
+          "prompt": "Say how to get to a particular destination",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_107",
+          "label": "practice",
+          "prompt": "Koko kara kuukoo made doo yatte ikimasu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_108",
+          "label": "practice",
+          "prompt": "Lesson 1 4 It's a famous temple Yuumeena otera desu",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_109",
+          "label": "practice",
+          "prompt": "Say how to get to a destination, using a map",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_110",
+          "label": "practice",
+          "prompt": "Sumimasen, depaato wa doko desu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_111",
+          "label": "practice",
+          "prompt": "Say where you are now over the phone",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_112",
+          "label": "practice",
+          "prompt": "Moshimoshi ima doko desu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_113",
+          "label": "practice",
+          "prompt": "Recognise opening/closing times on shop",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_114",
+          "label": "practice",
+          "prompt": "noticeboards",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_115",
+          "label": "practice",
+          "prompt": "Life and Culture",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_116",
+          "label": "practice",
+          "prompt": "Japanese towns",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_117",
+          "label": "practice",
+          "prompt": "Lesson 15 Cute! Kawaii!",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_118",
+          "label": "practice",
+          "prompt": "Talk about whatyou want to buy",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_119",
+          "label": "practice",
+          "prompt": "Ehagaki, dare ni agemasu ka.",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        },
+        {
+          "id": "marugoto_a1_textbook_marugoto_a1_11_exercise_120",
+          "label": "practice",
+          "prompt": "Talk about where to shop for something you want",
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 19
+          }
+        }
+      ]
+    }
+  ]
+}

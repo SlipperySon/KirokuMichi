@@ -73,8 +73,8 @@ function compareSnapshots(expected: Snapshot, current: Snapshot): string[] {
 
 function parseArgs(rawArgs: string[]): CliOptions {
   const options: CliOptions = {
-    packsRoot: 'app/tools/textbook-pack/out/reviewed-packs',
-    snapshotPath: 'app/tools/textbook-pack/out/reviewed-packs/fingerprints.json',
+    packsRoot: 'tools/textbook-pack/out/reviewed-packs',
+    snapshotPath: 'tools/textbook-pack/out/reviewed-packs/fingerprints.json',
     update: false,
   }
 

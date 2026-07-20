@@ -382,9 +382,16 @@ function initializeSchema() {
       user_id INTEGER NOT NULL,
       parent_id INTEGER REFERENCES decks(id),
       name TEXT NOT NULL,
+      lane TEXT NOT NULL DEFAULT 'path',
       created_at DATETIME DEFAULT (datetime('now'))
     )
   `)
+
+  try {
+    dbInstance.run(`ALTER TABLE decks ADD COLUMN lane TEXT NOT NULL DEFAULT 'path'`)
+  } catch {
+    // Column already exists
+  }
 
   try {
     dbInstance.run(`ALTER TABLE cards ADD COLUMN deck_id INTEGER REFERENCES decks(id)`)

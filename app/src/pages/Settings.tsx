@@ -392,6 +392,21 @@ export function Settings() {
                 </p>
               </div>
 
+              <label className="flex items-start gap-3 rounded-lg border border-gray-700 p-3 cursor-pointer hover:bg-gray-800/60">
+                <input
+                  type="checkbox"
+                  checked={settings.includeExtraInToday ?? false}
+                  onChange={e => updateSettings({ includeExtraInToday: e.target.checked })}
+                  className="mt-1"
+                />
+                <span>
+                  <span className="block text-sm font-medium text-gray-200 text-left">Include Extra Anki decks in Today</span>
+                  <span className="block text-xs text-gray-500 mt-1 text-left">
+                    Off by default. Imported .apkg dues stay under Review → Extra unless enabled.
+                  </span>
+                </span>
+              </label>
+
               {/* Hover Delay */}
               <div>
                 <label className="block text-sm font-medium text-gray-300 mb-2 text-center">

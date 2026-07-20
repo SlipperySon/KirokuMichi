@@ -1,0 +1,719 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "tobira_textbook",
+  "title": "tobira_textbook / tobira_textbook_12",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "tobira_textbook_12_draft",
+      "appLessonId": "tobira_textbook_12",
+      "title": "tobira textbook 12",
+      "qualityTier": "draft",
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "cefr_b2_602",
+          "pattern": "抜きで",
+          "meaning": "Means 'without' or 'leaving out' something, often implying that what is omitted is normally expected or necessary.",
+          "explanation": "抜きで follows a noun and indicates that the named thing is excluded from the situation. A related form, 抜きにして, is slightly more formal and common in set phrases like 冗談抜きにして (joking aside). It can suggest skipping a usual step or doing something without a key ingredient or participant. Register is neutral and usable in both speech and writing.",
+          "examples": [
+            {
+              "japanese": "今日は前置き抜きで本題に入りましょう。",
+              "reading": "きょうはまえおきぬきではんだいにはいりましょう。",
+              "english": "Let's get straight to the point today without any preamble."
+            },
+            {
+              "japanese": "彼女抜きでパーティーを開くのは寂しい。",
+              "reading": "かのじょぬきでパーティーをひらくのはさびしい。",
+              "english": "It feels lonely to have a party without her."
+            },
+            {
+              "japanese": "冗談抜きで言うと、その計画は危険だと思う。",
+              "reading": "じょうだんぬきでいうと、そのけいかくはきけんだとおもう。",
+              "english": "Joking aside, I think that plan is dangerous."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_603",
+          "pattern": "きっかけ",
+          "meaning": "Refers to a specific event or moment that served as the trigger, opportunity, or catalyst for something to begin.",
+          "explanation": "きっかけ is used as a noun meaning 'trigger', 'opportunity', or 'starting point', and commonly appears in the patterns 〜をきっかけに(して) meaning 'taking ~ as a trigger' or 'sparked by ~'. It marks the event or experience that caused a new situation, habit, or change to begin. It is neutral in register and natural in both spoken and written Japanese.",
+          "examples": [
+            {
+              "japanese": "日本のアニメを見たことがきっかけで、日本語を勉強し始めた。",
+              "reading": "にほんのアニメをみたことがきっかけで、にほんごをべんきょうしはじめた。",
+              "english": "Watching Japanese anime was what triggered me to start studying Japanese."
+            },
+            {
+              "japanese": "その事故をきっかけに、彼は生活を見直すことにした。",
+              "reading": "そのじこをきっかけに、かれはせいかつをみなおすことにした。",
+              "english": "Taking that accident as a turning point, he decided to reexamine his lifestyle."
+            },
+            {
+              "japanese": "転職をきっかけにして、彼女は新しい趣味を見つけた。",
+              "reading": "てんしょくをきっかけにして、かのじょはあたらしいしゅみをみつけた。",
+              "english": "Changing jobs was the opportunity that led her to find a new hobby."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_604",
+          "pattern": "おそらく",
+          "meaning": "Probably, perhaps, (most) likely, (I) fear that",
+          "explanation": "An adverb used to express probability or likelihood of something. It suggests the speaker's assessment or conjecture rather than certainty. It can modify verbs, adjectives, or other adverbs, and is used in both formal and informal contexts, though slightly more common in writing.",
+          "examples": [
+            {
+              "japanese": "明日はおそらく雨が降るだろう。",
+              "reading": "あしたはおそらくあめがふるだろう。",
+              "english": "It will probably rain tomorrow."
+            },
+            {
+              "japanese": "彼はおそらく来ないと思う。",
+              "reading": "かれはおそらくこないとおもう。",
+              "english": "I think he probably won't come."
+            },
+            {
+              "japanese": "おそらくその情報は古いのではないだろうか。",
+              "reading": "おそらくそのじょうほうはふるいのではないだろうか。",
+              "english": "Perhaps that information is outdated, don't you think?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_605",
+          "pattern": "に先立ち",
+          "meaning": "Indicates that something is done before or in preparation for a subsequent important event.",
+          "explanation": "Attach に先立ち (or に先立って) to a noun to express that the action in the main clause takes place ahead of the noun event, often as a preparatory step. It carries a formal, ceremonial nuance and is frequently found in announcements, official speeches, and written documents. It is not typically used for everyday small actions.",
+          "examples": [
+            {
+              "japanese": "式典に先立ち、主催者から挨拶がありました。",
+              "reading": "しきてんにさきだち、しゅさいしゃからあいさつがありました。",
+              "english": "Prior to the ceremony, there was a greeting from the organizer."
+            },
+            {
+              "japanese": "新製品の発売に先立ち、プレス向けの発表会が開かれた。",
+              "reading": "しんせいひんのはつばいにさきだち、プレスむけのはっぴょうかいがひらかれた。",
+              "english": "Before the launch of the new product, a press presentation was held."
+            },
+            {
+              "japanese": "工事開始に先立ち、近隣の住民に説明会が行われた。",
+              "reading": "こうじかいしにさきだち、きんりんのじゅうみんにせつめいかいがおこなわれた。",
+              "english": "Prior to the start of construction, an information session was held for nearby residents."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_606",
+          "pattern": "精々",
+          "meaning": "(At) most , (At) best, No more than, Barely",
+          "explanation": "Grammar explanation for 精々",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_607",
+          "pattern": "あげく",
+          "meaning": "Expresses that after a long or difficult process, a (usually negative or disappointing) result was reached.",
+          "explanation": "あげく (挙句) follows a verb in its た-form or a noun with の to indicate that after a prolonged effort, struggle, or series of events, the outcome stated in the main clause was reached. The result is almost always negative, unwanted, or ironic. It carries a nuance of wasted effort or exasperation. It appears in both spoken and written Japanese.",
+          "examples": [
+            {
+              "japanese": "長い議論のあげく、結局何も決まらなかった。",
+              "reading": "ながいぎろんのあげく、けっきょくなにもきまらなかった。",
+              "english": "After all that lengthy debate, nothing was decided in the end."
+            },
+            {
+              "japanese": "さんざん迷ったあげく、彼女は申し込みを断った。",
+              "reading": "さんざんまよったあげく、かのじょはもうしこみをことわった。",
+              "english": "After agonizing over it for so long, she ended up declining the application."
+            },
+            {
+              "japanese": "何度も交渉したあげく、契約は破談になってしまった。",
+              "reading": "なんどもこうしょうしたあげく、けいやくははだんになってしまった。",
+              "english": "After negotiating so many times, the contract fell through in the end."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_608",
+          "pattern": "たまえ",
+          "meaning": "A directive form used by a superior to instruct or order someone of lower status to do something.",
+          "explanation": "たまえ attaches to the te-form base (連用形) of a verb and is used by men in positions of authority to give instructions or orders to subordinates. It sounds paternalistic and somewhat old-fashioned. It is not rude in context but implies a clear power hierarchy; rarely used by women.",
+          "examples": [
+            {
+              "japanese": "君、これを部長に届けたまえ。",
+              "reading": "きみ、これをぶちょうにとどけたまえ。",
+              "english": "You there, deliver this to the department head."
+            },
+            {
+              "japanese": "もっとしっかり考えたまえ。",
+              "reading": "もっとしっかりかんがえたまえ。",
+              "english": "Think more carefully."
+            },
+            {
+              "japanese": "明日の会議には必ず出席したまえ。",
+              "reading": "あしたのかいぎにはかならずしゅっせきしたまえ。",
+              "english": "Make sure you attend tomorrow's meeting."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_609",
+          "pattern": "とっくに",
+          "meaning": "Expresses that something happened or was completed long before the present moment, often with a nuance of surprise or mild exasperation that the listener doesn't know.",
+          "explanation": "とっくに is an adverb placed before a verb or adjective to indicate that something occurred well in advance of the expected or assumed time. It carries a slightly impatient or emphatic tone, as if the speaker considers the fact obvious or overdue. It is used in both casual and polite speech and pairs naturally with past tense verbs.",
+          "examples": [
+            {
+              "japanese": "その映画はとっくに終わっていたので、私たちは入れなかった。",
+              "reading": "そのえいがはとっくにおわっていたので、わたしたちははいれなかった。",
+              "english": "The movie had already been over for a long time, so we couldn't get in."
+            },
+            {
+              "japanese": "彼はとっくに知っていたのに、何も言わなかった。",
+              "reading": "かれはとっくにしっていたのに、なにもいわなかった。",
+              "english": "He had known about it all along, yet he didn't say a word."
+            },
+            {
+              "japanese": "締め切りはとっくに過ぎていますよ。",
+              "reading": "しめきりはとっくにすぎていますよ。",
+              "english": "The deadline passed a long time ago, you know."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_610",
+          "pattern": "は別として",
+          "meaning": "Apart from, (Setting) aside, Whether or, Except for, Save for",
+          "explanation": "Grammar explanation for は別として",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_611",
+          "pattern": "はもとより",
+          "meaning": "Expresses that something applies not only to an obvious or expected case (marked by は), but also extends to additional cases that are even more noteworthy.",
+          "explanation": "はもとより follows a noun and signals that the item mentioned is a given baseline, and that what follows goes beyond it. The full structure is typically 「AはもとよりBも〜」, meaning 'not only A but also B.' It is a formal expression found mainly in written Japanese and formal speech, and is stronger and more literary than だけでなく.",
+          "examples": [
+            {
+              "japanese": "彼女は日本語はもとより、英語も中国語も流暢に話せる。",
+              "reading": "かのじょはにほんごはもとより、えいごもちゅうごくごもりゅうちょうにはなせる。",
+              "english": "She can speak not only Japanese, but also English and Chinese fluently."
+            },
+            {
+              "japanese": "このプロジェクトの成功は、社内はもとより業界全体に影響を与えるだろう。",
+              "reading": "このプロジェクトのせいこうは、しゃないはもとよりぎょうかいぜんたいにえいきょうをあたえるだろう。",
+              "english": "The success of this project will likely have an impact not only within the company but across the entire industry."
+            },
+            {
+              "japanese": "健康はもとより、精神的な安定も仕事の質に大きく影響する。",
+              "reading": "けんこうはもとより、せいしんてきなあんていもしごとのしつにおおきくえいきょうする。",
+              "english": "Not only physical health, but also mental stability greatly affects the quality of one's work."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_612",
+          "pattern": "やがて",
+          "meaning": "Indicates that something will happen or did happen after some passage of time, often with a sense of inevitability.",
+          "explanation": "やがて is a sentence adverb meaning 'before long', 'eventually', or 'in the end', and it implies that the outcome will naturally or inevitably arrive with the passage of time. It can describe something that happened gradually in the past or something expected to occur in the future. It is slightly literary in feel and appears more often in narration and written prose than in casual daily conversation.",
+          "examples": [
+            {
+              "japanese": "小さな川はやがて大きな海に注ぐ。",
+              "reading": "ちいさなかわはやがておおきなうみにそそぐ。",
+              "english": "The small river eventually flows into the vast ocean."
+            },
+            {
+              "japanese": "激しかった雨もやがてやんで、青空が広がった。",
+              "reading": "はげしかったあめもやがてやんで、あおぞらがひろがった。",
+              "english": "Before long the heavy rain stopped, and blue sky spread out above."
+            },
+            {
+              "japanese": "二人の小さな口論はやがて深刻な対立へと発展した。",
+              "reading": "ふたりのちいさなこうろんはやがてしんこくなたいりつへとはってんした。",
+              "english": "Their minor quarrel eventually developed into a serious conflict."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_613",
+          "pattern": "いつの間にか",
+          "meaning": "Describes a change or action that happened gradually or imperceptibly, so that the speaker only realizes it after the fact.",
+          "explanation": "いつの間にか is an adverbial phrase expressing that something occurred without the speaker being aware of when it happened. It typically describes gradual change, the passage of time, or an unnoticed shift in a situation. The phrase has a slightly reflective or wistful nuance and is natural in both casual conversation and written narration.",
+          "examples": [
+            {
+              "japanese": "話しているうちに、いつの間にか夜中になっていた。",
+              "reading": "はなしているうちに、いつのまにかよなかになっていた。",
+              "english": "Before I knew it, it had become the middle of the night while we were talking."
+            },
+            {
+              "japanese": "子どもたちはいつの間にかこんなに大きくなった。",
+              "reading": "こどもたちはいつのまにかこんなにおおきくなった。",
+              "english": "Without me noticing, the children have grown this much."
+            },
+            {
+              "japanese": "いつの間にか春が終わり、暑い夏が来ていた。",
+              "reading": "いつのまにかはるがおわり、あついなつがきていた。",
+              "english": "Before I realized it, spring had ended and hot summer had arrived."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_614",
+          "pattern": "一旦",
+          "meaning": "Indicates either that an action is done temporarily or as a first step, or that once a condition is met, a consequence reliably follows.",
+          "explanation": "一旦 has two closely related uses. In the first, it means 'for now' or 'temporarily,' suggesting an action will be paused or halted before resuming. In the second, it functions like a conditional adverb meaning 'once (something happens),' implying that the subsequent result is inevitable or hard to reverse. Both usages appear in everyday speech and writing, and the meaning is typically clear from context.",
+          "examples": [
+            {
+              "japanese": "一旦作業を止めて、休憩を取りましょう。",
+              "reading": "いったんさぎょうをとめて、きゅうけいをとりましょう。",
+              "english": "Let's temporarily stop the work and take a break."
+            },
+            {
+              "japanese": "一旦習慣になると、なかなかやめられない。",
+              "reading": "いったんしゅうかんになると、なかなかやめられない。",
+              "english": "Once something becomes a habit, it's hard to quit."
+            },
+            {
+              "japanese": "一旦家に帰ってから、また出かけるつもりです。",
+              "reading": "いったんいえにかえってから、またでかけるつもりです。",
+              "english": "I plan to go home first and then head out again."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_641",
+          "pattern": "傾向がある",
+          "meaning": "Tendency, Trend, Inclination",
+          "explanation": "Grammar explanation for 傾向がある",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_b2_648",
+          "pattern": "という点から考えると",
+          "meaning": "Introduces a specific perspective or angle from which a situation is being evaluated or analyzed.",
+          "explanation": "This expression is used to frame an argument or observation from a particular viewpoint — often academic, analytical, or professional. It signals that the speaker is considering the matter through a specific lens. The register is formal and it is frequently encountered in essays, reports, and structured discussions.",
+          "examples": [
+            {
+              "japanese": "コストという点から考えると、このシステムの導入は難しい。",
+              "reading": "こすとというてんからかんがえると、このしすてむのどうにゅうはむずかしい。",
+              "english": "From the standpoint of cost, implementing this system is difficult."
+            },
+            {
+              "japanese": "環境への影響という点から考えると、プラスチックの使用を減らす必要がある。",
+              "reading": "かんきょうへのえいきょうというてんからかんがえると、ぷらすちっくのしようをへらすひつようがある。",
+              "english": "From the perspective of environmental impact, we need to reduce plastic use."
+            },
+            {
+              "japanese": "学習効果という点から考えると、毎日少しずつ練習する方が効果的だ。",
+              "reading": "がくしゅうこうかというてんからかんがえると、まいにちすこしずつれんしゅうするほうがこうかてきだ。",
+              "english": "From the viewpoint of learning effectiveness, it is more efficient to practice a little every day."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-b2",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6157",
+          "label": "practice",
+          "prompt": "Ngood characteristics",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6158",
+          "label": "practice",
+          "prompt": "ANodistinct; unique",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6159",
+          "label": "practice",
+          "prompt": "Adv specially; especially; particularly",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6160",
+          "label": "practice",
+          "prompt": "ANaspecial; particular",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6161",
+          "label": "practice",
+          "prompt": "ANodistinctive; specifc",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6162",
+          "label": "practice",
+          "prompt": "ru-Vi to melt; dissolve",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6163",
+          "label": "practice",
+          "prompt": "Nage|年を取る (Phr) to growold; age",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6164",
+          "label": "practice",
+          "prompt": "Nelderly person",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6165",
+          "label": "practice",
+          "prompt": "ru-Vt to close(book, eyes,etc.); shut",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6166",
+          "label": "practice",
+          "prompt": "Nland; locality",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6167",
+          "label": "practice",
+          "prompt": "Phron the way; halfway",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6168",
+          "label": "practice",
+          "prompt": "Adv suddenly",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6169",
+          "label": "practice",
+          "prompt": "u-Vito reach",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6170",
+          "label": "practice",
+          "prompt": "u-Vi to rush out; jump out",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6171",
+          "label": "practice",
+          "prompt": "u-Vtto travel around; fy around",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6172",
+          "label": "practice",
+          "prompt": "u-Vi to fy",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6173",
+          "label": "practice",
+          "prompt": "Nwealth; fortune",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6174",
+          "label": "practice",
+          "prompt": "ru-Vt to hold on; fasten",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6175",
+          "label": "practice",
+          "prompt": "ru-Vt to adopt; take in",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6176",
+          "label": "practice",
+          "prompt": "u-Vt to regain; get back",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6177",
+          "label": "practice",
+          "prompt": "Adv  at first pace; one after another",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6178",
+          "label": "practice",
+          "prompt": "N bowl of rice with food on top",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6179",
+          "label": "practice",
+          "prompt": "u-Vito get well; be cured",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6180",
+          "label": "practice",
+          "prompt": "vNlongevity長きするto live a long life",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6181",
+          "label": "practice",
+          "prompt": "N Nagashisuki method (of paper making)",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6182",
+          "label": "practice",
+          "prompt": "comrade; circle of friends",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6183",
+          "label": "practice",
+          "prompt": "Phr to become friendly; get along well",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6184",
+          "label": "practice",
+          "prompt": "ru-Vito fow",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6185",
+          "label": "practice",
+          "prompt": "u-Vi to burst into tears; burst out crying",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6186",
+          "label": "practice",
+          "prompt": "u-Vi to sing [birds]; cry [animals]",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6187",
+          "label": "practice",
+          "prompt": "u-Vi to die [euphemism]",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6188",
+          "label": "practice",
+          "prompt": "ru-Vt to throw; pitch",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6189",
+          "label": "practice",
+          "prompt": "Sufwithout ~; with no ~",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6190",
+          "label": "practice",
+          "prompt": "Conj because",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6191",
+          "label": "practice",
+          "prompt": "ru-Vt to pet; pat someone's head",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_12_exercise_6192",
+          "label": "practice",
+          "prompt": "r-Vttolickな(Phr) to lick somethingwithone's tongue",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 408
+          }
+        }
+      ]
+    }
+  ]
+}

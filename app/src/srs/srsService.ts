@@ -2,6 +2,12 @@ import type { StorageProvider, SchedulerProvider, CardState, Rating } from '../c
 import { isLeech, LEECH_THRESHOLD } from '../core/scheduler'
 import type { ReviewCard, SessionStats, StreakData, HeatmapDay, GrammarQuestion, IntervalPreview, GrammarReviewContext } from '../study/types'
 import { storageLessonIdsFor } from '../content/lessonContentUtils'
+import {
+  EXTRA_DECKS_PARENT_NAME,
+  type DeckLane,
+  deckNameFromApkg,
+  laneFilterSql,
+} from '../study/deckLane'
 
 /** Full card_state snapshot used by undo-last-review. */
 export interface CardStateSnapshot {
@@ -51,8 +57,14 @@ export class SRSService {
     this.scheduler = scheduler
   }
 
-  async getDueCards(userId: number, limit: number, deckId?: number | null): Promise<ReviewCard[]> {
+  async getDueCards(
+    userId: number,
+    limit: number,
+    deckId?: number | null,
+    lane: DeckLane | 'all' = 'all',
+  ): Promise<ReviewCard[]> {
     const deckFilter = deckId != null ? 'AND c.deck_id = ?' : ''
+    const laneSql = laneFilterSql(lane)
     const params: (number | string)[] = deckId != null ? [userId, deckId, limit] : [userId, limit]
     return this.storage.query<ReviewCard>(
       `SELECT
@@ -74,19 +86,26 @@ export class SRSService {
         c.example_translation AS exampleTranslation
        FROM card_states cs
        JOIN cards c ON c.id = cs.card_id
+       LEFT JOIN decks d ON d.id = c.deck_id
        WHERE cs.user_id = ?
          AND cs.due <= datetime('now')
          AND cs.is_leech = 0
          AND cs.suspended_at IS NULL
          AND (cs.buried_until IS NULL OR cs.buried_until <= datetime('now'))
          ${deckFilter}
+         ${laneSql}
        ORDER BY cs.due ASC
        LIMIT ?`,
       params
     )
   }
 
-  async getNewCards(userId: number, limit: number): Promise<ReviewCard[]> {
+  async getNewCards(
+    userId: number,
+    limit: number,
+    lane: DeckLane | 'all' = 'all',
+  ): Promise<ReviewCard[]> {
+    const laneSql = laneFilterSql(lane)
     return this.storage.query<ReviewCard>(
       `SELECT
         cs.id        AS cardStateId,
@@ -107,8 +126,10 @@ export class SRSService {
         c.example_translation AS exampleTranslation
        FROM card_states cs
        JOIN cards c ON c.id = cs.card_id
+       LEFT JOIN decks d ON d.id = c.deck_id
        WHERE cs.user_id = ?
          AND cs.state = 'new'
+         ${laneSql}
        ORDER BY c.frequency_rank ASC, cs.id ASC
        LIMIT ?`,
       [userId, limit]
@@ -295,19 +316,34 @@ export class SRSService {
     )
   }
 
-  async getDueCount(userId: number): Promise<number> {
+  async getDueCount(userId: number, lane: DeckLane | 'all' = 'all'): Promise<number> {
+    const laneSql = laneFilterSql(lane)
     const rows = await this.storage.query<{ count: number }>(
-      `SELECT COUNT(*) AS count FROM card_states
-       WHERE user_id = ? AND state != 'new' AND due <= datetime('now') AND is_leech = 0`,
+      `SELECT COUNT(*) AS count
+       FROM card_states cs
+       JOIN cards c ON c.id = cs.card_id
+       LEFT JOIN decks d ON d.id = c.deck_id
+       WHERE cs.user_id = ?
+         AND cs.due <= datetime('now')
+         AND cs.is_leech = 0
+         AND cs.suspended_at IS NULL
+         AND (cs.buried_until IS NULL OR cs.buried_until <= datetime('now'))
+         ${laneSql}`,
       [userId]
     )
     return rows[0]?.count ?? 0
   }
 
-  async getNewCount(userId: number): Promise<number> {
+  async getNewCount(userId: number, lane: DeckLane | 'all' = 'all'): Promise<number> {
+    const laneSql = laneFilterSql(lane)
     const rows = await this.storage.query<{ count: number }>(
-      `SELECT COUNT(*) AS count FROM card_states
-       WHERE user_id = ? AND state = 'new'`,
+      `SELECT COUNT(*) AS count
+       FROM card_states cs
+       JOIN cards c ON c.id = cs.card_id
+       LEFT JOIN decks d ON d.id = c.deck_id
+       WHERE cs.user_id = ?
+         AND cs.state = 'new'
+         ${laneSql}`,
       [userId]
     )
     return rows[0]?.count ?? 0
@@ -873,13 +909,14 @@ export class SRSService {
   // ---------------------------------------------------------------------------
 
   async getDecks(userId: number): Promise<Array<{
-    id: number; name: string; parentId: number | null; cardCount: number
+    id: number; name: string; parentId: number | null; lane: DeckLane; cardCount: number
   }>> {
     return this.storage.query(
       `SELECT
         d.id,
         d.name,
         d.parent_id AS parentId,
+        COALESCE(d.lane, 'path') AS lane,
         COUNT(c.id) AS cardCount
        FROM decks d
        LEFT JOIN cards c ON c.deck_id = d.id
@@ -890,14 +927,105 @@ export class SRSService {
     )
   }
 
+  /** Parent folder + child Extra decks with due/new counts for unlinked cards. */
+  async listExtraDecks(userId: number): Promise<Array<{
+    id: number
+    name: string
+    cardCount: number
+    dueCount: number
+    newCount: number
+  }>> {
+    return this.storage.query(
+      `SELECT
+        d.id,
+        d.name,
+        COUNT(c.id) AS cardCount,
+        SUM(CASE
+          WHEN cs.id IS NOT NULL
+            AND cs.due <= datetime('now')
+            AND cs.is_leech = 0
+            AND cs.suspended_at IS NULL
+            AND (cs.buried_until IS NULL OR cs.buried_until <= datetime('now'))
+            AND (cs.lesson_id IS NULL OR cs.lesson_id = '')
+          THEN 1 ELSE 0 END) AS dueCount,
+        SUM(CASE
+          WHEN cs.id IS NOT NULL
+            AND cs.state = 'new'
+            AND (cs.lesson_id IS NULL OR cs.lesson_id = '')
+          THEN 1 ELSE 0 END) AS newCount
+       FROM decks d
+       LEFT JOIN cards c ON c.deck_id = d.id
+       LEFT JOIN card_states cs ON cs.card_id = c.id AND cs.user_id = ?
+       WHERE d.user_id = ?
+         AND COALESCE(d.lane, 'path') = 'extra'
+         AND d.name != ?
+       GROUP BY d.id
+       HAVING cardCount > 0
+       ORDER BY d.name ASC`,
+      [userId, userId, EXTRA_DECKS_PARENT_NAME]
+    )
+  }
+
+  async ensureExtraDecksParent(userId: number): Promise<number> {
+    const existing = await this.storage.query<{ id: number }>(
+      `SELECT id FROM decks WHERE user_id = ? AND name = ? AND parent_id IS NULL LIMIT 1`,
+      [userId, EXTRA_DECKS_PARENT_NAME]
+    )
+    if (existing[0]) {
+      await this.storage.execute(
+        `UPDATE decks SET lane = 'extra' WHERE id = ?`,
+        [existing[0].id]
+      )
+      return existing[0].id
+    }
+    await this.storage.execute(
+      `INSERT INTO decks (user_id, name, parent_id, lane) VALUES (?, ?, NULL, 'extra')`,
+      [userId, EXTRA_DECKS_PARENT_NAME]
+    )
+    const rows = await this.storage.query<{ id: number }>(
+      `SELECT id FROM decks WHERE user_id = ? AND name = ? ORDER BY id DESC LIMIT 1`,
+      [userId, EXTRA_DECKS_PARENT_NAME]
+    )
+    return rows[0].id
+  }
+
+  /** Create or reuse an Extra-lane deck for an imported .apkg. */
+  async ensureExtraDeck(userId: number, apkgFileName: string): Promise<number> {
+    const parentId = await this.ensureExtraDecksParent(userId)
+    const name = deckNameFromApkg(apkgFileName)
+    const existing = await this.storage.query<{ id: number }>(
+      `SELECT id FROM decks WHERE user_id = ? AND name = ? AND parent_id = ? LIMIT 1`,
+      [userId, name, parentId]
+    )
+    if (existing[0]) {
+      await this.storage.execute(`UPDATE decks SET lane = 'extra' WHERE id = ?`, [existing[0].id])
+      return existing[0].id
+    }
+    await this.storage.execute(
+      `INSERT INTO decks (user_id, name, parent_id, lane) VALUES (?, ?, ?, 'extra')`,
+      [userId, name, parentId]
+    )
+    const rows = await this.storage.query<{ id: number }>(
+      `SELECT id FROM decks WHERE user_id = ? AND name = ? AND parent_id = ? ORDER BY id DESC LIMIT 1`,
+      [userId, name, parentId]
+    )
+    return rows[0].id
+  }
+
   async ensureDefaultDeck(userId: number): Promise<number> {
     const existing = await this.storage.query<{ id: number }>(
       `SELECT id FROM decks WHERE user_id = ? AND name = 'Default' AND parent_id IS NULL LIMIT 1`,
       [userId]
     )
-    if (existing[0]) return existing[0].id
+    if (existing[0]) {
+      await this.storage.execute(
+        `UPDATE decks SET lane = COALESCE(lane, 'path') WHERE id = ?`,
+        [existing[0].id]
+      )
+      return existing[0].id
+    }
     await this.storage.execute(
-      `INSERT INTO decks (user_id, name) VALUES (?, 'Default')`,
+      `INSERT INTO decks (user_id, name, lane) VALUES (?, 'Default', 'path')`,
       [userId]
     )
     const rows = await this.storage.query<{ id: number }>(
@@ -905,7 +1033,6 @@ export class SRSService {
       [userId]
     )
     const deckId = rows[0].id
-    // Assign all unassigned cards to Default
     await this.storage.execute(
       `UPDATE cards SET deck_id = ? WHERE deck_id IS NULL`,
       [deckId]
@@ -913,10 +1040,10 @@ export class SRSService {
     return deckId
   }
 
-  async createDeck(userId: number, name: string, parentId?: number): Promise<number> {
+  async createDeck(userId: number, name: string, parentId?: number, lane: DeckLane = 'path'): Promise<number> {
     await this.storage.execute(
-      `INSERT INTO decks (user_id, name, parent_id) VALUES (?, ?, ?)`,
-      [userId, name, parentId ?? null]
+      `INSERT INTO decks (user_id, name, parent_id, lane) VALUES (?, ?, ?, ?)`,
+      [userId, name, parentId ?? null, lane]
     )
     const rows = await this.storage.query<{ id: number }>(
       `SELECT id FROM decks WHERE user_id = ? ORDER BY id DESC LIMIT 1`,

@@ -1,0 +1,883 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "genki_1_textbook",
+  "title": "genki_1_textbook / genki_1_7",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "genki_1_7_draft",
+      "appLessonId": "genki_1_7",
+      "title": "genki 1 7",
+      "qualityTier": "draft",
+      "vocabulary": [
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_7_vocab_15",
+          "surface": "家族の呼び方",
+          "reading": null,
+          "meaning": "Kinship Terms",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 193
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_vocab_41",
+          "surface": "高校",
+          "reading": null,
+          "meaning": "high school",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 334
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_vocab_76",
+          "surface": "すいか",
+          "reading": null,
+          "meaning": "watermelon",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 373
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_vocab_77",
+          "surface": "せんしゆ先週",
+          "reading": null,
+          "meaning": "last week",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 373
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "cefr_a1_67",
+          "pattern": "てはいけない",
+          "meaning": "Express that something is not allowed or forbidden.",
+          "explanation": "Attach てはいけない (or ではいけない after で-forms) to the て-form of a verb. It states that an action is prohibited — stronger than a polite request. The casual spoken form is てはだめ. Use it for rules, warnings, and prohibitions.",
+          "examples": [
+            {
+              "japanese": "ここでタバコを吸ってはいけません。",
+              "reading": "ここでたばこをすってはいけません。",
+              "english": "You must not smoke here."
+            },
+            {
+              "japanese": "試験中に話してはいけない。",
+              "reading": "しけんちゅうにはなしてはいけない。",
+              "english": "You must not talk during the exam."
+            },
+            {
+              "japanese": "赤信号を渡ってはいけません。",
+              "reading": "あかしんごうをわたってはいけません。",
+              "english": "You must not cross on a red light."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_68",
+          "pattern": "たほうがいい",
+          "meaning": "Recommend or advise that it would be better to do something.",
+          "explanation": "Attach たほうがいい to the た-form (past plain form) of a verb to give advice or a recommendation. It is milder than an obligation — more like 'you should' or 'it'd be better if you'. Commonly used by doctors, teachers, or friends giving suggestions.",
+          "examples": [
+            {
+              "japanese": "早く寝たほうがいいですよ。",
+              "reading": "はやくねたほうがいいですよ。",
+              "english": "You should go to bed early."
+            },
+            {
+              "japanese": "医者に行ったほうがいい。",
+              "reading": "いしゃにいったほうがいい。",
+              "english": "You should go to the doctor."
+            },
+            {
+              "japanese": "傘を持っていったほうがいいですよ。",
+              "reading": "かさをもっていったほうがいいですよ。",
+              "english": "You should take an umbrella with you."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_69",
+          "pattern": "ないほうがいい",
+          "meaning": "Recommend or advise that it would be better not to do something.",
+          "explanation": "Attach ないほうがいい to the plain negative (ない) form of a verb to advise against an action. It is the negative counterpart of たほうがいい and carries the meaning 'you'd better not' or 'it's better not to'. The register is casual to semi-polite.",
+          "examples": [
+            {
+              "japanese": "夜遅くに食べないほうがいいですよ。",
+              "reading": "よるおそくにたべないほうがいいですよ。",
+              "english": "You shouldn't eat late at night."
+            },
+            {
+              "japanese": "あまりテレビを見ないほうがいい。",
+              "reading": "あまりてれびをみないほうがいい。",
+              "english": "You'd better not watch too much TV."
+            },
+            {
+              "japanese": "今日は外に出ないほうがいいです。",
+              "reading": "きょうはそとにでないほうがいいです。",
+              "english": "It'd be better not to go outside today."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/negative_presence_ない",
+            "title": "Negative presence: ない",
+            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
+            "examples": [
+              {
+                "japanese": "2.5.5 Negative presence: ない"
+              },
+              {
+                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
+              },
+              {
+                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_70",
+          "pattern": "ましょう",
+          "meaning": "Expresses a suggestion or invitation to do something together — 'let's do ~'.",
+          "explanation": "ましょう is formed by replacing ます with ましょう on the ます-stem of a verb. It is polite and used to suggest a shared action, similar to 'shall we' or 'let's'. It is commonly used among friends, colleagues, or strangers in polite situations.",
+          "examples": [
+            {
+              "japanese": "一緒に昼ごはんを食べましょう。",
+              "reading": "いっしょにひるごはんをたべましょう。",
+              "english": "Let's eat lunch together."
+            },
+            {
+              "japanese": "そろそろ帰りましょう。",
+              "reading": "そろそろかえりましょう。",
+              "english": "Let's head home soon."
+            },
+            {
+              "japanese": "次の駅で降りましょう。",
+              "reading": "つぎのえきでおりましょう。",
+              "english": "Let's get off at the next station."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/pseudo_future_おう_よう",
+            "title": "Pseudo-future: おう/よう",
+            "excerpt": "3.2. FURTHER INFLECTIONS 121\nthe adjective 欲しい, desire, is used:\nあか\nこのドアが赤くて欲しい。\n\"(I) want this door red.\"\nIn terms of politeness 欲しい is just as direct and selfish as fい, and\nit can be softened by adding です or んです:\nつか\n使って欲しい。\n\"[I] want it made.\"\n使って欲しいです。\n\"(I) want it made (being said in a less direct manner than the above\nsentence)\"\n使って欲しいんです。\n\"(I) want it made ('There is a reason for me wanting this, it's not pure\nselfishness here, don't worry')\"\nSince 欲 し い is a normal verbal adjective, we ca",
+            "examples": [
+              {
+                "japanese": "the adjective 欲しい, desire, is used:"
+              },
+              {
+                "japanese": "このドアが赤くて欲しい。",
+                "english": "\"(I) want this door red.\""
+              },
+              {
+                "japanese": "In terms of politeness 欲しい is just as direct and selfish as fい, and"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_71",
+          "pattern": "ね",
+          "meaning": "A sentence-ending particle used to seek agreement or share a feeling with the listener.",
+          "explanation": "ね invites the listener to agree with or share the speaker's observation — similar to 'right?' or 'isn't it?' in English. It softens statements and makes conversation feel warmer. It is used in both casual and polite speech and is especially common when commenting on shared experiences.",
+          "examples": [
+            {
+              "japanese": "今日はいい天気ですね。",
+              "reading": "きょうはいいてんきですね。",
+              "english": "It's nice weather today, isn't it?"
+            },
+            {
+              "japanese": "このラーメンはおいしいね。",
+              "reading": "このラーメンはおいしいね。",
+              "english": "This ramen is tasty, right?"
+            },
+            {
+              "japanese": "田中さんは日本人ですね。",
+              "reading": "たなかさんはにほんじんですね。",
+              "english": "Mr Tanaka is Japanese, isn't he?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_72",
+          "pattern": "まだ",
+          "meaning": "Indicates that a situation or state continues to be true at the present time.",
+          "explanation": "まだ means 'still' in affirmative sentences, showing that a situation has not changed. It can also appear in negative sentences meaning 'not yet', though that combination is often expressed as まだ～ていません. Used in both polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "まだ雨が降っています。",
+              "reading": "まだあめがふっています。",
+              "english": "It's still raining."
+            },
+            {
+              "japanese": "弟はまだ子どもです。",
+              "reading": "おとうとはまだこどもです。",
+              "english": "My little brother is still a child."
+            },
+            {
+              "japanese": "まだ時間がありますか。",
+              "reading": "まだじかんがありますか。",
+              "english": "Is there still time?"
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_73",
+          "pattern": "より～のほうが",
+          "meaning": "Compares two things, stating that one is more ~ than the other.",
+          "explanation": "より marks the item being compared against (the lesser item), while のほうが marks the item that wins the comparison. The adjective or preference follows のほうが. This is the standard polite way to make direct comparisons in Japanese.",
+          "examples": [
+            {
+              "japanese": "電車よりバスのほうが安いです。",
+              "reading": "でんしゃよりばすのほうがやすいです。",
+              "english": "Buses are cheaper than trains."
+            },
+            {
+              "japanese": "コーヒーよりお茶のほうが好きです。",
+              "reading": "こーひーよりおちゃのほうがすきです。",
+              "english": "I like tea more than coffee."
+            },
+            {
+              "japanese": "夏より冬のほうが好きです。",
+              "reading": "なつよりふゆのほうがすきです。",
+              "english": "I prefer winter over summer."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_74",
+          "pattern": "なくちゃ・なきゃ",
+          "meaning": "Casual contracted forms meaning 'have to' or 'must do'.",
+          "explanation": "なくちゃ is a contraction of なくてはいけない and なきゃ is a contraction of なければいけない. Both are very common in casual spoken Japanese, especially among younger speakers. They express personal obligation in a relaxed, everyday register — never use them in formal writing or with superiors.",
+          "examples": [
+            {
+              "japanese": "もう行かなくちゃ！",
+              "reading": "もういかなくちゃ！",
+              "english": "I have to go now!"
+            },
+            {
+              "japanese": "宿題、やらなきゃ。",
+              "reading": "しゅくだい、やらなきゃ。",
+              "english": "I've got to do my homework."
+            },
+            {
+              "japanese": "お母さんに電話しなくちゃ。",
+              "reading": "おかあさんにでんわしなくちゃ。",
+              "english": "I have to call my mum."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_75",
+          "pattern": "～ましょうか",
+          "meaning": "Used to offer to do something for someone or to suggest doing something together as a question.",
+          "explanation": "Adding か to ましょう turns it into a question, softening it into an offer ('Shall I ~?') or an open suggestion ('Shall we ~?'). Context determines whether the speaker is offering personal help or inviting joint action. It is polite and very common in service and everyday interactions.",
+          "examples": [
+            {
+              "japanese": "荷物を持ちましょうか？",
+              "reading": "にもつをもちましょうか？",
+              "english": "Shall I carry your luggage?"
+            },
+            {
+              "japanese": "窓を開けましょうか？",
+              "reading": "まどをあけましょうか？",
+              "english": "Shall I open the window?"
+            },
+            {
+              "japanese": "一緒に図書館に行きましょうか？",
+              "reading": "いっしょにとしょかんにいきましょうか？",
+              "english": "Shall we go to the library together?"
+            }
+          ],
+          "maynardRef": {
+            "topicId": "more_grammar/pseudo_future_おう_よう",
+            "title": "Pseudo-future: おう/よう",
+            "excerpt": "3.2. FURTHER INFLECTIONS 121\nthe adjective 欲しい, desire, is used:\nあか\nこのドアが赤くて欲しい。\n\"(I) want this door red.\"\nIn terms of politeness 欲しい is just as direct and selfish as fい, and\nit can be softened by adding です or んです:\nつか\n使って欲しい。\n\"[I] want it made.\"\n使って欲しいです。\n\"(I) want it made (being said in a less direct manner than the above\nsentence)\"\n使って欲しいんです。\n\"(I) want it made ('There is a reason for me wanting this, it's not pure\nselfishness here, don't worry')\"\nSince 欲 し い is a normal verbal adjective, we ca",
+            "examples": [
+              {
+                "japanese": "the adjective 欲しい, desire, is used:"
+              },
+              {
+                "japanese": "このドアが赤くて欲しい。",
+                "english": "\"(I) want this door red.\""
+              },
+              {
+                "japanese": "In terms of politeness 欲しい is just as direct and selfish as fい, and"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_76",
+          "pattern": "すぎる",
+          "meaning": "Expresses that something is excessive or goes beyond an acceptable degree.",
+          "explanation": "Attach すぎる to the verb stem (ます-base) or to the stem of an い-adjective (drop い) or な-adjective (drop な/だ) to mean 'too ~' or 'excessively ~.' It conjugates as a regular る-verb: すぎます (polite), すぎた (past). It typically carries a negative nuance — the excess is problematic or undesirable.",
+          "examples": [
+            {
+              "japanese": "昨日食べすぎました。",
+              "reading": "きのうたべすぎました。",
+              "english": "I ate too much yesterday."
+            },
+            {
+              "japanese": "この問題は難しすぎます。",
+              "reading": "このもんだいはむずかしすぎます。",
+              "english": "This problem is too difficult."
+            },
+            {
+              "japanese": "コーヒーを飲みすぎないでください。",
+              "reading": "コーヒーをのみすぎないでください。",
+              "english": "Please don't drink too much coffee."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_77",
+          "pattern": "のがじょうず",
+          "meaning": "Expresses that someone is good at or proficient at doing something.",
+          "explanation": "This pattern nominalizes a verb using の and pairs it with 上手 (じょうず) to express skill or proficiency in an activity. The verb before の is in plain (dictionary) form. Note: when talking about your own skill, Japanese speakers often use 得意 (とくい) instead to avoid sounding boastful, but 上手 is standard for others.",
+          "examples": [
+            {
+              "japanese": "姉はピアノを弾くのが上手です。",
+              "reading": "あねはピアノをひくのがじょうずです。",
+              "english": "My older sister is good at playing the piano."
+            },
+            {
+              "japanese": "田中さんは日本語を話すのが上手です。",
+              "reading": "たなかさんはにほんごをはなすのがじょうずです。",
+              "english": "Tanaka-san is good at speaking Japanese."
+            },
+            {
+              "japanese": "彼は絵を描くのが上手です。",
+              "reading": "かれはえをかくのがじょうずです。",
+              "english": "He is good at drawing pictures."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "genki_1_7_dialogue_0",
+          "type": "dialogue",
+          "title": "Dialogue genki_1_7",
+          "text": "Make: sure you remember which verb belongs to which conjugation class. It is a good idea, there-\nrize: the dictionary form and the present tense affirmative, like行く—行きす.\nTo: recap the rules for telling which verb that ends with hiragana る belongs to which class, we\nnote: that if a verb ends with\nVerb: Types and the\"Present Tense\"\nIn: this lesson we learn about a dozen verbs that describe basic human actions. These are often\nally: or regularly engages in these activities, or (2) that a person will, or is planning to, perform\nthese: activities in the future.\nHabitual: actions:\nI: often watch TV.\nFuture: actions:\nI: will go to Kyoto tomorrow.\nわたし: きようと\nい: ソラは今日ちに帰りません。\nSora: will not return home today.\nParticles: Nouns used in sentences generally must be followed by particles, which indicate the relations that\nthe: nouns bear to the verbs.5 In this lesson, we learn four particles: を, で, l, and .\nvolved: in, or affected by, the event. Note that this particle is pronounced \"o.\"\nWe: will learn how to describe ongoing actions with these verbs in Lesson 7.\nIn: spoken language, particles are often \"dropped.\" We will learn more about such cases in Lesson 15.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_7_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue genki_1_7",
+          "text": "家族の写真: Family Picture\nかぞく: Lゃ Lh\nIn: this lesson, we will.\nTalk: about families and friends\nDescribe: how people are dressed and how they look\nSora: is showing a picture of her family to her roommate, Yui.ko7-01/02\nゆい: これはソラさんの家族の写真ですか。\nかでく: しゃしん\nちち: かいしゃ\nはたら: 7ゆい：\nす: 子供が一人います。三歳です。\nこともひとり: さんさい\nね二: ちよっと太っていますね。\nふと: 12ソラ：ええ、よく食べますから。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 175
+          }
+        },
+        {
+          "id": "genki_1_7_dialogue_2",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_7",
+          "text": "Nouns: *かぞく\n家族: family\nおじいさん: grandfather; old man\nおばあさん: grandmother; old woman\nおにいさん: お兄さん\nolder: brother\nおねえさん: お姉さん\nolder: sister\nちち: 父母兄姉妹\nはは: (my) mother\nあに: (my) older brother\nあね: (my) older sister\nいもうと: younger sister\nyounger: brother\nbrothers: and sisters\nおとこのひと: 男の人\nman: おんなのひと\n女の人: woman\ndepartment: store\n口: mouth\neye: めがね\n眼鏡: glasses\nsong: サークル\nclub: activity\ncar: い-a\nlong: みじかい\n短い: short (length)\nfast: せがたかい\n背が高い: tall (stature)\nせがひくい: 背が低い\nshort: (stature)\nあたまがいい: 頭がい\ncute: * Words that appear in the dialogue",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 177
+          }
+        },
+        {
+          "id": "genki_1_7_dialogue_3",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_7",
+          "text": "知る: 知っている5\nし: やましせんせい\nProfessor: Yamashita knows my mother.\n太る: 太っている\nふと: (is overweight)\nTom: is a little overweight.\nやせる: やせている\nわたしおとうと: (is thin)\nMy: younger brother is very thin.\n着ている: メアリーさんはTシャツを着ています。\nき: ティー\nき: (wears)\nMary: is wearing/wears a T-shirt.\n起きる: 起きている\nDad: is up and awake.\n住む: 住んでいる\ns: 方}$\nかく: とうきよう\nす: (lives in)\nMy: family lives in Tokyo.\nNote: that verbs like行くand来るbelong to the change class.Thus行ている and来ている\nindicate: the result of prior movements, not movements that are currently in progress. You may\nwant: to be careful with what the following sentences mean.\nSomebody: has come over to visit. (Not: Somebody is coming over.)\nき: You can simply use the present tense and say—ん来す, for example, if you want to\n二: say that Mary is coming, because the present tense in Japanese refers both to the present and to the\nTo: describe somebody who has long hair, one could say:\nかみなが: But in fact it would be far more natural in Japanese to say:\nTom: has long hair. (= As for Tom, he has long hair.)\nThenegation: of知っていすis知りません,without theているformation.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 181
+          }
+        },
+        {
+          "id": "genki_1_7_dialogue_4",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_7",
+          "text": "Verb: Stem + に行く\ni: If a person moves to another place in order to do something, we can describe their movement and\nits: purpose this way:\ndestination: of movement\nthe: purpose of movement\nに: (verb stem)\nThe: purpose of movement is a phrase consisting of a verb, its object, and so forth. Verbs describ-\ning: the purpose of a movement must be in their stem forms. Stems are the part you get by remov-\ning: ます from the verbs present tense long forms.\nstems: 食べる →食べ(ます)\nかばんを買い: に行きました。\nI: went to a department store to buy a bag.\n日本語を勉強し: に来ました。\nにほん: にほんご\nMary: has come to Japan to study Japanese.\nCounting: People\nにん: ひとり\nふたり: 1ひとり(一人)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 183
+          }
+        },
+        {
+          "id": "genki_1_7_dialogue_5",
+          "type": "dialogue",
+          "title": "Dialogue genki_1_7",
+          "text": "To: count people in a class, for example, you can add~人 after the noun and the particle , and\nにん: say:\nにん: 私のクラスに（は)イドネシア人の学生がー人います。\nわたし: じんがくせい\nひとり: There is one Indonesian student in our class.\nThe: place expressions are often followed by l l instead of l in this type of sentence.\nExpression: Notes\n会: ひょう\n遊遊: means \"to play,\"\"to spend time pleasantly,\"or \"to pay a social call.\"\nWhen: I was a child, I often\nあそ: played with friends.\nI: went to Tokyo to have fun\nせんしう: しうまつとうきうあそ\n心: last weekend.\nPlease: come and see us.\nき: Note that\"to play\" as used below requires different words.\nSports: to play tennis\nテニスをする: Games:\nto: play games\nto: play cards\nトランプをする: Music instruments: to play the guitar夕一を弹く\nthought: about it， you should sayわかんinsteadof知ん(see Les-\nson: 4 Dialogue 2, for example).知りません in such a context would sound rude,\nimplying: that your ignorance on that matter is none of the inquirer's business.\nYou: can also use some nouns like 買物(shopping) for the purpose phrase, as in\nI: went to a department store for shopping.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 184
+          }
+        },
+        {
+          "id": "genki_1_7_dialogue_6",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_7",
+          "text": "P: r a c t i c e\nれん: しゆう\nI: テレビを見ています\nみ: A. Look at the pictures below and answer the questions.  ko7-07\nExampleQ: メアリーさんは何をしていますか。\nなに: A：テレビを見ています。\nU: (1)\nB: きょう\nS: (8)\n八: B. Pair Work—What were you doing at the following times yesterday? Be as specific as\npossible: (where, with whom, and so on).\nB: 友だちと部屋で勉強していました。\nべんきよう: 1.6A.M.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 185
+          }
+        },
+        {
+          "id": "genki_1_7_dialogue_7",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_7",
+          "text": "おお: A. Describe the physical characteristics of the following people.  ko7-09\nExample: この人は目が大きいです。\nおお: e.g.\nC: (4)\nB: Look at the picture below and answer the questions.\nExample: Q：女の人はやせていますか。\nおんなひと: A：はい、やせています。\nふと: 2.女の人はシャツを着ていますか。\nき: 3.男の人は何を着ていますか。\nおとこひとなに: 4.女の人はジーンズをはいていますか。\nおんなひと: 5.男の人はめがねをかけていますか。\nおとこひとぜひく: 9.女の人は髪が長いですか。\n女の人: 男の人\nおんなひと: おとこ\nひと: おとこ",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 187
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1526",
+          "label": "practice",
+          "prompt": "Make sure you remember which verb belongs to which conjugation class. It is a good idea, there-",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1527",
+          "label": "practice",
+          "prompt": "fore, to memorize each verb as a set: instead of memorizing just the dictionary form, try to memo-",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1528",
+          "label": "practice",
+          "prompt": "rize the dictionary form and the present tense affirmative, like行く—行きす.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1529",
+          "label": "practice",
+          "prompt": "To recap the rules for telling which verb that ends with hiragana る belongs to which class, we",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1530",
+          "label": "practice",
+          "prompt": "note that if a verb ends with",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1531",
+          "label": "practice",
+          "prompt": "• aru or oru, it is definitely an u-verb",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1532",
+          "label": "practice",
+          "prompt": "• uru, it can either be an irregular verb or an u-verb",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1533",
+          "label": "practice",
+          "prompt": "• iru or eru, it is more likely to be a ru-verb, but it can also be an u-verb.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1534",
+          "label": "practice",
+          "prompt": "Verb Types and the\"Present Tense\"",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1535",
+          "label": "practice",
+          "prompt": "In this lesson we learn about a dozen verbs that describe basic human actions. These are often",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1536",
+          "label": "practice",
+          "prompt": "called\"action verbs,\" and the\"present tense\" of these verbs either means (1) that a person habitu-",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1537",
+          "label": "practice",
+          "prompt": "ally or regularly engages in these activities, or (2) that a person will, or is planning to, perform",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1538",
+          "label": "practice",
+          "prompt": "these activities in the future.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1539",
+          "label": "practice",
+          "prompt": "Habitual actions:",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1540",
+          "label": "practice",
+          "prompt": "私はよくテレビを見ます。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1541",
+          "label": "practice",
+          "prompt": "I often watch TV.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1542",
+          "label": "practice",
+          "prompt": "メり一さんはときどきご飯を食べません。Mary sometimes doesn't eat breakfast.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1543",
+          "label": "practice",
+          "prompt": "Future actions:",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1544",
+          "label": "practice",
+          "prompt": "私はあした京都に行きます。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1545",
+          "label": "practice",
+          "prompt": "I will go to Kyoto tomorrow.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1546",
+          "label": "practice",
+          "prompt": "ソラは今日ちに帰りません。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1547",
+          "label": "practice",
+          "prompt": "Sora will not return home today.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1548",
+          "label": "practice",
+          "prompt": "Nouns used in sentences generally must be followed by particles, which indicate the relations that",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1549",
+          "label": "practice",
+          "prompt": "the nouns bear to the verbs.5 In this lesson, we learn four particles: を, で, l, and .",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1550",
+          "label": "practice",
+          "prompt": "を(Direct object) The particle を indicates \"direct objects, the kind of things that are directly in-",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1551",
+          "label": "practice",
+          "prompt": "volved in, or affected by, the event. Note that this particle is pronounced \"o.\"",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1552",
+          "label": "practice",
+          "prompt": "We will learn how to describe ongoing actions with these verbs in Lesson 7.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_1553",
+          "label": "practice",
+          "prompt": "In spoken language, particles are often \"dropped.\" We will learn more about such cases in Lesson 15.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 97
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_2454",
+          "label": "practice",
+          "prompt": "私は英語を教えています。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 180
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_2455",
+          "label": "practice",
+          "prompt": "I teach English. /I am teaching English (right now).",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 180
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_2456",
+          "label": "practice",
+          "prompt": "メアり一さんは每日日本語を勉強しています。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 180
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_2457",
+          "label": "practice",
+          "prompt": "Mary studies Japanese every day.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 180
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_2458",
+          "label": "practice",
+          "prompt": "The helping verbる conjugates as a ru-verb. Thus we have long forms as in the following.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 180
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_2459",
+          "label": "practice",
+          "prompt": "aff rmative",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 180
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_2460",
+          "label": "practice",
+          "prompt": "He is eating.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 180
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_2461",
+          "label": "practice",
+          "prompt": "He is not eating.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 180
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_2462",
+          "label": "practice",
+          "prompt": "食べていませんでした",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 180
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_2463",
+          "label": "practice",
+          "prompt": "He was eating.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 180
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_2464",
+          "label": "practice",
+          "prompt": "He was not eating.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 180
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_7_exercise_2465",
+          "label": "practice",
+          "prompt": "【~ている (Result of a Change)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 180
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,800 @@
+{
+  "schemaVersion": "learner-draft-1",
+  "textbookKey": "genki_1_textbook",
+  "title": "genki_1_textbook / genki_1_12",
+  "qualityTier": "draft",
+  "lessons": [
+    {
+      "id": "genki_1_12_draft",
+      "appLessonId": "genki_1_12",
+      "title": "genki 1 12",
+      "qualityTier": "draft",
+      "vocabulary": [
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_vocab_20",
+          "surface": "日本の気候",
+          "reading": null,
+          "meaning": "The Japanese Climate",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 301
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_vocab_59",
+          "surface": "使う",
+          "reading": null,
+          "meaning": "to use",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 361
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_vocab_60",
+          "surface": "共働",
+          "reading": null,
+          "meaning": "both husband and wife working",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 361
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_vocab_61",
+          "surface": "連れて帰る",
+          "reading": null,
+          "meaning": "to bring(a person) back",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_vocab_62",
+          "surface": "青",
+          "reading": null,
+          "meaning": "blue color",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 362
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_vocab_63",
+          "surface": "文法さくいん",
+          "reading": null,
+          "meaning": "Grammar Index",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 366
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "cefr_a1_951",
+          "pattern": "い-Adjective (Predicate)",
+          "meaning": "Using an い-adjective at the end of a sentence to describe the subject.",
+          "explanation": "い-adjectives can end a sentence directly to describe the subject, without needing だ. In polite speech, です is added after the adjective (e.g. 高いです). In casual speech, the adjective alone is sufficient. This is one of the two main adjective types in Japanese and follows its own conjugation rules.",
+          "examples": [
+            {
+              "japanese": "この映画はおもしろいです。",
+              "reading": "このえいがはおもしろいです。",
+              "english": "This movie is interesting."
+            },
+            {
+              "japanese": "今日はとても暑いですね。",
+              "reading": "きょうはとてもあついですね。",
+              "english": "It's very hot today, isn't it?"
+            },
+            {
+              "japanese": "あのレストランは安くておいしい。",
+              "reading": "あのレストランはやすくておいしい。",
+              "english": "That restaurant is cheap and delicious."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_952",
+          "pattern": "な-Adjective だ",
+          "meaning": "Using a な-adjective with だ (or です) at the end of a sentence to describe the subject.",
+          "explanation": "な-adjectives require だ in casual speech or です in polite speech when used as predicates. Unlike い-adjectives, they do not end in い when standing alone, and they need な when directly modifying a noun (e.g. 静かな部屋). They behave similarly to nouns in their conjugation patterns.",
+          "examples": [
+            {
+              "japanese": "この部屋はきれいです。",
+              "reading": "このへやはきれいです。",
+              "english": "This room is clean."
+            },
+            {
+              "japanese": "彼はとても親切だ。",
+              "reading": "かれはとてもしんせつだ。",
+              "english": "He is very kind."
+            },
+            {
+              "japanese": "日本語の勉強は大変ですか。",
+              "reading": "にほんごのべんきょうはたいへんですか。",
+              "english": "Is studying Japanese difficult?"
+            }
+          ],
+          "maynardRef": {
+            "topicId": "verb_grammar/being_です_だ_ある_いる",
+            "title": "Being: です, だ, ある, いる",
+            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
+            "examples": [
+              {
+                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
+              },
+              {
+                "japanese": "bases areなら,なり，なる,なれ andなれ.",
+                "english": "While typically used in combination with the verb particle lC, it can"
+              },
+              {
+                "japanese": "also be used in combination with the particle と, in which case its meaning",
+                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_953",
+          "pattern": "い-Adjective + Noun",
+          "meaning": "Places an い-adjective before a noun to describe it, equivalent to 'big book', 'cold water', etc.",
+          "explanation": "い-adjectives directly precede the noun they modify with no connector needed. This is the attributive form and looks identical to the dictionary form. Unlike な-adjectives, no な is added. The order is always adjective then noun, never reversed.",
+          "examples": [
+            {
+              "japanese": "大きい犬がいます。",
+              "reading": "おおきいいぬがいます。",
+              "english": "There is a big dog."
+            },
+            {
+              "japanese": "冷たい水をください。",
+              "reading": "つめたいみずをください。",
+              "english": "Please give me cold water."
+            },
+            {
+              "japanese": "新しいカバンを買いました。",
+              "reading": "あたらしいカバンをかいました。",
+              "english": "I bought a new bag."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_954",
+          "pattern": "な-Adjective + Noun",
+          "meaning": "Use a な-adjective directly before a noun to describe it.",
+          "explanation": "な-adjectives require な between the adjective stem and the noun they modify. This construction works in both polite and casual speech. It is one of the two main adjective types in Japanese and is used whenever you want to describe a noun with a な-adjective.",
+          "examples": [
+            {
+              "japanese": "きれいな花が咲いています。",
+              "reading": "きれいなはながさいています。",
+              "english": "Beautiful flowers are blooming."
+            },
+            {
+              "japanese": "彼女は親切な人です。",
+              "reading": "かのじょはしんせつなひとです。",
+              "english": "She is a kind person."
+            },
+            {
+              "japanese": "これは有名なレストランです。",
+              "reading": "これはゆうめいなレストランです。",
+              "english": "This is a famous restaurant."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_955",
+          "pattern": "と",
+          "meaning": "Marks the person someone does an action together with, meaning 'with'.",
+          "explanation": "When と follows a noun referring to a person, it means 'together with' that person, indicating a joint or shared action. For example, 友達と行く means 'go with a friend'. It implies both parties participate, unlike から (from) or に (to/for). This usage is neutral in register and appears in both polite and casual contexts.",
+          "examples": [
+            {
+              "japanese": "私は家族と旅行します。",
+              "reading": "わたしはかぞくとりょこうします。",
+              "english": "I travel with my family."
+            },
+            {
+              "japanese": "友達と映画を見た。",
+              "reading": "ともだちとえいがをみた。",
+              "english": "I watched a movie with a friend."
+            },
+            {
+              "japanese": "先生と話しました。",
+              "reading": "せんせいとはなしました。",
+              "english": "I spoke with the teacher."
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_1082",
+          "pattern": "ます",
+          "meaning": "The polite non-past verb ending used in formal and everyday polite speech.",
+          "explanation": "ます attaches to the verb stem to make speech polite (丁寧語). It expresses present or future actions. Its negative is ません, its past is ました, and its past negative is ませんでした. ます-form is the standard form to use when speaking to people you don't know well, teachers, or in any formal situation.",
+          "examples": [
+            {
+              "japanese": "私は学校に行きます。",
+              "reading": "わたしはがっこうにいきます。",
+              "english": "I go to school."
+            },
+            {
+              "japanese": "昨日、図書館で勉強しました。",
+              "reading": "きのう、としょかんでべんきょうしました。",
+              "english": "Yesterday I studied at the library."
+            },
+            {
+              "japanese": "今日はテレビを見ません。",
+              "reading": "きょうはテレビをみません。",
+              "english": "I won't watch TV today."
+            }
+          ],
+          "maynardRef": {
+            "topicId": "conjugation_schemes/special_verbs_ます",
+            "title": "Special verbs: ます",
+            "excerpt": "7.1. BASES 325\n7.1.5 Special verbs:ある\nbase form\n未然形 あら\n連用形 あり\n連体形 ある\n已然形 あれ\n命令形 あれ\n7.1.6 Special verbs: だ\nbase form\n未然形 だろ\n連用形 だつ(で)\n終止形 だ\n連体形 な\n已然形 なら\n7.1.7 Special verbs: です\nbase form\n未然形 でしよ\n連用形 でし\n連体形 です\n7.1.8 Special verbs: ます\nbase form\n未然形 ませ(ましよ)\n連用形 まし\n連体形 ます\n已然形 ますれ\n命令形 ませ (まし)",
+            "examples": [
+              {
+                "japanese": "7.1.5 Special verbs:ある",
+                "english": "base form"
+              },
+              {
+                "japanese": "未然形 あら"
+              },
+              {
+                "japanese": "連用形 あり"
+              }
+            ]
+          },
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_1094",
+          "pattern": "なぜ",
+          "meaning": "A formal question word meaning 'why', used to ask for a reason.",
+          "explanation": "なぜ means 'why' and is used to ask about the reason or cause of something. It is the most formal of the three 'why' words in Japanese (なぜ、どうして、なんで) and is common in writing, formal speech, and set phrases. It is typically answered with から or ので.",
+          "examples": [
+            {
+              "japanese": "なぜ遅刻しましたか。",
+              "reading": "なぜちこくしましたか。",
+              "english": "Why were you late?"
+            },
+            {
+              "japanese": "なぜ日本語を勉強していますか。",
+              "reading": "なぜにほんごをべんきょうしていますか。",
+              "english": "Why are you studying Japanese?"
+            },
+            {
+              "japanese": "なぜ泣いているのですか。",
+              "reading": "なぜないているのですか。",
+              "english": "Why are you crying?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_1095",
+          "pattern": "どうして",
+          "meaning": "A neutral question word meaning 'why' or 'how come'.",
+          "explanation": "どうして means 'why' and sits between the formal なぜ and the casual なんで in register. It is comfortable in everyday polite conversation and is the most commonly heard 'why' word in spoken Japanese. It can also carry a nuance of 'how' in some contexts.",
+          "examples": [
+            {
+              "japanese": "どうして学校を休みましたか。",
+              "reading": "どうしてがっこうをやすみましたか。",
+              "english": "Why did you miss school?"
+            },
+            {
+              "japanese": "どうして知っているのですか。",
+              "reading": "どうしてしっているのですか。",
+              "english": "How do you know about that?"
+            },
+            {
+              "japanese": "どうして来なかったの？",
+              "reading": "どうしてこなかったの？",
+              "english": "Why didn't you come?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        },
+        {
+          "id": "cefr_a1_1096",
+          "pattern": "なんで",
+          "meaning": "A casual spoken word meaning 'why', used among friends and in informal situations.",
+          "explanation": "なんで is the most casual way to say 'why' in Japanese and is common in everyday conversation between friends, family, or peers. It should be avoided in formal or polite situations. It often carries a slightly surprised or incredulous tone, similar to 'how come?' in English.",
+          "examples": [
+            {
+              "japanese": "なんで食べないの？",
+              "reading": "なんでたべないの？",
+              "english": "How come you're not eating?"
+            },
+            {
+              "japanese": "なんで怒ってるの？",
+              "reading": "なんでおこってるの？",
+              "english": "Why are you angry?"
+            },
+            {
+              "japanese": "なんで昨日来なかったの？",
+              "reading": "なんできのうこなかったの？",
+              "english": "Why didn't you come yesterday?"
+            }
+          ],
+          "sourceRef": {
+            "sourceId": "cefr-a1",
+            "pageNumber": 0
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "genki_1_12_dialogue_0",
+          "type": "dialogue",
+          "title": "Dialogue genki_1_12",
+          "text": "In: this lesson, we will.\nDescribe: symptoms of illness\nComplain: about something being too much\nExpress: what we have to do\nI: Mary and Yui are talking at school. K12-01/02\nげんき: ２メり：うーん。ちよっとおなかが痛いんです。\nいた: 3ゆい：\nとも: ばんはんた\nい: たぶん食べすたんです。\n大: 6ゆい：\nだいじようぶ: 7メアリー：\nNext: day Mary is at a hospital.\nしや: 3メアリー：。\nしあい: 練習しなきやいけないんですが……。\nれんしう: 5医者：\nにさんにち: うんどう\nしや: きょうすり",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 281
+          }
+        },
+        {
+          "id": "genki_1_12_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_12",
+          "text": "Nouns: おなか\n足: leg; foot\nのど: throat\ntooth: インフルエンザ\ninfl: uenza\nせき: cough\nふつかよい: 二日酔い\nhangover: ホームシック\nhomesickness: アレルギー\nallergy: ジース\njuice: たまご\n卵服物: egg\nふく: clothes\nもの: thing (concrete object)\nプレゼント: present\ntrain: ticket\nbusiness: to take care of\nおてあらい: お手洗い\nrestroom: しあい\n試合: match; game\npolitics: せいせき\n成績: grade (on a test, etc.)\n意味: meaning\nbad: *いたい\n痛い: hurt; painful",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_12_dialogue_2",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_12",
+          "text": "Verb: stems may be followed by the helping verb する, which means \"too much,\" or\"to excess.\"\nI: got up too early.\nYou: must not eat too much.\n大: す can also follow - and な-adjective bases (the parts which do not change in conjuga-\nThis: book is too expensive.\n大か: ほんたか\nThis: town is too quiet.\nまちしず: verb stem/adjective stem+する\nYou: use す when something is beyond normal or proper, suggesting that you do not welcome\nit: Thus 親切すす(too kind) for example is not a straightforward compliment. Use modifiers\nんせ: likeともandすif you simply want to say that something is in a high degree.\nto: give advice. lfollows a verb in the short form.You usually use the past tense of\na: verbwithif the verb is in the affirmative. When the advice is in the negative,\nverb: (short, past, aff rmative)\nIt: is better.\nverb: (short, present, negative)\nIt: is better not...\nIt: is better not to skip classes.\nIn: addition to the verb conjugation, we also use the nounす, as in食.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 287
+          }
+        },
+        {
+          "id": "genki_1_12_dialogue_3",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_12",
+          "text": "doing: ..\" with the double negatives giving rise to the afirmative sense of the mandate. tな in な\nverb: short negative\n食べる: 食べない\n言わなければいけせん言わなきいけません: しない\nい: しなければいけせんしなきいけません\nくる: こない\nこなければいけませんこなきいけません: You can changeいtoせ to say you had to.You can use the short form\nI: had to get up at six this morning.\nそう: I must clean the room, because my girlfriend is coming.\nIf: you ask somebody a question that they do not know the answer to, they may be embarrassed.\nYou: can avoid such awkward situations by phrasing the question using, which adds a\nnote: of tentativeness and politeness.\nA: あした、雨が降るでしようか。\nWould: it rain tomorrow?\nB: 降ると思います。\nI: think it will.\nlistener: probably has a better-informed opinion, which you would appreciate.\nlows: a noun or a tな-adjective in a present tense affirmative sentence, it directly follows them,\nwithout: fin between.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 289
+          }
+        },
+        {
+          "id": "genki_1_12_dialogue_4",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_12",
+          "text": "P: r a c t i c e\nれん: しゆう\nA: You are in the following situations. Explain them using ~んです.k12.07\nExample: 頭が痛いです。\nm: あたま\nいた: Q：どうしたんですか。\nA: 頭が痛いんです。\nかれ: てんわ\nやす: ありました\nO: (4)きのうは\nしけん: むずか\nいた: 誕生日でした\nなかったです: たんじょうび\nC: Happy\nQ: Birthday)\nきっふ: しけん\ntrain: ticket",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 291
+          }
+        },
+        {
+          "id": "genki_1_12_dialogue_5",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_12",
+          "text": "C: Pair Work—Your partner has said something nice about what you have. Respond using\nExample: B：すてきな時計ですね。\nとけい: A：友だちにもらったんです。\nとも: D. Pair Work—Make up dialogues asking for reasons.\nExample: I went to Tokyo last week.\nB: どうして東京に行ったんですか。\nA: 母がアメりカから来たんです。\n食べすぎました: Grammar 2\nた: A.Describe the following pictures using~すぎる. Use\"verb+する\"for (1) through (4)\nつく: Example 2\nへや: e.g.1\ne: g.2",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 293
+          }
+        },
+        {
+          "id": "genki_1_12_dialogue_6",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_12",
+          "text": "B: Pair Work—Give advice to your partner in the following situations, using ~ほうが.\nExample: 日本語が上手になりたい\nにほんとじようす: →B：日本語が上手になりたいんです。\nにほんご: じようず\nA: 日本人の友だちを作ったほうがいですよ。\nつく: できるだけ英語を話さないほうがいですよ。\nいた: 2.やせたい\nきよかしよ: 3.友だちとけんかした\nとも: ふつかよ\nじゆぎょう: ちこく\nC: Pair Work—You are a health counselor. Someone who hasn't been feeling well is at your\noff: ce. Ask the following questions. Complete this form fi rst, then give your advice using\na: よく運動しますか。\nはい: いいえ\nうんどう: b.よく甘い物を食べますか。\nはい: いいえ\nた: C.よく野菜を食べますか。\nはい: いいえ\nd: 朝ご飯を食べますか。\nはい: いいえ\nはい: いいえ\nす: gよく歩きますか。\nはい: いいえ\nある: 何時間ぐらい寝ますか。\n時間: h.个",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 295
+          }
+        },
+        {
+          "id": "genki_1_12_dialogue_7",
+          "type": "dialogue",
+          "title": "Dialogue 1_textbook_genki_1_12",
+          "text": "V: 七時に起きなければいけません/起きなきゃいけませんGrammar5\nお: A. You have a busy day tomorrow.You have to do the following things. Make sentences\naccording: to the example.K12-12\n七時に起きる: 七時に起きなければいけません。\nExample: しちじ\nお: しちじ\nお: 1.八時にうちを出る\nく: Cぎよう\nて: 3.一時に先生に会う\nいちじ: せせい\nにじ: えいこ\nおし: 5.午後、図書館に行って、本を借りる\nい: 7.夜、宿題をする\nよる: しゆくだい\nの: B.Answer the following questions.\nにほんこ: じゆぎようなに\nなに: 3.友だちが遊びに来ます。何をしなければいけませんか。\nこともときなに: C. Using the cues in A, tell your friend what you must do tomorrow.\nExample: 七時に起きる\nD: Pair Work—Your partner invites you to do the following things together on a certain\ntime: Turn down the invitation and explain your reason using ~なきゃWlけな.\nExample: play tennis\nあさいっしよ: B：すみせん。あしたはうちにいなきやいけないんです。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 297
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "genki_1_textbook_genki_1_12_exercise_3767",
+          "label": "practice",
+          "prompt": "はい、ありがとうございました。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 282
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_exercise_3768",
+          "label": "practice",
+          "prompt": "Yui: You don't look well, Mary.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 282
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_exercise_3769",
+          "label": "practice",
+          "prompt": "Mary: Um...I have a little stomachache.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 282
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_exercise_3770",
+          "label": "practice",
+          "prompt": "Yui: What's the matter?",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 282
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_exercise_3771",
+          "label": "practice",
+          "prompt": "Mary: I went out to have dinner with my friend yesterday. I probably ate too much.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 282
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_exercise_3772",
+          "label": "practice",
+          "prompt": "Yui: Are you all right?",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 282
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_exercise_3773",
+          "label": "practice",
+          "prompt": "Mary: Yes. Don't worry about it. Oh, it hurts.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 282
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_exercise_3774",
+          "label": "practice",
+          "prompt": "Yui: You had better go to a hospital.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 282
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_exercise_3775",
+          "label": "practice",
+          "prompt": "Mary: Doctor, I have a stomachache and have a fever, too. Have I got the flu?",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 282
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_exercise_3776",
+          "label": "practice",
+          "prompt": "Doctor: I don't think that you've got the flu. It is just a cold.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 282
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_exercise_3777",
+          "label": "practice",
+          "prompt": "Mary: Good. Well, I will have a tennis tournament soon, so I have to practice, though ..",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 282
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_exercise_3778",
+          "label": "practice",
+          "prompt": "Doctor: You had better not exercise for a couple of days.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 282
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_exercise_3779",
+          "label": "practice",
+          "prompt": "Mary: I understand.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 282
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_exercise_3780",
+          "label": "practice",
+          "prompt": "Doctor: Take medicine and go to bed early tonight.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 282
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_exercise_3781",
+          "label": "practice",
+          "prompt": "Mary: Yes. Thank you so much.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 282
+          }
+        },
+        {
+          "id": "genki_1_textbook_genki_1_12_exercise_3782",
+          "label": "practice",
+          "prompt": "Doctor: Take care.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 282
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3783",
+          "label": "practice",
+          "prompt": "K12-05 (J-E)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3784",
+          "label": "practice",
+          "prompt": "K12-06 (E-J)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3785",
+          "label": "practice",
+          "prompt": "infl uenza",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3786",
+          "label": "practice",
+          "prompt": "homesickness",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3787",
+          "label": "practice",
+          "prompt": "thing (concrete object)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3788",
+          "label": "practice",
+          "prompt": "train ticket",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3789",
+          "label": "practice",
+          "prompt": "charge; fee",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3790",
+          "label": "practice",
+          "prompt": "business to take care of",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3791",
+          "label": "practice",
+          "prompt": "match; game",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3792",
+          "label": "practice",
+          "prompt": "grade (on a test, etc.)",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3793",
+          "label": "practice",
+          "prompt": "she; girlfriend",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3794",
+          "label": "practice",
+          "prompt": "he; boyfriend",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3795",
+          "label": "practice",
+          "prompt": "W-adiectives",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3796",
+          "label": "practice",
+          "prompt": "narrow; not spacious",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3797",
+          "label": "practice",
+          "prompt": "wide; spacious",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3798",
+          "label": "practice",
+          "prompt": "hurt; painful",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3799",
+          "label": "practice",
+          "prompt": "* Words that appear in the dialogue",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 283
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3800",
+          "label": "practice",
+          "prompt": "Verb stems may be followed by the helping verb する, which means \"too much,\" or\"to excess.\"",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 287
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3801",
+          "label": "practice",
+          "prompt": "するconjugates as a regular ru-verb.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 287
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3802",
+          "label": "practice",
+          "prompt": "I got up too early.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 287
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3803",
+          "label": "practice",
+          "prompt": "食べすてはいけません。",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 287
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3804",
+          "label": "practice",
+          "prompt": "You must not eat too much.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 287
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3805",
+          "label": "practice",
+          "prompt": "す can also follow - and な-adjective bases (the parts which do not change in conjuga-",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 287
+          }
+        },
+        {
+          "id": "genki_1_textbook_1_textbook_genki_1_12_exercise_3806",
+          "label": "practice",
+          "prompt": "tions); you drop theandなat the end of the adjectives and then addする.",
+          "sourceRef": {
+            "sourceId": "genki_1_textbook",
+            "pageNumber": 287
+          }
+        }
+      ]
+    }
+  ]
+}
