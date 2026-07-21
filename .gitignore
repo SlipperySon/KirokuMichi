@@ -5,3 +5,8 @@
 test-fixtures/
 app/tools/textbook-pack/out/
 app/tools/qa/out/
+
+# Dependencies / caches (never commit)
+node_modules/
+nihongo/
+.codex-screens/
