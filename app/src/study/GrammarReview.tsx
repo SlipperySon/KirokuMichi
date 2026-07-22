@@ -99,7 +99,8 @@ function GrammarCard({ point, onRate }: { point: GrammarPoint; onRate: (rating: 
 
 export function GrammarReview() {
   const navigate = useNavigate()
-  const { settings, activeUserId } = useAppStore()
+  const settings = useAppStore(s => s.settings)
+  const activeUserId = useAppStore(s => s.activeUserId)
   const [storage] = useState(() => new SQLiteStorage())
   const scheduler = settings.schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
   const [service] = useState(() => new SRSService(storage, scheduler))

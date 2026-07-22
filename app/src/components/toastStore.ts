@@ -34,10 +34,6 @@ export const toast = {
   info: (message: string, duration?: number) => push('info', message, duration),
 }
 
-export function useToast() {
-  return toast
-}
-
 export function getToasts() {
   return toasts
 }

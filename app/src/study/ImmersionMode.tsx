@@ -24,7 +24,8 @@ type ImmersionModeType = 'standard' | 'interleaved'
 
 export function ImmersionMode() {
   const navigate = useNavigate()
-  const { settings, updateSettings } = useAppStore()
+  const settings = useAppStore(s => s.settings)
+  const updateSettings = useAppStore(s => s.updateSettings)
   const activeUserId = useAppStore(s => s.activeUserId)
 
   // Initialize SRS service for card reviews

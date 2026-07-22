@@ -10,7 +10,7 @@ import { ArrowLeft, ArrowRight, BookOpen, CheckCircle2, Dumbbell, FileImage, Lay
 import { useAppStore } from '../store'
 import { CEFR_BASE_TEXTBOOK, TEXTBOOK_LESSON_COUNTS, CEFR_SUPPLEMENTAL, type CEFRLevel } from '../content/cefrMapping'
 import { lessonStructureService, type LessonStructure } from '../content/lessonNormalization'
-import { curriculumService, type Exercise, type GrammarItem, type VocabItem } from '../content/curriculumService'
+import { curriculumService, type GrammarItem, type VocabItem } from '../content/curriculumService'
 import { getReviewedLessonOverlay } from '../content/reviewedPackService'
 import { createLessonMatcher, pageRangeFromPages } from '../content/lessonContentUtils'
 import { hasMaynardSupport } from '../content/maynardSupport'
@@ -30,7 +30,6 @@ interface LessonPageState {
   lesson: LessonStructure | null
   vocab: VocabItem[] | null
   grammar: GrammarItem[] | null
-  exercises: Exercise[] | null
   overview: ExtractedLessonOverview | null
   workbookPractice: WorkbookPracticeTask[]
   textbookAssets: TextbookAsset[]
@@ -53,13 +52,12 @@ export function LessonPage() {
   const { cefr, lessonNumber } = useParams<{ cefr: string; lessonNumber: string }>()
   const navigate = useNavigate()
   const [searchParams, setSearchParams] = useSearchParams()
-  const { settings } = useAppStore()
+  const schedulerAlgorithm = useAppStore(s => s.settings.schedulerAlgorithm)
   const autostartConsumed = useRef(false)
   const [state, setState] = useState<LessonPageState>({
     lesson: null,
     vocab: null,
     grammar: null,
-    exercises: null,
     overview: null,
     workbookPractice: [],
     textbookAssets: [],
@@ -74,8 +72,10 @@ export function LessonPage() {
 
   // Initialize SRS service
   const [storage] = useState(() => new SQLiteStorage())
-  const scheduler = settings.schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
-  const [srsService] = useState(() => new SRSService(storage, scheduler))
+  const [srsService] = useState(() => {
+    const scheduler = schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
+    return new SRSService(storage, scheduler)
+  })
 
   const lessonsCompleted = useAppStore(s => s.lessonsCompleted)
   const activeUserId = useAppStore(s => s.activeUserId)
@@ -93,40 +93,47 @@ export function LessonPage() {
       try {
         setState(prev => ({ ...prev, loading: true, error: null }))
 
-        // Load lesson structure
-        const lesson = await lessonStructureService.getLesson(lessonId)
+        // Lesson structure + reviewed gold pack first (small). Full textbook
+        // curriculum (~multi-MB) is only fetched when gold content is missing.
+        const [lesson, reviewed] = await Promise.all([
+          lessonStructureService.getLesson(lessonId),
+          getReviewedLessonOverlay(lessonId),
+        ])
         if (!lesson) {
           setState(prev => ({ ...prev, error: `Lesson not found: ${lessonId}`, loading: false }))
           return
         }
 
-        // Load curriculum
-        const curriculum = await curriculumService.getTextbookCurriculum(baseTextbook)
-        if (!curriculum) {
+        const needsHeuristicVocab = !reviewed || reviewed.vocabulary.length === 0
+        const needsHeuristicGrammar = !reviewed || reviewed.grammar.length === 0
+        const assetSourceKeys = [baseTextbook, ...CEFR_SUPPLEMENTAL[cefrLevel]]
+        const [curriculum, workbookPractice, textbookAssets] = await Promise.all([
+          needsHeuristicVocab || needsHeuristicGrammar
+            ? curriculumService.getTextbookCurriculum(baseTextbook)
+            : Promise.resolve(null),
+          getWorkbookPracticeTasks({ cefr: cefrLevel, lessonId, lessonNum }),
+          textbookAssetService.getAssetsForLessonSources(assetSourceKeys, lessonId),
+        ])
+
+        let heuristicVocab: VocabItem[] = []
+        let heuristicGrammar: GrammarItem[] = []
+        if (curriculum && (needsHeuristicVocab || needsHeuristicGrammar)) {
+          // Curriculum lesson IDs vary: 'genki_1_1', '1_textbook_genki_1_1', or '1'.
+          const matchesLesson = createLessonMatcher(lessonId, lessonNum)
+          if (needsHeuristicVocab) {
+            heuristicVocab = curriculum.vocabulary.filter(v => matchesLesson(v.lesson))
+          }
+          if (needsHeuristicGrammar) {
+            heuristicGrammar = curriculum.grammar.filter(g => matchesLesson(g.lesson))
+          }
+        } else if ((needsHeuristicVocab || needsHeuristicGrammar) && !curriculum) {
           setState(prev => ({ ...prev, error: `Curriculum not found for ${baseTextbook}`, loading: false }))
           return
         }
 
-        // Get content for this lesson
-        // Curriculum data uses various lesson ID formats:
-        //   normalized: 'genki_1_1', 'quartet_1_3'
-        //   original:   '1_textbook_genki_1_1'
-        //   plain:      '1'
-        // Match against all of them.
-        const matchesLesson = createLessonMatcher(lessonId, lessonNum)
-
-        const heuristicVocab = curriculum.vocabulary.filter(v => matchesLesson(v.lesson))
-        const heuristicGrammar = curriculum.grammar.filter(g => matchesLesson(g.lesson))
-        const exercises = curriculum.exercises.filter(e => matchesLesson(e.lesson))
-        const assetSourceKeys = [baseTextbook, ...CEFR_SUPPLEMENTAL[cefrLevel]]
-        const [workbookPractice, textbookAssets, reviewed] = await Promise.all([
-          getWorkbookPracticeTasks({ cefr: cefrLevel, lessonId, lessonNum }),
-          textbookAssetService.getAssetsForLessonSources(assetSourceKeys, lessonId),
-          getReviewedLessonOverlay(lessonId),
-        ])
         // Gold reviewed packs win over noisy comprehensive extracts.
-        const vocab = reviewed && reviewed.vocabulary.length > 0 ? reviewed.vocabulary : heuristicVocab
-        const grammar = reviewed && reviewed.grammar.length > 0 ? reviewed.grammar : heuristicGrammar
+        const vocab = !needsHeuristicVocab ? reviewed!.vocabulary : heuristicVocab
+        const grammar = !needsHeuristicGrammar ? reviewed!.grammar : heuristicGrammar
         const overview: ExtractedLessonOverview = {
           pageRange: pageRangeFromPages([
             ...vocab.map(item => item.page),
@@ -161,7 +168,6 @@ export function LessonPage() {
           lesson,
           vocab,
           grammar,
-          exercises,
           overview,
           workbookPractice,
           textbookAssets,
@@ -180,7 +186,7 @@ export function LessonPage() {
     }
 
     loadLesson()
-  }, [lessonId, baseTextbook, lessonNum, activeUserId, srsService, storage, reloadToken])
+  }, [lessonId, baseTextbook, lessonNum, cefrLevel, activeUserId, srsService, storage, reloadToken])
 
   useEffect(() => {
     if (autostartConsumed.current) return

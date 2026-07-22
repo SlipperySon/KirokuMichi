@@ -17,7 +17,7 @@ type Tab = 'grammar' | 'vocab' | 'tests'
 type TestState = 'list' | 'builder' | 'taking' | 'result'
 
 export function JLPTSection() {
-  const { activeUserId } = useAppStore()
+  const activeUserId = useAppStore(s => s.activeUserId)
   const [searchParams, setSearchParams] = useSearchParams()
 
   const currentLevel = (searchParams.get('level') || 'N5') as JlptLevel

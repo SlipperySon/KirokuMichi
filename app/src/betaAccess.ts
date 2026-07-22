@@ -1,4 +1,4 @@
-export const BETA_ACCESS_KEY = 'kiroku-beta-access'
+const BETA_ACCESS_KEY = 'kiroku-beta-access'
 
 /**
  * Client-side UX gate flag only. Server auth for AI/PDF/report uses the

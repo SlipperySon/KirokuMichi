@@ -39,32 +39,6 @@ export async function unlockTextbookPack<T = unknown>(
   }
 }
 
-export async function createLockedTextbookPack<T>(
-  title: string,
-  payload: T,
-  passphrase: string,
-  iterations = 210_000
-): Promise<LockedTextbookPack> {
-  const salt = crypto.getRandomValues(new Uint8Array(16))
-  const iv = crypto.getRandomValues(new Uint8Array(12))
-  const key = await deriveKey(passphrase, salt, iterations)
-  const ciphertext = await crypto.subtle.encrypt(
-    { name: 'AES-GCM', iv },
-    key,
-    ENCODER.encode(JSON.stringify(payload))
-  )
-  return {
-    version: 1,
-    title,
-    createdAt: new Date().toISOString(),
-    kdf: 'PBKDF2-SHA256',
-    iterations,
-    salt: encodeBase64(salt),
-    iv: encodeBase64(iv),
-    ciphertext: encodeBase64(new Uint8Array(ciphertext)),
-  }
-}
-
 function validatePack(pack: LockedTextbookPack) {
   if (pack.version !== 1) throw new Error('Unsupported textbook pack version')
   if (pack.kdf !== 'PBKDF2-SHA256') throw new Error('Unsupported textbook pack key derivation')

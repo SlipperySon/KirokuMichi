@@ -7,7 +7,8 @@ interface Props {
 
 export function StepPrefs({ onNext }: Props) {
   const intl = useIntl()
-  const { settings, updateSettings } = useAppStore()
+  const settings = useAppStore(s => s.settings)
+  const updateSettings = useAppStore(s => s.updateSettings)
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen gap-8 p-8 max-w-lg mx-auto">

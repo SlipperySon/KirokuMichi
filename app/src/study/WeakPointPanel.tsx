@@ -9,7 +9,7 @@ interface Props {
 }
 
 export function WeakPointPanel({ className = '' }: Props) {
-  const { activeUserId } = useAppStore()
+  const activeUserId = useAppStore(s => s.activeUserId)
   const [storage] = useState(() => new SQLiteStorage())
   const [summary, setSummary] = useState<WeakPointSummary | null>(null)
   const [loading, setLoading] = useState(true)

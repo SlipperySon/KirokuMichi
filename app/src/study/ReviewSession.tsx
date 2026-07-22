@@ -11,8 +11,6 @@ import { CardListening } from './CardListening'
 import { RatingButtons } from './RatingButtons'
 import { LeechWarning } from './LeechWarning'
 import { SessionSummary } from './SessionSummary'
-import { exportToAnki } from '../srs/ankiExport'
-import { importFromAnki } from '../srs/ankiImport'
 import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { SRSService } from '../srs/srsService'
@@ -144,11 +142,14 @@ export function ReviewSession() {
 function ReviewSessionActive({ state }: { state: LocationState }) {
   const intl = useIntl()
   const navigate = useNavigate()
-  const { settings, markLessonComplete } = useAppStore()
+  const schedulerAlgorithm = useAppStore(s => s.settings.schedulerAlgorithm)
+  const markLessonComplete = useAppStore(s => s.markLessonComplete)
 
   const [storage] = useState(() => new SQLiteStorage())
-  const scheduler = settings.schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
-  const [service] = useState(() => new SRSService(storage, scheduler))
+  const [service] = useState(() => {
+    const scheduler = schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
+    return new SRSService(storage, scheduler)
+  })
 
   const grammarMap = new Map<number, GrammarQuestion>(state.grammarEntries ?? [])
 
@@ -237,8 +238,12 @@ function ReviewSessionActive({ state }: { state: LocationState }) {
         stats={session.stats}
         totalCards={state.queue.length}
         onDone={() => navigate(state.returnTo ?? '/study')}
-        onExportAnki={() => exportToAnki(state.queue)}
+        onExportAnki={async () => {
+          const { exportToAnki } = await import('../srs/ankiExport')
+          await exportToAnki(state.queue)
+        }}
         onImportAnki={async (file) => {
+          const { importFromAnki } = await import('../srs/ankiImport')
           await importFromAnki(file, storage, state.userId)
           navigate(state.returnTo ?? '/study')
         }}

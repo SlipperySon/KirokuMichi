@@ -49,7 +49,8 @@ const SKIP_PROVIDER_INFO = { label: 'Skip for now', description: 'Configure late
 
 export function StepAI({ onNext }: Props) {
   const intl = useIntl()
-  const { settings, updateSettings } = useAppStore()
+  const settings = useAppStore(s => s.settings)
+  const updateSettings = useAppStore(s => s.updateSettings)
   const [provider, setProvider] = useState<ProviderType>(settings.aiProvider || null)
   const [apiKey, setApiKey] = useState(settings.apiKey || '')
   const [customEndpoint, setCustomEndpoint] = useState('')

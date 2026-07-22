@@ -11,7 +11,7 @@ interface GrammarExplainerProps {
 }
 
 export function GrammarExplainer({ point, onClose }: GrammarExplainerProps) {
-  const { settings } = useAppStore()
+  const settings = useAppStore(s => s.settings)
   const [explanation, setExplanation] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)

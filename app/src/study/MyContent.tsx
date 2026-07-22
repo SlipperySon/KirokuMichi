@@ -22,7 +22,8 @@ interface LearningItem {
 }
 
 export function MyContent() {
-  const { activeUserId, settings } = useAppStore()
+  const activeUserId = useAppStore(s => s.activeUserId)
+  const settings = useAppStore(s => s.settings)
   const [cards, setCards] = useState<VocabItem[]>([])
   const [grammar, setGrammar] = useState<GrammarPoint[]>([])
   const [quizzes, setQuizzes] = useState<QuizItem[]>([])

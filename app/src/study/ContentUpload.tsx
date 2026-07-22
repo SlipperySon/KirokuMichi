@@ -3,7 +3,6 @@ import { useAppStore } from '../store'
 import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { SRSService } from '../srs/srsService'
-import { importFromAnki } from '../srs/ankiImport'
 import { importBundledGenkiTestDeck } from '../srs/bundledGenkiImport'
 import { ClientAIProvider } from '../ai/aiProvider'
 import { toast } from '../components/toastStore'
@@ -539,12 +538,16 @@ type InputMode = 'text' | 'file'
 type Step = 'input' | 'extracting' | 'preview' | 'done'
 
 export function ContentUpload() {
-  const { settings, activeUserId, setSessionToken } = useAppStore()
+  const settings = useAppStore(s => s.settings)
+  const activeUserId = useAppStore(s => s.activeUserId)
+  const setSessionToken = useAppStore(s => s.setSessionToken)
   const [storage] = useState(() => new SQLiteStorage())
   const userId = activeUserId ?? 1
 
-  const scheduler = settings.schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
-  const [service] = useState(() => new SRSService(storage, scheduler))
+  const [service] = useState(() => {
+    const scheduler = settings.schedulerAlgorithm === 'fsrs' ? new FSRSScheduler() : new SM2Scheduler()
+    return new SRSService(storage, scheduler)
+  })
   const [decks, setDecks] = useState<{ id: number; name: string }[]>([])
 
   useEffect(() => {
@@ -634,6 +637,7 @@ export function ContentUpload() {
       const textbookKey = routing && routing !== 'custom' ? routing : detectTextbook(file.name).textbookKey
       // All user .apkg imports land under Extra Anki decks. Textbook unlock may
       // still set lesson_id so matched cards count as path dues.
+      const { importFromAnki } = await import('../srs/ankiImport')
       const result = await importFromAnki(file, storage, userId, {
         textbookKey,
         autoUnlock: true,

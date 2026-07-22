@@ -58,7 +58,8 @@ function persistMessages(messages: AIMessage[]) {
 }
 
 export function TutorChat() {
-  const { settings, activeUserId } = useAppStore()
+  const settings = useAppStore(s => s.settings)
+  const activeUserId = useAppStore(s => s.activeUserId)
   const [storage] = useState(() => new SQLiteStorage())
   const [tab, setTab] = useState<Tab>('tutor')
   const [messages, setMessages] = useState<AIMessage[]>(() => loadPersistedMessages())

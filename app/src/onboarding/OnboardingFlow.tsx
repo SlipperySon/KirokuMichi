@@ -22,7 +22,12 @@ import { toast } from '../components/toastStore'
 
 export function OnboardingFlow() {
   const navigate = useNavigate()
-  const { updateSettings, setOnboardingComplete, setCurrentLesson, setLearningPath, activeUserId, setActiveUserId } = useAppStore()
+  const updateSettings = useAppStore(s => s.updateSettings)
+  const setOnboardingComplete = useAppStore(s => s.setOnboardingComplete)
+  const setCurrentLesson = useAppStore(s => s.setCurrentLesson)
+  const setLearningPath = useAppStore(s => s.setLearningPath)
+  const activeUserId = useAppStore(s => s.activeUserId)
+  const setActiveUserId = useAppStore(s => s.setActiveUserId)
   const [step, setStep] = useState<OnboardingStep>('welcome')
   const [placementLevel, setPlacementLevel] = useState<JlptLevel>('N5')
   const [placementCefr, setPlacementCefr] = useState<PlacementCefr>('A1')

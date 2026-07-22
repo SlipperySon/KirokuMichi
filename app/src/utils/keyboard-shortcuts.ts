@@ -358,19 +358,3 @@ export function getKeyboardShortcutManager(): KeyboardShortcutManager {
   return globalManager
 }
 
-/**
- * React hook for keyboard shortcuts
- */
-export function useKeyboardShortcut(action: ShortcutAction, callback: () => void) {
-  const manager = getKeyboardShortcutManager()
-
-  React.useEffect(() => {
-    const unsubscribe = manager.on(action, callback)
-    return unsubscribe
-  }, [action, callback, manager])
-
-  return manager.getShortcut(action)
-}
-
-// Import React for the hook
-import React from 'react'

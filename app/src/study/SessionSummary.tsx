@@ -12,7 +12,8 @@ interface Props {
 }
 
 function CelebrationBanner({ stats }: { stats: SessionStats }) {
-  const { settings, dailyStats } = useAppStore()
+  const settings = useAppStore(s => s.settings)
+  const dailyStats = useAppStore(s => s.dailyStats)
   const [visible, setVisible] = useState(true)
 
   useEffect(() => {

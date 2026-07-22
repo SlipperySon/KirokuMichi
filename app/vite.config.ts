@@ -12,14 +12,13 @@ export default defineConfig({
           if (id.includes('/node_modules/react') || id.includes('/node_modules/react-dom') || id.includes('/node_modules/react-router-dom')) {
             return 'vendor-react'
           }
-          if (id.includes('/node_modules/sql.js') || id.includes('/src/db/') || id.includes('/src/srs/')) {
+          // Keep sql.js in its own chunk; do not force /src/srs or /src/db here —
+          // that pulled route-only Anki/JSZip code into the initial storage graph.
+          if (id.includes('/node_modules/sql.js')) {
             return 'vendor-storage'
           }
           if (id.includes('/node_modules/pdfjs-dist') || id.includes('/node_modules/pdf-parse')) {
             return 'vendor-pdf'
-          }
-          if (id.includes('/data/generated/jlpt/')) {
-            return undefined
           }
         },
       },

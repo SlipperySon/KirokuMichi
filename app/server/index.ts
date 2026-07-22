@@ -100,6 +100,12 @@ function pruneExpiredSessionTokens(now = Date.now()) {
   }
 }
 
+function pruneExpiredRateBuckets(now = Date.now()) {
+  for (const [key, bucket] of rateLimitBuckets) {
+    if (bucket.resetAt <= now) rateLimitBuckets.delete(key)
+  }
+}
+
 function pruneSessionTokensToCap() {
   while (sessionTokens.size > SESSION_TOKEN_MAX) {
     const oldest = sessionTokens.keys().next().value as string | undefined
@@ -318,10 +324,12 @@ const corsMiddleware = cors({
   credentials: true,
 })
 
-app.use((req, _res, next) => {
-  console.log(`[http] ${req.method} ${req.path} origin=${req.headers.origin ?? 'none'}`)
-  next()
-})
+if (process.env.NODE_ENV !== 'production') {
+  app.use((req, _res, next) => {
+    console.log(`[http] ${req.method} ${req.path} origin=${req.headers.origin ?? 'none'}`)
+    next()
+  })
+}
 app.use((_req, res, next) => {
   res.setHeader('X-Content-Type-Options', 'nosniff')
   res.setHeader('X-Frame-Options', 'DENY')
@@ -332,6 +340,11 @@ app.use((_req, res, next) => {
 app.use(corsMiddleware)
 app.options(/.*/, corsMiddleware)
 app.use('/api', rateLimit({ windowMs: RATE_LIMIT_WINDOW_MS, maxRequests: RATE_LIMIT_MAX_REQUESTS }))
+app.use((_req, _res, next) => {
+  // Opportunistic cleanup; Map growth is otherwise unbounded across identities.
+  if (rateLimitBuckets.size > 256) pruneExpiredRateBuckets()
+  next()
+})
 app.use(express.json({ limit: JSON_BODY_LIMIT }))
 
 // Serve curriculum data folder (lesson structures, textbook content, etc.)
@@ -346,7 +359,12 @@ app.use('/data', (req, res, next) => {
   }
   next()
 })
-app.use('/data', express.static(dataPath))
+app.use('/data', express.static(dataPath, {
+  // Generated curriculum/packs change infrequently in prod; keep ETag + short max-age.
+  maxAge: process.env.NODE_ENV === 'production' ? '1h' : 0,
+  etag: true,
+  lastModified: true,
+}))
 void access(dataPath)
   .then(() => console.log(`[server] ✓ Data folder accessible and served`))
   .catch(() => console.error(`[server] ✗ Data folder not found at ${dataPath}`))
@@ -826,7 +844,21 @@ interface PdfExtractSummary {
 const MIN_EXTRACTED_CHARS_PER_PAGE = 100
 const OCR_HELPER_PATH = path.resolve(process.cwd(), 'tools/ocr/pdf-vision-ocr')
 const EXTRACTION_CACHE_VERSION = 'pdf-ocr-extraction-v2'
+const EXTRACTION_CACHE_MAX = 32
 const extractionCache = new Map<string, { result: ExtractedContentResult; files: PdfExtractSummary[] }>()
+
+function setExtractionCache(
+  key: string,
+  value: { result: ExtractedContentResult; files: PdfExtractSummary[] },
+) {
+  if (extractionCache.has(key)) extractionCache.delete(key)
+  extractionCache.set(key, value)
+  while (extractionCache.size > EXTRACTION_CACHE_MAX) {
+    const oldest = extractionCache.keys().next().value
+    if (oldest === undefined) break
+    extractionCache.delete(oldest)
+  }
+}
 
 interface ExtractedContentResult {
   source_title?: string | null
@@ -1539,7 +1571,7 @@ Extract vocabulary, grammar, and lesson-like reading/dialogue content.`
     const normalized = normalizeExtractionResult(parsed)
     console.log(`[content] extracted ${pdfFiles.length} PDFs pages=${summaries.map(s => s.pages).join('+')} chars=${totalExtractedChars} result=${normalized.vocab?.length ?? 0}/${normalized.grammar?.length ?? 0}/${normalized.lessons?.length ?? 0} in ${Date.now() - startedAt}ms`)
     const payload = { result: normalized, files: summaries }
-    extractionCache.set(cacheKey, payload)
+    setExtractionCache(cacheKey, payload)
     res.json(payload)
   } catch (err) {
     console.error('PDF upload extraction failed:', err)
@@ -1702,7 +1734,7 @@ Extract vocabulary, grammar, and lesson-like reading/dialogue content. Keep the 
       parsed = normalizeExtractionResult(parsed) as { vocab?: unknown[]; grammar?: unknown[]; lessons?: unknown[]; source_title?: string | null }
     }
     if (parsed) {
-      extractionCache.set(cacheKey, { result: parsed as ExtractedContentResult, files: summaries })
+      setExtractionCache(cacheKey, { result: parsed as ExtractedContentResult, files: summaries })
     }
 
     res.json({
