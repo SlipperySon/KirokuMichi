@@ -149,6 +149,67 @@ export function parseGenki2Interleaved(text: string, pageNumber: number): Parsed
   return out
 }
 
+/**
+ * Genki I L3+ / many Genki II pages: "映画 えいが movie" or "スポーツ sports"
+ * (kanji + kana reading + English, or katakana loanword + English).
+ */
+export function parseGenkiKanjiKanaGloss(text: string, pageNumber: number): ParsedVocab[] {
+  const out: ParsedVocab[] = []
+  const seen = new Set<string>()
+  const normalized = text
+    .replace(/[＊*]/g, ' * ')
+    .replace(/\s+/g, ' ')
+    .trim()
+
+  // surface + hiragana/katakana reading + english gloss
+  const withReading =
+    /([\u3040-\u30ff\u4e00-\u9fff々ー]{1,16})\s+([\u3040-\u309fー]{1,16})\s+([A-Za-z][A-Za-z0-9 .;,'\-/()+~…]{1,70}?)(?=\s+(?:[\u3040-\u30ff\u4e00-\u9fff*]|$))/g
+  // katakana (or mixed) surface + english, no separate reading
+  const loanOrBare =
+    /([\u30a0-\u30ffーA-Za-z0-9]{2,16}|[\u3040-\u30ff\u4e00-\u9fff々ー]{1,12})\s+([A-Za-z][A-Za-z0-9 .;,'\-/()+~…]{1,70}?)(?=\s+(?:[\u3040-\u30ff\u4e00-\u9fff*]|$))/g
+  // reading-first: あした 明日 tomorrow
+  const readingFirst =
+    /([\u3040-\u309fー]{2,12})\s+([\u4e00-\u9fff々]{1,8})\s+([A-Za-z][A-Za-z0-9 .;,'\-/()+~…]{1,70}?)(?=\s+(?:[\u3040-\u30ff\u4e00-\u9fff*]|$))/g
+
+  const push = (surface: string, reading: string | null, meaningRaw: string) => {
+    const meaning = cleanMeaning(meaningRaw)
+    if (!surface || !meaning || SKIP_MEANINGS.test(meaning)) return
+    if (!JP.test(surface) || surface.length > 20) return
+    if (!/[A-Za-z]{2,}/.test(meaning)) return
+    if (meaning.length > 90) return
+    if (/[\u3040-\u30ff\u4e00-\u9fff]{3,}/.test(meaning)) return
+    if (/^(nouns?|verbs?|adjectives?|adverbs?|expressions?|places?|time|foods?|people|things|entertainment)/i.test(meaning))
+      return
+    // Drop OCR section crumbs
+    if (/^(KO?\d|JE|EJ|U-v|Ru-|Irreg|W-ad|NoUns)/i.test(surface)) return
+    const key = `${surface}|${meaning}`
+    if (seen.has(key)) return
+    seen.add(key)
+    out.push({ surface: cleanSurface(surface), reading, meaning, pageNumber })
+  }
+
+  let match: RegExpExecArray | null
+  const rf = new RegExp(readingFirst.source, 'g')
+  while ((match = rf.exec(normalized)) !== null) {
+    push(match[2], match[1], match[3])
+  }
+  const wr = new RegExp(withReading.source, 'g')
+  while ((match = wr.exec(normalized)) !== null) {
+    push(match[1], match[2], match[3])
+  }
+  const lb = new RegExp(loanOrBare.source, 'g')
+  while ((match = lb.exec(normalized)) !== null) {
+    // Skip if already captured via withReading (same surface+start of meaning)
+    const surface = cleanSurface(match[1])
+    if (out.some((item) => item.surface === surface)) continue
+    // Prefer JP surfaces; allow katakana loans
+    if (!JP.test(surface)) continue
+    push(surface, null, match[2])
+  }
+
+  return out
+}
+
 /** Useful Expressions vocab: JP on one line / EN on next, or "口座 account" */
 export function parseUsefulVocabBlocks(text: string, pageNumber: number): ParsedVocab[] {
   const out: ParsedVocab[] = []

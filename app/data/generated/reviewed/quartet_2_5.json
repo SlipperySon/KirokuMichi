@@ -1,199 +1,3484 @@
 {
-  "schemaVersion": "learner-draft-1",
-  "textbookKey": "quartet_2_textbook",
-  "title": "quartet_2_textbook / quartet_2_5",
-  "qualityTier": "draft",
+  "schemaVersion": 1,
+  "textbookKey": "quartet_2",
+  "title": "Quartet II Lesson 11",
+  "edition": "learner-gold",
+  "levelRange": "N2",
+  "sources": [
+    {
+      "sourceId": "quartet_2_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "e3fea95b3fc99618f7cea33bc25ccebd9d32e618f76a3e2b97896c088b3ccb16",
+        "bytes": 153341719
+      }
+    },
+    {
+      "sourceId": "quartet_2_workbook",
+      "role": "workbook",
+      "fingerprint": {
+        "sha256": "9415289c35c67e728962b81b9b9ffa5e3bd4f5ae6e6cb6aa7c7e984eb9bf2a64",
+        "bytes": 27932538
+      }
+    },
+    {
+      "sourceId": "quartet_2_workbook_answer_key",
+      "role": "answer_key",
+      "fingerprint": {
+        "sha256": "6e87e3cc853217c6a135c72ec3df6c1fe8b6d524ef3abaada5e409ade577e0a4",
+        "bytes": 7714196
+      }
+    }
+  ],
   "lessons": [
     {
-      "id": "quartet_2_5_draft",
-      "appLessonId": "quartet_2_5",
-      "title": "quartet 2 5",
-      "qualityTier": "draft",
+      "id": "quartet_2_lesson_11",
+      "unitType": "lesson",
+      "lessonNumber": 11,
+      "title": "第11課",
+      "level": "N2",
+      "modes": [
+        "reading",
+        "conversation_grammar",
+        "workbook"
+      ],
       "vocabulary": [
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_11_vocab_8",
-          "surface": "キワドの例",
-          "reading": null,
-          "meaning": "Examples of keywords",
+          "id": "quartet_2_l11_vocab_1",
+          "surface": "表",
+          "reading": "おもて",
+          "meaning": "front",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 166
+            "pageNumber": 308,
+            "coordinates": [
+              299,
+              1664,
+              1327,
+              1723
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_11_vocab_9",
-          "surface": "提案する",
-          "reading": null,
-          "meaning": "to propose",
+          "id": "quartet_2_l11_vocab_2",
+          "surface": "裹",
+          "reading": "うら",
+          "meaning": "back",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 174
+            "pageNumber": 308,
+            "coordinates": [
+              212,
+              1709,
+              1323,
+              1777
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         },
         {
-          "id": "quartet_2_textbook_quartet_2_11_vocab_10",
-          "surface": "混同する",
-          "reading": null,
-          "meaning": "tomix up",
+          "id": "quartet_2_l11_vocab_3",
+          "surface": "いたるところ",
+          "reading": "いたるところ",
+          "meaning": "everywhere",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 184
+            "pageNumber": 308,
+            "coordinates": [
+              298,
+              1773,
+              1406,
+              1822
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         },
         {
-          "id": "quartet_2_textbook_quartet_2_11_vocab_22",
-          "surface": "順接",
-          "reading": null,
-          "meaning": "Resultative",
+          "id": "quartet_2_l11_vocab_4",
+          "surface": "連発(する)",
+          "reading": "れんぱつ(する)",
+          "meaning": "to speak continuously",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 240
+            "pageNumber": 308,
+            "coordinates": [
+              352,
+              1823,
+              1537,
+              1873
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         },
         {
-          "id": "quartet_2_textbook_quartet_2_11_vocab_63",
-          "surface": "とうしよ当初",
-          "reading": null,
-          "meaning": "at first",
+          "id": "quartet_2_l11_vocab_5",
+          "surface": "年賀状",
+          "reading": "ねんがじょう",
+          "meaning": "New Year's card",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 280
+            "pageNumber": 308,
+            "coordinates": [
+              349,
+              1873,
+              1462,
+              1928
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         },
         {
-          "id": "quartet_2_textbook_quartet_2_11_vocab_64",
-          "surface": "っち日中",
-          "reading": null,
-          "meaning": "duringthe daytime",
+          "id": "quartet_2_l11_vocab_6",
+          "surface": "きまって",
+          "reading": "きまって",
+          "meaning": "as usual",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 280
+            "pageNumber": 308,
+            "coordinates": [
+              294,
+              1927,
+              1361,
+              1976
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         },
         {
-          "id": "quartet_2_textbook_quartet_2_11_vocab_65",
-          "surface": "ぬる塗る",
-          "reading": null,
-          "meaning": "to paint",
+          "id": "quartet_2_l11_vocab_7",
+          "surface": "本年",
+          "reading": "ほんねん",
+          "meaning": "this year",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 280
+            "pageNumber": 308,
+            "coordinates": [
+              349,
+              1977,
+              1370,
+              2032
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         },
         {
-          "id": "quartet_2_textbook_quartet_2_11_vocab_66",
-          "surface": "ねる寝る",
-          "reading": null,
-          "meaning": "to sleep",
+          "id": "quartet_2_l11_vocab_8",
+          "surface": "知人",
+          "reading": "ちじん",
+          "meaning": "acquaintance",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 280
+            "pageNumber": 308,
+            "coordinates": [
+              349,
+              2028,
+              1429,
+              2080
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         },
         {
-          "id": "quartet_2_textbook_quartet_2_11_vocab_67",
-          "surface": "とらえる",
-          "reading": null,
-          "meaning": "to catch",
+          "id": "quartet_2_l11_vocab_9",
+          "surface": "[~に]依頼(する)",
+          "reading": "いらい(する)",
+          "meaning": "to request [vt.]",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 280
+            "pageNumber": 308,
+            "coordinates": [
+              152,
+              2081,
+              1441,
+              2130
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         },
         {
-          "id": "quartet_2_textbook_quartet_2_11_vocab_68",
-          "surface": "ひびく響く",
-          "reading": null,
-          "meaning": "to resonate",
+          "id": "quartet_2_l11_vocab_10",
+          "surface": "慣用語",
+          "reading": "かんようご",
+          "meaning": "idiom",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 281
+            "pageNumber": 308,
+            "coordinates": [
+              352,
+              2129,
+              1337,
+              2182
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         },
         {
-          "id": "quartet_2_textbook_quartet_2_11_vocab_69",
-          "surface": "はんちゅ範疇",
-          "reading": null,
-          "meaning": "category",
+          "id": "quartet_2_l11_vocab_11",
+          "surface": "聞き流す",
+          "reading": "ききながす",
+          "meaning": "to take no notice",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 281
+            "pageNumber": 308,
+            "coordinates": [
+              296,
+              2185,
+              1470,
+              2233
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         },
         {
-          "id": "quartet_2_textbook_quartet_2_11_vocab_70",
-          "surface": "ひく引く",
-          "reading": null,
-          "meaning": "to pull",
+          "id": "quartet_2_l11_vocab_12",
+          "surface": "誠実に",
+          "reading": "せいじつに",
+          "meaning": "sincerely",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 281
+            "pageNumber": 308,
+            "coordinates": [
+              147,
+              2232,
+              1372,
+              2292
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         },
         {
-          "id": "quartet_2_textbook_quartet_2_11_vocab_72",
-          "surface": "ひとくち一",
-          "reading": null,
-          "meaning": "aunit of donation",
+          "id": "quartet_2_l11_vocab_13",
+          "surface": "[~に]こたえる",
+          "reading": "こたえる",
+          "meaning": "to respond",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 281
+            "pageNumber": 308,
+            "coordinates": [
+              353,
+              2288,
+              1396,
+              2337
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         },
         {
-          "id": "quartet_2_textbook_quartet_2_11_vocab_106",
-          "surface": "構える",
-          "reading": null,
-          "meaning": "to get ready; to take a stance",
+          "id": "quartet_2_l11_vocab_14",
+          "surface": "[~に]心を配る",
+          "reading": "こころをくばる",
+          "meaning": "to care",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 340
+            "pageNumber": 308,
+            "coordinates": [
+              295,
+              2341,
+              1346,
+              2386
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         },
         {
-          "id": "quartet_2_textbook_quartet_2_11_vocab_107",
-          "surface": "乞",
-          "reading": null,
-          "meaning": "to beg;to ask",
+          "id": "quartet_2_l11_vocab_15",
+          "surface": "〜て欲しい",
+          "reading": "〜てほしい",
+          "meaning": "to want someone to ~",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 341
+            "pageNumber": 308,
+            "coordinates": [
+              215,
+              2391,
+              1532,
+              2440
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         },
         {
-          "id": "quartet_2_textbook_quartet_2_11_vocab_108",
-          "surface": "渋滞",
-          "reading": null,
-          "meaning": "traffic jam",
+          "id": "quartet_2_l11_vocab_16",
+          "surface": "頼みごと",
+          "reading": "たのみごと",
+          "meaning": "favor",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 341
+            "pageNumber": 308,
+            "coordinates": [
+              295,
+              2441,
+              1329,
+              2491
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         },
         {
-          "id": "quartet_2_textbook_quartet_2_11_vocab_109",
+          "id": "quartet_2_l11_vocab_17",
+          "surface": "具体的な",
+          "reading": "ぐたいてきな",
+          "meaning": "concrete",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 308,
+            "coordinates": [
+              143,
+              2490,
+              1368,
+              2545
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_18",
+          "surface": "[~1]要求(する)",
+          "reading": "ようきゅう(する)",
+          "meaning": "to request; to demand [vt.]",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              224,
+              184,
+              1664,
+              235
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_19",
+          "surface": "明示(する)",
+          "reading": "めいじ(する)",
+          "meaning": "to make explicit",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              423,
+              237,
+              1535,
+              285
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_20",
+          "surface": "[~に]迷惑(する)",
+          "reading": "めいわく(する)",
+          "meaning": "to be bothered",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              223,
+              288,
+              1520,
+              339
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_21",
+          "surface": "範囲",
+          "reading": "はんい",
+          "meaning": "range",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              344,
+              336,
+              1410,
+              394
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_22",
+          "surface": "[~に]力を貸す",
+          "reading": "ちからをかす",
+          "meaning": "to help",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              423,
+              392,
+              1420,
+              441
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_23",
+          "surface": "[~に]任せる",
+          "reading": "まかせる",
+          "meaning": "to entrust [vt.]",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              222,
+              442,
+              1512,
+              496
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_24",
+          "surface": "したがって",
+          "reading": "したがって",
+          "meaning": "therefore",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              224,
+              491,
+              1452,
+              545
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_25",
+          "surface": "志",
+          "reading": "こころざし",
+          "meaning": "will; motive",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              422,
+              541,
+              1485,
+              599
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_26",
+          "surface": "結構な",
+          "reading": "けっこうな",
+          "meaning": "fine",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              225,
+              593,
+              1389,
+              651
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_27",
+          "surface": "[~に]寄付(する)",
+          "reading": "きふ(する)",
+          "meaning": "to donate [vt.]",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              226,
+              650,
+              1508,
+              699
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_28",
+          "surface": "乞）",
+          "reading": "こう",
+          "meaning": "to ask",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              419,
+              697,
+              1409,
+              755
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_29",
+          "surface": "一口",
+          "reading": "ひとくち",
+          "meaning": "a unit of donation",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              358,
+              750,
+              1560,
+              803
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_30",
+          "surface": "断る",
+          "reading": "ことわる",
+          "meaning": "to turn down",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              209,
+              800,
+              1501,
+              856
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_31",
+          "surface": "[~に]協力(する)",
+          "reading": "きょうりょく(する)",
+          "meaning": "to cooperate",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              208,
+              854,
+              1492,
+              905
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_32",
+          "surface": "思い悩む",
+          "reading": "おもいなやむ",
+          "meaning": "to be worried",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              423,
+              907,
+              1502,
+              957
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_33",
+          "surface": "[~に]悩む",
+          "reading": "なやむ",
+          "meaning": "to be troubled",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              211,
+              955,
+              1512,
+              1009
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_34",
+          "surface": "判断(する)",
+          "reading": "はんだん(する)",
+          "meaning": "to decide",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              206,
+              1009,
+              1452,
+              1059
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_35",
+          "surface": "強いる",
+          "reading": "しいる",
+          "meaning": "to force",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              423,
+              1059,
+              1432,
+              1112
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_36",
+          "surface": "ずいぶん",
+          "reading": "ずいぶん",
+          "meaning": "quite",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              422,
+              1109,
+              1407,
+              1169
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_37",
+          "surface": "[~に]滞在(する)",
+          "reading": "たいざい(する)",
+          "meaning": "to stay",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              205,
+              1162,
+              1417,
+              1217
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_38",
+          "surface": "某氏",
+          "reading": "ぼうし",
+          "meaning": "unnamed person",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              291,
+              1209,
+              1550,
+              1272
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_39",
+          "surface": "よこす",
+          "reading": "よこす",
+          "meaning": "to send",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              358,
+              1265,
+              1424,
+              1320
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_40",
+          "surface": "さっぱり~ない",
+          "reading": "さっぱり~ない",
+          "meaning": "not at all",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              204,
+              1315,
+              1445,
+              1373
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_41",
+          "surface": "[〜に]見当がつく",
+          "reading": "けんとうがつく",
+          "meaning": "to have a clue",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              206,
+              1369,
+              1502,
+              1419
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_42",
+          "surface": "出迎える",
+          "reading": "でむかえる",
+          "meaning": "to pick up and meet someone",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              357,
+              1423,
+              1705,
+              1470
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_43",
+          "surface": "共にする",
+          "reading": "ともにする",
+          "meaning": "to do it together",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              360,
+              1473,
+              1540,
+              1524
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_44",
+          "surface": "さんざん",
+          "reading": "さんざん",
+          "meaning": "deeply",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              359,
+              1521,
+              1422,
+              1579
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_45",
+          "surface": "冗談",
+          "reading": "じょうだん",
+          "meaning": "joke",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              294,
+              1575,
+              1394,
+              1630
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_46",
+          "surface": "[~に]甘える",
+          "reading": "あまえる",
+          "meaning": "to lean on; to rely on",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              357,
+              1629,
+              1592,
+              1678
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_47",
+          "surface": "虫がいい",
+          "reading": "むしがいい",
+          "meaning": "take too much for granted",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              421,
+              1679,
+              1664,
+              1730
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_48",
+          "surface": "虫",
+          "reading": "むし",
+          "meaning": "insect",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              288,
+              1727,
+              1412,
+              1787
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_49",
+          "surface": "一見",
+          "reading": "いっけん",
+          "meaning": "at a glance",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              205,
+              1772,
+              1465,
+              1837
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_50",
+          "surface": "意志",
+          "reading": "い",
+          "meaning": "will; volition",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              209,
+              1831,
+              1493,
+              1888
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_51",
+          "surface": "尊重(する)",
+          "reading": "そんちょう(する)",
+          "meaning": "to respect",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              210,
+              1885,
+              1460,
+              1937
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_52",
+          "surface": "[~に]転嫁(する)",
+          "reading": "てんか(する)",
+          "meaning": "to pass (the buck) [vt.]",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              205,
+              1935,
+              1616,
+              1988
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_53",
+          "surface": "のがれる",
+          "reading": "のがれる",
+          "meaning": "to avoid",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              358,
+              1989,
+              1435,
+              2037
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_54",
           "surface": "呪文",
-          "reading": null,
+          "reading": "じゅもん",
           "meaning": "spell",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 342
+            "pageNumber": 309,
+            "coordinates": [
+              291,
+              2032,
+              1402,
+              2102
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         },
         {
-          "id": "quartet_2_textbook_quartet_2_11_vocab_111",
-          "surface": "大勢",
-          "reading": null,
-          "meaning": "many(people)",
+          "id": "quartet_2_l11_vocab_55",
+          "surface": "[~に]判断をくだす",
+          "reading": "はんだんをくだす",
+          "meaning": "to make a decision",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
-            "pageNumber": 343
+            "pageNumber": 309,
+            "coordinates": [
+              348,
+              2093,
+              1567,
+              2147
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_56",
+          "surface": "面倒な",
+          "reading": "めんどうな",
+          "meaning": "troublesome; laborious",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              353,
+              2141,
+              1625,
+              2195
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_57",
+          "surface": "思案(する)",
+          "reading": "しあん(する)",
+          "meaning": "to think",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              357,
+              2196,
+              1439,
+              2245
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_58",
+          "surface": "放棄(する)",
+          "reading": "ほうき(する)",
+          "meaning": "to abandon",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              208,
+              2245,
+              1478,
+              2296
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_59",
+          "surface": "[〜に]押しつける",
+          "reading": "おしつける",
+          "meaning": "to push [vt.]",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              423,
+              2298,
+              1485,
+              2347
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_60",
+          "surface": "無礼な",
+          "reading": "ぶれいな",
+          "meaning": "rude",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              351,
+              2347,
+              1393,
+              2403
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_61",
+          "surface": "別言(する)",
+          "reading": "べつげんする",
+          "meaning": "to say in other words",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 309,
+            "coordinates": [
+              354,
+              2401,
+              1598,
+              2450
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_62",
+          "surface": "殿様",
+          "reading": "とのさま",
+          "meaning": "lord",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 310,
+            "coordinates": [
+              217,
+              184,
+              1311,
+              235
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_63",
+          "surface": "家来",
+          "reading": "けらい",
+          "meaning": "retainer",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 310,
+            "coordinates": [
+              351,
+              237,
+              1359,
+              288
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_64",
+          "surface": "[~に]命じる",
+          "reading": "めいじる",
+          "meaning": "to order [vt.]",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 310,
+            "coordinates": [
+              282,
+              289,
+              1422,
+              338
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_65",
+          "surface": "横柄な",
+          "reading": "おうへいな",
+          "meaning": "arrogant",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 310,
+            "coordinates": [
+              133,
+              339,
+              1368,
+              390
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_66",
+          "surface": "〜以外の何ものでもない",
+          "reading": "〜いがいのなにものでもない",
+          "meaning": "nothing other than ~",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 310,
+            "coordinates": [
+              356,
+              390,
+              1527,
+              441
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_67",
+          "surface": "二重人格者",
+          "reading": "にじゅうじんかくしゃ",
+          "meaning": "person with dual personality",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              360,
+              288,
+              1710,
+              340
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_68",
+          "surface": "復権",
+          "reading": "ふっけん",
+          "meaning": "restoration",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              294,
+              341,
+              1484,
+              396
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_69",
+          "surface": "みごとな",
+          "reading": "みごとな",
+          "meaning": "wonderful",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              373,
+              393,
+              1478,
+              446
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_70",
+          "surface": "あやつる",
+          "reading": "あやつる",
+          "meaning": "to manipulate; to speak",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              423,
+              443,
+              1641,
+              496
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_71",
+          "surface": "「~がかけめぐる",
+          "reading": "かけめぐる",
+          "meaning": "to go around [vt.]",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              362,
+              496,
+              1562,
+              552
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_72",
+          "surface": "[~が交錯(する)",
+          "reading": "こうさく(する)",
+          "meaning": "to cross [vi.]",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              204,
+              547,
+              1497,
+              602
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_73",
+          "surface": "おそう",
+          "reading": "おそう",
+          "meaning": "to strike",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              422,
+              600,
+              1450,
+              651
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_74",
+          "surface": "なんだか",
+          "reading": "なんだか",
+          "meaning": "somehow",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              424,
+              652,
+              1465,
+              701
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_75",
+          "surface": "二人ながらに",
+          "reading": "ふたりながらに",
+          "meaning": "although we are two",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              375,
+              703,
+              1602,
+              755
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_76",
+          "surface": "都合",
+          "reading": "つごう",
+          "meaning": "in all",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              417,
+              749,
+              1416,
+              809
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_77",
+          "surface": "なす",
+          "reading": "なす",
+          "meaning": "to have",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              420,
+              801,
+              1437,
+              861
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_78",
+          "surface": "拒絶(する)",
+          "reading": "きよぜつ(する)",
+          "meaning": "to reject",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              208,
+              856,
+              1449,
+              909
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_79",
+          "surface": "姿勢",
+          "reading": "しせい",
+          "meaning": "posture; attitude",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              207,
+              908,
+              1556,
+              966
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_80",
+          "surface": "[~に]持ちかける",
+          "reading": "もちかける",
+          "meaning": "to start talking [vt.]",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              368,
+              961,
+              1590,
+              1012
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_81",
+          "surface": "[~がはっきりする",
+          "reading": "はっきりする",
+          "meaning": "to become clear [vi.]",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              200,
+              1007,
+              1598,
+              1065
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_82",
+          "surface": "[~に]返答(する)",
+          "reading": "へんとう(する)",
+          "meaning": "to respond",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              424,
+              1066,
+              1479,
+              1114
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_83",
+          "surface": "適当に",
+          "reading": "てきとうに",
+          "meaning": "halfhearted",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              204,
+              1112,
+              1493,
+              1166
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_84",
+          "surface": "にごす",
+          "reading": "にごす",
+          "meaning": "to dodge",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              420,
+              1162,
+              1457,
+              1221
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_85",
+          "surface": "細かい",
+          "reading": "こまかい",
+          "meaning": "fine; detailed",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              206,
+              1217,
+              1511,
+              1271
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_86",
+          "surface": "詮索(する)",
+          "reading": "せんさく(する)",
+          "meaning": "to pry into",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              205,
+              1269,
+              1479,
+              1324
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_87",
+          "surface": "おおよそ",
+          "reading": "おおよそ",
+          "meaning": "approximately",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              424,
+              1323,
+              1528,
+              1373
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_88",
+          "surface": "ストレートな",
+          "reading": "すとれとな",
+          "meaning": "straight",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              424,
+              1373,
+              1447,
+              1425
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_89",
+          "surface": "情的な",
+          "reading": "じょうてきな",
+          "meaning": "emotional",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              418,
+              1423,
+              1473,
+              1477
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_90",
+          "surface": "あいまいな",
+          "reading": "あいまいな",
+          "meaning": "ambiguous",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              207,
+              1473,
+              1487,
+              1530
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_91",
+          "surface": "[~に]共通(する)",
+          "reading": "きょうつう(する)",
+          "meaning": "to be common",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              204,
+              1527,
+              1527,
+              1578
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_92",
+          "surface": "言えよう",
+          "reading": "いえよう",
+          "meaning": "you can say that",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              354,
+              1581,
+              1547,
+              1630
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_93",
+          "surface": "双方",
+          "reading": "そうほう",
+          "meaning": "both",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              206,
+              1629,
+              1403,
+              1684
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_94",
+          "surface": "国語",
+          "reading": "こくご",
+          "meaning": "national language",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              417,
+              1677,
+              1573,
+              1736
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_95",
+          "surface": "人格",
+          "reading": "じんかく",
+          "meaning": "personality",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              350,
+              1727,
+              1491,
+              1793
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_96",
+          "surface": "いつのまにか",
+          "reading": "いつのまにか",
+          "meaning": "without knowing",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              422,
+              1787,
+              1564,
+              1836
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_97",
+          "surface": "使い分ける",
+          "reading": "つかいわける",
+          "meaning": "to use properly",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              422,
+              1837,
+              1535,
+              1890
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_98",
+          "surface": "心なしか",
+          "reading": "こころなしか",
+          "meaning": "somehow",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              359,
+              1889,
+              1466,
+              1939
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_99",
+          "surface": "おとなしい",
+          "reading": "おとなしい",
+          "meaning": "quiet",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              425,
+              1936,
+              1416,
+              1997
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_100",
+          "surface": "手ごわい",
+          "reading": "てごわい",
+          "meaning": "tough",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              357,
+              1991,
+              1422,
+              2045
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_101",
+          "surface": "使用(する)",
+          "reading": "しよう(する)",
+          "meaning": "to use",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              359,
+              2044,
+              1422,
+              2093
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_102",
+          "surface": "身り手りよろしく",
+          "reading": "みりてりろしく",
+          "meaning": "using a lot of gestures",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              358,
+              2096,
+              1619,
+              2147
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_103",
+          "surface": "母音",
+          "reading": "ぼいん",
+          "meaning": "vowel",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              357,
+              2146,
+              1420,
+              2198
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_104",
+          "surface": "ふんだんに",
+          "reading": "ふんだんに",
+          "meaning": "abundantly",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              420,
+              2194,
+              1497,
+              2251
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_105",
+          "surface": "響く",
+          "reading": "ひびく",
+          "meaning": "to resonate",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              423,
+              2248,
+              1483,
+              2303
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_106",
+          "surface": "陽気な",
+          "reading": "ようきな",
+          "meaning": "hilarious",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              207,
+              2299,
+              1461,
+              2352
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_107",
+          "surface": "抑制(する)",
+          "reading": "よくせい(する)",
+          "meaning": "to suppress",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              207,
+              2353,
+              1487,
+              2402
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_108",
+          "surface": "抑制がきく",
+          "reading": "よくせいがきく",
+          "meaning": "suppressed; restrained",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              423,
+              2405,
+              1628,
+              2454
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_109",
+          "surface": "キングズ・イングリッシュ",
+          "reading": "きんぐず・いんぐりっしゅ",
+          "meaning": "King's English",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              425,
+              2454,
+              1529,
+              2507
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_110",
+          "surface": "[~が落ち着く",
+          "reading": "おちっく",
+          "meaning": "to calm down",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 311,
+            "coordinates": [
+              202,
+              2507,
+              1520,
+              2558
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_111",
+          "surface": "あながち",
+          "reading": "あながち",
+          "meaning": "not necessarily",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              280,
+              186,
+              1458,
+              235
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_112",
+          "surface": "俗論",
+          "reading": "ぞくろん",
+          "meaning": "popular opinion",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              349,
+              236,
+              1477,
+              288
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_113",
+          "surface": "言いきる",
+          "reading": "いいきる",
+          "meaning": "to say definitely",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              353,
+              288,
+              1472,
+              338
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_114",
+          "surface": "平板な",
+          "reading": "へいばんな",
+          "meaning": "flat",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              277,
+              336,
+              1319,
+              391
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_115",
+          "surface": "国民",
+          "reading": "こくみん",
+          "meaning": "citizens of the country",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              212,
+              391,
+              1554,
+              443
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_116",
+          "surface": "通ずる(通じる)",
+          "reading": "つうずる(つうじる)",
+          "meaning": "to apply",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              282,
+              443,
+              1371,
+              495
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_117",
+          "surface": "製造(する)",
+          "reading": "せいぞう(する)",
+          "meaning": "to manufacture",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              132,
+              492,
+              1467,
+              546
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_118",
+          "surface": "検証(する)",
+          "reading": "けんしょ(る)",
+          "meaning": "to verify",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              123,
+              534,
+              1378,
+              604
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_119",
+          "surface": "同胞",
+          "reading": "どうほう",
+          "meaning": "fellow being",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              133,
+              592,
+              1425,
+              652
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_120",
+          "surface": "セリフ",
+          "reading": "せりふ",
+          "meaning": "quote; line",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              350,
+              646,
+              1405,
+              701
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_121",
+          "surface": "〜にしくはない",
+          "reading": "〜にしくはない",
+          "meaning": "nothing surpasses ~",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              283,
+              703,
+              1524,
+              748
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_122",
+          "surface": "そのへん",
+          "reading": "そのへん",
+          "meaning": "around",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              282,
+              752,
+              1363,
+              801
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_123",
+          "surface": "きっぱりと",
+          "reading": "きっぱりと",
+          "meaning": "clearly",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              282,
+              800,
+              1357,
+              855
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_124",
+          "surface": "[~に]呼びかける",
+          "reading": "よびかける",
+          "meaning": "to call",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              354,
+              855,
+              1351,
+              905
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_125",
+          "surface": "ぼんやりと",
+          "reading": "ぼんやりと",
+          "meaning": "vaguely",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              132,
+              906,
+              1368,
+              961
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_126",
+          "surface": "喚起（する)",
+          "reading": "かんき（する)",
+          "meaning": "to arouse",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              131,
+              957,
+              1385,
+              1008
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_127",
+          "surface": "自己主張（する)",
+          "reading": "じこしゅちょう(する)",
+          "meaning": "to assert oneself",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              131,
+              1009,
+              1477,
+              1059
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_128",
+          "surface": "[~に]つけ加える",
+          "reading": "つけくわえる",
+          "meaning": "to add",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              278,
+              1061,
+              1351,
+              1110
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_129",
+          "surface": "物言い",
+          "reading": "ものいい",
+          "meaning": "saying",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              349,
+              1112,
+              1355,
+              1167
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_130",
+          "surface": "ぼかす",
+          "reading": "ぼかす",
+          "meaning": "to blur",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              280,
+              1161,
+              1358,
+              1215
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_131",
+          "surface": "さぞかし",
+          "reading": "さぞかし",
+          "meaning": "I bet; indeed",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              283,
+              1216,
+              1428,
+              1266
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
+          }
+        },
+        {
+          "id": "quartet_2_l11_vocab_132",
+          "surface": "歯がゆい",
+          "reading": "はがゆい",
+          "meaning": "frustrating; irritating",
+          "lessonNumber": 11,
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 312,
+            "coordinates": [
+              130,
+              1264,
+              1543,
+              1320
+            ]
+          },
+          "tags": [
+            "gold_bessatsu"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.073Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "Bessatsu vocab list OCR"
           }
         }
       ],
       "grammar": [
         {
-          "id": "cefr_b2_434",
+          "id": "quartet_2_l11_grammar_1",
           "pattern": "ようがない・ようもない",
           "meaning": "Expresses that there is no possible way to do something, as no means or method exists.",
           "explanation": "ようがない and its softer variant ようもない attach to the verb stem (masu-stem) to indicate that doing something is completely impossible because there is no available means or method. This is different from できない in that it emphasizes the absence of any way, not just inability. It is used in both spoken and written Japanese and carries a tone of resignation or frustration.",
@@ -214,29 +3499,20 @@
               "english": "The manual was entirely in French, so there was no way to read it."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/negative_presence_ない",
-            "title": "Negative presence: ない",
-            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
-            "examples": [
-              {
-                "japanese": "2.5.5 Negative presence: ない"
-              },
-              {
-                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
-              },
-              {
-                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
-              }
-            ]
-          },
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_496",
+          "id": "quartet_2_l11_grammar_2",
           "pattern": "さすが",
           "meaning": "as one would expect, only natural, that is just like..., even",
           "explanation": "Grammar explanation for さすが",
@@ -247,13 +3523,20 @@
               "english": "Example sentence."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_497",
+          "id": "quartet_2_l11_grammar_3",
           "pattern": "だけのことはある",
           "meaning": "No wonder, Not surprising that, As expected",
           "explanation": "Grammar explanation for だけのことはある",
@@ -264,31 +3547,20 @@
               "english": "Example sentence."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/being_です_だ_ある_いる",
-            "title": "Being: です, だ, ある, いる",
-            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
-            "examples": [
-              {
-                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
-              },
-              {
-                "japanese": "bases areなら,なり，なる,なれ andなれ.",
-                "english": "While typically used in combination with the verb particle lC, it can"
-              },
-              {
-                "japanese": "also be used in combination with the particle と, in which case its meaning",
-                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
-              }
-            ]
-          },
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_498",
+          "id": "quartet_2_l11_grammar_4",
           "pattern": "てはいられない",
           "meaning": "Can&#x27;t afford to, Unable to",
           "explanation": "Grammar explanation for てはいられない",
@@ -299,29 +3571,20 @@
               "english": "Example sentence."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/negative_presence_ない",
-            "title": "Negative presence: ない",
-            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
-            "examples": [
-              {
-                "japanese": "2.5.5 Negative presence: ない"
-              },
-              {
-                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
-              },
-              {
-                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
-              }
-            ]
-          },
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_499",
+          "id": "quartet_2_l11_grammar_5",
           "pattern": "どうせ",
           "meaning": "Expresses resignation or certainty that something will turn out a certain (usually negative) way regardless of effort.",
           "explanation": "どうせ is an adverb that conveys the speaker's resigned or fatalistic attitude — that the outcome is inevitable no matter what one does. It often implies pessimism or sarcasm ('it's going to be that way anyway, so why bother'). It is used in casual to neutral speech and is rarely found in formal writing. It frequently pairs with んだから, だから, or similar expressions of reasoning.",
@@ -342,13 +3605,20 @@
               "english": "They'll definitely just repeat the same mistake again anyway."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_500",
+          "id": "quartet_2_l11_grammar_6",
           "pattern": "いきなり",
           "meaning": "For no reason, Suddenly, All of a sudden",
           "explanation": "Grammar explanation for いきなり",
@@ -359,13 +3629,20 @@
               "english": "Example sentence."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_501",
+          "id": "quartet_2_l11_grammar_7",
           "pattern": "からといって",
           "meaning": "Used to warn that a stated reason or condition does not automatically justify a particular conclusion or action.",
           "explanation": "からといって introduces a premise that might seem like a valid reason, then immediately refutes or qualifies it, often with a negative or cautionary statement in the following clause. It is equivalent to 'just because X doesn't mean Y.' Register is neutral and the pattern is common in both conversation and formal writing.",
@@ -386,13 +3663,20 @@
               "english": "Just because you failed doesn't mean you need to give up right away."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_502",
+          "id": "quartet_2_l11_grammar_8",
           "pattern": "ことは〜が",
           "meaning": "It is true...but, although, but",
           "explanation": "Grammar explanation for ことは〜が",
@@ -403,13 +3687,20 @@
               "english": "Example sentence."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_503",
+          "id": "quartet_2_l11_grammar_9",
           "pattern": "ものか",
           "meaning": "Definitely not, absolutely not, impossible, do you really think~?",
           "explanation": "The nominalizer もの combined with the question particle か creates a strong emphatic negation or rhetorical question. It expresses the speaker's firm conviction that something will not or cannot happen, often with emotional intensity. Common in both written and spoken Japanese.",
@@ -430,13 +3721,20 @@
               "english": "Do you really think I would give up so easily?"
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_504",
+          "id": "quartet_2_l11_grammar_10",
           "pattern": "に限らず",
           "meaning": "Means 'not only X but also', extending a statement beyond a single subject to a broader group.",
           "explanation": "に限らず follows a noun and expands the scope of the sentence, indicating that the statement is not restricted to the mentioned item alone. It is often paired with も or だけでなく to strengthen the expansive meaning. Common in both spoken and written Japanese, it is slightly more formal than だけじゃなくて.",
@@ -457,13 +3755,20 @@
               "english": "Talent in music and art is also important, not just talent in sports."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_505",
+          "id": "quartet_2_l11_grammar_11",
           "pattern": "更に",
           "meaning": "Even more or further, Again, More and more",
           "explanation": "Grammar explanation for 更に",
@@ -474,13 +3779,20 @@
               "english": "Example sentence."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_506",
+          "id": "quartet_2_l11_grammar_12",
           "pattern": "それとも",
           "meaning": "Used to present an alternative option, especially in questions or when asking someone to choose between two possibilities.",
           "explanation": "それとも is a conjunction that connects two alternatives, similar to 'or' or 'or else' in English. It is most naturally used in questions where the speaker asks the listener to choose between options. Unlike か, which is a simple disjunction, それとも implies the alternatives are somewhat contrasting or mutually exclusive. It is conversational and common in spoken Japanese.",
@@ -501,13 +3813,20 @@
               "english": "Do you want to try it yourself, or shall I help you?"
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_507",
+          "id": "quartet_2_l11_grammar_13",
           "pattern": "てからでないと",
           "meaning": "Expresses that a second action cannot happen unless or until the first action is completed.",
           "explanation": "てからでないと (or てからでなければ) attaches to the て-form of a verb and sets up a strict prerequisite: the result in the main clause (usually negative) cannot occur without first completing the action in the subordinate clause. It is more emphatic than てから alone and is used in both spoken and written Japanese at a fairly neutral register. The main clause typically ends with できない, わからない, or a similar negative expression.",
@@ -528,29 +3847,20 @@
               "english": "I cannot give you an answer until I check with my supervisor."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/negative_presence_ない",
-            "title": "Negative presence: ない",
-            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
-            "examples": [
-              {
-                "japanese": "2.5.5 Negative presence: ない"
-              },
-              {
-                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
-              },
-              {
-                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
-              }
-            ]
-          },
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_508",
+          "id": "quartet_2_l11_grammar_14",
           "pattern": "途中に・途中で",
           "meaning": "On the way to somewhere, partway through a journey, or in the middle of an activity or process.",
           "explanation": "途中に focuses on a point in space or time ('at a point along the way'), while 途中で focuses on an action or interruption ('in the middle of doing'). Both are natural and neutral in register. 途中で is especially common when describing something that happened or was done before completion, often implying interruption or a pause mid-process.",
@@ -571,13 +3881,20 @@
               "english": "On the way to the station, a new café had opened."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_509",
+          "id": "quartet_2_l11_grammar_15",
           "pattern": "というものでもない",
           "meaning": "Indicates that something is not always true or not guaranteed, pushing back against a simplistic or absolute assumption.",
           "explanation": "This expression attaches to a noun or plain verb form and is used to caution that a particular outcome or rule does not always apply. It implies nuance — that the situation is more complex than a straightforward assumption suggests. It is neutral to slightly formal in register and often appears in written or analytical speech.",
@@ -598,29 +3915,20 @@
               "english": "It's not necessarily true that hard work always leads to success, but if you don't give up, the possibilities expand."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/negative_presence_ない",
-            "title": "Negative presence: ない",
-            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
-            "examples": [
-              {
-                "japanese": "2.5.5 Negative presence: ない"
-              },
-              {
-                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
-              },
-              {
-                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
-              }
-            ]
-          },
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_510",
+          "id": "quartet_2_l11_grammar_16",
           "pattern": "～ところに・～ところへ",
           "meaning": "Expresses that something happens at a specific, often significant or inconvenient moment.",
           "explanation": "Attaches to the plain present or past form of a verb to indicate that a second event occurs right at that moment. ところに tends to focus on the timing itself, while ところへ adds a nuance of something arriving or intruding into that moment. Used in both spoken and written Japanese; the resulting sentence often carries a sense of surprise, coincidence, or disruption.",
@@ -641,13 +3949,20 @@
               "english": "Just when I had finally fallen asleep, the people next door started making noise."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_511",
+          "id": "quartet_2_l11_grammar_17",
           "pattern": "とも",
           "meaning": "Even if, No matter",
           "explanation": "Grammar explanation for とも",
@@ -658,13 +3973,20 @@
               "english": "Example sentence."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_512",
+          "id": "quartet_2_l11_grammar_18",
           "pattern": "要するに",
           "meaning": "Used to introduce a summary or simplified restatement of what was just said.",
           "explanation": "要するに is a conjunction meaning 'in short,' 'to sum up,' or 'in other words,' and is placed at the start of a clause to signal that the speaker is distilling a previous explanation into its key point. It is neutral to slightly formal in register and is common in both spoken and written Japanese, especially in explanations, reports, or discussions. It often appears after a long explanation to deliver the bottom line.",
@@ -685,31 +4007,20 @@
               "english": "I used technical terms, but to sum up, this medicine has few side effects."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/doing_する",
-            "title": "Doing: する",
-            "excerpt": "84 CHAPTER 2. VERB GRAMMAR\n2.5.31 Doing: する\nWe've already seen す る as irregular verb, and it has been used in enough\nexample sentences to let it be no surprise that it means \"do'\". However,\nthis isn't the only meaning for this verb. When used in combination with\na direct object – as transitive verb – す る does mean \"do', but when used\nas intransitive verb, its meaning should be considered to be \"decide on'\nor \"choose'\". To show this difference in meaning between the transitive\nたどうし じどうし\n(strictly",
-            "examples": [
-              {
-                "japanese": "2.5.31 Doing: する"
-              },
-              {
-                "japanese": "We've already seen す る as irregular verb, and it has been used in enough",
-                "english": "example sentences to let it be no surprise that it means \"do'\". However,"
-              },
-              {
-                "japanese": "a direct object – as transitive verb – す る does mean \"do', but when used",
-                "english": "as intransitive verb, its meaning should be considered to be \"decide on'"
-              }
-            ]
-          },
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_513",
+          "id": "quartet_2_l11_grammar_19",
           "pattern": "万が一",
           "meaning": "Refers to a highly unlikely but possible scenario, used when preparing for or warning about a worst-case event.",
           "explanation": "万が一 literally means 'one in ten thousand' and is used to describe something that has a very slim chance of happening — equivalent to 'just in case,' 'in the unlikely event,' or 'if by any chance' in English. It can function as an adverb or conjunctive and often appears with conditional forms like ～たら or ～の場合. It is neutral in register and common in both spoken warnings and written instructions.",
@@ -730,13 +4041,20 @@
               "english": "If by any chance the train is late, please go ahead and start without me."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_683",
+          "id": "quartet_2_l11_grammar_20",
           "pattern": "に際して",
           "meaning": "Marks a specific important moment or event as the context for an action or statement.",
           "explanation": "に際して follows a noun or verb dictionary form and means 'on the occasion of' or 'at the time of'. It is formal and typically used for significant events such as ceremonies, departures, launches, or formal decisions. It is more formal than 際に and appears frequently in written and ceremonial speech.",
@@ -757,13 +4075,20 @@
               "english": "Upon my overseas assignment, I was required to undergo language training."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_684",
+          "id": "quartet_2_l11_grammar_21",
           "pattern": "のももっともだ",
           "meaning": "May well, Have or has good reason for, No wonder, … Is only natural",
           "explanation": "Grammar explanation for のももっともだ",
@@ -774,31 +4099,20 @@
               "english": "Example sentence."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/being_です_だ_ある_いる",
-            "title": "Being: です, だ, ある, いる",
-            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
-            "examples": [
-              {
-                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
-              },
-              {
-                "japanese": "bases areなら,なり，なる,なれ andなれ.",
-                "english": "While typically used in combination with the verb particle lC, it can"
-              },
-              {
-                "japanese": "also be used in combination with the particle と, in which case its meaning",
-                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
-              }
-            ]
-          },
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_685",
+          "id": "quartet_2_l11_grammar_22",
           "pattern": "のも当然だ",
           "meaning": "It is only natural that, It is no wonder that",
           "explanation": "The nominalizer の combined with も (also/even) and 当然だ expresses that something is inevitable or unsurprising given the circumstances. It emphasizes that the consequence logically follows from what precedes. This pattern is more formal than simple 当然だ and is common in explanatory contexts.",
@@ -819,31 +4133,20 @@
               "english": "It's no wonder that it's popular."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/being_です_だ_ある_いる",
-            "title": "Being: です, だ, ある, いる",
-            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
-            "examples": [
-              {
-                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
-              },
-              {
-                "japanese": "bases areなら,なり，なる,なれ andなれ.",
-                "english": "While typically used in combination with the verb particle lC, it can"
-              },
-              {
-                "japanese": "also be used in combination with the particle と, in which case its meaning",
-                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
-              }
-            ]
-          },
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_686",
+          "id": "quartet_2_l11_grammar_23",
           "pattern": "の下で",
           "meaning": "Indicates that something takes place under a certain condition, rule, authority, or supervision.",
           "explanation": "の下で attaches to a noun and expresses that an action occurs within the framework of, or under the control or guidance of, that noun. It can refer to a person's supervision ('under the professor'), an institutional condition ('under the law'), or an environmental situation ('under harsh conditions'). It is neutral to formal in register.",
@@ -864,13 +4167,20 @@
               "english": "This contract was concluded under Japanese law."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         },
         {
-          "id": "cefr_b2_687",
+          "id": "quartet_2_l11_grammar_24",
           "pattern": "を中心に",
           "meaning": "Indicates that something revolves around, is focused on, or is centered on a particular person, place, or thing.",
           "explanation": "を中心に attaches to a noun and expresses that the noun is the core or focal point of an activity, group, or area. It can describe physical location ('centered around Tokyo') or abstract focus ('centered on the manager'). It is neutral in register and appears in both written and spoken Japanese.",
@@ -891,808 +4201,517 @@
               "english": "Rain is expected throughout the Kanto region, centered on Tokyo."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
-          }
-        },
-        {
-          "id": "cefr_b2_688",
-          "pattern": "恐れがある",
-          "meaning": "There is a risk or fear that, Be in danger of, Possibility of",
-          "explanation": "The noun 恐れ (fear, risk) combined with がある creates an expression indicating potential danger or negative outcome. It is more formal than simple possibility and is often used in news, reports, and formal speech. The pattern emphasizes concern about what might happen.",
-          "examples": [
-            {
-              "japanese": "この政策により物価が上がる恐れがある。",
-              "reading": "このせいさくによりぶっかがあがるおそれがある。",
-              "english": "There is a risk that prices will rise due to this policy."
-            },
-            {
-              "japanese": "プロジェクトが遅れる恐れがある。",
-              "reading": "ぷろじぇくとがおくれるおそれがある。",
-              "english": "There is a danger that the project will be delayed."
-            },
-            {
-              "japanese": "感染が広がる恐れがある。",
-              "reading": "かんせんがひろがるおそれがある。",
-              "english": "There is a risk that the infection will spread."
-            }
-          ],
-          "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
-          }
-        },
-        {
-          "id": "cefr_b2_689",
-          "pattern": "を契機に",
-          "meaning": "Indicates that an event served as the trigger or turning point for a subsequent change or action.",
-          "explanation": "を契機に (also を契機として) follows a noun and means 'using X as an opportunity' or 'triggered by X'. It emphasizes that a particular event became the catalyst for a meaningful change. It is formal and typically used in written Japanese or formal speech to describe turning points.",
-          "examples": [
-            {
-              "japanese": "その事故を契機に、会社は安全対策を見直した。",
-              "reading": "そのじこをけいきに、かいしゃはあんぜんたいさくをみなおした。",
-              "english": "The company reviewed its safety measures, triggered by that accident."
-            },
-            {
-              "japanese": "留学を契機に、将来のキャリアを真剣に考えるようになった。",
-              "reading": "りゅうがくをけいきに、しょうらいのキャリアをしんけんにかんがえるようになった。",
-              "english": "Studying abroad became the trigger for me to seriously think about my future career."
-            },
-            {
-              "japanese": "その出来事を契機として、二人の関係は大きく変わった。",
-              "reading": "そのできごとをけいきとして、ふたりのかんけいはおおきくかわった。",
-              "english": "That event became the turning point that significantly changed their relationship."
-            }
-          ],
-          "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
-          }
-        },
-        {
-          "id": "cefr_b2_690",
-          "pattern": "を巡って",
-          "meaning": "Indicates that a discussion, conflict, or action revolves around or is over a particular issue or topic.",
-          "explanation": "を巡って attaches to a noun and expresses that something — typically a debate, dispute, negotiation, or competition — is happening around or concerning that noun. It often carries a nuance of contention or multiple parties being involved. It is more formal than について and is frequently used in news, academic, and analytical writing.",
-          "examples": [
-            {
-              "japanese": "土地の所有権を巡って、隣人との間で争いが起きた。",
-              "reading": "とちのしょゆうけんをめぐって、りんじんとのあいだであらそいがおきた。",
-              "english": "A dispute arose between neighbors over land ownership."
-            },
-            {
-              "japanese": "新しい法案を巡って、国会で激しい議論が交わされた。",
-              "reading": "あたらしいほうあんをめぐって、こっかいではげしいぎろんがかわされた。",
-              "english": "Intense debate was exchanged in parliament over the new bill."
-            },
-            {
-              "japanese": "その事件を巡っては、いまだに様々な意見がある。",
-              "reading": "そのじけんをめぐっては、いまだにさまざまないけんがある。",
-              "english": "Regarding that incident, various opinions still exist to this day."
-            }
-          ],
-          "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
-          }
-        },
-        {
-          "id": "cefr_b2_691",
-          "pattern": "おまけに",
-          "meaning": "In addition, on top of that, what is more, to make matters worse",
-          "explanation": "An adverbial expression that adds information sequentially, often implying that an additional circumstance makes a situation worse or more complicated. It connects two related situations or facts and suggests cumulative or worsening effect. Used in both formal and casual speech.",
-          "examples": [
-            {
-              "japanese": "仕事は忙しいし、おまけに家事もある。",
-              "reading": "しごとはいそがしいし、おまけにかじもある。",
-              "english": "Work is busy, and on top of that, there is housework too."
-            },
-            {
-              "japanese": "雨が降っているし、おまけに風も強い。",
-              "reading": "あめがふっているし、おまけにかぜもつよい。",
-              "english": "It's raining, and to make matters worse, the wind is strong."
-            },
-            {
-              "japanese": "試験に失敗したし、おまけに誰にも相談できなかった。",
-              "reading": "しけんにしっぱいしたし、おまけにだれにもそうだんできなかった。",
-              "english": "I failed the exam, and to make matters worse, I couldn't consult with anyone."
-            }
-          ],
-          "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
-          }
-        },
-        {
-          "id": "cefr_b2_692",
-          "pattern": "に沿って",
-          "meaning": "Means either 'along (a physical path)' or 'in line with / in accordance with (a plan, rule, or intention)'.",
-          "explanation": "に沿って has two main uses: physically, it means moving or existing along something like a river or road; abstractly, it means acting in conformity with or following guidelines, policies, or expectations. Both uses share the core sense of staying close to or following something as a guide. It is neutral in register and used in both spoken and written Japanese. に沿った directly modifies nouns.",
-          "examples": [
-            {
-              "japanese": "川に沿って歩くと、きれいな景色が楽しめる。",
-              "reading": "かわにそってあるくと、きれいなけしきがたのしめる。",
-              "english": "If you walk along the river, you can enjoy beautiful scenery."
-            },
-            {
-              "japanese": "計画に沿って、プロジェクトを進めていきましょう。",
-              "reading": "けいかくにそって、プロジェクトをすすめていきましょう。",
-              "english": "Let's move the project forward in accordance with the plan."
-            },
-            {
-              "japanese": "会社の方針に沿った行動が、社員には求められる。",
-              "reading": "かいしゃのほうしんにそったこうどうが、しゃいんにはもとめられる。",
-              "english": "Employees are expected to act in line with company policy."
-            }
-          ],
-          "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
-          }
-        },
-        {
-          "id": "cefr_b2_693",
-          "pattern": "陸に～ない",
-          "meaning": "Not well or properly, Not much or enough, Barely, Hardly",
-          "explanation": "Grammar explanation for 陸に～ない",
-          "examples": [
-            {
-              "japanese": "例文です。",
-              "reading": "れいぶんです。",
-              "english": "Example sentence."
-            }
-          ],
-          "maynardRef": {
-            "topicId": "verb_grammar/negative_presence_ない",
-            "title": "Negative presence: ない",
-            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
-            "examples": [
-              {
-                "japanese": "2.5.5 Negative presence: ない"
-              },
-              {
-                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
-              },
-              {
-                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
-              }
-            ]
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 1
           },
-          "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
-          }
-        },
-        {
-          "id": "cefr_b2_694",
-          "pattern": "幸い・幸いなことに",
-          "meaning": "Luckily, Fortunately",
-          "explanation": "Grammar explanation for 幸い・幸いなことに",
-          "examples": [
-            {
-              "japanese": "例文です。",
-              "reading": "れいぶんです。",
-              "english": "Example sentence."
-            }
-          ],
-          "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
-          }
-        },
-        {
-          "id": "cefr_b2_695",
-          "pattern": "ていては",
-          "meaning": "Expresses that if a current action or state continues, a negative result will follow.",
-          "explanation": "Formed by attaching ては to the te-form of a verb (ていては) or to a noun/adjective with で. It sets up a conditional that strongly implies criticism or warning — the speaker judges the ongoing action as problematic. Commonly used in advice-giving contexts; the result clause is typically negative or unfavorable.",
-          "examples": [
-            {
-              "japanese": "毎晩ゲームばかりしていては、成績が上がるわけがない。",
-              "reading": "まいばんゲームばかりしていては、せいせきがあがるわけがない。",
-              "english": "If you keep playing games every night, there's no way your grades will improve."
-            },
-            {
-              "japanese": "そんなに無理をしていては、体を壊してしまうよ。",
-              "reading": "そんなにむりをしていては、からだをこわしてしまうよ。",
-              "english": "If you keep pushing yourself that hard, you'll end up ruining your health."
-            },
-            {
-              "japanese": "いつまでも迷っていては、チャンスを逃してしまう。",
-              "reading": "いつまでもまよっていては、チャンスをのがしてしまう。",
-              "english": "If you keep hesitating forever, you'll miss your chance."
-            }
-          ],
-          "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
-          }
-        },
-        {
-          "id": "cefr_b2_696",
-          "pattern": "僅かに",
-          "meaning": "Only, Slightly, A little, Barely, Merely",
-          "explanation": "Grammar explanation for 僅かに",
-          "examples": [
-            {
-              "japanese": "例文です。",
-              "reading": "れいぶんです。",
-              "english": "Example sentence."
-            }
-          ],
-          "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
-          }
-        },
-        {
-          "id": "cefr_b2_697",
-          "pattern": "および",
-          "meaning": "And, As well as",
-          "explanation": "Grammar explanation for および",
-          "examples": [
-            {
-              "japanese": "例文です。",
-              "reading": "れいぶんです。",
-              "english": "Example sentence."
-            }
-          ],
-          "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
-          }
-        },
-        {
-          "id": "cefr_b2_698",
-          "pattern": "たちまち",
-          "meaning": "Immediately, Quickly, Suddenly, In a moment or flash",
-          "explanation": "Grammar explanation for たちまち",
-          "examples": [
-            {
-              "japanese": "例文です。",
-              "reading": "れいぶんです。",
-              "english": "Example sentence."
-            }
-          ],
-          "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
-          }
-        },
-        {
-          "id": "cefr_b2_708",
-          "pattern": "未だに",
-          "meaning": "Indicates that a state or situation continues to persist up to the present moment, often contrary to expectation.",
-          "explanation": "未だに is an adverb that emphasizes the persistence of a state into the present, frequently implying that the speaker finds this surprising, unfortunate, or frustrating. It is used with both affirmative and negative predicates: with negatives it means 'not yet even now,' and with affirmatives it means 'still, even now.' It is appropriate in both written and spoken registers.",
-          "examples": [
-            {
-              "japanese": "彼女は未だに連絡先を変えていない。",
-              "reading": "かのじょはいまだにれんらくさきをかえていない。",
-              "english": "She still hasn't changed her contact information even now."
-            },
-            {
-              "japanese": "あの事故のことは未だに忘れられない。",
-              "reading": "あのじこのことはいまだにわすれられない。",
-              "english": "Even now, I still can't forget that accident."
-            },
-            {
-              "japanese": "未だに原因が分かっていないのは問題だと思う。",
-              "reading": "いまだにげんいんがわかっていないのはもんだいだとおもう。",
-              "english": "I think it's a problem that the cause is still unknown even now."
-            }
-          ],
-          "maynardRef": {
-            "topicId": "verb_grammar/being_です_だ_ある_いる",
-            "title": "Being: です, だ, ある, いる",
-            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
-            "examples": [
-              {
-                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
-              },
-              {
-                "japanese": "bases areなら,なり，なる,なれ andなれ.",
-                "english": "While typically used in combination with the verb particle lC, it can"
-              },
-              {
-                "japanese": "also be used in combination with the particle と, in which case its meaning",
-                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
-              }
-            ]
-          },
-          "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
-          }
-        },
-        {
-          "id": "cefr_b2_709",
-          "pattern": "何より",
-          "meaning": "Be glad, Be relieved, Most, Best, Above all else, More than anything",
-          "explanation": "Grammar explanation for 何より",
-          "examples": [
-            {
-              "japanese": "例文です。",
-              "reading": "れいぶんです。",
-              "english": "Example sentence."
-            }
-          ],
-          "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
-          }
-        },
-        {
-          "id": "cefr_b2_710",
-          "pattern": "たった(の)",
-          "meaning": "Only, just, no more than a limited amount",
-          "explanation": "This adverb or prefix emphasizes the smallness or limitation of a quantity, time, or scope. It can stand alone as an adverb or be followed by の to modify a noun directly. Used to express surprise or emphasis that something is remarkably small, brief, or inadequate.",
-          "examples": [
-            {
-              "japanese": "たったの三人で始めた会社が今は大きくなった。",
-              "reading": "たったのさんにんではじめたかいしゃがいまはおおきくなった。",
-              "english": "The company that started with just three people has grown large."
-            },
-            {
-              "japanese": "たった一日で全部終わった。",
-              "reading": "たったいちにちですべておわった。",
-              "english": "Everything was completed in just one day."
-            },
-            {
-              "japanese": "たった五分の違いで全く結果が変わった。",
-              "reading": "たったごふんのちがいでまったくけっかがかわった。",
-              "english": "The outcome changed completely with just a five-minute difference."
-            }
-          ],
-          "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "comprehensive grammar; source remapped"
           }
         }
       ],
       "contentBlocks": [
         {
-          "id": "quartet_2_5_dialogue_0",
+          "id": "quartet_2_l11_dialogue_1",
           "type": "dialogue",
           "title": "Dialogue quartet_2_11",
           "text": "話す: 学生生活\nめんせつ: 会話2学食についての提案\n格差社会: 131\nうら: 読み物1よろしく日本語表と裏\nら: 読み物2二重人格者の会話日本語の復権\nふつけん: 読みのストラテジー\n書く: 日本語と母語の違い\n話す: コミニケーショスタイル\n類義語の比較: 156\nはっそう: てんかん\n話す: 人や社会とのつながり",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 12
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "dialogue from comprehensive"
           }
         },
         {
-          "id": "quartet_2_5_dialogue_1",
+          "id": "quartet_2_l11_dialogue_2",
           "type": "dialogue",
           "title": "Dialogue 2_textbook_quartet_2_11",
           "text": "聞く: 求められる人材\nブラッシュアップ: 199\n上級ヘのチャレンジ: 200\nかんようく: ⑧インタビープロジェクト(Interviewproject)\n漢字チャレン: 226\nぶし: 部首「てへん()」\nおんぶ: 知っている漢字から単語の意味を考える\nちょうかい: 文型・表現さくいん\nぶんけい: 単語さくいん\n別冊: べつさつ",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 13
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "dialogue from comprehensive"
           }
         },
         {
-          "id": "quartet_2_5_dialogue_2",
+          "id": "quartet_2_l11_dialogue_3",
           "type": "dialogue",
           "title": "Dialogue quartet_2_5",
           "text": "むらかみはるき: 小説・エッセイを通じて考える愛\nHaruki: Murakami's new novel coming out next week must be interesting.\nやまなか: 回明日から英会話学校でアルイトを始める。緊張するが、きっと楽いに違いない。\nきんちう: ③あの授業は每週レポートを書くらいから、きっと大変に違いない。\n普: but also based on a proof of some sort.\nhigher: than~だろう.\n話す: Xはず is an expression used when the speaker's beliefis based on common sense or logical\nevidence: 例1）今日は日曜日だから、銀行は閉まっているはずだ。\nThe: bank should be closed because it's Sunday today.\nGeorge: likes parties, so there's no doubt that he'll come to the party today.\nA: メッセージに返事しなくてごめん。最近、忙しくて……\nSorry: for not replying to your message. I have been busy lately.\nB: 忙しかったとしても、返事はしてよ。心配するじゃない。\nI: would really appreciate a response even if you are busy. I have been worried.\nB: 実は迷ってて……。行ったとしても午前中で帰るつもり。午後から予定があって。\nまよ: 同駅から近くて、家賃が安かったとしても、古くて汚い部屋には住みたくない。\nやちん: 4どんなに大変だったとしても、医者になために勉強を続けつもりだ。",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 101
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "dialogue from comprehensive"
           }
         },
         {
-          "id": "quartet_2_5_dialogue_3",
+          "id": "quartet_2_l11_dialogue_4",
           "type": "dialogue",
           "title": "Dialogue 2_textbook_quartet_2_5",
           "text": "話す: ある日のできと\n申し出: やってみよう\nこま: 2）相手がなたからの申し出(offer)を遠慮(hold back)した時、どう言えば受け入れてもらえると\nえんりよ: 思いますか。あなたは誰かに何か助けてもらう時、どんな言葉かけてもらえらうしい\nじょうきよう: アルバイト先の友達が\nこま: なたは日にちを間違えてアルバイトを\nことわ: (refuse)なさい。",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 110
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "dialogue from comprehensive"
           }
         },
         {
-          "id": "quartet_2_5_dialogue_4",
+          "id": "quartet_2_l11_dialogue_5",
           "type": "dialogue",
           "title": "Dialogue quartet_2_11",
           "text": "二重人格者の会話一日本語の復権: 読み物2\n门: 加賀野井秀一\nかがのいしういち: 私の友人に、みごとな日本語をあやつるフランス人がいる。彼女と話すとき、\nノン: だめ」「それは不可能よ」とやる。あるいはまた、頼みごとの場合には日本語で、\nノン: セ・ール\nケスクチュパンス: 10ランス語でたずね、適当に言葉をにごしたいときには、「そだね、まあ、考え",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 164
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.078Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "dialogue from comprehensive"
           }
         },
         {
-          "id": "quartet_2_5_dialogue_5",
+          "id": "quartet_2_l11_dialogue_6",
           "type": "dialogue",
           "title": "Dialogue 2_textbook_quartet_2_11",
           "text": "話す: ミューョタル\n難しいお願い: やってみよう\nこうしょう: 手にそのお願いをきいてもらえると思いますか。\nA: あなた（学生)\nB: Aの先生\n来週授業で発表しなければ: いけませんが、\n理由があって別の日に: 対応しなさい。",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 176
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "dialogue from comprehensive"
           }
         },
         {
-          "id": "quartet_2_5_dialogue_6",
+          "id": "quartet_2_l11_dialogue_7",
           "type": "dialogue",
           "title": "Dialogue quartet_2_11",
           "text": "話す: ２)メイリンは何と言っていましたか。\n今回だけでも: いただけないでしよか。\nを: を見つけてきますので、\nなんとか: いただけないでしようか。\nO: 151",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 177
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "dialogue from comprehensive"
           }
         },
         {
-          "id": "quartet_2_5_dialogue_7",
+          "id": "quartet_2_l11_dialogue_8",
           "type": "dialogue",
           "title": "Dialogue quartet_2_11",
           "text": "モデル会話: 3.Kaiwa_L11-1\n発表の担当: 授業後、ワン・メイリン（メ:)が中村先生（中:）に話しかける。\nメ: 先生、すみません。今、ちょっとよろしいでしょうか。\n中: 何ですか。\nメ: あの、来週の発表のことなんですが。\n中: ええ。\nメ: 実は、その日に興味がある会社の企業説明会がありまして……。真前のことで\nちとくぜん: 申し訳ありませんが、授業を欠席させていただきたいので、発表の日を別の日\nけっき: に変えていただけないでしょうか。\n中: 発表、来週ですよね? 困りましたね……。\nこま: ×：自\n中: うーん、でも、授業のスケジュールは変えられないので……。\nメ: では、発表の日を代わってくれる人を見つけてきますので、なんとかご検討い\nけんとう: ただけないでしょうか。\n中: わかりました。今回だけですよ。\nメ: ありがとうございます。代わりの人が見つかりましたらお知らせします。\n中: はい、お願いします。\nメ: 勝手を言って、申し訳ありません。\n単語: 折り入ってご相談しいことがあるのですがMayIaskaveryspecial favor ofyou?\nそうだん: 企業説明会job fair直前のことlast minutes notice\nきざょうせつめいかい: ちとくぜん\nけっせき: 配慮するto consider\nはいりょ: けんとう",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 178
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "dialogue from comprehensive"
+          }
+        },
+        {
+          "id": "quartet_2_l11_dialogue_9",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_quartet_2_11",
+          "text": "読む: フローチャート\nあなた: 難しいお願いをする\n先生: お願いされる\nコミユニケションスタイル: (話を切り出す)\nちとくぜん: けっせき\nこま: ④状況を詳しく説明し、もう一度強くお願いする\nこうしょう: では、発表の日を代わってくれる人を見つけてきますので、\nけんとう: わかりました。今回だけですよ。",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 179
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "dialogue from comprehensive"
+          }
+        },
+        {
+          "id": "quartet_2_l11_dialogue_10",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_quartet_2_11",
+          "text": "練習しよう: のパターンを使って話してみましよう。\nこうしょう: →6お礼を言って、会話を終える\nあなた: ０今、ちょっとよろしいでしょうか。折り入ってご相談したいことがあるん\n先生: 何ですか。\nあなた: あの、\n来週の発表: のことなんですが……。\n先生: ええ。\nあなた: 実は、その日に興味がある会社の企業説明会がありまして……。\nちょくせん: けっせき\n発表の日を別の日に変え: ていただけないでしょうか。\n先生: それは困りましたね……。\nこま: あなた：\nはいりよ: だけないでしょうか。\n先生: うーん、でも、やっぱり難しいですね。\nあなた: ●では、_発表の日を代わってくれる人を見つけてきます\nけんとう: 先生：わかりました。今回だけですよ。\nあなた: ありがとうございます。勝手を言って、申し訳ありません。\nかって: 来週試験を受けなければいけませんが、理由があって別の日に受けたいです。",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 180
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "dialogue from comprehensive"
+          }
+        },
+        {
+          "id": "quartet_2_l11_dialogue_11",
+          "type": "dialogue",
+          "title": "Dialogue 2_textbook_quartet_2_11",
+          "text": "読む: カジュアルな会話にチャレンジ！\nA: あなた\nB: Aの友達\n話す: ペットを預かつて(look after)\nあず: もらいたいと思っています。\nコミユニケションスタイル: 練習しよう\nあなた: ~さん、ごめん。今、ちょっといい？ 折り入って相談したいことが\nあなた: 実は、来週、大学のゼミのみんなと九州に行くことになって…\nきのうしゅう: 急なことで悪いんだけど、_ぺットの猫を預かってくれない？\nあず: 友達：えっ、困ったなあ……\nこま: あなた：研究テーマに役立ちそうだから、どうしても行きたいんだ。他に\n友達: (例1)じゃあ、まあ、なんとかするよ。\nあなた: 本当？ 無理言って、ごめんね。ありがとう。\n単語: ゼミseminar",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 181
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "dialogue from comprehensive"
+          }
+        },
+        {
+          "id": "quartet_2_l11_dialogue_12",
+          "type": "dialogue",
+          "title": "Dialogue quartet_2_11",
+          "text": "類義語の比較: るいぎこ\nしか: 2-2\n聞いてみよう: 3.Kaiwa_L11-2\n英語: ①どちらも\nでは: 「尊重」\n日本語: といわけではない。\nでは: 「尊重」\n意味: 「尊重」\nや: 「尊重」",
+          "sourceRef": {
+            "sourceId": "quartet_2_textbook",
+            "pageNumber": 182
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "dialogue from comprehensive"
           }
         }
       ],
       "exercises": [
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_521",
+          "id": "quartet_2_l11_ex_1",
           "label": "practice",
           "prompt": "④へえ。こんな田舎の町にもデパートなんかあるんだ!",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_522",
+          "id": "quartet_2_l11_ex_2",
           "label": "practice",
           "prompt": "· N なhか implies that the speaker has negative feelings toward N, meaning",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_523",
+          "id": "quartet_2_l11_ex_3",
           "label": "practice",
           "prompt": "N(prt.)なんか",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_524",
+          "id": "quartet_2_l11_ex_4",
           "label": "practice",
           "prompt": "that the speaker dislikes N, thinks N is not important, etc. Accordingly, the",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_525",
+          "id": "quartet_2_l11_ex_5",
           "label": "practice",
           "prompt": "小説・エッセイを通じて考える愛",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_526",
+          "id": "quartet_2_l11_ex_6",
           "label": "practice",
           "prompt": "latter half of the sentence about N is often in the negative form.",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_527",
+          "id": "quartet_2_l11_ex_7",
           "label": "practice",
           "prompt": "· Particles を,が,は and も can be replaced by なhか，as shown in回,③ and ④.Other particles,",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_528",
+          "id": "quartet_2_l11_ex_8",
           "label": "practice",
           "prompt": "such as で,に and と,are placed before なんか,as in②.",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_529",
+          "id": "quartet_2_l11_ex_9",
           "label": "practice",
           "prompt": "·私なhか expresses the speaker's self-deprecating attitude or modesty, as in ③.",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_530",
+          "id": "quartet_2_l11_ex_10",
           "label": "practice",
           "prompt": "• When used with an affirmative form, N なhか can also express the speaker's surprise, as in ④.",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_531",
+          "id": "quartet_2_l11_ex_11",
           "label": "practice",
           "prompt": "Nなhか can bereplaced withNなんて.",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_532",
+          "id": "quartet_2_l11_ex_12",
           "label": "practice",
           "prompt": "例)A：ねえ、昨日の夜9時からのドマ見た?",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_533",
+          "id": "quartet_2_l11_ex_13",
           "label": "practice",
           "prompt": "B：うん。忙しくて、テレなんて見る時間はなかったよ。",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_534",
+          "id": "quartet_2_l11_ex_14",
           "label": "practice",
           "prompt": "なんてand なhかare interchangeable when preceded by anoun, but なhかcannot be usedin place",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_535",
+          "id": "quartet_2_l11_ex_15",
           "label": "practice",
           "prompt": "ofなhてwhen it's preceded by a sentence.\"X(sentence) なhてY\"mentions the sentence as a topic",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_536",
+          "id": "quartet_2_l11_ex_16",
           "label": "practice",
           "prompt": "and expresses the speaker's strong opinion (Y) about the topic. In such use, X typically expresses",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_537",
+          "id": "quartet_2_l11_ex_17",
           "label": "practice",
           "prompt": "the speaker's personal experience or something that the speaker saw or heard, while Y takes",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_538",
+          "id": "quartet_2_l11_ex_18",
           "label": "practice",
           "prompt": "expressionsofemotions suchas信じらない,あり得ないうらやましいandひどい.",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_539",
+          "id": "quartet_2_l11_ex_19",
           "label": "practice",
           "prompt": "例パク:あれ?ススさんじないですか?!",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         },
         {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_540",
+          "id": "quartet_2_l11_ex_20",
           "label": "practice",
           "prompt": "Hey! It's you, Smith-san!",
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
             "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_541",
-          "label": "practice",
-          "prompt": "スス：あっ、パさん!こんなとこで会なんて、信じらない!",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_542",
-          "label": "practice",
-          "prompt": "Park-san! What a surprise to run into you here!",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_543",
-          "label": "practice",
-          "prompt": "5.いったいQuestion Word(か)",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_544",
-          "label": "practice",
-          "prompt": "(on earth)",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_545",
-          "label": "practice",
-          "prompt": "[読み物1-行38]",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_546",
-          "label": "practice",
-          "prompt": "A：さっき、りーさんが泣きながら帰ってきたよ。",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_547",
-          "label": "practice",
-          "prompt": "Lee just came back crying.",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_548",
-          "label": "practice",
-          "prompt": "B：え、本当?いったい何があったんだろうね。",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_549",
-          "label": "practice",
-          "prompt": "Oh, really? I wonder what on earth happened.",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_550",
-          "label": "practice",
-          "prompt": "回卒業して以来、田中さんに全く連絡をしていない。いったい今どこで何をしているのだ",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_551",
-          "label": "practice",
-          "prompt": "回いったいいつになったら、世界は平和になるのだろうか。",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_552",
-          "label": "practice",
-          "prompt": "同父：お金もないのにを買なんて、いったい何を考えているんだ!",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_553",
-          "label": "practice",
-          "prompt": "息子：どしても欲しくて……",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_554",
-          "label": "practice",
-          "prompt": "④ピッはいったいどうやって作らたのだろう。",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_555",
-          "label": "practice",
-          "prompt": "· Wつたlis used to emphasize questions, and expresses",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_556",
-          "label": "practice",
-          "prompt": "いっいQuestion Word(か)",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_557",
-          "label": "practice",
-          "prompt": "that the speaker has no idea what the answer to the",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_558",
-          "label": "practice",
-          "prompt": "question would be.",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 103
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_559",
-          "label": "practice",
-          "prompt": "6.V1かV1ないか",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 104
-          }
-        },
-        {
-          "id": "quartet_2_textbook_2_textbook_quartet_2_5_exercise_560",
-          "label": "practice",
-          "prompt": "(hardly; mayV1or may not V1)",
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 104
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-21T05:47:25.079Z",
+            "reviewer": "quartet_bessatsu_enrich",
+            "notes": "exercise from comprehensive"
           }
         }
-      ]
+      ],
+      "qualityTier": "gold",
+      "appLessonId": "quartet_2_5"
     }
   ]
 }

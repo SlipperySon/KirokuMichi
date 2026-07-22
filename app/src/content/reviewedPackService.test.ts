@@ -22,7 +22,7 @@ describe('reviewedPackService', () => {
     expect(await reviewedPackUrlForLesson('genki_2_13')).toBe('/data/generated/reviewed/genki_2_13.json')
     expect(await reviewedPackUrlForLesson('quartet_2_1')).toBe('/data/generated/reviewed/quartet_2_1.json')
     expect(await reviewedPackUrlForLesson('quartet_2_7')).toBe('/data/generated/reviewed/quartet_2_7.json')
-    expect(await reviewedPackUrlForLesson('genki_1_3')).toBeNull()
+    expect(await reviewedPackUrlForLesson('genki_1_99')).toBeNull()
     expect(reviewedPackUrlForLessonSync('genki_1_1')).toBe('/data/generated/reviewed/genki_1_1.json')
     expect(reviewedPackUrlForLessonSync('genki_2_1')).toBe('/data/generated/reviewed/genki_2_1.json')
   })

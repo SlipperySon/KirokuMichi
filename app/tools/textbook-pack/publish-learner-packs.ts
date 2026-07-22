@@ -17,7 +17,7 @@ const textbooksDir = path.join(appRoot, 'data/generated/textbooks')
 const lessonStructurePath = path.join(appRoot, 'data/generated/lesson-structure.json')
 const assetsDir = path.join(appRoot, 'data/generated/assets/textbook')
 
-/** Gold pack file → app lesson id */
+/** Gold pack file → app lesson id (dual app/source ids for Genki II / Quartet II). */
 const GOLD_PACKS: Array<{ packFile: string; lessonId: string; assetCopies?: Array<{ from: string; to: string }> }> = [
   {
     packFile: 'genki_1_lesson_1.json',
@@ -27,10 +27,10 @@ const GOLD_PACKS: Array<{ packFile: string; lessonId: string; assetCopies?: Arra
       to: 'genki_1_workbook/genki_1_lesson_1/genki_1_workbook_genki_1_lesson_1_workbook_listening_a_picture_choices.png',
     }],
   },
-  {
-    packFile: 'genki_1_lesson_2.json',
-    lessonId: 'genki_1_2',
-  },
+  ...[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((n) => ({
+    packFile: `genki_1_lesson_${n}.json`,
+    lessonId: `genki_1_${n}`,
+  })),
   {
     packFile: 'quartet_1_lesson_1.json',
     lessonId: 'quartet_1_1',
@@ -39,16 +39,26 @@ const GOLD_PACKS: Array<{ packFile: string; lessonId: string; assetCopies?: Arra
       to: 'quartet_1_textbook/quartet_1_lesson_1/quartet_1_textbook_quartet_1_lesson_1_textbook_reading_1_miyazaki_photo.png',
     }],
   },
-  {
-    packFile: 'quartet_1_lesson_2.json',
-    lessonId: 'quartet_1_2',
-  },
-  // Genki II opener (textbook L13) — app ids genki_2_1 and genki_2_13
-  { packFile: 'genki_2_lesson_13.json', lessonId: 'genki_2_1' },
-  { packFile: 'genki_2_lesson_13.json', lessonId: 'genki_2_13' },
-  // Quartet II opener (textbook L7) — app ids quartet_2_1 and quartet_2_7
-  { packFile: 'quartet_2_lesson_7.json', lessonId: 'quartet_2_1' },
-  { packFile: 'quartet_2_lesson_7.json', lessonId: 'quartet_2_7' },
+  ...[2, 3, 4, 5, 6].map((n) => ({
+    packFile: `quartet_1_lesson_${n}.json`,
+    lessonId: `quartet_1_${n}`,
+  })),
+  // Genki II source L13–23 ↔ app genki_2_1–11 and genki_2_13–23
+  ...[13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23].flatMap((sourceLesson) => {
+    const appIdx = sourceLesson - 12
+    return [
+      { packFile: `genki_2_lesson_${sourceLesson}.json`, lessonId: `genki_2_${appIdx}` },
+      { packFile: `genki_2_lesson_${sourceLesson}.json`, lessonId: `genki_2_${sourceLesson}` },
+    ]
+  }),
+  // Quartet II source L7–12 ↔ app quartet_2_1–6 and quartet_2_7–12
+  ...[7, 8, 9, 10, 11, 12].flatMap((sourceLesson) => {
+    const appIdx = sourceLesson - 6
+    return [
+      { packFile: `quartet_2_lesson_${sourceLesson}.json`, lessonId: `quartet_2_${appIdx}` },
+      { packFile: `quartet_2_lesson_${sourceLesson}.json`, lessonId: `quartet_2_${sourceLesson}` },
+    ]
+  }),
 ]
 
 const TEXTBOOK_FOR_SERIES: Record<string, string> = {
@@ -160,11 +170,28 @@ async function writeJson(filePath: string, data: unknown): Promise<void> {
 async function publishGold(index: IndexEntry[]): Promise<void> {
   for (const gold of GOLD_PACKS) {
     const src = path.join(reviewedOut, gold.packFile)
+    let pack: { lessons?: PackLesson[]; title?: string }
+    try {
+      pack = await readJson(src)
+    } catch {
+      console.warn(`gold  skip missing pack file ${gold.packFile} (for ${gold.lessonId})`)
+      continue
+    }
+    const lesson = pack.lessons?.[0]
+    if (!lesson) {
+      console.warn(`gold  skip empty lesson in ${gold.packFile}`)
+      continue
+    }
+    // Skip unpublished OCR drafts that never reached gold enrich (0 vocab).
+    if ((lesson.vocabulary?.length ?? 0) < 8 && (lesson.grammar?.length ?? 0) < 3) {
+      console.warn(
+        `gold  skip thin pack ${gold.packFile} for ${gold.lessonId} (v${lesson.vocabulary?.length ?? 0} g${lesson.grammar?.length ?? 0})`,
+      )
+      continue
+    }
+
     const destName = `${gold.lessonId}.json`
     const dest = path.join(servedDir, destName)
-    const pack = await readJson<{ lessons?: PackLesson[]; title?: string }>(src)
-    const lesson = pack.lessons?.[0]
-    if (!lesson) throw new Error(`Gold pack missing lesson: ${gold.packFile}`)
 
     // Normalize pack lesson id metadata for the app overlay loader.
     const normalized = {

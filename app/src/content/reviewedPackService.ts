@@ -64,16 +64,24 @@ interface ReviewedPackJson {
 const INDEX_URL = '/data/generated/reviewed/index.json'
 
 /** Fallback when index is missing (bootstrapped gold packs). */
-const FALLBACK_URLS: Record<string, string> = {
-  genki_1_1: '/data/generated/reviewed/genki_1_1.json',
-  genki_1_2: '/data/generated/reviewed/genki_1_2.json',
-  quartet_1_1: '/data/generated/reviewed/quartet_1_1.json',
-  quartet_1_2: '/data/generated/reviewed/quartet_1_2.json',
-  genki_2_1: '/data/generated/reviewed/genki_2_1.json',
-  genki_2_13: '/data/generated/reviewed/genki_2_13.json',
-  quartet_2_1: '/data/generated/reviewed/quartet_2_1.json',
-  quartet_2_7: '/data/generated/reviewed/quartet_2_7.json',
-}
+const FALLBACK_URLS: Record<string, string> = Object.fromEntries([
+  ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12].map((n) => [`genki_1_${n}`, `/data/generated/reviewed/genki_1_${n}.json`]),
+  ...[1, 2, 3, 4, 5, 6].map((n) => [`quartet_1_${n}`, `/data/generated/reviewed/quartet_1_${n}.json`]),
+  ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11].flatMap((appIdx) => {
+    const sourceLesson = appIdx + 12
+    return [
+      [`genki_2_${appIdx}`, `/data/generated/reviewed/genki_2_${appIdx}.json`],
+      [`genki_2_${sourceLesson}`, `/data/generated/reviewed/genki_2_${sourceLesson}.json`],
+    ]
+  }),
+  ...[1, 2, 3, 4, 5, 6].flatMap((appIdx) => {
+    const sourceLesson = appIdx + 6
+    return [
+      [`quartet_2_${appIdx}`, `/data/generated/reviewed/quartet_2_${appIdx}.json`],
+      [`quartet_2_${sourceLesson}`, `/data/generated/reviewed/quartet_2_${sourceLesson}.json`],
+    ]
+  }),
+])
 
 const overlayCache = new Map<string, ReviewedLessonOverlay | null>()
 let indexCache: IndexEntry[] | null = null

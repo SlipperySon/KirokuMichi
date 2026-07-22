@@ -1,16 +1,16 @@
 /**
- * Quartet mirror of Genki L2 + book-II opener enrichment:
- * 1) Promote Quartet I Lesson 2 proof Bessatsu vocab → gold pack + corrections
- * 2) Enrich Quartet II Lesson 7 (app quartet_2_1 / quartet_2_7) from Bessatsu proof
+ * Quartet gold enrich from Bessatsu proof vocab + comprehensive grammar/dialogues.
+ *
+ * Builds Quartet I lessons 2–6 and Quartet II lessons 7–12 when proofs exist.
  *
  * Prerequisites (from app/):
- *   npm run textbook:proof:quartet -- --textbook-key quartet_1 --lesson 2
- *   npm run textbook:proof:quartet -- --textbook-key quartet_2 --lesson 7
+ *   npm run textbook:proof:quartet -- --textbook-key quartet_1 --lesson N
+ *   npm run textbook:proof:quartet -- --textbook-key quartet_2 --lesson N
  *
  * Usage:
  *   npx tsx tools/textbook-pack/build-quartet-l2-and-enrich-l7.ts
  */
-import { mkdir, readFile, writeFile } from 'node:fs/promises'
+import { access, mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 
 const appRoot = process.cwd()
@@ -80,6 +80,15 @@ function cleanReading(reading: string | null | undefined): string | null {
 
 async function readJson<T>(filePath: string): Promise<T> {
   return JSON.parse(await readFile(filePath, 'utf8')) as T
+}
+
+async function exists(filePath: string): Promise<boolean> {
+  try {
+    await access(filePath)
+    return true
+  } catch {
+    return false
+  }
 }
 
 function qualityVocab(items: VocabEntry[], lessonNumber: number): VocabEntry[] {
@@ -189,13 +198,22 @@ async function buildFromProof(opts: {
   title: string
   levelRange: string
 }) {
-  const proof = await readJson<ProofPack>(path.join(proofsDir, opts.proofFile))
+  const proofPath = path.join(proofsDir, opts.proofFile)
+  if (!(await exists(proofPath))) {
+    return { packId: opts.packId, skipped: true, reason: `missing proof ${opts.proofFile}` }
+  }
+
+  const proof = await readJson<ProofPack>(proofPath)
   const lesson = proof.lessons[0]
   if (!lesson) throw new Error(`No lesson in ${opts.proofFile}`)
 
   const vocabulary = qualityVocab(lesson.vocabulary ?? [], opts.lessonNumber)
   if (vocabulary.length < 20) {
-    throw new Error(`${opts.packId}: only ${vocabulary.length} quality vocab — regenerate Bessatsu proof`)
+    return {
+      packId: opts.packId,
+      skipped: true,
+      reason: `only ${vocabulary.length} quality vocab — regenerate Bessatsu proof`,
+    }
   }
 
   const { grammar, contentBlocks, exercises } = await loadCurriculumGrammar(
@@ -205,7 +223,6 @@ async function buildFromProof(opts: {
     `${opts.textbookKey}_textbook`,
   )
 
-  // Prefer proof grammar hits if any were found on textbook pages
   const proofGrammar = (lesson.grammar ?? [])
     .filter((g) => String(g.pattern ?? '').trim().length >= 1)
     .map((g, i) => ({
@@ -308,27 +325,46 @@ async function buildFromProof(opts: {
     exercises: exercises.length,
     outFile: path.relative(appRoot, outFile),
     corrections: path.relative(appRoot, corrFile),
+    skipped: false,
   }
 }
 
-const l2 = await buildFromProof({
-  proofFile: 'quartet_1_lesson_2.json',
-  packId: 'quartet_1_lesson_2',
-  appLessonTags: ['quartet_1_2'],
-  textbookKey: 'quartet_1',
-  lessonNumber: 2,
-  title: 'Quartet I Lesson 2',
-  levelRange: 'N3',
-})
+function appTagsForQuartet2(sourceLesson: number): string[] {
+  const appIdx = sourceLesson - 6
+  return [`quartet_2_${appIdx}`, `quartet_2_${sourceLesson}`]
+}
 
-const l7 = await buildFromProof({
-  proofFile: 'quartet_2_lesson_7.json',
-  packId: 'quartet_2_lesson_7',
-  appLessonTags: ['quartet_2_1', 'quartet_2_7'],
-  textbookKey: 'quartet_2',
-  lessonNumber: 7,
-  title: 'Quartet II Lesson 7',
-  levelRange: 'N2',
-})
+const SPECS: Array<{
+  proofFile: string
+  packId: string
+  appLessonTags: string[]
+  textbookKey: string
+  lessonNumber: number
+  title: string
+  levelRange: string
+}> = [
+  ...[2, 3, 4, 5, 6].map((n) => ({
+    proofFile: `quartet_1_lesson_${n}.json`,
+    packId: `quartet_1_lesson_${n}`,
+    appLessonTags: [`quartet_1_${n}`],
+    textbookKey: 'quartet_1',
+    lessonNumber: n,
+    title: `Quartet I Lesson ${n}`,
+    levelRange: 'N3',
+  })),
+  ...[7, 8, 9, 10, 11, 12].map((n) => ({
+    proofFile: `quartet_2_lesson_${n}.json`,
+    packId: `quartet_2_lesson_${n}`,
+    appLessonTags: appTagsForQuartet2(n),
+    textbookKey: 'quartet_2',
+    lessonNumber: n,
+    title: `Quartet II Lesson ${n}`,
+    levelRange: 'N2',
+  })),
+]
 
-console.log(JSON.stringify({ quartet_1_lesson_2: l2, quartet_2_lesson_7: l7 }, null, 2))
+const results: Record<string, unknown> = {}
+for (const spec of SPECS) {
+  results[spec.packId] = await buildFromProof(spec)
+}
+console.log(JSON.stringify(results, null, 2))

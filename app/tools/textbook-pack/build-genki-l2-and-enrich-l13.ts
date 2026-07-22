@@ -1,6 +1,10 @@
 /**
- * 1) Build Genki I Lesson 2 gold pack (+ corrections) from OCR vocab pages.
- * 2) Rebuild Genki II Lesson 13 gold with OCR-enriched vocabulary.
+ * Build Genki I/II gold learner packs from OCR vocab pages + comprehensive grammar/dialogues.
+ *
+ * Always rebuilds:
+ *   - Genki I Lesson 2 (seed + OCR)
+ *   - Genki II Lesson 13 (seed + OCR)
+ * Plus auto OCR enrich for Genki I L3–12 and Genki II L14–23 when grouped pages exist.
  *
  * Usage (from app/):
  *   npx tsx tools/textbook-pack/build-genki-l2-and-enrich-l13.ts
@@ -11,6 +15,7 @@ import {
   dedupeVocab,
   parseGenki1StyleLines,
   parseGenki2Interleaved,
+  parseGenkiKanjiKanaGloss,
   parseUsefulVocabBlocks,
   type ParsedVocab,
 } from './parse-genki-ocr-vocab.ts'
@@ -21,6 +26,7 @@ const grouped = (book: string, page: number) =>
 const reviewedDir = path.join(appRoot, 'tools/textbook-pack/out/reviewed-packs')
 const correctionsDir = path.join(appRoot, 'tools/textbook-pack/corrections')
 const textbooksDir = path.join(appRoot, 'data/generated/textbooks')
+const manifestPath = path.join(appRoot, 'tools/textbook-pack/out/source-manifest.json')
 
 interface GroupedPage {
   pageNumber: number
@@ -28,14 +34,10 @@ interface GroupedPage {
   blocks?: Array<{ text?: string }>
 }
 
-async function readPage(book: string, page: number): Promise<{ pageNumber: number; text: string; sourceId: string }> {
-  const data = JSON.parse(await readFile(grouped(book, page), 'utf8')) as GroupedPage
-  const text = (data.blocks ?? []).map((b) => b.text ?? '').join('\n')
-  return { pageNumber: data.pageNumber ?? page, text, sourceId: data.sourceId ?? book }
-}
-
-async function readJson<T>(filePath: string): Promise<T> {
-  return JSON.parse(await readFile(filePath, 'utf8')) as T
+interface LessonHint {
+  lessonNumber: number
+  pageNumber: number
+  label: string
 }
 
 function reviewStamp(notes: string) {
@@ -45,6 +47,44 @@ function reviewStamp(notes: string) {
     reviewer: 'ocr_vocab_enrich',
     notes,
   }
+}
+
+async function readJson<T>(filePath: string): Promise<T> {
+  return JSON.parse(await readFile(filePath, 'utf8')) as T
+}
+
+async function readPage(book: string, page: number): Promise<{ pageNumber: number; text: string; sourceId: string } | null> {
+  try {
+    const data = JSON.parse(await readFile(grouped(book, page), 'utf8')) as GroupedPage
+    const text = (data.blocks ?? []).map((b) => b.text ?? '').join('\n')
+    return { pageNumber: data.pageNumber ?? page, text, sourceId: data.sourceId ?? book }
+  } catch {
+    return null
+  }
+}
+
+function qualityVocab(items: ParsedVocab[]): ParsedVocab[] {
+  const seen = new Set<string>()
+  const out: ParsedVocab[] = []
+  for (const item of items) {
+    const surface = item.surface?.trim()
+    const meaning = item.meaning?.trim()
+    if (!surface || !meaning) continue
+    if (!/[\u3040-\u30ff\u4e00-\u9fff]/.test(surface) || surface.length > 20) continue
+    if (/^(単語|たんご|单|語|ご|Vocab|Nouns?|Verbs?|KO?\d)/i.test(surface)) continue
+    if (meaning.length < 2 || meaning.length > 80) continue
+    if (!/[A-Za-z]{2,}/.test(meaning)) continue
+    if (/[\u3040-\u30ff\u4e00-\u9fff]{3,}/.test(meaning)) continue
+    if (/^(extracted|unknown|KO?\d|b\s*U|NoUns|U-v|Ru-|W-ad|Irreg)/i.test(meaning)) continue
+    if (/^(nouns?|verbs?|adjectives?|adverbs?|expressions?|places?|time|foods?)\b/i.test(meaning)) continue
+    // Drop romaji-echo meanings from mixed parsers ("kore this one")
+    if (/^[a-z]{2,12}\s+[A-Za-z]/.test(meaning) && item.reading === meaning.split(/\s+/)[0]) continue
+    const key = surface
+    if (seen.has(key)) continue
+    seen.add(key)
+    out.push({ ...item, surface, meaning })
+  }
+  return out
 }
 
 function toVocabEntries(
@@ -64,6 +104,175 @@ function toVocabEntries(
     tags: ['gold_ocr'],
     review: reviewStamp(notes),
   }))
+}
+
+function scoreVocabPage(text: string): number {
+  let score = 0
+  if (/単語|たんご|Vocabulary|V\s*o\s*c\s*a\s*b/i.test(text)) score += 2
+  if (/Nouns|U-verbs|Ru-verbs|な-adjectives|Adjectives|Adverbs|Expressions/i.test(text)) score += 2
+  if ((text.match(/[a-z]{3,}\s+[A-Z][a-z]/g) ?? []).length > 3) score += 1
+  if ((text.match(/[\u4e00-\u9fff]{1,6}\s+[\u3040-\u309fー]{1,10}\s+[A-Za-z]/g) ?? []).length >= 3) score += 2
+  return score
+}
+
+async function findVocabPages(book: string, lessonStart: number, lessonEnd: number): Promise<number[]> {
+  const hits: Array<{ page: number; score: number }> = []
+  const scanEnd = Math.min(lessonStart + 8, lessonEnd)
+  for (let page = lessonStart; page <= scanEnd; page += 1) {
+    const data = await readPage(book, page)
+    if (!data) continue
+    const score = scoreVocabPage(data.text)
+    if (score >= 2) hits.push({ page, score })
+  }
+  if (hits.length === 0) return []
+  // Prefer contiguous run starting at first strong hit
+  const first = hits[0].page
+  const pages = [first]
+  for (const hit of hits.slice(1)) {
+    if (hit.page === pages[pages.length - 1] + 1) pages.push(hit.page)
+    else if (pages.length >= 2) break
+  }
+  // Also pick up useful-expression pages later in the lesson (optional)
+  for (let page = first + 4; page <= Math.min(lessonEnd, first + 28); page += 1) {
+    const data = await readPage(book, page)
+    if (!data) continue
+    if (/Useful Expressions|便利な表現/i.test(data.text) && /[\u3040-\u30ff\u4e00-\u9fff]/.test(data.text)) {
+      pages.push(page)
+    }
+  }
+  return [...new Set(pages)]
+}
+
+async function loadLessonHints(book: string): Promise<LessonHint[]> {
+  const manifest = await readJson<{
+    entries: Array<{
+      id: string
+      pageCount: number
+      splitHints: Array<{ kind: string; lessonNumber?: number | null; pageNumber?: number | null; label?: string }>
+    }>
+  }>(manifestPath)
+  const entry = manifest.entries.find((e) => e.id === book)
+  if (!entry) return []
+  const maxConversationPage = book === 'genki_1_textbook' ? 300 : 280
+  return entry.splitHints
+    .filter(
+      (h) =>
+        h.kind === 'lesson' &&
+        h.lessonNumber != null &&
+        h.pageNumber != null &&
+        h.pageNumber < maxConversationPage,
+    )
+    .map((h) => ({
+      lessonNumber: h.lessonNumber!,
+      pageNumber: h.pageNumber!,
+      label: h.label ?? `Lesson ${h.lessonNumber}`,
+    }))
+    .sort((a, b) => a.pageNumber - b.pageNumber)
+}
+
+async function loadCurriculumExtras(
+  textbookFile: string,
+  lessonTags: string[],
+  lessonNumber: number,
+  sourceId: string,
+  idPrefix: string,
+) {
+  const curriculum = await readJson<{
+    grammar?: Array<Record<string, unknown>>
+    dialogues?: Array<Record<string, unknown>>
+    exercises?: Array<Record<string, unknown>>
+  }>(path.join(textbooksDir, textbookFile))
+
+  const match = (lesson: string) =>
+    lessonTags.includes(lesson) || lessonTags.some((t) => lesson === t || lesson.endsWith(`_${t}`))
+
+  const grammar = (curriculum.grammar ?? [])
+    .filter((g) => match(String(g.lesson ?? '')))
+    .map((g, i) => ({
+      id: `${idPrefix}_grammar_${i + 1}`,
+      pattern: String(g.pattern ?? g.title ?? ''),
+      meaning: String(g.meaning ?? ''),
+      explanation: g.explanation,
+      examples: Array.isArray(g.examples) ? g.examples : [],
+      lessonNumber,
+      sourceRef: {
+        sourceId,
+        pageNumber: Math.max(1, Number(g.page ?? 0) || 1),
+      },
+      review: reviewStamp('from comprehensive; source remapped'),
+    }))
+    .filter((g) => g.pattern.trim().length >= 1)
+    .slice(0, 24)
+
+  const contentBlocks = (curriculum.dialogues ?? [])
+    .filter((d) => match(String(d.lesson ?? '')))
+    .slice(0, 12)
+    .map((d, i) => {
+      const lines = Array.isArray(d.lines) ? (d.lines as Array<{ speaker?: string; japanese?: string }>) : []
+      const text = lines
+        .map((line) => `${line.speaker ? `${line.speaker}: ` : ''}${line.japanese ?? ''}`.trim())
+        .filter(Boolean)
+        .join('\n')
+      return {
+        id: `${idPrefix}_dialogue_${i + 1}`,
+        type: 'dialogue' as const,
+        title: String(d.title ?? `Dialogue ${i + 1}`),
+        text,
+        sourceRef: {
+          sourceId,
+          pageNumber: Math.max(1, Number(d.page ?? 0) || 1),
+        },
+        review: reviewStamp('dialogue from comprehensive'),
+      }
+    })
+    .filter((b) => /[\u3040-\u30ff\u4e00-\u9fff]/.test(b.text))
+
+  const exercises = (curriculum.exercises ?? [])
+    .filter((e) => match(String(e.lesson ?? '')))
+    .slice(0, 20)
+    .map((e, i) => ({
+      id: `${idPrefix}_ex_${i + 1}`,
+      label: String(e.type ?? 'exercise'),
+      prompt: String(e.question ?? ''),
+      sourceRef: {
+        sourceId: String(e.source ?? '').includes('workbook')
+          ? sourceId.replace('_textbook', '_workbook')
+          : sourceId,
+        pageNumber: Math.max(1, Number(e.page ?? 0) || 1),
+      },
+      review: reviewStamp('exercise from comprehensive'),
+    }))
+    .filter((e) => e.prompt.trim().length >= 2)
+
+  return { grammar, contentBlocks, exercises }
+}
+
+async function loadSources(sourceIds: string[]) {
+  const manifest = await readJson<{
+    entries: Array<{ id: string; role: string; fingerprint: { sha256: string; bytes: number } }>
+  }>(manifestPath)
+  return sourceIds
+    .map((id) => {
+      const entry = manifest.entries.find((e) => e.id === id)
+      if (!entry) return { sourceId: id, role: id.includes('workbook') ? 'workbook' : 'textbook' }
+      return { sourceId: entry.id, role: entry.role, fingerprint: entry.fingerprint }
+    })
+}
+
+function parsePages(texts: Array<{ pageNumber: number; text: string }>, mode: 'genki1_early' | 'genki_kana') {
+  const items: ParsedVocab[] = []
+  for (const page of texts) {
+    if (mode === 'genki1_early') {
+      items.push(...parseGenki1StyleLines(page.text, page.pageNumber))
+    } else {
+      items.push(
+        ...parseGenkiKanjiKanaGloss(page.text, page.pageNumber),
+        ...parseGenki2Interleaved(page.text, page.pageNumber),
+        ...parseUsefulVocabBlocks(page.text, page.pageNumber),
+      )
+    }
+  }
+  return qualityVocab(dedupeVocab(items))
 }
 
 /** Hand-verified fills for OCR gaps (Genki I L2 3rd ed.). */
@@ -237,304 +446,255 @@ const GENKI_2_L13_SEED: ParsedVocab[] = [
   { surface: '両替', reading: 'りょうがえ', meaning: 'money exchange', pageNumber: 45 },
 ]
 
-async function buildGenki1Lesson2() {
-  const p58 = await readPage('genki_1_textbook', 67) // PDF page 67 ≈ book p.58
-  const p59 = await readPage('genki_1_textbook', 68)
-  const ocrParsed = dedupeVocab([
-    ...parseGenki1StyleLines(p58.text, 58),
-    ...parseGenki1StyleLines(p59.text, 59),
-  ])
-  // Seed wins on conflicts for known-good glosses; OCR adds extras
-  const vocabulary = dedupeVocab([...GENKI_1_L2_SEED, ...ocrParsed])
-
-  const curriculum = await readJson<{
-    dialogues?: Array<Record<string, unknown>>
-    exercises?: Array<Record<string, unknown>>
-  }>(path.join(textbooksDir, 'genki_1_textbook-comprehensive.json'))
-
-  const contentBlocks = (curriculum.dialogues ?? [])
-    .filter((d) => String(d.lesson ?? '').includes('genki_1_2'))
-    .slice(0, 12)
-    .map((d, i) => {
-      const lines = Array.isArray(d.lines) ? (d.lines as Array<{ speaker?: string; japanese?: string }>) : []
-      const text = lines
-        .map((line) => `${line.speaker ? `${line.speaker}: ` : ''}${line.japanese ?? ''}`.trim())
-        .filter(Boolean)
-        .join('\n')
-      return {
-        id: `genki_1_l2_dialogue_${i + 1}`,
-        type: 'dialogue' as const,
-        title: String(d.title ?? `Dialogue ${i + 1}`),
-        text,
-        sourceRef: {
-          sourceId: String(d.source ?? 'genki_1_textbook'),
-          pageNumber: Number(d.page ?? 0) || 60,
-        },
-        review: reviewStamp('dialogue from comprehensive'),
-      }
-    })
-    .filter((b) => /[\u3040-\u30ff\u4e00-\u9fff]/.test(b.text))
-
-  const exercises = (curriculum.exercises ?? [])
-    .filter((e) => /genki_1_2\b/.test(String(e.lesson ?? '')))
-    .slice(0, 20)
-    .map((e, i) => ({
-      id: String(e.id ?? `genki_1_l2_ex_${i + 1}`),
-      label: String(e.type ?? 'exercise'),
-      prompt: String(e.question ?? ''),
-      sourceRef: {
-        sourceId: String(e.source ?? 'genki_1_workbook'),
-        pageNumber: Number(e.page ?? 0) || 0,
-      },
-      review: reviewStamp('exercise from comprehensive'),
-    }))
-    .filter((e) => e.prompt.trim().length >= 2)
-
-  const proof = await readJson<{ sources: unknown[] }>(
-    path.join(appRoot, 'tools/textbook-pack/out/canonical-proofs/genki_1_lesson_2.json'),
-  ).catch(() => null)
-
+async function writeGoldPack(opts: {
+  packId: string
+  textbookKey: string
+  title: string
+  levelRange: string
+  lessonNumber: number
+  lessonTitle: string
+  vocabulary: ReturnType<typeof toVocabEntries>
+  grammar: Array<Record<string, unknown>>
+  contentBlocks: Array<Record<string, unknown>>
+  exercises: Array<Record<string, unknown>>
+  sources: Array<Record<string, unknown>>
+  writeCorrections?: boolean
+}) {
+  await mkdir(reviewedDir, { recursive: true })
   const pack = {
     schemaVersion: 1,
-    textbookKey: 'genki_1',
-    title: 'Genki I: An Integrated Course in Elementary Japanese',
-    edition: '3rd Edition',
-    levelRange: 'N5-N4',
-    sources: proof?.sources ?? [
-      { sourceId: 'genki_1_textbook', role: 'textbook' },
-      { sourceId: 'genki_1_workbook', role: 'workbook' },
-    ],
+    textbookKey: opts.textbookKey,
+    title: opts.title,
+    edition: 'learner-gold',
+    levelRange: opts.levelRange,
+    sources: opts.sources,
     lessons: [
       {
-        id: 'genki_1_lesson_2',
+        id: opts.packId,
         unitType: 'lesson',
-        lessonNumber: 2,
-        title: 'かいもの　Shopping',
-        level: 'N5-N4',
+        lessonNumber: opts.lessonNumber,
+        title: opts.lessonTitle,
+        level: opts.levelRange,
         modes: ['conversation_grammar'],
-        vocabulary: toVocabEntries(vocabulary, 'genki_1_l2', 2, 'genki_1_textbook', 'Genki I L2 OCR + seed'),
-        grammar: GENKI_1_L2_GRAMMAR,
-        contentBlocks,
-        exercises,
+        vocabulary: opts.vocabulary,
+        grammar: opts.grammar,
+        contentBlocks: opts.contentBlocks,
+        exercises: opts.exercises,
         qualityTier: 'gold',
       },
     ],
   }
-
-  await mkdir(reviewedDir, { recursive: true })
-  await mkdir(correctionsDir, { recursive: true })
-  const outFile = path.join(reviewedDir, 'genki_1_lesson_2.json')
+  const outFile = path.join(reviewedDir, `${opts.packId}.json`)
   await writeFile(outFile, `${JSON.stringify(pack, null, 2)}\n`, 'utf8')
 
-  // Corrections trail: ignore proof garbage; additions = gold vocab/grammar
-  const corrections = {
-    schemaVersion: 1,
-    packId: 'genki_1_lesson_2',
-    basedOnProof: '../out/canonical-proofs/genki_1_lesson_2.json',
-    generatedAt: new Date().toISOString(),
-    corrections: [] as Array<Record<string, unknown>>,
-    additions: {
-      vocabulary: pack.lessons[0].vocabulary,
-      grammar: pack.lessons[0].grammar,
-      contentBlocks: pack.lessons[0].contentBlocks,
-      exercises: pack.lessons[0].exercises,
-    },
+  if (opts.writeCorrections) {
+    await mkdir(correctionsDir, { recursive: true })
+    const corrections = {
+      schemaVersion: 1,
+      packId: opts.packId,
+      basedOnProof: `../out/canonical-proofs/${opts.packId}.json`,
+      generatedAt: new Date().toISOString(),
+      corrections: [] as Array<Record<string, unknown>>,
+      additions: {
+        vocabulary: opts.vocabulary,
+        grammar: opts.grammar,
+        contentBlocks: opts.contentBlocks,
+        exercises: opts.exercises,
+      },
+    }
+    await writeFile(
+      path.join(correctionsDir, `${opts.packId}.corrections.json`),
+      `${JSON.stringify(corrections, null, 2)}\n`,
+      'utf8',
+    )
   }
-
-  // If proof exists, mark all proof items ignored so finalize/apply keeps only additions
-  try {
-    const proof = await readJson<{
-      lessons: Array<{
-        vocabulary?: Array<{ id: string }>
-        grammar?: Array<{ id: string }>
-        contentBlocks?: Array<{ id: string }>
-        exercises?: Array<{ id: string }>
-      }>
-    }>(path.join(appRoot, 'tools/textbook-pack/out/canonical-proofs/genki_1_lesson_2.json'))
-    const lesson = proof.lessons[0]
-    for (const item of lesson.vocabulary ?? []) {
-      corrections.corrections.push({
-        id: item.id,
-        kind: 'vocabulary',
-        action: 'ignored',
-        current: {},
-        replacement: {},
-        notes: 'Replaced by OCR+seed gold additions',
-      })
-    }
-    for (const item of lesson.grammar ?? []) {
-      corrections.corrections.push({
-        id: item.id,
-        kind: 'grammar',
-        action: 'ignored',
-        current: {},
-        replacement: {},
-        notes: 'Replaced by curated L2 grammar',
-      })
-    }
-    for (const item of lesson.contentBlocks ?? []) {
-      corrections.corrections.push({
-        id: item.id,
-        kind: 'contentBlocks',
-        action: 'ignored',
-        current: {},
-        replacement: {},
-        notes: 'Bulk OCR ignored',
-      })
-    }
-    for (const item of lesson.exercises ?? []) {
-      corrections.corrections.push({
-        id: item.id,
-        kind: 'exercises',
-        action: 'ignored',
-        current: {},
-        replacement: {},
-        notes: 'Bulk OCR ignored',
-      })
-    }
-  } catch {
-    // proof optional for direct pack write
-  }
-
-  const corrFile = path.join(correctionsDir, 'genki_1_lesson_2.corrections.json')
-  await writeFile(corrFile, `${JSON.stringify(corrections, null, 2)}\n`, 'utf8')
 
   return {
-    packId: 'genki_1_lesson_2',
-    vocabulary: vocabulary.length,
-    ocrOnly: ocrParsed.length,
-    grammar: GENKI_1_L2_GRAMMAR.length,
-    contentBlocks: contentBlocks.length,
-    exercises: exercises.length,
+    packId: opts.packId,
+    vocabulary: opts.vocabulary.length,
+    grammar: opts.grammar.length,
+    contentBlocks: opts.contentBlocks.length,
+    exercises: opts.exercises.length,
     outFile: path.relative(appRoot, outFile),
-    corrections: path.relative(appRoot, corrFile),
   }
+}
+
+async function buildGenki1Lesson2() {
+  const p58 = await readPage('genki_1_textbook', 67)
+  const p59 = await readPage('genki_1_textbook', 68)
+  if (!p58 || !p59) throw new Error('Missing Genki I L2 vocab pages')
+  const ocrParsed = parsePages(
+    [
+      { pageNumber: 58, text: p58.text },
+      { pageNumber: 59, text: p59.text },
+    ],
+    'genki1_early',
+  )
+  const vocabulary = qualityVocab(dedupeVocab([...GENKI_1_L2_SEED, ...ocrParsed]))
+  const extras = await loadCurriculumExtras(
+    'genki_1_textbook-comprehensive.json',
+    ['genki_1_2'],
+    2,
+    'genki_1_textbook',
+    'genki_1_l2',
+  )
+  const sources = await loadSources(['genki_1_textbook', 'genki_1_workbook'])
+  return writeGoldPack({
+    packId: 'genki_1_lesson_2',
+    textbookKey: 'genki_1',
+    title: 'Genki I: An Integrated Course in Elementary Japanese',
+    levelRange: 'N5-N4',
+    lessonNumber: 2,
+    lessonTitle: 'かいもの　Shopping',
+    vocabulary: toVocabEntries(vocabulary, 'genki_1_l2', 2, 'genki_1_textbook', 'Genki I L2 OCR + seed'),
+    grammar: GENKI_1_L2_GRAMMAR,
+    contentBlocks: extras.contentBlocks,
+    exercises: extras.exercises,
+    sources,
+    writeCorrections: true,
+  })
 }
 
 async function enrichGenki2Lesson13() {
-  const p32 = await readPage('genki_2_textbook', 32)
-  const p33 = await readPage('genki_2_textbook', 33)
-  const p53 = await readPage('genki_2_textbook', 53)
-
-  const ocrParsed = dedupeVocab([
-    ...parseGenki2Interleaved(p32.text, 24),
-    ...parseGenki2Interleaved(p33.text, 25),
-    ...parseUsefulVocabBlocks(p53.text, 45),
-  ])
-  const vocabulary = dedupeVocab([...GENKI_2_L13_SEED, ...ocrParsed])
-
-  const curriculum = await readJson<{
-    grammar?: Array<Record<string, unknown>>
-    dialogues?: Array<Record<string, unknown>>
-    exercises?: Array<Record<string, unknown>>
-  }>(path.join(textbooksDir, 'genki_2_textbook-comprehensive.json'))
-  const tags = ['genki_2_1', 'genki_2_13']
-  const match = (lesson: string) => tags.includes(lesson) || tags.some((t) => lesson.endsWith(`_${t}`))
-
-  // Always rewrite sourceRefs onto genki_2_* — comprehensive often tags CEFR ids.
-  const grammar = (curriculum.grammar ?? [])
-    .filter((g) => match(String(g.lesson ?? '')))
-    .map((g, i) => ({
-      id: `genki_2_l13_grammar_${i + 1}`,
-      pattern: String(g.pattern ?? g.title ?? ''),
-      meaning: String(g.meaning ?? ''),
-      explanation: g.explanation,
-      examples: Array.isArray(g.examples) ? g.examples : [],
-      lessonNumber: 13,
-      sourceRef: {
-        sourceId: 'genki_2_textbook',
-        pageNumber: Math.max(1, Number(g.page ?? 0) || 26),
-      },
-      review: reviewStamp('from comprehensive; source remapped'),
-    }))
-    .filter((g) => g.pattern.trim().length >= 1)
-
-  const contentBlocks = (curriculum.dialogues ?? [])
-    .filter((d) => match(String(d.lesson ?? '')))
-    .slice(0, 12)
-    .map((d, i) => {
-      const lines = Array.isArray(d.lines) ? (d.lines as Array<{ speaker?: string; japanese?: string }>) : []
-      const text = lines
-        .map((line) => `${line.speaker ? `${line.speaker}: ` : ''}${line.japanese ?? ''}`.trim())
-        .filter(Boolean)
-        .join('\n')
-      return {
-        id: `genki_2_l13_dialogue_${i + 1}`,
-        type: 'dialogue',
-        title: String(d.title ?? `Dialogue ${i + 1}`),
-        text,
-        sourceRef: {
-          sourceId: 'genki_2_textbook',
-          pageNumber: Math.max(1, Number(d.page ?? 0) || 24),
-        },
-        review: reviewStamp('dialogue'),
-      }
-    })
-    .filter((b) => /[\u3040-\u30ff\u4e00-\u9fff]/.test(b.text))
-
-  const exercises = (curriculum.exercises ?? [])
-    .filter((e) => match(String(e.lesson ?? '')))
-    .slice(0, 20)
-    .map((e, i) => ({
-      id: `genki_2_l13_ex_${i + 1}`,
-      label: String(e.type ?? 'exercise'),
-      prompt: String(e.question ?? ''),
-      sourceRef: {
-        sourceId: String(e.source ?? '').includes('workbook') ? 'genki_2_workbook' : 'genki_2_textbook',
-        pageNumber: Math.max(1, Number(e.page ?? 0) || 1),
-      },
-      review: reviewStamp('exercise'),
-    }))
-    .filter((e) => e.prompt.trim().length >= 2)
-
-  const manifest = await readJson<{
-    entries: Array<{ id: string; role: string; fingerprint: { sha256: string; bytes: number } }>
-  }>(path.join(appRoot, 'tools/textbook-pack/out/source-manifest.json'))
-  const sources = ['genki_2_textbook', 'genki_2_workbook']
-    .map((id) => {
-      const entry = manifest.entries.find((e) => e.id === id)
-      if (!entry) return null
-      return { sourceId: entry.id, role: entry.role, fingerprint: entry.fingerprint }
-    })
-    .filter((s): s is NonNullable<typeof s> => Boolean(s))
-
-  const pack = {
-    schemaVersion: 1,
+  const pages = [32, 33, 53]
+  const texts = []
+  for (const page of pages) {
+    const data = await readPage('genki_2_textbook', page)
+    if (data) texts.push({ pageNumber: page === 53 ? 45 : page === 32 ? 24 : 25, text: data.text })
+  }
+  const ocrParsed = parsePages(texts, 'genki_kana')
+  const vocabulary = qualityVocab(dedupeVocab([...GENKI_2_L13_SEED, ...ocrParsed]))
+  const extras = await loadCurriculumExtras(
+    'genki_2_textbook-comprehensive.json',
+    ['genki_2_1', 'genki_2_13'],
+    13,
+    'genki_2_textbook',
+    'genki_2_l13',
+  )
+  const sources = await loadSources(['genki_2_textbook', 'genki_2_workbook'])
+  return writeGoldPack({
+    packId: 'genki_2_lesson_13',
     textbookKey: 'genki_2',
     title: 'Genki II Lesson 13',
-    edition: 'learner-gold',
     levelRange: 'N4',
+    lessonNumber: 13,
+    lessonTitle: 'Genki II Lesson 13',
+    vocabulary: toVocabEntries(vocabulary, 'genki_2_l13', 13, 'genki_2_textbook', 'OCR pages 32–33 + 53 + seed'),
+    grammar: extras.grammar,
+    contentBlocks: extras.contentBlocks,
+    exercises: extras.exercises,
     sources,
-    lessons: [
-      {
-        id: 'genki_2_lesson_13',
-        unitType: 'lesson',
-        lessonNumber: 13,
-        title: 'Genki II Lesson 13',
-        level: 'N4',
-        modes: ['conversation_grammar'],
-        vocabulary: toVocabEntries(vocabulary, 'genki_2_l13', 13, 'genki_2_textbook', 'OCR pages 32–33 + 53 + seed'),
-        grammar,
-        contentBlocks,
-        exercises,
-        qualityTier: 'gold',
-      },
-    ],
-  }
-
-  const outFile = path.join(reviewedDir, 'genki_2_lesson_13.json')
-  await writeFile(outFile, `${JSON.stringify(pack, null, 2)}\n`, 'utf8')
-  return {
-    packId: 'genki_2_lesson_13',
-    vocabulary: vocabulary.length,
-    ocrOnly: ocrParsed.length,
-    grammar: grammar.length,
-    contentBlocks: contentBlocks.length,
-    exercises: exercises.length,
-    outFile: path.relative(appRoot, outFile),
-  }
+  })
 }
 
-const l2 = await buildGenki1Lesson2()
-const l13 = await enrichGenki2Lesson13()
-console.log(JSON.stringify({ genki_1_lesson_2: l2, genki_2_lesson_13: l13 }, null, 2))
+async function enrichGenkiLesson(opts: {
+  book: 'genki_1_textbook' | 'genki_2_textbook'
+  textbookKey: 'genki_1' | 'genki_2'
+  lessonNumber: number
+  startPage: number
+  endPage: number
+  title: string
+  levelRange: string
+  appLessonTags: string[]
+  parseMode: 'genki1_early' | 'genki_kana'
+  minVocab?: number
+}) {
+  const vocabPages = await findVocabPages(opts.book, opts.startPage, opts.endPage)
+  if (vocabPages.length === 0) {
+    return { packId: `${opts.textbookKey}_lesson_${opts.lessonNumber}`, skipped: true, reason: 'no vocab pages' }
+  }
+  const texts = []
+  for (const page of vocabPages) {
+    const data = await readPage(opts.book, page)
+    if (data) texts.push({ pageNumber: page, text: data.text })
+  }
+  const vocabulary = parsePages(texts, opts.parseMode)
+  const minVocab = opts.minVocab ?? 18
+  if (vocabulary.length < minVocab) {
+    return {
+      packId: `${opts.textbookKey}_lesson_${opts.lessonNumber}`,
+      skipped: true,
+      reason: `only ${vocabulary.length} quality vocab (need ${minVocab})`,
+      vocabPages,
+    }
+  }
+
+  const idPrefix = `${opts.textbookKey}_l${opts.lessonNumber}`
+  const extras = await loadCurriculumExtras(
+    `${opts.book}-comprehensive.json`,
+    opts.appLessonTags,
+    opts.lessonNumber,
+    opts.book,
+    idPrefix,
+  )
+  const sources = await loadSources([opts.book, opts.book.replace('_textbook', '_workbook')])
+  const result = await writeGoldPack({
+    packId: `${opts.textbookKey}_lesson_${opts.lessonNumber}`,
+    textbookKey: opts.textbookKey,
+    title: opts.title,
+    levelRange: opts.levelRange,
+    lessonNumber: opts.lessonNumber,
+    lessonTitle: opts.title,
+    vocabulary: toVocabEntries(
+      vocabulary,
+      idPrefix,
+      opts.lessonNumber,
+      opts.book,
+      `OCR vocab pages ${vocabPages.join(', ')}`,
+    ),
+    grammar: extras.grammar,
+    contentBlocks: extras.contentBlocks,
+    exercises: extras.exercises,
+    sources,
+    writeCorrections: opts.textbookKey === 'genki_1',
+  })
+  return { ...result, vocabPages, skipped: false }
+}
+
+function appTagsForGenki2(sourceLesson: number): string[] {
+  // Source L13 ↔ app genki_2_1 and genki_2_13, etc.
+  const appIdx = sourceLesson - 12
+  return [`genki_2_${appIdx}`, `genki_2_${sourceLesson}`]
+}
+
+const results: Record<string, unknown> = {}
+results.genki_1_lesson_2 = await buildGenki1Lesson2()
+results.genki_2_lesson_13 = await enrichGenki2Lesson13()
+
+const g1Hints = await loadLessonHints('genki_1_textbook')
+for (let i = 0; i < g1Hints.length; i += 1) {
+  const hint = g1Hints[i]
+  if (hint.lessonNumber < 3 || hint.lessonNumber > 12) continue
+  const end = (g1Hints[i + 1]?.pageNumber ?? hint.pageNumber + 30) - 1
+  results[`genki_1_lesson_${hint.lessonNumber}`] = await enrichGenkiLesson({
+    book: 'genki_1_textbook',
+    textbookKey: 'genki_1',
+    lessonNumber: hint.lessonNumber,
+    startPage: hint.pageNumber,
+    endPage: end,
+    title: hint.label,
+    levelRange: 'N5-N4',
+    appLessonTags: [`genki_1_${hint.lessonNumber}`],
+    parseMode: 'genki_kana',
+  })
+}
+
+const g2Hints = await loadLessonHints('genki_2_textbook')
+for (let i = 0; i < g2Hints.length; i += 1) {
+  const hint = g2Hints[i]
+  if (hint.lessonNumber < 14 || hint.lessonNumber > 23) continue
+  const end = (g2Hints[i + 1]?.pageNumber ?? hint.pageNumber + 30) - 1
+  results[`genki_2_lesson_${hint.lessonNumber}`] = await enrichGenkiLesson({
+    book: 'genki_2_textbook',
+    textbookKey: 'genki_2',
+    lessonNumber: hint.lessonNumber,
+    startPage: hint.pageNumber,
+    endPage: end,
+    title: hint.label,
+    levelRange: 'N4',
+    appLessonTags: appTagsForGenki2(hint.lessonNumber),
+    parseMode: 'genki_kana',
+  })
+}
+
+console.log(JSON.stringify(results, null, 2))
