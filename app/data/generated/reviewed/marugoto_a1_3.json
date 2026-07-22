@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a1",
+  "title": "Marugoto A1: Katsudoo (Starter)",
+  "edition": "learner-gold",
+  "levelRange": "A1",
+  "sources": [
+    {
+      "sourceId": "marugoto_a1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "37d39aeeacc21293c1b109685277456c277309963dc485944bfb6adc91d5842a",
+        "bytes": 30572124
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a1_lesson_3",
+      "unitType": "lesson",
+      "lessonNumber": 3,
+      "title": "Marugoto A1: Katsudoo (Starter) — Lesson 3",
+      "level": "A1",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a1_l3_grammar_1",
+          "pattern": "～んです・のです",
+          "meaning": "Adds an explanatory or emphatic nuance, meaning 'the thing is...' or 'it's that...'.",
+          "explanation": "んです (casual) and のです (formal) wrap a plain-form clause to signal that the speaker is explaining, seeking explanation, or emphasizing a reason or situation. It softens direct statements into shared context and is very common in natural spoken Japanese. Attach の/ん directly after plain-form verbs and い-adjectives; after nouns and な-adjective stems, add な before の/ん.",
+          "examples": [
+            {
+              "japanese": "頭が痛いんです。",
+              "reading": "あたまがいたいんです。",
+              "english": "The thing is, I have a headache."
+            },
+            {
+              "japanese": "どうして遅れたんですか。",
+              "reading": "どうしておくれたんですか。",
+              "english": "Why is it that you were late?"
+            },
+            {
+              "japanese": "実は、日本語を勉強しているんです。",
+              "reading": "じつは、にほんごをべんきょうしているんです。",
+              "english": "Actually, I'm studying Japanese."
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.599Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l3_grammar_2",
+          "pattern": "だろう",
+          "meaning": "Expresses probability ('probably') or seeks confirmation ('right?') in casual speech.",
+          "explanation": "だろう is the casual equivalent of でしょう. With falling intonation it means 'probably', expressing the speaker's guess or assumption. With rising intonation it seeks agreement, similar to 'isn't it?' or 'right?'. It attaches to plain-form verbs, い-adjectives, nouns, and な-adjective stems.",
+          "examples": [
+            {
+              "japanese": "明日は雨だろう。",
+              "reading": "あしたはあめだろう。",
+              "english": "It will probably rain tomorrow."
+            },
+            {
+              "japanese": "彼は学生だろう？",
+              "reading": "かれはがくせいだろう？",
+              "english": "He's a student, right?"
+            },
+            {
+              "japanese": "この本は難しいだろう。",
+              "reading": "このほんはむずかしいだろう。",
+              "english": "This book is probably difficult."
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.599Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l3_grammar_3",
+          "pattern": "あれ",
+          "meaning": "Means 'that over there' — refers to a thing far from both speaker and listener.",
+          "explanation": "あれ points to something distant from both the speaker and the listener. It is the far-distance member of the ko-so-a-do series. Use it when both parties can see the object but it is clearly away from both of you, such as something across the street or at the other end of a room.",
+          "examples": [
+            {
+              "japanese": "あれは山です。",
+              "reading": "あれはやまです。",
+              "english": "That over there is a mountain."
+            },
+            {
+              "japanese": "あれは誰の車ですか。",
+              "reading": "あれはだれのくるまですか。",
+              "english": "Whose car is that over there?"
+            },
+            {
+              "japanese": "あれは大きい建物ですね。",
+              "reading": "あれはおおきいたてものですね。",
+              "english": "That is a big building, isn't it."
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.599Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l3_grammar_4",
+          "pattern": "そこ",
+          "meaning": "A place demonstrative pronoun meaning 'there' or 'that place', referring to a location near the listener.",
+          "explanation": "そこ refers to a place near the person being spoken to, functioning like 'there' in English when the place is within the listener's reach or awareness. It is the second in the ko-so-a-do place series. Use it with particles like に, で, or は just as you would with ここ. Register is neutral.",
+          "examples": [
+            {
+              "japanese": "そこに座ってください。",
+              "reading": "そこにすわってください。",
+              "english": "Please sit there."
+            },
+            {
+              "japanese": "そこは駅ですか。",
+              "reading": "そこはえきですか。",
+              "english": "Is that place the station?"
+            },
+            {
+              "japanese": "そこで何をしていますか。",
+              "reading": "そこでなにをしていますか。",
+              "english": "What are you doing there?"
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.599Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l3_grammar_5",
+          "pattern": "を",
+          "meaning": "Marks the direct object of a verb — the thing being acted upon.",
+          "explanation": "を (pronounced 'o') follows the noun that receives the action of a transitive verb. It is the direct-object marker and has no English equivalent word; it is simply omitted in translation. を is used in all registers and is essential for forming basic sentences with action verbs.",
+          "examples": [
+            {
+              "japanese": "コーヒーを飲みます。",
+              "reading": "コーヒーをのみます。",
+              "english": "I drink coffee."
+            },
+            {
+              "japanese": "本を読みますか。",
+              "reading": "ほんをよみますか。",
+              "english": "Do you read books?"
+            },
+            {
+              "japanese": "音楽を聞きます。",
+              "reading": "おんがくをききます。",
+              "english": "I listen to music."
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.599Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l3_grammar_6",
+          "pattern": "する",
+          "meaning": "する is an irregular verb meaning 'to do,' and it also turns many nouns into verbs.",
+          "explanation": "する is one of the two main irregular verbs in Japanese. It combines with many Japanese and loanword nouns to create compound verbs (e.g., 勉強する, 料理する). It is used in both polite (します) and casual (する) speech and is essential for expressing actions.",
+          "examples": [
+            {
+              "japanese": "毎日、勉強します。",
+              "reading": "まいにち、べんきょうします。",
+              "english": "I study every day."
+            },
+            {
+              "japanese": "週末に料理をします。",
+              "reading": "しゅうまつにりょうりをします。",
+              "english": "I cook on weekends."
+            },
+            {
+              "japanese": "電話します。",
+              "reading": "でんわします。",
+              "english": "I will make a phone call."
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.599Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l3_grammar_7",
+          "pattern": "がいる",
+          "meaning": "Indicates that a person or animal exists or is present somewhere.",
+          "explanation": "がいる is used for living, animate beings — people and animals. Unlike がある, it cannot be used for objects or events. The subject takes が and the location takes に. It can also describe someone remaining in a state. Polite form is います.",
+          "examples": [
+            {
+              "japanese": "公園に子どもがいます。",
+              "reading": "こうえんにこどもがいます。",
+              "english": "There are children in the park."
+            },
+            {
+              "japanese": "部屋に猫がいる。",
+              "reading": "へやにねこがいる。",
+              "english": "There is a cat in the room."
+            },
+            {
+              "japanese": "お母さんは台所にいますか。",
+              "reading": "おかあさんはだいどころにいますか。",
+              "english": "Is your mother in the kitchen?"
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.599Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l3_grammar_8",
+          "pattern": "い-Adjectives",
+          "meaning": "A class of adjectives ending in い that directly modify nouns and conjugate to show tense and negation.",
+          "explanation": "い-adjectives end in い and can modify a noun directly before it (e.g. 大きい犬) or appear at the end of a sentence before です or だ. To make them negative, drop the final い and add くない; to make them past tense, drop い and add かった. They conjugate independently without needing a copula for plain-form sentences.",
+          "examples": [
+            {
+              "japanese": "この本は面白いです。",
+              "reading": "このほんはおもしろいです。",
+              "english": "This book is interesting."
+            },
+            {
+              "japanese": "昨日は寒くなかったです。",
+              "reading": "きのうはさむくなかったです。",
+              "english": "Yesterday was not cold."
+            },
+            {
+              "japanese": "新しいレストランは高いですか。",
+              "reading": "あたらしいレストランはたかいですか。",
+              "english": "Is the new restaurant expensive?"
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.599Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a1_3"
+    }
+  ]
+}

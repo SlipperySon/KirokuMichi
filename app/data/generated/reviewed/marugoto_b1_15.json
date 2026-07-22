@@ -1,0 +1,418 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_b1",
+  "title": "Marugoto B1: Intermediate 1",
+  "edition": "learner-gold",
+  "levelRange": "B1",
+  "sources": [
+    {
+      "sourceId": "marugoto_b1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "d81948636c448b583ea3b99b908addcc1e79ec458e2c279c600e606b926b85fe",
+        "bytes": 148164767
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_b1_lesson_15",
+      "unitType": "lesson",
+      "lessonNumber": 15,
+      "title": "Marugoto B1: Intermediate 1 — Lesson 15",
+      "level": "B1",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_b1_l15_grammar_1",
+          "pattern": "又〜も",
+          "meaning": "Moreover, Additionally, And also, In addition, Furthermore, Or",
+          "explanation": "Grammar explanation for 又〜も",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.833Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l15_grammar_2",
+          "pattern": "と同じくらい",
+          "meaning": "About the same as, About as, No less",
+          "explanation": "Grammar explanation for と同じくらい",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.833Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l15_grammar_3",
+          "pattern": "Noun＋型",
+          "meaning": "Attaches to nouns to indicate a type, model, style, or category of something.",
+          "explanation": "型 (かた) follows a noun to classify something as belonging to a particular type or model. It is neutral in register and appears in both spoken and written Japanese. Common in product descriptions, personality types, and categorization contexts.",
+          "examples": [
+            {
+              "japanese": "彼は努力型の人間だと思います。",
+              "reading": "かれはどりょくがたのにんげんだとおもいます。",
+              "english": "I think he is the type of person who achieves things through hard work."
+            },
+            {
+              "japanese": "新しいスマートフォンはA型とB型の二種類があります。",
+              "reading": "あたらしいスマートフォンはAがたとBがたのにしゅるいがあります。",
+              "english": "The new smartphone comes in two models: Type A and Type B."
+            },
+            {
+              "japanese": "日本型のビジネス文化は海外と違う点が多い。",
+              "reading": "にほんがたのビジネスぶんかはかいがいとちがうてんがおおい。",
+              "english": "Japanese-style business culture differs from overseas in many ways."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.833Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l15_grammar_4",
+          "pattern": "合う",
+          "meaning": "Attached to the stem of a verb to express that an action is performed mutually or reciprocally between people.",
+          "explanation": "合う attaches to the conjunctive (ます-stem) form of a verb to indicate that two or more people perform an action toward each other simultaneously. It adds the meaning of 'with each other' or 'mutually'. This is common in everyday speech and writing at a neutral register.",
+          "examples": [
+            {
+              "japanese": "二人は目を見つめ合った。",
+              "reading": "ふたりはめをみつめあった。",
+              "english": "The two gazed into each other's eyes."
+            },
+            {
+              "japanese": "困ったときは助け合うことが大切です。",
+              "reading": "こまったときはたすけあうことがたいせつです。",
+              "english": "It's important to help each other when things get tough."
+            },
+            {
+              "japanese": "友達と意見を話し合って、決めた。",
+              "reading": "ともだちといけんをはなしあって、きめた。",
+              "english": "I talked it over with my friend and we made a decision."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.833Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l15_grammar_5",
+          "pattern": "と言える",
+          "meaning": "Expresses a reasonable or justified conclusion that can be drawn from evidence or context.",
+          "explanation": "と言える means 'one can say that' or 'it is fair to say that', and is used to present a conclusion that is logical or well-supported. It is softer than stating a fact directly, making it suitable for expressing opinions, evaluations, or reasoned judgments. It works in both formal writing and conversation.",
+          "examples": [
+            {
+              "japanese": "この結果は成功だと言えるでしょう。",
+              "reading": "このけっかはせいこうだといえるでしょう。",
+              "english": "It's fair to say that this result is a success."
+            },
+            {
+              "japanese": "彼は今、チームで一番大切な選手だと言える。",
+              "reading": "かれはいま、チームでいちばんたいせつなせんしゅだといえる。",
+              "english": "You could say he is currently the most important player on the team."
+            },
+            {
+              "japanese": "毎日練習すれば、上手になると言えます。",
+              "reading": "まいにちれんしゅうすれば、じょうずになるといえます。",
+              "english": "It can be said that if you practice every day, you will improve."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.833Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l15_grammar_6",
+          "pattern": "ことなの",
+          "meaning": "Defines or explains what something means, often used to clarify or restate a concept.",
+          "explanation": "ことなの (or ことなんだ in casual speech, ことなんです in polite speech) follows a noun or plain-form clause to provide an explanatory definition, similar to saying 'what I mean is' or 'it means that'. It is used when the speaker wants to clarify or emphasize the nature of something. The の adds a soft, explanatory nuance common in casual conversation.",
+          "examples": [
+            {
+              "japanese": "友達って、助け合うことなの。",
+              "reading": "ともだちって、たすけあうことなの。",
+              "english": "Friendship means helping each other out."
+            },
+            {
+              "japanese": "大切なのは、毎日続けることなの。",
+              "reading": "たいせつなのは、まいにちつづけることなの。",
+              "english": "What's important is continuing every day."
+            },
+            {
+              "japanese": "問題は、お金がないことなの。",
+              "reading": "もんだいは、おかねがないことなの。",
+              "english": "The problem is that there's no money."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.833Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l15_grammar_7",
+          "pattern": "のはXの方だ",
+          "meaning": "Focuses emphasis on a specific person or thing as the subject or agent of an action.",
+          "explanation": "This cleft construction uses のは to nominalize a verb phrase and の方だ to identify the emphasized element. It singles out one entity from a set of possibilities, similar to English 'it is X who...' or 'X is the one that...' It is used in both spoken and written Japanese when the speaker wants to correct a misunderstanding or clarify who or what is responsible for something.",
+          "examples": [
+            {
+              "japanese": "先に謝るべきなのは彼の方だ。",
+              "reading": "さきにあやまるべきなのはかれのほうだ。",
+              "english": "He is the one who should apologize first."
+            },
+            {
+              "japanese": "間違えたのは私の方です。",
+              "reading": "まちがえたのはわたしのほうです。",
+              "english": "I am the one who made the mistake."
+            },
+            {
+              "japanese": "この問題を解決できるのは田中さんの方だと思う。",
+              "reading": "このもんだいをかいけつできるのはたなかさんのほうだとおもう。",
+              "english": "I think Tanaka-san is the one who can solve this problem."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.833Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l15_grammar_8",
+          "pattern": "～は～となっている",
+          "meaning": "It is (has been), Have/has become, Happen to be, Has been established",
+          "explanation": "Grammar explanation for ～は～となっている",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.833Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l15_grammar_9",
+          "pattern": "に当たる",
+          "meaning": "Correspond to, Amounts to, Equals to, Is appropriate",
+          "explanation": "Grammar explanation for に当たる",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.833Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l15_grammar_10",
+          "pattern": "関係がある",
+          "meaning": "Expresses that something is (or is not) connected, related to, or involved with something else.",
+          "explanation": "関係がある means 'to be related to' or 'to have a connection with,' while its negative form 関係がない means 'to have no connection with' or 'not to be involved.' It follows a noun + と or に. It is used in both casual and formal contexts and is a flexible way to discuss relationships between things, people, or events.",
+          "examples": [
+            {
+              "japanese": "この問題は私には関係がないと思っていた。",
+              "reading": "このもんだいはわたしにはかんけいがないとおもっていた。",
+              "english": "I thought this problem had nothing to do with me."
+            },
+            {
+              "japanese": "その事件と彼との間に何か関係があるのかもしれない。",
+              "reading": "そのじけんとかれとのあいだになにかかんけいがあるのかもしれない。",
+              "english": "There might be some connection between that incident and him."
+            },
+            {
+              "japanese": "健康と睡眠には深い関係があることがわかってきた。",
+              "reading": "けんこうとすいみんにはふかいかんけいがあることがわかってきた。",
+              "english": "It has become clear that there is a deep relationship between health and sleep."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.833Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l15_grammar_11",
+          "pattern": "点",
+          "meaning": "Refers to a specific aspect, point, or dimension of something being discussed or evaluated.",
+          "explanation": "点 is a noun meaning 'point' or 'aspect' and is used with particles like で, から, において, and という to narrow discussion to a particular dimension. It allows the speaker to evaluate or describe something in one specific regard without making a blanket statement. It appears in both spoken and written Japanese and is especially useful for nuanced comparisons or feedback.",
+          "examples": [
+            {
+              "japanese": "この製品はデザインの点で他社より優れています。",
+              "reading": "このせいひんはデザインのてんでたしゃよりすぐれています。",
+              "english": "This product is superior to other companies in terms of design."
+            },
+            {
+              "japanese": "費用がかかるという点が問題です。",
+              "reading": "ひようがかかるというてんがもんだいです。",
+              "english": "The problem is the point that it costs a lot."
+            },
+            {
+              "japanese": "その点については、もう少し考える必要があります。",
+              "reading": "そのてんについては、もうすこしかんがえるひつようがあります。",
+              "english": "Regarding that point, I need to think a little more."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.833Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l15_grammar_12",
+          "pattern": "という理由で",
+          "meaning": "For (that) reason; on the grounds of (that), With the reasoning, Under the pretext of, Due to",
+          "explanation": "Grammar explanation for という理由で",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.833Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l15_grammar_13",
+          "pattern": "折角",
+          "meaning": "With trouble, At great pains, Take the trouble, Might as well..., Rare/long-awaited occasion",
+          "explanation": "Grammar explanation for 折角",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.833Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_b1_15"
+    }
+  ]
+}

@@ -1,0 +1,1905 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "tobira",
+  "title": "Tobira: Gateway to Advanced Japanese",
+  "edition": "learner-gold",
+  "levelRange": "B2",
+  "sources": [
+    {
+      "sourceId": "tobira_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "148bfbf6006104c9ecb0939ce545f2f0911955f692903b0f0bb317dcf08f86e8",
+        "bytes": 206175305
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "tobira_lesson_6",
+      "unitType": "lesson",
+      "lessonNumber": 6,
+      "title": "第6課 日本人と宗教",
+      "level": "B2",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [
+        {
+          "id": "tobira_l6_vocab_1",
+          "surface": "単語表",
+          "reading": null,
+          "meaning": "religion",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_2",
+          "surface": "宗教",
+          "reading": "くるしい",
+          "meaning": "hard; dificult",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_3",
+          "surface": "神頼み",
+          "reading": "かみだのみ",
+          "meaning": "Men pray to God only when they are in trouble. Buddha; Buddha image",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_4",
+          "surface": "どうか(~下さい）",
+          "reading": null,
+          "meaning": "please",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_5",
+          "surface": "かみだな",
+          "reading": null,
+          "meaning": "household Shinto altar",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_6",
+          "surface": "仏壇",
+          "reading": null,
+          "meaning": "family Buddhist altar",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_7",
+          "surface": "9朝晚",
+          "reading": "あさばん",
+          "meaning": "morning and evening",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_8",
+          "surface": "神道",
+          "reading": null,
+          "meaning": "Shintoism",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_9",
+          "surface": "仏教",
+          "reading": "ぶっきょう",
+          "meaning": "Buddhism",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_10",
+          "surface": "共",
+          "reading": "に",
+          "meaning": "both",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_11",
+          "surface": "一神教",
+          "reading": "いっしんきょう",
+          "meaning": "monotheism",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_12",
+          "surface": "同時",
+          "reading": "に",
+          "meaning": "at the same time",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_13",
+          "surface": "(~)祭る",
+          "reading": "まつる",
+          "meaning": "to deify; enshrine",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_14",
+          "surface": "ふしぎ(な)",
+          "reading": null,
+          "meaning": "wonderful; strange; mysterious",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_15",
+          "surface": "神社",
+          "reading": null,
+          "meaning": "shrine vNvisiting(a shrine,aperson's grave,etc.)|(~に)参",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_16",
+          "surface": "お守り",
+          "reading": "おまもり",
+          "meaning": "good-luck charm",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_17",
+          "surface": "お札",
+          "reading": "おふだ",
+          "meaning": "talisman issued at a Shinto shrine",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_18",
+          "surface": "(~に~を)つける",
+          "reading": "つける",
+          "meaning": "to attach; put something on",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_19",
+          "surface": "不幸",
+          "reading": null,
+          "meaning": "unhappiness; bad luck",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_20",
+          "surface": "(~が)起きる",
+          "reading": null,
+          "meaning": "to happen; take place; get up",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_21",
+          "surface": "幸福",
+          "reading": null,
+          "meaning": "happiness to hope",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_22",
+          "surface": "節分",
+          "reading": "せつぶん",
+          "meaning": "the day before the first day of spring",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_23",
+          "surface": "(お）盆",
+          "reading": "(お）ほん",
+          "meaning": "estival of the Dead",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_24",
+          "surface": "先祖",
+          "reading": null,
+          "meaning": "ancestor",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_25",
+          "surface": "信者",
+          "reading": null,
+          "meaning": "believer; follower",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_26",
+          "surface": "(~を)飾る",
+          "reading": null,
+          "meaning": "to decorate",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 153
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_27",
+          "surface": "ギリシャ神話",
+          "reading": null,
+          "meaning": "Greek mythology",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 156
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_28",
+          "surface": "3偉い",
+          "reading": "えらい",
+          "meaning": "great, admirable; respectable;(person)in ahigh position",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 156
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_29",
+          "surface": "乱暴（な）",
+          "reading": "らんぼう(な)",
+          "meaning": "violent; rough; rude",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 156
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_30",
+          "surface": "7侍女",
+          "reading": "じじよ",
+          "meaning": "lady attendant; maid",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 156
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_31",
+          "surface": "(~を)殺す",
+          "reading": null,
+          "meaning": "to kill",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 156
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_32",
+          "surface": "9岩",
+          "reading": "いわ",
+          "meaning": "rock|岩戸() rockdoor (to a cave)",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 156
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_33",
+          "surface": "(~に)隠れる",
+          "reading": "かくれる",
+          "meaning": "to hide oneself; be hidden",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 156
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_34",
+          "surface": "急（な）",
+          "reading": "きゅう（な)",
+          "meaning": "sudden; abrupt",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 156
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_35",
+          "surface": "大騒",
+          "reading": "ざ",
+          "meaning": "making great noise(yelling, cheering and laughing)|",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 156
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_36",
+          "surface": "15日食",
+          "reading": "にっしよく",
+          "meaning": "solar eclipse",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 156
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_37",
+          "surface": "17(~を)訪れる",
+          "reading": "おとずれる",
+          "meaning": "to visit; call (on a person, ata place)",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 156
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_38",
+          "surface": "世紀",
+          "reading": "せいき",
+          "meaning": "century",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 156
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_39",
+          "surface": "意見",
+          "reading": null,
+          "meaning": "opinion",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 160
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_40",
+          "surface": "3(~を)許す",
+          "reading": "ゆるす",
+          "meaning": "to allow; permit",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 160
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_41",
+          "surface": "4(~が)混ざる",
+          "reading": null,
+          "meaning": "to mix; blend",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 160
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_42",
+          "surface": "文化厅",
+          "reading": null,
+          "meaning": "the Agency for Cultural Affairs",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 160
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_43",
+          "surface": "年中行事",
+          "reading": "ねんちゅうぎょうじ",
+          "meaning": "yearly event",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 160
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_44",
+          "surface": "個人",
+          "reading": "こじん",
+          "meaning": "individual|個人的（な）（）personal",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 160
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_45",
+          "surface": "感",
+          "reading": "じがする",
+          "meaning": "to feel",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 160
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_46",
+          "surface": "図",
+          "reading": "ず",
+          "meaning": "figure; chart; drawing",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 160
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_47",
+          "surface": "16結果",
+          "reading": "けっか",
+          "meaning": "result",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 160
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_48",
+          "surface": "17-系",
+          "reading": "けい",
+          "meaning": "system; lineage; family; group",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 160
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_49",
+          "surface": "わりあい",
+          "reading": null,
+          "meaning": "ratio; percentage",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 160
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_50",
+          "surface": "あらわれる",
+          "reading": null,
+          "meaning": "to appear",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 160
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        },
+        {
+          "id": "tobira_l6_vocab_51",
+          "surface": "单位",
+          "reading": "たんい",
+          "meaning": "unit (of measure); credit",
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 160
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.424Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 153, 156, 160"
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "tobira_l6_grammar_1",
+          "pattern": "て当然だ",
+          "meaning": "It is natural that, As a matter of course",
+          "explanation": "The て-form linked with 当然だ expresses that something is a natural result or expected outcome. Often used with a reason or cause before the て-form to explain why an outcome is inevitable or expected. Common in both spoken and written Japanese.",
+          "examples": [
+            {
+              "japanese": "毎日練習しているのだから上達して当然だ。",
+              "reading": "まいにちれんしゅうしているのだからじょうたつしてとうぜんだ。",
+              "english": "Because you practice every day, improvement is only natural."
+            },
+            {
+              "japanese": "長時間働いているから疲れて当然だ。",
+              "reading": "ながじかんはたらいているからつかれてとうぜんだ。",
+              "english": "Because you work long hours, it's natural to be tired."
+            },
+            {
+              "japanese": "新しいシステムだから使い方がわからなくて当然だ。",
+              "reading": "あたらしいしすてむだからつかいかたがわからなくてとうぜんだ。",
+              "english": "Since it's a new system, it's natural not to understand how to use it."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_grammar_2",
+          "pattern": "ようがない・ようもない",
+          "meaning": "Expresses that there is no possible way to do something, as no means or method exists.",
+          "explanation": "ようがない and its softer variant ようもない attach to the verb stem (masu-stem) to indicate that doing something is completely impossible because there is no available means or method. This is different from できない in that it emphasizes the absence of any way, not just inability. It is used in both spoken and written Japanese and carries a tone of resignation or frustration.",
+          "examples": [
+            {
+              "japanese": "彼女の電話番号を知らないので、連絡のしようがない。",
+              "reading": "かのじょのでんわばんごうをしらないので、れんらくのしようがない。",
+              "english": "I don't know her phone number, so there's no way to contact her."
+            },
+            {
+              "japanese": "証拠がなければ、信じようがないよ。",
+              "reading": "しょうこがなければ、しんじようがないよ。",
+              "english": "Without evidence, there's no way I can believe it."
+            },
+            {
+              "japanese": "説明書が全部フランス語で、読みようもなかった。",
+              "reading": "せつめいしょがぜんぶフランスごで、よみようもなかった。",
+              "english": "The manual was entirely in French, so there was no way to read it."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_grammar_3",
+          "pattern": "さすが",
+          "meaning": "as one would expect, only natural, that is just like..., even",
+          "explanation": "Grammar explanation for さすが",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_grammar_4",
+          "pattern": "だけのことはある",
+          "meaning": "No wonder, Not surprising that, As expected",
+          "explanation": "Grammar explanation for だけのことはある",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_grammar_5",
+          "pattern": "てはいられない",
+          "meaning": "Can&#x27;t afford to, Unable to",
+          "explanation": "Grammar explanation for てはいられない",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_grammar_6",
+          "pattern": "どうせ",
+          "meaning": "Expresses resignation or certainty that something will turn out a certain (usually negative) way regardless of effort.",
+          "explanation": "どうせ is an adverb that conveys the speaker's resigned or fatalistic attitude — that the outcome is inevitable no matter what one does. It often implies pessimism or sarcasm ('it's going to be that way anyway, so why bother'). It is used in casual to neutral speech and is rarely found in formal writing. It frequently pairs with んだから, だから, or similar expressions of reasoning.",
+          "examples": [
+            {
+              "japanese": "どうせ試験に落ちると思って、あまり勉強しなかった。",
+              "reading": "どうせしけんにおちるとおもって、あまりべんきょうしなかった。",
+              "english": "Thinking I'd fail the exam anyway, I didn't study much."
+            },
+            {
+              "japanese": "どうせ誰も来ないんだから、パーティーを中止にしよう。",
+              "reading": "どうせだれもこないんだから、パーティーをちゅうしにしよう。",
+              "english": "Since nobody is going to come anyway, let's cancel the party."
+            },
+            {
+              "japanese": "どうせまた同じミスを繰り返すに決まっている。",
+              "reading": "どうせまたおなじミスをくりかえすにきまっている。",
+              "english": "They'll definitely just repeat the same mistake again anyway."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_grammar_7",
+          "pattern": "いきなり",
+          "meaning": "For no reason, Suddenly, All of a sudden",
+          "explanation": "Grammar explanation for いきなり",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_grammar_8",
+          "pattern": "からといって",
+          "meaning": "Used to warn that a stated reason or condition does not automatically justify a particular conclusion or action.",
+          "explanation": "からといって introduces a premise that might seem like a valid reason, then immediately refutes or qualifies it, often with a negative or cautionary statement in the following clause. It is equivalent to 'just because X doesn't mean Y.' Register is neutral and the pattern is common in both conversation and formal writing.",
+          "examples": [
+            {
+              "japanese": "忙しいからといって、健康を無視していいわけではない。",
+              "reading": "いそがしいからといって、けんこうをむししていいわけではない。",
+              "english": "Just because you're busy doesn't mean you can ignore your health."
+            },
+            {
+              "japanese": "お金があるからといって、何でも買えるわけではない。",
+              "reading": "おかねがあるからといって、なんでもかえるわけではない。",
+              "english": "Just because you have money doesn't mean you can buy everything."
+            },
+            {
+              "japanese": "失敗したからといって、すぐに諦める必要はない。",
+              "reading": "しっぱいしたからといって、すぐにあきらめるひつようはない。",
+              "english": "Just because you failed doesn't mean you need to give up right away."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_grammar_9",
+          "pattern": "ことは〜が",
+          "meaning": "It is true...but, although, but",
+          "explanation": "Grammar explanation for ことは〜が",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_grammar_10",
+          "pattern": "ものか",
+          "meaning": "Definitely not, absolutely not, impossible, do you really think~?",
+          "explanation": "The nominalizer もの combined with the question particle か creates a strong emphatic negation or rhetorical question. It expresses the speaker's firm conviction that something will not or cannot happen, often with emotional intensity. Common in both written and spoken Japanese.",
+          "examples": [
+            {
+              "japanese": "そんなことができるものか。",
+              "reading": "そんなことができるものか。",
+              "english": "As if I could do such a thing!"
+            },
+            {
+              "japanese": "彼がそんなことをするものか。",
+              "reading": "かれがそんなことをするものか。",
+              "english": "There's no way he would do such a thing."
+            },
+            {
+              "japanese": "私がそんなに簡単にあきらめるものか。",
+              "reading": "わたしがそんなにかんたんにあきらめるものか。",
+              "english": "Do you really think I would give up so easily?"
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_grammar_11",
+          "pattern": "に限らず",
+          "meaning": "Means 'not only X but also', extending a statement beyond a single subject to a broader group.",
+          "explanation": "に限らず follows a noun and expands the scope of the sentence, indicating that the statement is not restricted to the mentioned item alone. It is often paired with も or だけでなく to strengthen the expansive meaning. Common in both spoken and written Japanese, it is slightly more formal than だけじゃなくて.",
+          "examples": [
+            {
+              "japanese": "日本人に限らず、外国人も多くこの祭りに参加する。",
+              "reading": "にほんじんにかぎらず、がいこくじんもおおくこのまつりにさんかする。",
+              "english": "Not only Japanese people, but many foreigners also take part in this festival."
+            },
+            {
+              "japanese": "子どもに限らず、大人もこのゲームを楽しんでいる。",
+              "reading": "こどもにかぎらず、おとなもこのゲームをたのしんでいる。",
+              "english": "Not just children, but adults too are enjoying this game."
+            },
+            {
+              "japanese": "スポーツに限らず、音楽や美術の才能も大切だ。",
+              "reading": "スポーツにかぎらず、おんがくやびじゅつのさいのうもたいせつだ。",
+              "english": "Talent in music and art is also important, not just talent in sports."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_grammar_12",
+          "pattern": "更に",
+          "meaning": "Even more or further, Again, More and more",
+          "explanation": "Grammar explanation for 更に",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_grammar_13",
+          "pattern": "それとも",
+          "meaning": "Used to present an alternative option, especially in questions or when asking someone to choose between two possibilities.",
+          "explanation": "それとも is a conjunction that connects two alternatives, similar to 'or' or 'or else' in English. It is most naturally used in questions where the speaker asks the listener to choose between options. Unlike か, which is a simple disjunction, それとも implies the alternatives are somewhat contrasting or mutually exclusive. It is conversational and common in spoken Japanese.",
+          "examples": [
+            {
+              "japanese": "コーヒーにしますか、それとも紅茶にしますか。",
+              "reading": "コーヒーにしますか、それともこうちゃにしますか。",
+              "english": "Would you like coffee, or rather tea?"
+            },
+            {
+              "japanese": "電車で行きますか、それともバスで行きますか。",
+              "reading": "でんしゃでいきますか、それともバスでいきますか。",
+              "english": "Are you going by train, or by bus?"
+            },
+            {
+              "japanese": "自分でやってみますか、それとも手伝いましょうか。",
+              "reading": "じぶんでやってみますか、それともてつだいましょうか。",
+              "english": "Do you want to try it yourself, or shall I help you?"
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_grammar_14",
+          "pattern": "てからでないと",
+          "meaning": "Expresses that a second action cannot happen unless or until the first action is completed.",
+          "explanation": "てからでないと (or てからでなければ) attaches to the て-form of a verb and sets up a strict prerequisite: the result in the main clause (usually negative) cannot occur without first completing the action in the subordinate clause. It is more emphatic than てから alone and is used in both spoken and written Japanese at a fairly neutral register. The main clause typically ends with できない, わからない, or a similar negative expression.",
+          "examples": [
+            {
+              "japanese": "契約書にサインしてからでないと、作業を始めることができません。",
+              "reading": "けいやくしょにサインしてからでないと、さぎょうをはじめることができません。",
+              "english": "We cannot begin work until after you have signed the contract."
+            },
+            {
+              "japanese": "実際に使ってみてからでないと、その製品の良さは分からない。",
+              "reading": "じっさいにつかってみてからでないと、そのせいひんのよさはわからない。",
+              "english": "You won't know how good that product is until you actually try using it."
+            },
+            {
+              "japanese": "上司に確認してからでないと、返事できません。",
+              "reading": "じょうしにかくにんしてからでないと、へんじできません。",
+              "english": "I cannot give you an answer until I check with my supervisor."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_grammar_15",
+          "pattern": "途中に・途中で",
+          "meaning": "On the way to somewhere, partway through a journey, or in the middle of an activity or process.",
+          "explanation": "途中に focuses on a point in space or time ('at a point along the way'), while 途中で focuses on an action or interruption ('in the middle of doing'). Both are natural and neutral in register. 途中で is especially common when describing something that happened or was done before completion, often implying interruption or a pause mid-process.",
+          "examples": [
+            {
+              "japanese": "学校への途中で、財布を忘れたことに気がついた。",
+              "reading": "がっこうへのとちゅうで、さいふをわすれたことにきがついた。",
+              "english": "On the way to school, I realized I had forgotten my wallet."
+            },
+            {
+              "japanese": "映画の途中で眠くなって、結末が見られなかった。",
+              "reading": "えいがのとちゅうでねむくなって、けつまつがみられなかった。",
+              "english": "I got sleepy in the middle of the movie and couldn't see the ending."
+            },
+            {
+              "japanese": "駅への途中に、新しいカフェができていた。",
+              "reading": "えきへのとちゅうに、あたらしいカフェができていた。",
+              "english": "On the way to the station, a new café had opened."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "tobira_l6_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue tobira_textbook_6",
+          "text": "使い方: ぺワク：各課で学習した内容をぺで聞き合ったり話し合ったりします。\nかくか: がくしう\nルプレイ: 各課で学習した内容に関連したタスクをペで行います。\nかくか: がくしう\nないよう: かんれん\nおこな: その他の活動：以下の課には、会話練習、ペアワク、ロールプレイ以外の活動\nほか: かつどう\nいが: かっとう\nく: 教科書の課\n活動内容: きようかしょか\nないよう: 第6課\n加: 第8課\n物語を紹介する: ものがたりしようかい\n歴史的人物や出来事などについて発表する: れきしてきじんぶつ\nできこと: はつびよう\nはつびよう: 第13課\n討: 第14課\n討論: 第15課\n文法項目の番号表示: ぶんほうこ今もく\nふんほう: 各文法項目の前に付けられた通し番号には3種類の表示法があり、それぞれ次のこと\nとおぼう: しゆるひようじほう\nあらわ: 黒で白抜きの番号(例)必ず覚えて使えるようにする文法\nし方ぬ: はんこうれい\nかならおほ: ぶんほう\n方: ばんごうれい\nおほ: ふんほう\nしろるばんこうれい: りかい\nひつようぶんほう: ふんほう\n名詞: 学生；日本；バス\n名詞句: 日本語の勉強\nスル動詞の名詞部分: 勉強；買い物；サイン\nどうし: めいしぶぶん\nどうし: V-masu\nどうし: れんようけい\nどうし: みぜんけい\nひてい: かたち\n動詞の意思形: 話う;食べよう;来よう\nどうし: いしけい\nA: 形容詞（1形容詞）\nけいようし: けいようし\n形容詞の語幹: 大き;おもしろ\nけいようし: ごかん\nけいようし: んようけいひていこ\nかたち: ANa\nけいようどうし: けいようし\nANo: 名詞型形容詞（/形容詞*）の語干\nめいしがたけいうし: けいようし\n吃かん: ふつうさいこう\nAn: 連体詞\nあらゆる: れんたいし\nAdv: 副詞（形容詞・形容動詞の連用形を含む）\nふくしけいし: けいよどし",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 12
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_dialogue_2",
+          "type": "dialogue",
+          "title": "Dialogue textbook_tobira_textbook_6",
+          "text": "使い方: Type 2b·{V/A}-plain\nType: 2c·{V/A}-plain\nh: ANaなIじやないだった1\nことに気がつく: じなかった}\nことに気がつく: Type 3·{V/A}-plain\nだったじやなかった: 注：ANoの接続形はどのタイプもNの接続形と同じです。\nせつくけい: せつくけい\nかくか: さいご\n漢字表の見方: を覚える漢字に分かれており、新しい単語の他に、すでに習った単語で漢字を新し\nのうりよく: きゆう\nち: 心に、使用頻度・なじみ度1)の高いものを各課35字前後(RW:各課15字前後、R:各\nしん: しようひんと\nぜんか: おもしきううきかしきうつう\nあつか: 注：「とびらサイトに既習漢字リストがあります。\n漢字の: げんそく\nかんじ: 漢字にはりがなはつけてありません。\nふりがな: 各課で覚える漢字\nおほ: 「本文を読む前に」文法ト」：りがなあり\nほんぶん: ぶんほう\nとうろん: (各ペ下にりがなつきでその漢字を含む単語をリスト)\nf: ぎよう\nこゆうめいし: とくべつ\nのぞ: かくうししつ",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 14
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_dialogue_3",
+          "type": "dialogue",
+          "title": "Dialogue tobira_textbook_6",
+          "text": "第: 日本の歴史\n課: 内容質問\nはく: 織田信長：鳴かぬなら殺してしまえホトトギス\nおだのふなが: 豊臣秀吉：鳴かぬなら\nとよとみひでよし: 徳川家康：鳴かぬなら鳴くまで待とう ホトトギス\nとくがわいえやす: これらの俳句は実際に彼らが作った俳句ではありませんが、それぞれの性格がよく表れていると\nはいく: 言われています。この俳句から三人はどのよな人物だったと思いますか。誰に一番魅力を感じ\nはいく: 211<\nようしき: にまでも影響を与えたものがありますか。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 275
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_dialogue_4",
+          "type": "dialogue",
+          "title": "Dialogue textbook_tobira_textbook_6",
+          "text": "会話練習: 丁寧度\nていねいど: モデル会話\nゆうた: 勇太の母：勇太が言ってたけど、マイクさんは、おにりが好きなんだって?\nゆた: マイク：はい。特に梅干し(pickledplum)やさけ(salmon)のおにりが大好きなんです。\nうめぼ: 勇太の母：へえ、そう。マイクさんは、おにぎりがいつ頃からあったか知ってる?\nマイク: いいえ。いつ頃から食べられていたんですか。\n勇太の母: おにぎりが、今の形で一般的に食べられるようになったのは、江戸時代らしいわよ。\nマイク: へえ、そうなんですか。ファーストフードみたいだから、もっと最近の食べ物かと思ってました。\n勇太の母: 実は、「おにぎりの化石(fossi)」なんてのも、見つかったんだって。\nかせき: マイクえっ、おにの化石!?\nかせき: 勇太の母：そう。弥生時代のものだったそうよ。\nやよい: マイク：へえ。\n勇太の母: だから、日本人はその時代からおにぎりを食べてたってことが分かったんだって。\nマイク: なるほど。おにぎりの歴史って、古いんですね。\n勇太の母: そうね。\n練習問題: モ二と勇太のお父さんがお茶について話す。\nうた: 勇太の父：勇太から聞いたんだけど、モ二力さんは大学の茶道部に入ることにした\nゆう: さとう\nモ二力: はい。日本にいるうちに、日本の伝統文化も経験しておこうと思って。\n勇太の父: なるほど。モ二力さんは、お茶を飲む習慣を日本に広めた(topopularize)のは、誰か\nモ二: いいえ。\n勇太の父: 栄西っていう禅宗の僧なだ。\nえいさい: ぜんしゆうそう\nモ二力: あっ、聞いたことがあります。有名な禅僧ですよね。\nぜんそう: 勇太の父：うん。鎌倉時代に、彼が中国からお茶の種(seed)を日本に持って帰って来て、お茶が体にい\nモ二力: へ元、\no: パートナーと練習してみましょう。過去の出来事について話しなさい。\n友達の親: さんは、\n留学生: いいえ。\n友達の親: 。(トピックについて話す)\n留学生: (質問したり、コメントしたりする)",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_dialogue_5",
+          "type": "dialogue",
+          "title": "Dialogue textbook_tobira_textbook_6",
+          "text": "日本の歴史: 会話練習\nていねいと: モデル会話\nfhC: 3州寿起0才\nモ二力: 教科書に書いてあったけど、京都って昔は日本の首都だったんだって?\nはるか: うん。平安時代や室町時代ね。\nむろまち: モ二力：あっ、平安時代って、あの有名な「源氏物語」が書かれた時代だよね。\nはるか: うん。誰が書いたか知ってる?\nモ二力: ううん、それは知らない。誰が書いたの?\n守老心周马心六门: はるか：書いたのは、紫式部っていう女性。\nむらさきしき: 26营张分式\nモ二力: へえ、女の人なんだ。\nはるか: うん。平安時代って、女性がひらがなで小説やエッセ一を書き始めた時代なんだ。\nへいあん: モ二力：ふうん、そうなんだ。\nはるか: 「源氏物語」はアニメやマンガにもなって、今でもすごく人気があるんだよ。\nげん: モ二カ：へえ、アニメにもなってるんだ。見てみようかな。\nはるか: うん。モ二力は恋愛小説、好きだからね。\nれんあい: 練習問题\nてつほう: マイク：本\nV: てっぼう\nはるか: うん。ポト人を乗せた船が、日本に流れ着いて(todriftashore)、鉄砲が伝わったらいよ。\n亦ね: てっぼう\nマイク: へえ、そう\nはか: その鉄砲を戦いで上手に使った大名がいたんだど、誰か\nはるか: 織田信長。\nおだのぶなが: マイク：ああ、\nはるか: うん。彼は、歴史上の人物の中で、特に日本人に人気があるんだよ。\nマイク: ふん。\nA: Bさんは、\nB: ううん。\nA: 。(トピックについて話す)",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 277
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l6_dialogue_6",
+          "type": "dialogue",
+          "title": "Dialogue textbook_tobira_textbook_6",
+          "text": "例文: 3.お盆には毎年兄弟同士で集まって、両親のお墓参りに行くことになっている。\nぼん: はかまい\nたたか: 5.子供同士のけんかが原因で、親同士の関係も悪くなってしまった。\n本文: 明治政府は本人も欧人のように肉を食べるべきだと考え、~ 【読：1.46】\nめい: The auxiliary き expresses the speaker's strong judgment that one should do something. The form of\n説明: するbeforeべcan be eitherすorする(i.e.,べきorするべき).\n英訳: should; ought to\na: V-plain.non-past.affべきだ/じやない/ではない/だっじやなかっではなかっ}:\n文型: 行くべきだじないだたじなかった}(Exception:する+べきすべき)\nb: VきN:取るべき授;今日中にす()べきこと\nた: 1③Nounからすると\nしんちょうこうき: のふなが\nのふなが: からするとintroduces the source or basis for the speaker's conjecture or judgment. The information\n説明: can be of any sort, including visual information (e.g., a shape, a color, a mannerism) and verbal\ninformation: (e.g. an explanation, a conversation, a report).\n英訳: judging from ~\n文型: Nからすると：顔色(complexion)からすると;話し方からすると\nかおいろ: 1.空の様子からすると、夕方には雨になるようだ。\n例文: たふん\n本文: ・鳴かぬなら 鳴くまで待とう ホトトギスだからね。【会2:1.41]\nひでよし: is a verb negative ending in classical Japanese and is equivalent to な in meaning and form. For\n説明: example,言わ is equivalent to言わな. In modern Japanese, it often appears in set phrases.\n文型: a.ru-verbs:食べぬ;起きぬ\nb: u-verbs:飲まぬ;会わぬ\nc: irr.verbs:来る→来ぬ；する→せぬ\n例文: 2.「聞くは一時の恥(shame)、聞かぬは一生の恥」ですよ。だから、どんどん質問して下さい。\nいっしよう: 3.もの言わ(silent)自然に代わって、自然の大切さを話したいと思う。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 282
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3848",
+          "label": "practice",
+          "prompt": "マイクと勇太のお母さんが「おにぎり」について話す。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3849",
+          "label": "practice",
+          "prompt": "勇太の母：勇太が言ってたけど、マイクさんは、おにりが好きなんだって?",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3850",
+          "label": "practice",
+          "prompt": "マイク：はい。特に梅干し(pickledplum)やさけ(salmon)のおにりが大好きなんです。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3851",
+          "label": "practice",
+          "prompt": "勇太の母：へえ、そう。マイクさんは、おにぎりがいつ頃からあったか知ってる?",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3852",
+          "label": "practice",
+          "prompt": "マイク：いいえ。いつ頃から食べられていたんですか。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3853",
+          "label": "practice",
+          "prompt": "勇太の母：おにぎりが、今の形で一般的に食べられるようになったのは、江戸時代らしいわよ。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3854",
+          "label": "practice",
+          "prompt": "マイク：へえ、そうなんですか。ファーストフードみたいだから、もっと最近の食べ物かと思ってました。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3855",
+          "label": "practice",
+          "prompt": "勇太の母：実は、「おにぎりの化石(fossi)」なんてのも、見つかったんだって。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3856",
+          "label": "practice",
+          "prompt": "マイクえっ、おにの化石!?",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3857",
+          "label": "practice",
+          "prompt": "勇太の母：そう。弥生時代のものだったそうよ。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3858",
+          "label": "practice",
+          "prompt": "勇太の母：だから、日本人はその時代からおにぎりを食べてたってことが分かったんだって。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3859",
+          "label": "practice",
+          "prompt": "マイク：なるほど。おにぎりの歴史って、古いんですね。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3860",
+          "label": "practice",
+          "prompt": "モ二と勇太のお父さんがお茶について話す。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3861",
+          "label": "practice",
+          "prompt": "勇太の父：勇太から聞いたんだけど、モ二力さんは大学の茶道部に入ることにした",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3862",
+          "label": "practice",
+          "prompt": "モ二力：はい。日本にいるうちに、日本の伝統文化も経験しておこうと思って。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3863",
+          "label": "practice",
+          "prompt": "勇太の父：なるほど。モ二力さんは、お茶を飲む習慣を日本に広めた(topopularize)のは、誰か",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3864",
+          "label": "practice",
+          "prompt": "勇太の父：栄西っていう禅宗の僧なだ。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3865",
+          "label": "practice",
+          "prompt": "モ二力：あっ、聞いたことがあります。有名な禅僧ですよね。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3866",
+          "label": "practice",
+          "prompt": "勇太の父：うん。鎌倉時代に、彼が中国からお茶の種(seed)を日本に持って帰って来て、お茶が体にい",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_textbook_tobira_textbook_6_exercise_3867",
+          "label": "practice",
+          "prompt": "いことやお茶の飲み方を、日本に紹介したんだよ。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 276
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.423Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "qualityTier": "gold",
+      "appLessonId": "tobira_6"
+    }
+  ]
+}

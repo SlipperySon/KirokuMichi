@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a1",
+  "title": "Marugoto A1: Katsudoo (Starter)",
+  "edition": "learner-gold",
+  "levelRange": "A1",
+  "sources": [
+    {
+      "sourceId": "marugoto_a1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "37d39aeeacc21293c1b109685277456c277309963dc485944bfb6adc91d5842a",
+        "bytes": 30572124
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a1_lesson_9",
+      "unitType": "lesson",
+      "lessonNumber": 9,
+      "title": "Marugoto A1: Katsudoo (Starter) — Lesson 9",
+      "level": "A1",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a1_l9_grammar_1",
+          "pattern": "ないでください",
+          "meaning": "Politely ask someone not to do something.",
+          "explanation": "Attach ないでください to the negative stem of a verb (the ない-form minus ない). It is the standard polite way to make a negative request, equivalent to 'Please don't ~'. Use it in formal or semi-formal situations such as with teachers, strangers, or in written notices.",
+          "examples": [
+            {
+              "japanese": "ここで写真を撮らないでください。",
+              "reading": "ここでしゃしんをとらないでください。",
+              "english": "Please don't take photos here."
+            },
+            {
+              "japanese": "教室で食べないでください。",
+              "reading": "きょうしつでたべないでください。",
+              "english": "Please don't eat in the classroom."
+            },
+            {
+              "japanese": "大きい声で話さないでください。",
+              "reading": "おおきいこえではなさないでください。",
+              "english": "Please don't speak in a loud voice."
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.614Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l9_grammar_2",
+          "pattern": "な",
+          "meaning": "Attached to the plain (dictionary) form of a verb to mean 'don't do' or 'do not do'.",
+          "explanation": "Adding な directly after a verb's plain form creates a strong, blunt prohibition. It is casual and often sounds harsh or commanding, so it is used mainly by people in authority, or in signs and warnings. It should not be confused with the な in な-adjectives.",
+          "examples": [
+            {
+              "japanese": "ここで走るな。",
+              "reading": "ここではしるな。",
+              "english": "Don't run here."
+            },
+            {
+              "japanese": "そんなことを言うな。",
+              "reading": "そんなことをいうな。",
+              "english": "Don't say such a thing."
+            },
+            {
+              "japanese": "心配するな。",
+              "reading": "しんぱいするな。",
+              "english": "Don't worry."
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.614Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l9_grammar_3",
+          "pattern": "てはいけない",
+          "meaning": "Express that something is not allowed or forbidden.",
+          "explanation": "Attach てはいけない (or ではいけない after で-forms) to the て-form of a verb. It states that an action is prohibited — stronger than a polite request. The casual spoken form is てはだめ. Use it for rules, warnings, and prohibitions.",
+          "examples": [
+            {
+              "japanese": "ここでタバコを吸ってはいけません。",
+              "reading": "ここでたばこをすってはいけません。",
+              "english": "You must not smoke here."
+            },
+            {
+              "japanese": "試験中に話してはいけない。",
+              "reading": "しけんちゅうにはなしてはいけない。",
+              "english": "You must not talk during the exam."
+            },
+            {
+              "japanese": "赤信号を渡ってはいけません。",
+              "reading": "あかしんごうをわたってはいけません。",
+              "english": "You must not cross on a red light."
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.614Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l9_grammar_4",
+          "pattern": "たほうがいい",
+          "meaning": "Recommend or advise that it would be better to do something.",
+          "explanation": "Attach たほうがいい to the た-form (past plain form) of a verb to give advice or a recommendation. It is milder than an obligation — more like 'you should' or 'it'd be better if you'. Commonly used by doctors, teachers, or friends giving suggestions.",
+          "examples": [
+            {
+              "japanese": "早く寝たほうがいいですよ。",
+              "reading": "はやくねたほうがいいですよ。",
+              "english": "You should go to bed early."
+            },
+            {
+              "japanese": "医者に行ったほうがいい。",
+              "reading": "いしゃにいったほうがいい。",
+              "english": "You should go to the doctor."
+            },
+            {
+              "japanese": "傘を持っていったほうがいいですよ。",
+              "reading": "かさをもっていったほうがいいですよ。",
+              "english": "You should take an umbrella with you."
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.614Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l9_grammar_5",
+          "pattern": "ないほうがいい",
+          "meaning": "Recommend or advise that it would be better not to do something.",
+          "explanation": "Attach ないほうがいい to the plain negative (ない) form of a verb to advise against an action. It is the negative counterpart of たほうがいい and carries the meaning 'you'd better not' or 'it's better not to'. The register is casual to semi-polite.",
+          "examples": [
+            {
+              "japanese": "夜遅くに食べないほうがいいですよ。",
+              "reading": "よるおそくにたべないほうがいいですよ。",
+              "english": "You shouldn't eat late at night."
+            },
+            {
+              "japanese": "あまりテレビを見ないほうがいい。",
+              "reading": "あまりてれびをみないほうがいい。",
+              "english": "You'd better not watch too much TV."
+            },
+            {
+              "japanese": "今日は外に出ないほうがいいです。",
+              "reading": "きょうはそとにでないほうがいいです。",
+              "english": "It'd be better not to go outside today."
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.614Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l9_grammar_6",
+          "pattern": "ましょう",
+          "meaning": "Expresses a suggestion or invitation to do something together — 'let's do ~'.",
+          "explanation": "ましょう is formed by replacing ます with ましょう on the ます-stem of a verb. It is polite and used to suggest a shared action, similar to 'shall we' or 'let's'. It is commonly used among friends, colleagues, or strangers in polite situations.",
+          "examples": [
+            {
+              "japanese": "一緒に昼ごはんを食べましょう。",
+              "reading": "いっしょにひるごはんをたべましょう。",
+              "english": "Let's eat lunch together."
+            },
+            {
+              "japanese": "そろそろ帰りましょう。",
+              "reading": "そろそろかえりましょう。",
+              "english": "Let's head home soon."
+            },
+            {
+              "japanese": "次の駅で降りましょう。",
+              "reading": "つぎのえきでおりましょう。",
+              "english": "Let's get off at the next station."
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.614Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l9_grammar_7",
+          "pattern": "ね",
+          "meaning": "A sentence-ending particle used to seek agreement or share a feeling with the listener.",
+          "explanation": "ね invites the listener to agree with or share the speaker's observation — similar to 'right?' or 'isn't it?' in English. It softens statements and makes conversation feel warmer. It is used in both casual and polite speech and is especially common when commenting on shared experiences.",
+          "examples": [
+            {
+              "japanese": "今日はいい天気ですね。",
+              "reading": "きょうはいいてんきですね。",
+              "english": "It's nice weather today, isn't it?"
+            },
+            {
+              "japanese": "このラーメンはおいしいね。",
+              "reading": "このラーメンはおいしいね。",
+              "english": "This ramen is tasty, right?"
+            },
+            {
+              "japanese": "田中さんは日本人ですね。",
+              "reading": "たなかさんはにほんじんですね。",
+              "english": "Mr Tanaka is Japanese, isn't he?"
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.614Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l9_grammar_8",
+          "pattern": "まだ",
+          "meaning": "Indicates that a situation or state continues to be true at the present time.",
+          "explanation": "まだ means 'still' in affirmative sentences, showing that a situation has not changed. It can also appear in negative sentences meaning 'not yet', though that combination is often expressed as まだ～ていません. Used in both polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "まだ雨が降っています。",
+              "reading": "まだあめがふっています。",
+              "english": "It's still raining."
+            },
+            {
+              "japanese": "弟はまだ子どもです。",
+              "reading": "おとうとはまだこどもです。",
+              "english": "My little brother is still a child."
+            },
+            {
+              "japanese": "まだ時間がありますか。",
+              "reading": "まだじかんがありますか。",
+              "english": "Is there still time?"
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.614Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a1_9"
+    }
+  ]
+}

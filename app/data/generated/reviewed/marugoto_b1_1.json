@@ -1,18 +1,33 @@
 {
-  "schemaVersion": "learner-draft-1",
-  "textbookKey": "marugoto_b1_textbook",
-  "title": "marugoto_b1_textbook / marugoto_b1_1",
-  "qualityTier": "draft",
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_b1",
+  "title": "Marugoto B1: Intermediate 1",
+  "edition": "learner-gold",
+  "levelRange": "B1",
+  "sources": [
+    {
+      "sourceId": "marugoto_b1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "d81948636c448b583ea3b99b908addcc1e79ec458e2c279c600e606b926b85fe",
+        "bytes": 148164767
+      }
+    }
+  ],
   "lessons": [
     {
-      "id": "marugoto_b1_1_draft",
-      "appLessonId": "marugoto_b1_1",
-      "title": "marugoto b1 1",
-      "qualityTier": "draft",
+      "id": "marugoto_b1_lesson_1",
+      "unitType": "lesson",
+      "lessonNumber": 1,
+      "title": "Marugoto B1: Intermediate 1 — Lesson 1",
+      "level": "B1",
+      "modes": [
+        "conversation_grammar"
+      ],
       "vocabulary": [],
       "grammar": [
         {
-          "id": "cefr_b1_195",
+          "id": "marugoto_b1_l1_grammar_1",
           "pattern": "ばいい",
           "meaning": "Expresses advice, suggestion, or the idea that doing something would solve a problem or be sufficient.",
           "explanation": "Attach ばいい to the conditional ば-form of a verb to suggest what someone should do or what would be good enough. It is used in both casual and polite speech depending on the surrounding sentence. It often answers the question 'what should I do?' and carries a nuance of 'all you need to do is…'.",
@@ -33,29 +48,20 @@
               "english": "Could you tell me which train I should take?"
             }
           ],
-          "maynardRef": {
-            "topicId": "more_grammar/conditional_たら_なら",
-            "title": "Conditional: たら, なら",
-            "excerpt": "114 CHAPTER 3. MORE GRAMMAR\nform, which can pair up with any verb, fz り gets its inflection specifically\nfrom the verb する, meaning '\"to do\":\nきょう がっこう い じゆぎょう で はん た\n今日は学校に行ったり、 授業に出たり、ご飯を食べたりしました。\n\"Today (I) went to school, went to class and ate.\"\nThis sentence literally reads \"Today I did: going to school, going to\nclass, eating', and shows why this is only listing representative actions -\nthere is no way to distinguish which action occurred when, in relation to\nother actions; we're literally o",
-            "examples": [
-              {
-                "japanese": "form, which can pair up with any verb, fz り gets its inflection specifically"
-              },
-              {
-                "japanese": "from the verb する, meaning '\"to do\":"
-              },
-              {
-                "japanese": "きょう がっこう い じゆぎょう で はん た"
-              }
-            ]
-          },
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_196",
+          "id": "marugoto_b1_l1_grammar_2",
           "pattern": "べき",
           "meaning": "Expresses a strong moral obligation or social expectation that something should be done.",
           "explanation": "べき follows the dictionary form of a verb (する becomes すべき or するべき) and expresses that something ought to be done based on reason, duty, or social norms. It is stronger than たらいい and carries a judgmental or prescriptive tone. It is more common in formal or written contexts but appears in speech when making a firm point.",
@@ -76,32 +82,20 @@
               "english": "A leader ought to take responsibility."
             }
           ],
-          "maynardRef": {
-            "topicId": "language_patterns/stating_a_social_expectation_or_custom_using_べき",
-            "title": "Stating a social expectation or custom using べき",
-            "excerpt": "6.2. NOMINALISING 291\nはず\n6.2.89 Stating an expectation using 筈\nIn English, which is the language this book is written in, there are two\ninterpretations possible for \"should\": it can mean \"must'\" such as in \"you\nshould clean up your room', and it can mean \"expect\", such as in \"she\nshould be showing up any minute now'\". The nominaliser 筈 maps to this\nexpectating form of \"should\":\nきょう\n今日はみんなが来るはずなんだ。\nliterally: \"It should be that everyone will come today.\n\"Everyone should be coming today.\nHere, the",
-            "examples": [
-              {
-                "japanese": "6.2.89 Stating an expectation using 筈",
-                "english": "In English, which is the language this book is written in, there are two"
-              },
-              {
-                "japanese": "should be showing up any minute now'\". The nominaliser 筈 maps to this",
-                "english": "expectating form of \"should\":"
-              },
-              {
-                "japanese": "今日はみんなが来るはずなんだ。",
-                "english": "literally: \"It should be that everyone will come today."
-              }
-            ]
-          },
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_197",
+          "id": "marugoto_b1_l1_grammar_3",
           "pattern": "中",
           "meaning": "Indicates that something is happening throughout a period, place, or process.",
           "explanation": "中 (じゅう or ちゅう) attaches to nouns to express that something spans an entire time, space, or process. Read as じゅう it means 'throughout / all over' (e.g. 世界中 'all over the world'); read as ちゅう it means 'in the middle of / during' (e.g. 会議中 'during the meeting'). It is common in both written and spoken registers.",
@@ -122,13 +116,20 @@
               "english": "This road is closed because construction is underway."
             }
           ],
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_198",
+          "id": "marugoto_b1_l1_grammar_4",
           "pattern": "上で",
           "meaning": "Indicates that one action is completed before another begins, or that something is a prerequisite condition.",
           "explanation": "上で attaches to the plain past form of a verb (た-form) to mean 'after doing X, then Y.' It implies that the first action is a necessary step before the second can happen. It is used in both formal and neutral registers and appears frequently in written and business contexts.",
@@ -149,13 +150,20 @@
               "english": "I would like to decide after consulting with my family."
             }
           ],
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_199",
+          "id": "marugoto_b1_l1_grammar_5",
           "pattern": "ことだ",
           "meaning": "Gives direct advice or a recommendation about what one should or should not do.",
           "explanation": "ことだ follows a plain-form verb (affirmative or negative) to give advice, often from someone in an authoritative position such as a teacher or doctor. It is more direct and prescriptive than たほうがいい and carries the nuance that following the advice is the right or proper thing to do. It is used in spoken Japanese and is not typically found in very formal written contexts.",
@@ -176,31 +184,20 @@
               "english": "You shouldn't worry yourself over something like that."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/being_です_だ_ある_いる",
-            "title": "Being: です, だ, ある, いる",
-            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
-            "examples": [
-              {
-                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
-              },
-              {
-                "japanese": "bases areなら,なり，なる,なれ andなれ.",
-                "english": "While typically used in combination with the verb particle lC, it can"
-              },
-              {
-                "japanese": "also be used in combination with the particle と, in which case its meaning",
-                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
-              }
-            ]
-          },
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_200",
+          "id": "marugoto_b1_l1_grammar_6",
           "pattern": "そうだ",
           "meaning": "Conveys information the speaker received from an external source rather than direct experience.",
           "explanation": "The hearsay そうだ attaches to the plain form of verbs and adjectives (including the copula) to report something the speaker heard or read. It is distinct from the appearance そうだ (which attaches to verb stems and adjective stems). This pattern appears in both speech and writing and signals that the speaker is not personally vouching for the information.",
@@ -221,31 +218,20 @@
               "english": "It is said that there was a large castle here long ago."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/being_です_だ_ある_いる",
-            "title": "Being: です, だ, ある, いる",
-            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
-            "examples": [
-              {
-                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
-              },
-              {
-                "japanese": "bases areなら,なり，なる,なれ andなれ.",
-                "english": "While typically used in combination with the verb particle lC, it can"
-              },
-              {
-                "japanese": "also be used in combination with the particle と, in which case its meaning",
-                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
-              }
-            ]
-          },
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_201",
+          "id": "marugoto_b1_l1_grammar_7",
           "pattern": "ほど",
           "meaning": "Expresses degree, extent, or approximation — meaning 'about,' 'to the extent that,' or 'so much that.'",
           "explanation": "ほど is a versatile expression of degree. It can indicate an approximate amount (三時間ほど = about three hours), an extent or limit (死ぬほど = to the point of dying), or set up a comparison. It appears in both casual and formal registers and is one of the most commonly used degree expressions in Japanese.",
@@ -266,13 +252,20 @@
               "english": "She can run at an unbelievably fast speed."
             }
           ],
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_202",
+          "id": "marugoto_b1_l1_grammar_8",
           "pattern": "という",
           "meaning": "Used to name, quote, define, or refer to something, meaning 'called', 'named', 'known as', or 'that says'.",
           "explanation": "という connects a word, phrase, or clause to a following noun to provide its name, label, or content. It can introduce a direct or indirect quote, define a term, or indicate the content of a thought or message. It is used across all registers and is extremely versatile in everyday Japanese.",
@@ -293,13 +286,20 @@
               "english": "He gave me a reply saying he wouldn't go."
             }
           ],
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_203",
+          "id": "marugoto_b1_l1_grammar_9",
           "pattern": "なぜなら〜から",
           "meaning": "Introduces a full explanation of the reason for a previously stated claim or situation.",
           "explanation": "なぜなら signals to the listener that an explanation of the reason is coming, and the clause ends with から (or だからだ in more formal writing). It is stronger and more emphatic than ので or から alone, as it structurally separates the claim from its justification. This pattern is common in essays, speeches, and explanatory writing; in casual conversation, から or だって alone is more natural.",
@@ -320,29 +320,20 @@
               "english": "Please go to bed early. The reason is that we leave early tomorrow morning."
             }
           ],
-          "maynardRef": {
-            "topicId": "more_grammar/conditional_たら_なら",
-            "title": "Conditional: たら, なら",
-            "excerpt": "114 CHAPTER 3. MORE GRAMMAR\nform, which can pair up with any verb, fz り gets its inflection specifically\nfrom the verb する, meaning '\"to do\":\nきょう がっこう い じゆぎょう で はん た\n今日は学校に行ったり、 授業に出たり、ご飯を食べたりしました。\n\"Today (I) went to school, went to class and ate.\"\nThis sentence literally reads \"Today I did: going to school, going to\nclass, eating', and shows why this is only listing representative actions -\nthere is no way to distinguish which action occurred when, in relation to\nother actions; we're literally o",
-            "examples": [
-              {
-                "japanese": "form, which can pair up with any verb, fz り gets its inflection specifically"
-              },
-              {
-                "japanese": "from the verb する, meaning '\"to do\":"
-              },
-              {
-                "japanese": "きょう がっこう い じゆぎょう で はん た"
-              }
-            ]
-          },
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_204",
+          "id": "marugoto_b1_l1_grammar_10",
           "pattern": "によると・によれば",
           "meaning": "Introduces the source of information the speaker is reporting.",
           "explanation": "によると and によれば both mean 'according to' and attach to nouns indicating an information source such as a person, news report, or rumor. によれば is slightly more formal and common in written language, while によると is natural in both speech and writing. Both are typically followed by a sentence ending with そうだ or らしい to mark the information as hearsay.",
@@ -363,29 +354,20 @@
               "english": "According to the news, that company apparently went bankrupt."
             }
           ],
-          "maynardRef": {
-            "topicId": "more_grammar/conditional_たら_なら",
-            "title": "Conditional: たら, なら",
-            "excerpt": "114 CHAPTER 3. MORE GRAMMAR\nform, which can pair up with any verb, fz り gets its inflection specifically\nfrom the verb する, meaning '\"to do\":\nきょう がっこう い じゆぎょう で はん た\n今日は学校に行ったり、 授業に出たり、ご飯を食べたりしました。\n\"Today (I) went to school, went to class and ate.\"\nThis sentence literally reads \"Today I did: going to school, going to\nclass, eating', and shows why this is only listing representative actions -\nthere is no way to distinguish which action occurred when, in relation to\nother actions; we're literally o",
-            "examples": [
-              {
-                "japanese": "form, which can pair up with any verb, fz り gets its inflection specifically"
-              },
-              {
-                "japanese": "from the verb する, meaning '\"to do\":"
-              },
-              {
-                "japanese": "きょう がっこう い じゆぎょう で はん た"
-              }
-            ]
-          },
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_205",
+          "id": "marugoto_b1_l1_grammar_11",
           "pattern": "ため(に)",
           "meaning": "Expresses a deliberate purpose ('in order to') or the beneficiary of an action ('for the sake of').",
           "explanation": "ために follows a verb in dictionary form to express intentional purpose, or follows a noun+の to indicate who or what benefits from the action. It is common in both formal and casual registers, though it sounds slightly more formal than のに in many contexts. Use it when the subject actively aims toward a goal or acts on behalf of someone.",
@@ -406,13 +388,20 @@
               "english": "I work hard for the sake of my family."
             }
           ],
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_206",
+          "id": "marugoto_b1_l1_grammar_12",
           "pattern": "ところが",
           "meaning": "A conjunction meaning 'however' or 'but,' used when the outcome is contrary to what was expected.",
           "explanation": "ところが connects two clauses where the second clause presents a result that is surprising or opposite to what the first clause would lead one to expect. It is stronger than でも and implies genuine surprise or disappointment. It appears in both spoken and written Japanese and always marks an unexpected reversal.",
@@ -433,13 +422,20 @@
               "english": "I had heard the exam was easy. However, it was actually very difficult."
             }
           ],
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_207",
+          "id": "marugoto_b1_l1_grammar_13",
           "pattern": "ば〜ほど",
           "meaning": "Expresses a proportional relationship: 'the more [X], the more [Y].'",
           "explanation": "This construction combines the conditional ば-form with ほど to express that as one thing increases or intensifies, something else increases proportionally. The same verb or adjective typically appears twice — once in the ば-form and once in its dictionary form before ほど. It is used in both spoken and written Japanese and applies to verbs and adjectives.",
@@ -460,107 +456,178 @@
               "english": "The more I thought about it, the less I understood the answer."
             }
           ],
-          "maynardRef": {
-            "topicId": "more_grammar/conditional_たら_なら",
-            "title": "Conditional: たら, なら",
-            "excerpt": "114 CHAPTER 3. MORE GRAMMAR\nform, which can pair up with any verb, fz り gets its inflection specifically\nfrom the verb する, meaning '\"to do\":\nきょう がっこう い じゆぎょう で はん た\n今日は学校に行ったり、 授業に出たり、ご飯を食べたりしました。\n\"Today (I) went to school, went to class and ate.\"\nThis sentence literally reads \"Today I did: going to school, going to\nclass, eating', and shows why this is only listing representative actions -\nthere is no way to distinguish which action occurred when, in relation to\nother actions; we're literally o",
-            "examples": [
-              {
-                "japanese": "form, which can pair up with any verb, fz り gets its inflection specifically"
-              },
-              {
-                "japanese": "from the verb する, meaning '\"to do\":"
-              },
-              {
-                "japanese": "きょう がっこう い じゆぎょう で はん た"
-              }
-            ]
-          },
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         }
       ],
       "contentBlocks": [
         {
-          "id": "marugoto_b1_1_dialogue_0",
+          "id": "marugoto_b1_l1_dialogue_1",
           "type": "dialogue",
           "title": "Dialogue b1_textbook_marugoto_b1_1",
           "text": "ひょう: たつせい\nないよう: いっはんてききつ\nないよう: ぐたいてききつ\nつきひょう: トピック1-3\nこうとう: ひようかひょう\nがんばって: もう少し\nできた: すばらしい\nタスク: 初対面の人に話しかける\n初対面の人に話しかける: 初対面の人に話しかけ、\nしよたいめん: しょたいめん\nしよたいめん: しよたいめん\n達成: ことはできるが、話しが\n自分のことについて話し: 自分のことについて話し\nたつせい: あいて\n家元: Cぶん\n自分のこ: たり、相手のことについ\nあいて: しつもん\nあいて: あいて\nとについて話すことがで: ていくつか質問したりで\nしうもん: つもん\nしうもん: とについて話せない。\n自然に: 相手に質問したり自分の\n会話を発展させることが: あいて\nあ: はつてん\nことについて話したりす: ことができる。\nの評価表の例: こうとう\nせうめい: ひようかひよう\nがんばって: もう少し\nできた: すばらしい\nタスク: 料理の名前や材料など、\nたつせい: かんたん\nあしさいりょう: あしさいりょう\nあしさいりょう: 一部については説明でき\nいちぶ: せつめい\nくちよう: せうめい\nぜんたい: せつめい\nつた: ぐたいてき\nつた: い伝えられる。\nつた: トピック1-3\nさくぶん: ともだち\nひようかひょう: がんばって\nもう少し: できた\nすばらしい: タスク\n誘いの内寮: （コンサート\n誘いの内寮: （コンサート\n達成: いの内寮（コンサート名、\nしよ: ばしよ\nばしょ: 日時、場所、誘っている\nり: 理由など）が、ほとんど\n楽の魅力の一部がわか: 音楽の魅力がだいたいわ\nみりょく: いちぶ\nみりよく: みりよく",
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "marugoto_b1_1_dialogue_1",
+          "id": "marugoto_b1_l1_dialogue_2",
           "type": "dialogue",
           "title": "Dialogue b1_textbook_marugoto_b1_1",
           "text": "音声スクリプト: 1_13\n松田: え、みなさんこんにちは。松田利典と言います。日本\nまつだ: まつだとしのり\nていねんたいしよく: したあと、こちらに来ました。日本では、毎日朝から\nあさ: 晩まで働いていましたので、定年後は海外でゆっくりし\nはん: はたら\nていねんご: かいがい\nげんさいつま: ふたりく\n司会: では、順番に自己紹介をお願いします。\nもの: ともだち\nしょくかい: しかい\nいそが: 山下：はじめまして、山下ガルシア友子と申します。こちらで\nやました: やました\nこんかいさんか: 今は、旅行会社で働いています。大変なことも多いです\nりよこうがいしはら: たいへん\nねが: が、人の世話をするのが好きなので、今の仕事は向いて\nせわ: しこと\nしうまつ: は、どこで働いていたと言いましたか。\nか: てい近くの公園でスケッチをしています。\nこうえん: せいかく\n松田: 広告代理店です。え、コマーシヤルとかを作る会社で\nこうこくだいりてん: しこうてき\nねが: B：あ、そうなんですか。ありがとうございます。\nA: あのう、ちよっとわからなかったんですけど、性格は…\nせいかく: 何と言いましたか。\n山下: 性格は「しやこうてき」、えっと、いろいろな人と話すの\nせいかく: しつれい\nA: あ、わかりました。ありがとうございます。\n司会: では、次の方、お願いします。\n木村: どうも。え一、なんか緊張しますね。ぼくは木村です。\nきむら: きんちよう\nズン: 私は大学を卒業してすぐ、日本の会社で働きはじめまし\nそつぎよう: はたら\nりうがくちう: こがく\nべんきよう: しこと\nしゆみ: しゆみ\nえいが: あいだ\nねが: ナターリヤ：中学生ぐらいのころ日本のアニメを見はじめて、\n司会: え～と、次の方は…。\nしかい: つぎかた\nべんきよう: 112\n沢田: はじめまして。沢田のぶ子です。3か月前に、夫の仕事\nさわだ: さわだ\nおっとしと: の関係で、家族でこちらに赴任して来ました。8歳の\nかんけい: かぞく\nべんきよう: むすめひとり\nしごと: つたんですか?\nせんぎうしふ: ジョージ：1年前から和太鼓を習いはじめたんですが、そのと\nそうじたいへん: きから、日本語にも興味を持ちました。\nきようみ: むすめ\nくろう: す。えー、私は、日本ではアマチュアオーケストラに入\nはし: つていたので、こちらでもできればいいなと思ってます。\nアニス: 友達に、ここの日本語クラスに通うから、いつしよに\nねが: 司会：では、最後の方、お願いします。\nしかい: さいごかた\nねが: 219",
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 220
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "marugoto_b1_1_dialogue_2",
+          "id": "marugoto_b1_l1_dialogue_3",
           "type": "dialogue",
           "title": "Dialogue b1_textbook_marugoto_b1_1",
           "text": "B: そうですね、まずは、お好み焼き粉ですね。\nA: ええと、お好み焼き粉は、売つてないみたいですね。どう\n聞き手: へ一、そうなんですか。\nB: じやあ、小麦粉に、だしをまぜれば大丈夫ですよ。あとは、\nこむきこ: だいうぶ\nだんご: わがし\nにく: のよ。それに、お店の中に食べられるスペースがあっ\nA: それは、うちにあります。卵もあるし…ほかに何か買う物\nちゃ: B：あとはソースですね。\nA: どのソースがいいでしょうか。いろいろあるみたいですけ\nB: 「おたふくソース」あるかな?お好み焼き専用のソース。\nせんよう: 疑問詞《もんし》十ばいい\nA: ちよっと、ないみたいですね。こっちのとんかつソースで\nB: まあ、それでもいいですね。\n乙: B：小麦粉にだしを混ぜれば、だいじようぶですよ。\nA: あと、あれはなんでしたっけ、茶色くて、上にかける、魚\nちやいろ: の…。\nB: かつおぶし? 売ってますか?\nう: A：あ、あそこにあるみたいですね。\nB: コンセントをつないでから、ダイヤルを「中」のところに合\nB: じやあ、買いましよう。\nなんふん: B：そうですね、4分ぐらい焼いたら裏返して、また4分ぐら\n也: 2_32\nB: 紙ですから、台所のゴミ箱に捨ててください。\nかみ: だいどころ\n聞き手: 清田さん。\nきよた: (3)\n清田: 日：何？\nきよた: 聞き手：あのう、私、日本の音楽を聞いてみたいんですが、何\n清田: そうですねえ、んー、いろいろありますが、たとえば\nB: のり?\nA: はい。\n聞き手: いえ、聞いたことないですけど…。\n清田: 日本の有名な和太鼓集団です。\nゆうめい: わだいこしうだん\n聞き手: えっ?わだいこ…。\nB: わさびのこと?\n清田: 和太鼓集団。えっと、日本の太鼓のグル一プです。\nA: あ、そうそう。\nわだいこしうだん: たいこ\n聞き手: へー。\n聞き手: 私はライブに2回行きましたけど、とてもよかったで\nかい: すよ。大勢で鳴らす太鼓は本当に迫力があって、それ\nたいこ: ほんとうはくりよく\nぜんいん: きかい\nせいかく: 2_48\nれんしう: A：お好み焼きには、何を買えばいいでしようか。\n聞き手: へ一、そうなんですか。",
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 222
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "marugoto_b1_1_dialogue_3",
+          "id": "marugoto_b1_l1_dialogue_4",
           "type": "dialogue",
           "title": "Dialogue b1_textbook_marugoto_b1_1",
           "text": "かしゆ: きようみ\nまつもと: 何か聞いてみたいと思って…。\nさなえ: 日本の歌手で?んー、それなら、私、コブクロが好き。\n松本: うーん、そうだなあ、やっぱり演歌でしょう。\nかしゆ: まつもと\nえんか: 知つてる?\n聞き手: 演歌ですか。\nし: 元んか\n聞き手: ううん、知らない。J-POP?\n松本: 若い人はあまり聞かないみたいだけど、年を取ってく\nわか: さなえ：うん。でもほら、J-POPって言っても、アイドル系\nけい: えんかこころ\nけい: クロは、歌を聞かせる系？っていうのかな。\n松本: いちばん好きな歌手は、吉幾三かなあ。\nかしゆ: よしいくぞう\n聞き手: へー、何それ?\n聞き手: 吉、幾三…ですか?\nよしいくぞう: さなえ：男性二人のグループなんだけど、ニ人ともすごい歌が\n松本: うん。「雪國」とか「酒よ」なんかがわりと有名かなあ。\nだんせいふたり: ふたり\nうた: うまくて、歌のメロディーもきれいだし、それを完璧\nかんべき: 聞き手:へ。\nしょうげ: 松本：歌詞がさあ、典型的な演歌の世界って感じなんだよ\n聞き手: えっ?上下でハモ…。\nかし: てんけいてきんかせかい\nかん: じょうげ\nさなえ: 上下でハモる…えっと、上と下のメロディーがハーモ\nじょうげ: 聞き手：へ。\n松本: 男と女が別れたりとか、酒を飲みながら昔の夢を思\n聞き手: ふーん。\nむかしゆめおも: い出したりとか。メロデイーが簡単だから、カラオケ\nさなえ: 歌詞も、ちよつと難しいけど、なんか深い感じだし。\nだ: かんたん\nかし: むずか\nうた: じつむずか\nほんき: 聞き手：どうしてですか。\n松本: 上手な人が歌わないと、単純でつまらなくなっちゃう\n聞き手: うん。\nたんじゆん: からね。\n聞き手: へー、そうなんですか。\n上野: ：おすすめですか。そうですね、まあ、日本を代表す\nうた: うえの\nだいひよう: る音楽としては、×JAPANを聞いてもらいたいです\n聞き手: XJAPANですか。\n上野: ええ。昔のバンドって思うかもしれませんけど、今聞\nむかし: いても全然古くないです。\nぜんぜん: 聞き手：へ。\nB: うん、ときどきダウンロードして聞くことあるよ。\n上野: イメージ的にはいわゆるビジュアル系ですけど…。\n聞き手: え?ビジュ…。\n上野: ビジュアル系。衣装とか髪型とかが派手な感じのバン\nB: 休みの日に、家で一人で弾くことがあるぐらいかな。\nけいいしょう: かみがた\n聞き手: そうなんですか。\n上野: メロデイーがきれいでわかりやすくて、でも、それと\nB: ええ、1年に2回ぐらいライブを開くこともあるんですよ。\nむすか: 342\nかる: ④A：オペラはお好きですか?\nB: あまり好きじやないんですが、モーツアルトだけは好きな\n上野: おすすめは「SilentJealousy」ですね。美しいメ口\nうつく: ディーにからむYOSHIKIのドラムが、かっこよすぎ\n聞き手: へ一、そうなんですか。\nB: うん、私も今でもカラオケで歌うことあるよ。\nうた: 222",
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 223
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "marugoto_b1_1_dialogue_4",
+          "id": "marugoto_b1_l1_dialogue_5",
           "type": "dialogue",
           "title": "Dialogue b1_textbook_marugoto_b1_1",
           "text": "りゆう: ろてんぶろひようこう\nふ: くもうえろてんぶろ\nA: 今度の日曜日、カラオケパーティーするんですけど、来ま\nらいこう: あしたあさ\nこんどにちようび: も早起きして、ご来光を見ようと思います。ぜったい晴れろよ。\nはやお: らいこう\nは: 4_10\nB: いいですねえ。ぜひ参加させてください。\nA: ルーギーさんは、どんな歌を歌うんですか?\nしょうかい: おんせん\nあきたけん: にとおんせんきようつる\nうたうた: 温泉。江戸時代から300年以上も続く、歴史のある温泉です。\nおんせん: えどだい\nB: んー、私は、日本の歌はあまり知らないんですが、イギリ\nれきし: おんせん\nうた: しぜん\nひろ: ろてんぶろ\nにこ: スのロックが好きですね。\nD: 湯、とても体にいいんですよ。旅館の古い建物は、江戸時代か\nからだ: りよかん\nたてもの: えどしだい\nA: ロックですか。いいですね。たとえば?\nのこ: むかしふんいき\nへ: B：そうですねえ、レッド・ツエッペリンとか、ディープ・パー\nいろり: ゆうしよく\nいろり: プルとか。\nえどだい: りますね。この「秘湯」の雰囲気を求める人で、週末は半年先\nA: ヘー。私は、ロックだったら、やつぱりビートルズかな。\nひとう: ふんいき\nもと: しうまつはんとしさき\nB: ああ、ビートルズもいいですよね。どの曲がいちばん好き\nよく: きよく\nA: 私は、『Hey JudeとLet it beが好きです。\np: う露天風呂に来ています。もう、目の前が、海、海、海です。\nB: いいですね。私も、カラオケではじめて歌った曲が、Let\nきよく: オーシヤンビューです。どうですか、この景色!では、私も入\nit: beでした。\nけしき: つてみたいと思います。は一、幸せ。ほんと気持ちいい~。天\nA: そうですか。じやあパーティーでは、ビートルズをたくさん\nしあわ: きもち\nかん: 旅行の楽しみは旅館のお食事ですね。もちろんメインは海の\nうた: りょこうたの\nりよかん: しよく\nうみ: 幸!新鮮な魚に…ジャン!伊勢えびです。大きいですね~。\nさち: しんせんさかな\nいせ: 早速いただきます。んーー、甘い!もう口の中で、こう、とろ\nかん: しあわ\n温泉に行こう: おんせん\nりよかん: おんせん\nふろたび: 私は、長野県の地獄谷温泉に来ています。この地獄谷温泉、\nながのけん: こくだにおんせん\nわしつ: ある動物で有名なんです。それは…ほら、サルが温泉に入って\nB: 和室ですね、かしこまりました。\nどうぶつうめい: おんせん\nわしつ: いるんです。かわいー。ここのお猿さん、海外では「スノーモ\nさる: かいがい\nか: ろてんぶろ\nせんよう: にんげん\nきも: にんげん\nおんせん: B：はい、少々お待ちください……こちらをお使いください。\nしょうしょうま: りかんろてんろ\nあんしん: でも冬の寒い日には、サルが人間用露天風呂に入りに来ること\nにんげんよてんぶろ: もあるそうです。運がよければ、お猿さんと混浴できるかもし\nこんよく: となり\nB: それでは、ほかのお部屋をご用意いたします。\nへ也: ようい\nお: やまみち\nある: とさん\nおんせん: はくばやりおんせん\nなつ: ズンだけの山小屋にある温泉です。それにしても、きつい道で\nやまこや: おんせん\nB: はい、かしこまりました。\nくろう: 223",
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 224
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "marugoto_b1_1_dialogue_5",
+          "id": "marugoto_b1_l1_dialogue_6",
           "type": "dialogue",
           "title": "Dialogue b1_textbook_marugoto_b1_1",
           "text": "聞き手: それはお疲れさまでした。\nつか: さいきん\nしこといそが: 5_11\n竹内: ：いやあ、この間さあ、車上荒らしにあっちゃつたよ。\nたけうち: あいた\nしじようあ: ~つて\n聞き手: 車上荒らし?\nしじょうあ: (1)\n竹内: うん、日曜日、駅の地下の駐車場に車を止めたんだ\nにちようび: ちかちうしじょう\nと: けどね。\n聞き手: うん。\nきのう: たいへん\n竹内: そのとき、うっかりカメラをダッシュボードに置いて\nお: きちゃったんだよね。\nあいだ: のうりょくしけん\n聞き手: ああ、それはダメだよ。\nごうかく: 竹内:あとで、車に戻ってみたら、カメラがなくなってて。\nもど: 聞き手：あ一あ。\nひ: Cゆんび\nたいへん: しごとかんけい\n竹内: それに、よく見たら、カーナビのあったところが、が\nきゆう: ら一んとした空間になってて。\nくうかん: 聞き手:空間?\nくうかん: あした\n竹内: そう、なんにもなくなってたんだよね。もう、やられ\nぜんたい: こうし\nちゆうい: てください。\nかん: 5_37\n聞き手: ひどいね。\nあいだ: 5_17\nも: のクッションまでなくなってたんだよね。ショックだっ\nB: うーん、それがね、私たち…やっぱり合わなかったみたい。\nなかがわ: こんどむめけっこん\nわか: 聞き手:へ、おめでとうございます!\nA: え、そうなんだ…。\n中川: まあ、おめでたいと言えばおめでたい話なんですけど\nけこんあいて: さいとしうえ\nたいへん: イチの人で。\nB: それで、今からぼくが病院に連れて行くことになったので、\nびょういん: 聞き手:へー。\n中川: 聞いたときは、びっくりしました。なんで?って思いま\nA: わかった。みんなに伝えておくから。\nつた: した。\n聞き手: そうですか。\nはせがわ: きこく\nたの: 中川：でもね、会ってみると…すてきな人でした。この前、\nB: それがさ、子どもの学校の関係で、妻と子どもは、もう1\nひとりぐ: 聞き手：ええ。\n中川: やさしそうで、話がおもしろくて。ただ、主人は…う\nA: そうなんですか。大変ですね。\nしゅじん: たいへん\nじぶんちか: むすこ\nともだち: ④A：おめでとう。結婚するんだって?式はいつ?\nわら: B：ありがとう。でも私たち、結婚式はやらないことにしたん\nけっこんしき: です。家族だけで簡単に食事して終わりにしようと思いま\nかぞく: かんたんしよくじ",
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 226
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "marugoto_b1_1_dialogue_6",
+          "id": "marugoto_b1_l1_dialogue_7",
           "type": "dialogue",
           "title": "Dialogue b1_textbook_marugoto_b1_1",
           "text": "かんどうてき: 聞き手\n聞き手: ふーん。\nリン: ：ほら、ここにあります。1回は読んでみたらいいん\nわら: ですよ。\nさいこうけっさく: はがね\nだいすけ: そうそう。\nれんきんじつし: 聞き手:へ、そんなにおもしろいんですか。\nゆか: ：ええ。でもそこに、のだめがピアニストとして成長\n聞き手: れんきん…?\nせいちょう: していく話もあるし、千秋との恋がどうなるかって\nサイ: ：錬金術。このマンガの中では、ある物を別の物に\nうくか: まほう\nみ: ますよ。\n聞き手: ふ一ん。魔法の話なんですか?\n聞き手: そうなんですか。\nいっしゆ: しゅじんこう\nだいすけ: ドラマや映画にもなつたよね。\nえいが: きようだい\nさき: しつばい\nにい: もしれないですね。\nおとうとからだぜんたいうしな: 元の体に戻る方法をさがして、二人で世界を旅する\nもとからだもどほうほう: ふたりせかいたび\nだいすけ: おもしろいですよね。\nゆか: 聞き手:へ。\nサイ: ：その世界の設定が、スケールが大きくて、ハマりま\nだいすけ: どうぞ、どうぞ。\nせかい: せってい\nリン: ：日本のマンガの入門なら…やっぱりおすすめは『べ\nじつ: いのちおも\nにうもん: みたいな深いテーマがあるから、すごく考えさせら\nふか: れるんです。\nだいすけ: べルばらですか。\nだいすけ: そうですよね。\n聞き手: ベルばら?\n聞き手: ふーん。\nリン: :はい。『ベルサイユのばら』。わりと昔のマンガなん\n元: ゆうめい\n聞き手: そうですか。\n聞き手: うーん、どんな話なんですか?\nリン: ：フランス革命のときの話なんですけどね、ヒロイン\nかくめい: はオスカルつていつて、本当は女なんだけど男とし\nほんとう: ほうし\nそだ: ちょう\n聞き手: :へ一。\nゆか: :オスカル、かっこいいいですよね。\nリン: ：ええ。オスカルは最初は、マリー・アントワネット\nさいしよ: (1)\nまもたちば: A：ねえねえ、イグデさんって、どんなマンガが好き?\n聞き手: マリー・アントワネット?\nB: そうだなあ、いろいろあるけど、たとえば『ワンピース』\nリン: ：あ、フランスの王妃だった人です。\nおうひ: とか。\n聞き手: ：王妃って、王様の娘でしたっけ?\nおうひ: おうさまむすめ\nA: それ、どんな話?\nリン: :いいえ、王様の奥さん。で、えー、革命が進んでい\nおうさまおく: かくめい\nすす: B：知らないの？海賊が仲間といつしよに世界を冒険する話。\nC: かいぞく\nなかま: せかい\nほうけん: おうさまがわ\nこくみんがわ: です。\nA: 海賊の冒険の話?それ、どんなところがおもしろいの?\nかいぞくほうけん: 聞き手:へ。\nB: えっと、事件や戦いがいろいろあつて、ドキドキするんだ。\nじけんたたか: 大変なことがいつぱいあるけど、みんなでがんばって、勝\nリン: ：そういう歴史のドラマの中で、オスカルと幼なじみ\nれきし: おさな\nゆうよう: かんどうてき\nれんあい: 227",
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 228
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "marugoto_b1_1_dialogue_7",
+          "id": "marugoto_b1_l1_dialogue_8",
           "type": "dialogue",
           "title": "Dialogue b1_textbook_marugoto_b1_1",
           "text": "大関: いえ、銀行に振り込んでもらうことになっています。よ\nふどう: きんこう\nふ: すけど、篠崎さんは、剣道をやってましたよね?ど\nしのさき: けんどう\nねが: こでやってるんですか?\n篠崎: ：日本クラブのサークルでやってます。でも、もちろん、\nC: ：級を取るための試験は、どのレべルからあるんですか?\nと: しけん\n大関: 初心者の方は、入ってから3か月後に、7級を受けるこ\nけんどう: きようみ\nだれ: でも歓迎ですよ。現地の人もけっこう来ています。\nげつこ: きうう\nかんげい: げんち\n聞き手: へー。\nC: はい、がんばります。\n篠崎: 「サムライ」って感じがして、かっこいいと思う人が多\nかん: 731\n聞き手: ああ。\nれんしうお: どうじようそうじ\n篠崎: でも、練習はすごく真剣ですよ。剣道は、とくに\nD: トイレもですか?\nれんしう: しんけん\nけんどう: 集中力が大切なので、精神的に鍛えられますね。\nうちうりょくたいせつ: せいしんてき\n大関: あ、トイレは清掃会社の人がやります。\nせいそうがいし: しせい\nよ: 聞き手：そうなんですか。\n篠崎: 防具とか竹刀とか、必要な道具が多いのがちよっと\nぼうぐ: しない\nひつようどう: ロールプレイ(例)\nたいへん: さいしよ\nか: 聞き手：そうですか。\nA: 今日はありがとうございました。いくつか質問させていた\nしつもん: だきたいんですが。\nB: はい、なんでも聞いてください。\nA: あの私、今まであまりスポーツをしたことがないんです\n石井: ：合気道は試合がないので、自分のぺスでできるから\nあいきどう: しあい\nB: だいじょうぶですよ。子どももお年寄りも来てますから。\n聞き手: へ一、試合がないんですか。\nとしよ: しあい\nA: そうですか。えっと、大人のクラスは何曜日にあるんでし\n石井: そう。勝ち負けがなくて、強いとか弱いとか関係ない\nおとな: なんようび\nかんけい: ようか。\nじようす: B：初心者は、土曜日と日曜日の午前中ですよ。\nしょしんしゃ: どようびにちようびこぜんちう\nA: そうですか。あのう、土曜日は仕事があって、ちよつと難\nどようび: しこと\nむずか: しいんですが…。\n石井: それと、合気道の技は、相手の力を利用するので、\nあいきどうわさ: あいてちからりよう\nB: 最初は、日曜日だけでいいですよ。自分のぺースで続けて\nさいしよ: にちようび\nたいりょくからだ: かんけい\n聞き手: 小さい人でもだいじようぶなんですね。\nA: はい。じやあ、来週の日曜日から来たいと思います。\n石井: ええ。だから、女性にも人気があるし、年を取っても\nにちようび: じょせい\nB: わかりました。\nつづ: A：それから、毎月のお金はいくらでしょうか?\nB: はい、月謝は50ドルです。毎月、最初の練習のときに払\nげつしや: まいつき\nれんしゅうなんようび: つてもらうことになっています。\nA: そうですか。ええと、クレジットカードでも払えるでしよう\nB: ああ、すみませんが、現金でお願いします。\nA: わかりました。じゃあ、来週からよろしくお願いします。\nねが: ① A\nどうき: 大関：はい、みなさんに買ってもらうことになつています。\nおおぜき: 7_29",
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 230
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l1_dialogue_9",
+          "type": "dialogue",
+          "title": "Dialogue b1_textbook_marugoto_b1_1",
+          "text": "全員: ：乾杯！\nA: そうですね。どうもありがとう。\nぜんいん: かんばい\nでんしししよ: A：すみません、カメラが欲しいんですが。\nほ: B：どのようなものをおさがしでしょうか?\nA: ええと、旅行のときに持って行きたいので、小さくて軽い\nかる: のがいいんですが…。\nB: 旅行で使われるんですね。\nりよこう: A：ええ。旅行のとき、よく風景を撮るんです。夜景もきれい\nりよこう: ふうけい\nと: B：じやあ、こちらはいかがでしようか。夜でも、きれいに\nよる: 写真が撮れますよ。\nえいが: A：そうですか。それと、ときどき海とか山とかにも行くので、\nうみ: がめん\nえいがかん: 少しくらい濡れてもだいじょうぶなやつ、ありますか?\nぬ: B：はい。これなら、防水加工がされていますよ。\nほいかこう: A:へー、これ、よさそうですね。\n伝統的な祭り: ④新しいテレビをさがしています。できれば、インターネットに\nでんとうてきまつ: もつないで使えればいいいなあと思ってるんですが、テレビも\nまつ: なのか\nいしかわけんかなさわし: かなさわひくまんごく\nまつ: かなさわ\nつく: うまだとい\nこう: かなさわによう\nきねん: まいとし\nA: 電子辞書を買おうと思うんですけど、ちよつと聞いてもい\nさいしよしうまつ: おこな\nでんしじしょ: のは、戦後、1952年からで、実はわりと新しい祭りなんです。\nB: あ、いいいですよ。電子辞書?どんなのがいいんですか?\nでんしじしよ: ト、百万石行列を見るために集まっているんです。このパレ\nA: 漢字の読み方がわからないとき、調べられるのが欲しいん\nかんじ: ドは、音楽隊、獅子舞、加賀鳶、そして当時の衣装を着た侍\nおんがくたい: ししまい\nかがとび: とうじいしょう\nきさむらい: など、いろいろな行列が、全部で4kmも続くんです。そして\nきようつ: ぜんぶ\nつづ: B：じやあ、手書き入力ができるやつがいいいですね。\nてがにりよく: ぎょうれつしゅやく\nまえだとしいこうやく: まいとしうめいはいゆう\nえら: A:手書き入力?\nうま: 姿が人気を集めています。あ、パレードが来ましたね。\nB: ぺンで漢字が入カできるんです。すごく便利ですよ。\nすがたにんきあつ: かんじにりよく\nべんり: A：そうですか、いいですね。それから、音声が聞けたらいい\nおんせい: んですけど…。発音がわからないときがあるので。\nはつおん: とうきようあさくさ\nいち: 来ています。今日と明日は、浅草寺は縁日。この日にお参りす\nB: 今の辞書なら、だいたい音声が聞けるようですよ。\nあした: せんそうじえんにち\nまい: じしょ\nおんせい: れば、四万六千日分のお参りと同じ効果があるということで、\nA: へー、すごいですね。あと、あまり重くないやつ。日本語\nおな: こうか\nおも: 大勢の人が集まっています。食べ物やおもちゃの屋台もたくさ\nB: だいじようぶ。軽いものもたくさんありますよ。\nかる: き市と言えば、ほおずきです。こちらに、ほおずきを売る露店\nいち: ろてん\nA: そうなんですか。\nB: お店に行って、実際に見てみるのがいいいと思いますよ。\nじっさい: 231",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 232
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l1_dialogue_10",
+          "type": "dialogue",
+          "title": "Dialogue b1_textbook_marugoto_b1_1",
+          "text": "あさこうえん: ぜんかづ\nあす: 10日の二日間です。皆さんもどうぞお出かけください。\nあおもり: あおもりし\nまつ: (a)\nゆうめい: まいとし\nA: カクさん、日本はどうでしたか?\nB: ええ、すごくよかったですよ。いろいろなところ行って、い\nよ: きよだいにんぎようがただし\nちか: ほんとう\nくらやみ: けいけん\nA: 何がいちばんよかったですか?\nひか: うつく\nおど: ハネトと呼ばれる踊り手が、「ラッセラー、ラッセラー」のか\nB: そうですねえ…、いちばんは阿波踊りですね。\nA: 阿波踊り?徳島の?\nあわど: とくしま\nおど: さんか\nB: はい、徳島まで行って、見てきました。\nまつ: とくしま\nつづ: A:すごい。どんなところがよかったんですか?\nB: そうですね、阿波踊りは、誰でも踊りに参加できるんです\nしょうかい: おかやま\nおど: さんか\nおど: お祭りで、実は、この「うら」は、ここ岡山に伝わる『桃太郎\nA: へ一。\nももたろう: の伝説のもとになつているんです。毎年、8月の第一日曜日\nB: 観光客も、外国人も、みんな一緒に踊つているうちに、\nでんせつ: まいとし\nだいいちにちようび: かんこうきく\nいっしよおど: とその前日の土曜日に岡山市内で開かれるこのお祭り、主役\nまつ: しゆや<\nわかものたち: わかもの\nA: へー、おもしろそうですね。すぐ踊れましたか?\nおど: じふんたち\nB: はい、ステップはあまり難しくなかったし、DVDも見てい\nかお: おにけしよう\nとくちよう: たので。でも、とても疲れました。\nれきし: いがいあさ\nはじ: A：そうですか。よかったですね。\nわかひとたち: げんき\nも: (b)\nA: 最近、どこかに行きましか?\nB: ええ。実はこの前の日曜日、日本祭りに行ったんですよ。\nじつ: にちようび\nA: へー、どうでしたか?\nB: いやあ、大変でしたよ。\nたいへん: 9_31\nA: へー、どうして?\nB: とっても人が多くて。花火もよく見えなかつたし、たい焼\nとくしま: あわおど\nA: そうなんですか。どのくらい待ったんですか?\nま: 市民広場に行くと、もうたくさんの人達が集まっていました。\nB: 30分待ちましたよ。もうすごい行列で…。\nしみんひろば: ひとたちあつ\nま: きよつ\nA: 大変でしたね。\nたいへん: ③私のサイズのはっぴはもうなくなっていたので、少し小さいのを\nB: ええ。一人で10個とか20個とか買う人もいて、なかな\nひとり: 借りました。\nA: あー、いますよね一、そういう人。\nじょうずおど: ました。",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 233
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         }
       ],
@@ -572,6 +639,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -581,6 +654,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -590,6 +669,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -599,6 +684,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -608,6 +699,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -617,6 +714,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -626,6 +729,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -635,6 +744,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -644,6 +759,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -653,6 +774,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -662,6 +789,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -671,6 +804,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -680,6 +819,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -689,6 +834,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -698,6 +849,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -707,6 +864,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -716,6 +879,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -725,6 +894,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -734,6 +909,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -743,189 +924,17 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3361",
-          "label": "practice",
-          "prompt": "きる。また、導当なとこ",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3362",
-          "label": "practice",
-          "prompt": "相手に質問したり自分の",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3363",
-          "label": "practice",
-          "prompt": "ろで、会話を切り上げる",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3364",
-          "label": "practice",
-          "prompt": "会話を発展させることが",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3365",
-          "label": "practice",
-          "prompt": "ことについて話したりす",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3366",
-          "label": "practice",
-          "prompt": "できる。また、導当なと",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3367",
-          "label": "practice",
-          "prompt": "ころで、会話を切り上げ",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3368",
-          "label": "practice",
-          "prompt": "只頭テストく問題例10(長く話す)：自国のおすすめの料理について説明する>0",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3369",
-          "label": "practice",
-          "prompt": "料理の名前や材料など、",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3370",
-          "label": "practice",
-          "prompt": "どんな料理か、見た目、",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3371",
-          "label": "practice",
-          "prompt": "どんな料理か、見た目、",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3372",
-          "label": "practice",
-          "prompt": "どんな料理か、見た目、",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3373",
-          "label": "practice",
-          "prompt": "簡単なことだけは言える。",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3374",
-          "label": "practice",
-          "prompt": "味、材料や作り方などの",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3375",
-          "label": "practice",
-          "prompt": "味、材料や作り方などの",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3376",
-          "label": "practice",
-          "prompt": "味、材料や作り方などの",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3377",
-          "label": "practice",
-          "prompt": "一部については説明でき",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3378",
-          "label": "practice",
-          "prompt": "特徴について、ある程度",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3379",
-          "label": "practice",
-          "prompt": "特徴がうまく説明でき、",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_1_exercise_3380",
-          "label": "practice",
-          "prompt": "くわしく説明でき、その",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 219
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.686Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         }
-      ]
+      ],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_b1_1"
     }
   ]
 }

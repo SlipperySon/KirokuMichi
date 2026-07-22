@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a2",
+  "title": "Marugoto A2: Katsudoo (Elementary 2)",
+  "edition": "learner-gold",
+  "levelRange": "A2",
+  "sources": [
+    {
+      "sourceId": "marugoto_a2_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "87befe524f5f78113f32b3397bcd6b6f15a2bdcf16f20a9763e684fa556ca5b5",
+        "bytes": 35694565
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a2_lesson_17",
+      "unitType": "lesson",
+      "lessonNumber": 17,
+      "title": "Marugoto A2: Katsudoo (Elementary 2) — Lesson 17",
+      "level": "A2",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a2_l17_grammar_1",
+          "pattern": "てくれない・てもらえない",
+          "meaning": "To ask someone politely to do something, or to express that someone won't do something.",
+          "explanation": "This pattern is used to make indirect requests by using negative forms. てくれない？ is a casual request between friends or family, while てもらえますか is a more polite form. Both are softer and less direct than imperative commands.",
+          "examples": [
+            {
+              "japanese": "手伝ってくれませんか",
+              "reading": "てつだってくれませんか",
+              "english": "Would you help me?"
+            },
+            {
+              "japanese": "教えてもらえますか",
+              "reading": "おしえてもらえますか",
+              "english": "Could you teach me?"
+            },
+            {
+              "japanese": "ちょっと待ってくれない？",
+              "reading": "ちょっとまってくれない？",
+              "english": "Won't you wait a moment for me?"
+            }
+          ],
+          "lessonNumber": 17,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.674Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l17_grammar_2",
+          "pattern": "Number + しか〜ない",
+          "meaning": "Indicates restriction or limitation; emphasizes that only that amount exists, no more.",
+          "explanation": "The pattern しか (combined with negative ending) emphasizes exclusivity and limitation. The number or amount specified is the only one that exists. Neutral register, very common in daily speech and writing.",
+          "examples": [
+            {
+              "japanese": "私は猫を一匹しか持っていません。",
+              "reading": "わたしはねこをいっぴきしかもっていません。",
+              "english": "I only have one cat. / I have no more than one cat."
+            },
+            {
+              "japanese": "このクラスは5人しかいません。",
+              "reading": "このくらすはごにんしかいません。",
+              "english": "There are only 5 people in this class."
+            },
+            {
+              "japanese": "1000円しかありません。",
+              "reading": "せんえんしかありません。",
+              "english": "I only have 1000 yen. / I have no more than 1000 yen."
+            }
+          ],
+          "lessonNumber": 17,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.674Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l17_grammar_3",
+          "pattern": "お〜する",
+          "meaning": "A humble way to express that the speaker is doing something.",
+          "explanation": "This pattern combines the honorific prefix お with a noun form of a verb and する to humbly express the speaker's own actions. Used in business and formal contexts, it shows courtesy and humility. Common humble forms include お話しします, お手伝いします, and お送りします.",
+          "examples": [
+            {
+              "japanese": "明日、お話しします。",
+              "reading": "あした、おはなしします。",
+              "english": "I will speak tomorrow."
+            },
+            {
+              "japanese": "私がお手伝いします。",
+              "reading": "わたしがおてつだいします。",
+              "english": "I will help you."
+            },
+            {
+              "japanese": "このメールをお送りします。",
+              "reading": "このめーるをおおくりします。",
+              "english": "I will send you this email."
+            }
+          ],
+          "lessonNumber": 17,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.674Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l17_grammar_4",
+          "pattern": "Question-phrase + か",
+          "meaning": "Including questions within sentences",
+          "explanation": "Grammar explanation placeholder.",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 17,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.674Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l17_grammar_5",
+          "pattern": "～にする・～くする",
+          "meaning": "Adjective + する, To make something/someone (more)",
+          "explanation": "Used to express making something or someone become a particular adjective state.",
+          "examples": [
+            {
+              "japanese": "この部屋を明るくしましょう。",
+              "reading": "このへやをあかるくしましょう。",
+              "english": "Let's make this room brighter."
+            },
+            {
+              "japanese": "彼女は髪を短くしました。",
+              "reading": "かのじょはかみをみじかくしました。",
+              "english": "She made her hair short."
+            },
+            {
+              "japanese": "このカレーを辛くしてください。",
+              "reading": "このカレーをからくしてください。",
+              "english": "Please make this curry spicy."
+            }
+          ],
+          "lessonNumber": 17,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.674Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l17_grammar_6",
+          "pattern": "かた",
+          "meaning": "Attached to a verb stem to mean 'the way of doing' or 'how to do' something.",
+          "explanation": "Drop ます from a verb and add かた (方) to create a noun meaning 'the method or manner of doing' that action. The resulting noun phrase can be used with verbs like わかる、教える、知る. Used in neutral, polite, and instructional contexts.",
+          "examples": [
+            {
+              "japanese": "この漢字の読みかたを教えてください。",
+              "reading": "このかんじのよみかたをおしえてください。",
+              "english": "Please teach me how to read this kanji."
+            },
+            {
+              "japanese": "箸の使いかたがわかりません。",
+              "reading": "はしのつかいかたがわかりません。",
+              "english": "I don't know how to use chopsticks."
+            },
+            {
+              "japanese": "このアプリの使いかたは簡単です。",
+              "reading": "このアプリのつかいかたはかんたんです。",
+              "english": "The way to use this app is simple."
+            }
+          ],
+          "lessonNumber": 17,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.674Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l17_grammar_7",
+          "pattern": "ないと",
+          "meaning": "A construction expressing necessity or obligation by combining a negative condition with a consequence.",
+          "explanation": "ないと combines the negative stem (～ない) with the conditional と to express necessity or obligation. The pattern is 'if (you) don't (do X), then (consequence),' implying 'you must do X.' It's common in spoken Japanese for expressing obligations and is appropriate for A2 learners in both casual and slightly formal contexts.",
+          "examples": [
+            {
+              "japanese": "毎日勉強しないと、合格できません。",
+              "reading": "まいにち べんきょう しない と、ごうかく できません。",
+              "english": "If you don't study every day, you won't be able to pass."
+            },
+            {
+              "japanese": "早く寝ないと、明日起きられませんよ。",
+              "reading": "はやく ねない と、あした おきられません よ。",
+              "english": "If you don't go to bed early, you won't be able to wake up tomorrow."
+            },
+            {
+              "japanese": "健康になりたいなら、運動しないと駄目です。",
+              "reading": "けんこう に なりたい なら、うんどう しない と だめ です。",
+              "english": "If you want to be healthy, you have to exercise."
+            }
+          ],
+          "lessonNumber": 17,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.674Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l17_grammar_8",
+          "pattern": "聞こえる",
+          "meaning": "Describes something that can be heard or the way something sounds.",
+          "explanation": "聞こえる is the potential form of 聞く, expressing that something is audible or can be perceived through hearing. It emphasizes a passive ability to hear rather than active listening. Used in neutral/polite speech when describing sounds or audibility.",
+          "examples": [
+            {
+              "japanese": "雨の音が聞こえます。",
+              "reading": "あめのおとがきこえます。",
+              "english": "I can hear the sound of rain."
+            },
+            {
+              "japanese": "きれいな音が聞こえました。",
+              "reading": "きれいなおとがきこえました。",
+              "english": "A beautiful sound could be heard."
+            },
+            {
+              "japanese": "外から叫び声が聞こえます。",
+              "reading": "そとからさけびごえがきこえます。",
+              "english": "I can hear screams from outside."
+            }
+          ],
+          "lessonNumber": 17,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.674Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l17_grammar_9",
+          "pattern": "見える",
+          "meaning": "Describes something that can be seen or the way something appears.",
+          "explanation": "見える is the potential form of 見る, indicating that something is visible or can be perceived through sight. It emphasizes a passive ability to see rather than actively looking. Used in neutral/polite speech when describing visibility or appearance.",
+          "examples": [
+            {
+              "japanese": "窓から山が見えます。",
+              "reading": "まどからやまがみえます。",
+              "english": "I can see a mountain from the window."
+            },
+            {
+              "japanese": "遠くに光が見えました。",
+              "reading": "とおくにひかりがみえました。",
+              "english": "A light was visible in the distance."
+            },
+            {
+              "japanese": "彼が見えません。",
+              "reading": "かれがみえません。",
+              "english": "I cannot see him."
+            }
+          ],
+          "lessonNumber": 17,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.674Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l17_grammar_10",
+          "pattern": "Verb[て] + B",
+          "meaning": "Connect clauses causally or sequentially, showing cause-and-effect or sequential actions.",
+          "explanation": "The て-form links two actions or states, with the first often causing or leading to the second. It works in both casual and polite speech, and is fundamental for describing what happens as a result of something else. Used when the second clause is affected by or follows from the first.",
+          "examples": [
+            {
+              "japanese": "朝食を食べて、学校に行きました。",
+              "reading": "あさしょくをたべて、がっこうにいきました。",
+              "english": "I ate breakfast and then went to school."
+            },
+            {
+              "japanese": "雨が降って、授業が中止になりました。",
+              "reading": "あめがふって、じゅぎょうがちゅうしになりました。",
+              "english": "It rained, and as a result the class was canceled."
+            },
+            {
+              "japanese": "疲れて、すぐ寝ました。",
+              "reading": "つかれて、すぐねました。",
+              "english": "I was tired, so I went to bed right away."
+            }
+          ],
+          "lessonNumber": 17,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.674Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a2_17"
+    }
+  ]
+}

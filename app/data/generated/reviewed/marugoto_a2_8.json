@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a2",
+  "title": "Marugoto A2: Katsudoo (Elementary 2)",
+  "edition": "learner-gold",
+  "levelRange": "A2",
+  "sources": [
+    {
+      "sourceId": "marugoto_a2_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "87befe524f5f78113f32b3397bcd6b6f15a2bdcf16f20a9763e684fa556ca5b5",
+        "bytes": 35694565
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a2_lesson_8",
+      "unitType": "lesson",
+      "lessonNumber": 8,
+      "title": "Marugoto A2: Katsudoo (Elementary 2) — Lesson 8",
+      "level": "A2",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a2_l8_grammar_1",
+          "pattern": "ようにする",
+          "meaning": "Expresses deliberate effort or intention to do something habitually or as a goal.",
+          "explanation": "This pattern attaches to the dictionary form of a verb to show the subject is making an effort, trying, or intentionally doing something. It implies deliberate action taken regularly or with purpose. Used in both casual and polite contexts, often seen with 'する' to mean 'to make oneself do' or 'to ensure that'.",
+          "examples": [
+            {
+              "japanese": "毎日運動するようにしています。",
+              "reading": "まいにちうんどうするようにしています。",
+              "english": "I'm making an effort to exercise every day."
+            },
+            {
+              "japanese": "毎晩９時に寝るようにしています。",
+              "reading": "まいばんきゅうじにねるようにしています。",
+              "english": "I make sure to go to bed at 9 PM every night."
+            },
+            {
+              "japanese": "分からないことは先生に聞くようにします。",
+              "reading": "わからないことはせんせいにきくようにします。",
+              "english": "I make sure to ask the teacher when I don't understand something."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.653Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l8_grammar_2",
+          "pattern": "てある",
+          "meaning": "Indicate that something has been done and is in a resulting state.",
+          "explanation": "てある shows the results or state remaining after a completed action. Often used when someone intentionally did something and the effect persists. Different from ました (simple past), てある emphasizes the current state created by that past action. Common in describing preparations, arrangements, or lasting effects.",
+          "examples": [
+            {
+              "japanese": "宿題がしてあります。",
+              "reading": "しゅくだいがしてあります。",
+              "english": "The homework has been done (and is ready)."
+            },
+            {
+              "japanese": "窓が開けてあります。",
+              "reading": "まどがあけてあります。",
+              "english": "The window has been opened (and remains open)."
+            },
+            {
+              "japanese": "食事が用意してあります。",
+              "reading": "しょくじがようういしてあります。",
+              "english": "The meal has been prepared and is ready."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.653Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l8_grammar_3",
+          "pattern": "ているあいだに",
+          "meaning": "Indicate that one action occurs while another action is happening.",
+          "explanation": "This pattern shows simultaneity—something happens during the time that something else is taking place. The first clause describes an ongoing action, while the second describes an interrupting or concurrent event. Used frequently to describe what happened while you were doing something else.",
+          "examples": [
+            {
+              "japanese": "勉強しているあいだに、友達が来ました。",
+              "reading": "べんきょうしているあいだに、ともだちがきました。",
+              "english": "While I was studying, my friend came."
+            },
+            {
+              "japanese": "料理をしているあいだに、雨が降り始めました。",
+              "reading": "りょうりをしているあいだに、あめがふりはじめました。",
+              "english": "While I was cooking, it started to rain."
+            },
+            {
+              "japanese": "映画を見ているあいだに、電話が鳴りました。",
+              "reading": "えいがをみているあいだに、でんわがなりました。",
+              "english": "While I was watching the movie, the phone rang."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.653Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l8_grammar_4",
+          "pattern": "はずがない",
+          "meaning": "An expression indicating that something is logically impossible or highly unlikely to be true.",
+          "explanation": "はずがない combines はず (expectation) with がない (negation), expressing strong denial or impossibility. It means 'it's impossible that,' 'it cannot be,' or 'there's no way.' Use it to emphasize improbability or to contradict false assumptions in both casual and formal Japanese at the A2 level.",
+          "examples": [
+            {
+              "japanese": "田中さんが試験に落ちるはずがありません。彼はいつも一番です。",
+              "reading": "たなか さん が しけん に おちる はず が ありません。かれ は いつも いちばん です。",
+              "english": "There's no way Tanaka would fail the exam. He's always the top."
+            },
+            {
+              "japanese": "この映画がつまらないはずがありません。大人気の作品ですから。",
+              "reading": "この えいが が つまらない はず が ありません。だいにんき の さくひん です から。",
+              "english": "This movie cannot be boring. It's a very popular work."
+            },
+            {
+              "japanese": "兄がそんなことをするはずがありませんよ。彼は優しい人です。",
+              "reading": "あに が そんな こと を する はず が ありません よ。かれ は やさしい ひと です。",
+              "english": "There's no way my older brother would do such a thing. He's a kind person."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.653Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l8_grammar_5",
+          "pattern": "～だけ",
+          "meaning": "Indicates exclusivity or limitation.",
+          "explanation": "Used to show that only something or someone is involved. Neutral register, very common.",
+          "examples": [
+            {
+              "japanese": "水だけ飲みました。",
+              "reading": "みずだけのみました。",
+              "english": "I drank only water."
+            },
+            {
+              "japanese": "昨日だけ雨が降りました。",
+              "reading": "きのうだけあめがふりました。",
+              "english": "It rained only yesterday."
+            },
+            {
+              "japanese": "私だけ知っています。",
+              "reading": "わたしだけしっています。",
+              "english": "Only I know."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.653Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l8_grammar_6",
+          "pattern": "～だろう",
+          "meaning": "Expresses speculation or probability.",
+          "explanation": "Used when uncertain about something. Casual register.",
+          "examples": [
+            {
+              "japanese": "明日は晴れるだろう。",
+              "reading": "あしたははれるだろう。",
+              "english": "It will probably be sunny tomorrow."
+            },
+            {
+              "japanese": "彼は来るだろう。",
+              "reading": "かれはくるだろう。",
+              "english": "I guess he'll come."
+            },
+            {
+              "japanese": "このテストは難しいだろう。",
+              "reading": "このテストはむずかしいだろう。",
+              "english": "This test is probably difficult."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.653Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l8_grammar_7",
+          "pattern": "Causative-Passive",
+          "meaning": "Express being forced or made to do something against one's will.",
+          "explanation": "The causative-passive form combines causation with passivity, showing that someone made you do something. Formed by adding -させられる to the verb stem. This is formal and often used to express unwilling actions or being subject to someone's authority. Common in school and work contexts.",
+          "examples": [
+            {
+              "japanese": "先生に毎日宿題をしてくるように言わされました。",
+              "reading": "せんせいにまいにちしゅくだいをしてくるようにいわされました。",
+              "english": "The teacher made me do homework every day."
+            },
+            {
+              "japanese": "母に野菜を食べさせられました。",
+              "reading": "ははにやさいをたべさせられました。",
+              "english": "I was made to eat vegetables by my mother."
+            },
+            {
+              "japanese": "上司に遅くまで働かせられています。",
+              "reading": "じょうしにおそくまではたらかせられています。",
+              "english": "I'm being forced to work late by my boss."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.653Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l8_grammar_8",
+          "pattern": "たばかり",
+          "meaning": "Indicates that an action was just completed or happened very recently.",
+          "explanation": "This pattern attaches to the past tense form (～た) of a verb to show that something happened just now or a very short time ago. It emphasizes the recency of the action. Used in both casual and polite conversation to discuss recent events or completed actions.",
+          "examples": [
+            {
+              "japanese": "ちょうど朝ご飯を食べたばかりです。",
+              "reading": "ちょうどあさごはんをたべたばかりです。",
+              "english": "I just ate breakfast a moment ago."
+            },
+            {
+              "japanese": "昨日日本から帰ってきたばかりです。",
+              "reading": "きのうにほんからかえってきたばかりです。",
+              "english": "I just came back from Japan yesterday."
+            },
+            {
+              "japanese": "学校を卒業したばかりなので、仕事を探しています。",
+              "reading": "がっこうをそつぎょうしたばかりなので、しごとをさがしています。",
+              "english": "I just graduated from school, so I'm looking for a job."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.653Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l8_grammar_9",
+          "pattern": "にみえる",
+          "meaning": "Used to express how something looks, appears, or seems from the observer's perspective",
+          "explanation": "にみえる describes the visual or apparent impression something gives to the observer. It emphasizes what something looks like objectively. The form before に is typically an adjective or noun describing the appearance.",
+          "examples": [
+            {
+              "japanese": "彼は忙しく見えます。",
+              "reading": "かれはいそがしくみえます。",
+              "english": "He appears to be busy."
+            },
+            {
+              "japanese": "その建物は古く見えます。",
+              "reading": "そのたてものはふるくみえます。",
+              "english": "That building appears old."
+            },
+            {
+              "japanese": "彼女は悲しい表情に見えました。",
+              "reading": "かのじょはかなしいひょうじょうにみえました。",
+              "english": "She appeared to have a sad expression."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.653Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l8_grammar_10",
+          "pattern": "にきがつく",
+          "meaning": "Used to express noticing something, becoming aware of something, or suddenly realizing something",
+          "explanation": "にきがつく literally means 'to have one's attention struck by' something. The thing noticed is marked with に. It's used when you suddenly notice or become aware of something, often unexpectedly, rather than through deliberate observation.",
+          "examples": [
+            {
+              "japanese": "音がするのに気がつきました。",
+              "reading": "おとがするのにきがつきました。",
+              "english": "I noticed that there was a sound."
+            },
+            {
+              "japanese": "その間違いに気がつきました。",
+              "reading": "そのまちがいにきがつきました。",
+              "english": "I realized that mistake."
+            },
+            {
+              "japanese": "彼の不安な表情に気がつきました。",
+              "reading": "かれのふあんなひょうじょうにきがつきました。",
+              "english": "I noticed his anxious expression."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.653Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a2_8"
+    }
+  ]
+}

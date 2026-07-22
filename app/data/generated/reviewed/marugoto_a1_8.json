@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a1",
+  "title": "Marugoto A1: Katsudoo (Starter)",
+  "edition": "learner-gold",
+  "levelRange": "A1",
+  "sources": [
+    {
+      "sourceId": "marugoto_a1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "37d39aeeacc21293c1b109685277456c277309963dc485944bfb6adc91d5842a",
+        "bytes": 30572124
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a1_lesson_8",
+      "unitType": "lesson",
+      "lessonNumber": 8,
+      "title": "Marugoto A1: Katsudoo (Starter) — Lesson 8",
+      "level": "A1",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a1_l8_grammar_1",
+          "pattern": "～になる・～くなる",
+          "meaning": "Expresses a change of state — something becomes a certain way.",
+          "explanation": "Use ～くなる with い-adjectives (drop い, add くなる) and ～になる with な-adjectives and nouns (add になる). This pattern describes a transition into a new state and is used in both polite and casual speech. It is one of the most common ways to describe change in Japanese.",
+          "examples": [
+            {
+              "japanese": "だんだん暖かくなりました。",
+              "reading": "だんだんあたたかくなりました。",
+              "english": "It gradually got warmer."
+            },
+            {
+              "japanese": "彼女は有名になりました。",
+              "reading": "かのじょはゆうめいになりました。",
+              "english": "She became famous."
+            },
+            {
+              "japanese": "日本語が上手くなりたいです。",
+              "reading": "にほんごがじょうずくなりたいです。",
+              "english": "I want to get better at Japanese."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.611Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l8_grammar_2",
+          "pattern": "Noun + まで",
+          "meaning": "Marks a noun as the endpoint of time, place, or extent — 'until,' 'to,' or 'up to.'",
+          "explanation": "The particle まで attaches directly to a noun (time word, place name, etc.) to indicate a limit or endpoint. For place it means 'as far as' or 'to'; for time it means 'until.' It pairs naturally with から (from ~ to ~). まで itself does not imply going beyond the endpoint.",
+          "examples": [
+            {
+              "japanese": "九時まで働きました。",
+              "reading": "くじまではたらきました。",
+              "english": "I worked until nine o'clock."
+            },
+            {
+              "japanese": "東京まで新幹線で行きます。",
+              "reading": "とうきょうまでしんかんせんでいきます。",
+              "english": "I'll go to Tokyo by bullet train."
+            },
+            {
+              "japanese": "月曜日から金曜日まで学校があります。",
+              "reading": "げつようびからきんようびまでがっこうがあります。",
+              "english": "There is school from Monday to Friday."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.611Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l8_grammar_3",
+          "pattern": "たい",
+          "meaning": "Expresses the speaker's desire to perform an action.",
+          "explanation": "Attach たい to the verb stem (the ます-form base) to say you want to do something. It conjugates like an い-adjective: たいです (polite), たい (casual), たくない (negative). Use it only for the speaker's own desires; asking about others' desires requires たいですか or a different form.",
+          "examples": [
+            {
+              "japanese": "日本語を話したいです。",
+              "reading": "にほんごをはなしたいです。",
+              "english": "I want to speak Japanese."
+            },
+            {
+              "japanese": "今日は家に帰りたい。",
+              "reading": "きょうはいえにかえりたい。",
+              "english": "I want to go home today."
+            },
+            {
+              "japanese": "水が飲みたいです。",
+              "reading": "みずがのみたいです。",
+              "english": "I want to drink some water."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.611Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l8_grammar_4",
+          "pattern": "てください",
+          "meaning": "A polite way to ask or instruct someone to do something — 'please ~'.",
+          "explanation": "Attach てください to the て-form of a verb to make a polite request or instruction. It is used in everyday polite speech, classroom settings, and service situations. It is direct but not rude, and is one of the first request forms learners acquire.",
+          "examples": [
+            {
+              "japanese": "ここに名前を書いてください。",
+              "reading": "ここになまえをかいてください。",
+              "english": "Please write your name here."
+            },
+            {
+              "japanese": "もう少しゆっくり話してください。",
+              "reading": "もうすこしゆっくりはなしてください。",
+              "english": "Please speak a little more slowly."
+            },
+            {
+              "japanese": "ドアを閉めてください。",
+              "reading": "どあをしめてください。",
+              "english": "Please close the door."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.611Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l8_grammar_5",
+          "pattern": "くらい ①",
+          "meaning": "Expresses an approximate quantity, amount, or duration.",
+          "explanation": "くらい (also written ぐらい) follows numbers, counters, or time expressions to mean 'about' or 'approximately.' It softens precision and is very common in everyday speech. Both くらい and ぐらい are correct; ぐらい is slightly more casual. It can be used after nouns or number phrases without の.",
+          "examples": [
+            {
+              "japanese": "駅まで十分くらいかかります。",
+              "reading": "えきまでじゅっぷんくらいかかります。",
+              "english": "It takes about ten minutes to the station."
+            },
+            {
+              "japanese": "リンゴを三つくらい買いました。",
+              "reading": "リンゴをみっつくらいかいました。",
+              "english": "I bought about three apples."
+            },
+            {
+              "japanese": "毎日一時間くらい勉強します。",
+              "reading": "まいにちいちじかんくらいべんきょうします。",
+              "english": "I study for about one hour every day."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.611Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l8_grammar_6",
+          "pattern": "ので",
+          "meaning": "Connects a reason or cause to a result, meaning 'because' or 'since'.",
+          "explanation": "ので follows a plain-form verb, adjective, or noun (noun/な-adjective take なので) to give a reason for what comes after. It sounds softer and more objective than から, making it preferred in polite or formal contexts. Use it when you want to explain rather than justify.",
+          "examples": [
+            {
+              "japanese": "雨が降っているので、家にいます。",
+              "reading": "あめがふっているので、いえにいます。",
+              "english": "Since it is raining, I am staying home."
+            },
+            {
+              "japanese": "眠いので、早く寝ます。",
+              "reading": "ねむいので、はやくねます。",
+              "english": "Because I am sleepy, I will go to bed early."
+            },
+            {
+              "japanese": "明日テストがあるので、勉強します。",
+              "reading": "あしたテストがあるので、べんきょうします。",
+              "english": "I will study because there is a test tomorrow."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.611Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l8_grammar_7",
+          "pattern": "たことがある",
+          "meaning": "Express that you have had the experience of doing something at least once.",
+          "explanation": "Attach たことがある to the た-form (past plain form) of a verb. It describes a life experience rather than a recent past action — 'have ever done'. The negative form is たことがない ('have never done'). It is one of the most common ways to talk about personal experiences in Japanese.",
+          "examples": [
+            {
+              "japanese": "日本に行ったことがあります。",
+              "reading": "にほんにいったことがあります。",
+              "english": "I have been to Japan before."
+            },
+            {
+              "japanese": "お寿司を食べたことがありますか？",
+              "reading": "おすしをたべたことがありますか？",
+              "english": "Have you ever eaten sushi?"
+            },
+            {
+              "japanese": "富士山を見たことがない。",
+              "reading": "ふじさんをみたことがない。",
+              "english": "I have never seen Mount Fuji."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.611Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l8_grammar_8",
+          "pattern": "てから",
+          "meaning": "Expresses that one action is completed before another action begins.",
+          "explanation": "てから attaches to the て-form of a verb and means 'after doing ~' or 'once ~ is done'. It emphasizes that the first action must be fully completed before the second one starts. It is used in both polite and casual speech and is common for describing routines or procedures.",
+          "examples": [
+            {
+              "japanese": "手を洗ってから、ごはんを食べます。",
+              "reading": "てをあらってから、ごはんをたべます。",
+              "english": "I wash my hands and then eat."
+            },
+            {
+              "japanese": "シャワーを浴びてから、寝ます。",
+              "reading": "シャワーをあびてから、ねます。",
+              "english": "I take a shower and then go to sleep."
+            },
+            {
+              "japanese": "宿題をしてから、テレビを見ます。",
+              "reading": "しゅくだいをしてから、テレビをみます。",
+              "english": "After doing my homework, I watch TV."
+            }
+          ],
+          "lessonNumber": 8,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.611Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a1_8"
+    }
+  ]
+}

@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a2",
+  "title": "Marugoto A2: Katsudoo (Elementary 2)",
+  "edition": "learner-gold",
+  "levelRange": "A2",
+  "sources": [
+    {
+      "sourceId": "marugoto_a2_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "87befe524f5f78113f32b3397bcd6b6f15a2bdcf16f20a9763e684fa556ca5b5",
+        "bytes": 35694565
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a2_lesson_9",
+      "unitType": "lesson",
+      "lessonNumber": 9,
+      "title": "Marugoto A2: Katsudoo (Elementary 2) — Lesson 9",
+      "level": "A2",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a2_l9_grammar_1",
+          "pattern": "～ている",
+          "meaning": "Indicates ongoing action, habit, or current state.",
+          "explanation": "Very common form showing what's happening now or regularly. Neutral register.",
+          "examples": [
+            {
+              "japanese": "今、食べています。",
+              "reading": "いま、たべています。",
+              "english": "I'm eating now."
+            },
+            {
+              "japanese": "毎日、走っています。",
+              "reading": "まいにち、はしっています。",
+              "english": "I run every day."
+            },
+            {
+              "japanese": "彼は座っています。",
+              "reading": "かれはすわっています。",
+              "english": "He is sitting."
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.655Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l9_grammar_2",
+          "pattern": "なければいけない",
+          "meaning": "Expresses strong obligation, necessity, or requirement to do something.",
+          "explanation": "This pattern is created by attaching the negative conditional form plus いけない and indicates something that must be done or is required. It's commonly used in everyday conversation to express necessity or obligation, and is slightly less formal than なければならない. Used when the speaker feels obligated or when something is required by rules or circumstances.",
+          "examples": [
+            {
+              "japanese": "明日、朝早く起きなければいけません。",
+              "reading": "あした、あさはやくおきなければいけません。",
+              "english": "I must wake up early tomorrow morning."
+            },
+            {
+              "japanese": "この宿題は今週中に終わらなければいけません。",
+              "reading": "このしゅくだいはこんしゅうちゅうにおわらなければいけません。",
+              "english": "I must finish this homework by the end of this week."
+            },
+            {
+              "japanese": "毎日、日本語を勉強しなければいけません。",
+              "reading": "まいにち、にほんごをべんきょうしなければいけません。",
+              "english": "I must study Japanese every day."
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.655Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l9_grammar_3",
+          "pattern": "なければならない",
+          "meaning": "Expresses strong necessity or obligation, with a more formal or official tone than なければいけない.",
+          "explanation": "This pattern uses the negative conditional plus ならない to express obligation or necessity. It's slightly more formal and official than なければいけない, and is often used in written language, official statements, or when the obligation is emphasized. The meaning is essentially the same: something must be done.",
+          "examples": [
+            {
+              "japanese": "この仕事を今日中に終わらなければなりません。",
+              "reading": "このしごとをきょうちゅうにおわらなければなりません。",
+              "english": "I must complete this work by the end of today."
+            },
+            {
+              "japanese": "学生は授業に毎回参加しなければなりません。",
+              "reading": "がくせいはじゅぎょうにまいかいさんかしなければなりません。",
+              "english": "Students must participate in every class."
+            },
+            {
+              "japanese": "この規則を守らなければなりません。",
+              "reading": "このきそくをまもらなければなりません。",
+              "english": "One must follow this rule."
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.655Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l9_grammar_4",
+          "pattern": "なくてもいい",
+          "meaning": "Express that something is not necessary or required.",
+          "explanation": "This pattern negates necessity, saying you don't have to do something. Formed by adding なくてもいい to the verb stem. It's gentler than 禁止 (prohibition) and works in both casual and polite speech. Often used to reassure someone that an action is optional.",
+          "examples": [
+            {
+              "japanese": "毎日運動しなくてもいいです。",
+              "reading": "まいにちうんどうしなくてもいいです。",
+              "english": "You don't have to exercise every day."
+            },
+            {
+              "japanese": "靴を脱がなくてもいいですよ。",
+              "reading": "くつをぬがなくてもいいですよ。",
+              "english": "You don't have to take off your shoes."
+            },
+            {
+              "japanese": "全部食べなくてもいいです。",
+              "reading": "ぜんぶたべなくてもいいです。",
+              "english": "You don't have to eat all of it."
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.655Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l9_grammar_5",
+          "pattern": "てしまう・ちゃう",
+          "meaning": "To finish/complete; to do by accident; to end up doing; unfortunately",
+          "explanation": "This auxiliary verb combines with the te-form to express either completion of an action or an unintended/unfortunate action. The casual short form is ちゃう. It often implies that something was done completely, accidentally, or with an undesired result. It can also express regret or surprise.",
+          "examples": [
+            {
+              "japanese": "宿題をしてしまった。",
+              "reading": "しゅくだいを して しまった。",
+              "english": "I finished the homework (completely)."
+            },
+            {
+              "japanese": "ケーキを食べちゃった。",
+              "reading": "ケーキを たべちゃった。",
+              "english": "I ended up eating the cake (by accident)."
+            },
+            {
+              "japanese": "大事な物を失くしてしまった。",
+              "reading": "たいじな ものを なくして しまった。",
+              "english": "Unfortunately, I lost something important."
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.655Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l9_grammar_6",
+          "pattern": "～として",
+          "meaning": "Indicates a role, position, or manner.",
+          "explanation": "Shows how someone acts or what position they hold. Neutral register.",
+          "examples": [
+            {
+              "japanese": "先生として働いています。",
+              "reading": "せんせいとしてはたらいています。",
+              "english": "I work as a teacher."
+            },
+            {
+              "japanese": "友人として協力します。",
+              "reading": "ゆうじんとしてきょうりょくします。",
+              "english": "I'll cooperate as a friend."
+            },
+            {
+              "japanese": "大人として責任を持ちます。",
+              "reading": "おとなとしてせきにんをもちます。",
+              "english": "As an adult, I take responsibility."
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.655Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l9_grammar_7",
+          "pattern": "ても",
+          "meaning": "Even if; even though; no matter how; regardless of",
+          "explanation": "The ても form (te-form + も) expresses a concessive or opposing idea—that something is true, happens, or will happen despite an opposing condition. It is used to show contrast between a condition and a result, emphasizing that the result occurs regardless of the condition.",
+          "examples": [
+            {
+              "japanese": "雨でも、運動会をします。",
+              "reading": "あめでも、 うんどうかいを します。",
+              "english": "Even if it rains, we will hold the sports day."
+            },
+            {
+              "japanese": "疲れていても、勉強しなければならない。",
+              "reading": "つかれていても、 べんきょうしなければ ならない。",
+              "english": "Even though I'm tired, I must study."
+            },
+            {
+              "japanese": "何度言ってもわかってくれない。",
+              "reading": "なんどいっても わかってくれない。",
+              "english": "No matter how many times I say it, he won't understand."
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.655Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l9_grammar_8",
+          "pattern": "かい",
+          "meaning": "An informal question particle used in casual conversation, often with emphasis or surprise.",
+          "explanation": "かい is a casual question ending that adds an informal, sometimes emphatic or surprised tone to questions. It's primarily used in masculine or rough speech, though it can be used by anyone in very casual contexts. Common in spoken Japanese among friends or family.",
+          "examples": [
+            {
+              "japanese": "本当かい？",
+              "reading": "ほんとうかい？",
+              "english": "Really? / Is that true?"
+            },
+            {
+              "japanese": "お金がないのかい？",
+              "reading": "おかねがないのかい？",
+              "english": "You don't have money?"
+            },
+            {
+              "japanese": "明日、来るのかい？",
+              "reading": "あしたくるのかい？",
+              "english": "Are you coming tomorrow?"
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.655Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l9_grammar_9",
+          "pattern": "他動詞・自動詞",
+          "meaning": "Transitive verbs (他動詞) describe actions done to something; intransitive verbs (自動詞) describe things happening on their own.",
+          "explanation": "Japanese has many verb pairs where one verb is transitive (requires an object with を) and the other is intransitive (no object, uses が or は). For example, 開ける (to open something) vs. 開く (to open by itself). Understanding this distinction is essential for natural Japanese, as using the wrong verb is a very common learner error.",
+          "examples": [
+            {
+              "japanese": "風でドアが開いた。",
+              "reading": "かぜでドアがあいた。",
+              "english": "The door opened because of the wind. (intransitive)"
+            },
+            {
+              "japanese": "母が窓を開けました。",
+              "reading": "ははがまどをあけました。",
+              "english": "My mother opened the window. (transitive)"
+            },
+            {
+              "japanese": "電気がついていますよ。消してください。",
+              "reading": "でんきがついていますよ。けしてください。",
+              "english": "The light is on. Please turn it off."
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.655Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l9_grammar_10",
+          "pattern": "～なければいけない",
+          "meaning": "Indicates strong obligation.",
+          "explanation": "Shows necessity. Neutral register.",
+          "examples": [
+            {
+              "japanese": "毎日、勉強しなければいけない。",
+              "reading": "まいにち、べんきょうしなければいけない。",
+              "english": "I must study every day."
+            },
+            {
+              "japanese": "時間までに来なければいけません。",
+              "reading": "じかんまでにこなければいけません。",
+              "english": "I have to come by the time."
+            },
+            {
+              "japanese": "薬を飲まなければいけない。",
+              "reading": "くすりをのまなければいけない。",
+              "english": "I must take medicine."
+            }
+          ],
+          "lessonNumber": 9,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.655Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a2_9"
+    }
+  ]
+}

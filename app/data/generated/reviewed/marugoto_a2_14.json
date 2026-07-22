@@ -1,0 +1,356 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a2",
+  "title": "Marugoto A2: Katsudoo (Elementary 2)",
+  "edition": "learner-gold",
+  "levelRange": "A2",
+  "sources": [
+    {
+      "sourceId": "marugoto_a2_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "87befe524f5f78113f32b3397bcd6b6f15a2bdcf16f20a9763e684fa556ca5b5",
+        "bytes": 35694565
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a2_lesson_14",
+      "unitType": "lesson",
+      "lessonNumber": 14,
+      "title": "Marugoto A2: Katsudoo (Elementary 2) — Lesson 14",
+      "level": "A2",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a2_l14_grammar_1",
+          "pattern": "～ら",
+          "meaning": "A suffix added to pronouns or demonstratives to form casual plural or group references such as 'we', 'they', 'these people'.",
+          "explanation": "Attach ら to pronouns (僕、俺、あいつ) or demonstratives (こ、そ、あ) to indicate a group. It is informal and somewhat rough in tone — polite equivalents use たち instead. Common in casual male speech and colloquial writing.",
+          "examples": [
+            {
+              "japanese": "俺らは明日行くよ。",
+              "reading": "おれらはあしたいくよ。",
+              "english": "We're going tomorrow."
+            },
+            {
+              "japanese": "あいつらは何をしているの？",
+              "reading": "あいつらはなにをしているの？",
+              "english": "What are those guys doing?"
+            },
+            {
+              "japanese": "こいつらが友達です。",
+              "reading": "こいつらがともだちです。",
+              "english": "These are my friends."
+            }
+          ],
+          "lessonNumber": 14,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.667Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l14_grammar_2",
+          "pattern": "ようにいう",
+          "meaning": "Used to report what someone said, asked, or ordered another person to do.",
+          "explanation": "This pattern combines the conditional form '～ように' with the verb 言う to show reported speech, requests, or commands. It indicates that someone told, asked, instructed, or ordered another person to do something in a particular way. Commonly used in both casual and polite conversation to convey instructions or requests from others.",
+          "examples": [
+            {
+              "japanese": "先生は学生に毎日日本語を勉強するように言いました。",
+              "reading": "せんせいはがくせいにまいにちにほんごをべんきょうするようにいいました。",
+              "english": "The teacher told the students to study Japanese every day."
+            },
+            {
+              "japanese": "母は私に野菜を食べるように言っています。",
+              "reading": "はははわたしにやさいをたべるようにいっています。",
+              "english": "My mother tells me to eat vegetables."
+            },
+            {
+              "japanese": "医者は患者に薬を毎日飲むように言った。",
+              "reading": "いしゃはかんじゃにくすりをまいにちのむようにいった。",
+              "english": "The doctor told the patient to take medicine every day."
+            }
+          ],
+          "lessonNumber": 14,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.667Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l14_grammar_3",
+          "pattern": "〜でも 〜でも",
+          "meaning": "Used to list multiple alternatives, indicating that the result or conclusion is the same regardless of which is true",
+          "explanation": "This pattern repeats で+も to create meanings like 'whether...or...' or 'either...or...' It shows that the outcome, feeling, or statement applies regardless of the choice or condition. The pattern can be used with adjectives, verbs, or nouns.",
+          "examples": [
+            {
+              "japanese": "誰でも何でも構いません。",
+              "reading": "だれでもなんでもかまいません。",
+              "english": "Anyone or anything is fine."
+            },
+            {
+              "japanese": "雨でも晴れでも、毎日散歩します。",
+              "reading": "あめでもはれでも、まいにちさん�ぽします。",
+              "english": "I take a walk every day, whether it rains or is sunny."
+            },
+            {
+              "japanese": "高くても安くても、品質は同じです。",
+              "reading": "たかくてもやすくても、ひんしつはおなじです。",
+              "english": "Whether it's expensive or cheap, the quality is the same."
+            }
+          ],
+          "lessonNumber": 14,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.667Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l14_grammar_4",
+          "pattern": "ごとに",
+          "meaning": "Expresses a repeated interval or that something applies to each individual item.",
+          "explanation": "ごとに attaches to a noun or time expression to mean 'every' or 'each,' indicating a regular interval or that something applies to every instance. For example, 一時間ごとに means 'every hour.' It works with both time and non-time nouns.",
+          "examples": [
+            {
+              "japanese": "この薬は六時間ごとに飲んでください。",
+              "reading": "このくすりはろくじかんごとにのんでください。",
+              "english": "Please take this medicine every six hours."
+            },
+            {
+              "japanese": "駅ごとにアナウンスがあります。",
+              "reading": "えきごとにアナウンスがあります。",
+              "english": "There is an announcement at every station."
+            },
+            {
+              "japanese": "一ページごとに新しい単語があります。",
+              "reading": "いちページごとにあたらしいたんごがあります。",
+              "english": "There is a new word on every page."
+            }
+          ],
+          "lessonNumber": 14,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.667Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l14_grammar_5",
+          "pattern": "それに",
+          "meaning": "And, Besides, Moreover, In addition",
+          "explanation": "Grammar explanation placeholder.",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 14,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.667Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l14_grammar_6",
+          "pattern": "いがい",
+          "meaning": "Indicates exclusion or what is other than something; means 'except' or 'besides'.",
+          "explanation": "Used to show what is excluded from a set or to indicate 'other than' a specific thing. Often used with noun は or に particle. Neutral register, commonly used in both speech and writing.",
+          "examples": [
+            {
+              "japanese": "私は犬以外の動物が好きです。",
+              "reading": "わたしはいぬいがいのどうぶつがすきです。",
+              "english": "Other than dogs, I like animals. / I like animals except for dogs."
+            },
+            {
+              "japanese": "月曜日以外は仕事があります。",
+              "reading": "げつようびいがいはしごとがあります。",
+              "english": "Other than Monday, I have work. / I have work on days except Monday."
+            },
+            {
+              "japanese": "日本語以外の言語も勉強したいです。",
+              "reading": "にほんごいがいのげんごもべんきょうしたいです。",
+              "english": "I also want to study languages other than Japanese."
+            }
+          ],
+          "lessonNumber": 14,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.667Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l14_grammar_7",
+          "pattern": "～は～の一つだ",
+          "meaning": "Identifies something as belonging to a larger category or group; means '~ is one of ~'.",
+          "explanation": "Used to classify or categorize something as part of a larger set. The first part (～) is the specific thing, the second part (～の一つ) is the broader category. Common in explanations and definitions.",
+          "examples": [
+            {
+              "japanese": "犬は動物の一つです。",
+              "reading": "いぬはどうぶつのひとつです。",
+              "english": "A dog is one of the animals. / A dog is a type of animal."
+            },
+            {
+              "japanese": "日本語は言語の一つです。",
+              "reading": "にほんごはげんごのひとつです。",
+              "english": "Japanese is one of the languages. / Japanese is a language."
+            },
+            {
+              "japanese": "寿司は日本料理の一つです。",
+              "reading": "すしはにほんりょうりのひとつです。",
+              "english": "Sushi is one of the Japanese dishes. / Sushi is a type of Japanese food."
+            }
+          ],
+          "lessonNumber": 14,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.667Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l14_grammar_8",
+          "pattern": "とかんがえられている",
+          "meaning": "Is considered, Is thought of as",
+          "explanation": "Grammar explanation placeholder.",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 14,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.667Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l14_grammar_9",
+          "pattern": "なおす",
+          "meaning": "Attached to a verb stem, なおす means to do something again properly or to correct it.",
+          "explanation": "なおす (直す) as a suffix attaches to the conjunctive form (ます-stem) of a verb to mean 'redo' or 'do something again from scratch, correctly.' It implies the first attempt was flawed or incomplete and must be redone. It is neutral in register and used in both spoken and written Japanese.",
+          "examples": [
+            {
+              "japanese": "レポートを書きなおしました。",
+              "reading": "レポートをかきなおしました。",
+              "english": "I rewrote the report."
+            },
+            {
+              "japanese": "間違えたので、最初からやりなおしてください。",
+              "reading": "まちがえたので、さいしょからやりなおしてください。",
+              "english": "You made a mistake, so please start over from the beginning."
+            },
+            {
+              "japanese": "この文章を読みなおしたら、意味がわかりました。",
+              "reading": "このぶんしょうをよみなおしたら、いみがわかりました。",
+              "english": "When I reread this sentence, I understood the meaning."
+            }
+          ],
+          "lessonNumber": 14,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.667Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l14_grammar_10",
+          "pattern": "真(っ)",
+          "meaning": "Expresses intensity or exactness; means 'completely', 'entirely', 'bright', or 'right' depending on context.",
+          "explanation": "真 by itself or 真っ (with certain adjectives like colors and times) emphasizes a quality to the fullest. Common before night (真夜中), colors (真っ白, 真っ赤), and to show completeness. Neutral register.",
+          "examples": [
+            {
+              "japanese": "真っ白な雪が降っています。",
+              "reading": "まっしろなゆきがふっています。",
+              "english": "Pure white snow is falling. / Completely white snow is falling."
+            },
+            {
+              "japanese": "真夜中に起きました。",
+              "reading": "まよなかにおきました。",
+              "english": "I woke up at midnight. / I woke up in the middle of the night."
+            },
+            {
+              "japanese": "その花は真っ赤です。",
+              "reading": "そのはなはまっかです。",
+              "english": "That flower is bright red. / That flower is completely red."
+            }
+          ],
+          "lessonNumber": 14,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.667Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a2_14"
+    }
+  ]
+}

@@ -1,0 +1,398 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_b1",
+  "title": "Marugoto B1: Intermediate 1",
+  "edition": "learner-gold",
+  "levelRange": "B1",
+  "sources": [
+    {
+      "sourceId": "marugoto_b1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "d81948636c448b583ea3b99b908addcc1e79ec458e2c279c600e606b926b85fe",
+        "bytes": 148164767
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_b1_lesson_6",
+      "unitType": "lesson",
+      "lessonNumber": 6,
+      "title": "Marugoto B1: Intermediate 1 — Lesson 6",
+      "level": "B1",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_b1_l6_grammar_1",
+          "pattern": "にしても",
+          "meaning": "Even though, Even if, Even when, Also",
+          "explanation": "This pattern expresses concession, acknowledging a condition but showing that it doesn't change the result or meaning. It can also mean 'also' or 'likewise.' Found in formal and casual Japanese for indicating that despite certain circumstances, something else remains true.",
+          "examples": [
+            {
+              "japanese": "高いにしても、その値段の価値がある。",
+              "reading": "たかいにしても、そのねだんのかちがある。",
+              "english": "Even though it's expensive, it's worth that price."
+            },
+            {
+              "japanese": "忙しいにしても、返事くらいは書くべきだ。",
+              "reading": "いそがしいにしても、へんじくらいはかくべきだ。",
+              "english": "Even if you're busy, you should at least write a reply."
+            },
+            {
+              "japanese": "彼の考え方にしても、完全に同意する。",
+              "reading": "かれのかんがえかたにしても、かんぜんにどういする。",
+              "english": "Regarding his way of thinking as well, I completely agree."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.740Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l6_grammar_2",
+          "pattern": "をはじめ",
+          "meaning": "Lists items beginning with one primary example, implying additional related items follow.",
+          "explanation": "This pattern introduces a list where the first item is the main or most important example. Often used with とする to make をはじめとする. It's common in formal writing and speech for enumerating related items or categories, conveying 'X and others' or 'such as X'.",
+          "examples": [
+            {
+              "japanese": "田中さんをはじめ、みんなが参加します。",
+              "reading": "たなかさんをはじめ、みんながさんかします。",
+              "english": "Starting with Tanaka, everyone will participate."
+            },
+            {
+              "japanese": "東京をはじめとする大都市では、交通が便利です。",
+              "reading": "とうきょうをはじめとするだいとしでは、こうつうがべんりです。",
+              "english": "In major cities such as Tokyo, transportation is convenient."
+            },
+            {
+              "japanese": "アジアの国をはじめ、多くの国から学生が来ています。",
+              "reading": "あじあのくにをはじめ、おおくのくにからがくせいがきています。",
+              "english": "Students come from many countries, starting with Asian ones."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.740Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l6_grammar_3",
+          "pattern": "さえ〜ば",
+          "meaning": "A conditional stating that if only one specific condition is met, the result is guaranteed.",
+          "explanation": "This construction combines さえ with the conditional ば to create a strong conditional meaning. It emphasizes that only this one thing is necessary; if you have it, the result follows. Used in both formal and casual Japanese to state necessary and sufficient conditions.",
+          "examples": [
+            {
+              "japanese": "時間さえあれば、その映画が見たいです。",
+              "reading": "じかんさえあれば、そのえいががみたいです。",
+              "english": "If only I had time, I'd want to watch that movie."
+            },
+            {
+              "japanese": "健康さえあれば、何でもできます。",
+              "reading": "けんこうさえあれば、なんでもできます。",
+              "english": "As long as you have health, you can do anything."
+            },
+            {
+              "japanese": "勇気さえあれば、成功することができます。",
+              "reading": "ゆうきさえあれば、せいこうすることができます。",
+              "english": "Provided you have courage, you can succeed."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.740Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l6_grammar_4",
+          "pattern": "として",
+          "meaning": "As (in the role of), In the capacity of, For the purpose of",
+          "explanation": "This particle marks the role, position, or function that someone or something takes. It can also mean 'for the purpose of' or 'with the intention of.' Widely used in both formal writing and conversation to clarify what capacity someone is acting in.",
+          "examples": [
+            {
+              "japanese": "先生として、学生の将来を考えている。",
+              "reading": "せんせいとして、がくせいのしょうらいをかんがえている。",
+              "english": "As a teacher, I think about my students' futures."
+            },
+            {
+              "japanese": "意見として聞いてください。",
+              "reading": "いけんとしてきいてください。",
+              "english": "Please listen to this as my opinion."
+            },
+            {
+              "japanese": "日本への留学生として来日した。",
+              "reading": "にほんへのりゅうがくせいとしてらいにちした。",
+              "english": "I came to Japan as an exchange student."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.740Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l6_grammar_5",
+          "pattern": "わけにはいかない",
+          "meaning": "Cannot afford to, No way, Impossible to do",
+          "explanation": "Grammar explanation for わけにはいかない",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.740Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l6_grammar_6",
+          "pattern": "Verb[volitional]とする",
+          "meaning": "Try to, Attempt to, To be about to",
+          "explanation": "Grammar explanation for Verb[volitional]とする",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.740Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l6_grammar_7",
+          "pattern": "決して〜ない",
+          "meaning": "Never, By no means",
+          "explanation": "Grammar explanation for 決して〜ない",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.740Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l6_grammar_8",
+          "pattern": "ふりをする",
+          "meaning": "To pretend, To act as if",
+          "explanation": "Grammar explanation for ふりをする",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.740Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l6_grammar_9",
+          "pattern": "ことに",
+          "meaning": "Extremely, Especially, To my ...",
+          "explanation": "Grammar explanation for ことに",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.740Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l6_grammar_10",
+          "pattern": "めったに〜ない",
+          "meaning": "Hardly, Rarely, Seldom",
+          "explanation": "Grammar explanation for めったに〜ない",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.740Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l6_grammar_11",
+          "pattern": "向け",
+          "meaning": "Intended for, Aimed at",
+          "explanation": "Grammar explanation for 向け",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.740Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l6_grammar_12",
+          "pattern": "にしては",
+          "meaning": "(Even) considering, (Even) for, Against expectations",
+          "explanation": "This pattern indicates surprise or unexpected results given the circumstances. It suggests that the result contradicts what would normally be expected based on the condition. Often used with adjectives or verbs to express surprising outcomes.",
+          "examples": [
+            {
+              "japanese": "初心者にしては上手だ。",
+              "reading": "しょしんしゃにしてはじょうずだ。",
+              "english": "For a beginner, that's quite skillful."
+            },
+            {
+              "japanese": "夏にしては涼しい日だ。",
+              "reading": "なつにしてはすずしいひだ。",
+              "english": "It's a cool day, even for summer."
+            },
+            {
+              "japanese": "学生にしてはいい質問だ。",
+              "reading": "がくせいにしてはいいしつもんだ。",
+              "english": "For a student, that's a good question."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.740Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l6_grammar_13",
+          "pattern": "せいで",
+          "meaning": "Because of, Due to, Blame",
+          "explanation": "Grammar explanation for せいで",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.740Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_b1_6"
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "schemaVersion": 1,
+  "packId": "marugoto_a2_lesson_2",
+  "basedOnProof": "../out/canonical-proofs/marugoto_a2_lesson_2.json",
+  "generatedAt": "2026-07-22T06:45:30.639Z",
+  "corrections": [],
+  "additions": {
+    "vocabulary": [],
+    "grammar": [
+      {
+        "id": "marugoto_a2_l2_grammar_1",
+        "pattern": "こと",
+        "meaning": "Turns a verb or verb phrase into a noun, allowing it to function as the subject or object of a sentence.",
+        "explanation": "こと follows the plain form of a verb to nominalize the action, turning it into a concept or abstract thing. This lets verb phrases act as subjects (〜ことは) or objects (〜ことが好き). It is used in both casual and polite speech and is essential for expressing likes, abilities, and habits.",
+        "examples": [
+          {
+            "japanese": "日本語を話すことが好きです。",
+            "reading": "にほんごをはなすことがすきです。",
+            "english": "I like speaking Japanese."
+          },
+          {
+            "japanese": "毎朝走ることは健康にいいです。",
+            "reading": "まいあさはしることはけんこうにいいです。",
+            "english": "Running every morning is good for your health."
+          },
+          {
+            "japanese": "漢字を書くことは難しいです。",
+            "reading": "かんじをかくことはむずかしいです。",
+            "english": "Writing kanji is difficult."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_a2_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.638Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_a2_l2_grammar_2",
+        "pattern": "てみる",
+        "meaning": "Express trying to do something or experiencing an action for the first time.",
+        "explanation": "Adding てみる to a verb means to try, test, or attempt that action. It can mean trying something new or giving something a try. Common in both speaking and writing, it works with any verb. Often expresses willingness to experiment or see what happens.",
+        "examples": [
+          {
+            "japanese": "新しいスポーツをしてみたいです。",
+            "reading": "あたらしいすぽーつをしてみたいです。",
+            "english": "I want to try a new sport."
+          },
+          {
+            "japanese": "その映画を見てみてください。",
+            "reading": "そのえいがをみてみてください。",
+            "english": "Please try watching that movie."
+          },
+          {
+            "japanese": "和食を作ってみました。",
+            "reading": "わしょくをつくってみました。",
+            "english": "I tried making Japanese food."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_a2_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.638Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_a2_l2_grammar_3",
+        "pattern": "にくい",
+        "meaning": "Attached to a verb stem to express that an action is inherently difficult or hard to do.",
+        "explanation": "Add にくい to the verb stem (ます-form minus ます) to indicate something is objectively hard to do due to the nature of the action or object. Like やすい, it conjugates as an い-adjective. Used in neutral or polite speech.",
+        "examples": [
+          {
+            "japanese": "この字は書きにくいです。",
+            "reading": "このじはかきにくいです。",
+            "english": "This character is difficult to write."
+          },
+          {
+            "japanese": "そのドアは開けにくいです。",
+            "reading": "そのドアはあけにくいです。",
+            "english": "That door is hard to open."
+          },
+          {
+            "japanese": "暗いところでは読みにくいです。",
+            "reading": "くらいところではよみにくいです。",
+            "english": "It's hard to read in dark places."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_a2_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.638Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_a2_l2_grammar_4",
+        "pattern": "てほしい",
+        "meaning": "I want you to",
+        "explanation": "Grammar explanation placeholder.",
+        "examples": [
+          {
+            "japanese": "例文です。",
+            "reading": "れいぶんです。",
+            "english": "Example sentence."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_a2_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.638Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_a2_l2_grammar_5",
+        "pattern": "たら",
+        "meaning": "Expresses a condition or timing: 'if' or 'when' something happens.",
+        "explanation": "The たら conditional is formed by taking the past tense of a verb or adjective and adding ら. It expresses conditions ('if') or timing ('when'). It is one of the most common conditional forms in Japanese and is used in both casual and formal speech at all language levels.",
+        "examples": [
+          {
+            "japanese": "雨が降ったら、家にいます。",
+            "reading": "あめがふったら、いえにいます。",
+            "english": "If it rains, I'll stay at home."
+          },
+          {
+            "japanese": "10時になったら、出かけましょう。",
+            "reading": "じゅうじになったら、でかけましょう。",
+            "english": "Let's go out when it's 10 o'clock."
+          },
+          {
+            "japanese": "宿題が終わったら、友達と遊びます。",
+            "reading": "しゅくだいがおわったら、ともだちとあそびます。",
+            "english": "When homework is finished, I'll play with my friends."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_a2_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.638Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_a2_l2_grammar_6",
+        "pattern": "てくれる",
+        "meaning": "Someone does something for you or benefits you.",
+        "explanation": "This pattern expresses gratitude or describes when someone does a beneficial action for you. It emphasizes the favor or kindness of the action. Used in casual and polite contexts to show appreciation or describe helpful situations.",
+        "examples": [
+          {
+            "japanese": "友達が手伝ってくれました",
+            "reading": "ともだちが てつだってくれました",
+            "english": "My friend helped me"
+          },
+          {
+            "japanese": "先生が日本語を教えてくれます",
+            "reading": "せんせいが にほんごを おしえてくれます",
+            "english": "The teacher teaches Japanese for us"
+          },
+          {
+            "japanese": "母が夜ご飯を作ってくれた",
+            "reading": "ははが よるごはんを つくってくれた",
+            "english": "Mom made dinner for me"
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_a2_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.638Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_a2_l2_grammar_7",
+        "pattern": "までに",
+        "meaning": "Indicates a deadline by which an action must be completed.",
+        "explanation": "までに attaches to a time expression or clause to mean 'by' a certain point in time. Unlike まで (which means 'until' a continuing state), までに marks the latest point by which a one-time action should occur. It is used in both polite and casual speech.",
+        "examples": [
+          {
+            "japanese": "五時までに家に帰ります。",
+            "reading": "ごじまでにいえにかえります。",
+            "english": "I will go home by five o'clock."
+          },
+          {
+            "japanese": "明日までにレポートを出してください。",
+            "reading": "あしたまでにレポートをだしてください。",
+            "english": "Please submit the report by tomorrow."
+          },
+          {
+            "japanese": "会議が始まるまでに準備を終わらせます。",
+            "reading": "かいぎがはじまるまでにじゅんびをおわらせます。",
+            "english": "I will finish the preparations before the meeting starts."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_a2_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.638Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_a2_l2_grammar_8",
+        "pattern": "そう",
+        "meaning": "Expresses that something looks or seems a certain way based on direct observation.",
+        "explanation": "Attach そう to the stem of い-adjectives (drop い) or な-adjectives (drop な) to say something appears that way. For verbs, attach そう to the ます-stem to express that something looks like it is about to happen. This is a casual-to-neutral expression used when describing visual impressions.",
+        "examples": [
+          {
+            "japanese": "このケーキはおいしそうです。",
+            "reading": "このケーキはおいしそうです。",
+            "english": "This cake looks delicious."
+          },
+          {
+            "japanese": "彼は眠そうですね。",
+            "reading": "かれはねむそうですね。",
+            "english": "He looks sleepy, doesn't he."
+          },
+          {
+            "japanese": "雨が降りそうです。",
+            "reading": "あめがふりそうです。",
+            "english": "It looks like it's going to rain."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_a2_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.638Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_a2_l2_grammar_9",
+        "pattern": "てすみません",
+        "meaning": "Apologize for doing something or causing an inconvenience.",
+        "explanation": "This expression combines a て-form verb with すみません to apologize for an action. Used when you want to express regret or apology for something you did or failed to do. Works in both casual and polite contexts, and is essential for politeness and acknowledgment of mistakes.",
+        "examples": [
+          {
+            "japanese": "昨日は来なくてすみません。",
+            "reading": "きのうはこなくてすみません。",
+            "english": "I'm sorry for not coming yesterday."
+          },
+          {
+            "japanese": "待たせてすみません。",
+            "reading": "またせてすみません。",
+            "english": "I'm sorry for making you wait."
+          },
+          {
+            "japanese": "何度も聞いてすみません。",
+            "reading": "なんどもきいてすみません。",
+            "english": "I'm sorry for asking so many times."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_a2_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.638Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_a2_l2_grammar_10",
+        "pattern": "みたいに・みたいな",
+        "meaning": "Expresses similarity or resemblance in a casual way, meaning 'like', 'similar to', or 'resembling'.",
+        "explanation": "みたいに is used before verbs or adjectives to mean 'like (something)' in a way that modifies actions or states, while みたいな comes before nouns to modify them. Both attach directly to nouns or plain verb/adjective forms. This pattern is casual and very common in spoken Japanese; the more formal equivalent is ように・ような.",
+        "examples": [
+          {
+            "japanese": "彼は魚みたいに泳ぎます。",
+            "reading": "かれはさかなみたいにおよぎます。",
+            "english": "He swims like a fish."
+          },
+          {
+            "japanese": "先生みたいな人になりたいです。",
+            "reading": "せんせいみたいなひとになりたいです。",
+            "english": "I want to become someone like a teacher."
+          },
+          {
+            "japanese": "夢みたいな話ですね。",
+            "reading": "ゆめみたいなはなしですね。",
+            "english": "That's like a dream, isn't it."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_a2_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.638Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      }
+    ],
+    "contentBlocks": [],
+    "exercises": []
+  }
+}

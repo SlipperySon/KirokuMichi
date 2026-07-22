@@ -1,0 +1,342 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a2",
+  "title": "Marugoto A2: Katsudoo (Elementary 2)",
+  "edition": "learner-gold",
+  "levelRange": "A2",
+  "sources": [
+    {
+      "sourceId": "marugoto_a2_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "87befe524f5f78113f32b3397bcd6b6f15a2bdcf16f20a9763e684fa556ca5b5",
+        "bytes": 35694565
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a2_lesson_18",
+      "unitType": "lesson",
+      "lessonNumber": 18,
+      "title": "Marugoto A2: Katsudoo (Elementary 2) — Lesson 18",
+      "level": "A2",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a2_l18_grammar_1",
+          "pattern": "Verb[て]・Noun[で] + B",
+          "meaning": "Indicate the means, method, or instrument by which something is done.",
+          "explanation": "The で-particle shows how an action is accomplished—with what tool, by what method, or using what transportation. Works with both nouns (バスで = by bus) and て-form verbs (歩いて = by walking). Essential for describing the manner or means of doing something in everyday contexts.",
+          "examples": [
+            {
+              "japanese": "バスで学校に行きます。",
+              "reading": "ばすでがっこうにいきます。",
+              "english": "I go to school by bus."
+            },
+            {
+              "japanese": "ペンで書いてください。",
+              "reading": "ぺんでかいてください。",
+              "english": "Please write with a pen."
+            },
+            {
+              "japanese": "歩いて公園に着きました。",
+              "reading": "あるいてこうえんについきました。",
+              "english": "I arrived at the park by walking."
+            }
+          ],
+          "lessonNumber": 18,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.676Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l18_grammar_2",
+          "pattern": "なくて",
+          "meaning": "The negative て-form of verbs and adjectives, meaning 'not ~ and' or 'because not ~.'",
+          "explanation": "なくて is formed by replacing the final い of ない with くて. For い-adjectives, drop い and add くなくて; for な-adjectives and nouns, use じゃなくて. It connects clauses in sequence or expresses a reason for a negative state. It is neutral in register and extremely common.",
+          "examples": [
+            {
+              "japanese": "お金がなくて、旅行に行けません。",
+              "reading": "おかねがなくて、りょこうにいけません。",
+              "english": "I don't have money, so I can't travel."
+            },
+            {
+              "japanese": "宿題をしなくて、先生に怒られました。",
+              "reading": "しゅくだいをしなくて、せんせいにおこられました。",
+              "english": "Because I didn't do my homework, I was scolded by the teacher."
+            },
+            {
+              "japanese": "この部屋は静かじゃなくて、勉強しにくいです。",
+              "reading": "このへやはしずかじゃなくて、べんきょうしにくいです。",
+              "english": "This room isn't quiet, so it's hard to study."
+            }
+          ],
+          "lessonNumber": 18,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.676Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l18_grammar_3",
+          "pattern": "なくて",
+          "meaning": "なくて expresses cause-and-effect or sequential negative conditions in natural conversation.",
+          "explanation": "While なくて shares its form with the previous conjugation entry, this entry focuses on its practical use in expressing reasons and natural spoken connections. It is softer than ので or から and often implies an emotional or personal consequence. Common in casual and polite speech alike.",
+          "examples": [
+            {
+              "japanese": "熱があって、学校に行けなくて、悲しかったです。",
+              "reading": "ねつがあって、がっこうにいけなくて、かなしかったです。",
+              "english": "I had a fever and couldn't go to school, so I was sad."
+            },
+            {
+              "japanese": "彼女が来なくて、パーティーはつまらなかった。",
+              "reading": "かのじょがこなくて、パーティーはつまらなかった。",
+              "english": "She didn't come, so the party was boring."
+            },
+            {
+              "japanese": "財布を持ってこなくて、困りました。",
+              "reading": "さいふをもってこなくて、こまりました。",
+              "english": "I didn't bring my wallet, so I was in trouble."
+            }
+          ],
+          "lessonNumber": 18,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.676Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l18_grammar_4",
+          "pattern": "Verb[て] + B",
+          "meaning": "Connects two clauses to show sequence, cause, contrast, or parallel actions.",
+          "explanation": "The te-form allows you to link multiple clauses in one sentence. It can express sequential actions (and then), cause-and-effect (and so), contrasts (but), or parallel states (and). The relationship between clauses depends on context and the main predicate.",
+          "examples": [
+            {
+              "japanese": "朝起きて、顔を洗いました",
+              "reading": "あさおきて、かおをあらいました",
+              "english": "I woke up in the morning and washed my face"
+            },
+            {
+              "japanese": "雨が降って、寒いです",
+              "reading": "あめがふって、さむいです",
+              "english": "It's raining and therefore it's cold"
+            },
+            {
+              "japanese": "漢字は難しくて、ひらがなは簡単です",
+              "reading": "かんじはむずかしくて、ひらがなはかんたんです",
+              "english": "Kanji is difficult, but hiragana is easy"
+            }
+          ],
+          "lessonNumber": 18,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.676Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l18_grammar_5",
+          "pattern": "Verb[て]",
+          "meaning": "Please do (for me) - casual/informal request",
+          "explanation": "The te-form of a verb used alone (without ください) expresses a casual request or plea. It is less formal than ～てください but still appropriate for friends, family, or people you know well. The tone and politeness depend on context and intonation.",
+          "examples": [
+            {
+              "japanese": "ちょっと手伝ってくれない？",
+              "reading": "ちょっと てつだって くれない？",
+              "english": "Would you help me out for a moment?"
+            },
+            {
+              "japanese": "ちょっと待ってよ。",
+              "reading": "ちょっと まって よ。",
+              "english": "Wait just a moment, will you?"
+            },
+            {
+              "japanese": "これを見てみて。",
+              "reading": "これを みて みて。",
+              "english": "Look at this for me."
+            }
+          ],
+          "lessonNumber": 18,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.676Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l18_grammar_6",
+          "pattern": "Verb[ないで]",
+          "meaning": "To request not to do something, or to express doing something without another action.",
+          "explanation": "This pattern is used for casual requests not to do something. It can also mean 'without' doing an action or 'instead of' doing something. The tone is softer and more casual than a direct negative command, making it appropriate for gentle requests.",
+          "examples": [
+            {
+              "japanese": "待たないで、先に行ってください",
+              "reading": "またないで、さきにいってください",
+              "english": "Please don't wait; go ahead first"
+            },
+            {
+              "japanese": "電話しないで、メールで連絡してください",
+              "reading": "でんわしないで、めーるでれんらくしてください",
+              "english": "Instead of calling, please contact me by email"
+            },
+            {
+              "japanese": "子どもが寝ないで、夜遅くまで遊んでいます",
+              "reading": "こどもがねないで、よるおそくまであそんでいます",
+              "english": "The child doesn't sleep and plays until late at night"
+            }
+          ],
+          "lessonNumber": 18,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.676Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l18_grammar_7",
+          "pattern": "命令形",
+          "meaning": "A verb form used to express direct commands or instructions",
+          "explanation": "The imperative form is used to give commands or strong instructions in casual situations. It's formed differently for different verb types and is generally considered direct or even rude without softening words like ください or なさい. This form is not typically used in polite conversations.",
+          "examples": [
+            {
+              "japanese": "本をすぐに読みなさい。",
+              "reading": "ほんをすぐによみなさい。",
+              "english": "Read the book right away."
+            },
+            {
+              "japanese": "早く来てください。",
+              "reading": "はやくきてください。",
+              "english": "Please come early."
+            },
+            {
+              "japanese": "静かにしてください。",
+              "reading": "しずかにしてください。",
+              "english": "Please be quiet."
+            }
+          ],
+          "lessonNumber": 18,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.676Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l18_grammar_8",
+          "pattern": "く・に",
+          "meaning": "Converts adjectives into adverbs to describe how an action is performed, like '～ly' in English.",
+          "explanation": "い-adjectives form adverbs by replacing the final い with く (e.g., 速い → 速く, 'fast → quickly'), while な-adjectives form adverbs by adding に after the adjective stem (e.g., 静か → 静かに, 'quiet → quietly'). These adverbs directly modify verbs or other adjectives. This pattern is fundamental to Japanese and used in all registers.",
+          "examples": [
+            {
+              "japanese": "もっとゆっくり話してください。",
+              "reading": "もっとゆっくりはなしてください。",
+              "english": "Please speak more slowly."
+            },
+            {
+              "japanese": "彼女は静かに図書館を出ました。",
+              "reading": "かのじょはしずかにとしょかんをでました。",
+              "english": "She quietly left the library."
+            },
+            {
+              "japanese": "今日は早く起きました。",
+              "reading": "きょうははやくおきました。",
+              "english": "I woke up early today."
+            }
+          ],
+          "lessonNumber": 18,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.676Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l18_grammar_9",
+          "pattern": "づらい",
+          "meaning": "Attached to a verb stem to express that an action is difficult, painful, or uncomfortable to carry out, often due to emotional or physical burden.",
+          "explanation": "づらい attaches to the verb stem like にくい but carries a more personal, subjective nuance — the difficulty involves discomfort, awkwardness, or emotional pain rather than just objective hardness. It also conjugates as an い-adjective. More common in casual and written speech.",
+          "examples": [
+            {
+              "japanese": "そんなことは言いづらいです。",
+              "reading": "そんなことはいいづらいです。",
+              "english": "That kind of thing is hard to say."
+            },
+            {
+              "japanese": "この靴は歩きづらいです。",
+              "reading": "このくつはあるきづらいです。",
+              "english": "These shoes are hard to walk in."
+            },
+            {
+              "japanese": "彼に会いづらい気持ちがあります。",
+              "reading": "かれにあいづらいきもちがあります。",
+              "english": "I have a feeling that makes it hard to face him."
+            }
+          ],
+          "lessonNumber": 18,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.676Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a2_18"
+    }
+  ]
+}

@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a2",
+  "title": "Marugoto A2: Katsudoo (Elementary 2)",
+  "edition": "learner-gold",
+  "levelRange": "A2",
+  "sources": [
+    {
+      "sourceId": "marugoto_a2_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "87befe524f5f78113f32b3397bcd6b6f15a2bdcf16f20a9763e684fa556ca5b5",
+        "bytes": 35694565
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a2_lesson_16",
+      "unitType": "lesson",
+      "lessonNumber": 16,
+      "title": "Marugoto A2: Katsudoo (Elementary 2) — Lesson 16",
+      "level": "A2",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a2_l16_grammar_1",
+          "pattern": "らしい ②",
+          "meaning": "Used to describe something as characteristic of or typical of a person, thing, or group",
+          "explanation": "This らしい expresses what is characteristic or typical of someone or something, differing from the hearsay or inference meaning. It creates adjective-like descriptions (e.g., 大人らしい = adult-like, typical of adults) and can be modified with negative forms.",
+          "examples": [
+            {
+              "japanese": "その態度は大人らしくありません。",
+              "reading": "そのたいどはおとならしくありません。",
+              "english": "That attitude is not characteristic of an adult."
+            },
+            {
+              "japanese": "この洋服は女性らしいです。",
+              "reading": "このようふくはじょせいらしいです。",
+              "english": "This clothing is feminine / characteristic of women."
+            },
+            {
+              "japanese": "彼の意見は若者らしいですね。",
+              "reading": "かれのいけんはわかものらしいですね。",
+              "english": "His opinion is typical of young people, isn't it?"
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.672Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l16_grammar_2",
+          "pattern": "ようにいのる",
+          "meaning": "Expresses hope, prayer, or wish that something will happen or become true.",
+          "explanation": "This pattern combines '～ように' (so that, in order that) with the verb 祈る (to pray), expressing fervent hope, prayer, or wishes for a desired outcome. Used when someone deeply hopes for or prays for something to happen. It conveys a sense of earnest desire or spiritual hope.",
+          "examples": [
+            {
+              "japanese": "試験に合格するように祈っています。",
+              "reading": "しけんにごうかくするようにいのっています。",
+              "english": "I'm praying that I will pass the exam."
+            },
+            {
+              "japanese": "家族が幸せになるように祈ります。",
+              "reading": "かぞくがしあわせになるようにいのります。",
+              "english": "I pray that my family will be happy."
+            },
+            {
+              "japanese": "友達が早く元気になるように祈った。",
+              "reading": "ともだちがはやくげんきになるようにいのった。",
+              "english": "I prayed that my friend would recover quickly."
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.672Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l16_grammar_3",
+          "pattern": "すくなくない",
+          "meaning": "Quite a few; quite a lot; not a small number",
+          "explanation": "This double negative pattern (少なくない = not few) actually means something is considerable or significant. It's used to indicate a substantial quantity of something without directly saying 'many' or 'a lot.' It softens the expression while still conveying a large amount.",
+          "examples": [
+            {
+              "japanese": "クラスには日本人の学生が少なくない。",
+              "reading": "クラスには にほんじんの がくせいが すくなくない。",
+              "english": "There are quite a few Japanese students in the class."
+            },
+            {
+              "japanese": "毎年、事故で亡くなる人は少なくない。",
+              "reading": "まいとし、 じこで なくなる ひとは すくなくない。",
+              "english": "Every year, quite a number of people die in accidents."
+            },
+            {
+              "japanese": "この本には間違いが少なくない。",
+              "reading": "この ほんには まちがいが すくなくない。",
+              "english": "There are quite a few mistakes in this book."
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.672Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l16_grammar_4",
+          "pattern": "各",
+          "meaning": "A prefix or adjective meaning 'each' or 'every' one individually.",
+          "explanation": "各 (かく) is a prefix used before nouns to indicate 'each' or 'every' one, emphasizing individual items. It's more formal than ～ごと or other alternatives and is common in written Japanese and formal contexts.",
+          "examples": [
+            {
+              "japanese": "各学校は異なります。",
+              "reading": "かくがっこうはことなります。",
+              "english": "Each school is different."
+            },
+            {
+              "japanese": "各自が責任を持ってください。",
+              "reading": "かくじがせきにんをもってください。",
+              "english": "Each person, please take responsibility."
+            },
+            {
+              "japanese": "各部屋が大きいです。",
+              "reading": "かくへやがおおきいです。",
+              "english": "Each room is large."
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.672Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l16_grammar_5",
+          "pattern": "風",
+          "meaning": "Used as a suffix meaning style, manner, or way of doing something characteristic of a place or culture",
+          "explanation": "風 literally means wind but also refers to style or manner. When attached to nouns (usually with の or に), it indicates 'in the style of' or 'after the manner of.' Common examples include 日本風 (Japanese-style), 西洋風 (Western-style), etc.",
+          "examples": [
+            {
+              "japanese": "パリ風のレストランで食べました。",
+              "reading": "ぱりふうのれすとらんでたべました。",
+              "english": "I ate at a Paris-style restaurant."
+            },
+            {
+              "japanese": "この料理は中華風ですね。",
+              "reading": "このりょうりはちゅうかふうですね。",
+              "english": "This dish is Chinese-style, isn't it?"
+            },
+            {
+              "japanese": "和風の庭園が好きです。",
+              "reading": "わふうのていえんがすきです。",
+              "english": "I like Japanese-style gardens."
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.672Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l16_grammar_6",
+          "pattern": "とされている",
+          "meaning": "To be considered, To be deemed, Be regarded as, Be accepted as, To be said, To be accredited with",
+          "explanation": "Grammar explanation placeholder.",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.672Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l16_grammar_7",
+          "pattern": "ずっと ①",
+          "meaning": "Indicates continuous action or state from the past to present, meaning 'all the time' or 'ever since'.",
+          "explanation": "Used before verbs or adjectives to show duration and continuity. Often paired with から to mark when the action or state began. Neutral register, very common in daily conversation.",
+          "examples": [
+            {
+              "japanese": "朝からずっと雨が降っています。",
+              "reading": "あさからずっとあめがふっています。",
+              "english": "It has been raining continuously since morning. / It's been raining all morning."
+            },
+            {
+              "japanese": "子どもの時からずっと好きです。",
+              "reading": "こどものときからずっとすきです。",
+              "english": "I've liked it ever since I was a child."
+            },
+            {
+              "japanese": "ずっと待っていました。",
+              "reading": "ずっとまっていました。",
+              "english": "I was waiting all this time. / I've been waiting."
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.672Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l16_grammar_8",
+          "pattern": "～代",
+          "meaning": "Indicates a range of ages (twenties, thirties, forties) or a decade in time.",
+          "explanation": "～代 is a suffix added to numbers to indicate age ranges or historical eras, with the pronunciation combining the number with だい. It's commonly used to express someone's age by decade (二十代 = twenties, 五十代 = fifties) or to reference time periods (千九百年代 = 1900s era).",
+          "examples": [
+            {
+              "japanese": "彼は二十代です。",
+              "reading": "かれはにじゅうだいです。",
+              "english": "He is in his twenties."
+            },
+            {
+              "japanese": "母は五十代で、とても元気です。",
+              "reading": "はははごじゅうだいで、とてもげんきです。",
+              "english": "My mother is in her fifties and is very energetic."
+            },
+            {
+              "japanese": "六十代の人が多く働いています。",
+              "reading": "ろくじゅうだいのひとがおおくはたらいています。",
+              "english": "Many people in their sixties are working."
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.672Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l16_grammar_9",
+          "pattern": "だんだん",
+          "meaning": "An adverb meaning 'gradually' or 'little by little', describing a slow, steady change over time.",
+          "explanation": "だんだん modifies verbs or adjectives to show that a change is happening progressively and incrementally. It often pairs with the て-form of verbs of change (なる, わかる, etc.). Used in both casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "だんだん日本語が上手になってきました。",
+              "reading": "だんだんにほんごがじょうずになってきました。",
+              "english": "My Japanese has gradually been getting better."
+            },
+            {
+              "japanese": "外はだんだん暗くなっています。",
+              "reading": "そとはだんだんくらくなっています。",
+              "english": "It's gradually getting dark outside."
+            },
+            {
+              "japanese": "だんだん寒くなってきましたね。",
+              "reading": "だんだんさむくなってきましたね。",
+              "english": "It's been getting gradually colder, hasn't it."
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.672Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l16_grammar_10",
+          "pattern": "だいたい",
+          "meaning": "Indicates approximation, a rough estimate, or a general tendency rather than exact details.",
+          "explanation": "Can mean 'roughly' when describing quantity or time (approximately X), or 'mostly/generally' when describing overall tendency. Often used to soften statements. Neutral register, very common in everyday speech.",
+          "examples": [
+            {
+              "japanese": "クラスはだいたい30人です。",
+              "reading": "くらすはだいたいさんじゅうにんです。",
+              "english": "The class is approximately 30 people. / The class has roughly 30 people."
+            },
+            {
+              "japanese": "毎日だいたい7時に起きます。",
+              "reading": "まいにちだいたいしちじにおきます。",
+              "english": "I roughly wake up at 7 o'clock every day."
+            },
+            {
+              "japanese": "その映画はだいたい面白いです。",
+              "reading": "そのえいがはだいたいおもしろいです。",
+              "english": "That movie is generally interesting. / That movie is sort of interesting."
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.672Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a2_16"
+    }
+  ]
+}

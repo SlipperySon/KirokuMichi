@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a1",
+  "title": "Marugoto A1: Katsudoo (Starter)",
+  "edition": "learner-gold",
+  "levelRange": "A1",
+  "sources": [
+    {
+      "sourceId": "marugoto_a1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "37d39aeeacc21293c1b109685277456c277309963dc485944bfb6adc91d5842a",
+        "bytes": 30572124
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a1_lesson_5",
+      "unitType": "lesson",
+      "lessonNumber": 5,
+      "title": "Marugoto A1: Katsudoo (Starter) — Lesson 5",
+      "level": "A1",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a1_l5_grammar_1",
+          "pattern": "か",
+          "meaning": "Connects two or more nouns to express a choice or alternative, meaning 'or'.",
+          "explanation": "When placed between nouns, か means 'or', presenting alternatives for the listener to choose from. For example, コーヒーかお茶 means 'coffee or tea'. It is different from the sentence-ending か which forms questions. This usage is neutral in register and common in both polite and casual speech when offering or listing options.",
+          "examples": [
+            {
+              "japanese": "コーヒーか紅茶はいかがですか。",
+              "reading": "コーヒーかこうちゃはいかがですか。",
+              "english": "Would you like coffee or black tea?"
+            },
+            {
+              "japanese": "土曜日か日曜日に会いましょう。",
+              "reading": "どようびかにちようびにあいましょう。",
+              "english": "Let's meet on Saturday or Sunday."
+            },
+            {
+              "japanese": "バスか電車で行きます。",
+              "reading": "バスかでんしゃでいきます。",
+              "english": "I'll go by bus or train."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.604Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l5_grammar_2",
+          "pattern": "のがすき",
+          "meaning": "Express liking an activity by nominalizing a verb with の and following it with が好き.",
+          "explanation": "The nominalizer の turns a verb phrase into a noun-like clause, allowing it to act as the subject of が好き. The structure is [verb dictionary form] + のが好きです. This is the natural way to say you enjoy doing something. It is used in everyday polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "私は音楽を聴くのが好きです。",
+              "reading": "わたしはおんがくをきくのがすきです。",
+              "english": "I like listening to music."
+            },
+            {
+              "japanese": "料理を作るのが好きですか。",
+              "reading": "りょうりをつくるのがすきですか。",
+              "english": "Do you like cooking?"
+            },
+            {
+              "japanese": "外で走るのが好きです。",
+              "reading": "そとではしるのがすきです。",
+              "english": "I like running outside."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.604Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l5_grammar_3",
+          "pattern": "Verb + てもいい",
+          "meaning": "Expresses that something is permitted or acceptable — 'it's okay to ~', 'you may ~'.",
+          "explanation": "Attach てもいい to the て-form of a verb to grant or ask for permission. In question form (てもいいですか？), it means 'May I ~?' or 'Is it okay if I ~?'. It is polite in its ～てもいいです form and very common in everyday conversation.",
+          "examples": [
+            {
+              "japanese": "ここで写真を撮ってもいいですか？",
+              "reading": "ここでしゃしんをとってもいいですか？",
+              "english": "Is it okay to take photos here?"
+            },
+            {
+              "japanese": "このペンを使ってもいいです。",
+              "reading": "このぺんをつかってもいいです。",
+              "english": "You may use this pen."
+            },
+            {
+              "japanese": "明日、少し遅く来てもいいですか？",
+              "reading": "あした、すこしおそくきてもいいですか？",
+              "english": "Is it alright if I come a little late tomorrow?"
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.604Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l5_grammar_4",
+          "pattern": "で",
+          "meaning": "Indicates the means, tool, method, or material used to do something.",
+          "explanation": "The particle で attaches to a noun to show how or with what something is done. It covers transport, tools, language, and materials. This usage is very common in everyday polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "バスで学校に行きます。",
+              "reading": "バスでがっこうにいきます。",
+              "english": "I go to school by bus."
+            },
+            {
+              "japanese": "箸でご飯を食べます。",
+              "reading": "はしでごはんをたべます。",
+              "english": "I eat rice with chopsticks."
+            },
+            {
+              "japanese": "日本語で話してください。",
+              "reading": "にほんごではなしてください。",
+              "english": "Please speak in Japanese."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.604Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l5_grammar_5",
+          "pattern": "その",
+          "meaning": "Means 'that' and modifies a noun close to the listener or recently mentioned.",
+          "explanation": "その is a pre-noun modifier meaning 'that', referring to something near the listener or something already mentioned in the conversation. Like この, it must be followed by a noun. It contrasts with この (near speaker) and あの (far from both).",
+          "examples": [
+            {
+              "japanese": "その本は私のです。",
+              "reading": "そのほんはわたしのです。",
+              "english": "That book is mine."
+            },
+            {
+              "japanese": "その話はおもしろいですね。",
+              "reading": "そのはなしはおもしろいですね。",
+              "english": "That story is interesting, isn't it."
+            },
+            {
+              "japanese": "その人はだれですか。",
+              "reading": "そのひとはだれですか。",
+              "english": "Who is that person?"
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.604Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l5_grammar_6",
+          "pattern": "へ",
+          "meaning": "Marks the direction or destination of movement.",
+          "explanation": "The particle へ (pronounced 'e') attaches to a place noun to indicate the direction someone or something is moving toward. It is interchangeable with に for destinations in many cases, but へ emphasizes direction or journey rather than arrival. It is used in both polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "私は学校へ行きます。",
+              "reading": "わたしはがっこうへいきます。",
+              "english": "I am going to school."
+            },
+            {
+              "japanese": "東京へようこそ！",
+              "reading": "とうきょうへようこそ！",
+              "english": "Welcome to Tokyo!"
+            },
+            {
+              "japanese": "右へ曲がってください。",
+              "reading": "みぎへまがってください。",
+              "english": "Please turn to the right."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.604Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l5_grammar_7",
+          "pattern": "くる",
+          "meaning": "くる is an irregular verb meaning 'to come' toward the speaker or a reference point.",
+          "explanation": "くる is the second main irregular verb in Japanese. Unlike いく (to go away), くる describes movement toward the speaker or toward the topic's location. It conjugates irregularly: polite form is きます, past is きました. It is used in both polite and casual registers.",
+          "examples": [
+            {
+              "japanese": "友だちが来ます。",
+              "reading": "ともだちがきます。",
+              "english": "My friend is coming."
+            },
+            {
+              "japanese": "先生はもう来ました。",
+              "reading": "せんせいはもうきました。",
+              "english": "The teacher has already come."
+            },
+            {
+              "japanese": "明日、うちに来てください。",
+              "reading": "あした、うちにきてください。",
+              "english": "Please come to my house tomorrow."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.604Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l5_grammar_8",
+          "pattern": "だった・でした",
+          "meaning": "Expresses 'was' or 'were', the past tense of だ and です.",
+          "explanation": "だった is the plain past form of だ, and でした is the polite past form of です. They follow nouns and な-adjectives to express that something was a certain way in the past. でした is used in formal or polite contexts, while だった is used in casual conversation.",
+          "examples": [
+            {
+              "japanese": "昨日はいい天気でした。",
+              "reading": "きのうはいいてんきでした。",
+              "english": "Yesterday was nice weather."
+            },
+            {
+              "japanese": "子どものとき、私は元気だった。",
+              "reading": "こどものとき、わたしはげんきだった。",
+              "english": "When I was a child, I was energetic."
+            },
+            {
+              "japanese": "あの店は有名なレストランでした。",
+              "reading": "あのみせはゆうめいなレストランでした。",
+              "english": "That place was a famous restaurant."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.604Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a1_5"
+    }
+  ]
+}

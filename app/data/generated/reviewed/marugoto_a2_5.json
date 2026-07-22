@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a2",
+  "title": "Marugoto A2: Katsudoo (Elementary 2)",
+  "edition": "learner-gold",
+  "levelRange": "A2",
+  "sources": [
+    {
+      "sourceId": "marugoto_a2_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "87befe524f5f78113f32b3397bcd6b6f15a2bdcf16f20a9763e684fa556ca5b5",
+        "bytes": 35694565
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a2_lesson_5",
+      "unitType": "lesson",
+      "lessonNumber": 5,
+      "title": "Marugoto A2: Katsudoo (Elementary 2) — Lesson 5",
+      "level": "A2",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a2_l5_grammar_1",
+          "pattern": "てくる",
+          "meaning": "Attached to the て-form to express that an action or change has been progressing up to now, or that something comes toward the speaker.",
+          "explanation": "てくる (て＋くる) is the counterpart of ていく — it marks change or action that approaches the speaker in time or space. It can mean 'has been doing', 'has come to', or 'is starting to'. Also used literally when someone takes something and comes back. Used in casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "日本語がわかってきました。",
+              "reading": "にほんごがわかってきました。",
+              "english": "I've been coming to understand Japanese."
+            },
+            {
+              "japanese": "雨が降ってきました。",
+              "reading": "あめがふってきました。",
+              "english": "It has started to rain."
+            },
+            {
+              "japanese": "パンを買ってきてください。",
+              "reading": "パンをかってきてください。",
+              "english": "Please go buy some bread and come back."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.646Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l5_grammar_2",
+          "pattern": "といい",
+          "meaning": "I hope, I wish, You should, It would be good",
+          "explanation": "Expressing a hope or wish that something will happen.",
+          "examples": [
+            {
+              "japanese": "早く雨が止むといいですね。",
+              "reading": "はやくあめがやむといいですね。",
+              "english": "I hope the rain stops soon."
+            },
+            {
+              "japanese": "明日、天気がいいといいなあ。",
+              "reading": "あした、てんきがいいといいなあ。",
+              "english": "I wish the weather is good tomorrow."
+            },
+            {
+              "japanese": "彼が来るといいのですが。",
+              "reading": "かれがくるといいのですが。",
+              "english": "I hope he comes."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.646Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l5_grammar_3",
+          "pattern": "のに",
+          "meaning": "Expresses contrast or disappointment, meaning 'even though' or 'despite the fact that.'",
+          "explanation": "のに connects two clauses where the result is unexpected or contrary to what the first clause suggests. It often carries a nuance of frustration or surprise. It follows the plain form of verbs and adjectives, and な-adjectives take なのに.",
+          "examples": [
+            {
+              "japanese": "毎日練習したのに、試合に負けました。",
+              "reading": "まいにちれんしゅうしたのに、しあいにまけました。",
+              "english": "Even though I practiced every day, I lost the match."
+            },
+            {
+              "japanese": "安いのに、とてもおいしいです。",
+              "reading": "やすいのに、とてもおいしいです。",
+              "english": "Even though it's cheap, it's very delicious."
+            },
+            {
+              "japanese": "地図があるのに、道に迷いました。",
+              "reading": "ちずがあるのに、みちにまよいました。",
+              "english": "Even though I had a map, I got lost."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.646Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l5_grammar_4",
+          "pattern": "とか～とか",
+          "meaning": "Lists two or more examples from a larger set, meaning 'things like… and…'.",
+          "explanation": "Place とか after each item in a list to indicate you are giving examples, not a complete list. It is roughly equivalent to 'things like A and B' in English. This pattern is casual and common in everyday conversation; avoid it in formal writing.",
+          "examples": [
+            {
+              "japanese": "週末は映画を見るとか買い物をするとかします。",
+              "reading": "しゅうまつはえいがをみるとかかいものをするとかします。",
+              "english": "On weekends I do things like watching movies and shopping."
+            },
+            {
+              "japanese": "果物はりんごとかバナナとかが好きです。",
+              "reading": "くだものはりんごとかバナナとかがすきです。",
+              "english": "I like fruits like apples and bananas."
+            },
+            {
+              "japanese": "日本語とか韓国語とかを勉強しています。",
+              "reading": "にほんごとかかんこくごとかをべんきょうしています。",
+              "english": "I am studying languages like Japanese and Korean."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.646Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l5_grammar_5",
+          "pattern": "れる・られる (Potential)",
+          "meaning": "A verb form expressing the ability or possibility to perform an action.",
+          "explanation": "The potential form (～られる/～れる) expresses ability or possibility. For Ichidan verbs, replace る with られる (見る → 見られる); for Godan verbs, change the final vowel to え and add る (飲む → 飲める). Use it to express 'can do,' 'be able to,' or 'is possible.' This is essential at A2 level for expressing capabilities.",
+          "examples": [
+            {
+              "japanese": "私は日本語が少し読めます。",
+              "reading": "わたし は にほんご が すこし よめます。",
+              "english": "I can read Japanese a little."
+            },
+            {
+              "japanese": "兄は車を運転できますが、私はまだできません。",
+              "reading": "あに は くるま を うんてん できます が、わたし は まだ できません。",
+              "english": "My older brother can drive a car, but I can't yet."
+            },
+            {
+              "japanese": "この問題は解くことができますか？",
+              "reading": "この もんだい は とく こと が できます か？",
+              "english": "Can you solve this problem?"
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.646Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l5_grammar_6",
+          "pattern": "ばあいは",
+          "meaning": "In the event of; in the case of; if the situation is",
+          "explanation": "ばあいは marks a conditional circumstance or situation. It appears after a noun or verbal phrase to indicate 'if this situation occurs' or 'if this condition applies.' It is more formal than simple conditionals and frequently used in rules, instructions, and formal explanations.",
+          "examples": [
+            {
+              "japanese": "問題が起きた場合は、先生に言ってください。",
+              "reading": "もんだいが おきた ばあいは、 せんせいに いってください。",
+              "english": "In the event that a problem occurs, please tell the teacher."
+            },
+            {
+              "japanese": "雨の場合は、運動会を延期します。",
+              "reading": "あめの ばあいは、 うんどうかいを えんきします。",
+              "english": "In the case of rain, the sports day will be postponed."
+            },
+            {
+              "japanese": "質問がある場合は、手を上げてください。",
+              "reading": "しつもんが ある ばあいは、 てを あげてください。",
+              "english": "If you have any questions, please raise your hand."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.646Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l5_grammar_7",
+          "pattern": "ていただけませんか",
+          "meaning": "An extremely polite way to ask someone to do something for you.",
+          "explanation": "This pattern combines a verb's te-form with いただく (to receive the favor of) in the potential form, followed by the negative question ending. It is one of the most polite ways to make a request in Japanese and is frequently used in business and formal situations.",
+          "examples": [
+            {
+              "japanese": "待っていただけますか。",
+              "reading": "まっていただけますか。",
+              "english": "Would you wait for me?"
+            },
+            {
+              "japanese": "ちょっと助けていただけませんか。",
+              "reading": "ちょっとたすけていただけませんか。",
+              "english": "Could you help me for a moment?"
+            },
+            {
+              "japanese": "このメールを読んでいただけますか。",
+              "reading": "このめーるをよんでいただけますか。",
+              "english": "Could you read this email?"
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.646Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l5_grammar_8",
+          "pattern": "るところだ",
+          "meaning": "Expresses that an action is just about to happen or is on the verge of occurring.",
+          "explanation": "るところだ attaches to the dictionary (plain present) form of a verb to indicate that the action is just about to start. It describes the moment immediately before the action begins. In polite speech, です replaces だ at the end.",
+          "examples": [
+            {
+              "japanese": "今から出かけるところです。",
+              "reading": "いまからでかけるところです。",
+              "english": "I am just about to go out."
+            },
+            {
+              "japanese": "映画が始まるところです。",
+              "reading": "えいががはじまるところです。",
+              "english": "The movie is about to start."
+            },
+            {
+              "japanese": "ちょうど電話するところでした。",
+              "reading": "ちょうどでんわするところでした。",
+              "english": "I was just about to call you."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.646Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l5_grammar_9",
+          "pattern": "ていた",
+          "meaning": "The past progressive or habitual past form, expressing an action that was ongoing or repeatedly occurred in the past.",
+          "explanation": "ていた (ていました in polite form) is formed by combining the て-form of a verb with いた. It describes an action that was in progress at a past moment, or a habit or state that existed in the past. It is the past tense equivalent of ている.",
+          "examples": [
+            {
+              "japanese": "昨日の夜、テレビを見ていました。",
+              "reading": "きのうのよる、テレビをみていました。",
+              "english": "Last night, I was watching television."
+            },
+            {
+              "japanese": "子どものころ、毎日泳いでいました。",
+              "reading": "こどものころ、まいにちおよいでいました。",
+              "english": "When I was a child, I swam every day."
+            },
+            {
+              "japanese": "電話したとき、彼は寝ていた。",
+              "reading": "でんわしたとき、かれはねていた。",
+              "english": "When I called, he was sleeping."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.646Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l5_grammar_10",
+          "pattern": "ていく",
+          "meaning": "Attached to the て-form to express that an action or change proceeds forward, away from the current point in time or space.",
+          "explanation": "ていく (て＋いく) indicates movement or change that goes away from the speaker — physically (taking something and leaving) or temporally (a state that continues into the future). It can also mean 'to start doing' something progressively. Used in casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "これからもっと勉強していきます。",
+              "reading": "これからもっとべんきょうしていきます。",
+              "english": "I'm going to continue studying even more from now on."
+            },
+            {
+              "japanese": "彼は荷物を持っていきました。",
+              "reading": "かれはにもつをもっていきました。",
+              "english": "He took his luggage and left."
+            },
+            {
+              "japanese": "気温はどんどん上がっていくでしょう。",
+              "reading": "きおんはどんどんあがっていくでしょう。",
+              "english": "The temperature will probably keep rising."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.646Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a2_5"
+    }
+  ]
+}

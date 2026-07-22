@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a2",
+  "title": "Marugoto A2: Katsudoo (Elementary 2)",
+  "edition": "learner-gold",
+  "levelRange": "A2",
+  "sources": [
+    {
+      "sourceId": "marugoto_a2_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "87befe524f5f78113f32b3397bcd6b6f15a2bdcf16f20a9763e684fa556ca5b5",
+        "bytes": 35694565
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a2_lesson_3",
+      "unitType": "lesson",
+      "lessonNumber": 3,
+      "title": "Marugoto A2: Katsudoo (Elementary 2) — Lesson 3",
+      "level": "A2",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a2_l3_grammar_1",
+          "pattern": "より",
+          "meaning": "Used to compare two things, meaning 'more than' or 'over.'",
+          "explanation": "より follows a noun to indicate the standard of comparison, equivalent to 'more than' in English. It is commonly paired with the adjective or adverb that describes the difference. より is used in both casual and polite contexts and is more formal-sounding than けど-style comparisons.",
+          "examples": [
+            {
+              "japanese": "東京は大阪より大きいです。",
+              "reading": "とうきょうはおおさかよりおおきいです。",
+              "english": "Tokyo is bigger than Osaka."
+            },
+            {
+              "japanese": "今日は昨日より寒いですね。",
+              "reading": "きょうはきのうよりさむいですね。",
+              "english": "It's colder today than yesterday, isn't it?"
+            },
+            {
+              "japanese": "電車はバスより速いです。",
+              "reading": "でんしゃはバスよりはやいです。",
+              "english": "The train is faster than the bus."
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.641Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l3_grammar_2",
+          "pattern": "だけで",
+          "meaning": "Expresses that something is accomplished or felt by doing only one thing or using only one thing.",
+          "explanation": "だけで attaches to a noun or verb plain form to mean 'just by' or 'simply by doing.' It highlights that the single action or item is sufficient — often expressing surprise or emphasis. Used in both casual and polite speech; the sentence ending determines register.",
+          "examples": [
+            {
+              "japanese": "名前を聞くだけで、顔が赤くなります。",
+              "reading": "なまえをきくだけで、かおがあかくなります。",
+              "english": "Just by hearing his name, my face turns red."
+            },
+            {
+              "japanese": "この薬は一錠飲むだけで、頭痛が治りました。",
+              "reading": "このくすりはいちじょうのむだけで、ずつうがなおりました。",
+              "english": "Just by taking one tablet of this medicine, my headache went away."
+            },
+            {
+              "japanese": "笑うだけで気持ちが楽になります。",
+              "reading": "わらうだけできもちがらくになります。",
+              "english": "Just by smiling, you feel better."
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.641Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l3_grammar_3",
+          "pattern": "ことができる",
+          "meaning": "Expresses the ability or possibility to do something.",
+          "explanation": "ことができる is used to say that someone has the ability, opportunity, or permission to do something. It follows the verb stem and can be used in all tenses. This is a fundamental pattern for expressing ability in Japanese.",
+          "examples": [
+            {
+              "japanese": "私は日本語を話すことができます。",
+              "reading": "わたしはにほんごをはなすことができます。",
+              "english": "I can speak Japanese."
+            },
+            {
+              "japanese": "彼は毎日、運動することができます。",
+              "reading": "かれはまいにち、うんどうすることができます。",
+              "english": "He can exercise every day."
+            },
+            {
+              "japanese": "ここから富士山が見ることができます。",
+              "reading": "ここからふじさんがみることができます。",
+              "english": "You can see Mt. Fuji from here."
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.641Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l3_grammar_4",
+          "pattern": "さ",
+          "meaning": "Converts an adjective into a noun expressing a degree or quality.",
+          "explanation": "Replace the final い of an い-adjective, or drop な from a な-adjective, and add さ to form a noun meaning 'the degree/extent of that quality'. For example, 高い (tall) becomes 高さ (height/tallness). This is neutral in register and common in both speech and writing.",
+          "examples": [
+            {
+              "japanese": "この山の高さは富士山と同じくらいです。",
+              "reading": "このやまのたかさはふじさんとおなじくらいです。",
+              "english": "The height of this mountain is about the same as Mt. Fuji."
+            },
+            {
+              "japanese": "水の冷たさに驚きました。",
+              "reading": "みずのつめたさにおどろきました。",
+              "english": "I was surprised by the coldness of the water."
+            },
+            {
+              "japanese": "彼女の親切さはみんなに伝わりました。",
+              "reading": "かのじょのしんせつさはみんなにつたわりました。",
+              "english": "Her kindness was conveyed to everyone."
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.641Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l3_grammar_5",
+          "pattern": "がる",
+          "meaning": "Expresses that a third person appears to feel, want, or desire something based on observable behavior.",
+          "explanation": "がる attaches to the stem of い-adjectives or certain feeling words (like 欲しい → 欲しがる, 怖い → 怖がる) to describe how a third person outwardly shows an emotion or desire. Because Japanese speakers cannot directly state another person's inner feelings, がる is used to describe what can be observed. It is neutral in register and common in both spoken and written Japanese.",
+          "examples": [
+            {
+              "japanese": "弟は新しいゲームを欲しがっています。",
+              "reading": "おとうとはあたらしいゲームをほしがっています。",
+              "english": "My younger brother seems to want a new game."
+            },
+            {
+              "japanese": "子どもたちは暗い部屋を怖がっていました。",
+              "reading": "こどもたちはくらいへやをこわがっていました。",
+              "english": "The children seemed scared of the dark room."
+            },
+            {
+              "japanese": "彼女はいつも新しい服を欲しがります。",
+              "reading": "かのじょはいつもあたらしいふくをほしがります。",
+              "english": "She always seems to want new clothes."
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.641Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l3_grammar_6",
+          "pattern": "かもしれない",
+          "meaning": "Expresses uncertainty or possibility, meaning 'might', 'maybe', or 'perhaps'.",
+          "explanation": "かもしれない attaches to the plain form of verbs, adjectives, or nouns (noun/な-adjective + かもしれない, dropping だ) to indicate that something is possible but not certain. It is less confident than でしょう and more neutral than はずだ. The polite form is かもしれません, while かもしれない is casual.",
+          "examples": [
+            {
+              "japanese": "明日は雨が降るかもしれません。",
+              "reading": "あしたはあめがふるかもしれません。",
+              "english": "It might rain tomorrow."
+            },
+            {
+              "japanese": "彼女はもう家に帰ったかもしれない。",
+              "reading": "かのじょはもういえにかえったかもしれない。",
+              "english": "She might have already gone home."
+            },
+            {
+              "japanese": "このケーキは少し甘すぎるかもしれません。",
+              "reading": "このケーキはすこしあますぎるかもしれません。",
+              "english": "This cake might be a little too sweet."
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.641Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l3_grammar_7",
+          "pattern": "てもらう",
+          "meaning": "You receive or request an action from someone else.",
+          "explanation": "This pattern expresses when you have someone do something for you or when you ask them for help. It's the counterpart to てくれる from the receiver's perspective. Used when emphasizing that you asked for or received the action.",
+          "examples": [
+            {
+              "japanese": "友達に手伝ってもらいました",
+              "reading": "ともだちに てつだってもらいました",
+              "english": "I had my friend help me"
+            },
+            {
+              "japanese": "先生に日本語を教えてもらいます",
+              "reading": "せんせいに にほんごを おしえてもらいます",
+              "english": "I have the teacher teach me Japanese"
+            },
+            {
+              "japanese": "兄に荷物を持ってもらった",
+              "reading": "あにに にもつを もってもらった",
+              "english": "I had my older brother carry the package"
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.641Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l3_grammar_8",
+          "pattern": "はじめる",
+          "meaning": "Attached to a verb stem to express that an action has begun.",
+          "explanation": "はじめる (始める) is attached to the verb stem (masu-stem) of another verb to mean 'to start doing' something. It indicates the beginning of an ongoing action or process. It is used in both polite and casual speech and conjugates like a regular る-verb.",
+          "examples": [
+            {
+              "japanese": "雨が降り始めました。",
+              "reading": "あめがふりはじめました。",
+              "english": "It started to rain."
+            },
+            {
+              "japanese": "日本語を勉強し始めたのは去年です。",
+              "reading": "にほんごをべんきょうしはじめたのはきょねんです。",
+              "english": "It was last year that I started studying Japanese."
+            },
+            {
+              "japanese": "子どもたちは走り始めました。",
+              "reading": "こどもたちははしりはじめました。",
+              "english": "The children started running."
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.641Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l3_grammar_9",
+          "pattern": "あとで",
+          "meaning": "Indicates that an action happens after another action or at a later time.",
+          "explanation": "あとで (後で) means 'after' or 'later' and follows a noun (with の) or the plain past form of a verb. It indicates that something will happen following another event or simply at some point in the future. It is used in both polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "授業のあとで、友達と話しました。",
+              "reading": "じゅぎょうのあとで、ともだちとはなしました。",
+              "english": "After class, I talked with my friend."
+            },
+            {
+              "japanese": "シャワーを浴びたあとで、寝ます。",
+              "reading": "シャワーをあびたあとで、ねます。",
+              "english": "After taking a shower, I go to sleep."
+            },
+            {
+              "japanese": "あとで電話してもいいですか。",
+              "reading": "あとででんわしてもいいですか。",
+              "english": "Is it okay if I call you later?"
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.641Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l3_grammar_10",
+          "pattern": "がする",
+          "meaning": "Describes a sensory impression such as a smell, sound, taste, or feeling that one perceives.",
+          "explanation": "がする is used with nouns referring to sensations — such as においがする (there's a smell), 音がする (there's a sound), or 気がする (I have a feeling) — to express that a sensation is being perceived. The subject is the sensation itself, not the person experiencing it. It is a very natural and common expression in everyday Japanese.",
+          "examples": [
+            {
+              "japanese": "台所からいいにおいがします。",
+              "reading": "だいどころからいいにおいがします。",
+              "english": "There's a nice smell coming from the kitchen."
+            },
+            {
+              "japanese": "外で大きな音がしました。",
+              "reading": "そとでおおきなおとがしました。",
+              "english": "There was a loud sound outside."
+            },
+            {
+              "japanese": "このスープは変な味がします。",
+              "reading": "このスープはへんなあじがします。",
+              "english": "This soup has a strange taste."
+            }
+          ],
+          "lessonNumber": 3,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.641Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a2_3"
+    }
+  ]
+}

@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a1",
+  "title": "Marugoto A1: Katsudoo (Starter)",
+  "edition": "learner-gold",
+  "levelRange": "A1",
+  "sources": [
+    {
+      "sourceId": "marugoto_a1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "37d39aeeacc21293c1b109685277456c277309963dc485944bfb6adc91d5842a",
+        "bytes": 30572124
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a1_lesson_6",
+      "unitType": "lesson",
+      "lessonNumber": 6,
+      "title": "Marugoto A1: Katsudoo (Starter) — Lesson 6",
+      "level": "A1",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a1_l6_grammar_1",
+          "pattern": "う-Verb (Past)",
+          "meaning": "Form the past tense of う-verbs by applying sound-change rules to get ました (polite) or た/だ (casual).",
+          "explanation": "う-verbs (Group 1 or godan verbs) require a stem change before adding the past ending. In polite speech, change the final sound to the い-row and add ました (e.g., 書く→書きました). In casual speech, the ending becomes た or だ depending on the verb's final consonant. Mastering these sound changes is key to Japanese verb conjugation.",
+          "examples": [
+            {
+              "japanese": "昨日、本を読みました。",
+              "reading": "きのう、ほんをよみました。",
+              "english": "I read a book yesterday."
+            },
+            {
+              "japanese": "友だちに電話しました。",
+              "reading": "ともだちにでんわしました。",
+              "english": "I called my friend."
+            },
+            {
+              "japanese": "駅まで歩きました。",
+              "reading": "えきまであるきました。",
+              "english": "I walked to the station."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.606Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l6_grammar_2",
+          "pattern": "もう",
+          "meaning": "Expresses that something has already happened or is no longer the case.",
+          "explanation": "もう means 'already' in affirmative sentences (e.g., もう食べました — 'already ate') and 'not anymore' or 'no longer' in negative sentences (e.g., もう食べません — 'won't eat anymore'). It is very common in everyday conversation at all registers.",
+          "examples": [
+            {
+              "japanese": "もう宿題をしました。",
+              "reading": "もうしゅくだいをしました。",
+              "english": "I already did my homework."
+            },
+            {
+              "japanese": "もうお腹がいっぱいです。",
+              "reading": "もうおなかがいっぱいです。",
+              "english": "I'm already full."
+            },
+            {
+              "japanese": "田中さんはもうここにいません。",
+              "reading": "たなかさんはもうここにいません。",
+              "english": "Tanaka-san is no longer here."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.606Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l6_grammar_3",
+          "pattern": "だけ",
+          "meaning": "Means 'only' or 'just', limiting a quantity, person, or thing to nothing more than what is stated.",
+          "explanation": "だけ attaches to nouns, verbs in plain form, and adjectives to indicate that something is limited to exactly that and nothing else. It is neutral in register and works in both casual and polite sentences. It is similar in meaning to しか…ない but without the negative verb requirement.",
+          "examples": [
+            {
+              "japanese": "水だけ飲みました。",
+              "reading": "みずだけのみました。",
+              "english": "I only drank water."
+            },
+            {
+              "japanese": "一つだけ食べていいですよ。",
+              "reading": "ひとつだけたべていいですよ。",
+              "english": "You can eat just one."
+            },
+            {
+              "japanese": "少しだけ時間があります。",
+              "reading": "すこしだけじかんがあります。",
+              "english": "I have just a little time."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.606Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l6_grammar_4",
+          "pattern": "が",
+          "meaning": "Connects two contrasting or unexpected clauses, meaning 'but' or 'however'.",
+          "explanation": "When used as a conjunction between two clauses, が marks a contrast or mild contradiction. It is slightly more formal than けど and appears frequently in polite written and spoken Japanese. The clause before が sets context; the clause after presents a contrasting point.",
+          "examples": [
+            {
+              "japanese": "日本語を勉強していますが、まだ上手じゃないです。",
+              "reading": "にほんごをべんきょうしていますが、まだじょうずじゃないです。",
+              "english": "I am studying Japanese, but I am not good at it yet."
+            },
+            {
+              "japanese": "この店は安いですが、おいしいです。",
+              "reading": "このみせはやすいですが、おいしいです。",
+              "english": "This restaurant is cheap, but it is delicious."
+            },
+            {
+              "japanese": "電話しましたが、出ませんでした。",
+              "reading": "でんわしましたが、でませんでした。",
+              "english": "I called, but there was no answer."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.606Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l6_grammar_5",
+          "pattern": "から",
+          "meaning": "Gives a reason or cause for an action or situation, meaning 'because' or 'since'.",
+          "explanation": "から follows a plain-form or polite-form verb or adjective to explain why something happens. It is more direct and assertive than ので and is common in both casual and polite conversation. The reason clause comes before the result clause.",
+          "examples": [
+            {
+              "japanese": "お腹が空いたから、ご飯を食べます。",
+              "reading": "おなかがすいたから、ごはんをたべます。",
+              "english": "I will eat because I am hungry."
+            },
+            {
+              "japanese": "忙しいから、行けません。",
+              "reading": "いそがしいから、いけません。",
+              "english": "I can't go because I am busy."
+            },
+            {
+              "japanese": "好きだから、毎日練習します。",
+              "reading": "すきだから、まいにちれんしゅうします。",
+              "english": "I practice every day because I like it."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.606Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l6_grammar_6",
+          "pattern": "てもいい",
+          "meaning": "Expresses permission or that it is acceptable to do something.",
+          "explanation": "てもいい attaches to the て-form of a verb and means 'it's okay to ~', 'you may ~', or 'it's fine even if ~'. It is commonly used to ask for or grant permission. The question form ～てもいいですか is a polite way to ask 'May I ~?' in everyday situations.",
+          "examples": [
+            {
+              "japanese": "ここに座ってもいいですか。",
+              "reading": "ここにすわってもいいですか。",
+              "english": "May I sit here?"
+            },
+            {
+              "japanese": "窓を開けてもいいですよ。",
+              "reading": "まどをあけてもいいですよ。",
+              "english": "It's fine to open the window."
+            },
+            {
+              "japanese": "この本を借りてもいいですか。",
+              "reading": "このほんをかりてもいいですか。",
+              "english": "May I borrow this book?"
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.606Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l6_grammar_7",
+          "pattern": "あの",
+          "meaning": "Means 'that over there' and modifies a noun distant from both speaker and listener.",
+          "explanation": "あの is a pre-noun modifier referring to something far from both the speaker and the listener — visible in the distance, or mutually known to both parties. It must be followed by a noun. When both speakers share a memory or common reference, あの can refer to something not physically present but mutually understood.",
+          "examples": [
+            {
+              "japanese": "あの山はきれいです。",
+              "reading": "あのやまはきれいです。",
+              "english": "That mountain over there is beautiful."
+            },
+            {
+              "japanese": "あの先生はやさしいです。",
+              "reading": "あのせんせいはやさしいです。",
+              "english": "That teacher (we both know) is kind."
+            },
+            {
+              "japanese": "あのレストランで食べましょう。",
+              "reading": "あのレストランでたべましょう。",
+              "english": "Let's eat at that restaurant over there."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.606Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l6_grammar_8",
+          "pattern": "Verb + にいく",
+          "meaning": "Expresses going somewhere for the purpose of doing something.",
+          "explanation": "Attach に to the stem of a verb (the ます-form base) followed by いく to express going somewhere with a specific purpose. The verb before に describes the intended action at the destination. This pattern is common in everyday conversation and is used in both polite and casual registers depending on how いく is conjugated.",
+          "examples": [
+            {
+              "japanese": "スーパーへ買い物をしに行きます。",
+              "reading": "スーパーへかいものをしにいきます。",
+              "english": "I am going to the supermarket to shop."
+            },
+            {
+              "japanese": "図書館へ本を借りに行きました。",
+              "reading": "としょかんへほんをかりにいきました。",
+              "english": "I went to the library to borrow a book."
+            },
+            {
+              "japanese": "友だちに会いに行きます。",
+              "reading": "ともだちにあいにいきます。",
+              "english": "I am going to meet my friend."
+            }
+          ],
+          "lessonNumber": 6,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.606Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a1_6"
+    }
+  ]
+}

@@ -1,0 +1,356 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a2",
+  "title": "Marugoto A2: Katsudoo (Elementary 2)",
+  "edition": "learner-gold",
+  "levelRange": "A2",
+  "sources": [
+    {
+      "sourceId": "marugoto_a2_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "87befe524f5f78113f32b3397bcd6b6f15a2bdcf16f20a9763e684fa556ca5b5",
+        "bytes": 35694565
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a2_lesson_10",
+      "unitType": "lesson",
+      "lessonNumber": 10,
+      "title": "Marugoto A2: Katsudoo (Elementary 2) — Lesson 10",
+      "level": "A2",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a2_l10_grammar_1",
+          "pattern": "だす",
+          "meaning": "Indicates that an action suddenly begins or starts unexpectedly.",
+          "explanation": "だす is an auxiliary verb attached to the ～ます stem of another verb to show that an action abruptly or suddenly begins. It emphasizes the unexpected or sudden nature of the action starting. Used in casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "雨が降りだしました。",
+              "reading": "あめがふりだしました。",
+              "english": "It suddenly started raining."
+            },
+            {
+              "japanese": "子どもが泣きだしました。",
+              "reading": "こどもがなきだしました。",
+              "english": "The child suddenly started crying."
+            },
+            {
+              "japanese": "彼は笑いだしました。",
+              "reading": "かれはわらいだしました。",
+              "english": "He suddenly began to laugh."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.658Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l10_grammar_2",
+          "pattern": "とみえる",
+          "meaning": "Used to express what seems to be the case based on observable evidence or logical deduction",
+          "explanation": "とみえる is a more formal expression of inference or conclusion based on evidence. It's often found in written Japanese, academic contexts, or formal speech when explaining what something appears to be based on facts or careful observation.",
+          "examples": [
+            {
+              "japanese": "去年の売上が増えたとみえます。",
+              "reading": "きょねんのうりあげがふえたとみえます。",
+              "english": "It appears that last year's sales increased."
+            },
+            {
+              "japanese": "彼は困っているとみえます。",
+              "reading": "かれはこまっているとみえます。",
+              "english": "It seems he is having trouble."
+            },
+            {
+              "japanese": "その事件は計画的なものとみえます。",
+              "reading": "そのじけんはけいかくてきなものとみえます。",
+              "english": "The incident appears to be a planned one."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.658Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l10_grammar_3",
+          "pattern": "つづける",
+          "meaning": "Attached to the て-form of a verb to express that an action continues or keeps happening.",
+          "explanation": "This verb (続ける) combines with the て-form of another verb to show continuous action. It emphasizes persistence and ongoing activity. Used in both casual and formal contexts to indicate that something started before and is still happening, or will continue to happen.",
+          "examples": [
+            {
+              "japanese": "大学を卒業した後も、日本語を勉強し続けます。",
+              "reading": "だいがくをそつぎょうしたあともにほんごをべんきょうしつづけます。",
+              "english": "After graduating from university, I will continue to study Japanese."
+            },
+            {
+              "japanese": "毎日運動し続けることが大事です。",
+              "reading": "まいにちうんどうしつづけることがだいじです。",
+              "english": "It's important to keep exercising every day."
+            },
+            {
+              "japanese": "雨が降り続けています。",
+              "reading": "あめがふりつづけています。",
+              "english": "The rain continues to fall."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.658Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l10_grammar_4",
+          "pattern": "よていだ",
+          "meaning": "Expresses scheduled plans, intentions, or what is supposed to happen.",
+          "explanation": "This noun 予定 (yotei) combined with です/だ indicates a plan or intention. Used to discuss what will happen according to a schedule or plan. Common in both casual (～予定だ) and polite (～予定です) forms to state scheduled activities or future intentions.",
+          "examples": [
+            {
+              "japanese": "来週、日本に行く予定です。",
+              "reading": "らいしゅう、にほんにいくよていです。",
+              "english": "I plan to go to Japan next week."
+            },
+            {
+              "japanese": "明日の朝、駅で友達に会う予定です。",
+              "reading": "あしたのあさ、えきでともだちにあうよていです。",
+              "english": "I plan to meet my friend at the station tomorrow morning."
+            },
+            {
+              "japanese": "来年、大学に入学する予定です。",
+              "reading": "らいねん、だいがくににゅうがくするよていです。",
+              "english": "I plan to enter university next year."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.658Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l10_grammar_5",
+          "pattern": "しか～ない",
+          "meaning": "Indicates that something is the only option or exclusive choice.",
+          "explanation": "しか～ない expresses exclusivity, meaning 'only' or 'nothing but.' It emphasizes that there is no alternative. Always used with negative verb forms. Common in both casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "私はコーヒーしか飲みません。",
+              "reading": "わたしはこーひーしかのみません。",
+              "english": "I only drink coffee."
+            },
+            {
+              "japanese": "このバッグは千円しかありません。",
+              "reading": "このばっぐはせんえんしかありません。",
+              "english": "This bag costs only 1000 yen."
+            },
+            {
+              "japanese": "週末は寝るしかできません。",
+              "reading": "しゅうまつはねるしかできません。",
+              "english": "On weekends, I can only sleep."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.658Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l10_grammar_6",
+          "pattern": "のなかで",
+          "meaning": "Indicates location within a group or space; means 'in', 'among', or 'within'.",
+          "explanation": "Used with の to mark position within a group, space, or context. Shows the range or context in which something happens or a quality exists. Common in descriptions and comparisons.",
+          "examples": [
+            {
+              "japanese": "クラスの中で、田中さんが一番背が高いです。",
+              "reading": "くらすのなかで、たなかさんがいちばんせがたかいです。",
+              "english": "Among the class, Tanaka is the tallest."
+            },
+            {
+              "japanese": "家の中で勉強しています。",
+              "reading": "いえのなかでべんきょうしています。",
+              "english": "I'm studying within my house. / I'm studying inside."
+            },
+            {
+              "japanese": "この本の中で一番好きな話は何ですか。",
+              "reading": "このほんのなかでいちばんすきなはなしはなんですか。",
+              "english": "Among the stories in this book, which one is your favorite?"
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.658Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l10_grammar_7",
+          "pattern": "といわれている",
+          "meaning": "It is said that, Is known as",
+          "explanation": "Grammar explanation placeholder.",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.658Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l10_grammar_8",
+          "pattern": "ということ",
+          "meaning": "Turns a verb or clause into a noun phrase meaning 'the fact that ~' or 'that ~.'",
+          "explanation": "ということ (という＋こと) nominalizes a preceding clause, making it function as a noun. It is used to quote, explain, or comment on a fact or idea: 'the thing called ~' or 'it means that ~.' More explanatory and formal in nuance than plain こと nominalization, and very common in both spoken and written Japanese.",
+          "examples": [
+            {
+              "japanese": "彼が来ないということは、問題があるということですか。",
+              "reading": "かれがこないということは、もんだいがあるということですか。",
+              "english": "Does the fact that he's not coming mean there's a problem?"
+            },
+            {
+              "japanese": "毎日練習するということが大切です。",
+              "reading": "まいにちれんしゅうするということがたいせつです。",
+              "english": "The fact of practicing every day is important."
+            },
+            {
+              "japanese": "試験に合格したということを聞きました。",
+              "reading": "しけんにごうかくしたということをききました。",
+              "english": "I heard the news that you passed the exam."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.658Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l10_grammar_9",
+          "pattern": "それでも",
+          "meaning": "But still, And yet, Even so, Nevertheless",
+          "explanation": "Grammar explanation placeholder.",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.658Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l10_grammar_10",
+          "pattern": "ございます",
+          "meaning": "A very polite, formal version of ある (to have/exist) and いる (to be).",
+          "explanation": "ございます is the polite form of both ある and いる, primarily used in formal, service, or business contexts. It conveys greater formality and respect than です. This is essential for very formal Japanese communication.",
+          "examples": [
+            {
+              "japanese": "見本がございます。",
+              "reading": "みほんがございます。",
+              "english": "We have a sample."
+            },
+            {
+              "japanese": "何かご質問がございますか。",
+              "reading": "なにかごしつもんがございますか。",
+              "english": "Do you have any questions?"
+            },
+            {
+              "japanese": "本日は特別な日でございます。",
+              "reading": "ほんじつはとくべつなひでございます。",
+              "english": "Today is a special day."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.658Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a2_10"
+    }
+  ]
+}

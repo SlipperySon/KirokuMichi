@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a2",
+  "title": "Marugoto A2: Katsudoo (Elementary 2)",
+  "edition": "learner-gold",
+  "levelRange": "A2",
+  "sources": [
+    {
+      "sourceId": "marugoto_a2_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "87befe524f5f78113f32b3397bcd6b6f15a2bdcf16f20a9763e684fa556ca5b5",
+        "bytes": 35694565
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a2_lesson_4",
+      "unitType": "lesson",
+      "lessonNumber": 4,
+      "title": "Marugoto A2: Katsudoo (Elementary 2) — Lesson 4",
+      "level": "A2",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a2_l4_grammar_1",
+          "pattern": "そうに・そうな",
+          "meaning": "Describes how something or someone appears or seems based on visual or sensory observation.",
+          "explanation": "そう attaches to the stem of い-adjectives (dropping い) or the stem of な-adjectives (dropping な) to indicate that something looks or seems a certain way. そうに is used before verbs to describe how an action is done, while そうな comes before nouns. It expresses the speaker's inference from what they can directly observe right now, rather than hearsay or reasoning.",
+          "examples": [
+            {
+              "japanese": "あの料理はおいしそうです。",
+              "reading": "あのりょうりはおいしそうです。",
+              "english": "That dish looks delicious."
+            },
+            {
+              "japanese": "彼女は悲しそうに部屋を出ました。",
+              "reading": "かのじょはかなしそうにへやをでました。",
+              "english": "She left the room looking sad."
+            },
+            {
+              "japanese": "この仕事は難しそうですね。",
+              "reading": "このしごとはむずかしそうですね。",
+              "english": "This work looks difficult, doesn't it."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.643Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l4_grammar_2",
+          "pattern": "Number + も",
+          "meaning": "Emphasizes a number or amount, often conveying surprise or highlighting significance.",
+          "explanation": "も after a number emphasizes or highlights the quantity, often implying 'as many as,' 'even,' or conveying surprise about the amount. It suggests that the amount is large or significant depending on context. Used in casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "ビールを三杯も飲みました。",
+              "reading": "びーるをさんばいものみました。",
+              "english": "I drank three beers (quite a lot)."
+            },
+            {
+              "japanese": "百ドルも払いました。",
+              "reading": "ひゃくどるもはらいました。",
+              "english": "I paid even 100 dollars."
+            },
+            {
+              "japanese": "五人も来ました。",
+              "reading": "ごにんもきました。",
+              "english": "As many as five people came."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.643Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l4_grammar_3",
+          "pattern": "かな",
+          "meaning": "Expresses mild wondering or self-directed questioning, meaning 'I wonder…'.",
+          "explanation": "かな is a sentence-final particle attached to a plain-form verb, adjective, or noun. It indicates the speaker is musing to themselves or posing a soft question. It is casual; women may also use かしら with the same meaning. Use かな when thinking aloud or gently wondering about something.",
+          "examples": [
+            {
+              "japanese": "もう電車が来たかな。",
+              "reading": "もうでんしゃがきたかな。",
+              "english": "I wonder if the train has come yet."
+            },
+            {
+              "japanese": "明日は晴れるかな。",
+              "reading": "あしたははれるかな。",
+              "english": "I wonder if it will be sunny tomorrow."
+            },
+            {
+              "japanese": "彼女はまだ怒っているかな。",
+              "reading": "かのじょはまだおこっているかな。",
+              "english": "I wonder if she is still angry."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.643Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l4_grammar_4",
+          "pattern": "Verb[よう]",
+          "meaning": "Expresses a suggestion or personal intention, meaning 'let's' or 'I'll/I shall'.",
+          "explanation": "The plain volitional form is made by changing the dictionary-form verb ending: る-verbs drop る and add よう; う-verbs change the final う-sound to the おう-sound (e.g., 書く→書こう). This form is casual and used with friends, family, or in internal speech. It corresponds to the polite ましょう.",
+          "examples": [
+            {
+              "japanese": "もう寝よう。",
+              "reading": "もうねよう。",
+              "english": "Let's go to sleep already."
+            },
+            {
+              "japanese": "明日の朝、早く起きよう。",
+              "reading": "あしたのあさ、はやくおきよう。",
+              "english": "I'll wake up early tomorrow morning."
+            },
+            {
+              "japanese": "公園でサッカーをしよう！",
+              "reading": "こうえんでサッカーをしよう！",
+              "english": "Let's play soccer at the park!"
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.643Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l4_grammar_5",
+          "pattern": "〜ようと思う・〜おうと思う",
+          "meaning": "Expresses a personal intention or plan to do something, meaning 'I think I will' or 'I'm planning to'.",
+          "explanation": "The volitional form of a verb (e.g., 食べよう, 行こう) combined with と思う expresses the speaker's intention or decision to do something. It conveys a softer, more deliberate feeling than just using the volitional form alone, suggesting the speaker has made or is making up their mind. The plain form と思う is casual; と思っています adds a nuance of ongoing intention.",
+          "examples": [
+            {
+              "japanese": "来年、日本に行こうと思っています。",
+              "reading": "らいねん、にほんにいこうとおもっています。",
+              "english": "I'm thinking of going to Japan next year."
+            },
+            {
+              "japanese": "今日から毎日運動しようと思います。",
+              "reading": "きょうからまいにちうんどうしようとおもいます。",
+              "english": "I think I'll exercise every day starting today."
+            },
+            {
+              "japanese": "この本を読もうと思っているけど、まだ読んでいません。",
+              "reading": "このほんをよもうとおもっているけど、まだよんでいません。",
+              "english": "I'm thinking of reading this book, but I haven't read it yet."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.643Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l4_grammar_6",
+          "pattern": "なら",
+          "meaning": "Expresses a conditional based on a stated or assumed situation, meaning 'if', 'if it's the case that', or 'as for'.",
+          "explanation": "なら follows a noun, verb plain form, or adjective to introduce a condition that the speaker has just heard or assumed to be true. It often responds to something the listener said, making it more context-sensitive than other conditionals like たら or ば. It is used in both casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "日本語を勉強するなら、毎日練習した方がいいです。",
+              "reading": "にほんごをべんきょうするなら、まいにちれんしゅうしたほうがいいです。",
+              "english": "If you're going to study Japanese, you should practice every day."
+            },
+            {
+              "japanese": "東京に行くなら、このレストランに行ってみてください。",
+              "reading": "とうきょうにいくなら、このレストランにいってみてください。",
+              "english": "If you're going to Tokyo, please try going to this restaurant."
+            },
+            {
+              "japanese": "暇なら、一緒に映画を見ませんか。",
+              "reading": "ひまなら、いっしょにえいがをみませんか。",
+              "english": "If you're free, would you like to watch a movie together?"
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.643Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l4_grammar_7",
+          "pattern": "たがる",
+          "meaning": "Expresses that a third person appears to want to do something, based on observed behavior.",
+          "explanation": "たがる is formed by replacing the い of たい with がる (たい → たがる), and is used to describe a third person's desire to do an action as something the speaker observes or infers. Just as がる is used for adjective-based feelings, たがる handles verb-based desires for third-person subjects. It is neutral in register and used in everyday conversation.",
+          "examples": [
+            {
+              "japanese": "息子はいつも外で遊びたがります。",
+              "reading": "むすこはいつもそとであそびたがります。",
+              "english": "My son always wants to play outside."
+            },
+            {
+              "japanese": "友達は毎週カラオケに行きたがっています。",
+              "reading": "ともだちはまいしゅうカラオケにいきたがっています。",
+              "english": "My friend keeps wanting to go to karaoke every week."
+            },
+            {
+              "japanese": "彼はもっと早く帰りたがっていました。",
+              "reading": "かれはもっとはやくかえりたがっていました。",
+              "english": "He seemed to want to go home earlier."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.643Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l4_grammar_8",
+          "pattern": "ごろ",
+          "meaning": "Indicates an approximate point in time.",
+          "explanation": "ごろ follows a time expression to indicate an approximate time, meaning 'around' or 'about.' It is used for points in time (not durations), such as a time of day, month, or year. It is neutral in register and used in both polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "毎朝七時ごろ起きます。",
+              "reading": "まいあさしちじごろおきます。",
+              "english": "I wake up around seven every morning."
+            },
+            {
+              "japanese": "来年ごろ、日本に行くつもりです。",
+              "reading": "らいねんごろ、にほんにいくつもりです。",
+              "english": "I plan to go to Japan around next year."
+            },
+            {
+              "japanese": "子どものごろ、よく公園で遊びました。",
+              "reading": "こどものごろ、よくこうえんであそびました。",
+              "english": "When I was a child, I often played in the park."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.643Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l4_grammar_9",
+          "pattern": "おわる",
+          "meaning": "Attached to a verb stem to express that an action has been completed.",
+          "explanation": "おわる (終わる) is attached to the verb stem (masu-stem) of another verb to mean 'to finish doing' something. It marks the completion of an action. It is used in both polite and casual speech and conjugates like a regular う-verb.",
+          "examples": [
+            {
+              "japanese": "宿題を書き終わりました。",
+              "reading": "しゅくだいをかきおわりました。",
+              "english": "I finished writing my homework."
+            },
+            {
+              "japanese": "映画を見終わったら、電話してください。",
+              "reading": "えいがをみおわったら、でんわしてください。",
+              "english": "Please call me when you finish watching the movie."
+            },
+            {
+              "japanese": "ご飯を食べ終わって、コーヒーを飲みました。",
+              "reading": "ごはんをたべおわって、コーヒーをのみました。",
+              "english": "After finishing eating, I drank coffee."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.643Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l4_grammar_10",
+          "pattern": "がひつよう",
+          "meaning": "Expresses that something is necessary or needed.",
+          "explanation": "This expression uses が with 必要 (necessary) to indicate what is required or needed. The particle が marks the thing that is necessary. It is commonly used to state what is needed for a particular purpose or situation.",
+          "examples": [
+            {
+              "japanese": "パスポートが必要です。",
+              "reading": "ぱすぽーとがひつようです。",
+              "english": "A passport is necessary (I need a passport)."
+            },
+            {
+              "japanese": "この仕事には経験が必要です。",
+              "reading": "このしごとにはけいけんがひつようです。",
+              "english": "This job requires experience."
+            },
+            {
+              "japanese": "運転免許証があれば、車を運転できます。でも、保険証も必要です。",
+              "reading": "うんてんめんきょしょうがあれば、くるまをうんてんできます。でも、ほけんしょもひつようです。",
+              "english": "If you have a driver's license, you can drive a car. But you also need an insurance card."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.643Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a2_4"
+    }
+  ]
+}

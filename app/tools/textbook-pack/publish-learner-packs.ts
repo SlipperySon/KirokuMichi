@@ -59,6 +59,24 @@ const GOLD_PACKS: Array<{ packFile: string; lessonId: string; assetCopies?: Arra
       { packFile: `quartet_2_lesson_${sourceLesson}.json`, lessonId: `quartet_2_${sourceLesson}` },
     ]
   }),
+  // Marugoto A1/A2/B1 lesson packs
+  ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map((n) => ({
+    packFile: `marugoto_a1_lesson_${n}.json`,
+    lessonId: `marugoto_a1_${n}`,
+  })),
+  ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].map((n) => ({
+    packFile: `marugoto_a2_lesson_${n}.json`,
+    lessonId: `marugoto_a2_${n}`,
+  })),
+  ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map((n) => ({
+    packFile: `marugoto_b1_lesson_${n}.json`,
+    lessonId: `marugoto_b1_${n}`,
+  })),
+  // Tobira L1–15 ↔ app tobira_textbook_N and tobira_N
+  ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].flatMap((n) => [
+    { packFile: `tobira_lesson_${n}.json`, lessonId: `tobira_textbook_${n}` },
+    { packFile: `tobira_lesson_${n}.json`, lessonId: `tobira_${n}` },
+  ]),
 ]
 
 const TEXTBOOK_FOR_SERIES: Record<string, string> = {

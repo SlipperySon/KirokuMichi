@@ -43,6 +43,7 @@
     "textbook:learner:book2-gold": "tsx tools/textbook-pack/build-book2-gold-packs.ts",
     "textbook:learner:genki-gold-enrich": "tsx tools/textbook-pack/build-genki-l2-and-enrich-l13.ts",
     "textbook:learner:quartet-gold-enrich": "tsx tools/textbook-pack/build-quartet-l2-and-enrich-l7.ts",
+    "textbook:learner:marugoto-tobira-gold-enrich": "tsx tools/textbook-pack/build-marugoto-tobira-gold.ts",
     "generate": "tsx tools/generate/pipeline.ts",
     "packs:build": "tsx tools/build-encrypted-packs.ts"
   },

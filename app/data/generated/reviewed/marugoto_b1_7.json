@@ -1,0 +1,368 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_b1",
+  "title": "Marugoto B1: Intermediate 1",
+  "edition": "learner-gold",
+  "levelRange": "B1",
+  "sources": [
+    {
+      "sourceId": "marugoto_b1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "d81948636c448b583ea3b99b908addcc1e79ec458e2c279c600e606b926b85fe",
+        "bytes": 148164767
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_b1_lesson_7",
+      "unitType": "lesson",
+      "lessonNumber": 7,
+      "title": "Marugoto B1: Intermediate 1 — Lesson 7",
+      "level": "B1",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_b1_l7_grammar_1",
+          "pattern": "そうもない",
+          "meaning": "Very unlikely to, Does not seem that, Does not appear that",
+          "explanation": "Grammar explanation for そうもない",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.751Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l7_grammar_2",
+          "pattern": "たとえ〜ても",
+          "meaning": "Even if…is the case, Supposing that",
+          "explanation": "Grammar explanation for たとえ〜ても",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.751Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l7_grammar_3",
+          "pattern": "て初めて",
+          "meaning": "Indicates that a realization or ability occurs only after, or as a result of, a preceding action.",
+          "explanation": "This pattern combines the te-form with 初めて to show sequential causality—that one action must happen before another can be realized or understood. It expresses necessity and sequence, used in both formal and casual contexts to emphasize the importance of the first action.",
+          "examples": [
+            {
+              "japanese": "失敗して初めて、自分の間違いに気づきました。",
+              "reading": "しっぱいしてはじめて、じぶんのまちがいにきづきました。",
+              "english": "Only after failing did I realize my mistake."
+            },
+            {
+              "japanese": "その映画を見て初めて、その歴史の重要性がわかりました。",
+              "reading": "そのえいがをみてはじめて、そのれきしのじゅうようせいがわかりました。",
+              "english": "Only after watching that film did I understand the importance of that history."
+            },
+            {
+              "japanese": "大学に行って初めて、勉強の本当の大変さを知りました。",
+              "reading": "だいがくにいってはじめて、べんきょうのほんとうのたいへんさをしりました。",
+              "english": "Only after starting university did I truly understand how difficult studying is."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.751Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l7_grammar_4",
+          "pattern": "とは限らない",
+          "meaning": "Not necessarily so, Is not always true, There is no guarantee that",
+          "explanation": "Grammar explanation for とは限らない",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.751Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l7_grammar_5",
+          "pattern": "〜ようとしない",
+          "meaning": "Not willing to, Not make an effort to, To not attempt or try to, Volitional + としない",
+          "explanation": "Grammar explanation for 〜ようとしない",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.751Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l7_grammar_6",
+          "pattern": "一方だ",
+          "meaning": "More and more, Continue to, Keep on, -er and -er",
+          "explanation": "Grammar explanation for 一方だ",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.751Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l7_grammar_7",
+          "pattern": "代わりに",
+          "meaning": "Instead of,  In place of, In exchange for",
+          "explanation": "Grammar explanation for 代わりに",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.751Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l7_grammar_8",
+          "pattern": "切る",
+          "meaning": "To do something completely to the end, Utterly, Resolutely",
+          "explanation": "Grammar explanation for 切る",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.751Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l7_grammar_9",
+          "pattern": "ことになる",
+          "meaning": "Expresses that something has been decided, will end up happening, or is the result of circumstances.",
+          "explanation": "Attach ことになる to the plain form of a verb to express that a situation or outcome has come about — often through external decisions or natural consequences rather than personal choice. This distinguishes it from ことにする, which reflects personal will. It is used in both formal and informal contexts.",
+          "examples": [
+            {
+              "japanese": "来月から大阪に転勤することになった。",
+              "reading": "らいげつからおおさかにてんきんすることになった。",
+              "english": "It has been decided that I'll be transferred to Osaka starting next month."
+            },
+            {
+              "japanese": "この道を選ぶと、遠回りすることになる。",
+              "reading": "このみちをえらぶと、とおまわりすることになる。",
+              "english": "If you choose this road, you'll end up going the long way around."
+            },
+            {
+              "japanese": "彼が辞めたので、私が担当することになりました。",
+              "reading": "かれがやめたので、わたしがたんとうすることになりました。",
+              "english": "Since he quit, it has been decided that I will be in charge."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.751Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l7_grammar_10",
+          "pattern": "もしかしたら",
+          "meaning": "Perhaps, Maybe, Possibly",
+          "explanation": "Grammar explanation for もしかしたら",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.751Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l7_grammar_11",
+          "pattern": "ながらも",
+          "meaning": "But, Even while, Even though, Despite, Although",
+          "explanation": "Grammar explanation for ながらも",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.751Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l7_grammar_12",
+          "pattern": "に違いない",
+          "meaning": "There is no doubt that, I&#x27;m sure",
+          "explanation": "Grammar explanation for に違いない",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.751Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l7_grammar_13",
+          "pattern": "において・における",
+          "meaning": "In, On, At, Regarding, In terms of",
+          "explanation": "Grammar explanation for において・における",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.751Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_b1_7"
+    }
+  ]
+}

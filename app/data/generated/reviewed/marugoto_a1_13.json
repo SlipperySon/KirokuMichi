@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a1",
+  "title": "Marugoto A1: Katsudoo (Starter)",
+  "edition": "learner-gold",
+  "levelRange": "A1",
+  "sources": [
+    {
+      "sourceId": "marugoto_a1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "37d39aeeacc21293c1b109685277456c277309963dc485944bfb6adc91d5842a",
+        "bytes": 30572124
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a1_lesson_13",
+      "unitType": "lesson",
+      "lessonNumber": 13,
+      "title": "Marugoto A1: Katsudoo (Starter) — Lesson 13",
+      "level": "A1",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a1_l13_grammar_1",
+          "pattern": "どの",
+          "meaning": "Used before a noun to ask which one of three or more options is meant.",
+          "explanation": "どの directly precedes a noun and means 'which' or 'what kind of'. Unlike どれ, it must always be followed by a noun. It is used in both polite and casual registers and is common when asking for clarification.",
+          "examples": [
+            {
+              "japanese": "どのバスに乗りますか。",
+              "reading": "どのバスにのりますか。",
+              "english": "Which bus will you take?"
+            },
+            {
+              "japanese": "どの本が好きですか。",
+              "reading": "どのほんがすきですか。",
+              "english": "Which book do you like?"
+            },
+            {
+              "japanese": "どの学生が田中さんですか。",
+              "reading": "どのがくせいがたなかさんですか。",
+              "english": "Which student is Tanaka-san?"
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.624Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l13_grammar_2",
+          "pattern": "誰",
+          "meaning": "The question word meaning 'who', used to ask about a person.",
+          "explanation": "誰 (だれ) is used to ask about the identity of a person, similar to 'who' in English. It can function as a subject, object, or follow particles like が, を, or の. In very formal or written contexts, どなた is used instead as the polite equivalent.",
+          "examples": [
+            {
+              "japanese": "あの人は誰ですか。",
+              "reading": "あのひとはだれですか。",
+              "english": "Who is that person?"
+            },
+            {
+              "japanese": "誰が来ましたか。",
+              "reading": "だれがきましたか。",
+              "english": "Who came?"
+            },
+            {
+              "japanese": "これは誰のかばんですか。",
+              "reading": "これはだれのかばんですか。",
+              "english": "Whose bag is this?"
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.624Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l13_grammar_3",
+          "pattern": "たくさん",
+          "meaning": "Indicates a large quantity or amount of something.",
+          "explanation": "たくさん is an adverb meaning 'a lot,' 'many,' or 'plenty.' It can modify verbs directly (たくさん食べる) or precede の + noun (たくさんの人). It works with both countable and uncountable things and is neutral in register, suitable for both polite and casual contexts.",
+          "examples": [
+            {
+              "japanese": "昨日たくさん食べました。",
+              "reading": "きのうたくさんたべました。",
+              "english": "I ate a lot yesterday."
+            },
+            {
+              "japanese": "公園にたくさんの人がいます。",
+              "reading": "こうえんにたくさんのひとがいます。",
+              "english": "There are a lot of people in the park."
+            },
+            {
+              "japanese": "水をたくさん飲んでください。",
+              "reading": "みずをたくさんのんでください。",
+              "english": "Please drink plenty of water."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.624Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l13_grammar_4",
+          "pattern": "好き",
+          "meaning": "Express that you like something using 好き as a な-adjective with the subject marked by が.",
+          "explanation": "好き (すき) is a な-adjective meaning 'liked' or 'fond of.' The thing you like is marked by が, not を. The sentence structure is [person] は [thing] が 好きです. It is used in everyday polite and casual conversation to talk about preferences.",
+          "examples": [
+            {
+              "japanese": "私はねこが好きです。",
+              "reading": "わたしはねこがすきです。",
+              "english": "I like cats."
+            },
+            {
+              "japanese": "あなたはどんな音楽が好きですか。",
+              "reading": "あなたはどんなおんがくがすきですか。",
+              "english": "What kind of music do you like?"
+            },
+            {
+              "japanese": "彼はサッカーがとても好きです。",
+              "reading": "かれはサッカーがとてもすきです。",
+              "english": "He likes soccer very much."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.624Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l13_grammar_5",
+          "pattern": "きらい",
+          "meaning": "Express that you dislike something using きらい as a な-adjective with the subject marked by が.",
+          "explanation": "きらい (嫌い) is a な-adjective meaning 'disliked' or 'not fond of,' and it works as the direct opposite of 好き. The thing you dislike is marked by が. Note that きらい is fairly direct; Japanese speakers often soften dislike with あまり好きじゃない (don't really like) in conversation.",
+          "examples": [
+            {
+              "japanese": "私はにんじんが嫌いです。",
+              "reading": "わたしはにんじんがきらいです。",
+              "english": "I dislike carrots."
+            },
+            {
+              "japanese": "弟は虫が嫌いです。",
+              "reading": "おとうとはむしがきらいです。",
+              "english": "My younger brother dislikes insects."
+            },
+            {
+              "japanese": "あなたは何が嫌いですか。",
+              "reading": "あなたはなにがきらいですか。",
+              "english": "What do you dislike?"
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.624Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l13_grammar_6",
+          "pattern": "なにか・なにも",
+          "meaning": "なにか means 'something' or 'anything'; なにも (with a negative verb) means 'nothing' or 'not anything'.",
+          "explanation": "なにか is used in affirmative sentences and questions to mean 'something' or 'anything'. なにも requires a negative verb form and means 'nothing at all'. Both are common in everyday polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "何か食べますか？",
+              "reading": "なにかたべますか？",
+              "english": "Are you going to eat something?"
+            },
+            {
+              "japanese": "冷蔵庫に何かありますか？",
+              "reading": "れいぞうこになにかありますか？",
+              "english": "Is there anything in the fridge?"
+            },
+            {
+              "japanese": "今日は何も食べませんでした。",
+              "reading": "きょうはなにもたべませんでした。",
+              "english": "I didn't eat anything today."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.624Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l13_grammar_7",
+          "pattern": "Adjective + の(は)",
+          "meaning": "Turns an adjective phrase into a noun-like 'one' or 'thing', used to refer back to something already understood from context.",
+          "explanation": "Adding の after an adjective nominalizes the phrase, functioning like 'the one that is...' in English. It replaces a noun that is already clear from context. This is common in both casual and polite speech and helps avoid repetition.",
+          "examples": [
+            {
+              "japanese": "赤いのはどれですか。",
+              "reading": "あかいのはどれですか。",
+              "english": "Which one is the red one?"
+            },
+            {
+              "japanese": "大きいのをください。",
+              "reading": "おおきいのをください。",
+              "english": "Please give me the big one."
+            },
+            {
+              "japanese": "安いのはありますか。",
+              "reading": "やすいのはありますか。",
+              "english": "Do you have a cheaper one?"
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.624Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l13_grammar_8",
+          "pattern": "の",
+          "meaning": "Connects two nouns to show possession or belonging, and can replace a previously mentioned noun to avoid repetition.",
+          "explanation": "の links a possessor to the thing possessed (like 's in English). It can also replace a noun when the referent is clear from context — for example, 私のカバンは青いです。あなたのは？ ('Mine is blue. What about yours?'). This makes speech more natural and avoids awkward repetition.",
+          "examples": [
+            {
+              "japanese": "これは私のかばんです。",
+              "reading": "これはわたしのかばんです。",
+              "english": "This is my bag."
+            },
+            {
+              "japanese": "私のは赤いけど、あなたのは青い。",
+              "reading": "わたしのはあかいけど、あなたのはあおい。",
+              "english": "Mine is red, but yours is blue."
+            },
+            {
+              "japanese": "あの白いのをください。",
+              "reading": "あのしろいのをください。",
+              "english": "Please give me that white one."
+            }
+          ],
+          "lessonNumber": 13,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.624Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a1_13"
+    }
+  ]
+}

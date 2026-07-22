@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a1",
+  "title": "Marugoto A1: Katsudoo (Starter)",
+  "edition": "learner-gold",
+  "levelRange": "A1",
+  "sources": [
+    {
+      "sourceId": "marugoto_a1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "37d39aeeacc21293c1b109685277456c277309963dc485944bfb6adc91d5842a",
+        "bytes": 30572124
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a1_lesson_7",
+      "unitType": "lesson",
+      "lessonNumber": 7,
+      "title": "Marugoto A1: Katsudoo (Starter) — Lesson 7",
+      "level": "A1",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a1_l7_grammar_1",
+          "pattern": "じゃない",
+          "meaning": "Used to say something is not something else (negative of だ/です).",
+          "explanation": "じゃない is the casual negative form of だ (the copula). It attaches directly to nouns and な-adjectives to negate them. In polite speech, じゃありません or ではありません is used instead.",
+          "examples": [
+            {
+              "japanese": "これは本じゃない。",
+              "reading": "これはほんじゃない。",
+              "english": "This is not a book."
+            },
+            {
+              "japanese": "彼女は先生じゃない。",
+              "reading": "かのじょはせんせいじゃない。",
+              "english": "She is not a teacher."
+            },
+            {
+              "japanese": "ここは駅じゃない。",
+              "reading": "ここはえきじゃない。",
+              "english": "This place is not a station."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.608Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l7_grammar_2",
+          "pattern": "じゃなかった",
+          "meaning": "Used to say something was not something else (past negative of だ/です).",
+          "explanation": "じゃなかった is the casual past negative form of だ. It negates a noun or な-adjective in the past tense. The polite equivalent is じゃありませんでした or ではありませんでした.",
+          "examples": [
+            {
+              "japanese": "あの映画はおもしろくじゃなかった。",
+              "reading": "あのえいがはおもしろくじゃなかった。",
+              "english": "That movie was not interesting."
+            },
+            {
+              "japanese": "彼は学生じゃなかった。",
+              "reading": "かれはがくせいじゃなかった。",
+              "english": "He was not a student."
+            },
+            {
+              "japanese": "昨日は休みじゃなかった。",
+              "reading": "きのうはやすみじゃなかった。",
+              "english": "Yesterday was not a day off."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.608Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l7_grammar_3",
+          "pattern": "る-Verb (Negative)",
+          "meaning": "The plain negative form of Ichidan verbs, expressing that an action does not or will not happen.",
+          "explanation": "To negate a る-Verb in plain (casual) speech, drop る and add ない (e.g. たべる → たべない). The polite negative is ません (たべません). Use the plain ない-form in casual conversation with friends or family, and ません in polite contexts.",
+          "examples": [
+            {
+              "japanese": "今日は肉を食べない。",
+              "reading": "きょうはにくをたべない。",
+              "english": "I'm not eating meat today."
+            },
+            {
+              "japanese": "その映画は見ません。",
+              "reading": "そのえいがはみません。",
+              "english": "I won't watch that movie."
+            },
+            {
+              "japanese": "朝はシャワーを浴びない。",
+              "reading": "あさはシャワーをあびない。",
+              "english": "I don't take a shower in the morning."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.608Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l7_grammar_4",
+          "pattern": "から",
+          "meaning": "Marks the starting point in time, place, or sequence, meaning 'from'.",
+          "explanation": "When attached to a noun indicating a location, time, or source, から means 'from'. It pairs naturally with まで ('until/to') to describe a range. This usage appears in both polite and casual speech at all levels.",
+          "examples": [
+            {
+              "japanese": "学校から家まで歩きます。",
+              "reading": "がっこうからいえまであるきます。",
+              "english": "I walk from school to home."
+            },
+            {
+              "japanese": "朝から晩まで働きます。",
+              "reading": "あさからばんまではたらきます。",
+              "english": "I work from morning until night."
+            },
+            {
+              "japanese": "どこから来ましたか。",
+              "reading": "どこからきましたか。",
+              "english": "Where did you come from?"
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.608Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l7_grammar_5",
+          "pattern": "まえに",
+          "meaning": "Means 'before' in time or 'in front of' in space.",
+          "explanation": "まえに has two uses depending on what precedes it. After a noun + の, it means 'in front of' (location). After a verb in dictionary form, it means 'before doing' (time). Both uses are common at A1 level in polite and casual speech. The time meaning always requires the verb to be in plain present form, regardless of the tense of the main clause.",
+          "examples": [
+            {
+              "japanese": "寝る前に歯を磨きます。",
+              "reading": "ねるまえにはをみがきます。",
+              "english": "I brush my teeth before going to sleep."
+            },
+            {
+              "japanese": "駅の前に喫茶店があります。",
+              "reading": "えきのまえにきっさてんがあります。",
+              "english": "There is a café in front of the station."
+            },
+            {
+              "japanese": "食事の前に手を洗いましょう。",
+              "reading": "しょくじのまえにてをあらいましょう。",
+              "english": "Let's wash our hands before eating."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.608Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l7_grammar_6",
+          "pattern": "けれども",
+          "meaning": "Connects two contrasting clauses, meaning 'but' or 'although'.",
+          "explanation": "けれども is a conjunction placed after a plain or polite verb/adjective form to express contrast or concession between two clauses. It is slightly more formal than でも; shorter forms けれど, けど are more casual. It can also soften a statement when used at the end of a sentence.",
+          "examples": [
+            {
+              "japanese": "日本語は難しいけれども、面白いです。",
+              "reading": "にほんごはむずかしいけれども、おもしろいです。",
+              "english": "Japanese is difficult, but it's interesting."
+            },
+            {
+              "japanese": "行きたいけれども、時間がありません。",
+              "reading": "いきたいけれども、じかんがありません。",
+              "english": "I want to go, but I don't have time."
+            },
+            {
+              "japanese": "高いけれども、買います。",
+              "reading": "たかいけれども、かいます。",
+              "english": "It's expensive, but I'll buy it."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.608Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l7_grammar_7",
+          "pattern": "のなかで～がいちばん～",
+          "meaning": "Expresses that something is the best or most ~ within a given group.",
+          "explanation": "のなかで sets the scope of comparison (among/within ~), and いちばん means 'number one' or 'most'. The adjective or noun following いちばん describes the quality being compared. This structure is polite and usable in both spoken and written contexts.",
+          "examples": [
+            {
+              "japanese": "果物のなかでりんごがいちばん好きです。",
+              "reading": "くだもののなかでりんごがいちばんすきです。",
+              "english": "Among fruits, I like apples the most."
+            },
+            {
+              "japanese": "このクラスのなかで田中さんがいちばん背が高いです。",
+              "reading": "このくらすのなかでたなかさんがいちばんせがたかいです。",
+              "english": "In this class, Tanaka-san is the tallest."
+            },
+            {
+              "japanese": "季節のなかで春がいちばんきれいです。",
+              "reading": "きせつのなかではるがいちばんきれいです。",
+              "english": "Among the seasons, spring is the most beautiful."
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.608Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l7_grammar_8",
+          "pattern": "どこ",
+          "meaning": "Used to ask about the location or destination of something or someone.",
+          "explanation": "どこ means 'where' and is used to ask about a place. It can be combined with particles like に (destination/location), で (place of action), or から (starting point). It is used in both polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "トイレはどこですか。",
+              "reading": "トイレはどこですか。",
+              "english": "Where is the bathroom?"
+            },
+            {
+              "japanese": "あなたはどこに住んでいますか。",
+              "reading": "あなたはどこにすんでいますか。",
+              "english": "Where do you live?"
+            },
+            {
+              "japanese": "きのう、どこに行きましたか。",
+              "reading": "きのう、どこにいきましたか。",
+              "english": "Where did you go yesterday?"
+            }
+          ],
+          "lessonNumber": 7,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.608Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a1_7"
+    }
+  ]
+}

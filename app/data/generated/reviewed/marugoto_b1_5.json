@@ -1,0 +1,408 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_b1",
+  "title": "Marugoto B1: Intermediate 1",
+  "edition": "learner-gold",
+  "levelRange": "B1",
+  "sources": [
+    {
+      "sourceId": "marugoto_b1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "d81948636c448b583ea3b99b908addcc1e79ec458e2c279c600e606b926b85fe",
+        "bytes": 148164767
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_b1_lesson_5",
+      "unitType": "lesson",
+      "lessonNumber": 5,
+      "title": "Marugoto B1: Intermediate 1 — Lesson 5",
+      "level": "B1",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_b1_l5_grammar_1",
+          "pattern": "しかない",
+          "meaning": "Expresses that there is no other option available, so one must do the stated action.",
+          "explanation": "しかない attaches to the dictionary form of a verb to convey resignation or necessity — the speaker has no alternative but to do what is described. It is stronger than だけ and implies that other options have been exhausted or ruled out. It is used in both casual and polite contexts and often carries a nuance of reluctant acceptance.",
+          "examples": [
+            {
+              "japanese": "終電がなくなったから、歩いて帰るしかない。",
+              "reading": "しゅうでんがなくなったから、あるいてかえるしかない。",
+              "english": "The last train is gone, so I have no choice but to walk home."
+            },
+            {
+              "japanese": "もう時間がないから、このまま提出するしかない。",
+              "reading": "もうじかんがないから、このままていしゅつするしかない。",
+              "english": "There's no more time, so I have no choice but to submit it as is."
+            },
+            {
+              "japanese": "彼女を信じるしかなかった。",
+              "reading": "かのじょをしんじるしかなかった。",
+              "english": "I had no choice but to believe her."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.730Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l5_grammar_2",
+          "pattern": "というより",
+          "meaning": "Corrects or revises a previous statement by offering a more accurate description.",
+          "explanation": "This expression revises what was just said, offering a more precise or different characterization. It's used when clarifying misunderstandings or making contrasts. Common in both spoken and written Japanese for making distinctions or refinements to earlier statements.",
+          "examples": [
+            {
+              "japanese": "彼は学生というより、もう社会人です。",
+              "reading": "かれはがくせいというより、もうしゃかいじんです。",
+              "english": "Rather than a student, he's already a working adult."
+            },
+            {
+              "japanese": "これは失敗というより、次の成功への第一歩です。",
+              "reading": "これはしっぱいというより、つぎのせいこうへのだいいっぽです。",
+              "english": "This is more of a first step to future success than a failure."
+            },
+            {
+              "japanese": "悲しいというより、怒っています。",
+              "reading": "かなしいというより、おこっています。",
+              "english": "Rather than sad, I'm actually angry."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.730Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l5_grammar_3",
+          "pattern": "としたら・とすれば・とすると",
+          "meaning": "If we assume that, Supposing that, If it were the case that",
+          "explanation": "These three variants express hypothetical situations based on assumptions rather than facts. They introduce conditions for speculation or discussion of possibilities. Used for presenting imaginary scenarios in formal and casual contexts.",
+          "examples": [
+            {
+              "japanese": "その説が本当だとしたら、どうなるか。",
+              "reading": "そのせつがほんとうだとしたら、どうなるか。",
+              "english": "If that theory were true, what would happen?"
+            },
+            {
+              "japanese": "あの人が来るとすれば、いつ来るでしょうか。",
+              "reading": "あのひとがくるとすれば、いつくるでしょうか。",
+              "english": "Assuming that person comes, when would they arrive?"
+            },
+            {
+              "japanese": "もし仕事がなくなるとすると、どうしたらいいか。",
+              "reading": "もししごとがなくなるとすると、どうしたらいいか。",
+              "english": "If my job were to disappear, what would I do?"
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.730Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l5_grammar_4",
+          "pattern": "つまり",
+          "meaning": "In short, To sum up, In other words",
+          "explanation": "Grammar explanation for つまり",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.730Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l5_grammar_5",
+          "pattern": "わけがない",
+          "meaning": "There is no way, It's impossible, It cannot be",
+          "explanation": "This pattern denies the logical possibility of something. It expresses 'there's no way that could be true' or 'it's impossible for that to happen.' Often used with statements to create emphatic negation, appearing in both polite and casual forms.",
+          "examples": [
+            {
+              "japanese": "彼が犯人なわけがない。",
+              "reading": "かれがはんにんなわけがない。",
+              "english": "There's no way he's the criminal."
+            },
+            {
+              "japanese": "毎日勉強しないで、合格するわけがない。",
+              "reading": "まいにちべんきょうしないで、ごうかくするわけがない。",
+              "english": "It's impossible to pass without studying every day."
+            },
+            {
+              "japanese": "彼が約束を忘れるわけがない。",
+              "reading": "かれがやくそくをわすれるわけがない。",
+              "english": "There's no way he would forget his promise."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.730Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l5_grammar_6",
+          "pattern": "ような気がする",
+          "meaning": "Have a feeling that",
+          "explanation": "Grammar explanation for ような気がする",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.730Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l5_grammar_7",
+          "pattern": "ばかりでなく",
+          "meaning": "Not only…but also, As well as",
+          "explanation": "Grammar explanation for ばかりでなく",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.730Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l5_grammar_8",
+          "pattern": "別に〜ない",
+          "meaning": "Not really, Not particularly, It&#x27;s not like...",
+          "explanation": "Grammar explanation for 別に〜ない",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.730Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l5_grammar_9",
+          "pattern": "がたい",
+          "meaning": "Hard to, Difficult to",
+          "explanation": "Grammar explanation for がたい",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.730Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l5_grammar_10",
+          "pattern": "こそ",
+          "meaning": "Adds strong emphasis to the word or phrase it follows, highlighting it as the most important or most fitting element.",
+          "explanation": "こそ is a focus particle that singles out the preceding element as the definitive one — the thing that matters most in the statement. It can replace or follow other particles (は, が, を are typically dropped; に, で, と, から etc. are kept before こそ). It appears in a wide range of registers, from set expressions like こちらこそ to emphatic statements in formal speech and writing.",
+          "examples": [
+            {
+              "japanese": "今年こそ、日本語能力試験に合格します。",
+              "reading": "ことしこそ、にほんごのうりょくしけんにごうかくします。",
+              "english": "This year for sure, I will pass the JLPT."
+            },
+            {
+              "japanese": "あなたこそ、このプロジェクトに向いています。",
+              "reading": "あなたこそ、このプロジェクトにむいています。",
+              "english": "You are precisely the right person for this project."
+            },
+            {
+              "japanese": "「ありがとうございました。」「こちらこそ、お世話になりました。」",
+              "reading": "「ありがとうございました。」「こちらこそ、おせわになりました。」",
+              "english": "\"Thank you very much.\" \"It is I who should be thanking you.\""
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.730Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l5_grammar_11",
+          "pattern": "ことから",
+          "meaning": "Indicates reason or cause derived from a fact, situation, or evidence.",
+          "explanation": "This pattern expresses that one action or situation results from a fact or event. It introduces the reason or basis for a conclusion or action that follows. Common in explanatory or analytical contexts in both written and spoken Japanese.",
+          "examples": [
+            {
+              "japanese": "彼が来なかったことから、会議は中止になった。",
+              "reading": "かれがこなかったことから、かいぎはちゅうしになった。",
+              "english": "From the fact that he didn't come, the meeting was cancelled."
+            },
+            {
+              "japanese": "去年の経験のことから、私たちはこの方法を選びました。",
+              "reading": "きょねんのけいけんのことから、わたしたちはこのほうほうをえらびました。",
+              "english": "From our experience last year, we chose this method."
+            },
+            {
+              "japanese": "彼女の態度のことから、何か問題があると思います。",
+              "reading": "かのじょのたいどのことから、なにかもんだいがあるとおもいます。",
+              "english": "From her attitude, I think there is some problem."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.730Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l5_grammar_12",
+          "pattern": "まるで…ようだ",
+          "meaning": "It is entirely as if, It is just as though",
+          "explanation": "Grammar explanation for まるで…ようだ",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.730Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l5_grammar_13",
+          "pattern": "向き",
+          "meaning": "Suitable for, Facing",
+          "explanation": "Grammar explanation for 向き",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 5,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.730Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_b1_5"
+    }
+  ]
+}

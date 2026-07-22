@@ -1,0 +1,376 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a2",
+  "title": "Marugoto A2: Katsudoo (Elementary 2)",
+  "edition": "learner-gold",
+  "levelRange": "A2",
+  "sources": [
+    {
+      "sourceId": "marugoto_a2_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "87befe524f5f78113f32b3397bcd6b6f15a2bdcf16f20a9763e684fa556ca5b5",
+        "bytes": 35694565
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a2_lesson_12",
+      "unitType": "lesson",
+      "lessonNumber": 12,
+      "title": "Marugoto A2: Katsudoo (Elementary 2) — Lesson 12",
+      "level": "A2",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a2_l12_grammar_1",
+          "pattern": "そういう",
+          "meaning": "Refers to a type or category of thing just mentioned, meaning 'that kind of' or 'like that'.",
+          "explanation": "そういう combines そう (like that) and いう (to say/call) to form a demonstrative modifier meaning 'that type of' or 'that sort of'. It points back to a topic already established in the conversation. It is casual to neutral in register.",
+          "examples": [
+            {
+              "japanese": "そういう考え方は好きじゃないです。",
+              "reading": "そういうかんがえかたはすきじゃないです。",
+              "english": "I don't like that kind of thinking."
+            },
+            {
+              "japanese": "そういう映画はあまり見ません。",
+              "reading": "そういうえいがはあまりみません。",
+              "english": "I don't watch that kind of movie very often."
+            },
+            {
+              "japanese": "そういう問題はむずかしいですね。",
+              "reading": "そういうもんだいはむずかしいですね。",
+              "english": "That kind of problem is difficult, isn't it."
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.662Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l12_grammar_2",
+          "pattern": "～のだろうか",
+          "meaning": "To express curiosity, speculation, or wondering about something.",
+          "explanation": "This pattern is used when thinking out loud about something uncertain or when expressing doubt. It's more formal and contemplative than casual speech, often appearing in written Japanese or when a speaker is reflecting on a question.",
+          "examples": [
+            {
+              "japanese": "あの人は誰なのだろうか",
+              "reading": "あのひとはだれなのだろうか",
+              "english": "I wonder who that person is"
+            },
+            {
+              "japanese": "明日の天気はどうなるのだろうか",
+              "reading": "あしたのてんきはどうなるのだろうか",
+              "english": "I wonder what the weather will be like tomorrow"
+            },
+            {
+              "japanese": "なぜ彼女は来なかったのだろうか",
+              "reading": "なぜかのじょはこなかったのだろうか",
+              "english": "I wonder why she didn't come"
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.662Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l12_grammar_3",
+          "pattern": "ほとんど",
+          "meaning": "An adverb expressing 'almost all,' 'most,' or 'hardly any' with emphasis.",
+          "explanation": "ほとんど is an adverbial noun used to emphasize quantities or degrees. With positive statements it means 'almost all' or 'most,' while with negative statements it means 'hardly any.' Often used before の to modify nouns (ほとんどの～).",
+          "examples": [
+            {
+              "japanese": "ほとんどの人が来ました。",
+              "reading": "ほとんどのひとがきました。",
+              "english": "Most people came."
+            },
+            {
+              "japanese": "ケーキはほとんど食べました。",
+              "reading": "けーきはほとんどたべました。",
+              "english": "I ate almost all of the cake."
+            },
+            {
+              "japanese": "彼は日本語がほとんど分かりません。",
+              "reading": "かれはにほんごがほとんどわかりません。",
+              "english": "He hardly understands Japanese."
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.662Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l12_grammar_4",
+          "pattern": "とうとう",
+          "meaning": "Expresses that something happened after a long wait or process.",
+          "explanation": "とうとう is an adverb meaning 'finally' or 'at last,' used when a result comes after a long time or effort. It can describe both positive outcomes (a goal reached) and negative ones (something bad finally happening). It is used in both casual and polite speech.",
+          "examples": [
+            {
+              "japanese": "とうとう日本語の試験に合格しました。",
+              "reading": "とうとうにほんごのしけんにごうかくしました。",
+              "english": "I finally passed the Japanese language exam."
+            },
+            {
+              "japanese": "三時間待って、とうとうバスが来ました。",
+              "reading": "さんじかんまって、とうとうバスがきました。",
+              "english": "After waiting three hours, the bus finally came."
+            },
+            {
+              "japanese": "とうとう雨が降り始めました。",
+              "reading": "とうとうあめがふりはじめました。",
+              "english": "It finally started to rain."
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.662Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l12_grammar_5",
+          "pattern": "そんな・こんな・あんな・どんな",
+          "meaning": "Demonstrative adjectives indicating 'such,' 'that kind of,' or 'what kind of.'",
+          "explanation": "These four demonstrative adjectives modify nouns to describe type or quality. こんな = this kind of (near), そんな = that kind of (medium distance), あんな = that kind of (far/general), どんな = what kind of (question). They're used informally in conversation.",
+          "examples": [
+            {
+              "japanese": "そんなことは知りません。",
+              "reading": "そんなことはしりません。",
+              "english": "I don't know about such a thing."
+            },
+            {
+              "japanese": "こんな天気では行けません。",
+              "reading": "こんなてんきではいけません。",
+              "english": "In this kind of weather, I can't go."
+            },
+            {
+              "japanese": "どんな本を読みますか？",
+              "reading": "どんなほんをよみますか？",
+              "english": "What kind of books do you read?"
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.662Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l12_grammar_6",
+          "pattern": "だが・ですが",
+          "meaning": "A conjunction meaning 'but' or 'however,' used to contrast two statements.",
+          "explanation": "だが is the plain/written form and ですが is the polite spoken form. Both connect two clauses where the second contrasts with or qualifies the first. ですが is common at the start of a sentence in polite conversation to soften a contrast or introduce a reservation.",
+          "examples": [
+            {
+              "japanese": "この映画は面白い。だが、少し長すぎる。",
+              "reading": "このえいがはおもしろい。だが、すこしながすぎる。",
+              "english": "This movie is interesting. However, it's a little too long."
+            },
+            {
+              "japanese": "値段は高いですが、品質はとてもいいです。",
+              "reading": "ねだんはたかいですが、ひんしつはとてもいいです。",
+              "english": "The price is high, but the quality is very good."
+            },
+            {
+              "japanese": "行きたいですが、時間がありません。",
+              "reading": "いきたいですが、じかんがありません。",
+              "english": "I want to go, but I don't have time."
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.662Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l12_grammar_7",
+          "pattern": "てくれてありがとう",
+          "meaning": "To express gratitude for someone doing something for you.",
+          "explanation": "This pattern combines the te-form giving (てくれて) with appreciation to thank someone for a helpful action. It's a polite and sincere way to show gratitude in daily interactions, emails, and conversations with people you want to thank.",
+          "examples": [
+            {
+              "japanese": "手伝ってくれてありがとう",
+              "reading": "てつだってくれてありがとう",
+              "english": "Thank you for helping me"
+            },
+            {
+              "japanese": "誕生日をお祝いしてくれてありがとうございます",
+              "reading": "たんじょうびをおいわいしてくれてありがとうございます",
+              "english": "Thank you so much for celebrating my birthday"
+            },
+            {
+              "japanese": "昨日教えてくれてありがとうございました",
+              "reading": "きのうおしえてくれてありがとうございました",
+              "english": "Thank you for teaching me yesterday"
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.662Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l12_grammar_8",
+          "pattern": "まで",
+          "meaning": "Expresses surprise or emphasis that something extends to an unexpected degree or includes an unexpected thing.",
+          "explanation": "When まで follows a noun or verb phrase with this meaning, it conveys 'even' or 'to the point of,' highlighting that something surprising or extreme is included. It differs from the directional まで ('until/up to') by its emphatic nuance. It works in both polite and casual registers.",
+          "examples": [
+            {
+              "japanese": "子どもまでそのことを知っています。",
+              "reading": "こどもまでそのことをしっています。",
+              "english": "Even children know about that."
+            },
+            {
+              "japanese": "彼は夜中まで働きました。",
+              "reading": "かれはよなかまではたらきました。",
+              "english": "He worked until the middle of the night."
+            },
+            {
+              "japanese": "泣くまで笑いました。",
+              "reading": "なくまでわらいました。",
+              "english": "I laughed to the point of crying."
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.662Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l12_grammar_9",
+          "pattern": "のように・のような",
+          "meaning": "Expresses that something is like or resembles a specific noun, in a slightly more formal way than みたいに.",
+          "explanation": "のように follows a noun to describe how an action is done (modifying verbs or adjectives), while のような follows a noun to modify another noun. This pattern is more formal and versatile than みたいに・みたいな, and is used in both written and spoken Japanese. It is often used for vivid descriptions and comparisons.",
+          "examples": [
+            {
+              "japanese": "彼は風のように走りました。",
+              "reading": "かれはかぜのようにはしりました。",
+              "english": "He ran like the wind."
+            },
+            {
+              "japanese": "山のような宿題があります。",
+              "reading": "やまのようなしゅくだいがあります。",
+              "english": "I have a mountain of homework."
+            },
+            {
+              "japanese": "鳥のように空を飛びたいです。",
+              "reading": "とりのようにそらをとびたいです。",
+              "english": "I want to fly through the sky like a bird."
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.662Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l12_grammar_10",
+          "pattern": "あまり～ない",
+          "meaning": "Expresses a low degree of something, meaning 'not very', 'not much', or 'not really'.",
+          "explanation": "あまり is an adverb that softens a negative statement; it always pairs with a negative predicate. It conveys that something is true to a small or insufficient extent, unlike ぜんぜん which means total absence. This pattern is polite or casual depending on the verb ending used.",
+          "examples": [
+            {
+              "japanese": "魚はあまり好きじゃないです。",
+              "reading": "さかなはあまりすきじゃないです。",
+              "english": "I don't really like fish."
+            },
+            {
+              "japanese": "最近、あまり運動していません。",
+              "reading": "さいきん、あまりうんどうしていません。",
+              "english": "I haven't been exercising much lately."
+            },
+            {
+              "japanese": "この店はあまり高くないですよ。",
+              "reading": "このみせはあまりたかくないですよ。",
+              "english": "This shop isn't very expensive, you know."
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.662Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a2_12"
+    }
+  ]
+}

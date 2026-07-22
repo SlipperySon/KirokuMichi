@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a1",
+  "title": "Marugoto A1: Katsudoo (Starter)",
+  "edition": "learner-gold",
+  "levelRange": "A1",
+  "sources": [
+    {
+      "sourceId": "marugoto_a1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "37d39aeeacc21293c1b109685277456c277309963dc485944bfb6adc91d5842a",
+        "bytes": 30572124
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a1_lesson_12",
+      "unitType": "lesson",
+      "lessonNumber": 12,
+      "title": "Marugoto A1: Katsudoo (Starter) — Lesson 12",
+      "level": "A1",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a1_l12_grammar_1",
+          "pattern": "と",
+          "meaning": "Marks the content of what someone said, thought, or asked.",
+          "explanation": "The particle と is used after a quoted clause before verbs like 言う (to say), 思う (to think), or 聞く (to hear/ask). It can quote both direct and indirect speech. The quoted content before と can be in plain form.",
+          "examples": [
+            {
+              "japanese": "彼は「おはよう」と言った。",
+              "reading": "かれは「おはよう」といった。",
+              "english": "He said 'Good morning.'"
+            },
+            {
+              "japanese": "明日は雨だと思います。",
+              "reading": "あしたはあめだとおもいます。",
+              "english": "I think it will rain tomorrow."
+            },
+            {
+              "japanese": "先生は「勉強してください」と言いました。",
+              "reading": "せんせいは「べんきょうしてください」といいました。",
+              "english": "The teacher said 'Please study.'"
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.622Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l12_grammar_2",
+          "pattern": "Verb［た・ている］+ Noun",
+          "meaning": "A verb in plain past (た) or progressive (ている) form placed before a noun to describe or modify it.",
+          "explanation": "Japanese relative clauses come before the noun they modify, unlike English. A verb in plain た (past) or ている (ongoing/resultant) form directly precedes a noun to give it more description. This structure works like 'the [noun] that [verb-ed]' or 'the [noun] that is [verb-ing]' in English.",
+          "examples": [
+            {
+              "japanese": "昨日食べたケーキはおいしかった。",
+              "reading": "きのうたべたケーキはおいしかった。",
+              "english": "The cake I ate yesterday was delicious."
+            },
+            {
+              "japanese": "公園で遊んでいる子供たちを見た。",
+              "reading": "こうえんであそんでいるこどもたちをみた。",
+              "english": "I saw children playing in the park."
+            },
+            {
+              "japanese": "彼が書いた手紙を読みました。",
+              "reading": "かれがかいたてがみをよみました。",
+              "english": "I read the letter that he wrote."
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.622Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l12_grammar_3",
+          "pattern": "って",
+          "meaning": "Casual spoken equivalent of the quotation particle と.",
+          "explanation": "って is the colloquial version of quotation と, commonly used in everyday conversation. It follows a quoted word, phrase, or plain-form clause before verbs of saying or thinking. It can also be used to bring up a topic casually, similar to 'speaking of' or 'I heard that'.",
+          "examples": [
+            {
+              "japanese": "彼女は来ないって言ってた。",
+              "reading": "かのじょはこないっていってた。",
+              "english": "She said she's not coming."
+            },
+            {
+              "japanese": "明日、テストがあるって聞いた。",
+              "reading": "あした、テストがあるってきいた。",
+              "english": "I heard there's a test tomorrow."
+            },
+            {
+              "japanese": "田中さんって、どんな人？",
+              "reading": "たなかさんって、どんなひと？",
+              "english": "What kind of person is Tanaka-san?"
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.622Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l12_grammar_4",
+          "pattern": "けっこう",
+          "meaning": "Means 'quite,' 'fairly,' or 'rather,' indicating a degree higher than expected.",
+          "explanation": "けっこう is an adverb that modifies adjectives, adverbs, or verbs to express that something is more than you might have expected — similar to 'pretty' in English. It is used in both polite and casual speech and carries a slightly surprised or impressed nuance. Place it directly before the word it modifies.",
+          "examples": [
+            {
+              "japanese": "この映画はけっこう面白かったです。",
+              "reading": "このえいがはけっこうおもしろかったです。",
+              "english": "This movie was quite interesting."
+            },
+            {
+              "japanese": "駅からけっこう遠いですね。",
+              "reading": "えきからけっこうとおいですね。",
+              "english": "It's fairly far from the station, isn't it."
+            },
+            {
+              "japanese": "今日はけっこう寒い。",
+              "reading": "きょうはけっこうさむい。",
+              "english": "It's rather cold today."
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.622Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l12_grammar_5",
+          "pattern": "Verb + まで",
+          "meaning": "Marks a verb clause as the endpoint of an action — 'until ~ happens.'",
+          "explanation": "When まで follows a verb in plain form, it creates a time clause meaning 'until [that action/event occurs].' The verb before まで stays in the plain present tense regardless of tense in the main clause. This pattern expresses that the main action continues right up to the moment the subordinate event takes place.",
+          "examples": [
+            {
+              "japanese": "バスが来るまで待ちます。",
+              "reading": "バスがくるまでまちます。",
+              "english": "I will wait until the bus comes."
+            },
+            {
+              "japanese": "雨がやむまで、ここにいました。",
+              "reading": "あめがやむまで、ここにいました。",
+              "english": "I stayed here until the rain stopped."
+            },
+            {
+              "japanese": "先生が来るまで静かにしてください。",
+              "reading": "せんせいがくるまでしずかにしてください。",
+              "english": "Please be quiet until the teacher arrives."
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.622Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l12_grammar_6",
+          "pattern": "けど・だけど",
+          "meaning": "Connects two contrasting clauses, meaning 'but' or 'however'.",
+          "explanation": "けど (and its slightly more emphatic form だけど) is a casual conjunction used to contrast two ideas or soften a statement. It follows plain-form verbs and adjectives. It is more conversational than が and very common in everyday speech.",
+          "examples": [
+            {
+              "japanese": "日本語は好きだけど、難しいです。",
+              "reading": "にほんごはすきだけど、むずかしいです。",
+              "english": "I like Japanese, but it is difficult."
+            },
+            {
+              "japanese": "行きたいけど、時間がない。",
+              "reading": "いきたいけど、じかんがない。",
+              "english": "I want to go, but I don't have time."
+            },
+            {
+              "japanese": "寒いけど、窓を開けます。",
+              "reading": "さむいけど、まどをあけます。",
+              "english": "It is cold, but I will open the window."
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.622Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l12_grammar_7",
+          "pattern": "Verb + て",
+          "meaning": "Links two or more actions in sequence, meaning 'and then' or 'and'.",
+          "explanation": "The て-form of a verb connects it to the next verb or clause, indicating that actions happen one after another or are performed together. For る-verbs, replace る with て; う-verbs follow conjugation rules (e.g., 書く → 書いて). It is used in both casual and polite speech and is fundamental for describing sequences of events.",
+          "examples": [
+            {
+              "japanese": "手を洗って、ご飯を食べます。",
+              "reading": "てをあらって、ごはんをたべます。",
+              "english": "I wash my hands and then eat."
+            },
+            {
+              "japanese": "駅に行って、電車に乗りました。",
+              "reading": "えきにいって、でんしゃにのりました。",
+              "english": "I went to the station and got on the train."
+            },
+            {
+              "japanese": "シャワーを浴びて、寝ます。",
+              "reading": "シャワーをあびて、ねます。",
+              "english": "I take a shower and then go to sleep."
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.622Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l12_grammar_8",
+          "pattern": "どれ",
+          "meaning": "Used to ask which item is meant when there are three or more options.",
+          "explanation": "どれ is a question word meaning 'which one' and is used when choosing from three or more items. It stands alone as a pronoun and does not directly precede a noun. It works in both polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "あなたのかばんはどれですか。",
+              "reading": "あなたのかばんはどれですか。",
+              "english": "Which one is your bag?"
+            },
+            {
+              "japanese": "どれがいいですか。",
+              "reading": "どれがいいですか。",
+              "english": "Which one do you like?"
+            },
+            {
+              "japanese": "すみません、どれが田中さんのですか。",
+              "reading": "すみません、どれがたなかさんのですか。",
+              "english": "Excuse me, which one is Tanaka-san's?"
+            }
+          ],
+          "lessonNumber": 12,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.622Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a1_12"
+    }
+  ]
+}

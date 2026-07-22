@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a1",
+  "title": "Marugoto A1: Katsudoo (Starter)",
+  "edition": "learner-gold",
+  "levelRange": "A1",
+  "sources": [
+    {
+      "sourceId": "marugoto_a1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "37d39aeeacc21293c1b109685277456c277309963dc485944bfb6adc91d5842a",
+        "bytes": 30572124
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a1_lesson_15",
+      "unitType": "lesson",
+      "lessonNumber": 15,
+      "title": "Marugoto A1: Katsudoo (Starter) — Lesson 15",
+      "level": "A1",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a1_l15_grammar_1",
+          "pattern": "Adjective + て + B",
+          "meaning": "Uses the て-form of an adjective to connect it to a following clause, meaning 'and' or expressing a reason.",
+          "explanation": "The て-form of an adjective not only links two qualities but can also connect an adjective to a resulting action or state. The first clause often implies a reason or cause for the second clause. This structure is common in everyday speech at all registers.",
+          "examples": [
+            {
+              "japanese": "眠くて、勉強できません。",
+              "reading": "ねむくて、べんきょうできません。",
+              "english": "I'm sleepy and can't study."
+            },
+            {
+              "japanese": "忙しくて、電話しませんでした。",
+              "reading": "いそがしくて、でんわしませんでした。",
+              "english": "I was busy and didn't call."
+            },
+            {
+              "japanese": "嬉しくて、泣きました。",
+              "reading": "うれしくて、なきました。",
+              "english": "I was so happy that I cried."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.629Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l15_grammar_2",
+          "pattern": "い-Adjectives くない",
+          "meaning": "Expresses that something does NOT have a certain quality.",
+          "explanation": "To negate an い-adjective, drop the final い and add くない. This is the plain/casual negative form. Use くないです for polite speech. It works the same way for all い-adjectives.",
+          "examples": [
+            {
+              "japanese": "この映画は面白くないです。",
+              "reading": "このえいがはおもしろくないです。",
+              "english": "This movie is not interesting."
+            },
+            {
+              "japanese": "今日は寒くないです。",
+              "reading": "きょうはさむくないです。",
+              "english": "It is not cold today."
+            },
+            {
+              "japanese": "この鞄は高くない。",
+              "reading": "このかばんはたかくない。",
+              "english": "This bag is not expensive."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.629Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l15_grammar_3",
+          "pattern": "い-Adjective (Past)",
+          "meaning": "Expresses that a quality or state was true in the past ('was ~').",
+          "explanation": "To make an い-adjective past tense, drop the final い and add かった (plain past) or かったです (polite past). The negative past is ～くなかった / ～くなかったです. This conjugation applies to all い-adjectives except いい (good), which becomes よかった.",
+          "examples": [
+            {
+              "japanese": "昨日は寒かったです。",
+              "reading": "きのうはさむかったです。",
+              "english": "It was cold yesterday."
+            },
+            {
+              "japanese": "その映画はおもしろかった。",
+              "reading": "そのえいがはおもしろかった。",
+              "english": "That movie was interesting."
+            },
+            {
+              "japanese": "テストは難しくなかったです。",
+              "reading": "テストはむずかしくなかったです。",
+              "english": "The test was not difficult."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.629Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l15_grammar_4",
+          "pattern": "い-Adjective くなかった",
+          "meaning": "Used to say something was not [adjective] in the past.",
+          "explanation": "To negate an い-adjective in the past, drop the final い and add くなかった. This is the casual past negative form. The polite equivalent is くありませんでした.",
+          "examples": [
+            {
+              "japanese": "昨日は寒くなかった。",
+              "reading": "きのうはさむくなかった。",
+              "english": "It was not cold yesterday."
+            },
+            {
+              "japanese": "その料理はおいしくなかった。",
+              "reading": "そのりょうりはおいしくなかった。",
+              "english": "That food was not delicious."
+            },
+            {
+              "japanese": "テストは難しくなかった。",
+              "reading": "テストはむずかしくなかった。",
+              "english": "The test was not difficult."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.629Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l15_grammar_5",
+          "pattern": "う-Verb (Negative)",
+          "meaning": "Expresses that someone does not do or will not do an action (for う-verbs).",
+          "explanation": "To negate an う-verb in the plain (dictionary) form, drop the final う-row sound and add あない. For example, 書く becomes 書かない. This is the casual register equivalent of ません, used in everyday conversation among friends and in informal contexts. Use it to say you don't habitually do something or don't plan to do something.",
+          "examples": [
+            {
+              "japanese": "私はお酒を飲まない。",
+              "reading": "わたしはおさけをのまない。",
+              "english": "I don't drink alcohol."
+            },
+            {
+              "japanese": "彼は毎日学校に行かない。",
+              "reading": "かれはまいにちがっこうにいかない。",
+              "english": "He doesn't go to school every day."
+            },
+            {
+              "japanese": "今日は本を読まない。",
+              "reading": "きょうはほんをよまない。",
+              "english": "I'm not going to read a book today."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.629Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l15_grammar_6",
+          "pattern": "る-Verb (Past)",
+          "meaning": "Form the past tense of る-verbs by replacing る with ました (polite) or た (casual).",
+          "explanation": "る-verbs (also called Group 2 or ichidan verbs) form the past tense by simply dropping the final る and adding ました in polite speech, or た in casual speech. This is more regular than う-verb conjugation. Use the past tense to describe completed actions or past states.",
+          "examples": [
+            {
+              "japanese": "昨日、テレビを見ました。",
+              "reading": "きのう、テレビをみました。",
+              "english": "I watched TV yesterday."
+            },
+            {
+              "japanese": "朝ごはんを食べました。",
+              "reading": "あさごはんをたべました。",
+              "english": "I ate breakfast."
+            },
+            {
+              "japanese": "七時に起きました。",
+              "reading": "しちじにおきました。",
+              "english": "I woke up at seven o'clock."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.629Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l15_grammar_7",
+          "pattern": "る-Verb (Negative-Past)",
+          "meaning": "Expresses that a る-verb action did NOT happen in the past.",
+          "explanation": "To form the negative past of a る-verb in polite speech, replace ます with ませんでした. In plain/casual speech, replace る with なかった. Use this form to say something did not occur at a past point in time.",
+          "examples": [
+            {
+              "japanese": "昨日、ご飯を食べませんでした。",
+              "reading": "きのう、ごはんをたべませんでした。",
+              "english": "I did not eat rice yesterday."
+            },
+            {
+              "japanese": "映画を見なかった。",
+              "reading": "えいがをみなかった。",
+              "english": "I didn't watch the movie."
+            },
+            {
+              "japanese": "先生は来ませんでした。",
+              "reading": "せんせいはきませんでした。",
+              "english": "The teacher did not come."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.629Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l15_grammar_8",
+          "pattern": "う-Verb (Negative-Past)",
+          "meaning": "Expresses that an う-verb action did NOT happen in the past.",
+          "explanation": "For polite negative past, replace ます with ませんでした on the ます-stem. For plain/casual negative past, change the verb's final う-row sound to its あ-row equivalent and add なかった (e.g., 書く → 書かなかった). This is one of the four core tense-polarity combinations for verbs.",
+          "examples": [
+            {
+              "japanese": "昨日、学校に行きませんでした。",
+              "reading": "きのう、がっこうにいきませんでした。",
+              "english": "I did not go to school yesterday."
+            },
+            {
+              "japanese": "手紙を書かなかった。",
+              "reading": "てがみをかかなかった。",
+              "english": "I didn't write a letter."
+            },
+            {
+              "japanese": "彼は何も飲みませんでした。",
+              "reading": "かれはなにものみませんでした。",
+              "english": "He did not drink anything."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.629Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a1_15"
+    }
+  ]
+}

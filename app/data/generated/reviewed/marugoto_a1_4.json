@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a1",
+  "title": "Marugoto A1: Katsudoo (Starter)",
+  "edition": "learner-gold",
+  "levelRange": "A1",
+  "sources": [
+    {
+      "sourceId": "marugoto_a1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "37d39aeeacc21293c1b109685277456c277309963dc485944bfb6adc91d5842a",
+        "bytes": 30572124
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a1_lesson_4",
+      "unitType": "lesson",
+      "lessonNumber": 4,
+      "title": "Marugoto A1: Katsudoo (Starter) — Lesson 4",
+      "level": "A1",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a1_l4_grammar_1",
+          "pattern": "で",
+          "meaning": "Marks the place where an action or event takes place, meaning 'at' or 'in'.",
+          "explanation": "The particle で marks where an action happens, such as eating at a restaurant or studying at school. It answers the question 'where does this activity occur?' Do not confuse it with に, which marks where something exists or a destination of movement. で is neutral in register and appears in both polite and casual speech.",
+          "examples": [
+            {
+              "japanese": "私は学校で日本語を勉強します。",
+              "reading": "わたしはがっこうでにほんごをべんきょうします。",
+              "english": "I study Japanese at school."
+            },
+            {
+              "japanese": "公園で友達とサッカーをした。",
+              "reading": "こうえんでともだちとサッカーをした。",
+              "english": "I played soccer with my friends at the park."
+            },
+            {
+              "japanese": "このレストランで食べましょう。",
+              "reading": "このレストランでたべましょう。",
+              "english": "Let's eat at this restaurant."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.601Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l4_grammar_2",
+          "pattern": "う-Verb (Dictionary)",
+          "meaning": "The plain/dictionary form of Godan verbs, which end in an う-row sound and conjugate by changing that final syllable.",
+          "explanation": "う-Verbs (Godan verbs) end in う, く, ぐ, す, つ, ぬ, ぶ, む, or る (where the preceding vowel is あ, う, or お). To form the polite ます-form, change the final う-row syllable to its い-row equivalent and add ます (e.g. かく → かきます, のむ → のみます). The stem changes shape, so each ending must be learned.",
+          "examples": [
+            {
+              "japanese": "毎日日本語を書きます。",
+              "reading": "まいにちにほんごをかきます。",
+              "english": "I write Japanese every day."
+            },
+            {
+              "japanese": "水を飲みますか。",
+              "reading": "みずをのみますか。",
+              "english": "Do you drink water?"
+            },
+            {
+              "japanese": "友達と話します。",
+              "reading": "ともだちとはなします。",
+              "english": "I talk with my friend."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.601Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l4_grammar_3",
+          "pattern": "ている①",
+          "meaning": "Expresses an ongoing action happening right now.",
+          "explanation": "Attach ている to the て-form of a verb to show that an action is currently in progress. In casual speech, ている is often shortened to てる. This is the standard way to express the English present continuous tense in Japanese.",
+          "examples": [
+            {
+              "japanese": "私は今、本を読んでいます。",
+              "reading": "わたしはいま、ほんをよんでいます。",
+              "english": "I am reading a book right now."
+            },
+            {
+              "japanese": "彼女は音楽を聴いています。",
+              "reading": "かのじょはおんがくをきいています。",
+              "english": "She is listening to music."
+            },
+            {
+              "japanese": "犬が公園で走っています。",
+              "reading": "いぬがこうえんではしっています。",
+              "english": "The dog is running in the park."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.601Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l4_grammar_4",
+          "pattern": "な-Adjectives",
+          "meaning": "A class of adjectives that behave like nouns and require な when modifying a noun directly.",
+          "explanation": "な-Adjectives (形容動詞) look like nouns but function as adjectives. When placed before a noun they take な (e.g. きれいな); when used predicatively they are followed by だ or です. They are used in both casual and polite speech depending on the ending you attach.",
+          "examples": [
+            {
+              "japanese": "ここはきれいな公園です。",
+              "reading": "ここはきれいなこうえんです。",
+              "english": "This is a beautiful park."
+            },
+            {
+              "japanese": "彼女はとても元気です。",
+              "reading": "かのじょはとてもげんきです。",
+              "english": "She is very energetic."
+            },
+            {
+              "japanese": "この部屋は静かではありません。",
+              "reading": "このへやはしずかではありません。",
+              "english": "This room is not quiet."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.601Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l4_grammar_5",
+          "pattern": "あそこ",
+          "meaning": "A place demonstrative pronoun meaning 'over there', referring to a location far from both speaker and listener.",
+          "explanation": "あそこ refers to a place that is physically distant from both the speaker and the listener, like 'over there' in English. It is the third in the ko-so-a-do place series. It can also be used to refer to a place that both speaker and listener know about from shared experience, even if not physically present. Register is neutral.",
+          "examples": [
+            {
+              "japanese": "あそこに大きい山があります。",
+              "reading": "あそこにおおきいやまがあります。",
+              "english": "There is a big mountain over there."
+            },
+            {
+              "japanese": "あそこがバス停です。",
+              "reading": "あそこがバスていです。",
+              "english": "That over there is the bus stop."
+            },
+            {
+              "japanese": "あそこのカフェは有名です。",
+              "reading": "あそこのカフェはゆうめいです。",
+              "english": "The café over there is famous."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.601Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l4_grammar_6",
+          "pattern": "この",
+          "meaning": "Means 'this' and modifies a noun that is close to the speaker.",
+          "explanation": "この is a pre-noun modifier meaning 'this'. It refers to something physically or conceptually close to the speaker, and must always be followed directly by a noun. It cannot stand alone (use これ for that). この is part of the ko-so-a-do series (この・その・あの・どの).",
+          "examples": [
+            {
+              "japanese": "この本はおもしろいです。",
+              "reading": "このほんはおもしろいです。",
+              "english": "This book is interesting."
+            },
+            {
+              "japanese": "この店のラーメンは好きです。",
+              "reading": "このみせのラーメンはすきです。",
+              "english": "I like the ramen at this shop."
+            },
+            {
+              "japanese": "この映画を見ましたか。",
+              "reading": "このえいがをみましたか。",
+              "english": "Did you watch this movie?"
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.601Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l4_grammar_7",
+          "pattern": "へいく",
+          "meaning": "Express going or heading toward a place using the direction particle へ with いく.",
+          "explanation": "The particle へ (read as え) marks the direction or destination of movement. Combined with いく (to go), it indicates that the subject is moving toward a place. It is slightly more literary than に for destinations, but both are common in everyday speech.",
+          "examples": [
+            {
+              "japanese": "学校へ行きます。",
+              "reading": "がっこうへいきます。",
+              "english": "I go to school."
+            },
+            {
+              "japanese": "明日、東京へ行きます。",
+              "reading": "あした、とうきょうへいきます。",
+              "english": "Tomorrow I will go to Tokyo."
+            },
+            {
+              "japanese": "友だちの家へ行きました。",
+              "reading": "ともだちのいえへいきました。",
+              "english": "I went to my friend's house."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.601Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l4_grammar_8",
+          "pattern": "に",
+          "meaning": "Marks the location of existence, the destination of movement, a point in time, or the target of an action.",
+          "explanation": "The particle に has several key A1 uses: it marks where something exists (本は机の上にある — the book is on the desk), where someone or something is going (学校に行く — go to school), and specific times (七時に起きる — wake up at seven). Unlike で, に does not mark where an action takes place but rather where something is or where something is headed. It is neutral in register.",
+          "examples": [
+            {
+              "japanese": "猫はソファの上にいます。",
+              "reading": "ねこはソファのうえにいます。",
+              "english": "The cat is on the sofa."
+            },
+            {
+              "japanese": "明日、東京に行きます。",
+              "reading": "あした、とうきょうにいきます。",
+              "english": "I'm going to Tokyo tomorrow."
+            },
+            {
+              "japanese": "毎朝六時に起きます。",
+              "reading": "まいあさろくじにおきます。",
+              "english": "I wake up at six every morning."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.601Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a1_4"
+    }
+  ]
+}

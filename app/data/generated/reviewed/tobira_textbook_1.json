@@ -1,29 +1,1334 @@
 {
-  "schemaVersion": "learner-draft-1",
-  "textbookKey": "tobira_textbook",
-  "title": "tobira_textbook / tobira_textbook_1",
-  "qualityTier": "draft",
+  "schemaVersion": 1,
+  "textbookKey": "tobira",
+  "title": "Tobira: Gateway to Advanced Japanese",
+  "edition": "learner-gold",
+  "levelRange": "B2",
+  "sources": [
+    {
+      "sourceId": "tobira_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "148bfbf6006104c9ecb0939ce545f2f0911955f692903b0f0bb317dcf08f86e8",
+        "bytes": 206175305
+      }
+    }
+  ],
   "lessons": [
     {
-      "id": "tobira_textbook_1_draft",
-      "appLessonId": "tobira_textbook_1",
-      "title": "tobira textbook 1",
-      "qualityTier": "draft",
+      "id": "tobira_lesson_1",
+      "unitType": "lesson",
+      "lessonNumber": 1,
+      "title": "第1課 日本の地理",
+      "level": "B2",
+      "modes": [
+        "conversation_grammar"
+      ],
       "vocabulary": [
         {
-          "id": "tobira_textbook_textbook_tobira_textbook_1_vocab_2",
-          "surface": "あ二",
-          "reading": null,
-          "meaning": "indicates that the degree of something is excessively high. It is commonly used in formal",
+          "id": "tobira_l1_vocab_1",
+          "surface": "地理",
+          "reading": "ちり",
+          "meaning": "geography",
+          "lessonNumber": 1,
           "sourceRef": {
             "sourceId": "tobira_textbook",
-            "pageNumber": 331
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_2",
+          "surface": "皆",
+          "reading": "さん",
+          "meaning": "everyone",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_3",
+          "surface": "大き(な)",
+          "reading": "おおき(な)",
+          "meaning": "big; large [used only as a noun modifer]",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_4",
+          "surface": "島",
+          "reading": null,
+          "meaning": "island",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_5",
+          "surface": "大陸",
+          "reading": "たいりく",
+          "meaning": "continent",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_6",
+          "surface": "島国",
+          "reading": "しまぐに",
+          "meaning": "island country",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_7",
+          "surface": "都市",
+          "reading": "とし",
+          "meaning": "city",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_8",
+          "surface": "8国土",
+          "reading": "こくど",
+          "meaning": "territory;country",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_9",
+          "surface": "北海道",
+          "reading": "ほっかいどう",
+          "meaning": "Hokkaido [Japan's northernmost island] -",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_10",
+          "surface": "本州",
+          "reading": "ほんしゆう",
+          "meaning": "Honshu [Japan's largest island]",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_11",
+          "surface": "四国",
+          "reading": null,
+          "meaning": "Shikoku [the smallest of Japan's four major islands]",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_12",
+          "surface": "九州",
+          "reading": "きゆうしゅう",
+          "meaning": "Kyushu [the third largest of Japan's four major islands]",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_13",
+          "surface": "-以上",
+          "reading": "いじょう",
+          "meaning": "more than~; over~ ; above~",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_14",
+          "surface": "14全体(の)",
+          "reading": "ぜんたい(の)",
+          "meaning": "owhole; entire; general",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_15",
+          "surface": "分の1/21分の1",
+          "reading": null,
+          "meaning": "one twenty-fifth/one twenty-first",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_16",
+          "surface": "都/道/府/県",
+          "reading": null,
+          "meaning": "prefecture [the largest administrative unit in Japan]",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_17",
+          "surface": "首都",
+          "reading": "しゆと",
+          "meaning": "capital (city)",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_18",
+          "surface": "その他",
+          "reading": "そのほか",
+          "meaning": "the rest; the others",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_19",
+          "surface": "19富士山",
+          "reading": "ふじさん",
+          "meaning": "Mt. Fuji",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_20",
+          "surface": "戦争",
+          "reading": "せんそう",
+          "meaning": "war",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_21",
+          "surface": "恐",
+          "reading": "ろしい",
+          "meaning": "scary; frightening",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_22",
+          "surface": "23(~に~を)伝える",
+          "reading": "つたえる",
+          "meaning": "to pass (knowledge) on; tell; inform",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_23",
+          "surface": "原爆ドーム",
+          "reading": null,
+          "meaning": "the Atomic Bomb Memorial Dome",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_24",
+          "surface": "25南北",
+          "reading": "なんほく",
+          "meaning": "north and south",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_25",
+          "surface": "気候",
+          "reading": "きこう",
+          "meaning": "climate",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_26",
+          "surface": "27日",
+          "reading": "ひ",
+          "meaning": "day",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_27",
+          "surface": "気温",
+          "reading": "きおん",
+          "meaning": "(atmospheric) temperature",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_28",
+          "surface": "差",
+          "reading": "さ",
+          "meaning": "gap; difference",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_29",
+          "surface": "30摂氏",
+          "reading": "せっし",
+          "meaning": "centigrade; Celsius",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_30",
+          "surface": "桜",
+          "reading": null,
+          "meaning": "cherry blossoms",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_31",
+          "surface": "32終わり",
+          "reading": "おわり",
+          "meaning": "the end",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_32",
+          "surface": "花見",
+          "reading": "はなみ",
+          "meaning": "cherry-blossom viewing",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_33",
+          "surface": "(~を)楽しむ",
+          "reading": "たのしむ",
+          "meaning": "to enjoy",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_34",
+          "surface": "36名所",
+          "reading": "めいしよ",
+          "meaning": "famous place; place of interest",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_35",
+          "surface": "例",
+          "reading": "えば",
+          "meaning": "for instance; for example",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_36",
+          "surface": "最も",
+          "reading": "もっとも",
+          "meaning": "most; extremely",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_37",
+          "surface": "39美しい",
+          "reading": "うつくしい",
+          "meaning": "beautiful",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_38",
+          "surface": "(お)城",
+          "reading": "(お)しろ",
+          "meaning": "castle",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 28
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_39",
+          "surface": "(~に)聞き返す",
+          "reading": "ききかえす",
+          "meaning": "to raise a question about something that has just been said",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_40",
+          "surface": "昔話",
+          "reading": null,
+          "meaning": "old tale",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_41",
+          "surface": "せんこう",
+          "reading": null,
+          "meaning": "a lot;(so) much; many things; all sorts of things",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_42",
+          "surface": "色々(と)",
+          "reading": "いろいろ(と)",
+          "meaning": "(）various",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_43",
+          "surface": "5専門",
+          "reading": null,
+          "meaning": "one's specialization; one's specialized f eld",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_44",
+          "surface": "6地方",
+          "reading": "ちほう",
+          "meaning": "region; area;country",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_45",
+          "surface": "関東（地方",
+          "reading": "）",
+          "meaning": "the Kanto Region",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_46",
+          "surface": "周り",
+          "reading": "まわり",
+          "meaning": "surroundings; vicinity",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_47",
+          "surface": "はいる",
+          "reading": null,
+          "meaning": "to be included; come in; get in; join",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_48",
+          "surface": "13内容",
+          "reading": "ないよう",
+          "meaning": "content",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_49",
+          "surface": "地名",
+          "reading": "ちめい",
+          "meaning": "place name",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_50",
+          "surface": "伝統的（",
+          "reading": "な）",
+          "meaning": "traditional",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_51",
+          "surface": "年",
+          "reading": "とし",
+          "meaning": "year ANaspecial; particular",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_52",
+          "surface": "21(~を)行う",
+          "reading": null,
+          "meaning": "to conduct; carry out",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_53",
+          "surface": "（お）正月",
+          "reading": "(お)しようがつ",
+          "meaning": "(things) like that; that sort of (story)",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_54",
+          "surface": "そういう",
+          "reading": null,
+          "meaning": "[plural marker for people]",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_55",
+          "surface": "25そんな",
+          "reading": null,
+          "meaning": "such; like that",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_56",
+          "surface": "一般的(",
+          "reading": "な)",
+          "meaning": "general; common",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_57",
+          "surface": "27紙芝居",
+          "reading": "かみしばい",
+          "meaning": "a story told through pictures",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_58",
+          "surface": "28絵",
+          "reading": null,
+          "meaning": "Npicture; painting|絵本（） picture book",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_59",
+          "surface": "大变",
+          "reading": null,
+          "meaning": "very; greatly|",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_60",
+          "surface": "大変勉強になりました（Phr)You've",
+          "reading": null,
+          "meaning": "taught me a lot.",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_61",
+          "surface": "本当(の)",
+          "reading": "ほんとう(の)",
+          "meaning": "one's origin (town, country, etc.)",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_62",
+          "surface": "出身地（N）one's",
+          "reading": null,
+          "meaning": "birthplace;native place",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_63",
+          "surface": "しぜん",
+          "reading": null,
+          "meaning": "nature自然（な）（)natural; unaffected",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_64",
+          "surface": "厳",
+          "reading": "しい",
+          "meaning": "severe; strict;intense A",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
+          }
+        },
+        {
+          "id": "tobira_l1_vocab_65",
+          "surface": "35梅雨",
+          "reading": null,
+          "meaning": "the rainy season in Japan",
+          "lessonNumber": 1,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 33
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.334Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 28, 33"
           }
         }
       ],
       "grammar": [
         {
-          "id": "cefr_b2_316",
+          "id": "tobira_l1_grammar_1",
           "pattern": "上",
           "meaning": "From the standpoint, perspective, or domain of something — used to frame a statement within a particular field or context.",
           "explanation": "Noun + 上 (じょう) indicates that what follows is true or relevant within the scope of a specific domain, such as law, form, or appearance (法律上, 形式上, 見かけ上). It is a formal, written-register expression and is very common in academic, legal, and business Japanese. It differs from ～にとって in that 上 restricts the domain rather than expressing the viewpoint of a person.",
@@ -44,13 +1349,20 @@
               "english": "For health reasons, I had no choice but to decline the business trip."
             }
           ],
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b2_317",
+          "id": "tobira_l1_grammar_2",
           "pattern": "以上 ②",
           "meaning": "Since, now that, or as long as — used to indicate that given a certain situation or decision, a natural consequence or obligation follows.",
           "explanation": "Verb (plain form) + 以上（は） establishes a premise from which the speaker draws a logical or moral conclusion — often an obligation, expectation, or resolution. The nuance is stronger than から or ので; it implies 'given that this is the case, there is no choice but to…' or 'this being so, one must…'. It is a formal expression found mainly in written Japanese and formal speech.",
@@ -71,13 +1383,20 @@
               "english": "Since I decided to participate, I can't give up halfway."
             }
           ],
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b2_318",
+          "id": "tobira_l1_grammar_3",
           "pattern": "ぶりに",
           "meaning": "Indicates that an action is happening for the first time after a specified period of absence or non-occurrence.",
           "explanation": "Attaches directly to a time expression (e.g., 3年ぶりに, 久しぶりに) to mark that the action hasn't occurred for that length of time and is now happening again. It implies a significant gap and often carries emotional weight — reunion, nostalgia, or relief. Commonly used in both spoken and written Japanese.",
@@ -98,13 +1417,20 @@
               "english": "Since it was the first sunny day in a month, I hung out a lot of laundry."
             }
           ],
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b2_319",
+          "id": "tobira_l1_grammar_4",
           "pattern": "思うように",
           "meaning": "Expresses that something goes (or doesn't go) the way one had hoped, intended, or imagined.",
           "explanation": "思うように is most commonly used in negative sentences — 思うようにいかない / できない — to mean things aren't going as hoped. In positive contexts it describes a situation where something proceeds exactly as wished. The pattern is neutral in register and very natural in both spoken and written Japanese when discussing outcomes versus expectations.",
@@ -125,13 +1451,20 @@
               "english": "Today I was able to run just as I had hoped and set a new personal best."
             }
           ],
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b2_320",
+          "id": "tobira_l1_grammar_5",
           "pattern": "だけに",
           "meaning": "As might be expected, Because, All the more because, It&#x27;s only natural",
           "explanation": "Grammar explanation for だけに",
@@ -142,31 +1475,20 @@
               "english": "Example sentence."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/being_です_だ_ある_いる",
-            "title": "Being: です, だ, ある, いる",
-            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
-            "examples": [
-              {
-                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
-              },
-              {
-                "japanese": "bases areなら,なり，なる,なれ andなれ.",
-                "english": "While typically used in combination with the verb particle lC, it can"
-              },
-              {
-                "japanese": "also be used in combination with the particle と, in which case its meaning",
-                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
-              }
-            ]
-          },
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b2_321",
+          "id": "tobira_l1_grammar_6",
           "pattern": "得る・得る",
           "meaning": "Expresses that something is possible or can occur.",
           "explanation": "Attach 得る (うる/える) to the conjunctive (masu-stem) form of a verb to indicate that something is possible or conceivable. It is more formal and literary than できる and often appears in written, academic, or professional contexts. The reading うる is more classical; える is more common in modern usage.",
@@ -187,13 +1509,20 @@
               "english": "Under these conditions, various outcomes can occur."
             }
           ],
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b2_322",
+          "id": "tobira_l1_grammar_7",
           "pattern": "逆に",
           "meaning": "Introduces a result or perspective that is the opposite of what was just stated or expected.",
           "explanation": "逆に is an adverb used to signal a reversal or contrast with the preceding statement, introducing an outcome, effect, or viewpoint that runs in the opposite direction. It can express genuine contradiction ('on the contrary, it got worse'), ironic reversal ('I tried to help but ended up causing trouble instead'), or a shift in perspective ('conversely, you could look at it this way'). It is common in both casual speech and formal writing.",
@@ -214,13 +1543,20 @@
               "english": "That advice backfired, and the problem actually got worse as a result."
             }
           ],
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b2_323",
+          "id": "tobira_l1_grammar_8",
           "pattern": "から見ると",
           "meaning": "Indicates that a judgment or assessment is being made from a specific person's viewpoint or based on a particular appearance or evidence.",
           "explanation": "から見ると combines から (from) with 見る (to look/see) and と to mean 'looking from' or 'judging from.' It is used to indicate whose perspective is being taken or what evidence is being used to reach a conclusion. It is neutral in register and appears in both spoken and written Japanese.",
@@ -241,13 +1577,20 @@
               "english": "From a child's perspective, the adult world must appear very complicated."
             }
           ],
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b2_324",
+          "id": "tobira_l1_grammar_9",
           "pattern": "でしかない",
           "meaning": "Merely, Nothing but, No more than",
           "explanation": "Grammar explanation for でしかない",
@@ -258,29 +1601,20 @@
               "english": "Example sentence."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/negative_presence_ない",
-            "title": "Negative presence: ない",
-            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
-            "examples": [
-              {
-                "japanese": "2.5.5 Negative presence: ない"
-              },
-              {
-                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
-              },
-              {
-                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
-              }
-            ]
-          },
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b2_325",
+          "id": "tobira_l1_grammar_10",
           "pattern": "ことになっている",
           "meaning": "To be expected to, to be scheduled to, to be arranged that",
           "explanation": "The nominalizer こと combined with になっている expresses what is scheduled, arranged, or expected to happen according to a plan or rule. It describes established facts about what is supposed to occur. Common in formal contexts, instructions, and announcements.",
@@ -301,29 +1635,20 @@
               "english": "According to company rules, leave is supposed to be applied for one month in advance."
             }
           ],
-          "maynardRef": {
-            "topicId": "more_grammar/continuative_て_form",
-            "title": "Continuative: て form",
-            "excerpt": "3.2. FURTHER INFLECTIONS 103\n3.2.2 Continuative: て form\nThe continuative in Japanese is also commonly refered to as the \"て form',\nbecause it relies on the 連用形 of classical helper verb for completion, つ,\nwhich is て. This inflection is used for at least three things in Japanese,\nof which verb chaining is probably the most frequently used. Aside from\nthis, it is also used to issue (implied) imperatives, and it can be used in\ncombination with several special verbs to create special constructions.\nba",
-            "examples": [
-              {
-                "japanese": "3.2.2 Continuative: て form"
-              },
-              {
-                "japanese": "The continuative in Japanese is also commonly refered to as the \"て form',"
-              },
-              {
-                "japanese": "because it relies on the 連用形 of classical helper verb for completion, つ,"
-              }
-            ]
-          },
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b2_326",
+          "id": "tobira_l1_grammar_11",
           "pattern": "も～ば～も",
           "meaning": "…And…, Both ... and ..., ... And ... as well",
           "explanation": "Grammar explanation for も～ば～も",
@@ -334,29 +1659,20 @@
               "english": "Example sentence."
             }
           ],
-          "maynardRef": {
-            "topicId": "more_grammar/conditional_たら_なら",
-            "title": "Conditional: たら, なら",
-            "excerpt": "114 CHAPTER 3. MORE GRAMMAR\nform, which can pair up with any verb, fz り gets its inflection specifically\nfrom the verb する, meaning '\"to do\":\nきょう がっこう い じゆぎょう で はん た\n今日は学校に行ったり、 授業に出たり、ご飯を食べたりしました。\n\"Today (I) went to school, went to class and ate.\"\nThis sentence literally reads \"Today I did: going to school, going to\nclass, eating', and shows why this is only listing representative actions -\nthere is no way to distinguish which action occurred when, in relation to\nother actions; we're literally o",
-            "examples": [
-              {
-                "japanese": "form, which can pair up with any verb, fz り gets its inflection specifically"
-              },
-              {
-                "japanese": "from the verb する, meaning '\"to do\":"
-              },
-              {
-                "japanese": "きょう がっこう い じゆぎょう で はん た"
-              }
-            ]
-          },
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b2_327",
+          "id": "tobira_l1_grammar_12",
           "pattern": "に向かって・に向けて",
           "meaning": "Expresses physical direction towards a place or person, or effort and preparation aimed at a goal.",
           "explanation": "に向かって indicates movement or orientation physically towards something or someone, while に向けて more strongly implies purposeful preparation or action directed at a future goal or target audience. Both are used at neutral register in everyday and formal speech. に向けて is particularly common in project, event, or campaign contexts.",
@@ -377,13 +1693,20 @@
               "english": "In his speech, he delivered a powerful message directly to the audience."
             }
           ],
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b2_328",
+          "id": "tobira_l1_grammar_13",
           "pattern": "にしたら",
           "meaning": "Expresses something from the perspective or standpoint of a particular person, indicating how things appear or feel to them.",
           "explanation": "にしたら follows a noun referring to a person or group and expresses that what follows is how things seem, feel, or are judged from that person's perspective. It is similar to にとって (for / to someone) but specifically highlights a subjective viewpoint, often involving feelings or judgments that might differ from others'. Related forms include にしてみれば and にすれば. Register is neutral to slightly informal.",
@@ -404,29 +1727,20 @@
               "english": "From the perspective of a beginner, this operation might feel difficult."
             }
           ],
-          "maynardRef": {
-            "topicId": "more_grammar/conditional_たら_なら",
-            "title": "Conditional: たら, なら",
-            "excerpt": "114 CHAPTER 3. MORE GRAMMAR\nform, which can pair up with any verb, fz り gets its inflection specifically\nfrom the verb する, meaning '\"to do\":\nきょう がっこう い じゆぎょう で はん た\n今日は学校に行ったり、 授業に出たり、ご飯を食べたりしました。\n\"Today (I) went to school, went to class and ate.\"\nThis sentence literally reads \"Today I did: going to school, going to\nclass, eating', and shows why this is only listing representative actions -\nthere is no way to distinguish which action occurred when, in relation to\nother actions; we're literally o",
-            "examples": [
-              {
-                "japanese": "form, which can pair up with any verb, fz り gets its inflection specifically"
-              },
-              {
-                "japanese": "from the verb する, meaning '\"to do\":"
-              },
-              {
-                "japanese": "きょう がっこう い じゆぎょう で はん た"
-              }
-            ]
-          },
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b2_329",
+          "id": "tobira_l1_grammar_14",
           "pattern": "にしても～にしても",
           "meaning": "Used to state that the same conclusion or situation applies no matter which of two options is chosen or assumed.",
           "explanation": "にしても～にしても connects two contrasting options (often antonyms or opposing choices) and asserts that the outcome or judgment is the same in either case. It is neutral in register and works in both spoken and written Japanese. Use it when you want to emphasize that no option changes the result.",
@@ -447,13 +1761,20 @@
               "english": "Whether you buy it or rent it, you should first decide on a budget."
             }
           ],
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b2_330",
+          "id": "tobira_l1_grammar_15",
           "pattern": "にすぎない",
           "meaning": "No more than, Just, Merely",
           "explanation": "Grammar explanation for にすぎない",
@@ -464,107 +1785,210 @@
               "english": "Example sentence."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/negative_presence_ない",
-            "title": "Negative presence: ない",
-            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
-            "examples": [
-              {
-                "japanese": "2.5.5 Negative presence: ない"
-              },
-              {
-                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
-              },
-              {
-                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
-              }
-            ]
-          },
+          "lessonNumber": 1,
           "sourceRef": {
-            "sourceId": "cefr-b2",
-            "pageNumber": 0
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         }
       ],
       "contentBlocks": [
         {
-          "id": "tobira_textbook_1_dialogue_0",
+          "id": "tobira_l1_dialogue_1",
           "type": "dialogue",
           "title": "Dialogue tobira_textbook_1",
           "text": "目次: 刊行よせてi\nOnThe: Publiction of Tobira iii\n日本の地理: 読み物\nちり: 主なトピック...地理、名所、名物、行事、祭、昔話\nめいしよめいぶつきうじまつ: むかしばなし\n読み物: .日本語のスピチスタイル」\nx: だんじょことば\nば: しようりゃくたんしく\nとうち: 電話の会話、Eメルを出す\n読み物: 「人とロボット」\n主なトピック: .ロボット、テクノロの発達、外来語とカタ\nはったつがいらいこ: カ語、タネット辞書の使い方\nしよ: 第4課\n読み物: …「スポツを通して学ぶ心」\n主なトピック: 日本のスポツ、日本の武道、心・技・体の考え方、\nぶどうしんきたい: クブ活動、先輩と後輩\nぜんはいこうはい: 第5課\n日本の食べ物: 読み物\nはつめいものがたり: マンガで読むカップヌドル」\n日本人と宗教: 読み物\nしうきよう: しうきよう\nしんわ: あまいわと\nしうきよう: しうかんきょうじしんこうしんわ\n読み物: 「マンガの神様：手塚治虫」\nてうかおさむ: 本語のオノマトペ」\n主なトピック: 日本のポップカルチ、マガ、手塚マガ、\nてづか: オマトペ、血液型\nけつえきがた: 第8課\n日本の伝統芸能: 読み物\nでんとうげいのう: きょうげん\nわら: 主なトピック.日本の伝統芸能、狂\n課: 199\n日本の教育: 読み物\nきよういく: きよういく\nげんじよう: 主なトピック….日本の教育制度のいい点と問題点、学社会、\nもんだいてんがくきしかい: 受験戦争、いじめ、登校拒否\nじけんせんそう: とうこうきひ",
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "tobira_textbook_1_dialogue_1",
+          "id": "tobira_l1_dialogue_2",
           "type": "dialogue",
           "title": "Dialogue tobira_textbook_1",
           "text": "Tobira: is made up of the following components:\nThe: Overall\nStructure: the separate\ntheTobira: website\nof: Tobira\nthe: textbook\nkanji: practice\nEach: chapter of this textbook contains the following:\nA: pre-reading section that introduces\nAn: explanation of the grammar used in\nStructure: getting\nstudents: to the chapter's topic through\ngrammar: the readings and dialogues, followed by\nstarted: discussion, information gathering via\nnotes: additional example sentences to clarify\nthe: Internet and other activities.\nA: set of materials to facilitate reading a\nreading: A list of kanji that students should be\nlong: text and studying new vocabulary,\nable: to either write and read or just\nkanji: list\nread: vocabulary list\nA: set of dialogues or discussion to\nAn: explanation of grammar items\nfacilitate: studying the phrases and\nlanguage: discussion\nor: expressions that are commonly\ngrammar: used in conversational\nnotes: misused.\nvocabulary: list\nExercises: in speaking, including\nA: discussion of an aspect of Japanese\nconversation: culture\nculture: related to the topic of the\npair: work, role plays and student\nnotes: chapter.\npresentations: presentation\nVocabulary: lists include all new terms that appear in the reading or the conversation/\ndiscussion: section of each chapter. Terms that are included in the vocabulary list for the\nVocabulary: reading are not included in the vocabulary list for the dialogue in the chapter. The grammar\nLists: items are not included in the vocabulary lists:\nVocabulary: list content\nthe: item appears\nline: \"F\"indicates an item on\nthe: first page of the chapter.\nことわる: u-Vt\nto: refuse; decline断り(N)refusal\nDrawing: mainly on Japanese Language Proficiency Test (JLPT) Level 2 terms\nThe: meaning used in the\nJapanese: life, we have chosen 50 to 70 words from each chapter's vocabulary list\nand: expressions that\nfor: students to memorize;1 these items appear in bold type.\ninclude: the item are given.\nVerbs: are listed on vocabulary lists with the particles that often accompany them;\nthese: particles appear in parentheses before the verb.\nかんこう: • Na-adjectives and no-adjectives that are used as adverbs in the text appear on\nvocabulary: lists as adjectives.\nず: ”徳弘康代(2008）『本語学習者のためのよく使う順漢字2100三省堂",
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 17
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "tobira_textbook_1_dialogue_2",
+          "id": "tobira_l1_dialogue_3",
           "type": "dialogue",
           "title": "Dialogue textbook_tobira_textbook_1",
           "text": "使い方: Abbreviations used in vocabulary lists\nAbbreviation: Meaning\nAbbreviation: Meaning\nN: noun\nVN: the noun portion of a suru-verb\nintransitive: u-verb\ntransitive: u-verb\nintransitive: ru-verb\ntransitive: ru-verb\nirregular: verb\nA: i-adjective\nANa: na-adjective\nANo: no-adjective\nirregular: adjective\nAn: non-conjugational adjective\nadverb: (including the\nAdv: DemP\ndemonstrative: pronoun\nadverbial: forms of adjectives)\nDemA: demonstrative adjective\nConj: conjunction\nPrt: particle\nCtr: counter word\nPref: prefix\nSuf: suffix\nPhr: phrase\nInt: interjection\nAdjectives: which require の when they modify nouns. No-adjectives and t are connected in the\nsame: way as nouns and are connected.(See p.183言語卜9/形容詞(no-adjective)].)\nSymbol: Meaning\nExamples: [term]- prefix\nsuffix: -的；-達\na: word that does not appear in the text but\nmay: be useful in discussion\nPoliteness: Level\nConversations: are divided into three levels of politeness, each marked with a corresponding\nConversation: number of ★ symbols.\nPairWork: Level\nContent: Style\nand: Polite language (honorific forms, desu/masu forms, etc.) is\nRole: Play\nusually: not used in casual speech. This level of politeness\nis: appropriate for conversations with people in one's in-\nCasual: speech\ngroup: (family, friends, and others with whom one has a close\nCharacterized: by the use of polite language, with the exception\nof: honorific forms. This level of politeness is appropriate for\nconversations: with people in one's out-group (those one doesn't\nknow: well) or in formal situations at work, in class presentations,\netc: Characterized by the use of extremely polite expressions,\nHonorific: language\nincluding: honorific forms (i.e., respectful and humble language)\nand: and word beautification (e.g.,お飲物). This level ofpoliteness\nis: generally used with one's elders and superiors.\nin: the chapter's dialogues. Content is related to the chapter's readings and dialogues.\npracticed: in the model conversations.\nhave: practiced in the model conversations and practice questions.",
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 18
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "tobira_textbook_1_dialogue_3",
+          "id": "tobira_l1_dialogue_4",
           "type": "dialogue",
           "title": "Dialogue tobira_textbook_1",
           "text": "使い方: Correspondence with Textbook Chapters\nThe: LPO units correspond with the chapters of the textbook as follows:\nTextbook: Chapter\nLPO: Unit and Communication Skill(s)\nUnit: 1: Aizuchi\nUnit: 3:Contracted Forms\nUnit: 4: Apologizing\nUnit: 5: Making Requests; Expressing Gratitude\nUnit: 6: Seeking Advice\nUnit: 7: Giving and Receiving Compliments\nUnit: 8: Asking for and Receiving Information\nUnit: 9: Masculine Expressions\nChapters: 14&15\nUnit: 10: Expressing Opinions; Agreeing; Disagreeing\nTobira: Site is designed to work in tandem with this textbook, using different media to\nprovide: a variety of supplementary learning materials as well as additional information on\nTobira: Site\ntopics: covered within the text.\nTobira: Site is set up for individual registration. Students can register and login at\nhttp: //tobira.9640.jp/tobiralogin\nAudio: Learning Materials\nStudents: can download audio fles for each chapter's Reading(s), Dialogue(s)/Discussion and\nVocabulary: Lists, as well as the Model Conversations in the Conversation Practice section.\nSections: with recordings are marked in the textbook with the\nsymbol: Video Learning Materials\nStudents: can watch streaming clips of video related to the topic in each chapter. A content\nquestion: sheet is available for each video, easily accessible from a link above the video screen.\nsupplementary: learning materials.\ntopic: of each chapter.\nand: exchange opinions and information.\nContents: of Tobira Site\nLearning: Materials\nInformation: LPO Materials\nAudio: Learning\nMaterials: Related Websites\nVideo: Learning\nMaterials: Introduction of\nRelated: Articles\nKanji: Practice\nWriting: Tobira no Wa",
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 22
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "tobira_textbook_1_dialogue_4",
+          "id": "tobira_l1_dialogue_5",
           "type": "dialogue",
           "title": "Dialogue textbook_tobira_textbook_1",
           "text": "b: 読み物\n主なトピック: 地理、名所、名物、行事、\nめいしよ: めいふう\nきようじ: むかしはなし\n会話文: 質問をする/聞き返す",
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 23
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "tobira_textbook_1_dialogue_5",
+          "id": "tobira_l1_dialogue_6",
           "type": "dialogue",
           "title": "Dialogue textbook_tobira_textbook_1",
           "text": "日本の: 伝統工芸\nこうげい: 読み物\nわし: 主なトピック\nわし: とくせいせんはうる\n会話文: ものの作り方を紹介する\n発表: ものの作方、使い方、仕方などについて\n発表する: 文化ノート\nものづくりニッポン: 言語ノート\nThe: absenceofparticles(無助詞)",
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 289
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "tobira_textbook_1_dialogue_6",
+          "id": "tobira_l1_dialogue_7",
           "type": "dialogue",
           "title": "Dialogue textbook_tobira_textbook_1",
           "text": "会話文: ものの作り方を紹介する\n会話文: 折り紙の「鶴」の作方と千羽鶴について勇太とモ二力が話している。\nせんはう: ゆラた\nモ二カ: 勇太、何やってんの?あっ、折り紙?\nうた: 勇太うん。鶴を折ってるんだ。\nモ二力: へえ、鶴って英語で何?\nA: 勇太：Crane\nモ二力: そ言えば、鶴のよに見えるね。\nつる: 私も作ってみてもいい?\n勇太: いいよ。じや、この紙、使って。\nモ二力: ありがとう。ね、この紙、ちよっと変わって\nさわ: 勇太：これは「和紙」って言って、日本の伝統的\nモ二力: へえ。私も使ってもいいのかなあ。\n勇太: もちろんだよ。紙は見るだけじやなくて、\n日: モ二カ：うん、確かにそうだね。\n勇太: じや、折り方の絵を見ながら、折ってみよ\nモ二カ: はい。こう?\n勇太: うん、そう。で、今度は、Aを開いて、の先との先を合わせる。\nモ二カ: こうするの?\n勇太: そそう。それから、③番をひっくり返して、も同じよにすると④番の形ができ\nモ二力: えっ、ちよっと複雑。もう一度やってみて。あ、できた。\n先: 合わせる\n没って: おがみ",
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 296
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "tobira_textbook_1_dialogue_7",
+          "id": "tobira_l1_dialogue_8",
           "type": "dialogue",
           "title": "Dialogue textbook_tobira_textbook_1",
           "text": "第: 日本の伝統工芸\n課: 単語表\n太字覚える単語: 会話文\nおりがみ: origami (paper folding)\nつる: crane|千羽鹤（N）(string of)1000 paper cranes\nN: 3(紙を)折る\nおる: u-Vtto fold (paper)\nみえる: ru-Vi\nto: appear; seem\nDemP: like this; this way\nあわせる: ru-Vtt\nto: put together; fit in\nto: turn over; knock over; overturn\nそう: u-Vi\nto: follow\nがわ: Suf\nside: 14(~に)分かれる\nわかれる: to branchoff divide into; split\nN: tail [animal]\nまげる: ru-Vt\nto: fold down; bend\nbreath: 20(~を)吹く\nto: blow; play (fute, etc.)\nto: blow up; infl ate\nできあがる: u-Vi\nto: be fnished; be ready|出来上がり(N) fnish\nCtr: [counter for birds/rabbits]\nなおる: u-Vi\nto: get well; be cured\nto: tie;connect\natomic: bomb\nto: encounter [undesirable nuance]\nhospital: room\nANa: small [used only as a noun modifier]\nsuffering: from the bombing|(~が)被爆する\natomic: bomb sickness",
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 299
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l1_dialogue_9",
+          "type": "dialogue",
+          "title": "Dialogue textbook_tobira_textbook_1",
+          "text": "内容質問: 読み物を読んだ後で、考えてみよう。\n小: ことを知っていましたか。何でそのことを知りましたか。\nかく: 的で何に使われていますか。の中に話し合ったことのキーワードを入れなさい。\nかくへいき: 核爆弹(nuclear bomb)\nかくはくだん: (b)\nげんしょくうでん: (c)\nかくねんりょう: (d)その他\nかく: 278",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 300
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l1_dialogue_10",
+          "type": "dialogue",
+          "title": "Dialogue textbook_tobira_textbook_1",
+          "text": "本文: 。ほとんどの電気製品がこなしでは動かないのだそうです。【読:1.24-25】\n說明: form a predicate.\n英訳: without~; with no~\n文型: Nなし{でIの/だ}\n例文: 3.あのレストランは週末は混んでいるけど、今日は水曜日だから、予約なしでも大丈夫だろう。\nだいじようぶ: 4.ダイエット中だから、今日はデザトなしだ。\n說明: emphasizes the preceding word, phrase or clause. Whenis used, the particles,anddrop.\n英訳: the very ~; It is that ~; in particular; precisely; definitely; only (when, by doing~, etc.)\nb: V-teこそ：（日本語で)話してこそ\nB: こちらこそ、どうぞよろしくお願いします。\n例文: 2.今年こそ日本に留学したいと思っている。\nThe: compound verb base 込む can mean the following:\na: Taking or putting something/someone into something(Exs.飲み込む;取り込む;つめ込む;押し込む)\n説明: b.Gettinginto something(Exs.入り込む;乗り込む;飛び込；あがり込む)\nお: c.Beingheavilyinvolved in something(Exs.考込む；話込む;寝込む)\nd: Doing somethingthoroughly or completely(Exs.教込;思込;信込)\n英訳: in; into; deeply; heavily; thoroughly; completely\n文型: V-masu込む\nしょるい: じうしよ\n例文: 3.日本の電車のアナウンスでは、よく「かけ込み乗車(rushing aboard)はおやめ下さい」と言う。\nじようしや: 4.昨日は、久しぶりに会った友達と一晩中話し込んで、徹夜してしまった。\nひさ: てっや\n本文: それからさ、千羽鶴は平和のシンボルでもあるんだよ。【会:1.49】\nせんはうる: さoccurs after phrases, clauses or sentences in very casual conversation. One function is to catch the\n説明: hearer's attention, but it is also used as a filler with no meaning.\n英訳: (you know)\n文型: phrase/clause/sentenceさ",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 306
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l1_dialogue_11",
+          "type": "dialogue",
+          "title": "Dialogue textbook_tobira_textbook_1",
+          "text": "a: Nのまま:Tシャツのまま;子供のまま\nb: DemAまま：このまま;そのまま；あのまま\n文型: C.Aまま：冷たいまま\nd: ANaなまま：きれいなまま\ne: V-plain.pastまま：置いたまま；作っまま\nおんだんか: 2.あのまま日本に残っていたら、もっと日本語が上手になっただろう。\n例文: 3.このお菓子は、冷たいま食べるより、電子レンジで温めた方がおいしく食べられますよ。\nか: 4.疲れていたので、電気をつけたまま寝てしまった。ネクタイもしたままだった。\nつか: 5.日本の家には、靴を履いたまま入ってはいけないということ知っていましたか。\nThe: absence of particles\nむじよし: Some particles often drop in casual conversation. (a)—(g) are examples where は drops.\na: このケーキの、おいしいね。(=このケーキは)\nb: この映画、面白いよ。(=この映画は)\nC: あの人、先生?（一あの人は)\nd: そのコートの、いくらだった?(=そのコートは)\ne: この、昨日デパートのセールで買ったんだ。(=これは)\nf: はるかの、明日のパ一テイに行く?(=はるか(You))\ng: 僕、来年日本へ行くんだ。(=僕は)\nAs: seen above,  tends to drop when the topic noun is a demonstrative noun(こ，それ,),a\nnoun: phrase with a demonstrative adjective(この/その/あのN) or anoun referring to the speaker or\nthe: hearer.\nNote: that t never drops even in casual conversation when  marks contrastive elements. For example,\nusing: は. In these cases, は never drops.\nん: あのパイはまずいけど、このケーキはおいしいね。\nようじ: Additionally,を, and the directional 二 often drop in casual conversation, as seen in (j)–(n).\nk: 今、何0、してるの?(=何を)\nm: どこ、行<の?(=どこ{/に)\nn: 今晚、映画0、行かない？(=映画{△/に})\nAs: seen above, these particles tend to drop more often in questions.",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 308
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l1_dialogue_12",
+          "type": "dialogue",
+          "title": "Dialogue textbook_tobira_textbook_1",
+          "text": "読み物: 「私と先生」俳句：世界一短詩」\nはいく: 主なトピック\nびょうし: はいく\n会話文: 話を発展させる\nいか: かんそう\n発表: インタビーをして発表する\nわかたんか: まんようしう",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 311
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         }
       ],
@@ -576,6 +2000,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -585,6 +2015,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -594,6 +2030,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -603,6 +2045,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -612,6 +2060,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -621,6 +2075,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -630,6 +2090,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -639,6 +2105,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -648,6 +2120,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -657,6 +2135,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -666,6 +2150,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -675,6 +2165,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -684,6 +2180,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -693,6 +2195,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -702,6 +2210,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -711,6 +2225,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -720,6 +2240,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -729,6 +2255,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -738,6 +2270,12 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -747,189 +2285,17 @@
           "sourceRef": {
             "sourceId": "tobira_textbook",
             "pageNumber": 6
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_21",
-          "label": "practice",
-          "prompt": "主なトピック…..宗教、宗教的習慣、行事、信仰、神話",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 6
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_22",
-          "label": "practice",
-          "prompt": "しうかんきょうじしんこうしんわ",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 6
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_23",
-          "label": "practice",
-          "prompt": "日本のポップカルチャー",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 6
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_24",
-          "label": "practice",
-          "prompt": "「マンガの神様：手塚治虫」",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 6
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_25",
-          "label": "practice",
-          "prompt": "主なトピック.日本のポップカルチ、マガ、手塚マガ、",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 6
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_26",
-          "label": "practice",
-          "prompt": "主なトピック.日本の伝統芸能、狂",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 6
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_27",
-          "label": "practice",
-          "prompt": "でんとうげいのうきようげん",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 6
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_28",
-          "label": "practice",
-          "prompt": ".「日本の教育の現状」",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 6
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_29",
-          "label": "practice",
-          "prompt": "主なトピック….日本の教育制度のいい点と問題点、学社会、",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 6
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_30",
-          "label": "practice",
-          "prompt": "もんだいてんがくきしかい",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 6
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_31",
-          "label": "practice",
-          "prompt": "受験戦争、いじめ、登校拒否",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 6
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_147",
-          "label": "practice",
-          "prompt": "Students' Guide to Using Tobira",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 17
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_148",
-          "label": "practice",
-          "prompt": "Tobira is made up of the following components:",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 17
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_149",
-          "label": "practice",
-          "prompt": "The Overall",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 17
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_150",
-          "label": "practice",
-          "prompt": "the separate",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 17
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_151",
-          "label": "practice",
-          "prompt": "theTobira website",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 17
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_152",
-          "label": "practice",
-          "prompt": "the textbook",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 17
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_153",
-          "label": "practice",
-          "prompt": "kanji practice",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 17
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_154",
-          "label": "practice",
-          "prompt": "Each chapter of this textbook contains the following:",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 17
-          }
-        },
-        {
-          "id": "tobira_textbook_tobira_textbook_1_exercise_155",
-          "label": "practice",
-          "prompt": "A pre-reading section that introduces",
-          "sourceRef": {
-            "sourceId": "tobira_textbook",
-            "pageNumber": 17
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.329Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         }
-      ]
+      ],
+      "qualityTier": "gold",
+      "appLessonId": "tobira_textbook_1"
     }
   ]
 }

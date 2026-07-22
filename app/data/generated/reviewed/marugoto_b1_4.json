@@ -1,0 +1,458 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_b1",
+  "title": "Marugoto B1: Intermediate 1",
+  "edition": "learner-gold",
+  "levelRange": "B1",
+  "sources": [
+    {
+      "sourceId": "marugoto_b1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "d81948636c448b583ea3b99b908addcc1e79ec458e2c279c600e606b926b85fe",
+        "bytes": 148164767
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_b1_lesson_4",
+      "unitType": "lesson",
+      "lessonNumber": 4,
+      "title": "Marugoto B1: Intermediate 1 — Lesson 4",
+      "level": "B1",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_b1_l4_grammar_1",
+          "pattern": "に関する・に関して",
+          "meaning": "Marks the topic or subject matter that something is about, related to, or concerned with.",
+          "explanation": "に関する is an attributive form used directly before a noun ('information regarding X'), while に関して is an adverbial form used before a verb or at a clause boundary ('regarding X, …'). Both are more formal and precise than について and are common in academic, business, and journalistic writing. They typically follow a noun.",
+          "examples": [
+            {
+              "japanese": "環境問題に関する資料を集めています。",
+              "reading": "かんきょうもんだいにかんするしりょうをあつめています。",
+              "english": "I am gathering materials related to environmental issues."
+            },
+            {
+              "japanese": "この件に関して、詳しく説明していただけますか。",
+              "reading": "このけんにかんして、くわしくせつめいしていただけますか。",
+              "english": "Could you explain this matter in detail?"
+            },
+            {
+              "japanese": "新しい規則に関するお知らせが届いた。",
+              "reading": "あたらしいきそくにかんするおしらせがとどいた。",
+              "english": "A notice regarding the new rules has arrived."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.720Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l4_grammar_2",
+          "pattern": "に対して",
+          "meaning": "Expresses contrast between two things, or indicates that an action or attitude is directed toward something.",
+          "explanation": "に対して connects two clauses or noun phrases to show opposition or contrast (similar to 'whereas' or 'while'), or to indicate the target of an action, feeling, or attitude ('toward', 'regarding'). It is neutral in register and works in both spoken and written Japanese. The contrast usage typically pairs opposite subjects; the directional usage describes responses, reactions, or stances.",
+          "examples": [
+            {
+              "japanese": "兄は内向的なのに対して、弟はとても社交的だ。",
+              "reading": "あにはないこうてきなのにたいして、おとうとはとてもしゃこうてきだ。",
+              "english": "My older brother is introverted, whereas my younger brother is very sociable."
+            },
+            {
+              "japanese": "先生の質問に対して、学生たちは黙っていた。",
+              "reading": "せんせいのしつもんにたいして、がくせいたちはだまっていた。",
+              "english": "In response to the teacher's question, the students stayed silent."
+            },
+            {
+              "japanese": "去年の売上が100万円だったのに対して、今年は200万円になった。",
+              "reading": "きょねんのうりあげがひゃくまんえんだったのにたいして、ことしはにひゃくまんえんになった。",
+              "english": "Last year's sales were one million yen, whereas this year they reached two million yen."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.720Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l4_grammar_3",
+          "pattern": "おかげで",
+          "meaning": "Expresses gratitude or positive outcome attributed to someone or something.",
+          "explanation": "おかげで follows a noun plus の, a な-adjective plus な, or a plain verb form and indicates that something good happened as a result of another person's help or a favorable circumstance. It carries a tone of genuine appreciation. While it usually expresses positive results, it can be used sarcastically to express a negative outcome.",
+          "examples": [
+            {
+              "japanese": "先生のおかげで、試験に合格することができました。",
+              "reading": "せんせいのおかげで、しけんにごうかくすることができました。",
+              "english": "Thanks to my teacher, I was able to pass the exam."
+            },
+            {
+              "japanese": "毎日練習したおかげで、上手になりました。",
+              "reading": "まいにちれんしゅうしたおかげで、じょうずになりました。",
+              "english": "Thanks to practicing every day, I got better."
+            },
+            {
+              "japanese": "雨が降ったおかげで、涼しくなりましたね。",
+              "reading": "あめがふったおかげで、すずしくなりましたね。",
+              "english": "Thanks to the rain, it got cooler, didn't it."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.720Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l4_grammar_4",
+          "pattern": "てもかまわない",
+          "meaning": "It doesn't matter if..., I don't mind if...",
+          "explanation": "This pattern expresses indifference or gives permission. It follows verbs/adjectives in te-form and indicates that something is acceptable or that the speaker doesn't care about the consequence. Used in both polite and casual contexts to express tolerance or permission.",
+          "examples": [
+            {
+              "japanese": "明日来なくてもかまいません。",
+              "reading": "あしたこなくてもかまいません。",
+              "english": "It's fine if you don't come tomorrow."
+            },
+            {
+              "japanese": "何を飲んでもかまいません。",
+              "reading": "なにをのんでもかまいません。",
+              "english": "I don't mind what you drink."
+            },
+            {
+              "japanese": "間違っていてもかまわない。",
+              "reading": "まちがっていてもかまわない。",
+              "english": "It doesn't matter if it's wrong."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.720Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l4_grammar_5",
+          "pattern": "といえば",
+          "meaning": "Used to bring up a related topic or to identify the most typical example associated with something, meaning 'speaking of' or 'when it comes to'.",
+          "explanation": "といえば follows a noun or short phrase to introduce a topic that was just mentioned or implied, often associating it with what typically comes to mind. It can also be used hypothetically. This expression appears in both casual and formal contexts and is a natural topic-shifter in conversation.",
+          "examples": [
+            {
+              "japanese": "夏といえば、花火大会だよね。",
+              "reading": "なつといえば、はなびたいかいだよね。",
+              "english": "Speaking of summer, it's all about fireworks festivals, right?"
+            },
+            {
+              "japanese": "日本料理といえば、寿司や天ぷらが有名です。",
+              "reading": "にほんりょうりといえば、すしやてんぷらがゆうめいです。",
+              "english": "When it comes to Japanese food, sushi and tempura are famous."
+            },
+            {
+              "japanese": "彼女といえば、いつも笑顔だね。",
+              "reading": "かのじょといえば、いつもえがおだね。",
+              "english": "Speaking of her, she's always smiling."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.720Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l4_grammar_6",
+          "pattern": "わけではない",
+          "meaning": "Denies or softens an implication, clarifying that something is not entirely the case.",
+          "explanation": "わけではない (also わけじゃない in casual speech) is used to partially negate a statement — the speaker pushes back on an assumption or implication without a full flat denial. It is often used mid-conversation to clarify a misunderstanding ('I'm not saying that…', 'It's not like…'). It attaches to the plain form of verbs and adjectives or noun + な.",
+          "examples": [
+            {
+              "japanese": "嫌いなわけではないけど、毎日は食べたくない。",
+              "reading": "きらいなわけではないけど、まいにちはたべたくない。",
+              "english": "It's not that I dislike it, but I don't want to eat it every day."
+            },
+            {
+              "japanese": "全部わかるわけではないので、もう少し説明してもらえますか。",
+              "reading": "ぜんぶわかるわけではないので、もうすこしせつめいしてもらえますか。",
+              "english": "It's not like I understand everything, so could you explain a bit more?"
+            },
+            {
+              "japanese": "忙しいわけではないが、なんとなくやる気が出ない。",
+              "reading": "いそがしいわけではないが、なんとなくやるきがでない。",
+              "english": "It's not that I'm busy; I just somehow can't get motivated."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.720Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l4_grammar_7",
+          "pattern": "ばかりに",
+          "meaning": "Indicates that one regrettable or negative outcome was caused solely by a single action, state, or circumstance.",
+          "explanation": "ばかりに follows a plain verb (past or non-past) or a noun/adjective construction and expresses that the sole, unfortunate cause of a bad outcome is what precedes it. It carries a strong nuance of regret: if only that one thing had not happened, the bad result would have been avoided. It is primarily used in written and formal-spoken Japanese.",
+          "examples": [
+            {
+              "japanese": "一言余計なことを言ったばかりに、友達を怒らせてしまった。",
+              "reading": "ひとことよけいなことをいったばかりに、ともだちをおこらせてしまった。",
+              "english": "Just because I said one unnecessary thing, I ended up making my friend angry."
+            },
+            {
+              "japanese": "地図を確認しなかったばかりに、全然違う場所に行ってしまった。",
+              "reading": "ちずをかくにんしなかったばかりに、ぜんぜんちがうばしょにいってしまった。",
+              "english": "Simply because I didn't check the map, I ended up going to a completely wrong place."
+            },
+            {
+              "japanese": "有名なばかりに、どこへ行っても声をかけられて大変だ。",
+              "reading": "ゆうめいなばかりに、どこへいってもこえをかけられてたいへんだ。",
+              "english": "Simply because she is famous, people call out to her wherever she goes and it's exhausting."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.720Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l4_grammar_8",
+          "pattern": "だらけ",
+          "meaning": "Completely covered in, Full of",
+          "explanation": "Grammar explanation for だらけ",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.720Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l4_grammar_9",
+          "pattern": "から言うと",
+          "meaning": "Speaking in terms of, From the point of view of, In terms of",
+          "explanation": "This pattern introduces the perspective, standard, or criteria by which something is being judged or discussed. It marks the starting point for an evaluation or statement. Common in discussions and analyses where establishing the frame of reference is important.",
+          "examples": [
+            {
+              "japanese": "環境から言うと、電車を使う方がいい。",
+              "reading": "かんきょうからいうと、でんしゃをつかうほうがいい。",
+              "english": "From an environmental perspective, it's better to use the train."
+            },
+            {
+              "japanese": "値段から言うと、このレストランは高い。",
+              "reading": "ねだんからいうと、このれすとらんはたかい。",
+              "english": "In terms of price, this restaurant is expensive."
+            },
+            {
+              "japanese": "言語の難易度から言うと、日本語は中級程度だ。",
+              "reading": "げんごのなんいどからいうと、にほんごはちゅうきゅうていどだ。",
+              "english": "In terms of language difficulty, Japanese is intermediate level."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.720Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l4_grammar_10",
+          "pattern": "ことか",
+          "meaning": "How…, What..., God knows...",
+          "explanation": "Grammar explanation for ことか",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.720Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l4_grammar_11",
+          "pattern": "んだって",
+          "meaning": "Conveys information the speaker heard second-hand, equivalent to 'I heard that…' or 'apparently…'",
+          "explanation": "んだって (a contraction of のだって or というのだって) is used in casual spoken Japanese to report something you heard from someone else. It attaches to the plain form of verbs and adjectives or nouns (+ な). It is purely informal and used in everyday conversation among friends and family; avoid it in formal contexts.",
+          "examples": [
+            {
+              "japanese": "田中さん、来月結婚するんだって。",
+              "reading": "たなかさん、らいげつけっこんするんだって。",
+              "english": "I heard Tanaka-san is getting married next month."
+            },
+            {
+              "japanese": "あのお店、今日は休みなんだって。",
+              "reading": "あのおみせ、きょうはやすみなんだって。",
+              "english": "Apparently that shop is closed today."
+            },
+            {
+              "japanese": "彼、新しい仕事がかなり大変なんだって。",
+              "reading": "かれ、あたらしいしごとがかなりたいへんなんだって。",
+              "english": "I heard his new job is pretty tough."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.720Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l4_grammar_12",
+          "pattern": "に取って",
+          "meaning": "Expresses something from someone's point of view or for whose benefit something exists.",
+          "explanation": "This pattern indicates whose perspective or situation is being discussed. It shows how something affects, benefits, or appears to a particular person or group. Used in both formal and casual contexts to establish the subject's standpoint or interest.",
+          "examples": [
+            {
+              "japanese": "子どもに取って、学校は楽しい場所です。",
+              "reading": "こどもにとって、がっこうはたのしいばしょです。",
+              "english": "For children, school is a fun place."
+            },
+            {
+              "japanese": "私に取って、この仕事は大事です。",
+              "reading": "わたしにとって、このしごとはだいじです。",
+              "english": "For me, this job is important."
+            },
+            {
+              "japanese": "多くの人に取って、英語は難しい言葉です。",
+              "reading": "おおくのひとにとって、えいごはむずかしいことばです。",
+              "english": "For many people, English is a difficult language."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.720Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l4_grammar_13",
+          "pattern": "さえ",
+          "meaning": "Marks the most extreme or unlikely case in a series, emphasizing that if even that case is true, then everything else certainly is.",
+          "explanation": "This particle emphasizes extreme or unexpected cases. It suggests that if the most unlikely candidate can do something, then surely others can too. Used with nouns and before the verb, it's common in both speech and writing at B1 level and above.",
+          "examples": [
+            {
+              "japanese": "子どもさえ、このゲームができます。",
+              "reading": "こどもさえ、このげーむができます。",
+              "english": "Even a child can play this game."
+            },
+            {
+              "japanese": "私さえ、このテストに合格しました。",
+              "reading": "わたしさえ、このてすとにごうかくしました。",
+              "english": "Even I passed this test."
+            },
+            {
+              "japanese": "彼さえ知りません。",
+              "reading": "かれさえしりません。",
+              "english": "Even he doesn't know."
+            }
+          ],
+          "lessonNumber": 4,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.720Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_b1_4"
+    }
+  ]
+}

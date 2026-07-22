@@ -1,0 +1,366 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a2",
+  "title": "Marugoto A2: Katsudoo (Elementary 2)",
+  "edition": "learner-gold",
+  "levelRange": "A2",
+  "sources": [
+    {
+      "sourceId": "marugoto_a2_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "87befe524f5f78113f32b3397bcd6b6f15a2bdcf16f20a9763e684fa556ca5b5",
+        "bytes": 35694565
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a2_lesson_15",
+      "unitType": "lesson",
+      "lessonNumber": 15,
+      "title": "Marugoto A2: Katsudoo (Elementary 2) — Lesson 15",
+      "level": "A2",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a2_l15_grammar_1",
+          "pattern": "ほかに(も)・ほか(に)は",
+          "meaning": "Expresses 'other,' 'another,' 'besides,' or 'in addition to'.",
+          "explanation": "ほかに and ほか are used to list additional items, alternatives, or things besides what has been mentioned. ほかに(も) adds an additional item; ほか(に)は contrasts items or sets up a new topic. This expression is essential for making lists and comparisons.",
+          "examples": [
+            {
+              "japanese": "ほかに何かありますか。",
+              "reading": "ほかになにかありますか。",
+              "english": "Is there anything else?"
+            },
+            {
+              "japanese": "コーヒーのほかに、紅茶もあります。",
+              "reading": "こーひーのほかに、こうちゃもあります。",
+              "english": "Besides coffee, we also have tea."
+            },
+            {
+              "japanese": "日本語のほかに、韓国語も勉強しています。",
+              "reading": "にほんごのほかに、かんこくごもべんきょうしています。",
+              "english": "Besides Japanese, I'm also studying Korean."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.670Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l15_grammar_2",
+          "pattern": "でできる・からできる",
+          "meaning": "Indicates what something is made from (material or origin).",
+          "explanation": "This pattern shows the material or origin of something. で indicates the material or substance (e.g., wood, metal), while から indicates the source or origin (where something comes from). Both are used with できている or できています to show composition.",
+          "examples": [
+            {
+              "japanese": "このテーブルは木でできています。",
+              "reading": "このてーぶるはきでできています。",
+              "english": "This table is made of wood."
+            },
+            {
+              "japanese": "このジュースはぶどうからできています。",
+              "reading": "このじゅーすはぶどうからできています。",
+              "english": "This juice is made from grapes."
+            },
+            {
+              "japanese": "このセーターは羊毛でできています。",
+              "reading": "このせーたーはようもうでできています。",
+              "english": "This sweater is made of wool."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.670Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l15_grammar_3",
+          "pattern": "なん + counter + か",
+          "meaning": "The question form of a counter (何 + counter + か) means 'some' or 'several' without specifying exact number.",
+          "explanation": "This pattern combines 何 (what/some) with a counter and か to indicate an unspecified but small quantity. Used when the exact number is unclear or unimportant. Common in both spoken and written Japanese.",
+          "examples": [
+            {
+              "japanese": "何人か来ました。",
+              "reading": "なんにんかきました。",
+              "english": "Several people came. / Some people came."
+            },
+            {
+              "japanese": "何冊か本を読みました。",
+              "reading": "なんさつかほんをよみました。",
+              "english": "I read several books. / I read a few books."
+            },
+            {
+              "japanese": "何日かかかります。",
+              "reading": "なんにちかかかります。",
+              "english": "It will take several days. / It takes a few days."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.670Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l15_grammar_4",
+          "pattern": "がみられる",
+          "meaning": "Used to express that something can be seen, observed, or witnessed",
+          "explanation": "がみられる is a potential passive form expressing that something is observable or can be witnessed. The subject marked by が is what can be seen or observed. This form is often used in academic, scientific, or formal contexts to describe observable phenomena or trends.",
+          "examples": [
+            {
+              "japanese": "ここではいろいろな野鳥が見られます。",
+              "reading": "ここではいろいろなやちょうがみられます。",
+              "english": "Various wild birds can be seen here."
+            },
+            {
+              "japanese": "最近、新しい技術の発展が見られています。",
+              "reading": "さいきん、あたらしいぎじゅつのはってんがみられています。",
+              "english": "Recently, the development of new technology can be observed."
+            },
+            {
+              "japanese": "その地域では大きな変化が見られました。",
+              "reading": "そのちいきではおおきなへんかがみられました。",
+              "english": "In that region, a major change was observed."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.670Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l15_grammar_5",
+          "pattern": "まい～のように",
+          "meaning": "Almost every ~, Nearly every ~, On a ~ basis",
+          "explanation": "Indicating that something happens almost every time.",
+          "examples": [
+            {
+              "japanese": "毎日のように雨が降っている。",
+              "reading": "まいにちのようにあめがふっている。",
+              "english": "It's raining almost every day."
+            },
+            {
+              "japanese": "毎週のように新しい製品が発表される。",
+              "reading": "まいしゅうのようにあたらしいせいひんがはっぴょうされる。",
+              "english": "New products are announced almost weekly."
+            },
+            {
+              "japanese": "毎月のように価格が変わる。",
+              "reading": "まいげつのようにかかくがかわる。",
+              "english": "The price changes almost monthly."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.670Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l15_grammar_6",
+          "pattern": "ように",
+          "meaning": "Used to express the purpose, intent, or desired result of an action or change",
+          "explanation": "ように indicates what someone is trying to achieve or what result they hope for. It can follow action verbs to show purpose or state verbs to show desired result. The main verb determines the politeness level.",
+          "examples": [
+            {
+              "japanese": "毎日運動するようにしています。",
+              "reading": "まいにちうんどうするようにしています。",
+              "english": "I'm trying to exercise every day."
+            },
+            {
+              "japanese": "時間に遅れないようにしてください。",
+              "reading": "じかんにおくれないようにしてください。",
+              "english": "Please make sure you're not late."
+            },
+            {
+              "japanese": "雨が降らないように祈っています。",
+              "reading": "あめがふらないようにいのっています。",
+              "english": "I'm praying that it won't rain."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.670Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l15_grammar_7",
+          "pattern": "んだけど・んですが",
+          "meaning": "A construction that explains reasons, contrasts, or provides context in a gentle or polite way.",
+          "explanation": "んだけど and んですが are explanatory particles combined with conjunctions, used to softly introduce reasons or mild contradictions. んです adds emphasis or explanation, and けど/が add a 'but' or 'and' nuance. This is common in conversational Japanese for natural dialogue at the A2 level.",
+          "examples": [
+            {
+              "japanese": "実は、昨日は疲れていたんですが、今日は大丈夫です。",
+              "reading": "じつは、きのう は つかれて いた んです が、きょう は だいじょうぶ です。",
+              "english": "Actually, I was tired yesterday, but I'm fine today."
+            },
+            {
+              "japanese": "申し訳ないんですが、明日は来られないんです。",
+              "reading": "もうしわけ ない んです が、あした は こられない んです。",
+              "english": "I'm sorry, but I can't come tomorrow."
+            },
+            {
+              "japanese": "このレストランは安いんですが、とても美味しいんです。",
+              "reading": "この レストラン は やすい んです が、とても おいしい んです。",
+              "english": "This restaurant is inexpensive, and it's really delicious."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.670Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l15_grammar_8",
+          "pattern": "それで",
+          "meaning": "Because of that, So?, And then?, Therefore, With that",
+          "explanation": "Grammar explanation placeholder.",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.670Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l15_grammar_9",
+          "pattern": "Number/Amount + は",
+          "meaning": "When は follows a number or amount, it indicates 'at least that much' or an approximate quantity.",
+          "explanation": "The particle は after a specific number or amount softens the exactness, suggesting approximation or 'at least' that amount. Common in casual speech to avoid sounding too precise. Neutral register.",
+          "examples": [
+            {
+              "japanese": "100人は来ました。",
+              "reading": "ひゃくにんはきました。",
+              "english": "At least 100 people came. / Some 100 people came."
+            },
+            {
+              "japanese": "3時間はかかります。",
+              "reading": "さんじかんはかかります。",
+              "english": "It takes at least 3 hours."
+            },
+            {
+              "japanese": "1000円は必要です。",
+              "reading": "せんえんはひつようです。",
+              "english": "You need at least 1000 yen."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.670Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a2_l15_grammar_10",
+          "pattern": "化する",
+          "meaning": "A verb-forming suffix meaning to transform something into a certain state or to make something become a certain way.",
+          "explanation": "This suffix attaches to nouns to create verbs expressing transformation, modernization, or change. Common in both everyday speech and formal or technical contexts. Examples include 便利化 (to make convenient), 現実化 (to realize/make real), デジタル化 (to digitalize). Used to describe processes of change or transformation.",
+          "examples": [
+            {
+              "japanese": "自分の考えを現実化しました。",
+              "reading": "じぶんのかんがえをげんじつかしました。",
+              "english": "I made my thoughts a reality."
+            },
+            {
+              "japanese": "インターネットは生活を便利化しました。",
+              "reading": "いんたーねっとはせいかつをべんりかしました。",
+              "english": "The internet made life more convenient."
+            },
+            {
+              "japanese": "この会社は最近、デジタル化を始めました。",
+              "reading": "このかいしゃはさいきん、でじたるかをはじめました。",
+              "english": "This company has recently begun its digital transformation."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.670Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a2_15"
+    }
+  ]
+}

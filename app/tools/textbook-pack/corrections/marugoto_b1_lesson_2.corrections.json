@@ -1,0 +1,456 @@
+{
+  "schemaVersion": 1,
+  "packId": "marugoto_b1_lesson_2",
+  "basedOnProof": "../out/canonical-proofs/marugoto_b1_lesson_2.json",
+  "generatedAt": "2026-07-22T06:45:30.700Z",
+  "corrections": [],
+  "additions": {
+    "vocabulary": [],
+    "grammar": [
+      {
+        "id": "marugoto_b1_l2_grammar_1",
+        "pattern": "べきではない",
+        "meaning": "Expresses a strong moral or social judgment that something should not be done.",
+        "explanation": "べきではない (also べきじゃない in casual speech) is the negative form of べき and states that an action is contrary to duty, reason, or social norms. Like べき, it carries a firm or prescriptive tone and is more common in formal or argumentative contexts. It is stronger than ないほうがいい.",
+        "examples": [
+          {
+            "japanese": "他人のことをそんなふうに言うべきではない。",
+            "reading": "たにんのことをそんなふうにいうべきではない。",
+            "english": "You shouldn't talk about other people like that."
+          },
+          {
+            "japanese": "大切なことを急いで決めるべきではないと思う。",
+            "reading": "たいせつなことをいそいできめるべきではないとおもう。",
+            "english": "I don't think we should rush important decisions."
+          },
+          {
+            "japanese": "子どもにうそをつくべきではない。",
+            "reading": "こどもにうそをつくべきではない。",
+            "english": "You ought not to lie to children."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_b1_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.699Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_b1_l2_grammar_2",
+        "pattern": "の間に",
+        "meaning": "Marks a period of time or a gap between two points during which something happens.",
+        "explanation": "の間に attaches to nouns or plain-form verb phrases to indicate a window of time in which an action takes place, often implying the action happens at some point within that window rather than continuously throughout it. It contrasts with ている間に, which more explicitly frames an ongoing action as the backdrop. It works in both casual and formal contexts.",
+        "examples": [
+          {
+            "japanese": "子どもが寝ている間に、部屋を片付けた。",
+            "reading": "こどもがねているあいだに、へやをかたづけた。",
+            "english": "I tidied the room while the child was sleeping."
+          },
+          {
+            "japanese": "休憩の間に、コーヒーを飲んだ。",
+            "reading": "きゅうけいのあいだに、コーヒーをのんだ。",
+            "english": "I drank coffee during the break."
+          },
+          {
+            "japanese": "日本にいる間に、富士山に登りたい。",
+            "reading": "にほんにいるあいだに、ふじさんにのぼりたい。",
+            "english": "I want to climb Mt. Fuji while I'm in Japan."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_b1_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.699Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_b1_l2_grammar_3",
+        "pattern": "うちに",
+        "meaning": "Expresses that an action should be or is done while a certain condition still holds, before it changes.",
+        "explanation": "うちに attaches to verb plain forms, い-adjectives, or nouns+の to indicate taking advantage of a current state before it ends. It carries a nuance of 'now while you still can' or 'before the situation changes', making it more urgent than の間に. It is common in casual and semi-formal speech.",
+        "examples": [
+          {
+            "japanese": "熱いうちに食べてください。",
+            "reading": "あついうちにたべてください。",
+            "english": "Please eat it while it's still hot."
+          },
+          {
+            "japanese": "若いうちにたくさん旅行したい。",
+            "reading": "わかいうちにたくさんりょこうしたい。",
+            "english": "I want to travel a lot while I'm still young."
+          },
+          {
+            "japanese": "覚えているうちにノートに書いておこう。",
+            "reading": "おぼえているうちにノートにかいておこう。",
+            "english": "I'll write it in my notebook while I still remember."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_b1_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.699Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_b1_l2_grammar_4",
+        "pattern": "たらいい・といい",
+        "meaning": "Expresses a wish, hope, or gentle suggestion that something would be good or desirable.",
+        "explanation": "たらいい attaches to the た-form of a verb and expresses either a suggestion ('you should…') or a personal wish ('I hope…'). といい is slightly softer and more wistful, often used to express hope about something outside one's direct control. Both are common in casual conversation; adding ですね or のですが softens them further.",
+        "examples": [
+          {
+            "japanese": "もっと早く寝たらいいのに。",
+            "reading": "もっとはやくねたらいいのに。",
+            "english": "You really should go to bed earlier."
+          },
+          {
+            "japanese": "明日、晴れるといいですね。",
+            "reading": "あした、はれるといいですね。",
+            "english": "I hope it's sunny tomorrow."
+          },
+          {
+            "japanese": "日本語がもっと上手になったらいいな。",
+            "reading": "にほんごがもっとじょうずになったらいいな。",
+            "english": "I wish I could get better at Japanese."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_b1_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.699Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_b1_l2_grammar_5",
+        "pattern": "もの・もん",
+        "meaning": "Used at the end of a sentence to give a reason or explanation with a slightly emotional or defensive tone, meaning 'because' or 'it's just that'.",
+        "explanation": "もの (and its casual contraction もん) follows a plain-form verb or adjective to offer justification or explain oneself, often implying the speaker feels the reason is obvious or natural. It is primarily used in casual spoken Japanese and sounds soft, sometimes childlike or slightly whining. Women and younger speakers use it more frequently, but it is understood by all.",
+        "examples": [
+          {
+            "japanese": "行きたくないよ。怖いんだもん。",
+            "reading": "いきたくないよ。こわいんだもん。",
+            "english": "I don't want to go. It's because it's scary."
+          },
+          {
+            "japanese": "遅刻したのは、電車が止まったんだもの。",
+            "reading": "ちこくしたのは、でんしゃがとまったんだもの。",
+            "english": "The reason I was late is that the train stopped."
+          },
+          {
+            "japanese": "仕方ないじゃない。知らなかったんだもん。",
+            "reading": "しかたないじゃない。しらなかったんだもん。",
+            "english": "It can't be helped. I just didn't know."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_b1_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.699Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_b1_l2_grammar_6",
+        "pattern": "によって・による",
+        "meaning": "Expresses means, cause, variation by circumstance, or agent of a passive action.",
+        "explanation": "によって attaches to nouns and has several related uses: indicating the means or method by which something is done, the agent in a passive sentence, a cause or reason, or variation depending on context. による is the attributive form used before nouns (e.g. 事故による遅延). This pattern is common in formal and written Japanese.",
+        "examples": [
+          {
+            "japanese": "この橋は100年前に職人によって建てられた。",
+            "reading": "このはしは100ねんまえにしょくにんによってたてられた。",
+            "english": "This bridge was built by craftsmen 100 years ago."
+          },
+          {
+            "japanese": "結果は練習量によって変わる。",
+            "reading": "けっかはれんしゅうりょうによってかわる。",
+            "english": "The result varies depending on the amount of practice."
+          },
+          {
+            "japanese": "台風による被害はとても大きかった。",
+            "reading": "たいふうによるひがいはとてもおおきかった。",
+            "english": "The damage caused by the typhoon was very significant."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_b1_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.699Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_b1_l2_grammar_7",
+        "pattern": "ために",
+        "meaning": "Expresses a cause or reason for an outcome, meaning 'due to', 'because of', or 'as a result of'.",
+        "explanation": "When ために follows a verb in plain past form or a noun+の describing a cause, it explains why an outcome occurred—often an unintended or significant one. This usage is more formal and is frequently found in written Japanese, news, and explanations. It differs from the purposive ために by expressing causation rather than intention.",
+        "examples": [
+          {
+            "japanese": "台風のために、試合が中止になった。",
+            "reading": "たいふうのために、しあいがちゅうしになった。",
+            "english": "The game was cancelled due to the typhoon."
+          },
+          {
+            "japanese": "事故があったために、電車が遅れました。",
+            "reading": "じこがあったために、でんしゃがおくれました。",
+            "english": "The train was delayed because of an accident."
+          },
+          {
+            "japanese": "準備不足のために、発表がうまくいかなかった。",
+            "reading": "じゅんびぶそくのために、はっぴょうがうまくいかなかった。",
+            "english": "The presentation didn't go well as a result of insufficient preparation."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_b1_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.699Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_b1_l2_grammar_8",
+        "pattern": "ということだ",
+        "meaning": "Conveys reported information or a logical conclusion, meaning 'I heard that', 'it is said that', or 'it means that'.",
+        "explanation": "ということだ follows a plain-form clause to report something heard from another source (hearsay) or to draw a conclusion based on evidence or context. In the hearsay sense it is similar to そうだ but sounds slightly more formal and analytical. In the conclusion sense, it summarizes what a situation implies.",
+        "examples": [
+          {
+            "japanese": "来月、このカフェが閉まるということだ。",
+            "reading": "らいげつ、このカフェがしまるということだ。",
+            "english": "I heard that this café is closing next month."
+          },
+          {
+            "japanese": "彼女は仕事を辞めたということだ。",
+            "reading": "かのじょはしごとをやめたということだ。",
+            "english": "It is said that she quit her job."
+          },
+          {
+            "japanese": "電車が止まっているということは、何か事故があったということだ。",
+            "reading": "でんしゃがとまっているということは、なにかじこがあったということだ。",
+            "english": "The fact that the train has stopped means that some kind of accident has occurred."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_b1_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.699Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_b1_l2_grammar_9",
+        "pattern": "ところで",
+        "meaning": "A discourse marker meaning 'by the way' or 'incidentally,' used to shift to a new, unrelated topic.",
+        "explanation": "ところで signals a deliberate change of subject in conversation or writing. Unlike ところが, it does not imply contrast — it simply pivots the discussion to something new. It is common in casual and semi-formal spoken Japanese and can also appear in writing to introduce a new paragraph topic.",
+        "examples": [
+          {
+            "japanese": "ところで、明日の会議は何時からですか。",
+            "reading": "ところで、あしたのかいぎはなんじからですか。",
+            "english": "By the way, what time does tomorrow's meeting start?"
+          },
+          {
+            "japanese": "いい天気ですね。ところで、先週の旅行はどうでしたか。",
+            "reading": "いいてんきですね。ところで、せんしゅうのりょこうはどうでしたか。",
+            "english": "Nice weather, isn't it? By the way, how was your trip last week?"
+          },
+          {
+            "japanese": "話は変わりますが、ところで新しいプロジェクトについて聞きましたか。",
+            "reading": "はなしはかわりますが、ところであたらしいプロジェクトについてききましたか。",
+            "english": "Changing the subject — by the way, have you heard about the new project?"
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_b1_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.699Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_b1_l2_grammar_10",
+        "pattern": "あまり",
+        "meaning": "Expresses that something happens as a result of an excessive degree of a feeling or state.",
+        "explanation": "あまり (or あまりに/あまりにも for emphasis) is placed before an adjective or noun to indicate that the degree is so extreme it causes a consequence. It is used in both written and spoken registers. The result clause typically describes an involuntary or unexpected reaction.",
+        "examples": [
+          {
+            "japanese": "あまり嬉しくて、涙が出てしまった。",
+            "reading": "あまりうれしくて、なみだがでてしまった。",
+            "english": "I was so happy that I ended up crying."
+          },
+          {
+            "japanese": "あまりの暑さに、外に出る気がしなかった。",
+            "reading": "あまりのあつさに、そとにでるきがしなかった。",
+            "english": "It was so hot that I didn't feel like going outside."
+          },
+          {
+            "japanese": "彼はあまり驚いて、言葉も出なかった。",
+            "reading": "かれはあまりおどろいて、ことばもでなかった。",
+            "english": "He was so surprised that he was left speechless."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_b1_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.699Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_b1_l2_grammar_11",
+        "pattern": "ばかり",
+        "meaning": "Indicates an excessive, exclusive, or near-exclusive focus on one thing, often with a nuance of criticism or exaggeration.",
+        "explanation": "ばかり follows plain verb forms, nouns, or て-forms and conveys that something is the only thing happening or being done. When used after a noun, it means 'only X' or 'nothing but X.' After a て-form verb, it expresses the idea that someone is always doing that thing and nothing else, often implying the speaker finds it excessive. It is used in both spoken and written Japanese across many registers.",
+        "examples": [
+          {
+            "japanese": "弟はゲームばかりしていて、勉強しない。",
+            "reading": "おとうとはゲームばかりしていて、べんきょうしない。",
+            "english": "My little brother does nothing but play games and won't study."
+          },
+          {
+            "japanese": "甘いものばかり食べると、体に悪いですよ。",
+            "reading": "あまいものばかりたべると、からだにわるいですよ。",
+            "english": "If you eat nothing but sweets, it's bad for your health."
+          },
+          {
+            "japanese": "文句ばかり言わないで、自分でやってみてください。",
+            "reading": "もんくばかりいわないで、じぶんでやってみてください。",
+            "english": "Instead of just complaining, please try doing it yourself."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_b1_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.699Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_b1_l2_grammar_12",
+        "pattern": "どんなに〜ても",
+        "meaning": "Expresses that a result or situation holds true regardless of the degree of an action or state.",
+        "explanation": "どんなに〜ても combines どんなに ('how much/how') with the て-form of a verb or adjective plus も to mean 'no matter how (much/hard/far)'. It emphasizes that the outcome in the main clause is unchanged regardless of the extent described. The pattern is used in both formal and casual speech.",
+        "examples": [
+          {
+            "japanese": "どんなに疲れていても、彼女は笑顔を忘れない。",
+            "reading": "どんなにつかれていても、かのじょはえがおをわすれない。",
+            "english": "No matter how tired she is, she never forgets to smile."
+          },
+          {
+            "japanese": "どんなに練習しても、上手になれない気がする。",
+            "reading": "どんなにれんしゅうしても、じょうずになれないきがする。",
+            "english": "No matter how much I practice, I feel like I can't get better."
+          },
+          {
+            "japanese": "どんなに遠くても、会いに行くつもりだ。",
+            "reading": "どんなにとおくても、あいにいくつもりだ。",
+            "english": "No matter how far it is, I intend to go and meet them."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_b1_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.699Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      },
+      {
+        "id": "marugoto_b1_l2_grammar_13",
+        "pattern": "ほど～ない",
+        "meaning": "Expresses that something does not reach the same degree or extent as a reference point: 'not as … as.'",
+        "explanation": "AはBほど～ない means 'A is not as [adjective/adverb] as B.' The noun or noun phrase before ほど sets the standard of comparison, and the negative predicate states that the subject falls short of that standard. This is a common comparison pattern in everyday conversation and writing.",
+        "examples": [
+          {
+            "japanese": "今日は昨日ほど寒くない。",
+            "reading": "きょうはきのうほどさむくない。",
+            "english": "Today is not as cold as yesterday."
+          },
+          {
+            "japanese": "この映画はみんなが言うほど面白くなかった。",
+            "reading": "このえいがはみんながいうほどおもしろくなかった。",
+            "english": "The movie wasn't as interesting as everyone said it would be."
+          },
+          {
+            "japanese": "東京の冬は北海道ほど厳しくありません。",
+            "reading": "とうきょうのふゆはほっかいどうほどきびしくありません。",
+            "english": "Winter in Tokyo is not as harsh as in Hokkaido."
+          }
+        ],
+        "lessonNumber": 2,
+        "sourceRef": {
+          "sourceId": "marugoto_b1_textbook",
+          "pageNumber": 1
+        },
+        "review": {
+          "action": "approved",
+          "reviewedAt": "2026-07-22T06:45:30.699Z",
+          "reviewer": "marugoto_tobira_gold_enrich",
+          "notes": "from comprehensive curriculum"
+        }
+      }
+    ],
+    "contentBlocks": [],
+    "exercises": []
+  }
+}

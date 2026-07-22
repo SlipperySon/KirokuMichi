@@ -81,6 +81,22 @@ const FALLBACK_URLS: Record<string, string> = Object.fromEntries([
       [`quartet_2_${sourceLesson}`, `/data/generated/reviewed/quartet_2_${sourceLesson}.json`],
     ]
   }),
+  ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map((n) => [
+    `marugoto_a1_${n}`,
+    `/data/generated/reviewed/marugoto_a1_${n}.json`,
+  ]),
+  ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18].map((n) => [
+    `marugoto_a2_${n}`,
+    `/data/generated/reviewed/marugoto_a2_${n}.json`,
+  ]),
+  ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map((n) => [
+    `marugoto_b1_${n}`,
+    `/data/generated/reviewed/marugoto_b1_${n}.json`,
+  ]),
+  ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15].flatMap((n) => [
+    [`tobira_textbook_${n}`, `/data/generated/reviewed/tobira_textbook_${n}.json`],
+    [`tobira_${n}`, `/data/generated/reviewed/tobira_${n}.json`],
+  ]),
 ])
 
 const overlayCache = new Map<string, ReviewedLessonOverlay | null>()

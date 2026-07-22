@@ -1,0 +1,2163 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "tobira",
+  "title": "Tobira: Gateway to Advanced Japanese",
+  "edition": "learner-gold",
+  "levelRange": "B2",
+  "sources": [
+    {
+      "sourceId": "tobira_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "148bfbf6006104c9ecb0939ce545f2f0911955f692903b0f0bb317dcf08f86e8",
+        "bytes": 206175305
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "tobira_lesson_15",
+      "unitType": "lesson",
+      "lessonNumber": 15,
+      "title": "第15課 世界と私の国の未来",
+      "level": "B2",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [
+        {
+          "id": "tobira_l15_vocab_1",
+          "surface": "疑問",
+          "reading": null,
+          "meaning": "question; doubt",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_2",
+          "surface": "ちぢめる",
+          "reading": null,
+          "meaning": "to reduce",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_3",
+          "surface": "（~を）縮める",
+          "reading": null,
+          "meaning": "heterosexual（person）",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_4",
+          "surface": "異性爱者",
+          "reading": "どうせいあいしゃ",
+          "meaning": "homosexual（person）",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_5",
+          "surface": "11(~を)しやべる",
+          "reading": null,
+          "meaning": "to speak",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_6",
+          "surface": "ようゃく",
+          "reading": null,
+          "meaning": "as it is",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_7",
+          "surface": "あるがまま",
+          "reading": null,
+          "meaning": "like this",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_8",
+          "surface": "栄養",
+          "reading": "えいよう",
+          "meaning": "nutrition",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_9",
+          "surface": "じゆうぶん(な)十分(な)",
+          "reading": null,
+          "meaning": "enough; suffi cient",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_10",
+          "surface": "とみ",
+          "reading": null,
+          "meaning": "wealth; fortune",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_11",
+          "surface": "わける",
+          "reading": null,
+          "meaning": "to share; divide",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_12",
+          "surface": "(~)分ける",
+          "reading": "たくわえ",
+          "meaning": "supply; savings",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_13",
+          "surface": "蓄え",
+          "reading": "あめつゆをしのぐ",
+          "meaning": "to keep out the rain",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_14",
+          "surface": "拷問",
+          "reading": "ごうもん",
+          "meaning": "death",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_15",
+          "surface": "(~を)恐れる",
+          "reading": null,
+          "meaning": "to fear; be afraid of",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_16",
+          "surface": "信条",
+          "reading": "しんじよう",
+          "meaning": "principle; creed; belief",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_17",
+          "surface": "27良心",
+          "reading": "りょうしん",
+          "meaning": "conscience",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_18",
+          "surface": "(~に)恵まれる",
+          "reading": null,
+          "meaning": "aerial bombing; air strike",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_19",
+          "surface": "地雷",
+          "reading": null,
+          "meaning": "land-mine slaughter; massacreす",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_20",
+          "surface": "殺戮",
+          "reading": "ぶそうしゅうだん",
+          "meaning": "armed group",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_21",
+          "surface": "35(~に)おびえる",
+          "reading": null,
+          "meaning": "to be frightened; get scared",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 365
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_22",
+          "surface": "仲間",
+          "reading": null,
+          "meaning": "comrade; circle of friends",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_23",
+          "surface": "働き盛り",
+          "reading": "はたらきざかり",
+          "meaning": "prime of life Nold person/people",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_24",
+          "surface": "寿命",
+          "reading": "じゆみよう",
+          "meaning": "life span",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_25",
+          "surface": "(~が)延びる",
+          "reading": "のびる",
+          "meaning": "to lengthen",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_26",
+          "surface": "み",
+          "reading": "なやみ",
+          "meaning": "trouble; distress",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_27",
+          "surface": "不安（な）",
+          "reading": "ふあん(な)",
+          "meaning": "uneasy; ill at ease",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_28",
+          "surface": "収入",
+          "reading": "しゅうにゅう",
+          "meaning": "income",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_29",
+          "surface": "16財産",
+          "reading": "ざいさん",
+          "meaning": "property; fortune",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_30",
+          "surface": "じうみん",
+          "reading": null,
+          "meaning": "residents",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_31",
+          "surface": "豊か(な）",
+          "reading": "ゆたか(な)",
+          "meaning": "abundant; rich",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_32",
+          "surface": "快(な）",
+          "reading": "かいてき(な)",
+          "meaning": "pleasant; comfortable",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_33",
+          "surface": "せいじつ(な)",
+          "reading": null,
+          "meaning": "ANasincere; honest",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_34",
+          "surface": "(~に)励む",
+          "reading": "はげむ",
+          "meaning": "to strive; work hard",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_35",
+          "surface": "(~を)手に入れる",
+          "reading": "てにいれる",
+          "meaning": "to obtain",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_36",
+          "surface": "衛生",
+          "reading": "えいせい",
+          "meaning": "hygiene; sanitation|衛生的（な）（）hygienic",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_37",
+          "surface": "(~に)飢える",
+          "reading": "うえる",
+          "meaning": "to starve|え() hunger; starvation",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_38",
+          "surface": "(~が)渴く",
+          "reading": "かわく",
+          "meaning": "to get dry",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_39",
+          "surface": "うつ病",
+          "reading": "うつびょう",
+          "meaning": "depression",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_40",
+          "surface": "物質",
+          "reading": "ぶっしつ",
+          "meaning": "material",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_41",
+          "surface": "(~を)満たす",
+          "reading": null,
+          "meaning": "to satisfy; fill",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_42",
+          "surface": "33迷路",
+          "reading": "めいろ",
+          "meaning": "labyrinth; maze",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_43",
+          "surface": "35山積み",
+          "reading": "やまづみ",
+          "meaning": "huge mound; heap",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_44",
+          "surface": "36(~を)抱える",
+          "reading": "かかえる",
+          "meaning": "to have(problems, heavy work, etc.); to hold in one's arms",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_45",
+          "surface": "きっと",
+          "reading": null,
+          "meaning": "surely",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_46",
+          "surface": "一員",
+          "reading": "いちいん",
+          "meaning": "a member",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_47",
+          "surface": "41(一を)取り戻す",
+          "reading": "とりもどす",
+          "meaning": "to regain; get back",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_48",
+          "surface": "42背景",
+          "reading": "はいけい",
+          "meaning": "background",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 368
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_49",
+          "surface": "受賞",
+          "reading": null,
+          "meaning": "vNbeing awardeda prize|(~)受する",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_50",
+          "surface": "(~を)広める",
+          "reading": "ひろめる",
+          "meaning": "to propagate; spread; promote",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_51",
+          "surface": "もったいない",
+          "reading": null,
+          "meaning": "wasteful; more than one deserves A",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_52",
+          "surface": "-運動",
+          "reading": "うんどう",
+          "meaning": "campaign; move; exercise",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_53",
+          "surface": "分野",
+          "reading": "ぶんや",
+          "meaning": "field; area",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_54",
+          "surface": "初(の)",
+          "reading": "はつ(の)",
+          "meaning": "o first",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_55",
+          "surface": "再-",
+          "reading": null,
+          "meaning": "Pref",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_56",
+          "surface": "資源",
+          "reading": "しげん",
+          "meaning": "natural resources",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_57",
+          "surface": "一言で",
+          "reading": "ひとことで",
+          "meaning": "in a single word; in one word",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_58",
+          "surface": "13共通（の）",
+          "reading": null,
+          "meaning": "ocommon",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_59",
+          "surface": "14改善",
+          "reading": "かいぜん",
+          "meaning": "improvement; change for the better(～)改善",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_60",
+          "surface": "16テ口",
+          "reading": null,
+          "meaning": "terrorism",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_61",
+          "surface": "19合言葉",
+          "reading": "あいことば",
+          "meaning": "password",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_62",
+          "surface": "農家",
+          "reading": "のうか",
+          "meaning": "farming family",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_63",
+          "surface": "修士号",
+          "reading": "しゅうしごう",
+          "meaning": "master's degree",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_64",
+          "surface": "25生物分析学",
+          "reading": "せいぶつぶんせきがく",
+          "meaning": "V study of bioanalysis",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_65",
+          "surface": "博士号",
+          "reading": "はかせはくしごう",
+          "meaning": "doctor's degree; Ph.D.",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_66",
+          "surface": "祖国",
+          "reading": null,
+          "meaning": "homeland",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_67",
+          "surface": "破壊",
+          "reading": "はかい",
+          "meaning": "destruction(~)壊する",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_68",
+          "surface": "（~に)心を痛める",
+          "reading": "こころをいためる",
+          "meaning": "to feel distress",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_69",
+          "surface": "貧しい",
+          "reading": "まずしい",
+          "meaning": "poor A",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_70",
+          "surface": "植林",
+          "reading": "しょくりん",
+          "meaning": "vNtree planting; forestation",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_71",
+          "surface": "34砂漠",
+          "reading": "さばく",
+          "meaning": "desert",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_72",
+          "surface": "(~を)植える",
+          "reading": null,
+          "meaning": "to plant",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_73",
+          "surface": "森林",
+          "reading": "しんりん",
+          "meaning": "forest",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_74",
+          "surface": "脱却",
+          "reading": "だっきゃく",
+          "meaning": "gettingout（ofsituation)|（~か）脱却る",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 371
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_75",
+          "surface": "お古(の)",
+          "reading": "おふる(の)",
+          "meaning": "ohand-me-down",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 375
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_76",
+          "surface": "調子(",
+          "reading": "の)いい",
+          "meaning": "too smooth ru-Vtto lickなる() to lick something with (~を)なめる",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 375
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        },
+        {
+          "id": "tobira_l15_vocab_77",
+          "surface": "へそまがり(な)",
+          "reading": null,
+          "meaning": "twisted",
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 375
+          },
+          "tags": [
+            "gold_ocr"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "Tobira OCR 単語表 pages 365, 368, 371, 375"
+          }
+        }
+      ],
+      "grammar": [
+        {
+          "id": "tobira_l15_grammar_1",
+          "pattern": "おおよそ",
+          "meaning": "Approximately, roughly, or about — used to express an estimate or a general outline rather than an exact figure.",
+          "explanation": "おおよそ functions as an adverb meaning 'roughly' or 'approximately' when modifying quantities, and can also mean 'the general gist' or 'outline' when used as a noun (おおよその内容). It is slightly more formal than だいたい and appears more often in written or polished spoken Japanese. It signals that the speaker is giving an approximation, not a precise value.",
+          "examples": [
+            {
+              "japanese": "工事が終わるまでにおおよそ三ヶ月かかる見込みだ。",
+              "reading": "こうじがおわるまでにおおよそさんかげつかかるみこみだ。",
+              "english": "The construction is expected to take approximately three months to complete."
+            },
+            {
+              "japanese": "話のおおよそは理解できたが、細部はまだ不明だ。",
+              "reading": "はなしのおおよそはりかいできたが、さいぶはまだふめいだ。",
+              "english": "I got the general gist of the story, but the details are still unclear."
+            },
+            {
+              "japanese": "参加者はおおよそ百名ほどになる予定です。",
+              "reading": "さんかしゃはおおよそひゃくめいほどになるよていです。",
+              "english": "We expect roughly one hundred participants."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l15_grammar_2",
+          "pattern": "～ざる",
+          "meaning": "A classical/literary negative verb form meaning 'not doing ~' or 'un~'.",
+          "explanation": "ざる is a classical negative auxiliary that attaches to the plain negative stem of a verb (same position as ない). It is the attributive form of ざり (classical ず), so it modifies nouns directly. It appears in set expressions and formal or literary writing rather than everyday speech. Common set phrases include 知らざる (unknown), 見えざる (invisible), and 許されざる (unforgivable).",
+          "examples": [
+            {
+              "japanese": "それは許されざる行為だと、誰もが感じていた。",
+              "reading": "それはゆるされざるこういだと、だれもがかんじていた。",
+              "english": "Everyone felt that it was an unforgivable act."
+            },
+            {
+              "japanese": "見えざる力が、この世界を動かしているのかもしれない。",
+              "reading": "みえざるちからが、このせかいをうごかしているのかもしれない。",
+              "english": "An invisible force may be moving this world."
+            },
+            {
+              "japanese": "知らざる者には、真実を語ることができない。",
+              "reading": "しらざるものには、しんじつをかたることができない。",
+              "english": "One cannot speak the truth to those who do not know."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l15_grammar_3",
+          "pattern": "ならともかく",
+          "meaning": "If it&#x27;s (A), sure, but (B), Putting aside (A), (B)",
+          "explanation": "Grammar explanation for ならともかく",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l15_grammar_4",
+          "pattern": "なにやら",
+          "meaning": "Refers vaguely to something unspecified, often with an uncertain or mysterious nuance.",
+          "explanation": "なにやら is an adverb or pronoun meaning 'something or other' — used when the speaker is uncertain, vague, or deliberately imprecise about what something is. It often conveys a sense of unease, curiosity, or mystery. It is somewhat literary and appears more in written or narrated contexts than in casual conversation, though it can appear in spoken Japanese as well.",
+          "examples": [
+            {
+              "japanese": "暗い廊下の奥から、なにやら音が聞こえてきた。",
+              "reading": "くらいろうかのおくから、なにやらおとがきこえてきた。",
+              "english": "Some kind of sound could be heard from the back of the dark hallway."
+            },
+            {
+              "japanese": "彼はなにやら難しそうな本を読んでいた。",
+              "reading": "かれはなにやらむずかしそうなほんをよんでいた。",
+              "english": "He was reading some kind of book that looked difficult."
+            },
+            {
+              "japanese": "会議室からなにやら言い争う声がしていた。",
+              "reading": "かいぎしつからなにやらいいあらそうこえがしていた。",
+              "english": "There was some kind of arguing voice coming from the conference room."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l15_grammar_5",
+          "pattern": "次第に",
+          "meaning": "Describes something that changes gradually or progressively over time.",
+          "explanation": "次第に is an adverb meaning 'gradually' or 'little by little,' used to describe a slow, continuous change in state or degree. It is neutral in register and works naturally in both spoken and written Japanese. It typically precedes a verb or adjective describing the resulting state.",
+          "examples": [
+            {
+              "japanese": "春になって、気温が次第に上がってきた。",
+              "reading": "はるになって、きおんがしだいにあがってきた。",
+              "english": "As spring arrived, the temperature gradually began to rise."
+            },
+            {
+              "japanese": "日本語を勉強し続けていたら、次第に聞き取れるようになった。",
+              "reading": "にほんごをべんきょうしつづけていたら、しだいにききとれるようになった。",
+              "english": "As I kept studying Japanese, I gradually became able to understand what I heard."
+            },
+            {
+              "japanese": "最初は緊張していたが、話すうちに次第にリラックスできた。",
+              "reading": "さいしょはきんちょうしていたが、はなすうちにしだいにリラックスできた。",
+              "english": "I was nervous at first, but as I kept talking, I gradually relaxed."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l15_grammar_6",
+          "pattern": "～て頂戴",
+          "meaning": "A casual, often feminine or motherly way to ask someone to do something.",
+          "explanation": "て頂戴 is the casual equivalent of てください, formed by attaching 頂戴 to the て-form of a verb. It is predominantly used by women and in contexts involving children, close family, or informal settings. Using it with strangers or in formal situations would sound out of place or overly intimate.",
+          "examples": [
+            {
+              "japanese": "早くここに来て頂戴。",
+              "reading": "はやくここにきてちょうだい。",
+              "english": "Come here quickly, please."
+            },
+            {
+              "japanese": "この荷物を部屋まで運んで頂戴。",
+              "reading": "このにもつをへやまではこんでちょうだい。",
+              "english": "Please carry this luggage to the room."
+            },
+            {
+              "japanese": "もう少し静かにして頂戴よ。",
+              "reading": "もうすこししずかにしてちょうだいよ。",
+              "english": "Please be a little quieter, would you?"
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l15_grammar_7",
+          "pattern": "～に値する",
+          "meaning": "Be worthy of, Deserving of, Amounts to",
+          "explanation": "Grammar explanation for ～に値する",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l15_grammar_8",
+          "pattern": "～ばと思います",
+          "meaning": "Expresses a polite wish or hope that something would happen, often used to make indirect requests or express personal desires.",
+          "explanation": "Formed by attaching the conditional ば-form of a verb to と思います. This construction softens a request or desire, making it sound humble and indirect. It is polite in register and commonly used in formal speech, business settings, or when the speaker wants to avoid sounding demanding.",
+          "examples": [
+            {
+              "japanese": "もう少し早く連絡していただければと思います。",
+              "reading": "もうすこしはやくれんらくしていただければとおもいます。",
+              "english": "I would appreciate it if you could contact me a little sooner."
+            },
+            {
+              "japanese": "ご意見をいただければと思います。",
+              "reading": "ごいけんをいただければとおもいます。",
+              "english": "I would be grateful if I could receive your opinion."
+            },
+            {
+              "japanese": "次回はもっと多くの方にご参加いただければと思います。",
+              "reading": "じかいはもっとおおくのかたにごさんかいただければとおもいます。",
+              "english": "I hope that more people will be able to participate next time."
+            }
+          ],
+          "lessonNumber": 15,
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [
+        {
+          "id": "tobira_l15_dialogue_1",
+          "type": "dialogue",
+          "title": "Dialogue textbook_tobira_textbook_15",
+          "text": "内容質問: 本文を読んだ後で、考えてみよう。\nんばい: テロや戦争の抑止につながったりすると思いますか。\nこうょう: うけん\nでんき: さくせい\nhttp: //pioneer.jp/environment/tamate\nマンガ: 瑞境玉手箱\n登場人物: ヒオちん\nスピ: 画：斎藤雨泉",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 376
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_l15_dialogue_2",
+          "type": "dialogue",
+          "title": "Dialogue textbook_tobira_textbook_15",
+          "text": "本文: 。この村は「安全」で「衛生的」で、何から何まであらゆることが「平等」です。【読2:11.41-42】\n説明: with全部,すべてorみんな.\n英訳: anything and everything; all; all kinds\n本文: いろいろ満されることによってかえって悩んでしまう「精神の時代」に入りました。【読2:1.46-47】\n說明: 加えてis used when an opposite result comes about, contrary to one's expectation.\n英訳: on the contrary; rather\nA: 「日本村」の住民であると同時に「世界村」の員であることを～【読2:11.65-66】\nいちいん: と同時 means that something takes place at the same time as other actions or events, or that something\n説明: is the case while something else is also the case.\n英訳: as soon as; the moment; at the same time; also; as well\na: {V/A}-plain.non-pastと同時に：{考える/考ない/考えている}と同時に;難しい}と同時に\nb: {ANa/N}{である/じやない/ではない}と同時に：大切{である/じやない/ではない}と同時に;問題\n文型: {であるじやないではない子と同時に\nC: VNNと同時に：終戦と同時に;叫び声と同時に\nしゆうせん: さけこ元\n本文: 何て名前だったっけ?【討:1.5】\nt: is a question marker. It is used only in very casual conversation. Note that after the non-past\n説明: forms of verbs, adjectives and ~ない, hmust be used before つけ, as seen in 文型.\na: {V/A}-plain.non-pastんだっけ：行くんだっけ;大きいんだっけ\nb: {V/A}-plain.past(んだ)っけ:行っ(んだ)っけ;大きかっ(んだ)っけ\nC: {ANa/N/QW}(なん)だっけ:上手(なん)だっけ;学生(なん)だっけ;いつ(なん)だっけ\n文型: d.{ANaN}じないんだっけ：上手じないだっけ:学生じないだっけ\ne: {ANaN/QW}だった(んだ)っけ：上手だった(んだ)っけ;学生だっ(んだ)っけ;いつだっ（ん\nf: {ANaN}じなかっ(んだ)っけ:上手じやなかっ(んだ)っけ;大学生じなかっ(んだ)っけ",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 380
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "exercises": [
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5136",
+          "label": "practice",
+          "prompt": "地球温暖化と戦争以外で、今、世界で問題になっていること、あるいは、問題にすべ",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5137",
+          "label": "practice",
+          "prompt": "きことは何だと思いますか。二つ挙げなさい。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5138",
+          "label": "practice",
+          "prompt": "ワンガリ・マタイという人についてインタットや本で調て、下の表を完成し",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5139",
+          "label": "practice",
+          "prompt": "①リンク集をクリック",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5140",
+          "label": "practice",
+          "prompt": "[本文を読む前に2]",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5141",
+          "label": "practice",
+          "prompt": "http:/tobira.9640.jp/tobiralogin",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5142",
+          "label": "practice",
+          "prompt": "②[教科書に出てくるイをクッ",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5143",
+          "label": "practice",
+          "prompt": "③[第15課]をクリック",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5144",
+          "label": "practice",
+          "prompt": "下のa~cの中から、この言葉の意味を",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5145",
+          "label": "practice",
+          "prompt": "一番よく表している文を選びましょう。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5146",
+          "label": "practice",
+          "prompt": "a.食べ物や飲み物がたくさんあって嬉",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5147",
+          "label": "practice",
+          "prompt": "その他に分かったこと(二つ)",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5148",
+          "label": "practice",
+          "prompt": "b.何かを全部使わなかったり、食べ物",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5149",
+          "label": "practice",
+          "prompt": "や飲み物を残したり、まだ使えう",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5150",
+          "label": "practice",
+          "prompt": "なものを捨ててしまったりすること",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5151",
+          "label": "practice",
+          "prompt": "をよくないと思う気持ち。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5152",
+          "label": "practice",
+          "prompt": "会いたいと思った人が近くにいなく",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5153",
+          "label": "practice",
+          "prompt": "て、残念だと思う気持ち。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5154",
+          "label": "practice",
+          "prompt": "あなたの国のリサイクル制度について調べて、下の表を完成しなさい。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "tobira_textbook_tobira_textbook_15_exercise_5155",
+          "label": "practice",
+          "prompt": "あなたの国ではどんな物がサイクルできますか。",
+          "sourceRef": {
+            "sourceId": "tobira_textbook",
+            "pageNumber": 362
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.588Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "qualityTier": "gold",
+      "appLessonId": "tobira_15"
+    }
+  ]
+}

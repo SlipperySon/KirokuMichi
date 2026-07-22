@@ -1,6 +1,6 @@
 # KirokuMichi — Current State & Active Roadmap
 
-Last updated: 2026-07-21 AEST
+Last updated: 2026-07-22 AEST
 
 ---
 
@@ -18,10 +18,12 @@ starve the textbook path; treat skip as durable deferral (Today debt), never sil
 | **Gold** | `quartet_1_1`…`quartet_1_6` | L1 human corrections + images; L2–6 Bessatsu proofs (`npm run textbook:learner:quartet-gold-enrich`) |
 | **Gold** | `genki_2_1`…`genki_2_11` / `genki_2_13`…`genki_2_23` | OCR vocab enrich (dual app/source IDs); L13 seed + pages 32–33 + 53 |
 | **Gold** | `quartet_2_1`…`quartet_2_12` | Bessatsu proofs for source L7–12 (dual app/source IDs, incl. former gaps `_4`/`_6`) |
-| **Draft** | Marugoto A1/A2/B1, Tobira, plus odd stubs (`genki_2_12`, `quartet_2_0`) | Quality-filtered comprehensive JSON (not OCR bulk dumps) |
+| **Gold** | `marugoto_a1_1`…`_16`, `marugoto_a2_1`…`_18`, `marugoto_b1_1`…`_17` | CEFR grammar + dialogues/exercises (`npm run textbook:learner:marugoto-tobira-gold-enrich`); Katsudoo has no 単語表 — vocab stays thin |
+| **Gold** | `tobira_textbook_1`…`_15` / `tobira_1`…`_15` | OCR 単語表 + comprehensive grammar (same enrich script; dual IDs) |
+| **Draft** | Odd stubs (`genki_2_12`, `quartet_2_0`, `marugoto_a1_17`, `marugoto_b1_0`, …) | Quality-filtered comprehensive leftovers |
 
-Served under `data/generated/reviewed/` + `index.json` (~52 gold). LessonPage prefers overlays via `reviewedPackService`.
-Human page-image corrections still only for Genki I / Quartet I L1; remaining Genki/Quartet gold is OCR/Bessatsu enrich.
+Served under `data/generated/reviewed/` + `index.json` (~133 gold). LessonPage prefers overlays via `reviewedPackService`.
+Human page-image corrections still only for Genki I / Quartet I L1; remaining Genki/Quartet gold is OCR/Bessatsu enrich; Tobira is OCR 単語表; Marugoto is grammar-forward until vocab OCR improves.
 Phase 8 smoke: `src/study/phase8Smoke.test.ts`.
 
 **Related research canvas:**
@@ -69,7 +71,7 @@ Same `reviewCard` / FSRS / ReviewSession for both. Textbook-matched imports may 
 
 **Ideal chunk shape (ship later):** Series → Lesson → StudyUnits (dialogue/reading/workbook) → ContentBlocks (+cropped images) → PracticeSet/Exercises (+answer keys). Unlock encrypts **reviewed** packs, not raw OCR.
 
-**Next content work (separate from Phase 8):** Human spot-check gold glosses in validation viewer (esp. Genki OCR L3+); tighten Genki kana-gloss OCR noise; leave Marugoto/Tobira stubs until prioritized.
+**Next content work (separate from Phase 8):** Human spot-check gold glosses (Tobira OCR + Genki OCR L3+); Marugoto vocab from activity/romaji pages or external word lists; drop leftover draft stubs when unused.
 
 Canvas: [`ocr-textbook-pack-audit.canvas.tsx`](/Users/Skipp/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/ocr-textbook-pack-audit.canvas.tsx)
 

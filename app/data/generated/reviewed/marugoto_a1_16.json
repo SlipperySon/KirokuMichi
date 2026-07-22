@@ -1,0 +1,308 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a1",
+  "title": "Marugoto A1: Katsudoo (Starter)",
+  "edition": "learner-gold",
+  "levelRange": "A1",
+  "sources": [
+    {
+      "sourceId": "marugoto_a1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "37d39aeeacc21293c1b109685277456c277309963dc485944bfb6adc91d5842a",
+        "bytes": 30572124
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_a1_lesson_16",
+      "unitType": "lesson",
+      "lessonNumber": 16,
+      "title": "Marugoto A1: Katsudoo (Starter) — Lesson 16",
+      "level": "A1",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_a1_l16_grammar_1",
+          "pattern": "Verbs (Non-past)",
+          "meaning": "Expresses habitual actions, future intentions, or general facts.",
+          "explanation": "In Japanese, the dictionary (plain) form or ます form of a verb is used for both present habitual and future meaning — there is no separate future tense. Context and time words like 毎日 (every day) or 明日 (tomorrow) clarify the intended meaning. The ます form is polite; the plain form is casual.",
+          "examples": [
+            {
+              "japanese": "毎朝コーヒーを飲みます。",
+              "reading": "まいあさコーヒーをのみます。",
+              "english": "I drink coffee every morning."
+            },
+            {
+              "japanese": "明日、友達に会う。",
+              "reading": "あした、ともだちにあう。",
+              "english": "I will meet a friend tomorrow."
+            },
+            {
+              "japanese": "彼は毎日日本語を勉強します。",
+              "reading": "かれはまいにちにほんごをべんきょうします。",
+              "english": "He studies Japanese every day."
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.632Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l16_grammar_2",
+          "pattern": "い-Adjective (Predicate)",
+          "meaning": "Using an い-adjective at the end of a sentence to describe the subject.",
+          "explanation": "い-adjectives can end a sentence directly to describe the subject, without needing だ. In polite speech, です is added after the adjective (e.g. 高いです). In casual speech, the adjective alone is sufficient. This is one of the two main adjective types in Japanese and follows its own conjugation rules.",
+          "examples": [
+            {
+              "japanese": "この映画はおもしろいです。",
+              "reading": "このえいがはおもしろいです。",
+              "english": "This movie is interesting."
+            },
+            {
+              "japanese": "今日はとても暑いですね。",
+              "reading": "きょうはとてもあついですね。",
+              "english": "It's very hot today, isn't it?"
+            },
+            {
+              "japanese": "あのレストランは安くておいしい。",
+              "reading": "あのレストランはやすくておいしい。",
+              "english": "That restaurant is cheap and delicious."
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.632Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l16_grammar_3",
+          "pattern": "な-Adjective だ",
+          "meaning": "Using a な-adjective with だ (or です) at the end of a sentence to describe the subject.",
+          "explanation": "な-adjectives require だ in casual speech or です in polite speech when used as predicates. Unlike い-adjectives, they do not end in い when standing alone, and they need な when directly modifying a noun (e.g. 静かな部屋). They behave similarly to nouns in their conjugation patterns.",
+          "examples": [
+            {
+              "japanese": "この部屋はきれいです。",
+              "reading": "このへやはきれいです。",
+              "english": "This room is clean."
+            },
+            {
+              "japanese": "彼はとても親切だ。",
+              "reading": "かれはとてもしんせつだ。",
+              "english": "He is very kind."
+            },
+            {
+              "japanese": "日本語の勉強は大変ですか。",
+              "reading": "にほんごのべんきょうはたいへんですか。",
+              "english": "Is studying Japanese difficult?"
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.632Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l16_grammar_4",
+          "pattern": "い-Adjective + Noun",
+          "meaning": "Places an い-adjective before a noun to describe it, equivalent to 'big book', 'cold water', etc.",
+          "explanation": "い-adjectives directly precede the noun they modify with no connector needed. This is the attributive form and looks identical to the dictionary form. Unlike な-adjectives, no な is added. The order is always adjective then noun, never reversed.",
+          "examples": [
+            {
+              "japanese": "大きい犬がいます。",
+              "reading": "おおきいいぬがいます。",
+              "english": "There is a big dog."
+            },
+            {
+              "japanese": "冷たい水をください。",
+              "reading": "つめたいみずをください。",
+              "english": "Please give me cold water."
+            },
+            {
+              "japanese": "新しいカバンを買いました。",
+              "reading": "あたらしいカバンをかいました。",
+              "english": "I bought a new bag."
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.632Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l16_grammar_5",
+          "pattern": "な-Adjective + Noun",
+          "meaning": "Use a な-adjective directly before a noun to describe it.",
+          "explanation": "な-adjectives require な between the adjective stem and the noun they modify. This construction works in both polite and casual speech. It is one of the two main adjective types in Japanese and is used whenever you want to describe a noun with a な-adjective.",
+          "examples": [
+            {
+              "japanese": "きれいな花が咲いています。",
+              "reading": "きれいなはながさいています。",
+              "english": "Beautiful flowers are blooming."
+            },
+            {
+              "japanese": "彼女は親切な人です。",
+              "reading": "かのじょはしんせつなひとです。",
+              "english": "She is a kind person."
+            },
+            {
+              "japanese": "これは有名なレストランです。",
+              "reading": "これはゆうめいなレストランです。",
+              "english": "This is a famous restaurant."
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.632Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l16_grammar_6",
+          "pattern": "と",
+          "meaning": "Marks the person someone does an action together with, meaning 'with'.",
+          "explanation": "When と follows a noun referring to a person, it means 'together with' that person, indicating a joint or shared action. For example, 友達と行く means 'go with a friend'. It implies both parties participate, unlike から (from) or に (to/for). This usage is neutral in register and appears in both polite and casual contexts.",
+          "examples": [
+            {
+              "japanese": "私は家族と旅行します。",
+              "reading": "わたしはかぞくとりょこうします。",
+              "english": "I travel with my family."
+            },
+            {
+              "japanese": "友達と映画を見た。",
+              "reading": "ともだちとえいがをみた。",
+              "english": "I watched a movie with a friend."
+            },
+            {
+              "japanese": "先生と話しました。",
+              "reading": "せんせいとはなしました。",
+              "english": "I spoke with the teacher."
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.632Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l16_grammar_7",
+          "pattern": "ます",
+          "meaning": "The polite non-past verb ending used in formal and everyday polite speech.",
+          "explanation": "ます attaches to the verb stem to make speech polite (丁寧語). It expresses present or future actions. Its negative is ません, its past is ました, and its past negative is ませんでした. ます-form is the standard form to use when speaking to people you don't know well, teachers, or in any formal situation.",
+          "examples": [
+            {
+              "japanese": "私は学校に行きます。",
+              "reading": "わたしはがっこうにいきます。",
+              "english": "I go to school."
+            },
+            {
+              "japanese": "昨日、図書館で勉強しました。",
+              "reading": "きのう、としょかんでべんきょうしました。",
+              "english": "Yesterday I studied at the library."
+            },
+            {
+              "japanese": "今日はテレビを見ません。",
+              "reading": "きょうはテレビをみません。",
+              "english": "I won't watch TV today."
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.632Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_a1_l16_grammar_8",
+          "pattern": "なぜ",
+          "meaning": "A formal question word meaning 'why', used to ask for a reason.",
+          "explanation": "なぜ means 'why' and is used to ask about the reason or cause of something. It is the most formal of the three 'why' words in Japanese (なぜ、どうして、なんで) and is common in writing, formal speech, and set phrases. It is typically answered with から or ので.",
+          "examples": [
+            {
+              "japanese": "なぜ遅刻しましたか。",
+              "reading": "なぜちこくしましたか。",
+              "english": "Why were you late?"
+            },
+            {
+              "japanese": "なぜ日本語を勉強していますか。",
+              "reading": "なぜにほんごをべんきょうしていますか。",
+              "english": "Why are you studying Japanese?"
+            },
+            {
+              "japanese": "なぜ泣いているのですか。",
+              "reading": "なぜないているのですか。",
+              "english": "Why are you crying?"
+            }
+          ],
+          "lessonNumber": 16,
+          "sourceRef": {
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.632Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a1_16"
+    }
+  ]
+}

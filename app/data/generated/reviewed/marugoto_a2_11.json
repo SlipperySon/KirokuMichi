@@ -1,18 +1,33 @@
 {
-  "schemaVersion": "learner-draft-1",
-  "textbookKey": "marugoto_a2_textbook",
-  "title": "marugoto_a2_textbook / marugoto_a2_11",
-  "qualityTier": "draft",
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a2",
+  "title": "Marugoto A2: Katsudoo (Elementary 2)",
+  "edition": "learner-gold",
+  "levelRange": "A2",
+  "sources": [
+    {
+      "sourceId": "marugoto_a2_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "87befe524f5f78113f32b3397bcd6b6f15a2bdcf16f20a9763e684fa556ca5b5",
+        "bytes": 35694565
+      }
+    }
+  ],
   "lessons": [
     {
-      "id": "marugoto_a2_11_draft",
-      "appLessonId": "marugoto_a2_11",
-      "title": "marugoto a2 11",
-      "qualityTier": "draft",
+      "id": "marugoto_a2_lesson_11",
+      "unitType": "lesson",
+      "lessonNumber": 11,
+      "title": "Marugoto A2: Katsudoo (Elementary 2) — Lesson 11",
+      "level": "A2",
+      "modes": [
+        "conversation_grammar"
+      ],
       "vocabulary": [],
       "grammar": [
         {
-          "id": "cefr_a2_188",
+          "id": "marugoto_a2_l11_grammar_1",
           "pattern": "でございます",
           "meaning": "A very formal copula form equivalent to 'is' or 'are'.",
           "explanation": "でございます is the formal copula used in place of です in very formal contexts such as formal introductions, official announcements, and ceremonies. It carries a tone of extra respect and formality compared to です.",
@@ -33,13 +48,20 @@
               "english": "Today's meeting is at 2 PM."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-a2",
-            "pageNumber": 0
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_a2_189",
+          "id": "marugoto_a2_l11_grammar_2",
           "pattern": "お～ください",
           "meaning": "A respectful form for politely requesting someone to do something.",
           "explanation": "Combining the honorific prefix お with a verb stem and ください creates a respectful, formal request. This pattern is commonly used in business, customer service, and formal settings where politeness and respect are emphasized.",
@@ -60,31 +82,20 @@
               "english": "Please read this brochure."
             }
           ],
-          "maynardRef": {
-            "topicId": "more_grammar/requesting_て_てください",
-            "title": "Requesting: て, てください",
-            "excerpt": "3.2. FURTHER INFLECTIONS 133\n3.2.10 Requesting:て,てください\nImperative request\nWe already saw that we can use the verb 連用形 + てく ださい to form a\nrequest,\nにはいくだ\nコーヒーを二杯下さい。\n\"Two coffee, please.\"\nBut we can also use the plain て form to form an informal request,\nor plea:\n待って。\n\"Wait (please)\"\nか\nこれを買って?\n\"Buy this (for me)?\"\nOf course, like all requests, they can be made to sound demanding,\nso intonation counts. If we say 待て instead of 待つて, cutting out the stop\nin the middle to sound curt, then rather than a ",
-            "examples": [
-              {
-                "japanese": "3.2.10 Requesting:て,てください",
-                "english": "Imperative request"
-              },
-              {
-                "japanese": "We already saw that we can use the verb 連用形 + てく ださい to form a",
-                "english": "request,"
-              },
-              {
-                "japanese": "にはいくだ"
-              }
-            ]
-          },
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-a2",
-            "pageNumber": 0
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_a2_190",
+          "id": "marugoto_a2_l11_grammar_3",
           "pattern": "お～になる",
           "meaning": "To express that someone (usually of higher status) does an action in a respectful way.",
           "explanation": "This is an honorific pattern used to speak about others' actions with respect and politeness. The prefix お is added to a verb stem, and になる shows the action. Common in formal situations, when speaking about superiors, customers, or in business contexts.",
@@ -105,29 +116,20 @@
               "english": "The president decides"
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/becoming_なる",
-            "title": "Becoming: なる",
-            "excerpt": "2.5. SPECIAL VERBS 81\nこそあど meaning\nこなた this person (I/me/you/him/he/her/she).\nそなた that person (him/he, her/she).\nあなた that person over there (you).\nどなた which person (who).\nSince this set is a tad classical, there are a few things to notice. First\nof all, そなた refers to a third person (he/she), while あなた refers to second\nperson (you). Also, while somewhat classical, this set is still used in formal\nsettings. However, because it is used exclusively in formal settings it is\nconsidered distal and very",
-            "examples": [
-              {
-                "japanese": "こそあど meaning"
-              },
-              {
-                "japanese": "こなた this person (I/me/you/him/he/her/she)."
-              },
-              {
-                "japanese": "そなた that person (him/he, her/she)."
-              }
-            ]
-          },
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-a2",
-            "pageNumber": 0
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_a2_191",
+          "id": "marugoto_a2_l11_grammar_4",
           "pattern": "いらっしゃる",
           "meaning": "The respectful form of いる (to be/exist), 来る (to come), and 行く (to go).",
           "explanation": "This honorific verb replaces いる, 来る, or 行く when speaking about someone else's location, movement, or existence to show respect. It is one of the most important honorific verbs in Japanese and is conjugated with ~ます endings in formal speech.",
@@ -148,29 +150,20 @@
               "english": "The principal will come tomorrow."
             }
           ],
-          "maynardRef": {
-            "topicId": "conjugation_schemes/special_bases_for_いらっしゃる",
-            "title": "Special bases for いらっしゃる",
-            "excerpt": "326 CHAPTER 7. CONJUGATION SCHEMES\n7.1.9 Verbal adjectives\nbase how to form\nごかん\n語干 Remove the W from the dictionary form.\n未然形 語干+く\n連用形 語干+く\n連体形 語幹+い\n已然形 語幹+けれ\n(命令形 語幹+かれ)\nござ\n7.1.10 Special bases for 御座る\nbase form\n未然形 ござら\n連用形 ござい\n連体形 ござる\n已然形 ござれ\n命令形 ござい\n7.1.11 Special bases forいらっしゃる\nbase form\n未然形 いらっしゃら\n連用形 いらっしゃい\n連体形 いらっしゃる\n已然形 いらっしゃれ\n命令形いらっしゃい",
-            "examples": [
-              {
-                "japanese": "語干 Remove the W from the dictionary form."
-              },
-              {
-                "japanese": "未然形 語干+く"
-              },
-              {
-                "japanese": "連用形 語干+く"
-              }
-            ]
-          },
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-a2",
-            "pageNumber": 0
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_a2_192",
+          "id": "marugoto_a2_l11_grammar_5",
           "pattern": "いたす",
           "meaning": "A humble auxiliary verb that expresses the speaker's actions modestly.",
           "explanation": "いたす is a humble auxiliary verb that can follow a verb's te-form to express the speaker humbly performing an action. It softens the tone and shows respect, similar to する but more humble. Commonly used in business communication to show the speaker's modesty.",
@@ -191,13 +184,20 @@
               "english": "We have sent you the brochure."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-a2",
-            "pageNumber": 0
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_a2_193",
+          "id": "marugoto_a2_l11_grammar_6",
           "pattern": "なさる",
           "meaning": "A polite and respectful way to say 'do' when referring to someone else's actions.",
           "explanation": "This is the honorific equivalent of する/します. It's used when discussing someone else's actions in a respectful manner, particularly towards superiors, customers, or in formal contexts. Very common in business Japanese and formal conversation.",
@@ -218,30 +218,20 @@
               "english": "The president said so"
             }
           ],
-          "maynardRef": {
-            "topicId": "conjugation_schemes/special_bases_for_なさる",
-            "title": "Special bases for なさる",
-            "excerpt": "7.2. CONJUGATION SCHEMES 327\n7.1.12 Special bases for おつしゃる\nbase form\n未然形 おっしゃら\n連用形 おっしゃい\n連体形 おっしゃる\n已然形 おっしゃれ\n命令形 おっしゃい\nくだ\n7.1.13 Special bases for 下さる\nbase form\n未然形 下さら\n連用形 下さい\n連体形 下さる\n已然形 下され\n命令形 下さい\n7.1.14 Special bases for なさる\nbase form\n未然形 なさら\n連用形 なさい\n連体形 なさる\n已然形 なされ\n命令形 なさい\n7.2 Conjugation schemes\nごだん\n7.2.1 Regular verbs: 五段 verbs\nContractions in the inflections are indicated with (c)",
-            "examples": [
-              {
-                "japanese": "7.1.12 Special bases for おつしゃる",
-                "english": "base form"
-              },
-              {
-                "japanese": "未然形 おっしゃら"
-              },
-              {
-                "japanese": "連用形 おっしゃい"
-              }
-            ]
-          },
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-a2",
-            "pageNumber": 0
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_a2_194",
+          "id": "marugoto_a2_l11_grammar_7",
           "pattern": "かしら",
           "meaning": "Used to express uncertainty, wondering, or speculation in a casual way",
           "explanation": "かしら is an informal, somewhat feminine-sounding expression of wondering or asking a question to oneself. It can follow nouns, adjectives, or sentence-final verb forms. It's less formal than ～でしょうか and is typically used among friends or when thinking aloud.",
@@ -262,13 +252,20 @@
               "english": "I wonder if tomorrow will have nice weather."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-a2",
-            "pageNumber": 0
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_a2_362",
+          "id": "marugoto_a2_l11_grammar_8",
           "pattern": "どんどん",
           "meaning": "An adverb describing something advancing, increasing, or progressing quickly and without stopping.",
           "explanation": "どんどん expresses a rapid, continuous, often unstoppable progression — faster and more dynamic than だんだん. It frequently collocates with verbs of growth, increase, or forward movement. Neutral register, used in both casual and polite contexts.",
@@ -289,13 +286,20 @@
               "english": "Prices are rising more and more."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-a2",
-            "pageNumber": 0
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_a2_363",
+          "id": "marugoto_a2_l11_grammar_9",
           "pattern": "まず",
           "meaning": "Used to indicate the first step or action in a sequence.",
           "explanation": "まず introduces the first item in a list of steps or actions, similar to 'first of all' or 'to start with' in English. It is used in both polite and casual speech. It often appears in instructions, recipes, or explanations of a process.",
@@ -316,13 +320,20 @@
               "english": "When cooking, first I prepare the ingredients."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-a2",
-            "pageNumber": 0
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_a2_364",
+          "id": "marugoto_a2_l11_grammar_10",
           "pattern": "また",
           "meaning": "Used to add information, indicate repetition, or introduce an additional point.",
           "explanation": "また can mean 'again' (repeating an action), 'also' (adding another item), or 'moreover' (introducing a related point). It is a versatile conjunction/adverb used in both formal and casual contexts. The meaning is usually clear from context.",
@@ -343,9 +354,16 @@
               "english": "This restaurant is cheap. Moreover, the food is also delicious."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-a2",
-            "pageNumber": 0
+            "sourceId": "marugoto_a2_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         }
       ],
@@ -358,6 +376,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -367,6 +391,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -376,6 +406,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -385,6 +421,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -394,6 +436,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -403,6 +451,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -412,6 +466,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -421,6 +481,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -430,6 +496,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -439,6 +511,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -448,6 +526,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -457,6 +541,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -466,6 +556,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -475,6 +571,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -484,6 +586,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -493,6 +601,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -502,6 +616,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -511,6 +631,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -520,6 +646,12 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -529,189 +661,17 @@
           "sourceRef": {
             "sourceId": "marugoto_a2_textbook",
             "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_166",
-          "label": "practice",
-          "prompt": "Ask/Tell someone in the same tour group if it is his or her/your",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_167",
-          "label": "practice",
-          "prompt": "Kyooto wa hajimete desu ka?/ 2-kaime desu.",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_168",
-          "label": "practice",
-          "prompt": "A Town Rich",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_169",
-          "label": "practice",
-          "prompt": "first time to visit a sightseeing spot",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_170",
-          "label": "practice",
-          "prompt": "Kyooto wa nani o mitemo tanoshii desu yo.",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_171",
-          "label": "practice",
-          "prompt": "in History",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_172",
-          "label": "practice",
-          "prompt": "Kono otera wa 14-seeki no owari ni tateraremashita.",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_173",
-          "label": "practice",
-          "prompt": "Talk briefly about a famous place",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_174",
-          "label": "practice",
-          "prompt": "Kyooto de wa Kyoo-kotoba ga hanasarete limasu.",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_175",
-          "label": "practice",
-          "prompt": "and Culture",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_176",
-          "label": "practice",
-          "prompt": "Read comments written in the visitor comment book at a",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_177",
-          "label": "practice",
-          "prompt": "Rekishi to",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_178",
-          "label": "practice",
-          "prompt": "sightseeing spot",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_179",
-          "label": "practice",
-          "prompt": "Write a comment in the visitor comment book at a sightseeing",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_180",
-          "label": "practice",
-          "prompt": "Lesson 14 I hear that this painting is very famous Kono e wa totemo yuumeeda soo desu",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_181",
-          "label": "practice",
-          "prompt": "Kono e wa 17-seekini kakareta soo desu.",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_182",
-          "label": "practice",
-          "prompt": "Tell a friend in simple terms what the description of an exhibit",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_183",
-          "label": "practice",
-          "prompt": "Kore wa Yooroppa ni yushutsu-suru tameni",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_184",
-          "label": "practice",
-          "prompt": "in a museum says",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
-          }
-        },
-        {
-          "id": "marugoto_a2_textbook_marugoto_a2_11_exercise_185",
-          "label": "practice",
-          "prompt": "tsukuraremashita.",
-          "sourceRef": {
-            "sourceId": "marugoto_a2_textbook",
-            "pageNumber": 19
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.660Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         }
-      ]
+      ],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a2_11"
     }
   ]
 }

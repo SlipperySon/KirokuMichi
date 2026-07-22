@@ -1,18 +1,33 @@
 {
-  "schemaVersion": "learner-draft-1",
-  "textbookKey": "marugoto_a1_textbook",
-  "title": "marugoto_a1_textbook / marugoto_a1_10",
-  "qualityTier": "draft",
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_a1",
+  "title": "Marugoto A1: Katsudoo (Starter)",
+  "edition": "learner-gold",
+  "levelRange": "A1",
+  "sources": [
+    {
+      "sourceId": "marugoto_a1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "37d39aeeacc21293c1b109685277456c277309963dc485944bfb6adc91d5842a",
+        "bytes": 30572124
+      }
+    }
+  ],
   "lessons": [
     {
-      "id": "marugoto_a1_10_draft",
-      "appLessonId": "marugoto_a1_10",
-      "title": "marugoto a1 10",
-      "qualityTier": "draft",
+      "id": "marugoto_a1_lesson_10",
+      "unitType": "lesson",
+      "lessonNumber": 10,
+      "title": "Marugoto A1: Katsudoo (Starter) — Lesson 10",
+      "level": "A1",
+      "modes": [
+        "conversation_grammar"
+      ],
       "vocabulary": [],
       "grammar": [
         {
-          "id": "cefr_a1_73",
+          "id": "marugoto_a1_l10_grammar_1",
           "pattern": "より～のほうが",
           "meaning": "Compares two things, stating that one is more ~ than the other.",
           "explanation": "より marks the item being compared against (the lesser item), while のほうが marks the item that wins the comparison. The adjective or preference follows のほうが. This is the standard polite way to make direct comparisons in Japanese.",
@@ -33,13 +48,20 @@
               "english": "I prefer winter over summer."
             }
           ],
+          "lessonNumber": 10,
           "sourceRef": {
-            "sourceId": "cefr-a1",
-            "pageNumber": 0
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.616Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_a1_74",
+          "id": "marugoto_a1_l10_grammar_2",
           "pattern": "なくちゃ・なきゃ",
           "meaning": "Casual contracted forms meaning 'have to' or 'must do'.",
           "explanation": "なくちゃ is a contraction of なくてはいけない and なきゃ is a contraction of なければいけない. Both are very common in casual spoken Japanese, especially among younger speakers. They express personal obligation in a relaxed, everyday register — never use them in formal writing or with superiors.",
@@ -60,13 +82,20 @@
               "english": "I have to call my mum."
             }
           ],
+          "lessonNumber": 10,
           "sourceRef": {
-            "sourceId": "cefr-a1",
-            "pageNumber": 0
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.616Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_a1_75",
+          "id": "marugoto_a1_l10_grammar_3",
           "pattern": "～ましょうか",
           "meaning": "Used to offer to do something for someone or to suggest doing something together as a question.",
           "explanation": "Adding か to ましょう turns it into a question, softening it into an offer ('Shall I ~?') or an open suggestion ('Shall we ~?'). Context determines whether the speaker is offering personal help or inviting joint action. It is polite and very common in service and everyday interactions.",
@@ -87,30 +116,20 @@
               "english": "Shall we go to the library together?"
             }
           ],
-          "maynardRef": {
-            "topicId": "more_grammar/pseudo_future_おう_よう",
-            "title": "Pseudo-future: おう/よう",
-            "excerpt": "3.2. FURTHER INFLECTIONS 121\nthe adjective 欲しい, desire, is used:\nあか\nこのドアが赤くて欲しい。\n\"(I) want this door red.\"\nIn terms of politeness 欲しい is just as direct and selfish as fい, and\nit can be softened by adding です or んです:\nつか\n使って欲しい。\n\"[I] want it made.\"\n使って欲しいです。\n\"(I) want it made (being said in a less direct manner than the above\nsentence)\"\n使って欲しいんです。\n\"(I) want it made ('There is a reason for me wanting this, it's not pure\nselfishness here, don't worry')\"\nSince 欲 し い is a normal verbal adjective, we ca",
-            "examples": [
-              {
-                "japanese": "the adjective 欲しい, desire, is used:"
-              },
-              {
-                "japanese": "このドアが赤くて欲しい。",
-                "english": "\"(I) want this door red.\""
-              },
-              {
-                "japanese": "In terms of politeness 欲しい is just as direct and selfish as fい, and"
-              }
-            ]
-          },
+          "lessonNumber": 10,
           "sourceRef": {
-            "sourceId": "cefr-a1",
-            "pageNumber": 0
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.616Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_a1_76",
+          "id": "marugoto_a1_l10_grammar_4",
           "pattern": "すぎる",
           "meaning": "Expresses that something is excessive or goes beyond an acceptable degree.",
           "explanation": "Attach すぎる to the verb stem (ます-base) or to the stem of an い-adjective (drop い) or な-adjective (drop な/だ) to mean 'too ~' or 'excessively ~.' It conjugates as a regular る-verb: すぎます (polite), すぎた (past). It typically carries a negative nuance — the excess is problematic or undesirable.",
@@ -131,13 +150,20 @@
               "english": "Please don't drink too much coffee."
             }
           ],
+          "lessonNumber": 10,
           "sourceRef": {
-            "sourceId": "cefr-a1",
-            "pageNumber": 0
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.616Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_a1_77",
+          "id": "marugoto_a1_l10_grammar_5",
           "pattern": "のがじょうず",
           "meaning": "Expresses that someone is good at or proficient at doing something.",
           "explanation": "This pattern nominalizes a verb using の and pairs it with 上手 (じょうず) to express skill or proficiency in an activity. The verb before の is in plain (dictionary) form. Note: when talking about your own skill, Japanese speakers often use 得意 (とくい) instead to avoid sounding boastful, but 上手 is standard for others.",
@@ -158,13 +184,20 @@
               "english": "He is good at drawing pictures."
             }
           ],
+          "lessonNumber": 10,
           "sourceRef": {
-            "sourceId": "cefr-a1",
-            "pageNumber": 0
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.616Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_a1_78",
+          "id": "marugoto_a1_l10_grammar_6",
           "pattern": "よ",
           "meaning": "A sentence-ending particle that asserts information or gently informs the listener of something they may not know.",
           "explanation": "よ is added to the end of a sentence to emphasise the speaker's statement or to share new information with confidence. It can sound assertive or informative depending on tone. It is common in both casual and polite speech, but avoid overusing it as it can come across as pushy.",
@@ -185,13 +218,20 @@
               "english": "The train has already come."
             }
           ],
+          "lessonNumber": 10,
           "sourceRef": {
-            "sourceId": "cefr-a1",
-            "pageNumber": 0
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.616Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_a1_79",
+          "id": "marugoto_a1_l10_grammar_7",
           "pattern": "たり～たりする",
           "meaning": "Lists representative actions or states from a larger set, implying there are other similar things.",
           "explanation": "Form たり by adding り to the plain past (た-form) of each verb, then close the list with する (or します). It signals that the examples given are not exhaustive — you are picking out a few typical items. This pattern is common in casual and polite speech alike when describing routines or varied activities.",
@@ -212,31 +252,20 @@
               "english": "In the morning I do things like drink coffee and read the newspaper."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/doing_する",
-            "title": "Doing: する",
-            "excerpt": "84 CHAPTER 2. VERB GRAMMAR\n2.5.31 Doing: する\nWe've already seen す る as irregular verb, and it has been used in enough\nexample sentences to let it be no surprise that it means \"do'\". However,\nthis isn't the only meaning for this verb. When used in combination with\na direct object – as transitive verb – す る does mean \"do', but when used\nas intransitive verb, its meaning should be considered to be \"decide on'\nor \"choose'\". To show this difference in meaning between the transitive\nたどうし じどうし\n(strictly",
-            "examples": [
-              {
-                "japanese": "2.5.31 Doing: する"
-              },
-              {
-                "japanese": "We've already seen す る as irregular verb, and it has been used in enough",
-                "english": "example sentences to let it be no surprise that it means \"do'\". However,"
-              },
-              {
-                "japanese": "a direct object – as transitive verb – す る does mean \"do', but when used",
-                "english": "as intransitive verb, its meaning should be considered to be \"decide on'"
-              }
-            ]
-          },
+          "lessonNumber": 10,
           "sourceRef": {
-            "sourceId": "cefr-a1",
-            "pageNumber": 0
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.616Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_a1_80",
+          "id": "marugoto_a1_l10_grammar_8",
           "pattern": "つもりだ",
           "meaning": "Expresses the speaker's intention or plan to do something.",
           "explanation": "つもりだ follows the plain (dictionary) form of a verb to indicate that the speaker intends or plans to do something. For negative intention, use the negative plain form (〜ないつもりだ). It is used in both polite (つもりです) and casual (つもりだ) speech.",
@@ -257,53 +286,56 @@
               "english": "I plan not to drink alcohol."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/being_です_だ_ある_いる",
-            "title": "Being: です, だ, ある, いる",
-            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
-            "examples": [
-              {
-                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
-              },
-              {
-                "japanese": "bases areなら,なり，なる,なれ andなれ.",
-                "english": "While typically used in combination with the verb particle lC, it can"
-              },
-              {
-                "japanese": "also be used in combination with the particle と, in which case its meaning",
-                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
-              }
-            ]
-          },
+          "lessonNumber": 10,
           "sourceRef": {
-            "sourceId": "cefr-a1",
-            "pageNumber": 0
+            "sourceId": "marugoto_a1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.616Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         }
       ],
       "contentBlocks": [
         {
-          "id": "marugoto_a1_10_dialogue_0",
+          "id": "marugoto_a1_l10_dialogue_1",
           "type": "dialogue",
           "title": "Dialogue marugoto_a1_10",
           "text": "Katsudoo: and Rikai should both be seen as main study materials. Decide which to choose\nbased: on your learning objectives. In addition, Katsudoo and Rikai use the same topics. If\nyou: use both, you can make progress in your overall Japanese proficiency.\nIntercultural: Understanding\nMarugoto: offers learning in both language and culture. There is help with intercultural\nunderstanding: in various places, such as the situations of the conversations, contents of\nthe: conversations, photographs and illustrations. Learn about Japanese culture,reflect on\nyour: own culture and deepen your intercultural understanding.\nIf: I compare Japanese food with Australian food, they\nboth: rely on fresh ingredients and the natural tastes of\nthe: fresh ingredients.\nManaging: your own Study\n华: It is very important to evaluate and manage your learning by yourself in order to keep\ngoing: in language learning. Make a record of the Japanese language and culture you have\nstudied: using the portfolio. When you look at the portfolio, you can clearly understand your\nown: learning processes and your accomplishments.\nHow: to Use This Book\nCourse: Flow\nThe: Marugoto (Starter A1 Katsudoo) course is designed with communicative language\nactivities: at its heart. One lesson will be studied in each class hour. The suggested class\nlength: for one lesson is around 90-120 minutes. In the middle and at the end of the course,\nyou: wildo'Test and Reflection' 1 and 2, so there will be a total of twenty classes.\nStandard: Course Example\nlesson: lesson\nlesson: lesson\nTest: and Reflection 1\nTest: and Reflection 2",
           "sourceRef": {
             "sourceId": "marugoto_a1_textbook",
             "pageNumber": 13
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.616Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "marugoto_a1_10_dialogue_1",
+          "id": "marugoto_a1_l10_dialogue_2",
           "type": "dialogue",
           "title": "Dialogue a1_textbook_marugoto_a1_10",
           "text": "Topic: and Lesson Flow\nLearn: the Objectives\nEach: topic has two lessons. Look at the photographs and\nたべもの: talk about what kind of thing you think you are going to\ndo: Check the Can-do statements to see what you will be\nable: to do by the end of each lesson.\nKoaF: neniniu ha\neine: 08501\nIeoncno: O P A fe\nC: 2=14\nListen: to the recording and check your understanding\nwhile: pointing at the photographs and illustrations. Try\nsaying: the words and sentence patterns quietly as you listen.\nRemember: the words that you need. Audio files URL→p17\nListen: and Find\n华: You will listen to a lot of contextualized conversations. As well as understanding the\ncontents: of the conversation, it is important to grasp the flow of the conversation and\nnotice: the expressions that are often used. Audio files URL→p17\nTry: Using\nSpeak: in pairs using\nthe: expressions in the\n青: DA(：O：)\nconversations: you listened to. If you\nT: cannot do it well, try listening to the\nconversation: again.\nWords: and expressions\nyou: should pay atention\nJapan: Japan\nJapan: (Jose-san)\nKorea: India",
           "sourceRef": {
             "sourceId": "marugoto_a1_textbook",
             "pageNumber": 14
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.616Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         }
       ],
-      "exercises": []
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_a1_10"
     }
   ]
 }

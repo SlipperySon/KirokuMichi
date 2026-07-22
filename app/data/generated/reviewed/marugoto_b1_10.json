@@ -1,0 +1,468 @@
+{
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_b1",
+  "title": "Marugoto B1: Intermediate 1",
+  "edition": "learner-gold",
+  "levelRange": "B1",
+  "sources": [
+    {
+      "sourceId": "marugoto_b1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "d81948636c448b583ea3b99b908addcc1e79ec458e2c279c600e606b926b85fe",
+        "bytes": 148164767
+      }
+    }
+  ],
+  "lessons": [
+    {
+      "id": "marugoto_b1_lesson_10",
+      "unitType": "lesson",
+      "lessonNumber": 10,
+      "title": "Marugoto B1: Intermediate 1 — Lesson 10",
+      "level": "B1",
+      "modes": [
+        "conversation_grammar"
+      ],
+      "vocabulary": [],
+      "grammar": [
+        {
+          "id": "marugoto_b1_l10_grammar_1",
+          "pattern": "てごらん",
+          "meaning": "A gentle imperative meaning 'please try doing' or 'go ahead and do,' typically used by adults speaking to children or close inferiors.",
+          "explanation": "てごらん attaches to the て-form of a verb and functions as a soft command or invitation to try something. It is casual and carries a warm, encouraging tone, often used by parents, teachers, or seniors. It is more gentle than てみろ but less formal than てみてください.",
+          "examples": [
+            {
+              "japanese": "この料理を食べてごらん。きっと気に入るよ。",
+              "reading": "このりょうりをたべてごらん。きっときにいるよ。",
+              "english": "Try eating this dish. I'm sure you'll like it."
+            },
+            {
+              "japanese": "難しくないから、自分でやってごらん。",
+              "reading": "むずかしくないから、じぶんでやってごらん。",
+              "english": "It's not hard, so try doing it yourself."
+            },
+            {
+              "japanese": "窓から外を見てごらん。雪が降っているよ。",
+              "reading": "まどからそとをみてごらん。ゆきがふっているよ。",
+              "english": "Look outside the window. It's snowing."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.781Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l10_grammar_2",
+          "pattern": "ずにはいられない",
+          "meaning": "Cannot help doing something, Cannot resist doing something",
+          "explanation": "Grammar explanation for ずにはいられない",
+          "examples": [
+            {
+              "japanese": "例文です。",
+              "reading": "れいぶんです。",
+              "english": "Example sentence."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.781Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l10_grammar_3",
+          "pattern": "って",
+          "meaning": "A casual spoken equivalent of は used to mark the topic of a sentence or introduce what one is talking about.",
+          "explanation": "って functions as a colloquial substitute for は as a topic marker in informal conversation. It can also follow reported speech, names, or concepts to introduce them as the subject of discussion ('speaking of X', 'you know X?'). It is strictly casual and would sound inappropriate in formal or written contexts where は is expected.",
+          "examples": [
+            {
+              "japanese": "あの映画って、面白かった？",
+              "reading": "あのえいがって、おもしろかった？",
+              "english": "That movie — was it interesting?"
+            },
+            {
+              "japanese": "田中さんって、どんな人？",
+              "reading": "たなかさんって、どんなひと？",
+              "english": "So what kind of person is Tanaka-san?"
+            },
+            {
+              "japanese": "「愛」って、難しい言葉だよね。",
+              "reading": "「あい」って、むずかしいことばだよね。",
+              "english": "'Love' — it's a complicated word, isn't it."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.781Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l10_grammar_4",
+          "pattern": "である",
+          "meaning": "The formal or literary equivalent of だ, used to assert identity or state in written, academic, or authoritative contexts.",
+          "explanation": "である functions as a copula like だ but carries a much more formal and authoritative tone. It is standard in academic writing, official documents, news articles, and essays. It rarely appears in casual conversation and signals that the speaker or writer is presenting information with authority or in a structured format.",
+          "examples": [
+            {
+              "japanese": "自由とは、自分で選択できることである。",
+              "reading": "じゆうとは、じぶんでせんたくできることである。",
+              "english": "Freedom is the ability to make one's own choices."
+            },
+            {
+              "japanese": "この問題の原因は複雑であると考えられている。",
+              "reading": "このもんだいのげんいんはふくざつであるとかんがえられている。",
+              "english": "The cause of this problem is considered to be complex."
+            },
+            {
+              "japanese": "彼は本学の創設者であることが記録に残っている。",
+              "reading": "かれはほんがくのそうせつしゃであることがきろくにのこっている。",
+              "english": "It is recorded that he was the founder of this university."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.781Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l10_grammar_5",
+          "pattern": "なかなか",
+          "meaning": "Expresses either a notably high degree ('quite good') in positive statements, or persistent difficulty ('just won't') in negative statements.",
+          "explanation": "なかなか has two main uses depending on sentence polarity. With positive predicates it means 'quite / pretty / considerably' and adds appreciation or mild surprise (なかなかいい 'pretty good'). With negative predicates it means 'just won't / not easily / not as expected' and expresses frustration that something is not happening as hoped (なかなか来ない 'just won't come'). Both uses are common in everyday casual speech.",
+          "examples": [
+            {
+              "japanese": "このレストランの料理はなかなかおいしいね。",
+              "reading": "このレストランのりょうりはなかなかおいしいね。",
+              "english": "The food at this restaurant is quite good, isn't it."
+            },
+            {
+              "japanese": "バスがなかなか来なくて、遅刻してしまった。",
+              "reading": "バスがなかなかこなくて、ちこくしてしまった。",
+              "english": "The bus just wouldn't come, so I ended up being late."
+            },
+            {
+              "japanese": "日本語の発音はなかなか難しい。",
+              "reading": "にほんごのはつおんはなかなかむずかしい。",
+              "english": "Japanese pronunciation is quite difficult."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.781Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l10_grammar_6",
+          "pattern": "すると",
+          "meaning": "Connects two events, indicating the second happened immediately after or as a direct result of the first.",
+          "explanation": "すると follows a clause or sentence and introduces a consequence or discovery that followed naturally from the preceding situation. It is often used in narratives to advance the story and carries a sense of 'at that point' or 'then, as a result.' It also appears in conditional reasoning meaning 'if that is the case, then.' It is used in both written and spoken Japanese.",
+          "examples": [
+            {
+              "japanese": "ドアを開けた。すると、猫が入ってきた。",
+              "reading": "ドアをあけた。すると、ねこがはいってきた。",
+              "english": "I opened the door. Just then, a cat came in."
+            },
+            {
+              "japanese": "ボタンを押すと、機械が動いた。すると、音が止まった。",
+              "reading": "ボタンをおすと、きかいがうごいた。すると、おとがとまった。",
+              "english": "I pressed the button and the machine started. Thereupon, the sound stopped."
+            },
+            {
+              "japanese": "彼女は何も言わなかった。すると、彼は帰ってしまった。",
+              "reading": "かのじょはなにもいわなかった。すると、かれはかえってしまった。",
+              "english": "She didn't say anything. And then, he left."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.781Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l10_grammar_7",
+          "pattern": "全く～ない",
+          "meaning": "Completely negates the following verb or adjective, emphasizing total absence.",
+          "explanation": "全く is an adverb meaning 'completely' or 'entirely' and combines with a negative form to express that something is entirely absent or untrue. It is stronger than あまり～ない and closer to 'not in the least' or 'not at all.' It is used in both spoken and written Japanese and carries a tone of emphasis or frustration.",
+          "examples": [
+            {
+              "japanese": "彼の言っていることが全くわからない。",
+              "reading": "かれのいっていることがまったくわからない。",
+              "english": "I don't understand what he is saying at all."
+            },
+            {
+              "japanese": "その映画は全く面白くなかった。",
+              "reading": "そのえいがはまったくおもしろくなかった。",
+              "english": "That movie wasn't interesting in the least."
+            },
+            {
+              "japanese": "昨日は全く眠れなかった。",
+              "reading": "きのうはまったくねむれなかった。",
+              "english": "I couldn't sleep at all yesterday."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.781Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l10_grammar_8",
+          "pattern": "のに",
+          "meaning": "Expresses the purpose or requirement for something, meaning 'in order to' or 'for doing'.",
+          "explanation": "のに attaches to a verb in dictionary form or a noun+の to indicate what something is needed for or used for. It is neutral in register and works in both spoken and written Japanese. Unlike ために, のに often focuses on what is required or necessary for a purpose rather than a deliberate goal.",
+          "examples": [
+            {
+              "japanese": "この薬は頭痛を治すのに効果的です。",
+              "reading": "このくすりはずつうをなおすのにこうかてきです。",
+              "english": "This medicine is effective for treating headaches."
+            },
+            {
+              "japanese": "日本語を話せるようになるのに、毎日練習が必要だ。",
+              "reading": "にほんごをはなせるようになるのに、まいにちれんしゅうがひつようだ。",
+              "english": "In order to be able to speak Japanese, daily practice is necessary."
+            },
+            {
+              "japanese": "この仕事をするのに、特別なスキルはいらない。",
+              "reading": "このしごとをするのに、とくべつなスキルはいらない。",
+              "english": "You don't need any special skills to do this job."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.781Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l10_grammar_9",
+          "pattern": "～は～で有名",
+          "meaning": "States that a person, place, or thing is famous or well-known for a particular quality or thing.",
+          "explanation": "The structure [A]は[B]で有名 means 'A is famous for B', where B is a noun phrase indicating the reason for fame. 有名 is a な-adjective, so it connects to nouns via で. This is neutral in register and appears in both spoken and written Japanese.",
+          "examples": [
+            {
+              "japanese": "京都は古いお寺で有名です。",
+              "reading": "きょうとはふるいおてらでゆうめいです。",
+              "english": "Kyoto is famous for its old temples."
+            },
+            {
+              "japanese": "この店はおいしいラーメンで有名だ。",
+              "reading": "このみせはおいしいラーメンでゆうめいだ。",
+              "english": "This restaurant is famous for its delicious ramen."
+            },
+            {
+              "japanese": "彼女は親切な性格で有名です。",
+              "reading": "かのじょはしんせつなせいかくでゆうめいです。",
+              "english": "She is famous for her kind personality."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.781Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l10_grammar_10",
+          "pattern": "～と言っても",
+          "meaning": "Acknowledges what has been said but immediately qualifies or limits it, meaning 'although one might say ~ / even if ~'.",
+          "explanation": "と言っても follows a noun, adjective, or plain-form verb to concede a statement while clarifying that reality is more limited or nuanced than the statement implies. It often sets up a contrast between expectation and reality. It is used in both spoken and written Japanese at a neutral register.",
+          "examples": [
+            {
+              "japanese": "料理が得意と言っても、作れるのはカレーだけだ。",
+              "reading": "りょうりがとくいといっても、つくれるのはカレーだけだ。",
+              "english": "Even though I might say I'm good at cooking, the only thing I can make is curry."
+            },
+            {
+              "japanese": "日本語が話せると言っても、まだ初心者です。",
+              "reading": "にほんごがはなせるといっても、まだしょしんしゃです。",
+              "english": "Although I might say I can speak Japanese, I'm still a beginner."
+            },
+            {
+              "japanese": "近いと言っても、歩いて三十分かかる。",
+              "reading": "ちかいといっても、あるいてさんじゅっぷんかかる。",
+              "english": "Even though it might be called close, it takes thirty minutes on foot."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.781Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l10_grammar_11",
+          "pattern": "的",
+          "meaning": "A suffix attached to nouns to form な-adjectives meaning '-like', '-al', '-ic', or 'typical of'.",
+          "explanation": "的 turns a noun into a な-adjective that describes something as having the nature, style, or characteristics of that noun. It is very common in written and formal Japanese and is also used freely in everyday speech when discussing concepts, fields, or characteristics. It is similar to English suffixes like '-ic', '-al', or '-like'.",
+          "examples": [
+            {
+              "japanese": "この映画は科学的な視点から宇宙を描いている。",
+              "reading": "このえいがはかがくてきなしてんからうちゅうをえがいている。",
+              "english": "This film depicts space from a scientific perspective."
+            },
+            {
+              "japanese": "彼女はとても積極的な人だと思います。",
+              "reading": "かのじょはとてもせっきょくてきなひとだとおもいます。",
+              "english": "I think she is a very proactive person."
+            },
+            {
+              "japanese": "基本的に、私は早起きが苦手です。",
+              "reading": "きほんてきに、わたしははやおきがにがてです。",
+              "english": "Basically, I'm not good at getting up early."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.781Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l10_grammar_12",
+          "pattern": "なかなか～ない",
+          "meaning": "Expresses that something does not happen easily, despite expectation or effort.",
+          "explanation": "なかなか paired with a negative verb indicates that a desired or expected result is stubbornly not happening. It conveys frustration or difficulty rather than mere absence. This pattern is common in both spoken and written Japanese and implies that the speaker tried or waited.",
+          "examples": [
+            {
+              "japanese": "バスがなかなか来なくて、遅刻してしまった。",
+              "reading": "バスがなかなかこなくて、ちこくしてしまった。",
+              "english": "The bus just wouldn't come and I ended up being late."
+            },
+            {
+              "japanese": "新しい言語はなかなか上手くならない。",
+              "reading": "あたらしいげんごはなかなかうまくならない。",
+              "english": "A new language just doesn't come easily."
+            },
+            {
+              "japanese": "緊張してなかなか眠れなかった。",
+              "reading": "きんちょうしてなかなかねむれなかった。",
+              "english": "I was nervous and could hardly sleep."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.781Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l10_grammar_13",
+          "pattern": "そうすると",
+          "meaning": "Refers back to a previously stated situation and presents its consequence or logical follow-up.",
+          "explanation": "そうすると combines そう (referring to what was just mentioned) with すると to mean 'if that is done / if that happens, then.' It is used to draw conclusions or describe consequences from a hypothetical or stated situation. It is slightly more explicit than すると alone, as it makes a clear backward reference. Common in both spoken and written explanatory contexts.",
+          "examples": [
+            {
+              "japanese": "毎日30分歩くといいですよ。そうすると、健康になりますよ。",
+              "reading": "まいにち30ぷんあるくといいですよ。そうすると、けんこうになりますよ。",
+              "english": "You should walk 30 minutes every day. If you do that, you'll get healthier."
+            },
+            {
+              "japanese": "この薬を飲んでください。そうすると、痛みが消えるはずです。",
+              "reading": "このくすりをのんでください。そうすると、いたみがきえるはずです。",
+              "english": "Please take this medicine. If you do, the pain should go away."
+            },
+            {
+              "japanese": "先に予約しておいてください。そうすると、当日は待たなくて済みます。",
+              "reading": "さきによやくしておいてください。そうすると、とうじつはまたなくてすみます。",
+              "english": "Please make a reservation in advance. That way, you won't have to wait on the day."
+            }
+          ],
+          "lessonNumber": 10,
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.781Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        }
+      ],
+      "contentBlocks": [],
+      "exercises": [],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_b1_10"
+    }
+  ]
+}

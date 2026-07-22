@@ -1,29 +1,54 @@
 {
-  "schemaVersion": "learner-draft-1",
-  "textbookKey": "marugoto_b1_textbook",
-  "title": "marugoto_b1_textbook / marugoto_b1_11",
-  "qualityTier": "draft",
+  "schemaVersion": 1,
+  "textbookKey": "marugoto_b1",
+  "title": "Marugoto B1: Intermediate 1",
+  "edition": "learner-gold",
+  "levelRange": "B1",
+  "sources": [
+    {
+      "sourceId": "marugoto_b1_textbook",
+      "role": "textbook",
+      "fingerprint": {
+        "sha256": "d81948636c448b583ea3b99b908addcc1e79ec458e2c279c600e606b926b85fe",
+        "bytes": 148164767
+      }
+    }
+  ],
   "lessons": [
     {
-      "id": "marugoto_b1_11_draft",
-      "appLessonId": "marugoto_b1_11",
-      "title": "marugoto b1 11",
-      "qualityTier": "draft",
+      "id": "marugoto_b1_lesson_11",
+      "unitType": "lesson",
+      "lessonNumber": 11,
+      "title": "Marugoto B1: Intermediate 1 — Lesson 11",
+      "level": "B1",
+      "modes": [
+        "conversation_grammar"
+      ],
       "vocabulary": [
         {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_vocab_1",
+          "id": "marugoto_b1_l11_comp_vocab_1",
           "surface": "断定する",
           "reading": null,
           "meaning": "Drawing conclusions",
+          "lessonNumber": 11,
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 165
+          },
+          "tags": [
+            "gold_comprehensive"
+          ],
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         }
       ],
       "grammar": [
         {
-          "id": "cefr_b1_446",
+          "id": "marugoto_b1_l11_grammar_1",
           "pattern": "からこそ",
           "meaning": "Emphasizes that a particular cause or reason is the very reason — and no other — that the result occurred.",
           "explanation": "からこそ combines the causal particle から with the emphatic particle こそ to stress that the stated reason is the definitive, irreplaceable cause. It conveys that without that specific reason, the result would not have occurred. It is used across both formal and casual registers and often appears when the speaker wants to justify or defend a position.",
@@ -44,13 +69,20 @@
               "english": "It was precisely because I failed that I was able to learn something important."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_447",
+          "id": "marugoto_b1_l11_grammar_2",
           "pattern": "そのため(に)",
           "meaning": "A conjunction meaning 'for that reason', 'because of that', or 'to that end', connecting a cause to its result or purpose.",
           "explanation": "そのため(に) refers back to something previously stated and marks it as the reason or purpose for what follows. Without に it typically expresses a causal relationship ('because of that'); with に it can also indicate purpose ('in order to do that'). It is used in both formal writing and speech to structure logical flow.",
@@ -71,13 +103,20 @@
               "english": "The road was congested. Because of that, I ended up being late for the meeting."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_448",
+          "id": "marugoto_b1_l11_grammar_3",
           "pattern": "ところだった ①",
           "meaning": "Expresses that something almost happened but narrowly did not, often implying relief or alarm.",
           "explanation": "ところだった follows the plain past or dictionary form of a verb to express a near-miss — the speaker came very close to doing or experiencing something that ultimately did not occur. It is commonly used to express relief ('I almost made a terrible mistake') and often appears with 危なく or もう少しで to reinforce the closeness of the event. It is casual to neutral in register.",
@@ -98,31 +137,20 @@
               "english": "If I hadn't been careful, I would have nearly forgotten my wallet."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/being_です_だ_ある_いる",
-            "title": "Being: です, だ, ある, いる",
-            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
-            "examples": [
-              {
-                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
-              },
-              {
-                "japanese": "bases areなら,なり，なる,なれ andなれ.",
-                "english": "While typically used in combination with the verb particle lC, it can"
-              },
-              {
-                "japanese": "also be used in combination with the particle と, in which case its meaning",
-                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
-              }
-            ]
-          },
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_449",
+          "id": "marugoto_b1_l11_grammar_4",
           "pattern": "それぞれ",
           "meaning": "Indicates that each item or person in a group has its own distinct state, role, or action.",
           "explanation": "それぞれ is an adverb or pronoun meaning 'each' or 'respectively', used to emphasize that multiple people or things are treated individually rather than collectively. It is neutral in register and works in both spoken and written contexts. It often appears before a verb or as the subject/object of a sentence to highlight individual differences or distributions.",
@@ -143,13 +171,20 @@
               "english": "Please plate the food onto each individual dish."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_450",
+          "id": "marugoto_b1_l11_grammar_5",
           "pattern": "では・それでは・じゃあ",
           "meaning": "Discourse markers used to draw a conclusion, move to the next action, or wrap up a conversation based on what has just been said.",
           "explanation": "All three forms signal a transition or conclusion in response to the preceding context. では and それでは are more formal and appear in business, presentations, and polite conversation; じゃあ is the casual spoken equivalent. They can mean 'well then,' 'in that case,' or 'so' depending on context, and often introduce a next step, farewell, or decision.",
@@ -170,13 +205,20 @@
               "english": "Alright then, let's meet there at three o'clock."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_451",
+          "id": "marugoto_b1_l11_grammar_6",
           "pattern": "ないうちに",
           "meaning": "Expresses doing something before an unwanted or significant change occurs.",
           "explanation": "ないうちに attaches to the negative stem of a verb (ない-form minus ない) and indicates acting before a certain event happens or a condition arises. It often implies preventing a negative outcome or seizing an opportunity before a situation deteriorates. It is used in casual and polite registers alike.",
@@ -197,29 +239,20 @@
               "english": "Let's set up the tent before it gets dark."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/negative_presence_ない",
-            "title": "Negative presence: ない",
-            "excerpt": "2.6. MORE VERB GRAMMAR 85\n2.5.5 Negative presence: ない\nI know that な W is not a verb, but the reason it's in this list is because of\nある， which is very much a verb. Since ある means \"exist\" for inanimate\nthings, and since the adjective tな means \"not (exist)\", there are actually\n(almost) always two interpretations possible when な い is used in a sen-\ntence, by virtue of ある having two possible interpretations:\nラジオがない。\n1) \"There is no radio.\"\n2) \"I do not have a radio.\"\nSo for this reason it has been in",
-            "examples": [
-              {
-                "japanese": "2.5.5 Negative presence: ない"
-              },
-              {
-                "japanese": "I know that な W is not a verb, but the reason it's in this list is because of"
-              },
-              {
-                "japanese": "ある， which is very much a verb. Since ある means \"exist\" for inanimate"
-              }
-            ]
-          },
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_452",
+          "id": "marugoto_b1_l11_grammar_7",
           "pattern": "だって",
           "meaning": "A versatile casual particle used to give a reason, express mild protest, or indicate inclusion ('even/also').",
           "explanation": "だって is a casual spoken particle with several uses: it can mean 'because' or 'but' when the speaker is offering an excuse or justification (often at the start of a sentence), or it can mean 'even' or 'also' when attached to a noun to show that something is included or no exception. It also appears after nouns or sentences to report hearsay ('I heard that…'). It is informal and not suitable for formal writing.",
@@ -240,31 +273,20 @@
               "english": "Even she makes mistakes sometimes."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/being_です_だ_ある_いる",
-            "title": "Being: です, だ, ある, いる",
-            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
-            "examples": [
-              {
-                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
-              },
-              {
-                "japanese": "bases areなら,なり，なる,なれ andなれ.",
-                "english": "While typically used in combination with the verb particle lC, it can"
-              },
-              {
-                "japanese": "also be used in combination with the particle と, in which case its meaning",
-                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
-              }
-            ]
-          },
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_453",
+          "id": "marugoto_b1_l11_grammar_8",
           "pattern": "と同時に",
           "meaning": "Expresses that two things happen at exactly the same moment or that someone or something has two simultaneous qualities.",
           "explanation": "と同時に connects two clauses or nouns to indicate that they occur simultaneously or that a person/thing is two things at once. It can follow a verb in plain form or a noun directly. It is used in both spoken and written Japanese and carries a slightly formal nuance, making it common in writing and presentations.",
@@ -285,13 +307,20 @@
               "english": "The instant the graduation ceremony ended, tears came to my eyes."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_454",
+          "id": "marugoto_b1_l11_grammar_9",
           "pattern": "そこで",
           "meaning": "A conjunction that introduces a natural next step or response taken in light of the preceding situation.",
           "explanation": "そこで connects two clauses where the second is a deliberate action or decision taken as a result of the first situation. Unlike だから (which shows logical cause-and-effect), そこで implies a purposeful response to a circumstance — 'given that situation, we/I then did X'. It is common in both written and spoken Japanese at a neutral register and often appears in narrative or explanatory contexts.",
@@ -312,13 +341,20 @@
               "english": "I got lost. So I opened a map app."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_455",
+          "id": "marugoto_b1_l11_grammar_10",
           "pattern": "～というのは事実だ",
           "meaning": "It is a fact that..., There is no doubt that...",
           "explanation": "This pattern strongly asserts something as an indisputable fact. The phrase という marks the content being asserted, and 事実だ emphasizes that it's factual and undeniable. Used in formal contexts and debates to make emphatic claims.",
@@ -339,31 +375,20 @@
               "english": "It is a fact that the earth is round."
             }
           ],
-          "maynardRef": {
-            "topicId": "verb_grammar/being_です_だ_ある_いる",
-            "title": "Being: です, だ, ある, いる",
-            "excerpt": "82 CHAPTER 2. VERB GRAMMAR\nof course also be used to describe the process of \"becoming'\" itself, (such\nas \"to quickly become [..]\") by using proper adverbs.\nThe verb なる is a 五段 verb, without any irregularities, meaning its\nbases areなら,なり，なる,なれ andなれ.\nWhile typically used in combination with the verb particle lC, it can\nalso be used in combination with the particle と, in which case its meaning\nchanges from \"become'\" to \"be\"(often interpreted as the immediate future\n\"will be\"). This can be illustr",
-            "examples": [
-              {
-                "japanese": "The verb なる is a 五段 verb, without any irregularities, meaning its"
-              },
-              {
-                "japanese": "bases areなら,なり，なる,なれ andなれ.",
-                "english": "While typically used in combination with the verb particle lC, it can"
-              },
-              {
-                "japanese": "also be used in combination with the particle と, in which case its meaning",
-                "english": "changes from \"become'\" to \"be\"(often interpreted as the immediate future"
-              }
-            ]
-          },
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_456",
+          "id": "marugoto_b1_l11_grammar_11",
           "pattern": "～ても～なくても",
           "meaning": "Whether... or not; regardless of whether...",
           "explanation": "This pattern presents two opposite conditions to show that the result is the same in either case. It emphasizes that the outcome is independent of the condition, used in formal and casual contexts to express that something happens or is true no matter what.",
@@ -384,13 +409,20 @@
               "english": "Whether he comes or not, we'll start."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_457",
+          "id": "marugoto_b1_l11_grammar_12",
           "pattern": "に合わせて・に合った",
           "meaning": "Expresses adjusting or matching something to fit a standard, situation, or need.",
           "explanation": "に合わせて follows a noun to mean 'in accordance with' or 'adjusted to', describing an action tuned to a particular standard or condition. に合った is the attributive form, modifying a noun to mean 'suitable for' or 'matching'. Both are used in neutral to formal register in spoken and written Japanese.",
@@ -411,13 +443,20 @@
               "english": "Please explain it in a way that matches the child's level."
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "cefr_b1_458",
+          "id": "marugoto_b1_l11_grammar_13",
           "pattern": "さて",
           "meaning": "A discourse marker that signals a transition to a new topic, phase, or line of thinking.",
           "explanation": "This adverb marks shifts in conversation, often introducing a main topic, the next step, or a new direction. It can also express mild uncertainty or consideration. Common in both formal presentations and casual dialogue, especially in storytelling and structured discourse.",
@@ -438,91 +477,210 @@
               "english": "Well then, what should we do next?"
             }
           ],
+          "lessonNumber": 11,
           "sourceRef": {
-            "sourceId": "cefr-b1",
-            "pageNumber": 0
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 1
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         }
       ],
       "contentBlocks": [
         {
-          "id": "marugoto_b1_11_dialogue_0",
+          "id": "marugoto_b1_l11_dialogue_1",
           "type": "dialogue",
           "title": "Dialogue b1_textbook_marugoto_b1_11",
           "text": "TOPIC: 最近どう？\nさいきん: 離れて住む友達や家族と、どうやってコミュニケーションしていますか。\nともだち: かぞく\nひさ: PART\n聞いてわかる: PART 2\n会話する: さいきん\nしごと: いそが\n長く話す: さいきん\n国: PART 4\nきんきょう: PART5",
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 114
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "marugoto_b1_11_dialogue_1",
+          "id": "marugoto_b1_l11_dialogue_2",
           "type": "dialogue",
           "title": "Dialogue b1_textbook_marugoto_b1_11",
           "text": "話の展開を予測する: Predicting how a conversation will develop\nてんかい: よそく\nいちど: こんどとちゆう\nうづ: おもだ\nほかに: こんど\n横田: ・夜もニヤーニヤーうるさい\n伊藤: よこた\nよる: いとう\nうつ: かくにん\nつづ: かくにん\nよそく: それにね…\nつづ: かくにん\nつづ: ただ…\nおな: けいけん\nさいきん: よこた\nともだち: モルモットが死んでさびしかったから、そのネコを飼うことに\nか: ちょうど\nいとう: せんじつ\nこうしん: やくしよ\nやくしよ: しょるい\nた: ないと言われた。(⑤\nしょるい: じんび\nなんかい: やくよかよ\nけっきよく: さいしよ\nたけうち: にちようぴしゃじょうあ\nお: 戻ってみたら、カメラもカーナビもなくなっていた。\nもど: そのとき\nあとで: この間\nあいだ: (4) (①\nなかがわ: むすめ\nけっこん: けっこんあいて\nなかがわ: しゆじん\nただ: この前\n今度: こんど",
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 118
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "marugoto_b1_11_dialogue_2",
+          "id": "marugoto_b1_l11_dialogue_3",
           "type": "dialogue",
           "title": "Dialogue b1_textbook_marugoto_b1_11",
           "text": "最近: 仕事が忙しくて…\nPART: さいきん\nしごと: いそが\n会話する: Can-do 22\nさいきん: ようす\nきょうつうわだい: ができる。\nインドネシアのマナドに住んでいる: 会社員。日本語は日本語学校で勉強し\nかいしゃいん: べんきよう\nだれ: た。今もときどき仕事で日本語を使う。\nしこと: フランキーさんと、ツェツェグさんは、「日本語学習者訪日研修」で\nがくしうしゃほうにちけんしう: ツェツェグ(モンゴル)\nべんきよう: した。今は二人の子どもの母。\nてんちうい: ①フランキーさんは、最近どうして忙しいのですか。\nさいきん: いそが\n小: （1）二人は、普通体と丁寧体のどちらを使って話していますか。\nふたり: ふつうたい\nていねいたい: また、それはなぜですか。\na: フランキー\nツェツェグ: (2)(\nいみ: はたら\nツェツェグ: こんにちは、フランキーさん、久しぶり。\nひさ: フランキー：ほんと、久しぶりだね。最近、仕事が忙しくて、スカイプする時間がなかったから。そっちはどう？\nひさ: さいきんしごといが\nさむ: ツェツェグ：寒いよ。外はマイナス30度。インドネシアは寒くないの？\nいちねんじゅうなつ: きせつ\nふ: ツェツェグ：そういえばインドネシアで、大雨が降って、道が水でいっぱいになったんでしょう？だいじょうぶ？\nふ: フランキー：うん、ここはだいじょうぶ。だけど、ジャカルタは大変だった（①\nたいへん: 友達も、車が水に浸かっちゃつた（②\nともだち: ツェツェグ：そう。で、フランキーさんはどう？ 最近。\nさいきん: フランキー：すごく忙しい。来週、出張でシンガポールに行く（③\nいそが: しっちょう\nじゅんび: たいへん\nツェツェグ: １歳。でも二人目だから、問題なくやってるよ。この前、やっと歩けるようになったんだ。\nさい: ふたりめ",
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 119
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "marugoto_b1_11_dialogue_3",
+          "id": "marugoto_b1_l11_dialogue_4",
           "type": "dialogue",
           "title": "Dialogue b1_textbook_marugoto_b1_11",
           "text": "ツェツェグ: うん、それで、来年4月から、また働く（⑤\nはたら: フランキー：そう。そういえば、タイのユパカーさんのところは、来年子どもが小学校入学\nにうがく: だ(⑥\nツェツェグ: へー。でも、時間が過ぎるのって早いね。また日本に行きたいな。\nともだち: しょうほう\nべんり: ツェツェグ：ほんとだね。あ、ごめん、子どもが起きちゃった。泣いてる。\nマナド: やくだふんほう\nふんけい: ほかの人から聞いたことなどから考えて言うSaying what one thinks about something one has heard from another person\nたいへん: ほかの人から聞いたことを伝えるTelling someone what one has heard from another person\nつた: 車が水に浸かっちゃったって。→②\nにうがく: 決まつたことを伝えるTelling someone what has been decided\nはたら: 思い出せないことを確かめるChecking something that one cannot remember\nたし: 赤ちゃんは何歳になるんだっけ?→\nらしい: らしい\nふつうたい: 二人で友達のことについて話しています。a-eからことばを選んで「～らしい」を使って言いましょう。\nあんどう: ぶちょう\nきょねんけっこん: 119",
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 120
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "marugoto_b1_11_dialogue_4",
+          "id": "marugoto_b1_l11_dialogue_5",
           "type": "dialogue",
           "title": "Dialogue b1_textbook_marugoto_b1_11",
           "text": "しごと: ⑤ジョバニさん、大学を今年（\na: 行きます\nb: 幸せです\nc: なりました\nd: 卒業できませんでした\ne: 見つかりません\nしあわ: そつぎょう\nにゆうがく: *おもに、インフォーマルな話しことばで使う。Mainly used in informal spoken Japanese.\nホアン: みゆき\nかずえ: aE-\n周店: （2）絵を見ながら、（1）の話をほかの人に「~つて」を使つて教えましょう。\na: かずえさん、（夕イに引っ越すって）。\nひ: b.ホアさん、（\nc: みゆき、(\nd: 駅前のレストラン、（\ne: 明日、（\n十ことになる: じしょけい\nけい: V（辞書形）\n十ことにする: じしょけい\nいちど: ①（ことになる\n元: Cふん",
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 121
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "marugoto_b1_11_dialogue_5",
+          "id": "marugoto_b1_l11_dialogue_6",
           "type": "dialogue",
           "title": "Dialogue b1_textbook_marugoto_b1_11",
           "text": "ていねいたい: Mainly used in informal spoken Japanese.Becomes\"~でLたっけ\"in polite style.\nともだち: ふたり\nぶふん: ともだち\nかくにん: CHECK!\nわたしたち: しけん\nしのと: しみず\nもすめ: ええと、ウラ…ウラン…?\nSaying: simple words and phrases one knows in place of words one does not\n知らないことばを知っている簡単なことばで言う: know\nか: ①今は雨期だから、雨がたくさん降るけどね。\nふ: こうずい\nしゆっちよう: ②日本の情報も入るし。\n発音: 拍とリズムMora and rhythm\nはく: （１）リズムに注意して聞きましょう。\nちうい: タンとタに注意して聞いてみましょう。\nちゆうい: けっこうふるけどね\nたいへんだったらしいよ: (タンタンタンタンタン タ)\nしょうがっこうにゅうがくだっ: (タン タン タンタン タン タン タ)\nあったん: でしょう?\nつ: かっちゃったって\nはく: （2）リズムに合わせて手をたたきながら、文を発音してみましよう。\nあ: ぶんはつおん",
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 122
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "marugoto_b1_11_dialogue_6",
+          "id": "marugoto_b1_l11_dialogue_7",
           "type": "dialogue",
           "title": "Dialogue b1_textbook_marugoto_b1_11",
           "text": "れんしゅう: （1）ロールプレイのまえに、もうー度会話のスクリプトを見て考えましょう。会話の★の部分のうち、\nいちど: ぶぶん\n次の: A-はどこですか。印をつけましょう。\nつぎ: しるし\nあいて: しつもん\nじぶん: じふんかぞく\nきょうつう: わだい\nぶぶん: ひょうげん\nれんしう: 次の場面で、（例）の続きを考えましょう。そのとき、（1）で見た構成に気をつけて会話しましょう。また、\nこうせい: 友達同士の会話になるように、普通体で話してみましょう。\nともだちどうし: ふつうたい\nひさ: B：おお、久しぶり。どう?最近。忙しい?\nひさ: さいきんいそが\nしごとかぞくせいかつ: あいてしつもん\nしごと: じぶん\n共通の知り合いのことを話した: きょうつう\nむすめ: げんき\nかんたん: しょう。\nかいがい: ともだち\nひさ: わだい\n日本語: Can-do をチェックしましょう",
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 123
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
-          "id": "marugoto_b1_11_dialogue_7",
+          "id": "marugoto_b1_l11_dialogue_8",
           "type": "dialogue",
           "title": "Dialogue b1_textbook_marugoto_b1_11",
           "text": "ヨガにはまってるんです: PART\nさいきん: 長く話す\nじふんさいきんようす: ていど\nさいきん: チェさんは、日本関係のイべント会場で、知り合いの山口さん\n嘉装: かんけい\nやまぐち: に久しぶりに会いました。\nひ: 二人の会話を聞きましょう。\nふたり: あ、山口さん、久しぶりですね。\nさいきん: おかげさまで。私、最近体の調子がすごくいいんですよ。\nさいきん: ちょうし\nチェ: 実は、\nやまち: そうですか。それは、よさそうですね。\nさいきんようす: 最近、何を始めましたか。\nいちど: てきとう\nどうにう: ・最近、ヨガを始めた（①\nじゅんばん: ・はじめは、うまくできなくて…\nつつ: 最近は、夜もぐっすり眠れる（④\nねむ: たいちょう\nいんよう: ・はじめはうまくできなくて、「痛い!」「できない!」(⑤\nいた: 話をまとめるSumming up what one has just talked about\nたいへん: 楽しかったです。\nたの: やってノ始めてよかったです。\nはじ: もう一度行きたいですねノやりたいですね。\nいちど: ほんとう",
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 124
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l11_dialogue_9",
+          "type": "dialogue",
+          "title": "Dialogue b1_textbook_marugoto_b1_11",
+          "text": "TOPIC: マンガを読もう\nNUARA: CONTI\nCOMICS: MANGA\nYAAA: 51g1 2\nMANGA: PART 1\nすごく有名なマンガですよ: 聞いてわかる\nゆうめい: ThansPae\n会話する: ぼうし\n酒飲みの大男の話です: 長く話す\nさけの: おおおとこ\n国: PART 4\n読んでわかる: PART5",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 132
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l11_dialogue_10",
+          "type": "dialogue",
+          "title": "Dialogue b1_textbook_marugoto_b1_11",
+          "text": "いみ: かくにん\nいちぶ: いちど\nたんてい: しきしゃ\nけいさつ: （2）会話の一部をもう一度聞きましょう。聞き手は、赤字のことばの意味をどのように確認しましたか。\nいちぶ: いちど\nかくにん: ①だいすけ：…そこにすごく頭がいい探偵が出てきて、月が犯人だと気づくんです。\nあたま: たんてい\nライトはんにん: （え、探偵って、\nたんてい: けいさつ\n指揮者で才能あってかっこいい男の子: ちあき\nしきしゃ: さいのう\nたちば: あ、フランスの王妃だった人です。(\nおうひ: （3）④サイさんの話を先生に言ってもらって、よくわからないことばの意味を確認してみましょう。\nいみ: かくにん\nてきとうかたち: CHECK!\nしゆじんこう: 月が、このノートを(③\nライト: つぎつぎ\nライトんてい: たいけつ\nしきしゃ: ちあき\n笑う: 恋をする\nこい: せいちよう\nじよせい: だんせい\nかくめい: れきし\n進む: 育てる\nある: 恋愛が(①\nそだ: れんあい\nかんどてき: （4）『鋼の錬金術師』は、死んだ母親を（①\nはがねれんきんじつし: ははおや\nしっぱい: からだ\nきようだい: もとからだ\nほうほう: せかい\nたび: 「人の命の重さ」みたいな深いテーマがあるから\n考える: 生き返る",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 136
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l11_dialogue_11",
+          "type": "dialogue",
+          "title": "Dialogue b1_textbook_marugoto_b1_11",
+          "text": "PART: ぼうし\n会話する: 好きなマンガなどについて、内容を簡単に話したり、自分の考えを表現したりできる。また、相手の\nないよう: かんたん\nひょうげん: あいて\nたい: かんたん\nパリの大学で日本語を勉強している: べんきよう\nたいす: ひがし\nふたり: つきてん\nひがし: パリの大学の日本語学科で日本語を\nがっか: 教える教師。\nきょうし: 東先生は、マンガをよく読みますか。\nひがし: レオンさんは、どうして『ワンピース』が好きですか。\nぼうし: レオン：これですか？これはチョッパーの帽子です。明日からのマンガエキスポに、これをかぶって行く\nほうし: あした\n東: ：チョッパー?それ、何ですか?\nレオン: ええ? 先生、知らないんですかあ？チョッパーは『ワンピース』に出てくるキャラクターですよ。\n東: ：『ワンピース』かあ。そのマンガ、うちの娘も持ってますよ。私は読んだことないですけど。\nレオン: 海賊が仲間といっしよに世界を（②\nかいぞく: なかま\nせかい: 本を全部持っています。何回も何回も、\nぜんぶも: なんかい\nレオン: そうですねえ、えー、『ワンピース』は、すごく友達を大切にする話なんです。えー、事件が\nともだちたいせつ: じけん\nたたか: さいご\nともだちどうし: ゆうじょう\nか: かんどうてき\n東: ：へー、そうなんですか。\nレオン: チョッパーも、最初は友達がいませんでしたが、医者の先生に助けられて、ほかの人を信じる\nさいしょ: ともだち\nLh: ことの大切さを知ります。その先生が（③\nたいせつ: ほんとう\n東: :そ、そう…。\nレオン: 先生も今度、娘さんの本を、ぜひ1回、読んでみてください。おもしろいだけじゃなくて、\nかんどう: 136TOPIC6　マンガを読もう",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 137
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
+          }
+        },
+        {
+          "id": "marugoto_b1_l11_dialogue_12",
+          "type": "dialogue",
+          "title": "Dialogue b1_textbook_marugoto_b1_11",
+          "text": "東: ：そう。でも何十巻もあるんでしょ?ちよっと長いかもねえ。\nなんじゅっかん: レオン：んー、そうかもしれませんが、読み出したら夢中になって、すぐ読めると思います。\nこんど: くださいね。\nレオン: はい、そうする(⑤\nDQEPIC: JEp\nONE: SHOP\nやくだ: ぶんぼう\nぶんけい: 黑配白老力然全店\n自分の計画を言う: Saying one's plans\nじぶん: けいかく\nないよう: かんんせつめい\nかいぞく: なかま\nせかい: ほうけん\n器い説の: ばめん\nほんとう: なんかい\nな: ぜつたいにそうなると思うことを言うSaying what you thinkis definitely going to happen\nかんどう: 自分の意見をやわらかく言う\nGiving: your opinion tentatively\nじふん: いけん\nか: これをかぶつて行くつもりです。\nけいかく: CHECK!\nB: はい、もちろん（行きます→行くつもりです)。\nB: 『ワンピースをもう一度、最初から全部\nいちど: さいしよ\nぜんぶ: ③A：このマンガ、映画になるんですよね?\nえいが: B：ええ、映画が公開されたら、ぜったい（見に行きます→\nえいが: こうかい\nB: いえ、今年は（しません→\nかいじよう: 137",
+          "sourceRef": {
+            "sourceId": "marugoto_b1_textbook",
+            "pageNumber": 138
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         }
       ],
@@ -534,6 +692,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -543,6 +707,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -552,6 +722,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -561,6 +737,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -570,6 +752,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -579,6 +767,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -588,6 +782,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -597,6 +797,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -606,6 +812,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -615,6 +827,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -624,6 +842,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -633,6 +857,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -642,6 +872,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -651,6 +887,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -660,6 +902,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -669,6 +917,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -678,6 +932,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -687,6 +947,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -696,6 +962,12 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         },
         {
@@ -705,189 +977,17 @@
           "sourceRef": {
             "sourceId": "marugoto_b1_textbook",
             "pageNumber": 115
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2100",
-          "label": "practice",
-          "prompt": "いいね!31件コト6件",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 115
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2101",
-          "label": "practice",
-          "prompt": "あなたの国では、SNSがよく使われていますか。どんなことをよく話題にしますか。",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 115
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2102",
-          "label": "practice",
-          "prompt": ")に入ることばをa-iから選びましょう。",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2103",
-          "label": "practice",
-          "prompt": "最近、何かいいことがありましたか?",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2104",
-          "label": "practice",
-          "prompt": "昨日は、私たちの10年目の（①e.結婚）記念日でした。はやいものです。",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2105",
-          "label": "practice",
-          "prompt": "もうすぐ娘が大学を（②",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2106",
-          "label": "practice",
-          "prompt": ")します。これで、私もほっとできます。",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2107",
-          "label": "practice",
-          "prompt": ")が決まりました。4月から社会人です。",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2108",
-          "label": "practice",
-          "prompt": "去年、30年勤めた会社を定年",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2109",
-          "label": "practice",
-          "prompt": ")したので、この前、妻と二人で北海道旅行に行って来ま",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2110",
-          "label": "practice",
-          "prompt": "ほっかいどうりょこう",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2111",
-          "label": "practice",
-          "prompt": "次回は、家族で行きたいですね。",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2112",
-          "label": "practice",
-          "prompt": "先月、娘が無事に女の子を（⑤",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2113",
-          "label": "practice",
-          "prompt": ")しました。私もおばあちゃんです。",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2114",
-          "label": "practice",
-          "prompt": "この間、しばらく病気で(⑥",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2115",
-          "label": "practice",
-          "prompt": ")していた祖父が（⑦",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2116",
-          "label": "practice",
-          "prompt": ")して、家に帰って来ました。",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2117",
-          "label": "practice",
-          "prompt": "ずっと長生きしてもらいたいです。",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2118",
-          "label": "practice",
-          "prompt": "ペアになることばをさがしましょう。",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
-          }
-        },
-        {
-          "id": "marugoto_b1_textbook_b1_textbook_marugoto_b1_11_exercise_2119",
-          "label": "practice",
-          "prompt": "( b − d ) (",
-          "sourceRef": {
-            "sourceId": "marugoto_b1_textbook",
-            "pageNumber": 116
+          },
+          "review": {
+            "action": "approved",
+            "reviewedAt": "2026-07-22T06:45:30.791Z",
+            "reviewer": "marugoto_tobira_gold_enrich",
+            "notes": "from comprehensive curriculum"
           }
         }
-      ]
+      ],
+      "qualityTier": "gold",
+      "appLessonId": "marugoto_b1_11"
     }
   ]
 }
