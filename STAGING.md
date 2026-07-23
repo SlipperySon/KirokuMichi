@@ -9,6 +9,7 @@ Use Render for staging so the Express API, `/data` assets, and built Vite fronte
 - Build command: `npm ci && npm run build`
 - Start command: `npm run start`
 - Health check: `/api/health`
+- Auto-deploy: enabled on the connected Git branch (see `autoDeploy: true` in `render.yaml`)
 
 Vercel can still host the static frontend, but then `/api/*` must be proxied to the backend host. The Render
 single-service path avoids split-origin CORS and cookie/session wrinkles for staging.
@@ -54,13 +55,24 @@ cd app
 npm audit
 npm run build
 npm run test -- --run src/srs/phase1.test.ts src/srs/srs.test.ts src/srs/ankiImport.test.ts src/core/scheduler.test.ts
+npm run textbook:learner:validate-published
 ```
 
-After deploy:
+After deploy (one-command smoke):
+
+```bash
+cd app
+npm run staging:smoke -- https://YOUR-SERVICE.onrender.com
+# or: ./tools/staging-smoke.sh https://YOUR-SERVICE.onrender.com
+```
+
+Manual checks still worth doing once:
 
 - Open `/api/health`.
 - Confirm the beta invite screen appears when `BETA_INVITE_CODES` is configured.
+- Confirm AI calls work with the HttpOnly `kiroku-session` cookie (Settings → test connection).
 - Submit a test report and confirm it creates a GitHub Issue.
 - Test the selected AI provider from Settings.
 - Run a small PDF extraction smoke test; this requires server `DEEPSEEK_API_KEY` or a tester-provided DeepSeek key.
 - Trigger one browser error in a private staging session and confirm it appears in Sentry if Sentry is enabled.
+- Export/restore a study backup from Settings on a throwaway profile.

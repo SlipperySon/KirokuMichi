@@ -23,7 +23,9 @@ const ADMIN_OR_SOURCE_TEXT_RE =
 const STRUCTURAL_JUNK_RE = /([A-Za-z]{22,}|\d{4,}|[{}[\]\\<>|]{2,}|©|TEL|FAX)/
 const BROKEN_START_RE = /^(?:その後|ただし|必要なら|同じ言葉|[A-Z]：|[0-9]+[.)、])/
 const STATEMENT_ONLY_RE = /(?:紹介しています|発表しています|書いてあります|説明しています)。?$/
-const OCR_SCAR_RE = /Pr a c|toget\b|→/
+const OCR_SCAR_RE = /Pr a c|toget\b|→|Lesson\s*\d+/i
+const OCR_LETTER_SPACING_RE = /(?:^|[^A-Za-z])(?:[A-Za-z] ){4,}[A-Za-z](?:$|[^A-Za-z])/
+const JP_IN_ENGLISH_RE = /[\u3040-\u30ff\u4e00-\u9fff]/
 
 const VALID_FALSE_POSITIVE_IDS = new Set([
   'cefr_a2_364',
@@ -39,13 +41,15 @@ function localDataFetch(url: string) {
   } as Response
 }
 
-function reasonForText(text: string, options: { allowOcrScar?: boolean } = {}) {
+function reasonForText(text: string, options: { allowOcrScar?: boolean; treatAsEnglishGloss?: boolean } = {}) {
   if (!text.trim()) return 'empty text'
   if (ADMIN_OR_SOURCE_TEXT_RE.test(text)) return 'admin/source text'
   if (STRUCTURAL_JUNK_RE.test(text)) return 'structural OCR junk'
   if (BROKEN_START_RE.test(text)) return 'broken continuation/list fragment'
   if (STATEMENT_ONLY_RE.test(text)) return 'statement-only prompt'
   if (options.allowOcrScar !== false && OCR_SCAR_RE.test(text)) return 'known OCR scar'
+  if (OCR_LETTER_SPACING_RE.test(text)) return 'OCR letter-spacing scar'
+  if (options.treatAsEnglishGloss && JP_IN_ENGLISH_RE.test(text)) return 'Japanese characters inside English gloss'
   return null
 }
 
@@ -87,6 +91,7 @@ async function main() {
 
       for (const item of vocab) {
         const reason = reasonForText(`${item.surface} ${item.english}`)
+          ?? reasonForText(item.english, { treatAsEnglishGloss: true })
         if (reason && !VALID_FALSE_POSITIVE_IDS.has(item.id)) {
           issues.push({ cefr, lessonId, type: 'vocab', id: item.id, reason, text: `${item.surface} => ${item.english}` })
         }
@@ -117,15 +122,29 @@ async function main() {
     }
   }
 
+  const reasonCounts = issues.reduce<Record<string, number>>((acc, issue) => {
+    acc[issue.reason] = (acc[issue.reason] ?? 0) + 1
+    return acc
+  }, {})
   const report = {
     generatedAt: new Date().toISOString(),
     totals,
     issueCount: issues.length,
+    // Actionable triage for human OCR spot-checks (sorted by frequency).
+    warningReasons: Object.entries(reasonCounts)
+      .sort((a, b) => b[1] - a[1])
+      .map(([reason, count]) => ({ reason, count })),
     issues,
   }
   mkdirSync(dirname(REPORT_PATH), { recursive: true })
   writeFileSync(REPORT_PATH, `${JSON.stringify(report, null, 2)}\n`)
-  console.log(JSON.stringify({ reportPath: REPORT_PATH, ...report }, null, 2))
+  console.log(JSON.stringify({
+    reportPath: REPORT_PATH,
+    totals: report.totals,
+    issueCount: report.issueCount,
+    warningReasons: report.warningReasons,
+    sampleIssues: issues.slice(0, 25),
+  }, null, 2))
 
   if (issues.length > 0) {
     process.exitCode = 1
