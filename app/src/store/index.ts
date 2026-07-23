@@ -152,6 +152,8 @@ export const useAppStore = create<AppState>()(
           settings: {
             ...settings,
             apiKey: null,
+            // Prefer HttpOnly session cookie; never rehydrate tokens from disk.
+            sessionToken: null,
             // Phase 4: textbook lessons on by default for first-run paths
             includeTextbookLessons: settings.includeTextbookLessons ?? true,
             includeExtraInToday: settings.includeExtraInToday ?? false,
@@ -163,6 +165,7 @@ export const useAppStore = create<AppState>()(
         settings: {
           ...state.settings,
           apiKey: null,
+          sessionToken: null,
         },
       }),
     }

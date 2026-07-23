@@ -78,6 +78,7 @@ const rateLimitBuckets = new Map<string, RateBucket>()
 const BETA_GRANT_COOKIE = 'kiroku-beta-grant'
 const BETA_GRANT_TTL_MS = 30 * 24 * 60 * 60 * 1000
 const BETA_GRANT_MAX = 500
+const SESSION_COOKIE = 'kiroku-session'
 
 function betaCodes() {
   return (process.env.BETA_INVITE_CODES || '')
@@ -122,6 +123,31 @@ function isValidSessionToken(token: string) {
     return false
   }
   return true
+}
+
+function issueSessionToken(res: express.Response) {
+  pruneExpiredSessionTokens()
+  const token = crypto.randomBytes(32).toString('hex')
+  sessionTokens.set(token, Date.now() + SESSION_TOKEN_TTL_MS)
+  pruneSessionTokensToCap()
+  res.cookie(SESSION_COOKIE, token, {
+    httpOnly: true,
+    sameSite: 'lax',
+    secure: process.env.NODE_ENV === 'production',
+    maxAge: SESSION_TOKEN_TTL_MS,
+    path: '/',
+  })
+  return token
+}
+
+/** Prefer HttpOnly session cookie; keep x-session-token as transition fallback. */
+function getSessionToken(req: express.Request): string | null {
+  const cookies = parseCookies(req)
+  const fromCookie = cookies[SESSION_COOKIE]
+  if (fromCookie && isValidSessionToken(fromCookie)) return fromCookie
+  const header = req.headers['x-session-token']
+  if (typeof header === 'string' && isValidSessionToken(header)) return header
+  return null
 }
 
 function pruneExpiredBetaGrants(now = Date.now()) {
@@ -413,11 +439,9 @@ app.post('/api/session', (req, res) => {
     res.status(401).json({ error: 'Beta access required' })
     return
   }
-  pruneExpiredSessionTokens()
-  const token = crypto.randomBytes(32).toString('hex')
-  sessionTokens.set(token, Date.now() + SESSION_TOKEN_TTL_MS)
-  pruneSessionTokensToCap()
-  res.json({ token })
+  // Mint HttpOnly session cookie; token is also returned for transitional header clients.
+  const token = issueSessionToken(res)
+  res.json({ ok: true, token })
 })
 
 app.post(
@@ -450,8 +474,7 @@ function requireToken(req: express.Request, res: express.Response, next: express
     res.status(401).json({ error: 'Beta access required' })
     return
   }
-  const token = req.headers['x-session-token']
-  if (typeof token !== 'string' || !isValidSessionToken(token)) {
+  if (!getSessionToken(req)) {
     res.status(401).json({ error: 'Unauthorised' })
     return
   }
@@ -496,7 +519,7 @@ app.post('/api/ai/complete', requireToken, async (req, res) => {
     prompt?: string
   }
 
-  const sessionToken = typeof req.headers['x-session-token'] === 'string' ? req.headers['x-session-token'] : clientIp(req)
+  const sessionToken = getSessionToken(req) ?? clientIp(req)
   if (!enforceQuota(req, res, {
     prefix: 'ai',
     windowMs: AI_QUOTA_WINDOW_MS,
@@ -1445,7 +1468,7 @@ app.post('/api/ai/analyze', requireToken, (req, res) => {
 app.post('/api/content/extract-pdfs', requireToken, express.raw({ type: 'multipart/form-data', limit: PDF_UPLOAD_LIMIT }), async (req, res) => {
   const startedAt = Date.now()
   try {
-    const sessionToken = typeof req.headers['x-session-token'] === 'string' ? req.headers['x-session-token'] : clientIp(req)
+    const sessionToken = getSessionToken(req) ?? clientIp(req)
     if (!enforceQuota(req, res, {
       prefix: 'pdf',
       windowMs: PDF_QUOTA_WINDOW_MS,

@@ -1,10 +1,16 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import { useIntl } from 'react-intl'
 import { useAppStore } from '../store'
 import { useTheme } from '../hooks/useTheme'
 import { Navigation } from '../components/Navigation'
 import { KeyboardShortcutsPanel } from '../components/KeyboardShortcutsPanel'
 import { toast } from '../components/toastStore'
+import {
+  buildStudyBackup,
+  downloadStudyBackup,
+  readStudyBackupFile,
+  restoreStudyBackup,
+} from '../srs/studyBackup'
 
 type ProviderType = 'anthropic' | 'openai' | 'openrouter' | 'deepseek' | 'ollama' | 'custom' | null
 type ConfigurableProvider = Exclude<ProviderType, null>
@@ -55,6 +61,38 @@ export function Settings() {
   const [testLoading, setTestLoading] = useState(false)
   const [testResult, setTestResult] = useState<{ ok: boolean; message: string } | null>(null)
   const [showAdvanced, setShowAdvanced] = useState(false)
+  const [backupBusy, setBackupBusy] = useState(false)
+  const backupInputRef = useRef<HTMLInputElement>(null)
+
+  const handleExportBackup = async () => {
+    setBackupBusy(true)
+    try {
+      const backup = await buildStudyBackup()
+      downloadStudyBackup(backup)
+      toast.success('Study backup downloaded')
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Backup export failed')
+    } finally {
+      setBackupBusy(false)
+    }
+  }
+
+  const handleImportBackup = async (file: File) => {
+    const confirmed = window.confirm(
+      'Restore this backup? It replaces your local SRS database and progress on this device.',
+    )
+    if (!confirmed) return
+    setBackupBusy(true)
+    try {
+      const backup = await readStudyBackupFile(file)
+      await restoreStudyBackup(backup)
+      toast.success('Backup restored — reloading')
+      window.setTimeout(() => window.location.reload(), 600)
+    } catch (err) {
+      toast.error(err instanceof Error ? err.message : 'Backup restore failed')
+      setBackupBusy(false)
+    }
+  }
 
   const handleProviderChange = (provider: ProviderType) => {
     const defaults = provider ? PROVIDER_DEFAULTS[provider] : null
@@ -483,6 +521,43 @@ export function Settings() {
                   ☀️ Light
                 </button>
               </div>
+            </div>
+          </div>
+
+          {/* Backup / Restore */}
+          <div className="bg-gray-900 border border-gray-700 rounded-lg p-6">
+            <h2 className="text-xl font-semibold text-gray-100 mb-2 text-center">Backup &amp; Restore</h2>
+            <p className="text-sm text-gray-400 mb-4 text-center">
+              Download a JSON backup of your SRS database and lesson progress. Clearing site data without a backup permanently loses review history.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
+              <button
+                type="button"
+                onClick={() => void handleExportBackup()}
+                disabled={backupBusy}
+                className="px-4 py-2 rounded-lg bg-indigo-600 text-white font-medium hover:bg-indigo-500 disabled:opacity-50"
+              >
+                {backupBusy ? 'Working…' : 'Export backup'}
+              </button>
+              <button
+                type="button"
+                onClick={() => backupInputRef.current?.click()}
+                disabled={backupBusy}
+                className="px-4 py-2 rounded-lg border border-gray-600 text-gray-200 font-medium hover:bg-gray-800 disabled:opacity-50"
+              >
+                Restore backup
+              </button>
+              <input
+                ref={backupInputRef}
+                type="file"
+                accept="application/json,.json"
+                className="hidden"
+                onChange={(e) => {
+                  const file = e.target.files?.[0]
+                  e.target.value = ''
+                  if (file) void handleImportBackup(file)
+                }}
+              />
             </div>
           </div>
 

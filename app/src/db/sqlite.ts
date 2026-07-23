@@ -565,6 +565,37 @@ async function flushPersist() {
   if (persistInFlight) await persistInFlight
 }
 
+/** Export the current sql.js snapshot (call after flush for durability). */
+export async function exportSqliteSnapshot(): Promise<Uint8Array> {
+  const db = await initDB()
+  await flushPersist()
+  return db.export()
+}
+
+/** Replace the in-memory DB + durable snapshot from a backup export. */
+export async function replaceSqliteSnapshot(data: Uint8Array): Promise<void> {
+  const initSqlJs = (await import('sql.js')).default
+  const SQL = await initSqlJs({
+    locateFile: (file: string) => `/sql.js/${file}`,
+  })
+
+  if (persistTimer !== null) {
+    clearTimeout(persistTimer)
+    persistTimer = null
+  }
+  if (dbInstance) {
+    dbInstance.close()
+    dbInstance = null
+    dbInitPromise = null
+  }
+
+  // Prevent clearOldCards() from wiping a restored snapshot on first schema pass.
+  if (hasLocalStorage()) localStorage.setItem('kiroku_michi_cleared_old_cards', 'true')
+  dbInstance = new SQL.Database(data)
+  initializeSchema()
+  await persistNow()
+}
+
 export class SQLiteStorage implements StorageProvider {
   async query<T>(sql: string, params: unknown[] = []): Promise<T[]> {
     const db = await initDB()

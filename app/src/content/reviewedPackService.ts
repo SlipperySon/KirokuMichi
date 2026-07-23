@@ -81,7 +81,7 @@ const FALLBACK_URLS: Record<string, string> = Object.fromEntries([
       [`quartet_2_${sourceLesson}`, `/data/generated/reviewed/quartet_2_${sourceLesson}.json`],
     ]
   }),
-  ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map((n) => [
+  ...[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map((n) => [
     `marugoto_a1_${n}`,
     `/data/generated/reviewed/marugoto_a1_${n}.json`,
   ]),

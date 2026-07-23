@@ -7,7 +7,7 @@
  *
  * Usage (from app/): npx tsx tools/textbook-pack/publish-learner-packs.ts
  */
-import { copyFile, mkdir, readFile, writeFile, readdir } from 'node:fs/promises'
+import { access, copyFile, mkdir, readFile, unlink, writeFile, readdir } from 'node:fs/promises'
 import path from 'node:path'
 
 const appRoot = process.cwd()
@@ -78,6 +78,14 @@ const GOLD_PACKS: Array<{ packFile: string; lessonId: string; assetCopies?: Arra
     { packFile: `tobira_lesson_${n}.json`, lessonId: `tobira_${n}` },
   ]),
 ]
+
+/** Leftover OCR / curriculum stubs that must not ship as learner overlays. */
+const HIDDEN_DRAFT_LESSON_IDS = new Set([
+  'genki_2_12',
+  'quartet_2_0',
+  'marugoto_a1_17',
+  'marugoto_b1_0',
+])
 
 const TEXTBOOK_FOR_SERIES: Record<string, string> = {
   genki_1: 'genki_1_textbook',
@@ -330,6 +338,7 @@ async function publishDrafts(index: IndexEntry[]): Promise<void> {
 
   for (const lessonId of lessonIds) {
     if (goldIds.has(lessonId)) continue
+    if (HIDDEN_DRAFT_LESSON_IDS.has(lessonId)) continue
     const series = seriesKeyFromLessonId(lessonId)
     if (!series) continue
     const textbookKey = TEXTBOOK_FOR_SERIES[series]
@@ -419,10 +428,15 @@ async function publishDrafts(index: IndexEntry[]): Promise<void> {
 async function main() {
   await mkdir(servedDir, { recursive: true })
 
-  // Remove previous draft packs but keep directory
-  for (const name of await readdir(servedDir)) {
-    if (name.endsWith('.json')) {
-      // rewritten below
+  // Drop known-useless leftover drafts so they cannot linger after republish.
+  for (const lessonId of HIDDEN_DRAFT_LESSON_IDS) {
+    const stubPath = path.join(servedDir, `${lessonId}.json`)
+    try {
+      await access(stubPath)
+      await unlink(stubPath)
+      console.log(`removed stub ${lessonId}.json`)
+    } catch {
+      // absent is fine
     }
   }
 

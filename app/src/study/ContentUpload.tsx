@@ -8,6 +8,7 @@ import { ClientAIProvider } from '../ai/aiProvider'
 import { toast } from '../components/toastStore'
 import { CONFIRMABLE_TEXTBOOKS, detectTextbook, TEXTBOOK_LABELS, type TextbookKey } from '../content/textbookDetection'
 import { unlockTextbookPack, type LockedTextbookPack } from '../content/textbookPackUnlock'
+import { normalizeUnlockedPackPayload } from '../content/normalizeUnlockedPack'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -688,16 +689,14 @@ export function ContentUpload() {
     setPackStatus('Unlocking pack…')
     try {
       const pack = JSON.parse(await file.text()) as LockedTextbookPack
-      const unlocked = await unlockTextbookPack<ExtractionResult>(pack, packPassphrase)
-      const payload = {
-        source_title: unlocked.title,
-        vocab: unlocked.payload.vocab ?? [],
-        grammar: unlocked.payload.grammar ?? [],
-        lessons: unlocked.payload.lessons ?? [],
+      const unlocked = await unlockTextbookPack(pack, packPassphrase)
+      const payload = normalizeUnlockedPackPayload(unlocked.payload, unlocked.title)
+      if (payload.vocab.length + payload.grammar.length + payload.lessons.length === 0) {
+        throw new Error('Unlocked pack had no importable vocab, grammar, or lessons')
       }
       setPreview(payload)
       setStep('preview')
-      setPackStatus(`Unlocked ${unlocked.title}`)
+      setPackStatus(`Unlocked ${unlocked.title} (v${payload.vocab.length} g${payload.grammar.length} l${payload.lessons.length})`)
       toast.success('Textbook pack unlocked')
     } catch (err) {
       const message = err instanceof Error ? err.message : 'Could not unlock pack'

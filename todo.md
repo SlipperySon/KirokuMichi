@@ -1,7 +1,7 @@
 # KirokuMichi — Todo
 
 **Last updated: 2026-07-20**
-**Status: PHASE 8 MOSTLY SHIPPED — Staging security harden (HttpOnly session cookie still optional stretch)**
+**Status: PHASE 8 MOSTLY SHIPPED — HttpOnly session cookie MVP shipped; backup/export MVP shipped**
 
 ---
 
@@ -88,7 +88,7 @@ Should soon
 - [x] Custom provider: env endpoint allowlist; never forward server custom key to client URL
 - [x] Stronger invite login backoff
 - [x] Dedicated rate limit on `/api/report`
-- [ ] Prefer HttpOnly session cookie over localStorage token (optional stretch)
+- [x] Prefer HttpOnly session cookie over localStorage token (optional stretch)
 
 **Earlier (done):** Study path planner + Today’s Path panel on Home.
 
@@ -174,11 +174,10 @@ These cannot be progressed without outside input:
 Content (A1–B2) and the SRS are complete, so the highest-leverage work is now reliability and reach.
 Roughly priority-ordered:
 
-1. **Backup / Restore + cloud sync (highest value).** All state lives in one browser's localStorage +
-   IndexedDB — clearing site data wipes every SRS history with no recovery. This is the single biggest user
-   risk. First step: manual JSON export/import. Real fix: optional account-based sync (also unlocks multi-device).
-2. **Finish the encrypted-pack unlock flow.** Already half-built (`build-encrypted-packs.ts`,
-   `textbookPackUnlock.ts`); it's the roadmap's stated #1–2 and the main differentiator over generic OCR import.
+1. **✅ DONE — Backup / Restore MVP.** Settings → Backup & Restore exports/imports a JSON
+   snapshot of the SQLite SRS DB plus lesson progress. Optional account-based cloud sync remains future work.
+2. **✅ DONE — Encrypted-pack unlock flow MVP.** `build-encrypted-packs.ts` + `textbookPackUnlock.ts` +
+   ContentUpload unlock path now normalize canonical proof payloads into the import preview.
 3. **Recorded-audio regression test.** Assert imported/uploaded MP3 playback still resolves `idb:` audio and
    does not fall back to generated speech.
 4. **✅ DONE 2026-06-12 — Unify grammar into the scheduler.** Grammar review now uses scheduler-backed
