@@ -40,6 +40,14 @@ const LearningPath = lazy(() => import('./study/LearningPath').then(module => ({
 const ReviewHub = lazy(() => import('./study/ReviewHub').then(module => ({ default: module.ReviewHub })))
 
 function protectedElement(betaGateEnabled: boolean | null, element: ReactElement) {
+  // Fail closed while status is unknown — avoids a race that briefly opens the SPA.
+  if (betaGateEnabled === null) {
+    return (
+      <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center">
+        <p className="text-sm text-slate-400">Checking access…</p>
+      </div>
+    )
+  }
   if (betaGateEnabled && getBetaAccess() !== 'granted') {
     return <Navigate to="/beta-login" replace />
   }
@@ -83,7 +91,8 @@ function App() {
         if (!cancelled) setBetaGateEnabled(data.enabled)
       })
       .catch(() => {
-        if (!cancelled) setBetaGateEnabled(false)
+        // Fail closed: if we cannot reach the server, require the invite flow.
+        if (!cancelled) setBetaGateEnabled(true)
       })
     return () => {
       cancelled = true
@@ -146,9 +155,15 @@ function App() {
               <Route
                 path="/"
                 element={
-                  betaGateEnabled && getBetaAccess() !== 'granted'
-                    ? <Navigate to="/beta-login" replace />
-                    : onboardingComplete ? <Navigate to="/study" replace /> : <Navigate to="/onboarding" replace />
+                  betaGateEnabled === null
+                    ? (
+                      <div className="min-h-screen bg-slate-950 text-slate-100 flex items-center justify-center">
+                        <p className="text-sm text-slate-400">Checking access…</p>
+                      </div>
+                    )
+                    : betaGateEnabled && getBetaAccess() !== 'granted'
+                      ? <Navigate to="/beta-login" replace />
+                      : onboardingComplete ? <Navigate to="/study" replace /> : <Navigate to="/onboarding" replace />
                 }
               />
               <Route path="/onboarding" element={protectedElement(betaGateEnabled, <OnboardingFlow />)} />

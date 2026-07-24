@@ -262,3 +262,85 @@ export function isDataPathAllowed(requestPath: string, production: boolean): boo
   // Curriculum + assets only in production.
   return /\.(json|png|jpe?g|webp|gif|svg|mp3|m4a|wav|ogg|txt|md)$/i.test(normalized)
 }
+
+/** Default browser origins used by Vite + optional CORS_ORIGINS env. */
+export function configuredBrowserOrigins(
+  corsOriginsEnv = process.env.CORS_ORIGINS,
+  publicOriginEnv = process.env.PUBLIC_ORIGIN,
+): string[] {
+  const origins = [
+    'http://localhost:5173',
+    'http://127.0.0.1:5173',
+    'http://localhost:5174',
+    'http://127.0.0.1:5174',
+    ...parseAllowlist(corsOriginsEnv),
+  ]
+  if (publicOriginEnv?.trim()) origins.push(publicOriginEnv.trim().replace(/\/+$/, ''))
+  return origins
+}
+
+/**
+ * CSRF defense-in-depth for cookie-authenticated mutating requests.
+ * Allows same-host Origin/Referer (Render single-origin) and configured CORS origins.
+ */
+export function isAllowedMutatingOrigin(options: {
+  origin?: string | null
+  referer?: string | null
+  host?: string | null
+  secFetchSite?: string | null
+  allowedOrigins: string[]
+  production?: boolean
+}): boolean {
+  const production = options.production ?? process.env.NODE_ENV === 'production'
+  const host = options.host?.split(':')[0]?.toLowerCase()
+  const hostWithPort = options.host?.toLowerCase()
+
+  const matchesAllowed = (value: string) => {
+    try {
+      const url = new URL(value)
+      const origin = `${url.protocol}//${url.host}`
+      if (options.allowedOrigins.includes(origin)) return true
+      if (hostWithPort && url.host.toLowerCase() === hostWithPort) return true
+      if (host && url.hostname.toLowerCase() === host) return true
+      return false
+    } catch {
+      return false
+    }
+  }
+
+  if (options.origin) return matchesAllowed(options.origin)
+
+  const site = (options.secFetchSite || '').toLowerCase()
+  if (site === 'same-origin' || site === 'none') return true
+
+  if (options.referer && matchesAllowed(options.referer)) return true
+
+  // Non-browser / curl clients: allow outside production only.
+  return !production
+}
+
+/** Hard-cap rate-limit map growth from many client identities. */
+export function pruneRateBucketsToCap(
+  buckets: Map<string, RateBucket>,
+  maxEntries: number,
+  now = Date.now(),
+): void {
+  for (const [key, bucket] of buckets) {
+    if (bucket.resetAt <= now) buckets.delete(key)
+  }
+  while (buckets.size > maxEntries) {
+    const oldest = buckets.keys().next().value
+    if (oldest === undefined) return
+    buckets.delete(oldest)
+  }
+}
+
+/** Strip filesystem/path detail from OCR helper errors before returning to browsers. */
+export function sanitizeOcrError(
+  message: string | undefined,
+  production = process.env.NODE_ENV === 'production',
+): string | undefined {
+  if (!message) return undefined
+  if (!production) return message.slice(0, 300)
+  return 'Local OCR failed'
+}

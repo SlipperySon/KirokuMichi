@@ -4,8 +4,11 @@ import {
   checkRateBucket,
   clampMaxTokens,
   inviteCodeMatches,
+  isAllowedMutatingOrigin,
   isDataPathAllowed,
+  pruneRateBucketsToCap,
   resolveCustomProviderAuth,
+  sanitizeOcrError,
   sanitizeReportMetadata,
   sanitizeUpstreamError,
 } from './securityGuards'
@@ -144,5 +147,60 @@ describe('sanitizeUpstreamError', () => {
 
   it('keeps truncated detail outside production', () => {
     expect(sanitizeUpstreamError(400, 'model missing', false)).toBe('model missing')
+  })
+})
+
+describe('isAllowedMutatingOrigin', () => {
+  const allowed = ['http://localhost:5173', 'https://staging.example.com']
+
+  it('allows same-host Origin even when not in CORS list', () => {
+    expect(
+      isAllowedMutatingOrigin({
+        origin: 'https://app.onrender.com',
+        host: 'app.onrender.com',
+        allowedOrigins: allowed,
+        production: true,
+      }),
+    ).toBe(true)
+  })
+
+  it('rejects cross-site Origin in production', () => {
+    expect(
+      isAllowedMutatingOrigin({
+        origin: 'https://evil.example',
+        host: 'app.onrender.com',
+        allowedOrigins: allowed,
+        production: true,
+      }),
+    ).toBe(false)
+  })
+
+  it('allows missing Origin for same-origin Sec-Fetch-Site', () => {
+    expect(
+      isAllowedMutatingOrigin({
+        host: 'app.onrender.com',
+        secFetchSite: 'same-origin',
+        allowedOrigins: allowed,
+        production: true,
+      }),
+    ).toBe(true)
+  })
+})
+
+describe('sanitizeOcrError', () => {
+  it('redacts paths in production', () => {
+    expect(sanitizeOcrError('/Users/me/tools/ocr failed', true)).toBe('Local OCR failed')
+  })
+})
+
+describe('pruneRateBucketsToCap', () => {
+  it('evicts oldest entries after expiry prune', () => {
+    const buckets = new Map([
+      ['a', { count: 1, resetAt: 9_999_999 }],
+      ['b', { count: 1, resetAt: 9_999_999 }],
+      ['c', { count: 1, resetAt: 9_999_999 }],
+    ])
+    pruneRateBucketsToCap(buckets, 2, 1_000)
+    expect(buckets.size).toBe(2)
   })
 })

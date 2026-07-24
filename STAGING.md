@@ -45,6 +45,7 @@ Optional:
 - `VITE_SENTRY_ENVIRONMENT`: `staging`.
 - `VITE_SENTRY_RELEASE`: browser release/commit identifier.
 - `CORS_ORIGINS`: comma-separated frontend origins only if the API is hosted separately.
+- `PUBLIC_ORIGIN`: optional canonical https origin used with Origin checks when split-hosted.
 
 ## Verification
 

@@ -25,10 +25,14 @@ import {
   assertModelAllowed,
   checkRateBucket,
   clampMaxTokens,
+  configuredBrowserOrigins,
   inviteCodeMatches,
+  isAllowedMutatingOrigin,
   isDataPathAllowed,
+  pruneRateBucketsToCap,
   publicErrorMessage,
   resolveCustomProviderAuth,
+  sanitizeOcrError,
   sanitizeUpstreamError,
   type RateBucket,
 } from './securityGuards'
@@ -42,9 +46,17 @@ const JSON_BODY_LIMIT = '2mb'
 const PDF_UPLOAD_LIMIT = process.env.NODE_ENV === 'production' ? '25mb' : '100mb'
 const SESSION_TOKEN_TTL_MS = 12 * 60 * 60 * 1000
 const SESSION_TOKEN_MAX = 500
+const SESSION_MINT_WINDOW_MS = 15 * 60 * 1000
+const SESSION_MINT_MAX = 20
 const RATE_LIMIT_WINDOW_MS = 60 * 1000
 const RATE_LIMIT_MAX_REQUESTS = 120
+const RATE_LIMIT_BUCKET_MAX = 2048
 const execFileAsync = promisify(execFile)
+
+// Render (and similar) terminate TLS and forward client IP — required for per-IP quotas.
+if (process.env.NODE_ENV === 'production' || process.env.TRUST_PROXY === '1') {
+  app.set('trust proxy', 1)
+}
 
 if (process.env.SENTRY_DSN) {
   Sentry.init({
@@ -344,18 +356,29 @@ async function validateCustomProviderEndpoint(endpoint?: string) {
   }
 }
 
+const browserOrigins = configuredBrowserOrigins()
+
 const corsMiddleware = cors({
-  origin: [
-    'http://localhost:5173',
-    'http://127.0.0.1:5173',
-    'http://localhost:5174',
-    'http://127.0.0.1:5174',
-    ...(process.env.CORS_ORIGINS ? process.env.CORS_ORIGINS.split(',').map(origin => origin.trim()).filter(Boolean) : []),
-  ],
+  origin: browserOrigins,
   methods: ['GET', 'POST', 'OPTIONS'],
   allowedHeaders: ['content-type', 'x-session-token', 'authorization'],
   credentials: true,
 })
+
+function requireAllowedOrigin(req: express.Request, res: express.Response, next: express.NextFunction) {
+  const allowed = isAllowedMutatingOrigin({
+    origin: typeof req.headers.origin === 'string' ? req.headers.origin : null,
+    referer: typeof req.headers.referer === 'string' ? req.headers.referer : null,
+    host: typeof req.headers.host === 'string' ? req.headers.host : null,
+    secFetchSite: typeof req.headers['sec-fetch-site'] === 'string' ? req.headers['sec-fetch-site'] : null,
+    allowedOrigins: browserOrigins,
+  })
+  if (!allowed) {
+    res.status(403).json({ error: 'Forbidden origin' })
+    return
+  }
+  next()
+}
 
 if (process.env.NODE_ENV !== 'production') {
   app.use((req, _res, next) => {
@@ -368,14 +391,37 @@ app.use((_req, res, next) => {
   res.setHeader('X-Frame-Options', 'DENY')
   res.setHeader('Referrer-Policy', 'no-referrer')
   res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()')
+  // SPA + sql.js wasm + blob media; AI/Sentry egress is same-origin or explicit connect-src.
+  res.setHeader(
+    'Content-Security-Policy',
+    [
+      "default-src 'self'",
+      "script-src 'self' 'wasm-unsafe-eval'",
+      "style-src 'self' 'unsafe-inline'",
+      "img-src 'self' data: blob:",
+      "font-src 'self'",
+      "connect-src 'self' https://*.ingest.sentry.io https://*.sentry.io",
+      "media-src 'self' blob:",
+      "worker-src 'self' blob:",
+      "object-src 'none'",
+      "base-uri 'self'",
+      "frame-ancestors 'none'",
+      "form-action 'self'",
+    ].join('; '),
+  )
+  if (process.env.NODE_ENV === 'production') {
+    res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains')
+  }
   next()
 })
 app.use(corsMiddleware)
 app.options(/.*/, corsMiddleware)
 app.use('/api', rateLimit({ windowMs: RATE_LIMIT_WINDOW_MS, maxRequests: RATE_LIMIT_MAX_REQUESTS }))
 app.use((_req, _res, next) => {
-  // Opportunistic cleanup; Map growth is otherwise unbounded across identities.
-  if (rateLimitBuckets.size > 256) pruneExpiredRateBuckets()
+  if (rateLimitBuckets.size > 256) {
+    pruneExpiredRateBuckets()
+    pruneRateBucketsToCap(rateLimitBuckets, RATE_LIMIT_BUCKET_MAX)
+  }
   next()
 })
 app.use(express.json({ limit: JSON_BODY_LIMIT }))
@@ -430,6 +476,7 @@ app.get('/api/beta/status', (_req, res) => {
 
 app.post(
   '/api/beta/login',
+  requireAllowedOrigin,
   rateLimit({
     windowMs: BETA_LOGIN_WINDOW_MS,
     maxRequests: BETA_LOGIN_MAX_ATTEMPTS,
@@ -452,18 +499,28 @@ app.post(
   },
 )
 
-app.post('/api/session', (req, res) => {
-  if (isBetaGateEnabled() && !hasValidBetaGrant(req)) {
-    res.status(401).json({ error: 'Beta access required' })
-    return
-  }
-  // Mint HttpOnly session cookie only — do not put the secret in JSON (XSS-exfiltratable).
-  issueSessionToken(res)
-  res.json({ ok: true })
-})
+app.post(
+  '/api/session',
+  requireAllowedOrigin,
+  rateLimit({
+    windowMs: SESSION_MINT_WINDOW_MS,
+    maxRequests: SESSION_MINT_MAX,
+    keyPrefix: 'session-mint',
+  }),
+  (req, res) => {
+    if (isBetaGateEnabled() && !hasValidBetaGrant(req)) {
+      res.status(401).json({ error: 'Beta access required' })
+      return
+    }
+    // Mint HttpOnly session cookie only — do not put the secret in JSON (XSS-exfiltratable).
+    issueSessionToken(res)
+    res.json({ ok: true })
+  },
+)
 
 app.post(
   '/api/report',
+  requireAllowedOrigin,
   rateLimit({
     windowMs: REPORT_QUOTA_WINDOW_MS,
     maxRequests: REPORT_QUOTA_MAX,
@@ -496,7 +553,8 @@ function requireToken(req: express.Request, res: express.Response, next: express
     res.status(401).json({ error: 'Unauthorised' })
     return
   }
-  next()
+  // Cookie session + SameSite=Lax; Origin check adds defense if CORS_ORIGINS is overly broad.
+  requireAllowedOrigin(req, res, next)
 }
 
 function blockDevInProduction(_req: express.Request, res: express.Response, next: express.NextFunction) {
@@ -1562,13 +1620,17 @@ Extract vocabulary, grammar, and lesson-like reading/dialogue content.`
     const totalExtractedPages = summaries.reduce((sum, summary) => sum + summary.extractedPages, 0)
     const averageCharsPerPage = totalExtractedPages > 0 ? totalExtractedChars / totalExtractedPages : 0
     if (averageCharsPerPage < MIN_EXTRACTED_CHARS_PER_PAGE) {
-      const ocrErrors = summaries.map(summary => summary.ocrError).filter(Boolean)
+      const safeSummaries = summaries.map(summary => ({
+        ...summary,
+        ocrError: sanitizeOcrError(summary.ocrError),
+      }))
+      const ocrErrors = safeSummaries.map(summary => summary.ocrError).filter(Boolean)
       res.status(422).json({
         error: ocrErrors.length > 0
-          ? `These PDFs appear to be image-based/scanned, and local OCR could not run. Text extraction found only ${Math.round(averageCharsPerPage)} characters per page on average. OCR error: ${ocrErrors[0]}`
+          ? `These PDFs appear to be image-based/scanned, and local OCR could not run. Text extraction found only ${Math.round(averageCharsPerPage)} characters per page on average.`
           : `These PDFs appear to be image-based/scanned. Text extraction found only ${Math.round(averageCharsPerPage)} characters per page on average, so there is not enough text to extract vocabulary or grammar. Use an OCR/vision import path before AI extraction.`,
         code: 'PDF_TEXT_TOO_SPARSE',
-        files: summaries,
+        files: safeSummaries,
       })
       return
     }
@@ -1611,7 +1673,13 @@ Extract vocabulary, grammar, and lesson-like reading/dialogue content.`
 
     const normalized = normalizeExtractionResult(parsed)
     console.log(`[content] extracted ${pdfFiles.length} PDFs pages=${summaries.map(s => s.pages).join('+')} chars=${totalExtractedChars} result=${normalized.vocab?.length ?? 0}/${normalized.grammar?.length ?? 0}/${normalized.lessons?.length ?? 0} in ${Date.now() - startedAt}ms`)
-    const payload = { result: normalized, files: summaries }
+    const payload = {
+      result: normalized,
+      files: summaries.map(summary => ({
+        ...summary,
+        ocrError: sanitizeOcrError(summary.ocrError),
+      })),
+    }
     setExtractionCache(cacheKey, payload)
     res.json(payload)
   } catch (err) {
