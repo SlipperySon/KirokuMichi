@@ -25,8 +25,11 @@ import {
   assertModelAllowed,
   checkRateBucket,
   clampMaxTokens,
+  inviteCodeMatches,
   isDataPathAllowed,
+  publicErrorMessage,
   resolveCustomProviderAuth,
+  sanitizeUpstreamError,
   type RateBucket,
 } from './securityGuards'
 
@@ -140,11 +143,15 @@ function issueSessionToken(res: express.Response) {
   return token
 }
 
-/** Prefer HttpOnly session cookie; keep x-session-token as transition fallback. */
+/**
+ * Prefer HttpOnly session cookie. Header fallback is dev-only so stolen
+ * x-session-token values from older clients cannot be replayed in production.
+ */
 function getSessionToken(req: express.Request): string | null {
   const cookies = parseCookies(req)
   const fromCookie = cookies[SESSION_COOKIE]
   if (fromCookie && isValidSessionToken(fromCookie)) return fromCookie
+  if (process.env.NODE_ENV === 'production') return null
   const header = req.headers['x-session-token']
   if (typeof header === 'string' && isValidSessionToken(header)) return header
   return null
@@ -377,7 +384,11 @@ app.use(express.json({ limit: JSON_BODY_LIMIT }))
 // Mount synchronously so Playwright/health-ready servers never race a 502 on /data/*
 // (vite proxies /data here; async access().then() left early requests unhandled).
 const dataPath = path.join(process.cwd(), 'data')
-console.log(`[server] Serving /data from ${dataPath}`)
+if (process.env.NODE_ENV !== 'production') {
+  console.log(`[server] Serving /data from ${dataPath}`)
+} else {
+  console.log('[server] Serving /data (curriculum assets)')
+}
 app.use('/data', (req, res, next) => {
   if (!isDataPathAllowed(req.path, process.env.NODE_ENV === 'production')) {
     res.status(404).end()
@@ -390,10 +401,16 @@ app.use('/data', express.static(dataPath, {
   maxAge: process.env.NODE_ENV === 'production' ? '1h' : 0,
   etag: true,
   lastModified: true,
+  dotfiles: 'deny',
+  index: false,
 }))
+// Never fall through to dist/ SPA for /data — blocks stale dist/data copies (e.g. import.sql).
+app.use('/data', (_req, res) => {
+  res.status(404).end()
+})
 void access(dataPath)
-  .then(() => console.log(`[server] ✓ Data folder accessible and served`))
-  .catch(() => console.error(`[server] ✗ Data folder not found at ${dataPath}`))
+  .then(() => console.log('[server] ✓ Data folder accessible and served'))
+  .catch(() => console.error('[server] ✗ Data folder not found'))
 
 
 // Issue a session token
@@ -425,11 +442,12 @@ app.post(
     }
     const { code } = req.body as { code?: string }
     const validCodes = betaCodes()
-    if (!code || !validCodes.includes(code.trim())) {
+    if (!inviteCodeMatches(code, validCodes)) {
       res.status(401).json({ error: 'Invalid beta invite code' })
       return
     }
     issueBetaGrant(res)
+    // Grant is HttpOnly cookie only — never return invite codes or grant secrets.
     res.json({ ok: true })
   },
 )
@@ -439,9 +457,9 @@ app.post('/api/session', (req, res) => {
     res.status(401).json({ error: 'Beta access required' })
     return
   }
-  // Mint HttpOnly session cookie; token is also returned for transitional header clients.
-  const token = issueSessionToken(res)
-  res.json({ ok: true, token })
+  // Mint HttpOnly session cookie only — do not put the secret in JSON (XSS-exfiltratable).
+  issueSessionToken(res)
+  res.json({ ok: true })
 })
 
 app.post(
@@ -463,7 +481,7 @@ app.post(
     } catch (err) {
       console.error('[report] submission failed:', err)
       res.status(400).json({
-        error: err instanceof Error ? err.message : 'Report submission failed',
+        error: publicErrorMessage(err, 'Report submission failed'),
       })
     }
   },
@@ -739,7 +757,7 @@ async function streamAnthropicRequest(
 
   if (!upstream.ok || !upstream.body) {
     const err = await upstream.text()
-    res.status(upstream.status).json({ error: err })
+    res.status(upstream.status).json({ error: sanitizeUpstreamError(upstream.status, err) })
     return
   }
 
@@ -820,7 +838,7 @@ async function streamOpenAICompatible(
 
   if (!upstream.ok || !upstream.body) {
     const err = await upstream.text()
-    res.status(upstream.status).json({ error: err })
+    res.status(upstream.status).json({ error: sanitizeUpstreamError(upstream.status, err) })
     return
   }
 
@@ -992,7 +1010,7 @@ async function handleAnthropicRequest(
 
   if (!response.ok) {
     const err = await response.text()
-    res.status(response.status).json({ error: err })
+    res.status(response.status).json({ error: sanitizeUpstreamError(response.status, err) })
     return
   }
 
@@ -1289,7 +1307,7 @@ async function handleOpenAIRequest(
 
   if (!response.ok) {
     const err = await response.text()
-    res.status(response.status).json({ error: err })
+    res.status(response.status).json({ error: sanitizeUpstreamError(response.status, err) })
     return
   }
 
@@ -1331,7 +1349,7 @@ async function handleOpenRouterRequest(
 
   if (!response.ok) {
     const err = await response.text()
-    res.status(response.status).json({ error: err })
+    res.status(response.status).json({ error: sanitizeUpstreamError(response.status, err) })
     return
   }
 
@@ -1416,7 +1434,7 @@ async function handleOpenAICompatibleRequest(
 
   if (!response.ok) {
     const err = await response.text()
-    res.status(response.status).json({ error: err })
+    res.status(response.status).json({ error: sanitizeUpstreamError(response.status, err) })
     return
   }
 
@@ -1445,7 +1463,7 @@ async function handleOllamaRequest(
 
   if (!response.ok) {
     const err = await response.text()
-    res.status(response.status).json({ error: err })
+    res.status(response.status).json({ error: sanitizeUpstreamError(response.status, err) })
     return
   }
 
@@ -1598,7 +1616,7 @@ Extract vocabulary, grammar, and lesson-like reading/dialogue content.`
     res.json(payload)
   } catch (err) {
     console.error('PDF upload extraction failed:', err)
-    res.status(500).json({ error: err instanceof Error ? err.message : 'PDF upload extraction failed' })
+    res.status(500).json({ error: publicErrorMessage(err, 'PDF upload extraction failed') })
   }
 })
 
@@ -1784,16 +1802,28 @@ Extract vocabulary, grammar, and lesson-like reading/dialogue content. Keep the 
 const distPath = path.join(process.cwd(), 'dist')
 try {
   access(distPath).then(() => {
-    app.use(express.static(distPath))
-    app.get(/^(?!\/api\/).*/, (_req, res) => {
+    // Refuse source maps even if a local vite build emitted them into dist/.
+    app.use((req, res, next) => {
+      if (req.path.endsWith('.map')) {
+        res.status(404).end()
+        return
+      }
+      next()
+    })
+    app.use(express.static(distPath, {
+      dotfiles: 'deny',
+      index: false,
+    }))
+    // Exclude /api and /data so missing curriculum files never become SPA HTML.
+    app.get(/^(?!\/(?:api|data)(?:\/|$)).*/, (_req, res) => {
       res.sendFile(path.join(distPath, 'index.html'))
     })
-    console.log(`[server] ✓ Frontend dist accessible and served`)
+    console.log('[server] ✓ Frontend dist accessible and served')
   }).catch(() => {
-    console.log(`[server] Frontend dist not found at ${distPath}; API-only mode`)
+    console.log('[server] Frontend dist not found; API-only mode')
   })
 } catch (err) {
-  console.error(`[server] Error setting up frontend dist folder: ${err}`)
+  console.error('[server] Error setting up frontend dist folder')
 }
 
 async function callOpenAICompatibleText(options: {

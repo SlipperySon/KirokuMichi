@@ -27,6 +27,8 @@ echo "Staging smoke against $BASE_URL"
 check health "$BASE_URL/api/health" 200
 check beta_status "$BASE_URL/api/beta/status" 200
 check reviewed_index "$BASE_URL/data/generated/reviewed/index.json" 200
+# Must never publicly serve DB dump / packaging artifacts.
+check import_sql_blocked "$BASE_URL/data/generated/import.sql" 404
 
 if command -v node >/dev/null 2>&1; then
   node --input-type=module <<'NODE' || fail=1

@@ -119,20 +119,17 @@ export function Settings() {
     updateSettings({ powerfulModel: model })
   }
 
-  const refreshSessionToken = async () => {
-    const response = await fetch('/api/session', { method: 'POST', credentials: 'include' })
-    if (!response.ok) throw new Error('Could not refresh session token')
-    const data = await response.json() as { token: string }
-    updateSettings({ sessionToken: data.token })
-    return data.token
+  const refreshSession = async () => {
+    const { ensureSessionCookie } = await import('../session')
+    const ok = await ensureSessionCookie(token => updateSettings({ sessionToken: token }))
+    if (!ok) throw new Error('Could not refresh session')
   }
 
-  const requestTestConnection = (token: string, signal: AbortSignal) => fetch('/api/ai/complete', {
+  const requestTestConnection = (signal: AbortSignal) => fetch('/api/ai/complete', {
     method: 'POST',
     credentials: 'include',
     headers: {
       'content-type': 'application/json',
-      'x-session-token': token
     },
     signal,
     body: JSON.stringify({
@@ -159,17 +156,16 @@ export function Settings() {
     setTestResult(null)
 
     try {
-      let token = settings.sessionToken
-      if (!token) {
-        token = await refreshSessionToken()
+      if (!settings.sessionToken) {
+        await refreshSession()
       }
 
       const controller = new AbortController()
       const timeoutId = window.setTimeout(() => controller.abort(), 90000)
-      let response = await requestTestConnection(token, controller.signal)
+      let response = await requestTestConnection(controller.signal)
       if (response.status === 401) {
-        token = await refreshSessionToken()
-        response = await requestTestConnection(token, controller.signal)
+        await refreshSession()
+        response = await requestTestConnection(controller.signal)
       }
       window.clearTimeout(timeoutId)
 

@@ -5,6 +5,8 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   build: {
+    // Never emit source maps into production dist (avoids shipping original sources).
+    sourcemap: false,
     chunkSizeWarningLimit: 700,
     rollupOptions: {
       output: {

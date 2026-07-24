@@ -98,21 +98,10 @@ All generated files are saved to `app/data/generated/`:
 
 After running the generation pipeline, you have three options:
 
-### Option 1: Browser Console (Easiest)
-1. Start the app: `npm run dev`
-2. Open http://localhost:5173 in your browser
-3. Open browser DevTools (F12)
-4. Go to Console and run:
-```javascript
-// Load the SQL file
-const response = await fetch('/data/generated/import.sql');
-const sql = await response.text();
+### Option 1: Use SQLite CLI (recommended)
+`/data/generated/import.sql` is intentionally blocked from HTTP serving.
+Import only from the local filesystem:
 
-// Execute it (this assumes db is available globally)
-// Note: implementation depends on how SQLiteStorage is exposed
-```
-
-### Option 2: Use SQLite CLI
 ```bash
 sqlite3 data/kiroku.db < data/generated/import.sql
 ```

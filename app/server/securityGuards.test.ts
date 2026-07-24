@@ -3,9 +3,11 @@ import {
   assertModelAllowed,
   checkRateBucket,
   clampMaxTokens,
+  inviteCodeMatches,
   isDataPathAllowed,
   resolveCustomProviderAuth,
   sanitizeReportMetadata,
+  sanitizeUpstreamError,
 } from './securityGuards'
 
 describe('clampMaxTokens', () => {
@@ -113,5 +115,34 @@ describe('isDataPathAllowed', () => {
     expect(isDataPathAllowed('/Kaishi.apkg', true)).toBe(false)
     expect(isDataPathAllowed('/generated/import.sql', true)).toBe(false)
     expect(isDataPathAllowed('/generated/lesson-structure.json', true)).toBe(true)
+  })
+
+  it('blocks OCR dumps, traversal, and source maps always', () => {
+    expect(isDataPathAllowed('/generated/import.sql', false)).toBe(false)
+    expect(isDataPathAllowed('/ocr/raw/page-0001.json', true)).toBe(false)
+    expect(isDataPathAllowed('/generated/reviewed/../import.sql', true)).toBe(false)
+    expect(isDataPathAllowed('/assets/app.js.map', true)).toBe(false)
+    expect(isDataPathAllowed('/generated/reviewed/genki_1_1.json', true)).toBe(true)
+  })
+})
+
+describe('inviteCodeMatches', () => {
+  it('accepts only configured codes', () => {
+    expect(inviteCodeMatches('alpha-123', ['alpha-123', 'beta-456'])).toBe(true)
+    expect(inviteCodeMatches('nope', ['alpha-123'])).toBe(false)
+    expect(inviteCodeMatches(' alpha-123 ', ['alpha-123'])).toBe(true)
+  })
+})
+
+describe('sanitizeUpstreamError', () => {
+  it('redacts provider bodies in production', () => {
+    expect(sanitizeUpstreamError(401, 'invalid api key sk-secret', true)).toBe(
+      'AI provider rejected the request',
+    )
+    expect(sanitizeUpstreamError(500, 'stack trace', true)).toBe('AI provider is unavailable')
+  })
+
+  it('keeps truncated detail outside production', () => {
+    expect(sanitizeUpstreamError(400, 'model missing', false)).toBe('model missing')
   })
 })

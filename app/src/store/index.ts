@@ -152,7 +152,8 @@ export const useAppStore = create<AppState>()(
           settings: {
             ...settings,
             apiKey: null,
-            // Prefer HttpOnly session cookie; never rehydrate tokens from disk.
+            // Prefer HttpOnly session cookie; never rehydrate secrets from disk.
+            // Legacy persisted raw tokens are discarded on hydrate.
             sessionToken: null,
             // Phase 4: textbook lessons on by default for first-run paths
             includeTextbookLessons: settings.includeTextbookLessons ?? true,

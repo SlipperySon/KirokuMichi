@@ -67,12 +67,15 @@ export function StepAI({ onNext }: Props) {
     setStatus('testing')
     try {
       const defaults = PROVIDER_DEFAULTS[provider]
+      if (!settings.sessionToken) {
+        const { ensureSessionCookie } = await import('../session')
+        await ensureSessionCookie(token => updateSettings({ sessionToken: token }))
+      }
       const response = await fetch('/api/ai/complete', {
         method: 'POST',
         credentials: 'include',
         headers: {
           'content-type': 'application/json',
-          'x-session-token': settings.sessionToken ?? '',
         },
         body: JSON.stringify({
           messages: [{ role: 'user', content: 'Say OK' }],

@@ -63,10 +63,12 @@ function App() {
     if (betaGateEnabled && getBetaAccess() !== 'granted') return
 
     fetch('/api/session', { method: 'POST', credentials: 'include' })
-      .then(async response => {
+      .then(response => {
         if (!response.ok) return
-        const data = await response.json() as { token: string }
-        setSessionToken(data.token)
+        // Cookie carries the secret; store only a non-secret readiness marker.
+        void import('./session').then(({ markSessionReady }) => {
+          markSessionReady(setSessionToken)
+        })
       })
       .catch(() => {
         // Silently fail — user can still use app without AI

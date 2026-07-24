@@ -70,7 +70,9 @@ Manual checks still worth doing once:
 
 - Open `/api/health`.
 - Confirm the beta invite screen appears when `BETA_INVITE_CODES` is configured.
-- Confirm AI calls work with the HttpOnly `kiroku-session` cookie (Settings → test connection).
+- Confirm AI calls work with the HttpOnly `kiroku-session` cookie only (Settings → test connection).
+  `/api/session` must not return a token body; clients use `credentials: 'include'`.
+- Confirm `/data/generated/import.sql` returns 404 (packaging dump must stay private).
 - Submit a test report and confirm it creates a GitHub Issue.
 - Test the selected AI provider from Settings.
 - Run a small PDF extraction smoke test; this requires server `DEEPSEEK_API_KEY` or a tester-provided DeepSeek key.

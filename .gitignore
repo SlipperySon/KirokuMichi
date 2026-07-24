@@ -5,6 +5,9 @@
 test-fixtures/
 app/tools/textbook-pack/out/
 app/tools/qa/out/
+# Never reintroduce a public/data symlink — Vite would copy import.sql into dist/.
+app/public/data
+app/dist/data
 
 # Dependencies / caches (never commit)
 node_modules/

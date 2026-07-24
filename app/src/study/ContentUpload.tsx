@@ -591,12 +591,10 @@ export function ContentUpload() {
 
   const fileInputRef = useRef<HTMLInputElement>(null)
 
-  async function refreshSessionToken() {
-    const response = await fetch('/api/session', { method: 'POST', credentials: 'include' })
-    if (!response.ok) throw new Error('Could not refresh session token')
-    const data = await response.json() as { token: string }
-    setSessionToken(data.token)
-    return data.token
+  async function refreshSession() {
+    const { ensureSessionCookie } = await import('../session')
+    const ok = await ensureSessionCookie(setSessionToken)
+    if (!ok) throw new Error('Could not refresh session')
   }
 
   async function fetchWithClientTimeout(url: string, init: RequestInit, timeoutMs = 120000) {
@@ -711,12 +709,11 @@ export function ContentUpload() {
     setDevOcrResult(null)
     setDevTestError(null)
     try {
-      let token = settings.sessionToken || await refreshSessionToken()
-      const request = (sessionToken: string) => fetchWithClientTimeout('/api/dev/test-pdf-import', {
+      if (!settings.sessionToken) await refreshSession()
+      const request = () => fetchWithClientTimeout('/api/dev/test-pdf-import', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
-          'x-session-token': sessionToken,
         },
         body: JSON.stringify({
           fastModel: settings.fastModel,
@@ -724,10 +721,10 @@ export function ContentUpload() {
           pageLimit: 2,
         }),
       })
-      let response = await request(token)
+      let response = await request()
       if (response.status === 401) {
-        token = await refreshSessionToken()
-        response = await request(token)
+        await refreshSession()
+        response = await request()
       }
       if (!response.ok) {
         const data = await response.json().catch(() => null) as { error?: string } | null
@@ -747,19 +744,18 @@ export function ContentUpload() {
     setDevOcrResult(null)
     setDevTestError(null)
     try {
-      let token = settings.sessionToken || await refreshSessionToken()
-      const request = (sessionToken: string) => fetchWithClientTimeout('/api/dev/test-pdf-ocr', {
+      if (!settings.sessionToken) await refreshSession()
+      const request = () => fetchWithClientTimeout('/api/dev/test-pdf-ocr', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
-          'x-session-token': sessionToken,
         },
         body: JSON.stringify({ pageStart: GENKI_TEXTBOOK_PAGE_START, pageLimit: 2 }),
       })
-      let response = await request(token)
+      let response = await request()
       if (response.status === 401) {
-        token = await refreshSessionToken()
-        response = await request(token)
+        await refreshSession()
+        response = await request()
       }
       if (!response.ok) {
         const data = await response.json().catch(() => null) as { error?: string } | null
@@ -774,8 +770,8 @@ export function ContentUpload() {
   }
 
   async function extractPdfsOnServer(files: File[]) {
-    let token = settings.sessionToken || await refreshSessionToken()
-    const request = (sessionToken: string) => {
+    if (!settings.sessionToken) await refreshSession()
+    const request = () => {
       const formData = new FormData()
       for (const file of files) formData.append('files', file)
       const fileRanges = files
@@ -795,15 +791,14 @@ export function ContentUpload() {
       return fetch('/api/content/extract-pdfs', {
         method: 'POST',
         credentials: 'include',
-        headers: { 'x-session-token': sessionToken },
         body: formData,
       })
     }
 
-    let response = await request(token)
+    let response = await request()
     if (response.status === 401) {
-      token = await refreshSessionToken()
-      response = await request(token)
+      await refreshSession()
+      response = await request()
     }
     if (!response.ok) {
       const data = await response.json().catch(() => null) as { error?: string } | null

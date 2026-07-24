@@ -2,6 +2,8 @@
  * Staging security helpers — quotas, model allowlist, custom-provider key policy.
  */
 
+import crypto from 'node:crypto'
+
 export const AI_MAX_TOKENS_CAP = 4096
 export const AI_QUOTA_WINDOW_MS = 60 * 60 * 1000
 export const AI_QUOTA_MAX = 40
@@ -166,11 +168,97 @@ export function sanitizeReportMetadata(input: unknown): Record<string, string | 
   return out
 }
 
+const BLOCKED_DATA_BASENAMES = new Set([
+  'import.sql',
+  '.env',
+  '.env.local',
+  '.env.production',
+  'credentials.json',
+  'source-manifest.json',
+])
+
+const BLOCKED_DATA_SEGMENTS = new Set([
+  'ocr',
+  'raw',
+  'out',
+  'normalized',
+  'grouped',
+  'canonical-proofs',
+  'validation-viewer',
+  'node_modules',
+  '.git',
+])
+
+/**
+ * Timing-safe invite-code check (hash compare so length does not short-circuit).
+ */
+export function inviteCodeMatches(provided: unknown, validCodes: string[]): boolean {
+  if (typeof provided !== 'string' || validCodes.length === 0) return false
+  const trimmed = provided.trim()
+  if (!trimmed) return false
+  const providedHash = crypto.createHash('sha256').update(trimmed).digest()
+  let matched = false
+  for (const code of validCodes) {
+    const codeHash = crypto.createHash('sha256').update(code).digest()
+    if (crypto.timingSafeEqual(providedHash, codeHash)) matched = true
+  }
+  return matched
+}
+
+/** Never forward raw upstream provider bodies to browsers in production. */
+export function sanitizeUpstreamError(
+  status: number,
+  body: string,
+  production = process.env.NODE_ENV === 'production',
+): string {
+  if (!production) {
+    const trimmed = body.trim()
+    return trimmed ? trimmed.slice(0, 500) : `Upstream error (${status})`
+  }
+  if (status === 401 || status === 403) return 'AI provider rejected the request'
+  if (status === 429) return 'AI provider rate limit exceeded'
+  if (status >= 500) return 'AI provider is unavailable'
+  return 'AI provider request failed'
+}
+
+/** Prefer generic client errors in production; keep detail locally. */
+export function publicErrorMessage(
+  err: unknown,
+  fallback: string,
+  production = process.env.NODE_ENV === 'production',
+): string {
+  if (!production && err instanceof Error && err.message) return err.message
+  return fallback
+}
+
 export function isDataPathAllowed(requestPath: string, production: boolean): boolean {
-  if (requestPath.includes('..')) return false
-  if (/\.apkg$/i.test(requestPath)) return false
-  if (/\.sql$/i.test(requestPath)) return false
+  let decoded = requestPath
+  try {
+    decoded = decodeURIComponent(requestPath)
+  } catch {
+    return false
+  }
+  if (!decoded || decoded.includes('\0')) return false
+  // Path traversal (raw, decoded, or Windows separators).
+  if (
+    decoded.includes('..') ||
+    requestPath.includes('..') ||
+    decoded.includes('\\') ||
+    /%2e/i.test(requestPath)
+  ) {
+    return false
+  }
+
+  const normalized = decoded.replace(/\\/g, '/').toLowerCase()
+  const segments = normalized.split('/').filter(Boolean)
+  const basename = segments[segments.length - 1] ?? ''
+
+  if (BLOCKED_DATA_BASENAMES.has(basename)) return false
+  if (segments.some(segment => BLOCKED_DATA_SEGMENTS.has(segment))) return false
+
+  if (/\.(apkg|sql|map|pdf|db|sqlite|sqlite3|env|pem|key|log)$/i.test(normalized)) return false
+
   if (!production) return true
   // Curriculum + assets only in production.
-  return /\.(json|png|jpe?g|webp|gif|svg|mp3|m4a|wav|ogg|txt|md)$/i.test(requestPath)
+  return /\.(json|png|jpe?g|webp|gif|svg|mp3|m4a|wav|ogg|txt|md)$/i.test(normalized)
 }

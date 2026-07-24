@@ -1,4 +1,5 @@
 import type { AIProvider, AIMessage } from '../core/providers'
+import { ensureSessionCookie } from '../session'
 import { useAppStore } from '../store'
 
 /**
@@ -6,9 +7,12 @@ import { useAppStore } from '../store'
  * which handles the actual API calls to any configured provider (Anthropic, OpenAI, custom, etc).
  * Hosted provider keys may come from server env vars, or from a session-only
  * user-supplied key passed through this proxy request.
+ *
+ * Auth is the HttpOnly `kiroku-session` cookie (`credentials: 'include'`).
+ * Zustand only keeps a non-secret readiness marker — never the raw token.
  */
 export class ClientAIProvider implements AIProvider {
-  private sessionToken: string | null = null
+  private sessionReady = false
   private aiProvider: string | null = null
   private apiKey: string | null = null
   private apiEndpoint: string | null = null
@@ -17,7 +21,7 @@ export class ClientAIProvider implements AIProvider {
 
   constructor(sessionToken?: string | null) {
     const store = useAppStore.getState()
-    this.sessionToken = sessionToken || store.settings.sessionToken
+    this.sessionReady = Boolean(sessionToken || store.settings.sessionToken)
     this.aiProvider = store.settings.aiProvider
     this.apiKey = store.settings.apiKey
     this.apiEndpoint = store.settings.apiEndpoint
@@ -34,9 +38,7 @@ export class ClientAIProvider implements AIProvider {
     system?: string,
     tier: 'fast' | 'reasoning' = 'fast'
   ): Promise<string> {
-    if (!this.sessionToken) {
-      throw new Error('No session token available. Please configure AI in Settings.')
-    }
+    await this.ensureReady()
 
     if (!this.aiProvider) {
       throw new Error('No AI provider configured. Please set one in Settings.')
@@ -44,7 +46,7 @@ export class ClientAIProvider implements AIProvider {
 
     let response = await this.requestCompletion(messages, system, tier)
     if (response.status === 401) {
-      await this.refreshSessionToken()
+      await this.refreshSession()
       response = await this.requestCompletion(messages, system, tier)
     }
 
@@ -57,25 +59,27 @@ export class ClientAIProvider implements AIProvider {
     return data.text
   }
 
-  private async refreshSessionToken() {
-    const response = await fetch('/api/session', { method: 'POST', credentials: 'include' })
-    if (!response.ok) return
-    const data = await response.json() as { token: string }
-    this.sessionToken = data.token
-    useAppStore.getState().setSessionToken(data.token)
+  private async ensureReady() {
+    if (this.sessionReady) return
+    await this.refreshSession()
+    if (!this.sessionReady) {
+      throw new Error('No session available. Please configure AI in Settings.')
+    }
+  }
+
+  private async refreshSession() {
+    const ok = await ensureSessionCookie(token => {
+      useAppStore.getState().setSessionToken(token)
+    })
+    this.sessionReady = ok
   }
 
   private requestCompletion(messages: AIMessage[], system: string | undefined, tier: 'fast' | 'reasoning', stream = false) {
-    if (!this.sessionToken) {
-      throw new Error('No session token available. Please configure AI in Settings.')
-    }
-
     return fetch('/api/ai/complete', {
       method: 'POST',
       credentials: 'include',
       headers: {
         'content-type': 'application/json',
-        'x-session-token': this.sessionToken,
       },
       body: JSON.stringify({
         messages,
@@ -103,16 +107,14 @@ export class ClientAIProvider implements AIProvider {
     tier: 'fast' | 'reasoning',
     onChunk: (delta: string) => void
   ): Promise<string> {
-    if (!this.sessionToken) {
-      throw new Error('No session token available. Please configure AI in Settings.')
-    }
+    await this.ensureReady()
     if (!this.aiProvider) {
       throw new Error('No AI provider configured. Please set one in Settings.')
     }
 
     let response = await this.requestCompletion(messages, system, tier, true)
     if (response.status === 401) {
-      await this.refreshSessionToken()
+      await this.refreshSession()
       response = await this.requestCompletion(messages, system, tier, true)
     }
 

@@ -79,7 +79,12 @@ export async function submitIssueReport(report: IssueReport): Promise<ReportResu
 
   const data = await response.json().catch(() => null) as { html_url?: string; message?: string } | null
   if (!response.ok) {
-    throw new Error(data?.message || `GitHub issue creation failed with ${response.status}`)
+    // Do not forward GitHub API error text (can mention repo/auth details) to browsers.
+    console.error('[report] GitHub issue creation failed', {
+      status: response.status,
+      message: data?.message,
+    })
+    throw new Error('Report submission failed')
   }
 
   return { ok: true, mode: 'github', url: data?.html_url }

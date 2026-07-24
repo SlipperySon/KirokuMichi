@@ -52,8 +52,8 @@ export function BetaLogin() {
         credentials: 'include',
       })
       if (sessionResponse.ok) {
-        const data = await sessionResponse.json() as { token: string }
-        setSessionToken(data.token)
+        const { markSessionReady } = await import('../session')
+        markSessionReady(setSessionToken)
       }
 
       toast.success('Beta access unlocked')
