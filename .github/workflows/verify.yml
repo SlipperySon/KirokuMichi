@@ -5,6 +5,25 @@ on:
   pull_request:
 
 jobs:
+  staging-config:
+    name: Staging config gate
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - name: Setup Node
+        uses: actions/setup-node@v5
+        with:
+          node-version: 22
+
+      - name: Validate staging artifacts
+        # Offline only — no live staging URL / Render deploy from CI
+        run: npm run staging:validate-config
+
   app:
     name: App health gate
     runs-on: ubuntu-latest

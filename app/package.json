@@ -46,6 +46,9 @@
     "textbook:learner:quartet-gold-enrich": "tsx tools/textbook-pack/build-quartet-l2-and-enrich-l7.ts",
     "textbook:learner:marugoto-tobira-gold-enrich": "tsx tools/textbook-pack/build-marugoto-tobira-gold.ts",
     "staging:smoke": "bash tools/staging-smoke.sh",
+    "staging:checklist": "bash tools/staging-checklist.sh",
+    "staging:env-required": "bash tools/staging-env-required.sh",
+    "staging:validate-config": "node tools/validate-staging-config.mjs",
     "generate": "tsx tools/generate/pipeline.ts",
     "packs:build": "tsx tools/build-encrypted-packs.ts"
   },
