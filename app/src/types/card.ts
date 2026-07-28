@@ -24,7 +24,7 @@ export function makeNoteTypeId(id: number): NoteTypeId {
 }
 
 /**
- * Card type - from ANKI_SPEC_VERIFIED
+ * Card type - Anki-compatible queue/type enums
  * This is the "current state" of the card
  */
 export enum CardType {

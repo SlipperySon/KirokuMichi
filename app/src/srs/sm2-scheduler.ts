@@ -14,7 +14,7 @@ import type { DeckConfig } from '../types/deck'
 import { CardQueue as CQ } from '../types/card'
 
 /**
- * SM2 Constants (Verified from ANKI_SPEC_VERIFIED.md)
+ * SM2 Constants (Anki-compatible defaults)
  */
 export const SM2_INITIAL_EASE = 2.5
 export const SM2_MINIMUM_EASE = 1.3
