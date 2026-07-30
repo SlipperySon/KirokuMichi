@@ -6,6 +6,8 @@ const SCREENSHOT_DIR = path.resolve('tools/qa/out/route-screenshots')
 
 const ROUTES = [
   { path: '/study', expectText: 'Review Cards' },
+  { path: '/study/srs', expectText: 'Extra Anki decks' },
+  { path: '/settings', expectText: 'Backup' },
   { path: '/learn', expectText: 'Study by Lesson' },
   { path: '/learn/lessons', expectText: 'Study by Lesson' },
   { path: '/learn/lessons/a1/1', expectText: 'Start Lesson' },
