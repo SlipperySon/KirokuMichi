@@ -34,7 +34,10 @@ interface SourceRef {
   coordinates?: [number, number, number, number]
 }
 
-const PACK_ROOT = resolve(process.cwd(), 'tools/textbook-pack/out/reviewed-packs')
+const PACK_ROOTS = [
+  resolve(process.cwd(), 'tools/textbook-pack/out/reviewed-packs'),
+  resolve(process.cwd(), 'data/generated/reviewed'),
+]
 const PUBLIC_ASSET_ROOT = resolve(process.cwd(), 'data/generated/assets/textbook')
 const MANIFEST_PATH = resolve(process.cwd(), 'data/generated/assets/textbook-assets.json')
 const PUBLIC_PREFIX = '/data/generated/assets/textbook'
@@ -42,34 +45,42 @@ const IMAGE_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp'])
 
 function main() {
   const assets: TextbookAsset[] = []
-  if (!existsSync(PACK_ROOT)) {
+  const existingRoots = PACK_ROOTS.filter(root => existsSync(root))
+  if (existingRoots.length === 0) {
     writeManifest(assets)
     console.log(JSON.stringify({ generated: 0, reason: 'reviewed pack root is missing', manifestPath: manifestDisplayPath() }, null, 2))
     return
   }
 
-  const packFiles = readdirSync(PACK_ROOT)
-    .filter(file => file.endsWith('.json') && file !== 'fingerprints.json')
-    .sort()
+  for (const packRoot of existingRoots) {
+    const packFiles = readdirSync(packRoot)
+      .filter(file => file.endsWith('.json') && file !== 'fingerprints.json' && file !== 'index.json')
+      .sort()
 
-  for (const file of packFiles) {
-    const packPath = join(PACK_ROOT, file)
-    const pack = JSON.parse(readFileSync(packPath, 'utf8')) as CanonicalPack
-    const lesson = pack.lessons?.[0]
-    if (!lesson) continue
+    for (const file of packFiles) {
+      const packPath = join(packRoot, file)
+      const pack = JSON.parse(readFileSync(packPath, 'utf8')) as CanonicalPack
+      const lesson = pack.lessons?.[0]
+      if (!lesson) continue
 
-    const explicitAssets = collectExplicitAssets(pack, lesson, packPath)
-    if (explicitAssets.length > 0) {
-      assets.push(...explicitAssets)
-      continue
+      const explicitAssets = collectExplicitAssets(pack, lesson, packPath)
+      if (explicitAssets.length > 0) {
+        assets.push(...explicitAssets)
+        continue
+      }
+
+      assets.push(...collectLooseAssets(pack, lesson, packPath, file))
     }
-
-    assets.push(...collectLooseAssets(pack, lesson, packPath, file))
   }
 
   const deduped = dedupeAssets(assets)
   writeManifest(deduped)
-  console.log(JSON.stringify({ generated: deduped.length, manifestPath: manifestDisplayPath(), assets: deduped }, null, 2))
+  console.log(JSON.stringify({
+    generated: deduped.length,
+    scannedRoots: existingRoots.map(root => relative(process.cwd(), root)),
+    manifestPath: manifestDisplayPath(),
+    assets: deduped,
+  }, null, 2))
 }
 
 function collectExplicitAssets(pack: CanonicalPack, lesson: NonNullable<CanonicalPack['lessons']>[number], packPath: string): TextbookAsset[] {
@@ -78,8 +89,8 @@ function collectExplicitAssets(pack: CanonicalPack, lesson: NonNullable<Canonica
   const carriers = [...contentBlocks, ...exercises]
   return carriers.flatMap(carrier => {
     if (!carrier.imageFile) return []
-    const sourcePath = resolve(dirname(packPath), carrier.imageFile)
-    if (!existsSync(sourcePath)) return []
+    const sourcePath = resolveImageSource(packPath, carrier.imageFile)
+    if (!sourcePath) return []
     return [
       buildAsset({
         pack,
@@ -90,6 +101,15 @@ function collectExplicitAssets(pack: CanonicalPack, lesson: NonNullable<Canonica
       }),
     ]
   })
+}
+
+/** Resolve imageFile against the pack directory or the app cwd (published packs). */
+function resolveImageSource(packPath: string, imageFile: string): string | null {
+  const candidates = [
+    resolve(dirname(packPath), imageFile),
+    resolve(process.cwd(), imageFile),
+  ]
+  return candidates.find(candidate => existsSync(candidate)) ?? null
 }
 
 function collectLooseAssets(pack: CanonicalPack, lesson: NonNullable<CanonicalPack['lessons']>[number], packPath: string, fileName: string): TextbookAsset[] {
