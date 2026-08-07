@@ -36,7 +36,7 @@ export function getTtsStatus(): TtsStatus {
       provider: 'none',
       configured: false,
       ready: false,
-      message: 'Cloud TTS disabled (TTS_PROVIDER=none). Browser speech fallback only.',
+      message: 'Cloud TTS disabled (TTS_PROVIDER=none). Audio is unavailable (no browser TTS fallback).',
     }
   }
 

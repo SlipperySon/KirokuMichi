@@ -1260,7 +1260,7 @@ Next: Manual corrections phase (A1-A2 first, then B1-B2)
 | Audio persistence | IndexedDB (`audioStore.ts`) with `idb:` key prefix | Blob URLs die on page reload |
 | API keys | Server-side only, proxied via Express | Never exposed to client |
 | Base content | Zero on install — user imports everything | Avoids bundling large data files |
-| Generated speech | Disabled before beta | The old browser/Azure fallback sounded poor; use imported/uploaded real audio only |
+| Generated speech | Cloud TTS only (Sarashina → later ElevenLabs) | **Never** use browser/`speechSynthesis`. If cloud TTS is unavailable, disable audio. |
 | Grammar tracking | `grammar_progress` table (UPSERT) | Lightweight, no full SRS needed for grammar points |
 | Heatmap colours | Blue=vocab, purple=grammar, green=both | Visually separates study modes |
 

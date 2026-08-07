@@ -33,7 +33,9 @@ export function CardListening({ card, phase, intervalPreviews, onReveal, onRate 
         await playCardListeningAudio(card.front, card.audioUrl)
         if (!cancelled) setHasPlayed(true)
       } catch {
-        if (!cancelled) setPlayError('Could not play audio — try again or reveal to check.')
+        if (!cancelled) {
+          setPlayError('Audio unavailable — cloud TTS is off or unreachable (device voices are not used). Reveal to continue.')
+        }
       } finally {
         if (!cancelled) setIsPlaying(false)
       }
@@ -53,7 +55,7 @@ export function CardListening({ card, phase, intervalPreviews, onReveal, onRate 
       await playCardListeningAudio(card.front, card.audioUrl)
       setHasPlayed(true)
     } catch {
-      setPlayError('Could not play audio — try again or reveal to check.')
+      setPlayError('Audio unavailable — cloud TTS is off or unreachable (device voices are not used). Reveal to continue.')
     } finally {
       setIsPlaying(false)
     }

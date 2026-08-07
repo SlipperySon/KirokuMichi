@@ -85,7 +85,8 @@ cd app && npm run verify
 - ✅ Mistake Review Mode (drill recent mistakes, log to SRS)
 - ✅ Save correction to SRS
 - ✅ Conversation persistence (localStorage per-chat)
-- ✅ Pluggable cloud TTS (`/api/tts`) — Sarashina default via local sidecar; ElevenLabs provider stub; browser Speech API fallback
+- ✅ Pluggable cloud TTS (`/api/tts`) — Sarashina default via local sidecar; ElevenLabs provider stub
+- ❌ **No browser/`speechSynthesis` TTS** — if cloud TTS fails or is unconfigured, listen/speak audio is disabled (never fall back to device voices)
 - ⏳ Sarashina sidecar not yet run in prod/dev (needs GPU + prompt WAV — checklist in `todo.md`)
 
 ### Dashboard & UX
@@ -256,7 +257,7 @@ npm run packs:build                # Encrypt canonical proof JSONs → public/pa
 ## Recent changes (2026-08-07)
 
 - **Lesson-gated Genki starter deck** — import still loads the full library, but only the active/starter lesson’s cards stay unsuspended (~106 for Genki I L1). One-time heal via `settings.bundledCardsLessonGated`; `ensureLessonCards` / `activateCardsForLesson` unlock later lessons. `getNewCount` / `getNewCards` ignore suspended cards.
-- **Pluggable TTS** — `app/server/tts/` (Sarashina + ElevenLabs + cache), `app/tts-sidecar/server.py`, client `app/src/audio/cloudTts.ts`. Playback order: recorded → `/api/tts` → browser TTS. Finish Sidecar setup on a GPU machine (`todo.md`).
+- **Pluggable TTS** — `app/server/tts/` (Sarashina + ElevenLabs + cache), `app/tts-sidecar/server.py`, client `app/src/audio/cloudTts.ts`. Playback: recorded → `/api/tts` only; **never browser TTS** (disable audio if cloud TTS unavailable). Finish sidecar setup on a GPU machine (`todo.md`).
 - **Lesson rail / grading polish** — IME-aware typed recall, `~` prefix stripping, first-session teach/check budget (no checkpoints for untaught items), Speak skips Latin schema patterns (`XはYです`), lesson labels like `Genki I · Lesson 1`, softer learner-facing copy.
 - **Nav** — finish onboarding → `/study` (Today), not forced lesson-1 autostart.
 

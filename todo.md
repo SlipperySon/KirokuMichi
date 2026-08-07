@@ -12,7 +12,8 @@ Pluggable cloud TTS is coded (`TTS_PROVIDER=sarashina` default; ElevenLabs ready
 **Code already on `main` (this session)**
 - [x] Express `GET /api/tts/status` + `POST /api/tts` with disk cache (`.cache/tts`)
 - [x] Providers: `sarashina` · `elevenlabs` · `none` (`app/server/tts/`)
-- [x] Client: recorded audio → `/api/tts` → browser `speechSynthesis` (`app/src/audio/cloudTts.ts`)
+- [x] Client: recorded audio → `/api/tts` only (`app/src/audio/cloudTts.ts`)
+- [x] **Policy: never use browser/`speechSynthesis` TTS.** If cloud TTS is down/unconfigured, disable speak/listen audio (no device-voice fallback).
 - [x] Sidecar stub: `app/tts-sidecar/server.py`
 - [x] Env docs in `app/.env.example`
 - [x] Lesson-gated Genki starter import (no more ~2454 new cards on first open)
@@ -91,7 +92,7 @@ Canvas: `~/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/learning-e
 - [x] Typed free-recall in checkpoints; writing variant every 7th card; GrammarReview meaning hidden until reveal
 - [x] Day-1 session budget (`firstSessionBudget`) caps first lesson rail
 - [x] Unit tests: productionValidation, typedRecall, firstSessionBudget, grammarCardBuilder
-- [x] Sentence cards use listen-then-type (`CardListening` + bundled audio / TTS fallback)
+- [x] Sentence cards use listen-then-type (`CardListening` + bundled/cloud TTS; no browser fallback)
 - [x] Scenario Live Practice counts toward Speak completion when launched from lesson rail
 - [x] Playwright lesson-rail smoke (`npm run qa:lesson-rail`)
 
