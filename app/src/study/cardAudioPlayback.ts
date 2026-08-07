@@ -1,12 +1,22 @@
+import { playCloudTts, stopCloudTts } from '../audio/cloudTts'
 import { playRecordedAudio } from './useCardAudio'
 
-/** Play bundled card audio or fall back to browser TTS for listen-then-type cards. */
+/**
+ * Play card audio: bundled recording → cloud TTS (Sarashina/ElevenLabs) → browser TTS.
+ */
 export async function playCardListeningAudio(
   text: string,
   audioUrl: string | null | undefined,
 ): Promise<void> {
   const recorded = await playRecordedAudio(audioUrl).catch(() => null)
   if (recorded) return
+
+  try {
+    await playCloudTts(text, { language: 'ja' })
+    return
+  } catch {
+    // Fall through to device TTS when cloud provider is offline / unconfigured.
+  }
 
   if (typeof speechSynthesis === 'undefined') {
     throw new Error('No audio available for this card.')
@@ -24,5 +34,6 @@ export async function playCardListeningAudio(
 }
 
 export function stopCardListeningAudio(): void {
+  stopCloudTts()
   if (typeof speechSynthesis !== 'undefined') speechSynthesis.cancel()
 }

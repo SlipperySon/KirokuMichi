@@ -19,5 +19,13 @@ export function lessonRouteFromId(lessonId: string, options?: { autostart?: bool
 }
 
 export function formatLessonLabel(lessonId: string) {
-  return lessonId.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+  const match = lessonId.match(/^(genki|quartet)_([12])_(\d+)$/)
+  if (!match) {
+    return lessonId.replace(/_/g, ' ').replace(/\b\w/g, c => c.toUpperCase())
+  }
+  const [, book, volume, n] = match
+  const bookLabel = book === 'genki'
+    ? `Genki ${volume === '1' ? 'I' : 'II'}`
+    : `Quartet ${volume}`
+  return `${bookLabel} · Lesson ${Number(n)}`
 }

@@ -50,6 +50,18 @@ describe('lessonCardBridge', () => {
     expect(fronts).toEqual(['犬', '〜は'])
   })
 
+  it('maps typed-recall miss ids back to vocab fronts', () => {
+    const fronts = priorityFrontsFromLessonSignals({
+      vocab: [
+        { id: 'a', surface: '犬', english: 'dog', lesson: 'genki_1_1', source: 'g', page: 1 },
+      ],
+      grammar: [],
+      againItemIds: [],
+      missedItemIds: ['vocab:a:typed'],
+    })
+    expect(fronts).toEqual(['犬'])
+  })
+
   it('orders priority fronts first and caps the queue', () => {
     const ordered = orderLessonReviewCards(
       [

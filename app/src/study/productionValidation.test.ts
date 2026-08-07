@@ -39,6 +39,31 @@ describe('productionValidation', () => {
     ).toEqual(['です'])
   })
 
+  it('skips Latin schema patterns like XはYです for speak fragments', () => {
+    expect(
+      speakRequiredFragments(
+        [{ id: 'g', pattern: 'XはYです', meaning: 'X is Y', lesson: 'l', source: 's', page: 1 }],
+        [{ surface: '学生' }],
+      ),
+    ).toEqual(['学生'])
+  })
+
+  it('accepts bare stems when required fragment is an attachment form', () => {
+    const result = validateJapaneseProduction('たけしさんです', {
+      requiredFragments: ['~さん'],
+    })
+    expect(result.ok).toBe(true)
+  })
+
+  it('prefers concrete vocab over attachment placeholders for speak fragments', () => {
+    expect(
+      speakRequiredFragments(
+        [],
+        [{ surface: '~さん' }, { surface: 'がくせい' }],
+      ),
+    ).toEqual(['がくせい'])
+  })
+
   it('validates workbook tasks with minimum length', () => {
     expect(validateWorkbookTask('abc').ok).toBe(false)
     expect(validateWorkbookTask('わたしは学生です').ok).toBe(true)

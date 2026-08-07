@@ -37,7 +37,19 @@ describe('firstSessionBudget', () => {
     expect(budgeted.some(s => s.kind === 'workbook')).toBe(false)
     expect(budgeted.some(s => s.kind === 'final')).toBe(false)
     expect(budgeted.filter(s => s.kind === 'teach').length).toBe(1)
+    expect(budgeted.filter(s => s.kind === 'checkpoint').length).toBe(1)
     expect(budgeted.at(-2)?.kind).toBe('cards')
     expect(budgeted.at(-1)?.kind).toBe('speak')
+
+    const taught = new Set(
+      budgeted.flatMap(step => (step.kind === 'teach' ? step.items.map(item => item.title) : [])),
+    )
+    for (const step of budgeted) {
+      if (step.kind !== 'checkpoint') continue
+      for (const question of step.questions) {
+        if (question.type !== 'vocab' || question.recallMode === 'typed') continue
+        expect(taught.has(question.correctAnswer)).toBe(true)
+      }
+    }
   })
 })

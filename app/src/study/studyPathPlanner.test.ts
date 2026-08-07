@@ -133,7 +133,7 @@ describe('studyPathPlanner', () => {
     })
 
     expect(action.kind).toBe('current-lesson')
-    expect(action.route).toBe('/learn/lessons/a1/2?autostart=1')
+    expect(action.route).toBe('/learn/lessons/a1/2')
   })
 
   it('starts the next incomplete learning-path lesson', () => {
@@ -157,7 +157,7 @@ describe('studyPathPlanner', () => {
     })
     expect(action.kind).toBe('path-lesson')
     expect(action.lessonId).toBe('genki_1_2')
-    expect(action.route).toBe('/learn/lessons/a1/2?autostart=1')
+    expect(action.route).toBe('/learn/lessons/a1/2')
   })
 
   it('continues textbook curriculum when the path window is caught up', () => {
@@ -184,7 +184,7 @@ describe('studyPathPlanner', () => {
 
     expect(action.kind).toBe('path-lesson')
     expect(action.lessonId).toBe('genki_1_5')
-    expect(action.route).toBe('/learn/lessons/a1/5?autostart=1')
+    expect(action.route).toBe('/learn/lessons/a1/5')
     expect(action.meta).toBe('Curriculum')
   })
 

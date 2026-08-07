@@ -4,7 +4,7 @@ const FIRST_SESSION_TEACH_CHUNKS = 1
 
 /**
  * Day-1 budget: Intro + first teach chunk + its checkpoint + Cards + Speak.
- * Defers remaining teach sets, final mixed review, and workbook to "continue lesson".
+ * Defers remaining teach sets, their checkpoints, final mixed review, and workbook.
  */
 export function applyFirstSessionBudget(steps: LessonStep[], enabled: boolean): LessonStep[] {
   if (!enabled) return steps
@@ -12,11 +12,25 @@ export function applyFirstSessionBudget(steps: LessonStep[], enabled: boolean): 
   let teachSeen = 0
   const core: LessonStep[] = []
 
-  for (const step of steps) {
+  for (let index = 0; index < steps.length; index += 1) {
+    const step = steps[index]
+
     if (step.kind === 'teach') {
       teachSeen += 1
-      if (teachSeen > FIRST_SESSION_TEACH_CHUNKS) continue
+      if (teachSeen > FIRST_SESSION_TEACH_CHUNKS) {
+        // Skip this teach chunk and its paired checkpoint (if present).
+        if (steps[index + 1]?.kind === 'checkpoint') index += 1
+        continue
+      }
+      core.push(step)
+      if (steps[index + 1]?.kind === 'checkpoint') {
+        core.push(steps[index + 1])
+        index += 1
+      }
+      continue
     }
+
+    if (step.kind === 'checkpoint') continue // unpaired / already consumed with teach
     if (step.kind === 'final') continue
     if (step.kind === 'workbook') continue
     core.push(step)

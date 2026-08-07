@@ -1,0 +1,6 @@
+# Install Sarashina2.2-TTS itself from upstream first:
+#   git clone https://github.com/sbintuitions/sarashina2.2-tts.git
+#   cd sarashina2.2-tts && pip install -e .
+#
+# This sidecar only needs the stdlib HTTP server once Sarashina is importable.
+# No extra pip packages required beyond the Sarashina package and its deps.

@@ -607,7 +607,7 @@ Ensure activities array has 3-4 items per week. Make the plan realistic and prog
                   key={week.week}
                   week={week}
                   index={i}
-                  onStartLesson={(lessonId) => navigate(lessonRouteFromId(lessonId, { autostart: true }))}
+                  onStartLesson={(lessonId) => navigate(lessonRouteFromId(lessonId))}
                 />
               ))}
             </div>

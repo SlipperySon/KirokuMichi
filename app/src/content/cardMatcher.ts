@@ -108,6 +108,11 @@ export function matchCardToTerm(cardFront: string, lessonTerm: string): CardMatc
     }
   }
 
+  // Short stems from stripped ~さん / ~じ collide with many words — exact only.
+  if (cleanLesson.length <= 2 || cleanCard.length <= 2) {
+    return null
+  }
+
   // Tier 2: Substring match (card contains lesson term, or lesson contains card)
   if (cleanCard.includes(cleanLesson) || cleanLesson.includes(cleanCard)) {
     return {

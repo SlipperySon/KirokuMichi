@@ -31,6 +31,7 @@ import {
   countUserCardStates,
   ensureStarterDeckIfEmpty,
 } from './firstRunBootstrap'
+import { gateBundledCardsToActiveLessons } from '../srs/bundledGenkiImport'
 import type { ReviewCard, GrammarQuestion, StreakData, SessionRecoveryPayload } from './types'
 
 interface HomeAction {
@@ -108,6 +109,21 @@ export function StudyDashboard() {
 
       // Ensure Default deck exists
       await service.ensureDefaultDeck(uid)
+
+      // One-time heal for installs that imported the full Genki pack as active "new".
+      // Later lessons unlock via ensureLessonCards / activateCardsForLesson.
+      const store = useAppStore.getState()
+      if (!store.settings.bundledCardsLessonGated) {
+        const activeLessons = Array.from(new Set(
+          [store.currentLesson, ...store.lessonsCompleted].filter((id): id is string => Boolean(id)),
+        ))
+        await gateBundledCardsToActiveLessons(
+          storage,
+          uid,
+          activeLessons.length > 0 ? activeLessons : ['genki_1_1'],
+        )
+        updateSettings({ bundledCardsLessonGated: true })
+      }
 
       const [due, extraDue, newC, grammarDue, streak, mistakes, weeklyRows, preview, deckRows] = await Promise.all([
         service.getDueCount(uid, 'path'),
@@ -276,11 +292,15 @@ export function StudyDashboard() {
     if (!userId || importingStarter) return
     setImportingStarter(true)
     try {
-      const result = await ensureStarterDeckIfEmpty(storage, userId)
+      const result = await ensureStarterDeckIfEmpty(storage, userId, {
+        activeLessonIds: currentLesson ? [currentLesson] : ['genki_1_1'],
+      })
       if (!result) {
         toast.info('You already have cards — no starter import needed.')
       } else {
-        toast.success(`Imported ${result.imported} Genki starter cards (${result.linked} lesson-linked)`)
+        toast.success(
+          `Ready: ${result.activeNew} Lesson 1 cards for review (${result.cards} in library, locked by lesson)`,
+        )
       }
       await init()
     } catch (error) {
@@ -492,7 +512,7 @@ export function StudyDashboard() {
               >
                 <span>Review Cards</span>
                 <span className="text-xs mt-1 opacity-80">
-                  {dueCount} due · {availableNewCount} new
+                  {dueCount} due · {availableNewCount} new today
                   {grammarDueCount > 0 ? ` · ${grammarDueCount} grammar due` : ''}
                 </span>
               </button>
@@ -596,8 +616,10 @@ export function StudyDashboard() {
               <div className="bg-green-50 rounded-xl p-4">
                 <div className="text-3xl font-bold text-green-600 tabular-nums">{availableNewCount}</div>
                 <div className="text-sm text-gray-500 mt-1">{intl.formatMessage({ id: 'study.dashboard.new' }, { count: availableNewCount })}</div>
-                {newCount > availableNewCount && (
-                  <div className="text-xs text-gray-400 mt-1">+{newCount - availableNewCount} queued</div>
+                {newCount > availableNewCount && newCount <= settings.dailyCardLimit * 5 && (
+                  <div className="text-xs text-gray-400 mt-1">
+                    {newCount - availableNewCount} more new unlocked for this lesson
+                  </div>
                 )}
               </div>
             </div>

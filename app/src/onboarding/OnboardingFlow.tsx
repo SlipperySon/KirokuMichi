@@ -14,7 +14,6 @@ import { SQLiteStorage } from '../db/sqlite'
 import {
   buildStarterLearningPath,
   ensureStarterDeckIfEmpty,
-  firstLessonAutostartRoute,
   starterLessonIdFromCefr,
   type PlacementCefr,
 } from '../study/firstRunBootstrap'
@@ -60,16 +59,20 @@ export function OnboardingFlow() {
       setCurrentLesson(firstLessonId)
 
       try {
-        const imported = await ensureStarterDeckIfEmpty(storage, userId)
-        if (imported && imported.imported > 0) {
-          toast.success(`Imported ${imported.imported} starter cards for Anki reviews`)
+        const imported = await ensureStarterDeckIfEmpty(storage, userId, {
+          activeLessonIds: [firstLessonId],
+        })
+        if (imported && imported.activeNew > 0) {
+          toast.success(
+            `${imported.activeNew} cards ready for your first lesson — later lessons unlock as you go`,
+          )
         }
       } catch {
         toast.info('You can import Genki starter cards from Today or the lesson page.')
       }
 
       setOnboardingComplete(true)
-      navigate(firstLessonAutostartRoute(placementCefr), { replace: true })
+      navigate('/study', { replace: true })
     } catch (error) {
       toast.error(`Could not finish setup: ${String(error)}`)
       setOnboardingComplete(true)

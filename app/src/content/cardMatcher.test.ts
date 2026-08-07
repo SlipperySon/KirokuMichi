@@ -12,4 +12,9 @@ describe('cardMatcher', () => {
     expect(lessonTermVariants('食べる・飲む')).toEqual(expect.arrayContaining(['食べる', '飲む']))
     expect(lessonTermVariants('なん／なに')).toEqual(expect.arrayContaining(['なん', 'なに']))
   })
+
+  it('does not substring-match short attachment stems like ~さん', () => {
+    expect(findBestMatch('おねえさん', ['~さん'])).toBeNull()
+    expect(findBestMatch('さん', ['~さん'])?.matchType).toBe('exact')
+  })
 })

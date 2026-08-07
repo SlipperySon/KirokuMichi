@@ -12,6 +12,7 @@ function makeStorage(): StorageProvider & { execute: ReturnType<typeof vi.fn>, q
     query: vi.fn().mockImplementation((sql: string) => {
       if (sql.includes('COUNT(*) AS cards')) return Promise.resolve([{ cards: 2 }])
       if (sql.includes('COUNT(*) AS linked')) return Promise.resolve([{ linked: 2 }])
+      if (sql.includes('COUNT(*) AS activeNew')) return Promise.resolve([{ activeNew: 0 }])
       if (sql.includes('SELECT id FROM cards')) {
         if (sql.includes('ORDER BY id DESC')) return Promise.resolve([{ id: nextId++ }])
         return Promise.resolve([])
@@ -113,9 +114,11 @@ describe('importBundledGenkiTestDeck', () => {
     })))
     const storage = makeStorage()
 
-    const result = await importBundledGenkiTestDeck(storage, 7)
+    const result = await importBundledGenkiTestDeck(storage, 7, {
+      activeLessonIds: ['genki_2_1'],
+    })
 
-    expect(result).toEqual({ imported: 1, skipped: 0, cards: 2, linked: 2 })
+    expect(result).toEqual({ imported: 1, skipped: 0, cards: 2, linked: 2, activeNew: 0 })
     expect(storage.execute).toHaveBeenCalledWith(
       expect.stringContaining('INSERT OR IGNORE INTO lesson_vocabulary'),
       [7, 'genki_2_1', 100, 100]
@@ -123,6 +126,33 @@ describe('importBundledGenkiTestDeck', () => {
     expect(storage.execute).toHaveBeenCalledWith(
       expect.stringContaining('INSERT OR IGNORE INTO lesson_vocabulary'),
       [7, 'genki_2_1', 101, 101]
+    )
+  })
+
+  it('suspends non-active lesson cards on import', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => ({
+      ok: true,
+      json: async () => ({
+        version: 1,
+        source: 'test',
+        media: 'omitted',
+        notes: [{
+          front: '遅れる',
+          back: 'to be late',
+          reading: 'おくれる',
+          sentence: null,
+          sentenceMeaning: null,
+          sourceLessonId: 'genki_2_1',
+        }],
+      }),
+    })))
+    const storage = makeStorage()
+
+    await importBundledGenkiTestDeck(storage, 7) // default active: genki_1_1
+
+    expect(storage.execute).toHaveBeenCalledWith(
+      expect.stringContaining('INSERT OR IGNORE INTO card_states'),
+      expect.arrayContaining([100, 7, 'genki_2_1', expect.any(String)]),
     )
   })
 })

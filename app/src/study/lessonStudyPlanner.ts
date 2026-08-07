@@ -52,7 +52,7 @@ export interface LessonStudyState {
 }
 
 export type TeachItem =
-  | { type: 'vocab'; id: string; title: string; body: string; source?: string; page?: number; order: number; lessonId?: string }
+  | { type: 'vocab'; id: string; title: string; body: string; source?: string; page?: number; order: number; lessonId?: string; examples?: GrammarExample[] }
   | { type: 'grammar'; id: string; title: string; body: string; source?: string; page?: number; order: number; lessonId?: string; explanation?: string; examples?: GrammarExample[]; maynardRef?: MaynardRef; explanationPlan: GrammarExplanationPlan }
 
 export interface QuizQuestion {
@@ -112,6 +112,29 @@ function interleaveItems(sorted: TeachItem[], secondary: TeachItem[]): TeachItem
   return result
 }
 
+function examplesForVocab(surface: string, english: string, grammar: GrammarItem[]): GrammarExample[] {
+  const attachment = /^[~～〜]+/.test(surface.trim())
+  const needle = surface.replace(/^[~～〜]+/, '').trim()
+  if (!needle) return []
+  const matches: GrammarExample[] = []
+  for (const item of grammar) {
+    for (const example of item.examples ?? []) {
+      if (!example.japanese?.includes(needle)) continue
+      if (matches.some(existing => existing.japanese === example.japanese)) continue
+      matches.push(example)
+      if (matches.length >= 3) return matches
+    }
+  }
+  // Attachment forms (~さん) should not get nonsense "これは~さんです" fallbacks.
+  if (matches.length === 0 && !attachment) {
+    matches.push({
+      japanese: `これは${surface}です。`,
+      english: `This is ${english.split(/[;/,]/)[0]?.trim() || english}.`,
+    })
+  }
+  return matches
+}
+
 function toTeachItems(vocab: VocabItem[], grammar: GrammarItem[]): TeachItem[] {
   const grammarMapped = grammar
     .filter(item => item.pattern && item.meaning)
@@ -141,6 +164,7 @@ function toTeachItems(vocab: VocabItem[], grammar: GrammarItem[]): TeachItem[] {
       page: item.page,
       order: index,
       lessonId: item.lesson,
+      examples: examplesForVocab(item.surface, item.english, grammar),
     }))
 
   const regularVocab = vocabMapped
@@ -238,6 +262,7 @@ export function buildLessonPlan(
   const steps: LessonStep[] = [intro]
   for (let start = 0; start < items.length; start += CHUNK_SIZE) {
     const chunk = items.slice(start, start + CHUNK_SIZE)
+    const taughtSoFar = items.slice(0, start + chunk.length)
     const chunkNumber = Math.floor(start / CHUNK_SIZE) + 1
     steps.push({
       kind: 'teach',
@@ -246,7 +271,8 @@ export function buildLessonPlan(
       items: chunk,
     })
 
-    const checkpoint = buildQuestions(chunk, items, `${lessonId}:checkpoint:${chunkNumber}`, 4)
+    // Distractors only from items already taught — never quiz untaught vocab as options.
+    const checkpoint = buildQuestions(chunk, taughtSoFar, `${lessonId}:checkpoint:${chunkNumber}`, 4)
     if (checkpoint.length > 0) {
       steps.push({
         kind: 'checkpoint',

@@ -11,6 +11,7 @@ import net from 'node:net'
 import { tmpdir } from 'node:os'
 import { promisify } from 'node:util'
 import { sanitizeReport, submitIssueReport } from './reportIssue'
+import { getTtsStatus, synthesizeSpeech } from './tts/service'
 import {
   AI_QUOTA_MAX,
   AI_QUOTA_WINDOW_MS,
@@ -564,6 +565,40 @@ function blockDevInProduction(_req: express.Request, res: express.Response, next
   }
   next()
 }
+
+// Cloud TTS — pluggable providers (Sarashina default; ElevenLabs when commercial)
+app.get('/api/tts/status', requireToken, (_req, res) => {
+  res.json(getTtsStatus())
+})
+
+app.post(
+  '/api/tts',
+  requireToken,
+  rateLimit({
+    windowMs: 60_000,
+    maxRequests: 40,
+    keyPrefix: 'tts',
+  }),
+  async (req, res) => {
+    try {
+      const body = req.body as { text?: string; voice?: string; language?: string }
+      const result = await synthesizeSpeech({
+        text: body.text ?? '',
+        voice: body.voice,
+        language: body.language,
+      })
+      res.setHeader('Content-Type', result.contentType)
+      res.setHeader('X-TTS-Provider', result.provider)
+      res.setHeader('X-TTS-Cached', result.cached ? '1' : '0')
+      res.setHeader('Cache-Control', 'private, max-age=86400')
+      res.send(result.audio)
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'TTS failed'
+      const status = /not configured|disabled|required|too long/i.test(message) ? 400 : 502
+      res.status(status).json({ error: message })
+    }
+  },
+)
 
 // AI proxy — routes to configured provider, keeps API keys server-side only
 app.post('/api/ai/complete', requireToken, async (req, res) => {

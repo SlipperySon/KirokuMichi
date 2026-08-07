@@ -24,19 +24,33 @@ export function validateJapaneseProduction(
 
   const required = (options?.requiredFragments ?? []).filter(Boolean)
   for (const fragment of required) {
-    if (!trimmed.includes(fragment)) {
-      return { ok: false, message: `Include「${fragment}」in your sentence.` }
+    const bare = fragment.replace(/^[~～〜]+/, '')
+    if (!trimmed.includes(fragment) && !(bare && trimmed.includes(bare))) {
+      return { ok: false, message: `Include「${bare || fragment}」in your sentence.` }
     }
   }
 
   return { ok: true, message: 'Looks like real output.' }
 }
 
+function isUsableSpeakFragment(value: string | undefined | null): value is string {
+  if (!value?.trim()) return false
+  const trimmed = value.trim()
+  // Schema placeholders like "XはYです" / "~さん" are not learner production targets.
+  if (/[A-Za-z]/.test(trimmed)) return false
+  if (/^([~～〜])+/.test(trimmed)) return false
+  return trimmed.length <= 12
+}
+
 export function speakRequiredFragments(grammar: GrammarItem[], vocab: { surface: string }[]): string[] {
   const pattern = grammar.find(g => g.pattern?.trim())?.pattern?.trim()
-  const surface = vocab.find(v => v.surface?.trim())?.surface?.trim()
-  if (pattern) return [pattern]
-  if (surface) return [surface]
+  // Prefer a concrete vocab stem over attachment placeholders like ~さん.
+  const surface = vocab
+    .map(v => v.surface?.trim())
+    .find(value => isUsableSpeakFragment(value))
+    ?? vocab.find(v => v.surface?.trim())?.surface?.trim()?.replace(/^[~～〜]+/, '')
+  if (isUsableSpeakFragment(pattern)) return [pattern]
+  if (surface) return [surface.replace(/^[~～〜]+/, '')]
   return []
 }
 

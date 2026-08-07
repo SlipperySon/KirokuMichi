@@ -666,8 +666,10 @@ export function ContentUpload() {
     setAnkiLoading(true)
     setAnkiStatus('Importing bundled Genki test cards…')
     try {
-      const result = await importBundledGenkiTestDeck(storage, userId)
-      const summary = `Imported ${result.imported} Genki test cards, skipped ${result.skipped}; ${result.linked}/${result.cards} bundled cards linked to lessons`
+      const result = await importBundledGenkiTestDeck(storage, userId, {
+        activeLessonIds: ['genki_1_1'],
+      })
+      const summary = `Imported library (${result.cards} cards); ${result.activeNew} active for Lesson 1, rest unlock by lesson`
       setAnkiStatus(summary)
       toast.success(summary, 7000)
     } catch (e) {

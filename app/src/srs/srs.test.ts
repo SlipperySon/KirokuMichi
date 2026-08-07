@@ -38,10 +38,27 @@ describe('SRSService.getDueCards', () => {
     const result = await svc.getDueCards(USER_ID, 20)
 
     expect(result).toEqual(mockCards)
+    const [sql] = (storage.query as ReturnType<typeof vi.fn>).mock.calls[0] as [string, unknown[]]
+    expect(sql).toContain('is_leech = 0')
+    expect(sql).toContain("state != 'new'")
     expect(storage.query).toHaveBeenCalledWith(
-      expect.stringContaining('is_leech = 0'),
+      expect.any(String),
       [USER_ID, 20]
     )
+  })
+})
+
+describe('SRSService.getDueCount', () => {
+  it('excludes new cards from the due backlog', async () => {
+    const storage = makeStorage({ query: vi.fn().mockResolvedValue([{ count: 3 }]) })
+    const svc = new SRSService(storage, makeScheduler())
+
+    const count = await svc.getDueCount(USER_ID, 'path')
+
+    expect(count).toBe(3)
+    const [sql] = (storage.query as ReturnType<typeof vi.fn>).mock.calls[0] as [string, unknown[]]
+    expect(sql).toContain("state != 'new'")
+    expect(sql).toContain("due <= datetime('now')")
   })
 })
 
@@ -54,6 +71,7 @@ describe('SRSService.getNewCards', () => {
 
     const [sql] = (storage.query as ReturnType<typeof vi.fn>).mock.calls[0] as [string, unknown[]]
     expect(sql).toContain("state = 'new'")
+    expect(sql).toContain('suspended_at IS NULL')
     expect(sql).toContain('frequency_rank ASC')
   })
 })

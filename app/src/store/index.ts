@@ -34,6 +34,11 @@ interface Settings {
    * are counted together. Default false — Extra stays under Review → Extra.
    */
   includeExtraInToday: boolean
+  /**
+   * One-time heal: suspend future-lesson bundled Genki cards that were imported
+   * as a full active backlog before lesson gating existed.
+   */
+  bundledCardsLessonGated: boolean
 }
 
 interface DailyStats {
@@ -122,6 +127,7 @@ export const useAppStore = create<AppState>()(
         lastFreezeUsedDate: null,
         includeTextbookLessons: true,
         includeExtraInToday: false,
+        bundledCardsLessonGated: false,
       },
       onboardingComplete: false,
       updateSettings: (patch) =>

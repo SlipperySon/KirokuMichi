@@ -46,7 +46,7 @@ export function StepIME({ onDone, busy = false }: Props) {
           disabled={busy}
           className="px-8 py-3 bg-indigo-600 text-white rounded-xl font-semibold hover:bg-indigo-700 transition-colors disabled:opacity-60"
         >
-          {busy ? 'Starting your first lesson…' : intl.formatMessage({ id: 'onboarding.ime.done' })}
+          {busy ? 'Finishing setup…' : intl.formatMessage({ id: 'onboarding.ime.done' })}
         </button>
         <button onClick={onDone} disabled={busy} className="text-gray-500 hover:text-gray-700 text-sm disabled:opacity-60">
           {intl.formatMessage({ id: 'onboarding.ime.skip' })}

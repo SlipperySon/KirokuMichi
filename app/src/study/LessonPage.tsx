@@ -23,6 +23,7 @@ import { SQLiteStorage } from '../db/sqlite'
 import { FSRSScheduler, SM2Scheduler } from '../core/scheduler'
 import { toast } from '../components/toastStore'
 import type { ReviewCard } from './types'
+import { Navigation } from '../components/Navigation'
 import { AddToDeckButton } from './AddToDeckButton'
 import { hasResumableLessonSession } from './lessonSessionPersistence'
 
@@ -234,8 +235,13 @@ export function LessonPage() {
 
     setState(prev => ({ ...prev, importingBundledGenki: true, error: null }))
     try {
-      const result = await importBundledGenkiTestDeck(storage, activeUserId)
-      toast.success(`Imported ${result.imported} Genki cards; ${result.linked}/${result.cards} linked to lessons`, 7000)
+      const result = await importBundledGenkiTestDeck(storage, activeUserId, {
+        activeLessonIds: lessonId ? [lessonId] : ['genki_1_1'],
+      })
+      toast.success(
+        `${result.activeNew} cards active for this lesson (${result.cards} in library; others unlock with later lessons)`,
+        7000,
+      )
       setReloadToken(token => token + 1)
     } catch (error) {
       const message = error instanceof Error ? error.message : 'Could not import bundled Genki cards'
@@ -248,10 +254,13 @@ export function LessonPage() {
 
   if (state.loading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <div className="mb-4 h-8 w-8 animate-spin rounded-full border-4 border-gray-200 border-t-blue-500" />
-          <p className="text-gray-600">Loading lesson...</p>
+      <div className="flex min-h-screen flex-col bg-gray-50">
+        <Navigation />
+        <div className="flex flex-1 items-center justify-center">
+          <div className="text-center">
+            <div className="mb-4 h-8 w-8 animate-spin rounded-full border-4 border-gray-200 border-t-blue-500" />
+            <p className="text-gray-600">Loading lesson...</p>
+          </div>
         </div>
       </div>
     )
@@ -259,15 +268,18 @@ export function LessonPage() {
 
   if (state.error || !state.lesson) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gray-50">
-        <div className="text-center">
-          <p className="mb-4 text-red-600">{state.error || 'Lesson not found'}</p>
-          <button
-            onClick={() => navigate('/learn')}
-            className="rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
-          >
-            Back to Course
-          </button>
+      <div className="flex min-h-screen flex-col bg-gray-50">
+        <Navigation />
+        <div className="flex flex-1 items-center justify-center">
+          <div className="text-center">
+            <p className="mb-4 text-red-600">{state.error || 'Lesson not found'}</p>
+            <button
+              onClick={() => navigate('/learn')}
+              className="rounded-lg bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+            >
+              Back to Course
+            </button>
+          </div>
         </div>
       </div>
     )
@@ -321,6 +333,7 @@ export function LessonPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Navigation />
       {/* Header */}
       <div className="bg-white shadow">
         <div className="mx-auto max-w-4xl px-4 py-6 sm:px-6 sm:py-8">
@@ -372,6 +385,12 @@ export function LessonPage() {
 
           {/* Navigation and Actions */}
           <div className="grid grid-cols-1 gap-3 sm:flex sm:flex-wrap sm:items-center">
+            <button
+              onClick={() => navigate('/study')}
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 font-semibold text-slate-700 shadow-sm transition-colors hover:bg-slate-50"
+            >
+              Back to Today
+            </button>
             <button
               onClick={() => navigate('/learn')}
               className="inline-flex items-center justify-center gap-2 rounded-lg border border-indigo-200 bg-indigo-50 px-4 py-2 font-semibold text-indigo-800 shadow-sm transition-colors hover:bg-indigo-100"
@@ -541,7 +560,7 @@ export function LessonPage() {
                   <div className="font-semibold text-gray-900">{item.surface}</div>
                   <div className="text-sm text-gray-600">{item.english}</div>
                   <div className="mt-1 text-[11px] font-medium text-blue-800">
-                    {item.source.replace(/_/g, ' ')} {item.page > 0 ? `p. ${item.page}` : 'extracted content'}
+                    {item.source.replace(/_/g, ' ')}{item.page > 0 ? ` · p. ${item.page}` : ''}
                   </div>
                   <div className="mt-2">
                     <AddToDeckButton front={item.surface} back={item.english} lessonId={lessonId} originRef={item.id} />
@@ -570,7 +589,7 @@ export function LessonPage() {
                     <div className="mt-1 text-xs text-gray-500 line-clamp-2">{item.explanation}</div>
                   )}
                   <div className="mt-1 text-[11px] font-medium text-purple-800">
-                    {item.source.replace(/_/g, ' ')} {item.page > 0 ? `p. ${item.page}` : 'extracted content'}
+                    {item.source.replace(/_/g, ' ')}{item.page > 0 ? ` · p. ${item.page}` : ''}
                   </div>
                 </div>
               ))}

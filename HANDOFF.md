@@ -1,7 +1,7 @@
 # KirokuMichi — Handoff Document
 
-**Last updated: 2026-05-22**
-**Status: ✅ FEATURE COMPLETE — staging/reporting setup next**
+**Last updated: 2026-08-07**
+**Status: Learning rail + Anki gating shipped; Sarashina TTS needs GPU sidecar setup (see todo.md)**
 
 > At the end of each session update the date above and the "Recent changes" section below.
 
@@ -85,7 +85,8 @@ cd app && npm run verify
 - ✅ Mistake Review Mode (drill recent mistakes, log to SRS)
 - ✅ Save correction to SRS
 - ✅ Conversation persistence (localStorage per-chat)
-- ✅ TTS fallback (Web Speech API; Japanese voice selection)
+- ✅ Pluggable cloud TTS (`/api/tts`) — Sarashina default via local sidecar; ElevenLabs provider stub; browser Speech API fallback
+- ⏳ Sarashina sidecar not yet run in prod/dev (needs GPU + prompt WAV — checklist in `todo.md`)
 
 ### Dashboard & UX
 - ✅ Two-column dashboard: action-now left, overview right
@@ -251,6 +252,13 @@ npm run packs:build                # Encrypt canonical proof JSONs → public/pa
 ```
 
 ---
+
+## Recent changes (2026-08-07)
+
+- **Lesson-gated Genki starter deck** — import still loads the full library, but only the active/starter lesson’s cards stay unsuspended (~106 for Genki I L1). One-time heal via `settings.bundledCardsLessonGated`; `ensureLessonCards` / `activateCardsForLesson` unlock later lessons. `getNewCount` / `getNewCards` ignore suspended cards.
+- **Pluggable TTS** — `app/server/tts/` (Sarashina + ElevenLabs + cache), `app/tts-sidecar/server.py`, client `app/src/audio/cloudTts.ts`. Playback order: recorded → `/api/tts` → browser TTS. Finish Sidecar setup on a GPU machine (`todo.md`).
+- **Lesson rail / grading polish** — IME-aware typed recall, `~` prefix stripping, first-session teach/check budget (no checkpoints for untaught items), Speak skips Latin schema patterns (`XはYです`), lesson labels like `Genki I · Lesson 1`, softer learner-facing copy.
+- **Nav** — finish onboarding → `/study` (Today), not forced lesson-1 autostart.
 
 ## Recent changes (2026-05-22)
 

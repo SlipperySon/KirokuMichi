@@ -166,7 +166,15 @@ function App() {
                       : onboardingComplete ? <Navigate to="/study" replace /> : <Navigate to="/onboarding" replace />
                 }
               />
-              <Route path="/onboarding" element={protectedElement(betaGateEnabled, <OnboardingFlow />)} />
+              <Route
+                path="/onboarding"
+                element={
+                  protectedElement(
+                    betaGateEnabled,
+                    onboardingComplete ? <Navigate to="/study" replace /> : <OnboardingFlow />,
+                  )
+                }
+              />
               <Route path="/study" element={protectedElement(betaGateEnabled, <StudyDashboard />)} />
               <Route path="/study/srs" element={protectedElement(betaGateEnabled, <ReviewHub />)} />
               <Route path="/study/review" element={protectedElement(betaGateEnabled, <ReviewSession />)} />

@@ -2,6 +2,7 @@ import type { SRSService } from '../srs/srsService'
 import type { ReviewCard, GrammarQuestion } from './types'
 import type { VocabItem, GrammarItem } from './lessonStudyPlanner'
 import { repairLessonCardLinks } from '../content/lessonUnlockService'
+import { activateCardsForLesson } from '../srs/bundledGenkiImport'
 import { grammarCardFields, grammarEntriesFromCards } from './grammarCardBuilder'
 
 export const LESSON_INTRO_REVIEW_CAP = 12
@@ -26,6 +27,14 @@ function normalizeFront(value: string): string {
 }
 
 /** Map teach/quiz item ids to card fronts for priority ordering. */
+function signalMatchesItem(idSet: Set<string>, prefixes: string[]): boolean {
+  for (const id of idSet) {
+    const bare = id.replace(/:typed$/, '')
+    if (prefixes.includes(bare) || prefixes.includes(id)) return true
+  }
+  return false
+}
+
 export function priorityFrontsFromLessonSignals(input: {
   vocab: VocabItem[]
   grammar: GrammarItem[]
@@ -35,10 +44,10 @@ export function priorityFrontsFromLessonSignals(input: {
   const idSet = new Set([...input.againItemIds, ...input.missedItemIds])
   const fronts: string[] = []
   for (const item of input.vocab) {
-    if (idSet.has(`vocab:${item.id}`) || idSet.has(item.id)) fronts.push(item.surface)
+    if (signalMatchesItem(idSet, [`vocab:${item.id}`, item.id])) fronts.push(item.surface)
   }
   for (const item of input.grammar) {
-    if (idSet.has(`grammar:${item.id}`) || idSet.has(item.id)) fronts.push(item.pattern)
+    if (signalMatchesItem(idSet, [`grammar:${item.id}`, item.id])) fronts.push(item.pattern)
   }
   return fronts
 }
@@ -68,6 +77,8 @@ export async function ensureLessonCards(
   vocab: VocabItem[],
   grammar: GrammarItem[] = [],
 ): Promise<{ linked: number; created: number; grammarCreated: number }> {
+  await activateCardsForLesson(service.storage, userId, lessonId)
+
   const repair = await repairLessonCardLinks(lessonId, userId, service.storage, vocab, grammar)
   let created = 0
   let grammarCreated = 0

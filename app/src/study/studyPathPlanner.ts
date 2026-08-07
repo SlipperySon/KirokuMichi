@@ -155,9 +155,10 @@ export function getStudyPathAction(input: StudyPathPlannerInput): StudyPathActio
         ? 'Resume your in-progress lesson rail (teach → check → practice → cards → speak).'
         : 'Finish the active lesson sections, then review its linked cards.',
       actionLabel: resume ? 'Resume Lesson' : 'Continue Lesson',
-      route: lessonRouteFromId(input.currentLesson, resume ? { resume: true } : { autostart: true }),
+      // Resume mid-rail; otherwise open the lesson page so the user chooses Start.
+      route: lessonRouteFromId(input.currentLesson, resume ? { resume: true } : undefined),
       lessonId: input.currentLesson,
-      meta: resume ? 'Resume rail' : 'Active lesson',
+      meta: resume ? 'Continue where you left off' : 'Active lesson',
     }
   }
 
@@ -168,7 +169,7 @@ export function getStudyPathAction(input: StudyPathPlannerInput): StudyPathActio
       title: `Start ${nextLesson.series} Lesson ${nextLesson.lessonNumber}`,
       description: 'This is the next textbook step from your saved Learning Path.',
       actionLabel: 'Start Path Lesson',
-      route: lessonRouteFromId(nextLesson.id, { autostart: true }),
+      route: lessonRouteFromId(nextLesson.id),
       lessonId: nextLesson.id,
       meta: 'Learning Path',
     }
@@ -183,7 +184,7 @@ export function getStudyPathAction(input: StudyPathPlannerInput): StudyPathActio
         title: `Start ${formatLessonLabel(nextCurriculum)}`,
         description: 'Your saved path weeks are caught up — continue the textbook curriculum.',
         actionLabel: 'Start Next Lesson',
-        route: lessonRouteFromId(nextCurriculum, { autostart: true }),
+        route: lessonRouteFromId(nextCurriculum),
         lessonId: nextCurriculum,
         meta: 'Curriculum',
       }

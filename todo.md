@@ -1,7 +1,44 @@
 # KirokuMichi — Todo
 
-**Last updated: 2026-07-20**
-**Status: PHASE 8 MOSTLY SHIPPED — HttpOnly session cookie MVP shipped; backup/export MVP shipped**
+**Last updated: 2026-08-07**
+**Status: Learning-rail polish shipped; Sarashina TTS wired but needs GPU machine to finish**
+
+---
+
+## 🔥 Current priority — Sarashina TTS (GPU machine)
+
+Pluggable cloud TTS is coded (`TTS_PROVIDER=sarashina` default; ElevenLabs ready later). Finish on a machine with GPU (~6GB VRAM).
+
+**Code already on `main` (this session)**
+- [x] Express `GET /api/tts/status` + `POST /api/tts` with disk cache (`.cache/tts`)
+- [x] Providers: `sarashina` · `elevenlabs` · `none` (`app/server/tts/`)
+- [x] Client: recorded audio → `/api/tts` → browser `speechSynthesis` (`app/src/audio/cloudTts.ts`)
+- [x] Sidecar stub: `app/tts-sidecar/server.py`
+- [x] Env docs in `app/.env.example`
+- [x] Lesson-gated Genki starter import (no more ~2454 new cards on first open)
+- [x] Typed-recall / IME / `~さん` grading + first-session teach/check fixes
+- [x] UI copy polish (lesson labels, grammar notes, Speak schema fragments)
+
+**Still to do on the capable machine**
+- [ ] Install [Sarashina2.2-TTS](https://github.com/sbintuitions/sarashina2.2-tts) (`pip install -e .`)
+- [ ] Choose a ~3–8s Japanese prompt WAV + exact transcript (end with `。`)
+- [ ] Run sidecar:
+  ```bash
+  export SARASHINA_PROMPT_WAV=/absolute/path/to/prompt.wav
+  export SARASHINA_PROMPT_TEXT='書き起こし。'
+  python app/tts-sidecar/server.py   # :7861
+  ```
+- [ ] Add to `app/.env` and restart Express:
+  ```bash
+  TTS_PROVIDER=sarashina
+  SARASHINA_TTS_URL=http://127.0.0.1:7861
+  ```
+- [ ] Smoke: listen card / `POST /api/tts` with `{ "text": "こんにちは。" }`
+- [ ] Optional: speaker buttons on teach screens (today only listen-cards hit cloud TTS)
+- [ ] Optional: pre-cache common Lesson 1 surfaces
+- [ ] Later (commercial): `TTS_PROVIDER=elevenlabs` + `ELEVENLABS_API_KEY` / `ELEVENLABS_VOICE_ID`
+
+**License note:** Sarashina is non-commercial. Keep ElevenLabs (or another commercial-OK model) for paid launch.
 
 ---
 
@@ -11,7 +48,7 @@ All planned features are implemented and building cleanly. See HANDOFF.md for th
 
 ---
 
-## 🔥 Current priority — Learning Environment Redesign
+## ✅ Learning Environment Redesign (shipped)
 
 Full plan + science foundation + **Anki integration** + **smooth lesson rail**: `plan.md`.
 Canvas: `~/.cursor/projects/Users-Skipp-Projects-KirokuMichi/canvases/learning-env-redesign.canvas.tsx`
@@ -182,7 +219,7 @@ Roughly priority-ordered:
    does not fall back to generated speech.
 4. **✅ DONE 2026-06-12 — Unify grammar into the scheduler.** Grammar review now uses scheduler-backed
    `grammar_states` with Again/Hard/Good/Easy ratings; `grammar_progress` remains as history/compat.
-5. **Pitch-accent display (OJAD-style),** shown visually without generated audio until a better voice plan is chosen.
+5. **Pitch-accent display (OJAD-style)** once Sarashina/cloud TTS is verified — optional visual aid alongside audio.
 6. **Offline-aware AI features.** Already a PWA; have AI surfaces show a clear offline state while
    review/lessons keep working without the proxy.
 7. **Live "time-to-goal" dashboard widget.** Reuse the Learning Path realism + month-estimate logic to show a

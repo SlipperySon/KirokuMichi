@@ -3,7 +3,7 @@ import { useIntl } from 'react-intl'
 import type { Rating } from '../core/providers'
 import type { ReviewCard, IntervalPreview } from './types'
 import { RatingButtons } from './RatingButtons'
-import { gradeTypedRecall } from './typedRecall'
+import { gradeTypedRecall, rememberImeKanaReading } from './typedRecall'
 import { playCardListeningAudio, stopCardListeningAudio } from './cardAudioPlayback'
 
 interface Props {
@@ -17,6 +17,7 @@ interface Props {
 export function CardListening({ card, phase, intervalPreviews, onReveal, onRate }: Props) {
   const intl = useIntl()
   const [attempt, setAttempt] = useState('')
+  const [imeKanaReading, setImeKanaReading] = useState('')
   const [isPlaying, setIsPlaying] = useState(false)
   const [playError, setPlayError] = useState<string | null>(null)
   const [hasPlayed, setHasPlayed] = useState(false)
@@ -58,7 +59,9 @@ export function CardListening({ card, phase, intervalPreviews, onReveal, onRate 
     }
   }
 
-  const matched = gradeTypedRecall(attempt, card.front)
+  const matched = gradeTypedRecall(attempt, card.front, {
+    alsoAccept: [imeKanaReading, card.reading],
+  })
 
   return (
     <div className="flex flex-col items-center gap-6 w-full max-w-md mx-auto">
@@ -83,8 +86,20 @@ export function CardListening({ card, phase, intervalPreviews, onReveal, onRate 
         <>
           <textarea
             value={attempt}
-            onChange={event => setAttempt(event.target.value)}
+            onChange={event => {
+              setAttempt(event.target.value)
+              if (!event.target.value.trim()) setImeKanaReading('')
+            }}
+            onCompositionUpdate={event => {
+              setImeKanaReading(previous => rememberImeKanaReading(previous, event.data ?? ''))
+            }}
+            onCompositionEnd={event => {
+              setImeKanaReading(previous => rememberImeKanaReading(previous, event.data ?? ''))
+            }}
             placeholder="Type the sentence you heard…"
+            autoCapitalize="off"
+            autoCorrect="off"
+            spellCheck={false}
             className="min-h-28 w-full resize-y rounded-xl border border-gray-200 px-3 py-2 text-lg text-gray-900 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-100"
             lang="ja"
           />

@@ -88,6 +88,7 @@ export class SRSService {
        JOIN cards c ON c.id = cs.card_id
        LEFT JOIN decks d ON d.id = c.deck_id
        WHERE cs.user_id = ?
+         AND cs.state != 'new'
          AND cs.due <= datetime('now')
          AND cs.is_leech = 0
          AND cs.suspended_at IS NULL
@@ -129,6 +130,8 @@ export class SRSService {
        LEFT JOIN decks d ON d.id = c.deck_id
        WHERE cs.user_id = ?
          AND cs.state = 'new'
+         AND cs.suspended_at IS NULL
+         AND (cs.buried_until IS NULL OR cs.buried_until <= datetime('now'))
          ${laneSql}
        ORDER BY c.frequency_rank ASC, cs.id ASC
        LIMIT ?`,
@@ -324,6 +327,7 @@ export class SRSService {
        JOIN cards c ON c.id = cs.card_id
        LEFT JOIN decks d ON d.id = c.deck_id
        WHERE cs.user_id = ?
+         AND cs.state != 'new'
          AND cs.due <= datetime('now')
          AND cs.is_leech = 0
          AND cs.suspended_at IS NULL
@@ -343,6 +347,8 @@ export class SRSService {
        LEFT JOIN decks d ON d.id = c.deck_id
        WHERE cs.user_id = ?
          AND cs.state = 'new'
+         AND cs.suspended_at IS NULL
+         AND (cs.buried_until IS NULL OR cs.buried_until <= datetime('now'))
          ${laneSql}`,
       [userId]
     )
@@ -942,6 +948,7 @@ export class SRSService {
         COUNT(c.id) AS cardCount,
         SUM(CASE
           WHEN cs.id IS NOT NULL
+            AND cs.state != 'new'
             AND cs.due <= datetime('now')
             AND cs.is_leech = 0
             AND cs.suspended_at IS NULL
@@ -951,6 +958,8 @@ export class SRSService {
         SUM(CASE
           WHEN cs.id IS NOT NULL
             AND cs.state = 'new'
+            AND cs.suspended_at IS NULL
+            AND (cs.buried_until IS NULL OR cs.buried_until <= datetime('now'))
             AND (cs.lesson_id IS NULL OR cs.lesson_id = '')
           THEN 1 ELSE 0 END) AS newCount
        FROM decks d

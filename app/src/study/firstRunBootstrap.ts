@@ -113,9 +113,9 @@ export async function buildStarterLearningPath(
     focus: i === 0 ? 'First lessons from your placement level' : `Week ${i + 1} textbook progress`,
     dailyGoal: 20,
     activities: [
-      'Finish the next textbook lesson rail (Intro → Speak)',
-      'Clear due Anki cards before adding new ones',
-      'Produce one short sentence from today’s targets',
+      'Finish the next textbook lesson (Intro → Speak)',
+      'Clear due review cards before adding new ones',
+      'Write one short sentence using today’s words',
     ],
     milestone: lessons[0] ? `${lessons[0].series} Lesson ${lessons[0].lessonNumber}` : `Week ${i + 1}`,
     lessons,
@@ -139,10 +139,15 @@ export async function countUserCardStates(storage: StorageProvider, userId: numb
 export async function ensureStarterDeckIfEmpty(
   storage: StorageProvider,
   userId: number,
+  options?: { activeLessonIds?: string[] },
 ): Promise<BundledGenkiImportResult | null> {
   const count = await countUserCardStates(storage, userId)
   if (count > 0) return null
-  return importBundledGenkiTestDeck(storage, userId)
+  return importBundledGenkiTestDeck(storage, userId, {
+    activeLessonIds: options?.activeLessonIds?.length
+      ? options.activeLessonIds
+      : ['genki_1_1'],
+  })
 }
 
 export function firstLessonAutostartRoute(cefr: PlacementCefr): string {

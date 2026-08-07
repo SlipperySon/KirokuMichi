@@ -20,7 +20,7 @@ import {
   validateJapaneseProduction,
   validateWorkbookTask,
 } from './productionValidation'
-import { gradeTypedRecall } from './typedRecall'
+import { answersMatch, gradeTypedRecall, rememberImeKanaReading } from './typedRecall'
 import { toast } from '../components/toastStore'
 import { unlockScenariosForLesson } from '../content/scenarioUnlockService'
 import { clearScenarioPractice, hasScenarioPractice } from './scenarioPracticeGate'
@@ -107,6 +107,9 @@ export function LessonStudy() {
   const [cardsCompleted, setCardsCompleted] = useState(false)
   const [cardsDeferred, setCardsDeferred] = useState(false)
   const [typedAnswer, setTypedAnswer] = useState('')
+  const [imeKanaReading, setImeKanaReading] = useState('')
+  const [imeComposing, setImeComposing] = useState(false)
+  const [imeIgnoreNextChange, setImeIgnoreNextChange] = useState(false)
   const [speakError, setSpeakError] = useState<string | null>(null)
   const [workbookError, setWorkbookError] = useState<string | null>(null)
   const [showDone, setShowDone] = useState(false)
@@ -119,6 +122,20 @@ export function LessonStudy() {
     () => applyFirstSessionBudget(rawPlan, isFirstSessionCandidate(lessonsCompleted, state.lessonId)),
     [rawPlan, lessonsCompleted, state.lessonId]
   )
+
+  /** Vocab/grammar actually covered by teach steps in the (possibly budgeted) rail. */
+  const taughtContent = useMemo(() => {
+    const titles = new Set(
+      plan.flatMap(step => (step.kind === 'teach' ? step.items.map(item => item.title) : [])),
+    )
+    if (titles.size === 0) {
+      return { vocab: state.vocab, grammar: state.grammar }
+    }
+    return {
+      vocab: state.vocab.filter(item => titles.has(item.surface)),
+      grammar: state.grammar.filter(item => titles.has(item.pattern)),
+    }
+  }, [plan, state.vocab, state.grammar])
   useEffect(() => {
     const lessonId = routeState?.lessonId || resumeId
     if (!lessonId || lessonId.endsWith('_drill')) {
@@ -225,10 +242,14 @@ export function LessonStudy() {
 
   if (!initialLesson) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-gray-50 p-6">
-        <button onClick={() => navigate('/learn')} className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700">
+      <div className="flex min-h-screen flex-col items-center justify-center gap-3 bg-gray-50 p-6">
+        <p className="text-sm text-gray-600">No lesson session to resume.</p>
+        <button onClick={() => navigate('/study')} className="inline-flex items-center gap-2 rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700">
+          Back to Today
+        </button>
+        <button onClick={() => navigate('/learn')} className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700 shadow-sm hover:bg-slate-50">
           <ListChecks className="h-5 w-5" aria-hidden="true" />
-          Return to Course
+          Open Course
         </button>
       </div>
     )
@@ -252,15 +273,19 @@ export function LessonStudy() {
     setQuestionIndex(0)
     setSelectedAnswer(null)
     setTypedAnswer('')
+    setImeKanaReading('')
+    setImeComposing(false)
+    setImeIgnoreNextChange(false)
     setIsTeachRevealed(false)
   }
 
   function submitQuizAnswer(question: QuizQuestion, answer: string) {
     if (selectedAnswer !== null) return
+    if (imeComposing) return
     setSelectedAnswer(answer)
     const isCorrect = question.recallMode === 'typed'
-      ? gradeTypedRecall(answer, question.correctAnswer)
-      : answer === question.correctAnswer
+      ? gradeTypedRecall(answer, question.correctAnswer, { alsoAccept: [imeKanaReading] })
+      : answersMatch(answer, question.correctAnswer)
     setAnswers(previous => [
       ...previous,
       {
@@ -287,8 +312,8 @@ export function LessonStudy() {
     setIsStartingCards(true)
     try {
       const priorityFronts = priorityFrontsFromLessonSignals({
-        vocab: state.vocab,
-        grammar: state.grammar,
+        vocab: taughtContent.vocab,
+        grammar: taughtContent.grammar,
         againItemIds: selfMarkedAgain.map(item => item.itemId),
         missedItemIds: missedAnswers.map(answer => answer.itemId),
       })
@@ -296,12 +321,12 @@ export function LessonStudy() {
         service,
         userId,
         state.lessonId,
-        state.vocab,
-        state.grammar,
+        taughtContent.vocab,
+        taughtContent.grammar,
         { priorityFronts },
       )
       if (queue.length === 0) {
-        await commitDeferredLessonCards(service, userId, state.lessonId, state.vocab, state.grammar)
+        await commitDeferredLessonCards(service, userId, state.lessonId, taughtContent.vocab, taughtContent.grammar)
         setCardsDeferred(true)
         markCardsDeferred(state.lessonId)
         toast.info('Cards queued on Today — continue to Speak.')
@@ -334,7 +359,7 @@ export function LessonStudy() {
     if (isStartingCards) return
     setIsStartingCards(true)
     try {
-      const count = await commitDeferredLessonCards(service, userId, state.lessonId, state.vocab, state.grammar)
+      const count = await commitDeferredLessonCards(service, userId, state.lessonId, taughtContent.vocab, taughtContent.grammar)
       setCardsDeferred(true)
       markCardsDeferred(state.lessonId)
       toast.success(count > 0 ? `${count} lesson cards queued on Today` : 'Lesson cards saved for Today')
@@ -354,7 +379,7 @@ export function LessonStudy() {
     }
     const speakValidation = validateJapaneseProduction(speakResponse, {
       minChars: 8,
-      requiredFragments: speakRequiredFragments(state.grammar, state.vocab),
+      requiredFragments: speakRequiredFragments(taughtContent.grammar, taughtContent.vocab),
     })
     const scenarioPracticeDone = hasScenarioPractice(state.lessonId)
     if (!speakValidation.ok && !scenarioPracticeDone) {
@@ -380,6 +405,9 @@ export function LessonStudy() {
       setQuestionIndex(previous => previous + 1)
       setSelectedAnswer(null)
       setTypedAnswer('')
+      setImeKanaReading('')
+      setImeComposing(false)
+      setImeIgnoreNextChange(false)
     }
   }
 
@@ -398,6 +426,9 @@ export function LessonStudy() {
     setCardsCompleted(false)
     setCardsDeferred(false)
     setTypedAnswer('')
+    setImeKanaReading('')
+    setImeComposing(false)
+    setImeIgnoreNextChange(false)
     setSpeakError(null)
     setWorkbookError(null)
     setShowDone(false)
@@ -544,11 +575,18 @@ export function LessonStudy() {
   if (currentStep.kind === 'speak') {
     const speakValidation = validateJapaneseProduction(speakResponse, {
       minChars: 8,
-      requiredFragments: speakRequiredFragments(state.grammar, state.vocab),
+      requiredFragments: speakRequiredFragments(taughtContent.grammar, taughtContent.vocab),
     })
     const scenarioPracticeDone = hasScenarioPractice(state.lessonId)
     const canFinishSpeak = (speakValidation.ok || scenarioPracticeDone) && (cardsCompleted || cardsDeferred)
     const speakReturnTo = `/learn/study?resume=${encodeURIComponent(state.lessonId)}`
+    const focusGrammar = taughtContent.grammar.find(g => g.pattern && g.meaning)
+    const focusVocab = taughtContent.vocab.find(v => v.surface && v.english)
+    const speakPrompt = focusGrammar
+      ? `Write one short sentence using「${focusGrammar.pattern}」(${focusGrammar.meaning}).`
+      : focusVocab
+        ? `Write one short sentence that uses「${focusVocab.surface.replace(/^[~～〜]+/, '')}」(${focusVocab.english}).`
+        : currentStep.prompt
 
     return (
       <LessonShell
@@ -561,7 +599,7 @@ export function LessonStudy() {
         <div className="rounded-xl bg-white p-6 shadow-lg sm:p-8">
           <p className="text-sm font-semibold text-emerald-700">Pushed output</p>
           <h2 className="mt-1 text-xl font-bold text-gray-900">Produce before you finish</h2>
-          <p className="mt-3 font-medium text-gray-900">{currentStep.prompt}</p>
+          <p className="mt-3 font-medium text-gray-900">{speakPrompt}</p>
           <p className="mt-1 text-sm text-gray-600">{currentStep.support}</p>
           <textarea
             value={speakResponse}
@@ -824,8 +862,8 @@ export function LessonStudy() {
 
   const hasAnswered = selectedAnswer !== null
   const isCorrect = question.recallMode === 'typed'
-    ? gradeTypedRecall(selectedAnswer ?? '', question.correctAnswer)
-    : selectedAnswer === question.correctAnswer
+    ? gradeTypedRecall(selectedAnswer ?? '', question.correctAnswer, { alsoAccept: [imeKanaReading] })
+    : answersMatch(selectedAnswer ?? '', question.correctAnswer)
   const isTypedRecall = question.recallMode === 'typed'
   const progress = plan.length > 0 ? ((stepIndex + 1) / plan.length) * 100 : 0
 
@@ -850,16 +888,41 @@ export function LessonStudy() {
           <div className="mt-6">
             <textarea
               value={typedAnswer}
-              onChange={event => setTypedAnswer(event.target.value)}
-              placeholder="Type the Japanese…"
+              onChange={event => {
+                const value = event.target.value
+                setTypedAnswer(value)
+                if (!value.trim()) {
+                  setImeKanaReading('')
+                  return
+                }
+                // Drop stale IME assist after post-composition edits (not the commit event itself).
+                if (imeIgnoreNextChange) {
+                  setImeIgnoreNextChange(false)
+                  return
+                }
+                if (!imeComposing) setImeKanaReading('')
+              }}
+              onCompositionStart={() => setImeComposing(true)}
+              onCompositionUpdate={event => {
+                setImeKanaReading(previous => rememberImeKanaReading(previous, event.data ?? ''))
+              }}
+              onCompositionEnd={event => {
+                setImeComposing(false)
+                setImeIgnoreNextChange(true)
+                setImeKanaReading(previous => rememberImeKanaReading(previous, event.data ?? ''))
+              }}
+              placeholder="Type the Japanese (kana OK)…"
               disabled={hasAnswered}
+              autoCapitalize="off"
+              autoCorrect="off"
+              spellCheck={false}
               className="min-h-24 w-full resize-y rounded-lg border border-gray-200 px-3 py-2 text-lg text-gray-900 focus:border-indigo-400 focus:outline-none focus:ring-2 focus:ring-indigo-100 disabled:opacity-60"
               lang="ja"
             />
             {!hasAnswered && (
               <button
                 type="button"
-                disabled={typedAnswer.trim().length === 0}
+                disabled={typedAnswer.trim().length === 0 || imeComposing}
                 onClick={() => submitQuizAnswer(question, typedAnswer)}
                 className="mt-4 w-full rounded-lg bg-indigo-600 px-4 py-3 font-semibold text-white hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-40"
               >
@@ -870,11 +933,13 @@ export function LessonStudy() {
         ) : (
         <div className="mt-6 space-y-3">
           {question.options.map((option, index) => {
+            const optionIsCorrect = answersMatch(option, question.correctAnswer)
+            const optionIsSelected = answersMatch(option, selectedAnswer ?? '')
             const tone = !hasAnswered
               ? 'border-gray-200 text-gray-900 hover:border-indigo-400 hover:bg-indigo-50'
-              : option === question.correctAnswer
+              : optionIsCorrect
                 ? 'border-green-500 bg-green-50 text-green-800'
-                : option === selectedAnswer
+                : optionIsSelected
                   ? 'border-red-500 bg-red-50 text-red-800'
                   : 'border-gray-200 text-gray-500 opacity-50'
 
@@ -896,7 +961,12 @@ export function LessonStudy() {
         {hasAnswered && (
           <div className={`mt-5 rounded-lg p-4 text-center ${isCorrect ? 'bg-green-50 text-green-800' : 'bg-red-50 text-red-800'}`}>
             <p className="font-bold">{isCorrect ? 'Correct' : 'Not quite'}</p>
-            {!isCorrect && <p className="mt-1 text-sm">Answer: {question.correctAnswer}</p>}
+            {!isCorrect && (
+              <p className="mt-1 text-sm">
+                Answer: {question.correctAnswer.replace(/^[~～〜]+/, '')}
+                {/^([~～〜])+/.test(question.correctAnswer) ? ' (textbook writes this with ~)' : ''}
+              </p>
+            )}
           </div>
         )}
 
@@ -1008,8 +1078,10 @@ function TeachCard({
 }) {
   const isVocab = item.type === 'vocab'
   const [showMaynard, setShowMaynard] = useState(false)
+  const [showExamples, setShowExamples] = useState(false)
   const [prediction, setPrediction] = useState('')
   const canReveal = prediction.trim().length >= 1
+  const examples = item.examples ?? []
   return (
     <div className="overflow-hidden rounded-xl bg-white shadow-lg">
       <div className={`flex items-center justify-between px-6 py-3 ${isVocab ? 'bg-blue-50' : 'bg-purple-50'}`}>
@@ -1061,9 +1133,40 @@ function TeachCard({
               <div className="text-lg font-semibold leading-relaxed text-gray-900">{item.body}</div>
             </div>
 
+            {examples.length > 0 && (
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm text-gray-800">
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <div>
+                    <div className="text-xs font-bold uppercase tracking-wider text-slate-600">Example sentences</div>
+                    <p className="mt-1 text-xs text-slate-500">
+                      {isVocab ? 'See the word used in a lesson sentence.' : 'Pattern examples from this lesson.'}
+                    </p>
+                  </div>
+                  <button
+                    type="button"
+                    onClick={() => setShowExamples(value => !value)}
+                    className="rounded-lg border border-slate-300 bg-white px-3 py-2 text-xs font-semibold text-slate-800 hover:bg-slate-100"
+                  >
+                    {showExamples ? 'Hide examples' : `Show examples (${examples.length})`}
+                  </button>
+                </div>
+                {showExamples && (
+                  <div className="mt-3 space-y-2">
+                    {examples.slice(0, 3).map((ex, i) => (
+                      <div key={i} className="rounded-lg bg-white p-3 shadow-sm">
+                        <div className="font-medium text-gray-900" lang="ja">{ex.japanese}</div>
+                        {ex.reading && <div className="text-xs text-gray-500">{ex.reading}</div>}
+                        <div className="mt-1 text-sm text-gray-600">{ex.english}</div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+
             {!isVocab && (
               <div className="rounded-xl border border-purple-100 bg-purple-50/50 p-4 text-sm text-gray-800">
-                <div className="mb-2 text-xs font-bold uppercase tracking-wider text-purple-700">Grammar Explanation Engine</div>
+                <div className="mb-2 text-xs font-bold uppercase tracking-wider text-purple-700">Grammar notes</div>
                 <div className="space-y-3">
                   <ExplanationRow label="Basic explanation" value={item.explanationPlan.basicExplanation} />
                   {item.explanationPlan.contrastWithNearbyGrammar && (
@@ -1072,17 +1175,6 @@ function TeachCard({
                   <ExplanationRow label="Common mistake" value={item.explanationPlan.commonMistake} />
                   <ExplanationRow label="Example pattern" value={item.explanationPlan.examplePattern} lang="ja" />
                 </div>
-                {item.examples && item.examples.length > 0 && (
-                  <div className="mt-3 space-y-2">
-                    {item.examples.slice(0, 3).map((ex, i) => (
-                      <div key={i} className="rounded-lg bg-white/80 p-2">
-                        <div className="font-medium text-gray-900" lang="ja">{ex.japanese}</div>
-                        {ex.reading && <div className="text-xs text-gray-500">{ex.reading}</div>}
-                        <div className="text-sm text-gray-600">{ex.english}</div>
-                      </div>
-                    ))}
-                  </div>
-                )}
               </div>
             )}
 
@@ -1179,7 +1271,7 @@ function TeachCard({
         )}
         {item.source && (
           <div className="text-center text-xs text-gray-500">
-            Source: {item.source.replace(/_/g, ' ')} {item.page && item.page > 0 ? `· p. ${item.page}` : '· extracted content'}
+            Source: {item.source.replace(/_/g, ' ')}{item.page && item.page > 0 ? ` · p. ${item.page}` : ''}
           </div>
         )}
       </div>

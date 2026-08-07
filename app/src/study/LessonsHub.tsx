@@ -156,8 +156,14 @@ export function LessonsHub({ embedded = false }: LessonsHubProps) {
   }, [lessonsCompleted])
 
   const handleCEFRSelect = (cefr: CEFRLevel) => {
-    // Navigate to first lesson for that CEFR level
-    navigate(`/learn/lessons/${cefr}/1`)
+    // Stay on Course — jump to that level's lesson picker instead of forcing lesson 1.
+    const target = document.getElementById(`lesson-menu-${cefr}`)
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      target.focus({ preventScroll: true })
+      return
+    }
+    document.getElementById('lesson-menu')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
   }
 
   const availableLessonCount = Object.values(stats).reduce((sum, entry) => sum + entry.total, 0)
@@ -255,14 +261,19 @@ export function LessonsHub({ embedded = false }: LessonsHubProps) {
         )}
 
         {lessonShortcuts.length > 0 && (
-          <div className="mt-8">
+          <div id="lesson-menu" className="mt-8">
             <h2 className="mb-3 text-lg font-semibold text-slate-800">Lesson Menu</h2>
             <div className="grid gap-3 md:grid-cols-2">
               {cefrLevels.filter(({ cefr }) => stats[cefr].total > 0).map(({ cefr, title, description }) => {
                 const lessons = lessonShortcuts.filter(lesson => lesson.cefr === cefr)
                 if (lessons.length === 0) return null
                 return (
-                  <section key={cefr} className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm">
+                  <section
+                    key={cefr}
+                    id={`lesson-menu-${cefr}`}
+                    tabIndex={-1}
+                    className="rounded-lg border border-slate-200 bg-white p-4 shadow-sm outline-none focus-visible:ring-2 focus-visible:ring-indigo-400"
+                  >
                     <div className="mb-3 flex items-start justify-between gap-3">
                       <div>
                         <h3 className="text-base font-bold text-slate-950">{title}</h3>
@@ -313,9 +324,9 @@ export function LessonsHub({ embedded = false }: LessonsHubProps) {
           <div className="rounded-lg bg-blue-50 p-6">
             <h3 className="mb-2 font-semibold text-blue-900">How it works</h3>
             <ul className="space-y-2 text-sm text-blue-800">
-              <li>1. Select your proficiency level (A1-C1)</li>
-              <li>2. Work through lessons in order</li>
-              <li>3. Learn vocabulary and grammar for each lesson</li>
+              <li>1. Pick a CEFR level to jump to its lesson menu</li>
+              <li>2. Open any lesson from the list</li>
+              <li>3. Start the lesson rail when you are ready</li>
               <li>4. Study matching Anki cards to reinforce</li>
               <li>5. Track your progress</li>
             </ul>
