@@ -655,9 +655,9 @@
         },
         {
           "id": "genki_2_l15_vocab_32",
-          "surface": "インタ一ネト",
-          "reading": "じしん",
-          "meaning": "colloquially,ネ卜)",
+          "surface": "インターネット",
+          "reading": "インターネット",
+          "meaning": "internet",
           "lessonNumber": 15,
           "sourceRef": {
             "sourceId": "genki_2_textbook",
@@ -668,9 +668,9 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.829Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 80, 81, 82, 99"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Fixed OCR surface/gloss for インターネット."
           }
         },
         {
@@ -718,26 +718,6 @@
           "surface": "描く",
           "reading": "かく",
           "meaning": "to draw; to paint",
-          "lessonNumber": 15,
-          "sourceRef": {
-            "sourceId": "genki_2_textbook",
-            "pageNumber": 81
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.829Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 80, 81, 82, 99"
-          }
-        },
-        {
-          "id": "genki_2_l15_vocab_36",
-          "surface": "保険に入る",
-          "reading": "ほけんにはいる",
-          "meaning": "to buy insurance Ru-verbs",
           "lessonNumber": 15,
           "sourceRef": {
             "sourceId": "genki_2_textbook",
@@ -818,26 +798,6 @@
           "surface": "しゃべる",
           "reading": null,
           "meaning": "to chat",
-          "lessonNumber": 15,
-          "sourceRef": {
-            "sourceId": "genki_2_textbook",
-            "pageNumber": 81
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.829Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 80, 81, 82, 99"
-          }
-        },
-        {
-          "id": "genki_2_l15_vocab_41",
-          "surface": "ほけんにはいる",
-          "reading": null,
-          "meaning": "to buy insurance Ru-verbs",
           "lessonNumber": 15,
           "sourceRef": {
             "sourceId": "genki_2_textbook",
@@ -1077,7 +1037,7 @@
           "id": "genki_2_l15_vocab_53",
           "surface": "気をつける",
           "reading": "きをつける",
-          "meaning": "cautious/careful(~l二)",
+          "meaning": "to be careful (~に)",
           "lessonNumber": 15,
           "sourceRef": {
             "sourceId": "genki_2_textbook",
@@ -1088,9 +1048,9 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.829Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 80, 81, 82, 99"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Fixed に→二 OCR in gloss."
           }
         },
         {
@@ -1218,26 +1178,6 @@
           "surface": "う",
           "reading": "そ",
           "meaning": "volitional",
-          "lessonNumber": 15,
-          "sourceRef": {
-            "sourceId": "genki_2_textbook",
-            "pageNumber": 82
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.829Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 80, 81, 82, 99"
-          }
-        },
-        {
-          "id": "genki_2_l15_vocab_61",
-          "surface": "文",
-          "reading": null,
-          "meaning": "G r m m a r sih",
           "lessonNumber": 15,
           "sourceRef": {
             "sourceId": "genki_2_textbook",

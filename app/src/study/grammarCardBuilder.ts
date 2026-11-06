@@ -1,17 +1,16 @@
+import { resolveGrammarCloze } from '../content/vocabGlossQuality'
 import type { GrammarItem } from './lessonStudyPlanner'
 import type { GrammarQuestion, ReviewCard } from './types'
 
-function clozeFromExample(example: string, pattern: string): string | null {
-  if (!example.includes(pattern)) return null
-  return example.replace(pattern, '[___]')
-}
-
-function clozeOptions(pattern: string, pool: string[]): string[] {
-  const distractors = pool.filter(p => p !== pattern && p.length > 0).slice(0, 3)
+function clozeOptions(answer: string, pool: string[]): string[] {
+  const distractors = pool
+    .filter(p => p && p !== answer)
+    .slice(0, 3)
   while (distractors.length < 3) distractors.push('は')
-  return [pattern, ...distractors.slice(0, 3)]
+  return [answer, ...distractors.slice(0, 3)]
 }
 
+/** Prefer fillable Japanese spans; fall back to pattern recognition (not obscure Latin cloze). */
 export function grammarCardFields(item: GrammarItem): {
   front: string
   back: string
@@ -21,10 +20,10 @@ export function grammarCardFields(item: GrammarItem): {
   const pattern = item.pattern.trim()
   const meaning = item.meaning.trim()
   const example = item.examples?.[0]
-  const cloze = example?.japanese ? clozeFromExample(example.japanese, pattern) : null
+  const cloze = resolveGrammarCloze(pattern, example?.japanese)
 
   return {
-    front: cloze ?? `Pattern: ${pattern}`,
+    front: cloze?.prompt ?? `Pattern: ${pattern}`,
     back: `${pattern} — ${meaning}`,
     exampleSentence: example?.japanese ?? null,
     exampleTranslation: example?.english ?? null,
@@ -38,13 +37,27 @@ export function buildGrammarQuestionForCard(
 ): GrammarQuestion {
   const pattern = item.pattern.trim()
   const example = item.examples?.[0]
-  const prompt = example?.japanese && example.japanese.includes(pattern)
-    ? example.japanese.replace(pattern, '[___]')
-    : `Fill in: [___] (${item.meaning})`
+  const cloze = resolveGrammarCloze(pattern, example?.japanese)
 
+  if (cloze) {
+    // Prefer other fillable Japanese spans as distractors when available.
+    const fillablePool = patternPool
+      .map(p => resolveGrammarCloze(p, example?.japanese)?.answer ?? p)
+      .filter(Boolean)
+    return {
+      questionId: card.cardStateId,
+      prompt: cloze.prompt,
+      options: clozeOptions(cloze.answer, fillablePool),
+      answer: cloze.answer,
+      explanation: item.explanation ?? item.meaning,
+      grammarPointId: null,
+    }
+  }
+
+  // Schema / unmatched patterns: ask meaning recognition instead of an empty [___].
   return {
     questionId: card.cardStateId,
-    prompt,
+    prompt: `Which pattern means: ${item.meaning}?`,
     options: clozeOptions(pattern, patternPool),
     answer: pattern,
     explanation: item.explanation ?? item.meaning,
@@ -60,9 +73,6 @@ export function grammarEntriesFromCards(
   const entries: [number, GrammarQuestion][] = []
   for (const card of queue) {
     if (card.type !== 'grammar') continue
-    const key = card.front.includes('[___]')
-      ? card.exampleSentence ?? card.front
-      : card.front.replace(/^Pattern:\s*/, '')
     const item = [...grammarByFront.values()].find(g =>
       card.front.includes(g.pattern) || card.back.includes(g.pattern),
     )

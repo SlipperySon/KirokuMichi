@@ -814,30 +814,10 @@
           }
         },
         {
-          "id": "genki_2_l20_vocab_40",
-          "surface": "るandのむ",
-          "reading": "ござる",
-          "meaning": "forある",
-          "lessonNumber": 20,
-          "sourceRef": {
-            "sourceId": "genki_2_textbook",
-            "pageNumber": 191
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:14.508Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 190, 191, 192, 193"
-          }
-        },
-        {
           "id": "genki_2_l20_vocab_41",
-          "surface": "~でござる",
+          "surface": "でござる",
           "reading": null,
-          "meaning": "forです",
+          "meaning": "humble/formal equivalent of desu",
           "lessonNumber": 20,
           "sourceRef": {
             "sourceId": "genki_2_textbook",
@@ -848,9 +828,9 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:14.508Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 190, 191, 192, 193"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Normalized humble copula entry."
           }
         },
         {
@@ -877,7 +857,7 @@
           "id": "genki_2_l20_vocab_43",
           "surface": "差し上げる",
           "reading": "きこえる",
-          "meaning": "forある",
+          "meaning": "to give (humble)",
           "lessonNumber": 20,
           "sourceRef": {
             "sourceId": "genki_2_textbook",
@@ -888,9 +868,9 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:14.508Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 190, 191, 192, 193"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Clarified humble giving verb gloss."
           }
         },
         {
@@ -938,26 +918,6 @@
           "surface": "わたくしらいねん",
           "reading": "にほん",
           "meaning": "I will be in Japan next year, too, sir/ma'am",
-          "lessonNumber": 20,
-          "sourceRef": {
-            "sourceId": "genki_2_textbook",
-            "pageNumber": 192
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:14.508Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 190, 191, 192, 193"
-          }
-        },
-        {
-          "id": "genki_2_l20_vocab_47",
-          "surface": "ろくがつだいがくそつぎよう",
-          "reading": "わたくしとし",
-          "meaning": "I graduated from college this June, sir/ma'am",
           "lessonNumber": 20,
           "sourceRef": {
             "sourceId": "genki_2_textbook",
@@ -1138,66 +1098,6 @@
           "surface": "まい",
           "reading": null,
           "meaning": "A train is pulling in",
-          "lessonNumber": 20,
-          "sourceRef": {
-            "sourceId": "genki_2_textbook",
-            "pageNumber": 193
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:14.508Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 190, 191, 192, 193"
-          }
-        },
-        {
-          "id": "genki_2_l20_vocab_57",
-          "surface": "あ",
-          "reading": null,
-          "meaning": "I (humbly) met husband of the company president yesterday",
-          "lessonNumber": 20,
-          "sourceRef": {
-            "sourceId": "genki_2_textbook",
-            "pageNumber": 193
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:14.508Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 190, 191, 192, 193"
-          }
-        },
-        {
-          "id": "genki_2_l20_vocab_58",
-          "surface": "か",
-          "reading": null,
-          "meaning": "I intend to (humbly) lend my professor a book",
-          "lessonNumber": 20,
-          "sourceRef": {
-            "sourceId": "genki_2_textbook",
-            "pageNumber": 193
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:14.508Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 190, 191, 192, 193"
-          }
-        },
-        {
-          "id": "genki_2_l20_vocab_59",
-          "surface": "お手洗いは二階でございます。",
-          "reading": "にかい",
-          "meaning": "cf.です",
           "lessonNumber": 20,
           "sourceRef": {
             "sourceId": "genki_2_textbook",

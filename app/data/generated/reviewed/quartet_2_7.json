@@ -1500,32 +1500,6 @@
           }
         },
         {
-          "id": "quartet_2_l7_vocab_57",
-          "surface": "[~が]発展(する)",
-          "reading": "はってん(する)",
-          "meaning": "to develop [vi.]",
-          "lessonNumber": 7,
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 289,
-            "coordinates": [
-              206,
-              801,
-              1376,
-              853
-            ]
-          },
-          "tags": [
-            "gold_bessatsu"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.025Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
-          }
-        },
-        {
           "id": "quartet_2_l7_vocab_58",
           "surface": "基準",
           "reading": "きじゅん",
@@ -1553,9 +1527,9 @@
         },
         {
           "id": "quartet_2_l7_vocab_59",
-          "surface": "[~に]似る",
+          "surface": "似る",
           "reading": "にる",
-          "meaning": "to resemble 津",
+          "meaning": "to resemble (~に)",
           "lessonNumber": 7,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -1572,9 +1546,9 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.025Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Removed OCR spill and normalized attachment surface."
           }
         },
         {

@@ -255,7 +255,7 @@
         },
         {
           "id": "genki_1_l4_vocab_12",
-          "surface": "ね二",
+          "surface": "ねこ",
           "reading": null,
           "meaning": "cat",
           "lessonNumber": 4,
@@ -268,9 +268,9 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.446Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 113, 114, 136"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Fixed に→二 OCR on ねこ."
           }
         },
         {
@@ -754,26 +754,6 @@
           }
         },
         {
-          "id": "genki_1_l4_vocab_37",
-          "surface": "二",
-          "reading": null,
-          "meaning": "thing)",
-          "lessonNumber": 4,
-          "sourceRef": {
-            "sourceId": "genki_1_textbook",
-            "pageNumber": 114
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.446Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 113, 114, 136"
-          }
-        },
-        {
           "id": "genki_1_l4_vocab_38",
           "surface": "撮る",
           "reading": "とる",
@@ -818,26 +798,6 @@
           "surface": "だから",
           "reading": null,
           "meaning": "so; therefore",
-          "lessonNumber": 4,
-          "sourceRef": {
-            "sourceId": "genki_1_textbook",
-            "pageNumber": 114
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.446Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 113, 114, 136"
-          }
-        },
-        {
-          "id": "genki_1_l4_vocab_41",
-          "surface": "と",
-          "reading": null,
-          "meaning": "why",
           "lessonNumber": 4,
           "sourceRef": {
             "sourceId": "genki_1_textbook",
@@ -917,7 +877,7 @@
           "id": "genki_1_l4_vocab_45",
           "surface": "ある",
           "reading": null,
-          "meaning": "l二 thing)",
+          "meaning": "there is; to exist (inanimate things)",
           "lessonNumber": 4,
           "sourceRef": {
             "sourceId": "genki_1_textbook",
@@ -928,9 +888,9 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.446Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 113, 114, 136"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Replaced OCR に→二 gloss scar."
           }
         },
         {
@@ -955,9 +915,9 @@
         },
         {
           "id": "genki_1_l4_vocab_47",
-          "surface": "兴",
+          "surface": "わかる",
           "reading": "わかる",
-          "meaning": "understand(~が) Ru- verb",
+          "meaning": "to understand (~が)",
           "lessonNumber": 4,
           "sourceRef": {
             "sourceId": "genki_1_textbook",
@@ -968,9 +928,9 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.446Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 113, 114, 136"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Restored わかる from corrupt 兴 surface."
           }
         },
         {
@@ -1038,26 +998,6 @@
           "surface": "さんじうにちさんじいちにち",
           "reading": "にじゆうはちにち",
           "meaning": "Months",
-          "lessonNumber": 4,
-          "sourceRef": {
-            "sourceId": "genki_1_textbook",
-            "pageNumber": 136
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.446Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 113, 114, 136"
-          }
-        },
-        {
-          "id": "genki_1_l4_vocab_52",
-          "surface": "ひ",
-          "reading": null,
-          "meaning": "Day s / Wee k s / Mo n ths /Yea r s Days",
           "lessonNumber": 4,
           "sourceRef": {
             "sourceId": "genki_1_textbook",

@@ -437,7 +437,7 @@
           "id": "genki_2_l19_vocab_21",
           "surface": "召し上がる",
           "reading": "くださる",
-          "meaning": "andのむ",
+          "meaning": "to eat/drink (honorific)",
           "lessonNumber": 19,
           "sourceRef": {
             "sourceId": "genki_2_textbook",
@@ -448,16 +448,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:14.455Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 170, 171, 172, 173"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Clarified honorific gloss without JP spill."
           }
         },
         {
           "id": "genki_2_l19_vocab_22",
           "surface": "お休みになる",
           "reading": "ごらんになる",
-          "meaning": "forねる",
+          "meaning": "to sleep; to rest (honorific)",
           "lessonNumber": 19,
           "sourceRef": {
             "sourceId": "genki_2_textbook",
@@ -468,9 +468,9 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:14.455Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 170, 171, 172, 173"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Clarified honorific gloss without JP spill."
           }
         },
         {
@@ -957,7 +957,7 @@
           "id": "genki_2_l19_vocab_47",
           "surface": "遅れる",
           "reading": null,
-          "meaning": "late(~1二)",
+          "meaning": "to be late (~に)",
           "lessonNumber": 19,
           "sourceRef": {
             "sourceId": "genki_2_textbook",
@@ -968,9 +968,9 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:14.455Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 170, 171, 172, 173"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Fixed に→二 OCR in gloss."
           }
         },
         {
@@ -1094,50 +1094,10 @@
           }
         },
         {
-          "id": "genki_2_l19_vocab_54",
-          "surface": "ね",
-          "reading": null,
-          "meaning": "I hear that the professor (graciously) goes to bed around 10",
-          "lessonNumber": 19,
-          "sourceRef": {
-            "sourceId": "genki_2_textbook",
-            "pageNumber": 173
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:14.455Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 170, 171, 172, 173"
-          }
-        },
-        {
           "id": "genki_2_l19_vocab_55",
           "surface": "らん",
           "reading": null,
           "meaning": "The president is (graciously) watching the news",
-          "lessonNumber": 19,
-          "sourceRef": {
-            "sourceId": "genki_2_textbook",
-            "pageNumber": 173
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:14.455Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 170, 171, 172, 173"
-          }
-        },
-        {
-          "id": "genki_2_l19_vocab_56",
-          "surface": "お",
-          "reading": null,
-          "meaning": "and",
           "lessonNumber": 19,
           "sourceRef": {
             "sourceId": "genki_2_textbook",

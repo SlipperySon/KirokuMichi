@@ -655,9 +655,9 @@
         },
         {
           "id": "genki_1_l9_vocab_32",
-          "surface": "水",
+          "surface": "みんな",
           "reading": "みんな",
-          "meaning": "all",
+          "meaning": "all; everyone",
           "lessonNumber": 9,
           "sourceRef": {
             "sourceId": "genki_1_textbook",
@@ -668,9 +668,9 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.650Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 221, 222, 223, 238"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Corrected wrong 水/all pair to みんな."
           }
         },
         {
@@ -918,26 +918,6 @@
           "surface": "みんな",
           "reading": null,
           "meaning": "all",
-          "lessonNumber": 9,
-          "sourceRef": {
-            "sourceId": "genki_1_textbook",
-            "pageNumber": 222
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.650Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 221, 222, 223, 238"
-          }
-        },
-        {
-          "id": "genki_1_l9_vocab_46",
-          "surface": "もう",
-          "reading": null,
-          "meaning": "N u m b e r s (used to count smallitems)",
           "lessonNumber": 9,
           "sourceRef": {
             "sourceId": "genki_1_textbook",
@@ -1214,50 +1194,10 @@
           }
         },
         {
-          "id": "genki_1_l9_vocab_60",
-          "surface": "て",
-          "reading": null,
-          "meaning": "and",
-          "lessonNumber": 9,
-          "sourceRef": {
-            "sourceId": "genki_1_textbook",
-            "pageNumber": 223
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.650Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 221, 222, 223, 238"
-          }
-        },
-        {
           "id": "genki_1_l9_vocab_61",
           "surface": "ですfrom",
           "reading": null,
           "meaning": "form.\" (3)",
-          "lessonNumber": 9,
-          "sourceRef": {
-            "sourceId": "genki_1_textbook",
-            "pageNumber": 223
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.650Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 221, 222, 223, 238"
-          }
-        },
-        {
-          "id": "genki_1_l9_vocab_62",
-          "surface": "ないwithなかった.",
-          "reading": null,
-          "meaning": "Past, aff rmative compare with",
           "lessonNumber": 9,
           "sourceRef": {
             "sourceId": "genki_1_textbook",
@@ -1518,26 +1458,6 @@
           "surface": "オレンジ",
           "reading": null,
           "meaning": "orange These words need",
-          "lessonNumber": 9,
-          "sourceRef": {
-            "sourceId": "genki_1_textbook",
-            "pageNumber": 238
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.650Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 221, 222, 223, 238"
-          }
-        },
-        {
-          "id": "genki_1_l9_vocab_76",
-          "surface": "の",
-          "reading": null,
-          "meaning": "in order to make noun phrases",
           "lessonNumber": 9,
           "sourceRef": {
             "sourceId": "genki_1_textbook",

@@ -183,7 +183,18 @@ function toTeachItems(vocab: VocabItem[], grammar: GrammarItem[]): TeachItem[] {
 }
 
 function buildQuestion(item: TeachItem, pool: TeachItem[], salt: string): QuizQuestion | null {
-  const sameType = pool.filter(candidate => candidate.type === item.type && candidate.id !== item.id)
+  // Exclude same-gloss / same-meaning siblings so kanji+kana pairs (学生 / がくせい)
+  // and duplicate grammar meanings cannot appear as both correct and distractor.
+  const sameType = pool.filter(candidate => {
+    if (candidate.type !== item.type || candidate.id === item.id) return false
+    if (item.type === 'vocab' && candidate.type === 'vocab') {
+      return candidate.body.trim().toLowerCase() !== item.body.trim().toLowerCase()
+    }
+    if (item.type === 'grammar' && candidate.type === 'grammar') {
+      return candidate.body.trim().toLowerCase() !== item.body.trim().toLowerCase()
+    }
+    return true
+  })
   const distractors = stableShuffle(sameType, `${salt}:${item.id}`)
     .map(candidate => (item.type === 'vocab' ? candidate.title : candidate.body))
     .filter(Boolean)

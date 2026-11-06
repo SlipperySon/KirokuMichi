@@ -614,26 +614,6 @@
           }
         },
         {
-          "id": "genki_2_l23_vocab_30",
-          "surface": "悪口を言う",
-          "reading": "わるぐちをいう",
-          "meaning": "to talk behind someone's back Ru-verbs",
-          "lessonNumber": 23,
-          "sourceRef": {
-            "sourceId": "genki_2_textbook",
-            "pageNumber": 261
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:14.632Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 260, 261, 262"
-          }
-        },
-        {
           "id": "genki_2_l23_vocab_31",
           "surface": "優勝する",
           "reading": "ゆうしょうする",
@@ -678,26 +658,6 @@
           "surface": "おなかをこわす",
           "reading": null,
           "meaning": "to have a stomachache",
-          "lessonNumber": 23,
-          "sourceRef": {
-            "sourceId": "genki_2_textbook",
-            "pageNumber": 261
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:14.632Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 260, 261, 262"
-          }
-        },
-        {
-          "id": "genki_2_l23_vocab_34",
-          "surface": "わるぐちをいう",
-          "reading": null,
-          "meaning": "to talk behind someone's back Ru-verbs",
           "lessonNumber": 23,
           "sourceRef": {
             "sourceId": "genki_2_textbook",
@@ -897,7 +857,7 @@
           "id": "genki_2_l23_vocab_44",
           "surface": "答える",
           "reading": "こたえる",
-          "meaning": "answer(~1二)",
+          "meaning": "to answer (~に)",
           "lessonNumber": 23,
           "sourceRef": {
             "sourceId": "genki_2_textbook",
@@ -908,9 +868,9 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:14.632Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 260, 261, 262"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Fixed に→二 OCR in gloss."
           }
         },
         {
@@ -937,7 +897,7 @@
           "id": "genki_2_l23_vocab_46",
           "surface": "同情する",
           "reading": "どうじよする",
-          "meaning": "sympathize(~1二)",
+          "meaning": "to sympathize (~に)",
           "lessonNumber": 23,
           "sourceRef": {
             "sourceId": "genki_2_textbook",
@@ -948,9 +908,9 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:14.632Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 260, 261, 262"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Fixed に→二 OCR in gloss."
           }
         },
         {

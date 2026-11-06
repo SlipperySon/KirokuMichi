@@ -73,6 +73,7 @@ describe('reviewedPackService', () => {
               qualityTier: 'gold',
               vocabulary: [
                 { id: 'v1', surface: 'だいがく', meaning: 'university', sourceRef: { pageNumber: 47, sourceId: 'genki_1_textbook' } },
+                { id: 'v_bad', surface: 'ね二', meaning: 'cat', sourceRef: { pageNumber: 48, sourceId: 'genki_1_textbook' } },
               ],
               grammar: [
                 { id: 'g1', pattern: 'XはYです', meaning: 'X is Y', sourceRef: { pageNumber: 50 } },

@@ -24,6 +24,37 @@ describe('grammarCardBuilder', () => {
     expect(fields.back).toContain('です')
   })
 
+  it('asks meaning recognition for schema patterns without fillable cloze', () => {
+    const schemaItem = {
+      ...grammarItem,
+      id: 'g2',
+      pattern: 'XはYです',
+      meaning: 'X is Y',
+      examples: [{ japanese: 'わたしは学生です。', english: 'I am a student.' }],
+    }
+    const card: ReviewCard = {
+      cardStateId: 7,
+      cardId: 7,
+      type: 'grammar',
+      front: 'Pattern: XはYです',
+      back: 'XはYです — X is Y',
+      reading: null,
+      audioUrl: null,
+      jlptLevel: null,
+      userNote: null,
+      exampleSentence: 'わたしは学生です。',
+      exampleTranslation: 'I am a student.',
+      state: 'new',
+      lapses: 0,
+      stability: 0,
+      difficulty: 0,
+      due: '2026-01-01',
+    }
+    const question = buildGrammarQuestionForCard(card, schemaItem, ['XはYです', 'です'])
+    expect(question.prompt).toContain('Which pattern means')
+    expect(question.answer).toBe('XはYです')
+  })
+
   it('maps grammar cards in queue to cloze questions', () => {
     const card: ReviewCard = {
       cardStateId: 42,

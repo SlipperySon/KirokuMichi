@@ -2335,7 +2335,7 @@
           "id": "quartet_2_l12_vocab_89",
           "surface": "経営企画部長",
           "reading": "けいえいきかくぶちょう",
-          "meaning": "chief of corporate planning division 漢",
+          "meaning": "chief of corporate planning division",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -2352,9 +2352,9 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Removed stray 漢 OCR spill."
           }
         },
         {
@@ -4802,36 +4802,10 @@
           }
         },
         {
-          "id": "quartet_2_l12_vocab_184",
-          "surface": "読み物1",
-          "reading": "かべ",
-          "meaning": "壁（か）wall；barrier",
-          "lessonNumber": 12,
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 320,
-            "coordinates": [
-              91,
-              199,
-              1134,
-              346
-            ]
-          },
-          "tags": [
-            "gold_bessatsu"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
-          }
-        },
-        {
           "id": "quartet_2_l12_vocab_185",
-          "surface": "差",
-          "reading": "さ",
-          "meaning": "差し上げる(さしあげる)togive",
+          "surface": "差し上げる",
+          "reading": "さしあげる",
+          "meaning": "to give",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -4848,16 +4822,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=差)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_186",
-          "surface": "ね",
-          "reading": "根付く(ねづく)to take root",
-          "meaning": "根(ね)root",
+          "surface": "根",
+          "reading": "ね",
+          "meaning": "root",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -4874,16 +4848,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=ね)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_187",
-          "surface": "勇",
-          "reading": "いさ",
-          "meaning": "勇ましい(いさましい)courageous",
+          "surface": "勇ましい",
+          "reading": "いさましい",
+          "meaning": "courageous",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -4900,16 +4874,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=勇)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_188",
-          "surface": "飛",
-          "reading": "と",
-          "meaning": "飛びだす(とびだす)tojumpout",
+          "surface": "飛びだす",
+          "reading": "とびだす",
+          "meaning": "to jumpout",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -4926,16 +4900,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=飛)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_189",
           "surface": "共",
-          "reading": "とも",
-          "meaning": "共(とも1二)together with",
+          "reading": "とも1二",
+          "meaning": "to gether with",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -4952,16 +4926,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=共)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_190",
-          "surface": "トウ",
-          "reading": "没頭(ぼっとう)immersion",
-          "meaning": "冒頭(とう)beginning",
+          "surface": "冒頭",
+          "reading": "とう",
+          "meaning": "beginning",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -4978,42 +4952,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
-          }
-        },
-        {
-          "id": "quartet_2_l12_vocab_191",
-          "surface": "頭",
-          "reading": "あたま",
-          "meaning": "牛40頭(40と)40head ofcattle 頭(あ)head",
-          "lessonNumber": 12,
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 323,
-            "coordinates": [
-              237,
-              219,
-              1733,
-              405
-            ]
-          },
-          "tags": [
-            "gold_bessatsu"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=トウ)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_192",
-          "surface": "望",
-          "reading": "のぞ",
-          "meaning": "望む(のぞむ) towish;to desire",
+          "surface": "望む",
+          "reading": "のぞむ",
+          "meaning": "to wish;to desire",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5030,16 +4978,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=望)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_193",
-          "surface": "速",
-          "reading": "はや",
-          "meaning": "速さ(はやさ)speed速い(はやい) fast",
+          "surface": "速さ",
+          "reading": "はやさ",
+          "meaning": "speed",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5056,16 +5004,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=速)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_194",
-          "surface": "基",
-          "reading": "もと",
-          "meaning": "基づく(もとづ<)to be based on",
+          "surface": "基づく",
+          "reading": "もとづ<",
+          "meaning": "to be based on",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5082,42 +5030,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
-          }
-        },
-        {
-          "id": "quartet_2_l12_vocab_195",
-          "surface": "形",
-          "reading": "かたち",
-          "meaning": "形(かち）shape; way;method",
-          "lessonNumber": 12,
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 326,
-            "coordinates": [
-              152,
-              684,
-              1259,
-              883
-            ]
-          },
-          "tags": [
-            "gold_bessatsu"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=基)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_196",
-          "surface": "読み物2",
-          "reading": "あたた",
-          "meaning": "温める(あたためる)towarmup",
+          "surface": "温める",
+          "reading": "あたためる",
+          "meaning": "to warmup",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5134,16 +5056,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=読み物2)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_197",
-          "surface": "瞬",
-          "reading": "またた",
-          "meaning": "瞬く(<)toblink",
+          "surface": "瞬く",
+          "reading": null,
+          "meaning": "to blink",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5160,42 +5082,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
-          }
-        },
-        {
-          "id": "quartet_2_l12_vocab_198",
-          "surface": "囲",
-          "reading": "かこ",
-          "meaning": "囲む(かこむ）to surround",
-          "lessonNumber": 12,
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 328,
-            "coordinates": [
-              183,
-              1894,
-              1158,
-              2059
-            ]
-          },
-          "tags": [
-            "gold_bessatsu"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=瞬)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_199",
-          "surface": "胸",
-          "reading": "むな",
-          "meaning": "胸元(なもと)chest;neckline",
+          "surface": "胸元",
+          "reading": "なもと",
+          "meaning": "chest;neckline",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5212,16 +5108,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=胸)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_200",
           "surface": "細",
-          "reading": "ほそ",
-          "meaning": "細(そい)thin;narrow",
+          "reading": "そい",
+          "meaning": "thin;narrow",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5238,16 +5134,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=細)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_201",
-          "surface": "除",
-          "reading": "のぞ",
-          "meaning": "除く(のぞく)toremove",
+          "surface": "除く",
+          "reading": "のぞく",
+          "meaning": "to remove",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5264,16 +5160,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=除)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_202",
           "surface": "夫",
-          "reading": "おっと",
-          "meaning": "夫(っと)husband",
+          "reading": "っと",
+          "meaning": "husband",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5290,42 +5186,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
-          }
-        },
-        {
-          "id": "quartet_2_l12_vocab_203",
-          "surface": "わり",
-          "reading": "役割(やくわり)role",
-          "meaning": "7割(ななわり)70percent",
-          "lessonNumber": 12,
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 335,
-            "coordinates": [
-              455,
-              1423,
-              1668,
-              1486
-            ]
-          },
-          "tags": [
-            "gold_bessatsu"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=夫)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_204",
-          "surface": "わ",
-          "reading": "割合(わりあい)proportion",
-          "meaning": "割れる(われる)tobreak",
+          "surface": "割れる",
+          "reading": "われる",
+          "meaning": "to break",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5342,16 +5212,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=わ)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_205",
-          "surface": "かつ",
-          "reading": "負担感(たんかん)sense ofburden",
-          "meaning": "負担(ふ大ん)load",
+          "surface": "負担",
+          "reading": "ふ大ん",
+          "meaning": "load",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5368,42 +5238,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
-          }
-        },
-        {
-          "id": "quartet_2_l12_vocab_206",
-          "surface": "担",
-          "reading": "にな",
-          "meaning": "担<(かつ<)to shoulder 担(1にな)to bear",
-          "lessonNumber": 12,
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 335,
-            "coordinates": [
-              229,
-              1636,
-              1582,
-              1841
-            ]
-          },
-          "tags": [
-            "gold_bessatsu"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=かつ)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_207",
-          "surface": "ひ<",
-          "reading": "低(ひ<)low",
-          "meaning": "低め(ひ<め)on the low side",
+          "surface": "低め",
+          "reading": "ひ<め",
+          "meaning": "on the low side",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5420,16 +5264,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=ひ<)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_208",
-          "surface": "因",
-          "reading": "よ",
-          "meaning": "因る(よる) to be due to",
+          "surface": "因る",
+          "reading": "よる",
+          "meaning": "to be due to",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5446,16 +5290,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=因)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_209",
-          "surface": "率",
-          "reading": "ひき",
-          "meaning": "率いる(ひきいる)tolead",
+          "surface": "率いる",
+          "reading": "ひきいる",
+          "meaning": "to lead",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5472,16 +5316,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=率)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_210",
-          "surface": "探",
+          "surface": "探す",
           "reading": "さが",
-          "meaning": "探す(さが)tolook for",
+          "meaning": "to look for",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5498,16 +5342,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=探)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_211",
-          "surface": "支",
-          "reading": "ささ",
-          "meaning": "支える(ささえる)to support",
+          "surface": "支える",
+          "reading": "ささえる",
+          "meaning": "to support",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5524,16 +5368,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=支)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_212",
-          "surface": "摘",
-          "reading": "つ",
-          "meaning": "摘む(つむ) to pick; to trim",
+          "surface": "摘む",
+          "reading": "つむ",
+          "meaning": "to pick; to trim",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5550,16 +5394,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=摘)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_213",
-          "surface": "設",
-          "reading": "もう",
-          "meaning": "設ける(もうける)to establish; to provide",
+          "surface": "設ける",
+          "reading": "もうける",
+          "meaning": "to establish; to provide",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5576,16 +5420,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=設)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_214",
-          "surface": "欠",
-          "reading": "か",
-          "meaning": "欠かせな(かかせな)indispensable",
+          "surface": "欠かせな",
+          "reading": "かかせな",
+          "meaning": "indispensable",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5602,16 +5446,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=欠)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_215",
-          "surface": "概",
-          "reading": "おおむ",
-          "meaning": "概ね(おおむね)generally speaking; for the most part",
+          "surface": "概ね",
+          "reading": "おおむね",
+          "meaning": "generally speaking; for the most part",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5628,16 +5472,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=概)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_216",
-          "surface": "ことわ",
-          "reading": "断食(だんじき)fast",
-          "meaning": "断(ことわ)toturn down",
+          "surface": "断",
+          "reading": "ことわ",
+          "meaning": "to turn down",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5654,16 +5498,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=ことわ)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_217",
-          "surface": "氏",
-          "reading": "うじ",
-          "meaning": "氏神(じがみ)tutelarydeity",
+          "surface": "氏神",
+          "reading": "じがみ",
+          "meaning": "tutelarydeity",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5680,42 +5524,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
-          }
-        },
-        {
-          "id": "quartet_2_l12_vocab_218",
-          "surface": "嫁",
-          "reading": "とつ",
-          "meaning": "嫁<(と<) to marry(used for women)",
-          "lessonNumber": 12,
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 342,
-            "coordinates": [
-              152,
-              438,
-              1348,
-              650
-            ]
-          },
-          "tags": [
-            "gold_bessatsu"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=氏)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_219",
-          "surface": "拒",
-          "reading": "こば",
-          "meaning": "拒む(こばむ)torefuse",
+          "surface": "拒む",
+          "reading": "こばむ",
+          "meaning": "to refuse",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5732,16 +5550,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=拒)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_220",
-          "surface": "勢",
-          "reading": "いきお",
-          "meaning": "勢い(いきおい)momentum",
+          "surface": "勢い",
+          "reading": "いきおい",
+          "meaning": "momentum",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5758,16 +5576,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=勢)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_221",
-          "surface": "抑",
-          "reading": "おさ",
-          "meaning": "抑える(おさえる)to suppress; to repress",
+          "surface": "抑える",
+          "reading": "おさえる",
+          "meaning": "to suppress; to repress",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5784,42 +5602,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
-          }
-        },
-        {
-          "id": "quartet_2_l12_vocab_222",
-          "surface": "証",
-          "reading": "あかし",
-          "meaning": "証（あかL）proof;evidence",
-          "lessonNumber": 12,
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 344,
-            "coordinates": [
-              150,
-              210,
-              1163,
-              404
-            ]
-          },
-          "tags": [
-            "gold_bessatsu"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=抑)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_223",
-          "surface": "営",
-          "reading": "いとな",
-          "meaning": "営む(いとなむ)torun abusiness",
+          "surface": "営む",
+          "reading": "いとなむ",
+          "meaning": "to run abusiness",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5836,16 +5628,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=営)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_224",
-          "surface": "編",
-          "reading": "あ",
-          "meaning": "編む(あむ)toknit 編物(あみもの)knitting",
+          "surface": "編む",
+          "reading": "あむ",
+          "meaning": "to knit",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5862,16 +5654,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=編)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_225",
-          "surface": "務",
-          "reading": "つと",
-          "meaning": "める(つとめる)towork;to serve",
+          "surface": "める",
+          "reading": "つとめる",
+          "meaning": "to work;to serve",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5888,16 +5680,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=務)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_226",
-          "surface": "更",
-          "reading": "ふ",
-          "meaning": "更ける(ふける)tobe late",
+          "surface": "更ける",
+          "reading": "ふける",
+          "meaning": "to be late",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5914,16 +5706,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=更)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_227",
           "surface": "襲",
-          "reading": "おそ",
-          "meaning": "襲(おう)to attack",
+          "reading": "おう",
+          "meaning": "to attack",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5940,16 +5732,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=襲)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_228",
-          "surface": "戦",
-          "reading": "大たか",
-          "meaning": "戦う(か)tofight",
+          "surface": "戦う",
+          "reading": "か",
+          "meaning": "to fight",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -5966,42 +5758,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
-          }
-        },
-        {
-          "id": "quartet_2_l12_vocab_229",
-          "surface": "抱",
-          "reading": "いだ",
-          "meaning": "抱<(f<) to have(a feeling or emotion)",
-          "lessonNumber": 12,
-          "sourceRef": {
-            "sourceId": "quartet_2_textbook",
-            "pageNumber": 348,
-            "coordinates": [
-              154,
-              2345,
-              1420,
-              2547
-            ]
-          },
-          "tags": [
-            "gold_bessatsu"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=戦)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_230",
-          "surface": "悔",
-          "reading": "くや",
-          "meaning": "悔しい(くやい)regretful",
+          "surface": "悔しい",
+          "reading": "くやい",
+          "meaning": "regretful",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -6018,16 +5784,16 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=悔)."
           }
         },
         {
           "id": "quartet_2_l12_vocab_231",
-          "surface": "貧",
-          "reading": "まず",
-          "meaning": "貧しい(ましい)poor",
+          "surface": "貧しい",
+          "reading": "ましい",
+          "meaning": "poor",
           "lessonNumber": 12,
           "sourceRef": {
             "sourceId": "quartet_2_textbook",
@@ -6044,9 +5810,9 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:25.093Z",
-            "reviewer": "quartet_bessatsu_enrich",
-            "notes": "Bessatsu vocab list OCR"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Parsed Quartet merged gloss from OCR (was surface=貧)."
           }
         }
       ],
