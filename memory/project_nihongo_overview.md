@@ -4,6 +4,10 @@ description: Comprehensive spec for Japanese learning app architecture, tech sta
 type: project
 originSessionId: 1c4173c9-f9bf-4e26-b7f3-59bac68ed5e0
 ---
+> **Superseded for live status (2026-11-06).** This file is the early product vision / phase plan.  
+> Current feature status → [`../HANDOFF.md`](../HANDOFF.md). Priorities → [`../todo.md`](../todo.md).  
+> Notable drift vs reality: TTS is **cloud-only** (no Web Speech fallback); curriculum is CEFR A1–B2 textbook packs + Anki rail, not the original 11-phase JLPT-first timeline.
+
 ## Nihongo: Japanese Learning App
 
 **Vision:** Open-source, web-first Japanese learning app with pregenerated curriculum, optional AI tutor, adaptive SRS (FSRS), and full offline capability for structured study.
@@ -241,30 +245,10 @@ Safeguards: 90-min break reminders, accuracy drop 15%+ over 3 days → fatigue w
 
 ## Project Status
 
-**Phases 1–3 complete. Ready to start Phase 4.**
+**Historical snapshot below is obsolete.** As of 2026-11-06 the app is an A1–B2 closed-beta candidate with Anki-clone SRS, lesson rail, gold packs, AI tutor/scenarios, and staging security shipped. See [`../HANDOFF.md`](../HANDOFF.md).
 
-### Phase 1 — Complete
-- Vite + React + TypeScript + Tailwind scaffolded in `app/`
-- FSRS and SM-2 scheduler implementations (`src/core/`)
-- SQLite WASM StorageProvider with localStorage persistence
-- Express AI proxy server (`server/`)
-- Zustand store with persisted settings
-- react-intl i18n with English catalogue
-- All tests passing
+### Phase 1–3 — Complete (early scaffold / onboarding)
+Retained as archive: Vite scaffold, FSRS/SM-2, sql.js, Express proxy, onboarding + CEFR placement.
 
-### Phase 2 — Complete
-- Full Drizzle ORM SQLite schema (14 tables)
-- SQL migration runner
-- AI content generation pipeline
-
-### Phase 3 — Complete
-- Full onboarding flow: Welcome → AI setup → Prefs → Hiragana → Katakana → (Kana Learning placeholder) → Placement → Goal → IME
-- Kana quiz (`StepKana`) with 46-character hiragana/katakana sets, row selection, Enter key advance, incorrect answer display
-- Adaptive CEFR placement quiz (`StepPlacement`): 17 tiers (A1-early → C2-late), 126 conversational questions, 3-correct-advance / 2-wrong-stop logic
-- Furigana reading hints shown on A1/A2 levels only, hidden on B1+
-- CEFR→JLPT mapping for SRS integration (A1→N5, A2→N4, B1→N3, B2→N2, C1/C2→N1)
-- Result screen shows both CEFR and approximate JLPT level with manual override
-- 40 tests passing, zero type errors
-
-### Phase 4 — Not started
-SRS Engine + Writing Practice (see plan file for full spec)
+### Later phases — Delivered under redesigned plan
+Phases 4–11 in this document were reorganized into the learning-environment redesign (HANDOFF / `todo.md` Phases 1–8): full SRS, textbook gold packs, lesson rail, AI conversation, staging harden. Do not use the “Phase 4 not started” line for planning.

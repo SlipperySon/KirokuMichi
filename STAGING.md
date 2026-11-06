@@ -86,6 +86,13 @@ Optional:
   (same-host Origin/Referer is already allowed). Set it to `https://YOUR-SERVICE.onrender.com` if you
   also put a second frontend origin in front of the API.
 
+**TTS (optional but needed for listen/speak cards):**
+
+- `TTS_PROVIDER`: Blueprint default `sarashina`. Use `elevenlabs` for commercial-OK beta audio, or `none` to disable.
+- `SARASHINA_TTS_URL`: base URL of the GPU sidecar when using Sarashina.
+- `ELEVENLABS_API_KEY` / `ELEVENLABS_VOICE_ID` / `ELEVENLABS_MODEL_ID`: when `TTS_PROVIDER=elevenlabs`.
+- Policy: never fall back to browser `speechSynthesis`. If TTS is down, listen/speak audio stays disabled.
+
 Template with comments: `app/.env.example`.
 
 ## Verification

@@ -83,6 +83,12 @@ export function Navigation() {
         { path: '/my-content', label: 'My Content', description: 'Import PDFs, decks, and packs', icon: Upload },
         { path: '/immersion', label: 'Immersion', description: 'Turn native text into study material', icon: Library },
         { path: '/practice', label: 'AI Tutor', description: 'Ask questions or practise output', icon: Sparkles },
+        {
+          path: '/study/jlpt',
+          label: 'JLPT drills',
+          description: 'Optional N5–N1 bank — not the CEFR course',
+          icon: BookOpen,
+        },
         { path: '/settings', label: 'Settings', description: 'App, AI, audio, and shortcuts', icon: Settings },
       ],
     },

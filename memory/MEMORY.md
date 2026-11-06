@@ -1,4 +1,5 @@
-- [Nihongo Project Overview](project_nihongo_overview.md) — Comprehensive spec: pregenerated curriculum + optional AI tutor, tech stack, 11-phase development plan
+- **Source of truth:** [`../HANDOFF.md`](../HANDOFF.md) (feature status) · [`../todo.md`](../todo.md) (priorities) · [`../STAGING.md`](../STAGING.md) (deploy)
+- [Nihongo Project Overview](project_nihongo_overview.md) — Historical early spec (phases 1–11); superseded for status by HANDOFF
 - [Phase Decisions](project_phase_decisions.md) — Key implementation decisions per phase (CEFR quiz, kana placeholder, app name)
 - [Quiz Answer Position](feedback_quiz_answer_position.md) — Correct answer must always be options[0] (top-left in CardGrammar 2x2 grid)
-- [Textbook Pack Strategy](textbook_pack_strategy.md) — New mapped-textbook direction: specialized OCR pipeline, encrypted JSON packs, local PDF unlock flow
+- [Textbook Pack Strategy](textbook_pack_strategy.md) — Mapped-textbook OCR pipeline + encrypted JSON packs + local PDF unlock flow

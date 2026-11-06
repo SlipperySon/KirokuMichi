@@ -1,24 +1,35 @@
 # KirokuMichi — Todo
 
-**Last updated: 2026-08-07**
-**Status: Learning-rail polish shipped; Sarashina TTS wired but needs GPU machine to finish**
+**Last updated: 2026-11-06 (Australia/Brisbane)**  
+**Status: Product cohesive for A1–B2 closed beta — next is staging + TTS + dep hygiene**  
+**Source of truth for what shipped:** [`HANDOFF.md`](./HANDOFF.md)
 
 ---
 
-## 🔥 Current priority — Sarashina TTS (GPU machine)
+## 🔥 Current priority — Closed beta launch path
+
+Ordered for a cohesive first external use:
+
+1. **Deploy Render staging** (`STAGING.md` / `render.yaml`) with `BETA_INVITE_CODES` + one AI key + report token.
+2. **Cloud TTS for testers** — Sarashina on GPU *or* ElevenLabs for commercial-OK beta audio.
+3. **Dependency hygiene** — `npm audit` currently reports runtime vulns (Express `proxy-addr` / `body-parser`, `pdfjs-dist`); bump carefully and re-verify.
+4. **Real-learner smoke** — Genki I L1 rail → Cards → Speak; triage Report Issue feedback before new features.
+
+### Sarashina TTS (GPU machine)
 
 Pluggable cloud TTS is coded (`TTS_PROVIDER=sarashina` default; ElevenLabs ready later). Finish on a machine with GPU (~6GB VRAM).
 
-**Code already on `main` (this session)**
+**Already shipped**
 - [x] Express `GET /api/tts/status` + `POST /api/tts` with disk cache (`.cache/tts`)
 - [x] Providers: `sarashina` · `elevenlabs` · `none` (`app/server/tts/`)
 - [x] Client: recorded audio → `/api/tts` only (`app/src/audio/cloudTts.ts`)
 - [x] **Policy: never use browser/`speechSynthesis` TTS.** If cloud TTS is down/unconfigured, disable speak/listen audio (no device-voice fallback).
 - [x] Sidecar stub: `app/tts-sidecar/server.py`
-- [x] Env docs in `app/.env.example`
+- [x] Env docs in `app/.env.example` (+ Render TTS env aligned Nov 2026)
 - [x] Lesson-gated Genki starter import (no more ~2454 new cards on first open)
 - [x] Typed-recall / IME / `~さん` grading + first-session teach/check fixes
 - [x] UI copy polish (lesson labels, grammar notes, Speak schema fragments)
+- [x] Cohesion pass: docs SoT, JLPT in Library as optional drills, C1 marked out of beta
 
 **Still to do on the capable machine**
 - [ ] Install [Sarashina2.2-TTS](https://github.com/sbintuitions/sarashina2.2-tts) (`pip install -e .`)
@@ -202,8 +213,8 @@ These cannot be progressed without outside input:
 
 - **More textbook image crops** — no longer fully blocked: agreed workflow (2026-06-12, see plan.md "Image extraction workflow") is (1) deterministically derive candidate figure regions from gaps in grouped OCR block coverage, (2) Haiku subagent pass to classify/label candidates (not to emit raw coordinates), (3) Sonnet/Opus escalation for flagged ambiguous pages, (4) human review via corrections file + validation viewer, then `npm run textbook:assets:crop` + `npm run textbook:assets:manifest`. Still pending: building the OCR-gap candidate generator and running a trial lesson.
 - **Maynard direct refs cleanup** — reduced from 73 curated bridges to 5 remaining niche bridges; rerun `npm run textbook:maynard:direct-refs` and `npm run textbook:maynard:quality` when better extraction/alias data lands.
-- **Manual lesson corrections** — 54 lesson packs flagged for human review; not automatable
-- **C1/N1 post-B2 expansion** — Shin Kanzen Master, Kanji in Context, native immersion sources; out of current scope
+- **Manual lesson OCR polish** — 133 gold packs published; soft warnings (~271) still need human triage; not fully automatable
+- **C1/N1 post-B2 expansion** — Shin Kanzen Master, Kanji in Context, native immersion sources; out of current A1–B2 beta scope
 
 ---
 
