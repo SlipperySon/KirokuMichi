@@ -6,6 +6,7 @@
  * Draft: quality-filtered comprehensive slices for other lessons
  */
 import type { GrammarItem, VocabItem } from './curriculumService'
+import { isLearnerSafeVocab } from './vocabGlossQuality'
 
 export interface ReviewedLessonOverlay {
   lessonId: string
@@ -171,7 +172,7 @@ export async function getReviewedLessonOverlay(lessonId: string): Promise<Review
       title: lesson.title ?? meta?.title ?? lessonId,
       tier,
       vocabulary: (lesson.vocabulary ?? [])
-        .filter(v => v.surface && v.meaning)
+        .filter(v => v.surface && v.meaning && isLearnerSafeVocab(v.surface, v.meaning))
         .map((v, i) => ({
           id: v.id ?? `${lessonId}_rv_${i}`,
           surface: v.surface!,

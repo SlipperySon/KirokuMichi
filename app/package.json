@@ -34,6 +34,7 @@
     "textbook:reviewed:fingerprints": "tsx tools/textbook-pack/check-reviewed-fingerprints.ts",
     "textbook:reviewed:validate": "tsx tools/textbook-pack/validate-reviewed-pack.ts",
     "textbook:vocab:quality": "tsx tools/textbook-pack/repair-genki-vocab-quality.ts",
+    "textbook:learner:repair-clarity": "tsx tools/textbook-pack/repair-answer-clarity-packs.ts",
     "textbook:learner:quality": "tsx tools/textbook-pack/audit-learner-content-quality.ts",
     "textbook:learner:validate-published": "tsx tools/textbook-pack/validate-published-learner-packs.ts",
     "textbook:maynard:direct-refs": "tsx tools/textbook-pack/build-maynard-direct-refs.ts",

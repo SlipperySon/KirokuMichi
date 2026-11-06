@@ -957,7 +957,7 @@
           "id": "genki_1_l5_vocab_47",
           "surface": "暇",
           "reading": null,
-          "meaning": "not busy; free (time) I-verbs",
+          "meaning": "not busy; free (time)",
           "lessonNumber": 5,
           "sourceRef": {
             "sourceId": "genki_1_textbook",
@@ -968,9 +968,9 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.487Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 139, 140, 141, 142, 143, 144"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Removed I-verbs table spill."
           }
         },
         {
@@ -1177,7 +1177,7 @@
           "id": "genki_1_l5_vocab_58",
           "surface": "乗る",
           "reading": "のる",
-          "meaning": "board(~1二)",
+          "meaning": "to board; to ride (~に)",
           "lessonNumber": 5,
           "sourceRef": {
             "sourceId": "genki_1_textbook",
@@ -1188,9 +1188,9 @@
           ],
           "review": {
             "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.487Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 139, 140, 141, 142, 143, 144"
+            "reviewedAt": "2026-11-06T09:52:46.805Z",
+            "reviewer": "answer_clarity_repair",
+            "notes": "Fixed に→二 OCR in gloss."
           }
         },
         {
@@ -1278,26 +1278,6 @@
           "surface": "きらい",
           "reading": null,
           "meaning": "dislikes",
-          "lessonNumber": 5,
-          "sourceRef": {
-            "sourceId": "genki_1_textbook",
-            "pageNumber": 144
-          },
-          "tags": [
-            "gold_ocr"
-          ],
-          "review": {
-            "action": "approved",
-            "reviewedAt": "2026-07-21T05:47:13.487Z",
-            "reviewer": "ocr_vocab_enrich",
-            "notes": "OCR vocab pages 139, 140, 141, 142, 143, 144"
-          }
-        },
-        {
-          "id": "genki_1_l5_vocab_64",
-          "surface": "私は野菜は好きですが、肉はきらいです。",
-          "reading": "わたし",
-          "meaning": "vegetables, but I don't like meat",
           "lessonNumber": 5,
           "sourceRef": {
             "sourceId": "genki_1_textbook",
