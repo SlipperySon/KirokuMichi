@@ -22,7 +22,7 @@ const TEXTBOOK_DISPLAY_NAMES: Record<string, string> = {
   'genki_2_textbook': 'Genki II',
   'quartet_1_textbook': 'Quartet 1',
   'quartet_2_textbook': 'Quartet 2',
-  'authentic_japanese': 'Coming soon'
+  'authentic_japanese': 'Out of beta scope',
 }
 
 interface CEFRButtonProps {
@@ -79,7 +79,7 @@ function CEFRButton({
       {/* Stats */}
       <div className="text-xs text-slate-500">
         {disabled
-          ? 'Coming soon'
+          ? 'Not in A1–B2 beta'
           : lessonsCompleted === 0
             ? 'Not started'
             : lessonsCompleted === totalLessons

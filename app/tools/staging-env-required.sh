@@ -23,12 +23,14 @@ SET AUTOMATICALLY by render.yaml (do not override unless you know why):
   TRUST_PROXY=1              (also auto-on when NODE_ENV=production)
   SENTRY_ENVIRONMENT=staging
   VITE_SENTRY_ENVIRONMENT=staging
-  AZURE_TTS_REGION=eastus
+  TTS_PROVIDER=sarashina     (swap to elevenlabs for commercial-OK beta audio)
 
 OPTIONAL:
   CUSTOM_PROVIDER_API_KEY / CUSTOM_PROVIDER_ENDPOINT / CUSTOM_PROVIDER_ENDPOINTS
   AI_MODEL_ALLOWLIST
-  AZURE_TTS_KEY
+  SARASHINA_TTS_URL          local/GPU sidecar base URL
+  ELEVENLABS_API_KEY / ELEVENLABS_VOICE_ID / ELEVENLABS_MODEL_ID
+  TTS_CACHE_DIR
   PUBLIC_ORIGIN              canonical https origin for CSRF Origin checks if split-hosted
   CORS_ORIGINS               extra frontend origins if API is separate
   SENTRY_DSN / SENTRY_RELEASE / VITE_SENTRY_DSN / VITE_SENTRY_RELEASE

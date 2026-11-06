@@ -152,8 +152,10 @@ export function StudyDashboard() {
       setGrammarDueCount(grammarDue)
       setPreviewCards(preview)
       setDecks(deckRows)
-      // Cap new cards shown by daily limit minus due cards already scheduled
-      const available = Math.max(0, settings.dailyCardLimit - due)
+      // Cap new cards shown by daily limit minus due cards already scheduled.
+      // Guard undefined/NaN dailyCardLimit (partial persist hydration / old seeds).
+      const dailyLimit = Number.isFinite(settings.dailyCardLimit) ? settings.dailyCardLimit : 20
+      const available = Math.max(0, dailyLimit - due)
       setAvailableNewCount(Math.min(newC, available))
       setStreakData(streak)
       setMistakeCount(mistakes)
@@ -616,7 +618,7 @@ export function StudyDashboard() {
               <div className="bg-green-50 rounded-xl p-4">
                 <div className="text-3xl font-bold text-green-600 tabular-nums">{availableNewCount}</div>
                 <div className="text-sm text-gray-500 mt-1">{intl.formatMessage({ id: 'study.dashboard.new' }, { count: availableNewCount })}</div>
-                {newCount > availableNewCount && newCount <= settings.dailyCardLimit * 5 && (
+                {newCount > availableNewCount && newCount <= (Number.isFinite(settings.dailyCardLimit) ? settings.dailyCardLimit : 20) * 5 && (
                   <div className="text-xs text-gray-400 mt-1">
                     {newCount - availableNewCount} more new unlocked for this lesson
                   </div>

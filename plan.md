@@ -1,6 +1,7 @@
 # KirokuMichi — Current State & Active Roadmap
 
-Last updated: 2026-07-30 AEST
+Last updated: 2026-07-30 AEST  
+**Status note (2026-11-06):** Planning archive. Live feature status → `HANDOFF.md`. Priorities → `todo.md`.
 
 ---
 

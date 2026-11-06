@@ -14,7 +14,7 @@ export const CEFR_BASE_TEXTBOOK: Record<CEFRLevel, string> = {
   a2: 'genki_2_textbook',      // Genki 2
   b1: 'quartet_1_textbook',    // Quartet 1
   b2: 'quartet_2_textbook',    // Quartet 2
-  c1: 'authentic_japanese'     // TBD: Authentic Japanese reading/content (Tobira is supplementary for B2)
+  c1: 'authentic_japanese'     // Out of A1–B2 beta; Tobira remains B2 supplemental
 }
 
 /**
@@ -47,7 +47,7 @@ export const TEXTBOOK_LESSON_COUNTS: Record<string, number> = {
   'quartet_2_textbook': 6,
   'quartet_2_workbook': 6,
   'tobira_textbook': 14,
-  'authentic_japanese': 0  // TBD: C1 content not yet available
+  'authentic_japanese': 0  // C1 not in closed-beta scope
 }
 
 /**

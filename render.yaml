@@ -25,8 +25,9 @@ services:
         value: staging
       - key: VITE_SENTRY_ENVIRONMENT
         value: staging
-      - key: AZURE_TTS_REGION
-        value: eastus
+      # Cloud TTS default (Sarashina sidecar). Swap to elevenlabs for commercial beta.
+      - key: TTS_PROVIDER
+        value: sarashina
 
       # Required for closed beta + PDF + reports (prompted on Blueprint create)
       - key: BETA_INVITE_CODES
@@ -56,8 +57,16 @@ services:
       - key: AI_MODEL_ALLOWLIST
         sync: false
 
-      # TTS (optional)
-      - key: AZURE_TTS_KEY
+      # TTS (optional — Sarashina sidecar URL, or ElevenLabs when commercial)
+      - key: SARASHINA_TTS_URL
+        sync: false
+      - key: ELEVENLABS_API_KEY
+        sync: false
+      - key: ELEVENLABS_VOICE_ID
+        sync: false
+      - key: ELEVENLABS_MODEL_ID
+        sync: false
+      - key: TTS_CACHE_DIR
         sync: false
 
       # Split-origin / CSRF (usually leave empty for single-origin Render)

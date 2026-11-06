@@ -129,9 +129,14 @@ export function JLPTSection() {
       <Navigation />
       <div className="flex flex-col gap-6 p-6 max-w-4xl mx-auto flex-1">
         <div>
-          <h1 className="text-3xl font-bold text-gray-900">JLPT Section</h1>
-        <p className="text-gray-600">Study Japanese grammar, vocabulary, and practice tests</p>
-      </div>
+          <h1 className="text-3xl font-bold text-gray-900">JLPT drills</h1>
+          <p className="text-gray-600">
+            Optional grammar, vocabulary, and practice tests. Your main path stays Today → Course → Review.
+          </p>
+          <p className="mt-2 text-sm text-slate-500">
+            CEFR lessons and Anki review are separate — use this bank when you want exam-style drills.
+          </p>
+        </div>
 
       <LevelPicker counts={counts} />
 

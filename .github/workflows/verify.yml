@@ -26,7 +26,8 @@ jobs:
 
   app:
     name: App health gate
-    runs-on: ubuntu-latest
+    # Pin 24.04: playwright browser deps lag newest ubuntu-latest images.
+    runs-on: ubuntu-24.04
     defaults:
       run:
         working-directory: app
